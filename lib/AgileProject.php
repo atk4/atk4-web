@@ -50,8 +50,22 @@ class AgileProject extends ApiFrontend {
 	function initLayout(){
 		parent::initLayout();
 
+		$section=explode('_',$this->page);
+		$this->template->trySet('section',$section[0]);
+		switch($section[0]){
+			case'doc':
+				$this->template->trySet('menu_doc','class="current"');
+				break;
+			case'download':
+				$this->template->trySet('menu_download','class="current"');
+				break;
+			default:
+				$this->template->trySet('menu_home','class="current"');
+		}
+
 		// If you are using a complex menu, you can re-define
 		// it and place in a separate class
+		/*
 		$m=$this->add('Menu','Menu','Menu');
 		$m->addMenuItem('Home','index');
 		$m->addMenuItem('Demo','demo');
@@ -59,6 +73,7 @@ class AgileProject extends ApiFrontend {
 		$m->addMenuItem('Documentation','doc');
 		$m->addMenuItem('Support','support');
 		$m->addMenuItem('Blog','blog');
+		*/
 
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
