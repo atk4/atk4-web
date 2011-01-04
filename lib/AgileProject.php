@@ -68,12 +68,9 @@ class AgileProject extends ApiFrontend {
 		/*
 		$m=$this->add('Menu','Menu','Menu');
 		$m->addMenuItem('Home','index');
-		$m->addMenuItem('Demo','demo');
-		$m->addMenuItem('Getting Started','doc/started');
-		$m->addMenuItem('Documentation','doc');
-		$m->addMenuItem('Support','support');
+		$m->addMenuItem('Documentation','doc/DBlite');
 		$m->addMenuItem('Blog','blog');
-		*/
+		$m->addMenuItem('Download','doc');
 
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
