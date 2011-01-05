@@ -50,67 +50,51 @@ class AgileProject extends ApiFrontend {
 	function initLayout(){
 		parent::initLayout();
 
+		$menu2=$this->add('Menu','Menu','Menu');
+		$menu2->current_menu_class='current';
+
 		$section=explode('_',$this->page);
 		$this->template->trySet('section',$section[0]);
 		switch($section[0]){
-			case'doc':
+			case'doc': case'start': case'sc':
 				$this->template->trySet('menu_doc','class="current"');
+
+				$menu2->addMenuItem('Getting Started','doc');
+				$menu2->addMenuItem('API Reference','doc/ref');
+				$menu2->addMenuItem('Screencasts','sc');
+				$menu2->addMenuItem('Examples','example');
+
 				break;
 			case'download':
 				$this->template->trySet('menu_download','class="current"');
 				break;
+
+			case'about':
 			default:
 				$this->template->trySet('menu_home','class="current"');
+
+				$menu2->addMenuItem('Home','index');
+				$menu2->addMenuItem('Extensions','extend');
+				$menu2->addMenuItem('License','about/commercial');
+				$menu2->addMenuItem('Jobs','about/site');
+				$menu2->addMenuItem('About','about/history');
 		}
 
 		// If you are using a complex menu, you can re-define
 		// it and place in a separate class
-		/*
-		$m=$this->add('Menu','Menu','Menu');
-		$m->addMenuItem('Home','index');
-		$m->addMenuItem('Documentation','doc/DBlite');
-		$m->addMenuItem('Blog','blog');
-		$m->addMenuItem('Download','doc');
+
 
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
+	}
+	function defaultTemplate(){
+		if($this->page=='' or $this->page=='index')return array('index');
+		return parent::defaultTemplate();
 	}
 
 	// There are 2 ways to add pages to your project. You can either keep a short
 	// functions here or you can create page/projects.php file
 	// Pages are used four routing and to add views on your page.
-
-	function page_index($p){
-		// This is your index page
-
-		$p->add('View',null,null,array('view/download_box'));
-
-		$p->add('View',null,null,array('view/intro_box'));
-
-		$p->add('View',null,null,array('view/explore_difference'));
-
-		$c=$p->add('View',null,null,array('view/comparison'));
-		$g=$c->add('Grid',null,'grid');
-		$g->addColumn('text','feature');
-		$g->addColumn('boolean','agile_toolkit');
-		$g->addColumn('boolean','dnet','.NET');
-		$g->addColumn('boolean','zend');
-		$g->addColumn('boolean','symfony');
-		$g->addColumn('boolean','cake','CakePHP');
-
-		$g->setStaticSource(array(
-					array('feature'=>'Object-oriented','agile_toolkit'=>'Y','dnet'=>'Y','zend'=>'Y','symfony'=>'N','cake'=>'N'),
-					array('feature'=>'Minimalistic','agile_toolkit'=>'Y','dnet'=>'N','zend'=>'N','symfony'=>'Y','cake'=>'Y'),
-					array('feature'=>'Web UI','agile_toolkit'=>'Y','dnet'=>'Y','zend'=>'N','symfony'=>'N','cake'=>'N'),
-					array('feature'=>'jQuery, jQuery UI','agile_toolkit'=>'Y','dnet'=>'Y','zend'=>'N','symfony'=>'N','cake'=>'N'),
-					array('feature'=>'Open-Source','agile_toolkit'=>'Y','dnet'=>'N','zend'=>'Y','symfony'=>'Y','cake'=>'Y'),
-					array('feature'=>'Commercial/Enterprise','agile_toolkit'=>'Y','dnet'=>'Y','zend'=>'Y','symfony'=>'N','cake'=>'N'),
-					));
-
-
-		$p->add('View',null,null,array('view/features'));
-
-	}
 
 	function page_pref($p){
 

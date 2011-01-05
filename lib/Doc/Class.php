@@ -18,15 +18,11 @@ class Doc_Class extends Doc_View {
 	}
 
 	function addMethod($name){
-		$this->add('Doc_Method')->setName($name);
+		return $this->add('Doc_Method')->setName($name);
 	}
-	function addLink($type,$dest,$descr=null){
+	function addAliasMethod($name,$alias){
+		return $this->add('Doc_Method')->setName($name)->setDescr('Same as '.$alias);
 	}
-	function addNote($text){
-		$this->add('Doc_Note')
-			->set('Content',$text);
-	}
-
 
 
 

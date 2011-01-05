@@ -18,7 +18,7 @@ class Doc_Class_DBlite extends Doc_Class {
 				');
 
 		$this->addMoreInfo('Why executing SQL directly is a bad idea?')
-			->setInfo('When developer have to design all SQL queries in the software, there are several disadvantages:
+			->setDescr('When developer have to design all SQL queries in the software, there are several disadvantages:
 
 					First - developer must write every single query himself. Toolkit can\'t help you by creating them
 					automatically for you. 
@@ -36,7 +36,7 @@ class Doc_Class_DBlite extends Doc_Class {
 
 					')
 			->addExample('Typical use of Dynamic SQL')
-			->set(<<<'EOD'
+			->setDescr(<<<'EOD'
 // Creating new DSQL query
 $dynamic_query = $this->api->db->dsql();
 
@@ -67,13 +67,13 @@ $data = $dynamic_query->do_getAll();
 EOD
 					);
 
-		$this->moreInfo('When you should use DBlite')
-			->set('When Dynamic SQL does not provide required functionality. For example it
+		$this->addMoreInfo('When you should use DBlite')
+			->setDescr('When Dynamic SQL does not provide required functionality. For example it
 					can be used to begin transactions, perform commits or use database-specific queries 
 					(such as "set names="UTF8") ');
 
 		$this->addExample('Typical use of DBlite')
-			->set(<<<'EOD'
+			->setDescr(<<<'EOD'
 
 // reads DSN from configuration file and establishes connection with database
 $this->api->dbConnect();
@@ -84,7 +84,7 @@ EOD
 			);
 
 		$this->addExample('Establishing additional database connection')
-			->set(<<<'EOD'
+			->setDescr(<<<'EOD'
 
 $db2=$this->add('DBlite')
 	->connect('mysql://user:secret@1.2.3.4/mydb');
@@ -98,7 +98,7 @@ EOD
 				);
 
 
-		$this->addNote('This class is due to reimplementation in 4.1. New implementation will 
+		$this->addNote('Obsolete')->setDescr('This class is due to reimplementation in 4.1. New implementation will 
 				have the same interface, however will use PDO. It will also introduce new 
 				dynamic queries [Roadmap]');
 	}
@@ -112,7 +112,7 @@ EOD
 				information for the database. Example: mysql://john:secret@127.0.0.1/mydb');
 
 		$a->addNote('Alternative DSN format')
-			->set('EOD'<<<
+			->setDescr(<<<'EOD'
 You can specify DSN as associative array instead of string. Example: 
 
 $dsn=array(
@@ -136,7 +136,7 @@ EOD
 				calling getRow(). 
 				');
 
-		$m->addNote('Multiple Cursors')->set('
+		$m->addNote('Multiple Cursors')->setDescr('
 				Execution of a query which returns data is typically implemented through use of cursor handles. Using this
 				handle data can be fetched even if additional queries are executed along the way. 
 
@@ -154,14 +154,14 @@ EOD
 		$a->addLink('class','DBLite_psql');
 
 		//////// fetchRow
-		$m=$this->addAliasMethod('fetchRow')->alias('fetchArray');
+		$m=$this->addAliasMethod('fetchRow','fetchArray');
 		//////// fetchArray
 		$m=$this->addMethod('fetchRow')
 			->setDescr('Receive next row of data for previously executed query()');
 
 
-		$m->addObsoseteArgument('handle');
-		$m->addObsoleteArgument('fetchmode');
+		$m->addObsoleteArgument('handle','4.1');
+		$m->addObsoleteArgument('fetchmode','4.1');
 		$a=$m->addArgument('param1','Array with values for parametric queries');
 		$a->addLink('class','DBLite_psql');
 	}
