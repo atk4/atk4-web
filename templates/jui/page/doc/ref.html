@@ -1,140 +1,52 @@
 <h1>API Reference</h1>
 <h2>Core Classes</h2>
 <ul>
-<li>AbstractObject</li>
+<li><a href="/doc/abstract">Abstract Object</a> - common anchestors for all classes</li>
+<li><a href="/doc/api">Base API classes</a> - select the right API class for your application</li>
 <ul>
-	<li>AbstractView</li>
-	<li>AbstractModel</li>
-	<li>AbstractController</li>
-</ul><li>APIs</li><ul>
-	<li>ApiCLI</li>
-	<li>ApiWeb</li>
-	<li>ApiFrontend</li>
-</ul><li>API Controllers</li><ul>
-	<li>PathFinder</li>
-	<li>PageManager</li>
-</ul><li>Auth</li><ul>
-	<li>BasicAuth</li>
-	<li>SQLAuth</li>
-</ul><li>JavaScript</li><ul>
-	<li>jQuery</li>
-	<li>jUI</li>
-	<li>jQuery_Chain</li>
+	<li><a href="/doc/logger">Logger</a> - Enhance your API with error and event display / logging</li>
+	<li><a href="/doc/pathfinder">PathFinder</a> - Resource locations, lookup and file paths</li>
+	<li><a href="/doc/dblite">DBlite</a> - Database Connectivity, regular and Dynamic Queries</li>
+	<li><a href="/doc/smlite">SMlite</a> - Lightweight template engine</li>
+	<li><a href="/doc/location">Location</a> - URL awarness, creating relative links and URL with arguments</li>
+	<li><a href="/doc/auth">Auth</a> - User authentication</li>
+	<li><a href="/doc/jquery">jQuery</a> - jQuery and UI integration framework</li>
+	<li><a href="/doc/exception">Exception</a> - Exception classes and handling</li>
+</ul>
+<li><a href="/doc/view">View</a> - Standard Views</li>
+<ul>
+	<li><a href="/doc/form">Form</a> - UI Form class</li>
+	<li><a href="/doc/lister">Lister</a> - User-defined lists</li>
+	<li><a href="/doc/grid">Grid</a> - Multi-column type-aware tables</li>
+	<li><a href="/doc/info">Info</a> - Informative controls: warning, info and error boxes, icons</li>
+</ul>
+<li><a href="/doc/htmlelement">HtmlElement</a> - Java-Script enabled controls</li>
+<ul>
+	<li><a href="/doc/button">Button</a> - Standalone Buttons, button enhancement</li>
+	<li><a href="/doc/layout">Layout</a> - Laying out views on the pages: Tabs, Accordions and more</li>
+</ul>
 </li>
-<li>BaseException</li>
-<li>SMLite</li>
-<li>DBlite</li>
-<li>Logger</li>
-<li>TMail</li>
-<li>URL</li>
-<li>View</li>
-<li>static</li>
-</ul>
-</ul>
-<h2>Core Views</h2>
+<li>Non-visual supplimentary frameworks</li>
 <ul>
-<li>HelloWorld</li>
-<li>LoremIpsum</li>
-<li>Lister</li>
-<li>CompleteLister</li>
-<li>Grid</li>
-<li>Form</li><ul>
-	<li>Form_Field</li><ul>
-		<li>Form_Field_Line</li>
-		<li>Form_Field_URL</li>
-		<li>Form_Field_Search</li>
-		<li>Form_Field_Checkbox</li>
-		<li>Form_Field_Password</li>
-		<li>Form_Field_Hidden</li>
-		<li>Form_Field_Readonly</li>
-		<li>Form_Field_File</li>
-		<li>Form_Field_FileSize</li>
-		<li>Form_Field_Time</li>
-		<li>Form_Field_Date</li>
-		<li>Form_Field_Money</li>
-		<li>Form_Field_ValueList</li>
-		<li>Form_Field_Dropdown</li>
-		<li>Form_Field_CheckboxList</li>
-		<li>Form_Field_Radio</li>
-		<li>Form_Field_DatePicker</li>
-		<li>Form_Field_DateSelector</li>
-		<li>Form_Field_IconSelect</li>
-		<li>Form_Field_Slider</li>
-		<li>Form_Field_Upload</li>
-		</ul>
-	<li>Form_Submit</li>
-	<li>Form_Hint</li>
-	<li>Form_Button</li>
+	<li><a href="/doc/tmail">TMail</a> - Template-based emails</li>
+	<li><a href="/doc/processio">ProcessIO</a> - Interaction with system-processes in a secure way</li>
+	<li><a href="/doc/htmlsanitizer">HTMLSanitizer</a> - Cleans up HTML you supply using XSLT</li>
+	<li><a href="/doc/recordorder">RecordOrder</a> - Flexible way to change array order</li>
+	<li><a href="/doc/versioncontrol">VerionControl</a> - SQL Database version control scripts and classes</li>
 </ul>
-<li>Filter</li>
-<li>Wizard</li>
-<li>Text</li>
-<li>HtmlElement</li><ul>
-	<li>View_Box</li>
-	<li>View_Error</li>
-	<li>View_Warning</li>
-	<li>View_Info</li>
-	<li>View_Hint</li>
-	<li>View_Icon</li>
-</ul><li>View_Button</li>
-<li>View_Columns</li>
-<li>View_Tabs</li>
-<li>View_Accordion</li>
-</ul>
-<h2>Additional classes</h2>
+</li>
+<li>MVC - Model View Controller</li>
 <ul>
-<li>EntityManager</li>
-<li>System_ProcessIO</li>
-<li>System_HTMLSanitizer</li>
-<li>Menu</li>
-<li>QuickSearch, Paginator</li>
-<li>RecordOrder</li>
-<li>Tip</li>
-<li>VersionControl</li>
+	<li><a href="/doc/model">Model</a> - Basic models and SQL Models</li>
+	<li><a href="/doc/controller">Controller</a> - Interraction between Views and Models - Controllers</li>
 </ul>
-<h2>Model View Controller</h2>
+</ul>
+<h2>atk4-addons extensions</h2>
 <ul>
-<li>Model</li>
-<li>Model_Table</li>
-<li>Controller</li>
-<li>FieldDefinition</li>
-<li>MVCForm</li>
-<li>MVCLister</li>
-<li>MVCGrid</li>
-<li>Form_Field_Reference</li>
-</ul>
-<h2>Misc MVC</h2>
-<ul>
-<li>Fistesore</li><ul>
-	<li>Filestore_File</li>
-	<li>Filestore_Type</li>
-	<li>Filestore_Volume</li>
-</ul>
-
-<li>Doc</li><ul>
-	<li>Doc_Howto</li>
-	<li>Doc_Page</li>
-	<li>Doc_Example</li>
-	<li>Doc_Note</li>
-	<li>Doc_Moreinfo</li>
-	<li>Doc_Class</li>
-	<li>Doc_Method</li>
-	<li>Doc_Argument</li>
-</ul>
-</ul>
-<h2>Billing</h2>
-<ul>
-<li>Billing_PaymentMethod</li><ul>
-	<li>Billing_PaymentMethod_CreditCard</li>
-	<li>Billing_PaymentMethod_PayPal</li>
-	<li>Billing_PaymentMethod_generic</li>
-</ul><li>Billing_Realex</li><ul>
-	<li>Billing_Realex_Transaction_auth</li>
-	<li>Billing_Realex_Transaction_cardnew</li>
-	<li>Billing_Realex_Transaction_generic</li>
-	<li>Billing_Realex_Transaction_payernew</li>
-	<li>Billing_Realex_Transaction_rebate</li>
-	<li>Billing_Realex_Transaction_receiptin</li>
-	<li>Billing_Realex_Transaction_void</li>
-</ul>
+	<li><a href="/doc/filestore">FileStore</a> - Storing files and it's meta-information in a unified way</li>
+	<li><a href="/doc/howto">HowTo</a> - Test-cases / example suite</li>
+	<li><a href="/doc/entitymanager">EntityManager</a> - Entity Manager page for adding, editing, deleting your models</li>
+	<li><a href="/doc/payments">Payments</a> - Support for on-line payments: PayPal, Realex</li>
+	<li><a href="/doc/campaignmonitor">CampaignMoitor</a> - SOAP API implementation for CampaignMonitor</li>
+	<li><a href="/doc/doc">Doc</a> - Documenting your own software in a smart way</li>
 </ul>
