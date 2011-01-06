@@ -80,12 +80,12 @@
 	padding:0 1.8em;
 	font-size:14px;
 	line-height:2.9em;
-	color:#424e5c;
+	color:#3c5269;
 	text-shadow:0 1px 0 #fff;
-	-webkit-transition: all .2s ease-in-out;
-	   -moz-transition: all .2s ease-in-out;
-	     -o-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;}
+	-webkit-transition: all .15s ease-in-out;
+	   -moz-transition: all .15s ease-in-out;
+	     -o-transition: all .15s ease-in-out;
+			transition: all .15s ease-in-out;}
 #header-graybar ul#sub-navigation li a:hover {color:#2685e3;}
 #header-graybar ul#sub-navigation li.current {background:url(../images/bg-gradient-darkblue-blue.jpg) 0 -8em repeat-x;padding-top:1px;}
 #header-graybar ul#sub-navigation li.current a {text-shadow:0 1px 1px #000;color:#fff;position:relative;top:-1px;}
@@ -307,39 +307,43 @@ BODY:nth-of-type(1) .input-search button.button, x:-moz-any-link, x:default {pad
 	background:-webkit-gradient(linear,left top,left bottom, from(#00070f), to(#002d5e));
 	background:-moz-linear-gradient(top, #00070f, #002d5e);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00070f", endColorstr="#002d5e");}
+.gray {
+	background:#eee;
+	background:-webkit-gradient(linear,left top,left bottom, from(#f7f7f7), to(#eeeeee));
+	background:-moz-linear-gradient(top, #f7f7f7, #eeeeee);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7f7f7", endColorstr="#eeeeee");}
 
 	
 /* -------------------------------------------------------------------------------------------------
    Styles
 ------------------------------------------------------------------------------------------------- */
 .box {padding:2em;}
-a:link {color:#0062c1;}
-a:visited {color:#76a6d6;}
+a:link {color:#0041c2;}
+a:visited {color:#551A8B;}
 a:hover {color:#2f96fa;}
 a:link, a:visited {text-decoration:none;}
 a.dynamic:link, a.dynamic:visited {color:#0062c1;border-bottom:1px dashed #0062c1;}
 label {font-family:'mepbc';text-transform:uppercase;color:#555;}
+.comment {color:#555;}
 .submenu {width:220px;float:left;}
 .submenu-header {padding:.7em .5em .35em .5em;color:#fff;text-shadow:0 1px 1px #000;}
 .submenu-header h6 {margin:0;line-height:1;}
-/* .submenu-header+.submenu-body {border:1px solid #c8d3de;border-top:none;} */
 ul.submenu-body, ul.submenu-body li {margin:0;padding:0;list-style-type:none;}
-/* ul.submenu-body {padding:1em 0;} */
 ul.submenu-body li {border:1px solid #c8d3de;border-bottom:1px solid #aab6c3;border-top:1px solid #fff;position:relative;}
 ul.submenu-body li:after {content:'';position:absolute;top:0;left:0;background:rgba(255,255,255,0.3);width:100%;height:50%;z-index:1;}
 ul.submenu-body li a {
 	display:block;
 	padding:.8em 1em;
-	color:#515d69;
+	color:#3c5269;
 	font-weight:bold;
 	line-height:1;
 	text-shadow:0 1px 0 #fff;
 	position:relative;
 	z-index:2;
-	-webkit-transition: all .2s ease-in-out;
-	   -moz-transition: all .2s ease-in-out;
-	     -o-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;}
+	-webkit-transition: all .15s ease-in-out;
+	   -moz-transition: all .15s ease-in-out;
+	     -o-transition: all .15s ease-in-out;
+			transition: all .15s ease-in-out;}
 ul.submenu-body li:hover a {color:#2685e3;}
 /* ul.submenu-body li:first-child {border-top:none;} */
 ul.submenu-body li.current {border:1px solid #0080ff;border-bottom-color:#0080ff;border-top-color:#003973;-webkit-box-shadow:0 1px 3px rgba(0,30,60,0.5) inset;-moz-box-shadow:0 1px 1px rgba(0,30,60,0.5) inset;box-shadow:0 1px 1px rgba(0,30,60,0.5) inset;}
@@ -361,9 +365,10 @@ ul.submenu-body li.current:after {display:none;}
 .submenu+.atk_doc {margin-left:220px;padding-left:3em;}
 .atk_doc h2 {margin-top:1em;}
 .atk_doc h4 {margin-top:1.5em;}
-.atk_doc code {display:block;background:#f5f5f5;border:1px solid #ccc;padding:1em;}
-.expanded-content {margin:0 0 1em 0;padding:2em;background:#eef3f7;-moz-box-shadow:0 1px 3px rgba(13,40,68,0.5) inset;}
-.expanded-content code {background:#f2f4f7;border-color:#cdcfd5;}
+.atk_doc code {margin:.5em 0;display:block;background:#f5f5f5 url(../images/pattern-grid.png);border:1px solid #ccc;padding:1em;}
+.atk_doc.example {margin:1.5em 0;}
+.expanded-content {margin:0 0 2em 0;padding:2em;box-shadow:0 1px 3px rgba(0,0,0,0.5);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.5);}
+/* .expanded-content code {background:#f2f4f7;border-color:#cdcfd5;} */
 
 
 /* -------------------------------------------------------------------------------------------------
