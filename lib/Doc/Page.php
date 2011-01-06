@@ -7,6 +7,7 @@ class Doc_Page extends Page {
 		parent::init();
 
 		$this->sidebar=$this->add('Menu');
+
 	}
 	function subPageHandler($p){
 	}
