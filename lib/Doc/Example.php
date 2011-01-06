@@ -9,7 +9,7 @@ class Doc_Example extends Doc_View {
 			;
 	}
 	function setDescr($d){
-		$this->add('Text')->set(highlight_string('<?'.$d.'?>',true));
+		$this->add('Text')->set(str_replace(array('&lt;?php','php?&gt;'),'',highlight_string('<?php'.$d.'php?>',true)));
 		return $this;
 	}
 

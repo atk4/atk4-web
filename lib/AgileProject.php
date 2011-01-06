@@ -24,6 +24,7 @@ class AgileProject extends ApiFrontend {
 		// Initialize any system-wide javascript libraries here
 		$this->js()
 			->_load('atk4_univ')
+			->_load('atk4web')
 			// ->_load('ui.atk4_expander')
 
 			;
@@ -76,7 +77,7 @@ class AgileProject extends ApiFrontend {
 
 				$menu2->addMenuItem('Home','index');
 				$menu2->addMenuItem('Extensions','extend');
-				$menu2->addMenuItem('License','about/commercial');
+				$menu2->addMenuItem('License','about/license');
 				$menu2->addMenuItem('Jobs','about/site');
 				$menu2->addMenuItem('About','about/history');
 		}
