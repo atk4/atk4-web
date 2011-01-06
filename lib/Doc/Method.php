@@ -2,7 +2,7 @@
 class Doc_Method extends Doc_View {
 	function addArgument($n,$info){
 		return $this
-			->add('Doc_Note')
+			->add('Doc_Argument')
 			->setName($n)
 			->setDescr($info);
 	}

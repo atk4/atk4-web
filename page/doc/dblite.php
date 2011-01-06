@@ -14,5 +14,11 @@ class page_doc_dblite extends Doc_Page {
 			->set('descr','DSQL is implementation of dynamic queries. Using dynamic queries helps in easier modification of your
 					SQL query as well as improved security. DSQL implements different queries such as selects, updates,
 					deletes and others');
+
+
+		$this->add('Doc_Class') ->setName('DBLite_psql') ;
+		$this->add('Doc_Class') ->setName('DBLite_mysql') ;
+		$this->add('Doc_Class') ->setName('DBLite_mysql_cluster') ;
+
 	}
 }
