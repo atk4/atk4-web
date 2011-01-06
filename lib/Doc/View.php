@@ -28,16 +28,18 @@ class Doc_View extends View {
 	function addLink($type,$dest,$descr=null){
 	}
 	function addNote($name){
-		return $this->add('Doc_Note')
-			->setName($name);
+		if($this->template->is_set('Notes'))$n=$this->add('Doc_Note',null,'Notes');
+		else $n=$this->add('Doc_Note');
+		return $n->setName($name);
 	}
 	function addExample($name){
-		return $this->add('Doc_Note')
+		return $this->add('Doc_Example')
 			->setName($name);
 	}
 	function addMoreInfo($name){
-		return $this->add('Doc_Note')
-			->setName($name);
+		if($this->template->is_set('MoreInfo'))$n=$this->add('Doc_MoreInfo',null,'MoreInfo');
+		else $n=$this->add('Doc_MoreInfo');
+		return $n->setName($name);
 	}
 
 }

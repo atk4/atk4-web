@@ -52,6 +52,7 @@ class AgileProject extends ApiFrontend {
 
 		$menu2=$this->add('Menu','Menu','Menu');
 		$menu2->current_menu_class='current';
+		$menu2->inactive_menu_class='';
 
 		$section=explode('_',$this->page);
 		$this->template->trySet('section',$section[0]);
