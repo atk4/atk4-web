@@ -35,7 +35,7 @@
 #workflow {height:545px;background:url(../images/bg-darkblue-dotted.jpg);color:#b5c2cf;}
 #workflow #cycle-wrapper {position:relative;height:370px;}
 #workflow h2 {color:#fff;text-shadow:0 1px 1px #000;}
-#workflow h2:after {-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.7);-moz-box-shadow:0 1px 1px rgba(0,0,0,0.7);box-shadow:0 1px 1px rgba(0,0,0,0.7);}
+#workflow h2:after {-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.5);-moz-box-shadow:0 1px 1px rgba(0,0,0,0.5);box-shadow:0 1px 1px rgba(0,0,0,0.5);}
 #workflow #cycle {width:445px;height:209px;margin:auto;background:url(../images/sprite.png) no-repeat -300px -144px;}
 #workflow #browser, #workflow #server, #workflow #sql {width:220px;position:absolute;}
 #workflow #browser {left:0;top:10px;text-align:right;}

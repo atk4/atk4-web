@@ -255,17 +255,12 @@ EOT
 		$this->add('Button')
 			->set('More Examples')
 			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../4'));
+			->univ()->location('http://demo.atk4.com/');
 
 		$this->add('Button')
-			->set('Coding Standards')
+			->set('Blog')
 			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../4'));
-
-		$this->add('Button')
-			->set('API Reference')
-			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../4'));
+			->univ()->location('http://blog.atk4.com/');
 
 	}
 

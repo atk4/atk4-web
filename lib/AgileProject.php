@@ -104,4 +104,12 @@ class AgileProject extends ApiFrontend {
 		$p->frame('Preferences')->add('MVCForm')
 			->setController('Controller_User');
 	}
+	function page_blog($p){
+		header('Location: http://blog.atk4.com/');
+		exit;
+	}
+	function page_download($p){
+		header('Location: https://github.com/atk4/atk4/zipball/master');
+		exit;
+	}
 }
