@@ -1,0 +1,66 @@
+#footer-guard {height:7.5em !important;}
+#content {padding-top:0;}
+
+#header {padding-bottom:1.6em;}
+#header #hero {clear:both;margin-top:3.5em;color:#93c9ff;}
+#header #hero-text {float:left;width:680px;}
+#header #hero h1 {background:url(../images/sprite.png) no-repeat -300px -20px;height:33px;width:680px;line-height:1;margin:0 0 0.3em 0;}
+#header #hero p {margin:0;line-height:1.8;}
+#header #hero p span.highlight {color:#ebf5ff;}
+#header #hero .button {-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.08);-moz-box-shadow:0 1px 0 rgba(255,255,255,0.08);box-shadow:0 1px 0 rgba(255,255,255,0.08);}
+#header #hero-download {float:right;width:200px;min-height:32px;}
+#header #hero-download #version {padding:20px 0 0 48px;background:url(../images/sprite.png) no-repeat -300px -79px;}
+#header #hero-download .button {margin:0.7em 0 0.3em 0;}
+#header #hero-download #size {font-size:10px;color:#397cbf;text-align:center;}
+#header a:link, #header a:visited {color:#fff;text-decoration:none;}
+#header #actionbar {font-size:16px;margin-top:2.5em;}
+#header #actionbar #example {margin-right:2.5em;}
+#header #actionbar a, #header #actionbar a i {float:left;}
+#header #actionbar a:hover span {text-shadow:0 0 5px rgba(255,255,255,0.7);border-bottom-color:#84a3c2;}
+#header #actionbar a#tour, #header #actionbar a#tour i {float:right;}
+#header #actionbar a i {margin:0 0.5em 0 0;position:relative;}
+#header #actionbar a span {border-bottom:1px solid #507ca8;padding-bottom:0.1em;}
+#header #actionbar a#tour i {margin:0 0 0 0.5em;}
+#header #actionbar a#example span {border-bottom:1px dashed #507ca8;}
+#header #actionbar a#example i {top:-0.7em;}
+#header #actionbar a#tour i {top:0.4em;}
+
+
+#workflow>.wrapper,
+#features>.wrapper {padding-top:4em;padding-bottom:4em;}
+#workflow h2,
+#features h2 {margin-bottom:1.2em;}
+
+
+#workflow {height:545px;background:url(../images/bg-darkblue-dotted.jpg);color:#b5c2cf;}
+#workflow #cycle-wrapper {position:relative;height:370px;}
+#workflow h2 {color:#fff;text-shadow:0 1px 1px #000;}
+#workflow h2:after {-webkit-box-shadow:0 1px 1px rgba(0,0,0,0.7);-moz-box-shadow:0 1px 1px rgba(0,0,0,0.7);box-shadow:0 1px 1px rgba(0,0,0,0.7);}
+#workflow #cycle {width:445px;height:209px;margin:auto;background:url(../images/sprite.png) no-repeat -300px -144px;}
+#workflow #browser, #workflow #server, #workflow #sql {width:220px;position:absolute;}
+#workflow #browser {left:0;top:10px;text-align:right;}
+#workflow #server {left:400px;top:230px;}
+#workflow #sql {right:0;top:10px;}
+#workflow h4 {color:#fff;}
+#workflow p {font-size:12px;}
+#workflow ul#cycle-nav, #workflow ul#cycle-nav li {margin:0;padding:0;list-style-type:none;}
+#workflow ul#cycle-nav {background:#1b232b;padding:5px;position:absolute;width:220px;right:0;bottom:30px;-webkit-box-shadow:0 3px 15px rgba(0,0,0,0.5);-moz-box-shadow:0 3px 15px rgba(0,0,0,0.5);box-shadow:0 3px 15px rgba(0,0,0,0.5);}
+#workflow ul#cycle-nav li {margin-top:5px;}
+#workflow ul#cycle-nav li:first-child {margin-top:0;}
+#workflow ul#cycle-nav li .button {-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.1);-moz-box-shadow:0 1px 0 rgba(255,255,255,0.1);box-shadow:0 1px 0 rgba(255,255,255,0.1);}
+#workflow ul#cycle-nav li .blue-i {text-shadow:0 1px 1px #004080;}
+#workflow ul#cycle-nav li .blue-i:after {content:'';position:absolute;top:0;left:0;height:1px;width:100%;background:#189df3;}
+
+
+#features {background:url(../images/bg-blue-noised.jpg);text-shadow:0 1px 0 rgba(255,255,255,0.7);color:#1f2c3b;}
+#features h2 {color:#2c3f53;}
+#features h2:after {background:#2c3f53;-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.7);-moz-box-shadow:0 1px 0 rgba(255,255,255,0.7);box-shadow:0 1px 0 rgba(255,255,255,0.7);}
+.features-grid {position:relative;overflow:hidden;}
+.features-grid>div {width:286px;margin-left:40px;float:left;}
+.features-grid>div:first-child {margin-left:0;}
+.features-grid>div>div {margin-top:3em;overflow:hidden;}
+.features-grid>div>div:first-child {margin-top:0;}
+.features-grid>div>div>div {float:right;width:215px;}
+.features-grid h6 {white-space:nowrap;}
+.features-grid p {height:16em;}
+.features-grid .big-icon {float:left;}
