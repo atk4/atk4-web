@@ -26,10 +26,10 @@
 				<div class="wrapper clearing">
 					<a href="#" id="logo"><img src="<?template?>images/logo.png<?/?>" alt="Agile Toolkit" /></a>
 					<ul id="navigation">
-						<li <?$menu_home?>><a href="/"><i class="blue-h"></i>Home</a></li>
+						<li <?$menu_home?>><a href="/"><i class="blue-h"></i>About</a></li>
 						<li <?$menu_doc?>><a href="/doc/"><i class="green-h"></i>Documentation</a></li>
-						<li <?$menu_blog?>><a href="/blog/"><i class="yellow-h"></i>Blog</a></li>
-						<li <?$menu_dl?>><a href="/download/"><i class="orange-h"></i>Download</a></li>
+						<li <?$menu_service?>><a href="/service/"><i class="yellow-h"></i>Services</a></li>
+						<li <?$menu_develop?>><a href="/develop/"><i class="orange-h"></i>Development</a></li>
 					</ul>
 				</div>
 				<div id="hero">
@@ -52,7 +52,7 @@
 					<div class="wrapper clearing">
 						<a href="#" id="example"><i class="icon-magichat"></i><span>See example</span></a>
 						<a href="#" id="comparison"><i class="icon-comparison"></i><span>Compare with other frameworks</span></a>
-						<a href="#" id="tour"><span>Take a tour</span><i class="icon-rightarrow"></i></a>
+						<a href="/doc/intro/1" id="tour"><span>Take a tour</span><i class="icon-rightarrow"></i></a>
 					</div>
 				</div>	
 
@@ -74,6 +74,14 @@
 				</div>
 			</div>
 -->
+			<div id="test" class="metalic"> <!-- Content Starts -->
+				<?Sample?>	
+<span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">=</span><span style="color: #0000BB">$p</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'Form'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'name'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'surname'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addSubmit</span><span style="color: #007700">();<br>&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">isSubmitted</span><span style="color: #007700">()){<br>&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">univ</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">alert</span><span style="color: #007700">(</span><span style="color: #DD0000">'Thank&nbsp;you,&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">).</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'surname'</span><span style="color: #007700">))-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br>}<br><br></span>
+</span>
+<?/?>
+				
+			</div>
 			<div id="content"> <!-- Content Starts -->
 				<?Content?>
 					<div id="workflow">

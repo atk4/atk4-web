@@ -3,7 +3,16 @@ class page_index extends Page {
 	function init(){
 		parent::init();
 
+
+		//$c=$this->add('Columns',null,'Sample');
+
+		//$c->addColumn()
+
+
+
 		return ; // for now
+
+
 		$p=$this;
 		$p->add('View',null,null,array('view/download_box'));
 
