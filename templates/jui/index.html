@@ -51,8 +51,8 @@
 				<div id="actionbar">
 					<div class="wrapper clearing">
 						<a href="#" id="example"><i class="icon-magichat"></i><span>See example</span></a>
-						<a href="#" id="comparison"><i class="icon-comparison"></i><span>Compare with other frameworks</span></a>
-						<a href="/doc/intro/1" id="tour"><span>Take a tour</span><i class="icon-rightarrow"></i></a>
+						<a href="#" id="comparison" class="current"><i class="icon-comparison"></i><span>Compare with other frameworks</span><b></b></a>
+						<a href="/dev/intro/1" id="tour"><i class="icon-rightarrow"></i><span>Take a tour</span></a>
 					</div>
 				</div>	
 
@@ -75,18 +75,15 @@
 			</div>
 -->
 			<div id="test" class="metalic"> <!-- Content Starts -->
-				<?Sample?>	
-<span style="color: #000000">
-<span style="color: #0000BB">&lt;?php<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">=</span><span style="color: #0000BB">$p</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'Form'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'name'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'surname'</span><span style="color: #007700">);<br>&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addSubmit</span><span style="color: #007700">();<br>&nbsp;</span><span style="color: #007700">if(</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">isSubmitted</span><span style="color: #007700">()){<br>&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">univ</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">alert</span><span style="color: #007700">(</span><span style="color: #DD0000">'Thank&nbsp;you,&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">).</span><span style="color: #DD0000">'&nbsp;'</span><span style="color: #007700">.</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'surname'</span><span style="color: #007700">))-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br>}<br><br></span>
-</span>
-<?/?>
-				
-			</div>
 			<div id="content"> <!-- Content Starts -->
 				<?Content?>
 					<div id="workflow">
+						<?TabContent?>
 						<div class="wrapper">
 							<h2>Explore the difference</h2>
+							<ul id="cycle-nav">
+								<li><a href="#" class="button black wide">Simple php</a></li><li><a href="#" class="button black wide">PHP frameworks</a></li><li><a href="#" class="button blue-i wide">Agile toolkit</a></li>
+							</ul>
 							<div id="cycle-wrapper">
 								<div id="cycle"></div>
 								<div id="browser">
@@ -101,13 +98,9 @@
 									<h4>SQL database</h4>
 									<p>Duis turpis enim, bibendum sed rutrum laoreet, suscipit sit amet nulla. Integer vitae justo vitae nisl vestibulum gravida nec bibendum elit. Suspendisse id cursus sem.</p>
 								</div>
-								<ul id="cycle-nav">
-									<li><a href="#" class="button black wide">Simple php</a></li>
-									<li><a href="#" class="button black wide">PHP frameworks</a></li>
-									<li><a href="#" class="button blue-i wide">Agile toolkit</a></li>
-								</ul>
 							</div>
 						</div>
+						<?/TabContent?>
 					</div>
 					<div id="features">
 						<div class="wrapper">
@@ -155,7 +148,7 @@
 										<i class="big-icon icon-brush"></i>
 										<div>
 											<h6>Simple templates</h6>
-											<p>Agile toolkit comes with integrated template engine which is simple and fast. This is a template your designers can easily understand and involves no programming. The same template also allows you to preserve the look of your mock-up pages even after they are changed into templates.</p>
+											<p>Agile toolkit comes with integrated template engine which is simple and fast. This is a template your designers can easily understand and involves no programming. The same template also allows you to preserve the look of your mock-ups even after they are changed into templates.</p>
 										</div>
 									</div>
 								</div>
@@ -199,8 +192,8 @@
 				<div id="socials">
 					<a href="#" id="facebook"></a>
 					<a href="#" id="twitter"></a>
-					<a href="#" id="linkedin"></a>
-					<a href="#" id="github"></a>
+					<a href="http://www.linkedin.com/company/agile-toolkit?trk=fc_badge" id="linkedin"></a>
+					<a href="http://github.com/atk4" target="_blank" id="github"></a>
 				</div>
 			</div>
 		</div>

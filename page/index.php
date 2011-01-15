@@ -9,6 +9,8 @@ class page_index extends Page {
 		//$c->addColumn()
 
 
+		$this->add('View',null,'TabContent',array('view/index/tab_compare'));
+
 
 		return ; // for now
 
