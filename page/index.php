@@ -9,7 +9,43 @@ class page_index extends Page {
 		//$c->addColumn()
 
 
-		$this->add('View',null,'TabContent',array('view/index/tab_compare'));
+		if($_GET['example']){
+			$this->api->template->set('index_tab_example','current');
+			$this->api->template->trySet('index_tab_comparison','');
+			$l=$this->add('View',null,'TabContent',array('view/index/tab_example'));
+			$this->api->stickyGET('example');
+
+
+		$l->add('Doc_Example',null,'example')
+			->setDescr(<<<'EOT'
+$f=$p->add('Form');
+$f->addField('line','name')->validateNotNull();
+$f->addField('line','surname');
+$f->addSubmit();
+if($f->isSubmitted()){
+  $f->js()->univ()->alert('Thank you, '.$f->get('name').
+	  ' '.$f->get('surname'))->execute();
+}
+EOT
+);
+
+$f=$l->add('Form',null,'form');
+$f->addField('line','name')->validateNotNull();
+$f->addField('line','surname');
+$f->addButton('Try me')->js('click',$f->js()->submit());
+if($f->isSubmitted()){
+  $f->js()->univ()->alert('Thank you, '.$f->get('name').' '.$f->get('surname'))->execute();
+}
+
+		}elseif($_GET['compare']=='php'){
+		   	$this->add('View',null,'TabContent',array('view/index/tab_compare_php'));
+		}elseif($_GET['compare']=='fw'){
+		   	$this->add('View',null,'TabContent',array('view/index/tab_compare_fw'));
+		}else{
+
+		   	$this->add('View',null,'TabContent',array('view/index/tab_compare_atk4'));
+		}
+
 
 
 		return ; // for now

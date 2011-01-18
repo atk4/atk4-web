@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="<?template?>css/agile.css<?/?>" />
 		<link rel="stylesheet" type="text/css" href="<?template?>css/general.css<?/?>" />
 		<link rel="stylesheet" type="text/css" href="<?template?>css/front.css<?/?>" />
+		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
 		<!-- <script type="text/javascript" src="js/general.js"></script> -->
 
 		<?$js_include?>
@@ -26,10 +27,11 @@
 				<div class="wrapper clearing">
 					<a href="#" id="logo"><img src="<?template?>images/logo.png<?/?>" alt="Agile Toolkit" /></a>
 					<ul id="navigation">
-						<li <?$menu_home?>><a href="/"><i class="blue-h"></i>About</a></li>
+						<li <?$menu_home?>><a href="/"><i class="blue-h"></i>Home</a></li>
 						<li <?$menu_doc?>><a href="/doc/"><i class="green-h"></i>Documentation</a></li>
 						<li <?$menu_service?>><a href="/service/"><i class="yellow-h"></i>Services</a></li>
 						<li <?$menu_develop?>><a href="/develop/"><i class="orange-h"></i>Development</a></li>
+						<li <?$menu_about?>><a href="/"><i class="red-h"></i>About</a></li>
 					</ul>
 				</div>
 				<div id="hero">
@@ -50,8 +52,10 @@
 				</div>
 				<div id="actionbar">
 					<div class="wrapper clearing">
-						<a href="#" id="example"><i class="icon-magichat"></i><span>See example</span></a>
-						<a href="#" id="comparison" class="current"><i class="icon-comparison"></i><span>Compare with other frameworks</span><b></b></a>
+						<a href="/" id="comparison" class="<?index_tab_comparison?>current<?/?>"><i 
+						class="icon-comparison"></i><span>Compare with other frameworks</span><b></b></a>
+						<a href="?example=1" id="example" class="<?$index_tab_example?>"><i 
+						class="icon-magichat"></i><span>See example</span><b></b></a>
 						<a href="/dev/intro/1" id="tour"><i class="icon-rightarrow"></i><span>Take a tour</span></a>
 					</div>
 				</div>	
@@ -77,14 +81,14 @@
 			<div id="test" class="metalic"> <!-- Content Starts -->
 			<div id="content"> <!-- Content Starts -->
 				<?Content?>
-					<div id="workflow">
+					<div id="comparison">
 						<?TabContent?>
 						<div class="wrapper">
 							<h2>Explore the difference</h2>
-							<ul id="cycle-nav">
+							<ul id="comparison-nav">
 								<li><a href="#" class="button black wide">Simple php</a></li><li><a href="#" class="button black wide">PHP frameworks</a></li><li><a href="#" class="button blue-i wide">Agile toolkit</a></li>
 							</ul>
-							<div id="cycle-wrapper">
+							<div id="comparison-content">
 								<div id="cycle"></div>
 								<div id="browser">
 									<h4>BROWSER</h4>
@@ -102,7 +106,7 @@
 						</div>
 						<?/TabContent?>
 					</div>
-					<div id="features">
+					<div id="features" class="box blue-noised">
 						<div class="wrapper">
 							<h2>And that's not all...</h2>
 							<div class="features-grid">

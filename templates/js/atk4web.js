@@ -13,9 +13,11 @@ $.each({
 			if(content.is(':visible')){
 				content.fadeOut();
 				icon.toggleClass('atk-icon-arrows-right2 atk-icon-arrows-bottom2');
+				self.removeClass('atk-doc-expander-open');
 			}else{
 				content.fadeIn();
 				icon.toggleClass('atk-icon-arrows-right2 atk-icon-arrows-bottom2');
+				self.addClass('atk-doc-expander-open');
 			}
 		});
 	}

@@ -51,6 +51,14 @@ class AgileProject extends ApiFrontend {
 	function initLayout(){
 		parent::initLayout();
 
+
+		if (
+				strpos($_SERVER['HTTP_USER_AGENT'],'Windows NT 5')!==false
+				|| strpos($_SERVER['HTTP_USER_AGENT'],'Windows NT 4')!==false
+				|| strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false
+		   )$this->template->tryDel('notWinXP');
+		else $this->template->tryDel('WinXP');
+
 		$menu2=$this->add('Menu','Menu','Menu');
 		$menu2->current_menu_class='current';
 		$menu2->inactive_menu_class='';
@@ -111,5 +119,8 @@ class AgileProject extends ApiFrontend {
 	function page_download($p){
 		header('Location: https://github.com/atk4/atk4/zipball/master');
 		exit;
+	}
+	function render(){
+		parent::render();
 	}
 }
