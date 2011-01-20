@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="<?template?>css/front.css<?/?>" />
 		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
 		<!-- <script type="text/javascript" src="js/general.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="/templates/jui/css/<?os?>empty<?/?>.css" />
 
 		<?$js_include?>
 		<script type="text/javascript">
@@ -27,11 +28,11 @@
 				<div class="wrapper clearing">
 					<a href="#" id="logo"><img src="<?template?>images/logo.png<?/?>" alt="Agile Toolkit" /></a>
 					<ul id="navigation">
-						<li <?$menu_home?>><a href="/"><i class="blue-h"></i>Home</a></li>
+						<li <?$menu_about?>><a href="/about/"><i class="blue-h"></i>About</a></li>
 						<li <?$menu_doc?>><a href="/doc/"><i class="green-h"></i>Documentation</a></li>
-						<li <?$menu_service?>><a href="/service/"><i class="yellow-h"></i>Services</a></li>
-						<li <?$menu_develop?>><a href="/develop/"><i class="orange-h"></i>Development</a></li>
-						<li <?$menu_about?>><a href="/"><i class="red-h"></i>About</a></li>
+						<li <?$menu_develop?>><a href="/develop/"><i class="yellow-h"></i>Development</a></li>
+						<li <?$menu_services?>><a href="/services/"><i class="orange-h"></i>Commercial</a></li>
+						<li <?$menu_download?>><a href="/"><i class="red-h"></i>Downloads</a></li>
 					</ul>
 				</div>
 				<div id="hero">
@@ -61,27 +62,10 @@
 				</div>	
 
 			</div>
-<!--
-			<div id="header-graybar" class="metallic">
-				<div class="wrapper clearing">
-					<ul id="sub-navigation">
-					<?Menu?>
-						<li class="current"><a href="#">Home</a></li>
-						<li><a href="#">Commercial Use</a></li>
-						<li><a href="#">OpenSource</a></li>
-						<li><a href="#">History</a></li>
-					<?/?>
-					</ul>
-					<div class="input-search">
-						<span class="input-wrap"><input type="text"/></span><button class="button blue"><img src="<?template?>images/button-search.png<?/?>" alt="" /></button>
-					</div>
-				</div>
-			</div>
--->
 			<div id="test" class="metalic"> <!-- Content Starts -->
 			<div id="content"> <!-- Content Starts -->
 				<?Content?>
-					<div id="comparison">
+					<div id="comparison-section">
 						<?TabContent?>
 						<div class="wrapper">
 							<h2>Explore the difference</h2>

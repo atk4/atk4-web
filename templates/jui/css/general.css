@@ -2,7 +2,7 @@
    General
 ------------------------------------------------------------------------------------------------- */
 .wrapper {width:940px;margin:auto;padding:0 20px;}
-#content {padding:3.5em 0 0 0;}
+#content {padding:3.5em 20px 0 20px;}
 .atk-icon {background-image:url(../images/atk-icons.png);}
 .atk-icons-white {background-image:url(../images/atk-icons-white.png);}
 
@@ -57,7 +57,7 @@
 #header ul#navigation li i.green-h:after, #header ul#navigation li i.green-h:before {-webkit-box-shadow:0px 0px 10px #67ea67;-moz-box-shadow:0px 0px 10px #67ea67;box-shadow:0px 0px 10px #67ea67;background:#c8ffc8;}
 #header ul#navigation li i.yellow-h:after, #header ul#navigation li i.yellow-h:before {-webkit-box-shadow:0px 0px 10px #ffff75;-moz-box-shadow:0px 0px 10px #ffff75;box-shadow:0px 0px 10px #ffff75;background:#feffcb;}
 #header ul#navigation li i.orange-h:after, #header ul#navigation li i.orange-h:before {-webkit-box-shadow:0px 0px 10px #ffaa56;-moz-box-shadow:0px 0px 10px #ffaa56;box-shadow:0px 0px 10px #ffaa56;background:#ffe962;}
-#header ul#navigation li i.red-h:after, #header ul#navigation li i.red-h:before {-webkit-box-shadow:0px 0px 10px #ff7b7b;-moz-box-shadow:0px 0px 10px #ff7b7b;box-shadow:0px 0px 10px #ff7b7b;background:#ff9d9d;}
+#header ul#navigation li i.red-h:after, #header ul#navigation li i.red-h:before {-webkit-box-shadow:0px 0px 10px #ff7b7b;-moz-box-shadow:0px 0px 10px #ff7b7b;box-shadow:0px 0px 10px #ff7b7b;background:#ffc8c8;}
 #header ul#navigation li a {font-family:"mepbc";color:#e1e9ed;text-transform:uppercase;font-size:16px;}
 #header ul#navigation li.current i:after, #header ul#navigation li.current i:before,
 #header ul#navigation li:hover i:after, #header ul#navigation li:hover i:before {opacity:1;}
@@ -118,9 +118,9 @@ div#footer-guard {height:11em;}
     src: local('☺'), url('../fonts/fago.woff') format('woff'), url('../fonts/fago.ttf') format('truetype'), url('../fonts/fago.svg#webfontPP01dUre') format('svg');
     font-weight: normal;
     font-style: normal;}
-body {font:14px/1.6 "Lucida Grande", "Helvetica Neue", "Helvetica", sans-serif;}
-h1 {font:40px 'Fago','Tahoma',sans-serif;text-transform:uppercase;}
-h2 {font:36px 'Fago','Tahoma',sans-serif;margin:1em 0 0.4em 0;color:#0180ff;position:relative;z-index:2;text-shadow:0 1px 0 #fff;}
+body {font:14px/1.6 'Lucida Grande','Helvetica Neue','Helvetica',sans-serif;}
+h1 {font:40px 'Fago','Helvetica Neue','Helvetica',sans-serif;text-transform:uppercase;}
+h2 {font:2.5em 'Fago','Helvetica Neue','Helvetica',sans-serif;margin:1em 0 0.4em 0;color:#0180ff;position:relative;z-index:2;text-shadow:0 1px 0 #fff;}
 h2:after {content:'';width:100%;height:3px;position:absolute;top:100%;margin-top:-.15em;left:0;background:#0180ff;z-index:-1;}
 h2 span {color:#000;}
 h2 span em {margin:0.05em;}
@@ -247,6 +247,7 @@ input[type=text], input[type=password], textarea {
     resize:none;}
 input[type=text]:focus, input[type=password]:focus, textarea:focus {color:#47657d;background:#eff8ff;border-color:#66bcff;-webkit-box-shadow:0 0 5px #bfddf5;-moz-box-shadow:0 0 5px #bfddf5;box-shadow:0 0 5px #bfddf5;}
 .input-search {display:inline-block;}
+.input-search .input-wrap {overflow:hidden;}
 .input-search .input-wrap, .input-search .input-wrap input[type=text], .input-search button {-webkit-border-radius:1em;-moz-border-radius:1em;border-radius:1em;}
 .input-search .input-wrap input[type=text] {padding:0.5em 0.8em;float:left;}
 .input-search button.button {padding:0.35em 0.6em;position:relative;margin-left:0.3em;top:0;float:right;}

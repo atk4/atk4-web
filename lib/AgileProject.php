@@ -52,42 +52,18 @@ class AgileProject extends ApiFrontend {
 		parent::initLayout();
 
 
-		if (
-				strpos($_SERVER['HTTP_USER_AGENT'],'Windows NT 5')!==false
+		if ( strpos($_SERVER['HTTP_USER_AGENT'],'Windows NT 5')!==false
 				|| strpos($_SERVER['HTTP_USER_AGENT'],'Windows NT 4')!==false
-				|| strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false
-		   )$this->template->tryDel('notWinXP');
-		else $this->template->tryDel('WinXP');
+				|| $_GET['winxp']
+		   )$this->template->trySet('os','winxp');
 
-		$menu2=$this->add('Menu','Menu','Menu');
-		$menu2->current_menu_class='current';
-		$menu2->inactive_menu_class='';
+		if ( strpos($_SERVER['HTTP_USER_AGENT'],'iPhone')!==false
+				|| $_GET['iphone']
+				)
+		   $this->template->trySet('os','iphone');
 
-		$section=explode('_',$this->page);
-		$this->template->trySet('section',$section[0]);
-		switch($section[0]){
-			case'doc': case'start': case'sc':
-				$this->template->trySet('menu_doc','class="current"');
-
-				$menu2->addMenuItem('Getting Started','doc');
-				$menu2->addMenuItem('API Reference','doc/ref');
-				$menu2->addMenuItem('Screencasts','sc');
-				$menu2->addMenuItem('Examples','example');
-
-				break;
-			case'download':
-				$this->template->trySet('menu_download','class="current"');
-				break;
-
-			case'about':
-			default:
-				$this->template->trySet('menu_home','class="current"');
-
-				$menu2->addMenuItem('Home','index');
-				$menu2->addMenuItem('Extensions','extend');
-				$menu2->addMenuItem('License','about/license');
-				$menu2->addMenuItem('Jobs','about/site');
-				$menu2->addMenuItem('About','about/history');
+		if($this->template->is_set('Menu')){
+			$menu2=$this->add('AtkMenu','Menu','Menu');
 		}
 
 		// If you are using a complex menu, you can re-define
