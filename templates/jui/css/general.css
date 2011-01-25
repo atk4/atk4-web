@@ -58,13 +58,14 @@
 #header ul#navigation li i.yellow-h:after, #header ul#navigation li i.yellow-h:before {-webkit-box-shadow:0px 0px 10px #ffff75;-moz-box-shadow:0px 0px 10px #ffff75;box-shadow:0px 0px 10px #ffff75;background:#feffcb;}
 #header ul#navigation li i.orange-h:after, #header ul#navigation li i.orange-h:before {-webkit-box-shadow:0px 0px 10px #ffaa56;-moz-box-shadow:0px 0px 10px #ffaa56;box-shadow:0px 0px 10px #ffaa56;background:#ffe962;}
 #header ul#navigation li i.red-h:after, #header ul#navigation li i.red-h:before {-webkit-box-shadow:0px 0px 10px #ff7b7b;-moz-box-shadow:0px 0px 10px #ff7b7b;box-shadow:0px 0px 10px #ff7b7b;background:#ffc8c8;}
-#header ul#navigation li a {font-family:"mepbc";color:#e1e9ed;text-transform:uppercase;font-size:16px;}
+#header ul#navigation li a {font-family:"frutiger";color:#e1e9ed;text-transform:uppercase;font-size:16px;}
 #header ul#navigation li.current i:after, #header ul#navigation li.current i:before,
 #header ul#navigation li:hover i:after, #header ul#navigation li:hover i:before {opacity:1;}
 #header ul#navigation li.current a,
 #header ul#navigation li:hover a {color:#fff;}
 
 #header-graybar {
+	clear:both;
     position:relative;
     line-height:1;
     border-bottom:1px solid #96a8ba;
@@ -77,8 +78,9 @@
 #header-graybar ul#sub-navigation li a:hover {color:#2685e3;}
 #header-graybar ul#sub-navigation li.current {background:url(../images/bg-gradient-darkblue-blue.png) 0 -8em repeat-x;padding-top:1px;}
 #header-graybar ul#sub-navigation li.current a {text-shadow:0 1px 1px #000;color:#fff;position:relative;top:-1px;}
-#header-graybar .input-search {min-width:300px;padding:0.5em 0;}
-#header-graybar .input-search input[type=text] {width:242px;}
+#header-graybar .input-search {min-width:300px;.width:300px;.min-width:auto;padding:0.5em 0;}
+#header-graybar .input-search .input-wrap {float:left;}
+#header-graybar .input-search input[type=text] {width:242px;.width:235px;}
 BODY:nth-of-type(1) #header-graybar .input-search input[type=text], x:-moz-any-link, x:default {width:239px;}
 
 
@@ -107,9 +109,9 @@ div#footer-guard {height:11em;}
    Typography
 ------------------------------------------------------------------------------------------------- */
 @font-face {
-    font-family: 'mepbc';
-    src: url('../fonts/mepbc.eot');
-    src: local('☺'), url('../fonts/mepbc.woff') format('woff'), url('../fonts/mepbc.ttf') format('truetype'), url('../fonts/mepbc.svg#webfontA2Th408u') format('svg');
+    font-family: 'frutiger';
+    src: url('../fonts/frutiger.eot');
+    src: local('☺'), url('../fonts/frutiger.woff') format('woff'), url('../fonts/frutiger.ttf') format('truetype'), url('../fonts/frutiger.svg#webfontA2Th408u') format('svg');
     font-weight: normal;
     font-style: normal;}
 @font-face {
@@ -118,17 +120,18 @@ div#footer-guard {height:11em;}
     src: local('☺'), url('../fonts/fago.woff') format('woff'), url('../fonts/fago.ttf') format('truetype'), url('../fonts/fago.svg#webfontPP01dUre') format('svg');
     font-weight: normal;
     font-style: normal;}
+    
 body {font:14px/1.6 'Lucida Grande','Helvetica Neue','Helvetica',sans-serif;}
 h1 {font:40px 'Fago','Helvetica Neue','Helvetica',sans-serif;text-transform:uppercase;}
 h2 {font:2.5em 'Fago','Helvetica Neue','Helvetica',sans-serif;margin:1em 0 0.4em 0;color:#0180ff;position:relative;z-index:2;text-shadow:0 1px 0 #fff;}
-h2:after {content:'';width:100%;height:3px;position:absolute;top:100%;margin-top:-.15em;left:0;background:#0180ff;z-index:-1;}
+h2:after {content:'';width:100%;height:3px;position:absolute;top:100%;margin-top:-.15em;margin-top:0\0/;left:0;background:#0180ff;z-index:-1;}
 h2 span {color:#000;}
 h2 span em {margin:0.05em;}
-h3 {font:26px 'mepbc','Lucida Grande',sans-serif;text-transform:uppercase;margin:1.2em 0 0.2em 0;}
+h3 {font:26px 'frutiger','Lucida Grande',sans-serif;text-transform:uppercase;margin:1.2em 0 0.2em 0;}
 h4,h5 {text-transform:uppercase;margin:1.5em 0 0.4em 0;}
 h3 span, h4 span, h5 span {text-transform:lowercase;font-family:'Lucida Grande',sans-serif;font-weight:bold;letter-spacing:-0.02em;}
-h4 {font:18px 'mepbc','Lucida Grande',sans-serif;}
-h5 {font:16px 'mepbc','Lucida Grande',sans-serif;}
+h4 {font:18px 'frutiger','Lucida Grande',sans-serif;}
+h5 {font:16px 'frutiger','Lucida Grande',sans-serif;}
 h6 {font:bold 14px 'Lucida Grande',sans-serif;margin:1.4em 0 0.5em 0;}
 h4+p, h5+p, h6+p {margin-top:0;}
 p {margin:1em 0;}
@@ -140,17 +143,21 @@ quote {background:url(../images/quotes.png) 0 0.5em no-repeat;padding-left:60px;
    Buttons
 ------------------------------------------------------------------------------------------------- */
 .button {
-    font:16px 'mepbc';
+    font:16px 'frutiger';
     line-height:1;
     height:auto;
     color:#fff;
     text-transform:uppercase;
     padding:0.5em 0.7em 0.4em 0.7em;
+    .padding:0.3em 0.7em 0.1em 0.7em;
     margin:0;
     outline:0;
     cursor:pointer;
     border:1px solid #000;
-    position:relative;}
+    position:relative;
+    width:1;
+    overflow:visible}
+input.button[class] {width:auto;}
 BODY:nth-of-type(1) .button, x:-moz-any-link, x:default {padding:0.4em 0.7em 0.2em 0.7em;}  
 button.button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
@@ -250,7 +257,7 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {color:#47657
 .input-search .input-wrap {overflow:hidden;}
 .input-search .input-wrap, .input-search .input-wrap input[type=text], .input-search button {-webkit-border-radius:1em;-moz-border-radius:1em;border-radius:1em;}
 .input-search .input-wrap input[type=text] {padding:0.5em 0.8em;float:left;}
-.input-search button.button {padding:0.35em 0.6em;position:relative;margin-left:0.3em;top:0;float:right;}
+.input-search button.button {padding:0.35em 0.6em;.padding-bottom:0.2em;position:relative;margin-left:0.3em;top:0;float:right;}
 BODY:nth-of-type(1) .input-search button.button, x:-moz-any-link, x:default {padding:0.35em 0.6em 0.3em 0.6em;}
 .input-search button img {float:left;}
 
@@ -385,7 +392,7 @@ a:visited {color:#551A8B;}
 a:hover {color:#2f96fa;}
 a:link, a:visited {text-decoration:none;}
 a.dynamic:link, a.dynamic:visited {color:#0062c1;border-bottom:1px dashed #0062c1;}
-label {font-family:'mepbc';text-transform:uppercase;color:#555;}
+label {font-family:'frutiger';text-transform:uppercase;color:#555;}
 p:first-child {margin-top:0;}
 .hr {clear:both;}
 .comment {color:#555;}
