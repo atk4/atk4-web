@@ -8,6 +8,15 @@ class page_index extends Page {
 
 		//$c->addColumn()
 
+		if($_GET['cut_page']){
+			$it=$this->add('IndexTabs');
+			$it->js(true)->_selector(false)->_load('jquery.scrollTo-min')->scrollTo('#actionbar',500);
+		}else{
+			$this->add('IndexTabs',null,'TabContent');
+		}
+
+		/*
+
 
 		if($_GET['example']){
 			$this->api->template->set('index_tab_example','current');
@@ -45,6 +54,7 @@ if($f->isSubmitted()){
 
 		   	$this->add('View',null,'TabContent',array('view/index/tab_compare_atk4'));
 		}
+		*/
 
 
 

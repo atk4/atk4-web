@@ -32,9 +32,10 @@ class Doc_View extends View {
 		else $n=$this->add('Doc_Note');
 		return $n->setName($name);
 	}
-	function addExample($name){
-		return $this->add('Doc_Example')
-			->setName($name);
+	function addExample($caption=null){
+		$e=$this->add('Doc_Example');
+		if($caption)$e->setName($caption);
+		return $e;
 	}
 	function addMoreInfo($name){
 		if($this->template->is_set('MoreInfo'))$n=$this->add('Doc_MoreInfo',null,'MoreInfo');

@@ -1,16 +1,13 @@
 <?
 class Doc_Class extends Doc_View {
 	public $is_active=false;
-	function init(){
-		parent::init();
-	}
 	function setName($name){
 		$this->class_name=$name;
 		parent::setName($name);
-		if($this->owner->sidebar)
-			$this->owner->sidebar->addMenuItem($name,$hr=str_replace(array('page_','_'),array('','/'),
-						get_class($this->owner)).'/'.$name);
-		$this->is_active=$this->owner->sidebar->isCurrent($hr);
+		$this->is_active=true;
+		if($this->owner instanceof Doc_Page){
+			$this->is_active=$this->owner->subPage($name);
+		}
 		if($this->is_active){
 			$this->initMethods();
 		}
