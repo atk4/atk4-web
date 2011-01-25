@@ -77,6 +77,10 @@ class AgileProject extends ApiFrontend {
 		if($this->page=='' or $this->page=='index')return array('index');
 		return parent::defaultTemplate();
 	}
+	protected function loadStaticPage($page){
+		$this->page_object=$this->add($this->page_class,$page,'Content',array('page/'.str_replace('_','/',strtolower($page)),'_top'));
+		return $this->page_object;
+	}
 
 	// There are 2 ways to add pages to your project. You can either keep a short
 	// functions here or you can create page/projects.php file

@@ -26,8 +26,8 @@ class AtkMenu extends Menu {
 
 				$menu->addMenuItem('Documentation','doc');
 				$menu->addMenuItem('API Reference','doc/ref');
-				$menu->addMenuItem('Screencasts','sc');
-				$menu->addMenuItem('Examples','example');
+				$menu->addMenuItem('Screencasts','doc/sc');
+				$menu->addMenuItem('Examples','doc/example');
 
 				break;
 
@@ -44,10 +44,10 @@ class AtkMenu extends Menu {
 			case'services':
 				$this->api->template->trySet('menu_services','class="current"');
 
-				$menu->addMenuItem('Commercial Use','services');
-				$menu->addMenuItem('Services','services/blah');
-				$menu->addMenuItem('Products','services/support');
-				$menu->addMenuItem('Jobs','about/site');
+				$menu->addMenuItem('Commercial Use','commercial');
+				$menu->addMenuItem('Services','commercial/services');
+				$menu->addMenuItem('Products','commercial/products');
+				$menu->addMenuItem('Jobs','commercial/jobs');
 
 				break;
 			case'download':
