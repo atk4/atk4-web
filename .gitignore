@@ -2,3 +2,5 @@ config.php
 .htaccess
 .*swp
 *.bak
+
+.DS_Store
