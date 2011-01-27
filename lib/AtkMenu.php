@@ -27,14 +27,14 @@ class AtkMenu extends Menu {
 				$menu->addMenuItem('Documentation','doc');
 				$menu->addMenuItem('API Reference','doc/ref');
 				$menu->addMenuItem('Screencasts','doc/sc');
-				$menu->addMenuItem('Examples','doc/example');
+				$menu->addMenuItem('Examples','examples');
 
 				break;
 
 			case'develop': 
 				$this->api->template->trySet('menu_develop','class="current"');
 
-				$menu->addMenuItem('Development','develop');
+				//$menu->addMenuItem('Development','develop');
 				$menu->addMenuItem('Get Involved','develop/getinvolved');
 				$menu->addMenuItem('Roadmap','develop/roadmap');
 				$menu->addMenuItem('Addons','develop/addons');
