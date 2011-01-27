@@ -4,7 +4,22 @@
 
 
 $.each({
+	indexCompareSwitch: function(){
+		/* Implements switching between tabs on index page */
+		var self=this;
+		$('#comparison-nav').find('a').click(function(ev){
+			ev.preventDefault();
+			var t=$(this).attr('data-dst');
+			$('#comparison-nav').find('.blue-i').removeClass('blue-i').addClass('black');
+			$(this).removeClass('black').addClass('blue-i');
+			self.jquery.find('.comparison-content:visible').fadeOut(function(){
+				$("#"+t).fadeIn();
+			});
+
+		});
+	},
 	moreInfoTrigger: function(){
+		/* Implements link which reveals more information when clicked */
 		var self=this.jquery;
 		var content=self.children('div:first').hide();
 		var icon=self.find('i:first');

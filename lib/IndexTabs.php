@@ -51,6 +51,7 @@ if($f->isSubmitted()){
 				break;
 
 			default:
+				$this->js(true)->univ()->indexCompareSwitch();
 				break;
 		}
 
@@ -72,7 +73,7 @@ if($f->isSubmitted()){
 			case'tour':
 				return 'Content';
 			default:
-				return array('view/index/tab_compare_php');
+				return array('view/index/tab_compare');
 		}
 	}
 }
