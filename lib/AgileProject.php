@@ -100,6 +100,10 @@ class AgileProject extends ApiFrontend {
 		header('Location: https://github.com/atk4/atk4/zipball/master');
 		exit;
 	}
+	function page_examples($p){
+		header('Location: http://demo.atk4.com/');
+		exit;
+	}
 	function render(){
 		parent::render();
 	}

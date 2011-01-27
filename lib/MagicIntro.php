@@ -14,11 +14,11 @@ class MagicIntro extends View {
 		// First step of the introduction
 
 
-		$h1=$this->add('h3')->set('How to build <u>Rich</u> <u>Modern</u> and <u>Fast</u> Web Software');
-		$h2=$this->add('h3')->set('Which uses <u>JavaScript</u>, <u>MVC</u>, <u>AJAX</u> and other technologies');
+		$h1=$this->add('H3')->set('How to build <u>Rich</u> <u>Modern</u> and <u>Fast</u> Web Software');
+		$h2=$this->add('H3')->set('Which uses <u>JavaScript</u>, <u>MVC</u>, <u>AJAX</u> and other technologies');
 
-		$t1=$this->add('h3')->set('With only basic knowledge of PHP?');
-		$t2=$this->add('h3')->set('there  .. is .. a .. way!');
+		$t1=$this->add('H3')->set('With only basic knowledge of PHP?');
+		$t2=$this->add('H3')->set('there  .. is .. a .. way!');
 
 		$h2->js(true)->hide();
 		$t1->js(true)->hide();
