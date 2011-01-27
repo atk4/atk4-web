@@ -41,12 +41,12 @@ class AtkMenu extends Menu {
 
 				break;
 
-			case'services':
+			case'commercial':
 				$this->api->template->trySet('menu_services','class="current"');
 
 				$menu->addMenuItem('Commercial Use','commercial');
 				$menu->addMenuItem('Services','commercial/services');
-				$menu->addMenuItem('Products','commercial/products');
+				//$menu->addMenuItem('Products','commercial/products');
 				$menu->addMenuItem('Jobs','commercial/jobs');
 
 				break;
