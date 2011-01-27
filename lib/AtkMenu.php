@@ -17,6 +17,7 @@ class AtkMenu extends Menu {
 				$menu->addMenuItem('Features','about/features');
 				$menu->addMenuItem('License','about/license');
 				$menu->addMenuItem('FAQ','about/faq');
+				$menu->addMenuItem('History','about/history');
 
 				break;
 
