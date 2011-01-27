@@ -35,7 +35,7 @@ class AtkMenu extends Menu {
 				$this->api->template->trySet('menu_develop','class="current"');
 
 				$menu->addMenuItem('Development','develop');
-				$menu->addMenuItem('Get Involved','develop/media');
+				$menu->addMenuItem('Get Involved','develop/getinvolved');
 				$menu->addMenuItem('Roadmap','develop/roadmap');
 				$menu->addMenuItem('Addons','develop/addons');
 
