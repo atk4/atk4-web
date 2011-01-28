@@ -66,12 +66,25 @@ class AgileProject extends ApiFrontend {
 			$menu2=$this->add('AtkMenu','Menu','Menu');
 		}
 
+		if($this->page_object){
+			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
+		}
+
 		// If you are using a complex menu, you can re-define
 		// it and place in a separate class
 
 
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
+	}
+	function enclose_MoreInfo($content,$tag){
+		list($header,$content)=preg_split('/\n/',$content,2);
+		$this->page_object->add('Doc_MoreInfo',null,$tag)
+			->setName($header)
+			->setDescr($content);
+	}
+	function locateTemplate($path){
+		return $this->locateURL('template',$path);
 	}
 	function defaultTemplate(){
 		if($this->page=='' or $this->page=='index')return array('index');
