@@ -15,10 +15,35 @@ To those who have a very little knowledge of programming, there are already many
 <p>
 You will need an Apache webserver with PHP installed.
 </p>
+<?MoreInfo?>How do I install Apache and PHP?
+<h3>Installing on Windows</h3>
+<p>Probably the easiest way to install is to use WAMP software. It comes with 3 main components you will need - Apache web server, PHP and MySQL database. This will allow you to turn your desktop computer or laptop into a full-featured webserver, although only you will be able to use it by typing http://localhost/ in your browser window. Follow dirrections on the <a href="http://www.wampserver.com/" target="_blank">WAMP site</a>.</p>
+<h3>Installing on Mac</h3>
+<p>Macs come with builtin web server, although it have it's PHP disabled. A better choise would be to download a MAMP software. It's free to use and delivers 3 main components you need — Apache web server, PHP and MySQL database. For more info and downloads visit <a href="http://www.mamp.info/" target="_blank">MAMP website</a>.</p>
+<h3>Installing on Linux</h3>
+<p>Linux has much higher level of customization and variations when it comes to any software. What you need is abbreviated as LAMP. L stands for Linux and you have it. Consult with your Linux Distribution website on how to get working Apache, PHP and MySQL</p>
+
+<p>
+For this guide you will not need MySQL, but we recommend to install it anyway as it will be useful further on</p>
+<?/?>
+
+<?MoreInfo?>How Agile Toolkit compares with CMS software?
+<h3>General approach</h3>
+<p>Content Management Systems in general come with some user interface, database and a lot of things you might not even need by default. The approach of CMS is to enable maximum amoun of features to be used by pointing your mouse and clicking. If you are making website for your client, that means he will be able to tinker with some of those settings potentially breaking the site or taking some of your work off you.</p>
+<p>Agile Toolkit does not have any UI but makes it extremely simple for you to build one. It does not use database by default, but makes it simple to start using it. And it comes with no UI features turned on, but you can easily activate them.</p>
+<h3>Extensibility</h3>
+<p>Content Management System have thousands of addons. However even by looking through all of them, sometimes what you are looking is not there. Developing addon for CMS system requires you a lot of extra knowledge. Agile toolkit addons are different. They are more focused on flexibility and customisation. They can have much better AJAX support and you can build your own modules on top of existing ones.</p>
+</p>
+<h3>Content diversity</h3>
+<p>Content Management System would generally allow you to put HTML data into the database, then on each request they would read that data and format it for display. Agile Toolkit uses the templates inside the files, making display speed much faster. If you will use dynamic elements they will automatically use the database, but only when it's really required. Agile Toolkit makes it easy to make any text editable on your page. (<a href="http://blog.atk4.com/lightweight-cms-in-atk/">Lightweight CMS in ATK4</a>)
+</p>
+<h3>Summary</h3>
+<p>By using Agile Toolkit you will receive much faster working website, much more lightweight and will have a absolute control over it's workings and look. However you would need to have some confidence and write few lines of code. If you don't want to learn anything and just want a website then CMS is a way to go, but if you want to extend and improve your website, learn more about programming and web software then Agile Toolkit will become ideal platform for your site.</p>
+<?/?>
 
 <h2>How to download something that works right away</h2>
 <div class="text-right30">
-	<p>For your convenience you can grab a <a href="/download/WebsiteATK4.zip">WebsiteATK4.zip</a> from our download page</p>
+	<p>For your convenience you can grab a <a href="http://files.agiletech.ie/website-atk4.zip">website-atk4.zip</a> from our download page</p>
 </div>
 
 <p>
@@ -26,7 +51,7 @@ Agile Toolkit is collection of tools. You start with empty website and add compo
 To help you get started, you should download a sample website, which will contain couple of pages. You can look through those pages, although this guide will be focusing on creating new pages.
 </p>
 <p>
-Download and unpack WebsiteATK4.zip somewhere into your webroot. Once it's unpacked open this directory through the web browser. If you see directory structure, check that mod_rewrite is enabled.
+Download and unpack website-atk4.zip somewhere into your webroot. Once it's unpacked open this directory through the web browser. If you see directory structure, check that mod_rewrite is enabled.
 </p>
 
 <h2>How to create a very basic website. Templates.</h2>
