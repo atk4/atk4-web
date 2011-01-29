@@ -1,4 +1,4 @@
-<?
+<?php
 class AtkMenu extends Menu {
 	function init(){
 		parent::init();

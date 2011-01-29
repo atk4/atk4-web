@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Argument extends Doc_View {
 
 	function defaultTemplate(){

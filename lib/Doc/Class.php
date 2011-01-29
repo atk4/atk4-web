@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Class extends Doc_View {
 	public $is_active=false;
 	function setName($name){

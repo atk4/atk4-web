@@ -1,4 +1,4 @@
-<?
+<?php
 /*
    This is generic documentation view. Documentation views can
    be hierarchical

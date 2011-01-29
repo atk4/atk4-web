@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Method extends Doc_View {
 	function addArgument($n,$info){
 		return $this

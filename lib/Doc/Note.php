@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Note extends Doc_View {
 
 	function defaultTemplate(){

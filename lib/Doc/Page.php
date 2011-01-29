@@ -1,4 +1,4 @@
-<?
+<?php
 // Generic class for documentation
 
 class Doc_Page extends Page {

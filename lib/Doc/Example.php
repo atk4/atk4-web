@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Example extends Doc_View {
 
 	function init(){

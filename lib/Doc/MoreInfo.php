@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_MoreInfo extends Doc_View {
 	function init(){
 		parent::init();

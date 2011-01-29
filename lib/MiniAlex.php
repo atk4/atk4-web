@@ -1,4 +1,4 @@
-<?
+<?php
 class MiniAlex extends Alex {
 	function init(){
 		parent::init();

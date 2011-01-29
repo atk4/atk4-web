@@ -1,4 +1,4 @@
-<?
+<?php
 class page_doc_intro extends Page {
 	function init(){
 		parent::init();

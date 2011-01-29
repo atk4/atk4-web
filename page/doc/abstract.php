@@ -1,4 +1,4 @@
-<?
+<?php
 class page_doc_abstract extends Doc_Page {
 	function init(){
 		parent::init();

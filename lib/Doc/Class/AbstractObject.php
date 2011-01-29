@@ -1,4 +1,4 @@
-<?
+<?php
 class Doc_Class_AbstractObject extends Doc_Class {
 	function init(){
 		parent::init();
