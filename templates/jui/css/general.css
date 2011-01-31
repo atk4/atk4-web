@@ -268,7 +268,7 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus {color:#47657
 BODY:nth-of-type(1) .input-search button.button, x:-moz-any-link, x:default {padding:0.35em 0.6em 0.3em 0.6em;}
 .input-search button img {float:left;}
 
-.metallic input[type=text], .metallic input[type=password] {
+.metallic input[type=text], .metallic input[type=password], .metallic textarea {
     border:none;
     color:#fff;
     text-shadow:0 1px 1px rgba(0,0,0,0.7);
@@ -276,7 +276,8 @@ BODY:nth-of-type(1) .input-search button.button, x:-moz-any-link, x:default {pad
     -webkit-box-shadow:0 2px 3px rgba(0,0,0,0.4) inset;
        -moz-box-shadow:0 2px 3px rgba(0,0,0,0.4) inset;
             box-shadow:0 2px 3px rgba(0,0,0,0.4) inset;}
-.metallic input[type=text]:focus, .metallic input[type=password]:focus {background:#6289b5;}
+.metallic input[type=text]:focus, .metallic input[type=password]:focus, .metallic textarea:focus {
+	background:#6289b5;}
 .metallic .input-wrap, .metallic button.button {
     -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.7);
        -moz-box-shadow:0 1px 0 rgba(255,255,255,0.7);

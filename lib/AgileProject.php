@@ -68,6 +68,8 @@ class AgileProject extends ApiFrontend {
 
 		if($this->page_object){
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
+			if($this->page_object->template->is_set('ContactForm'))
+				$this->page_object->add('ContactForm',null,'ContactForm');
 		}
 
 		// If you are using a complex menu, you can re-define
@@ -117,7 +119,13 @@ class AgileProject extends ApiFrontend {
 		header('Location: http://demo.atk4.com/');
 		exit;
 	}
+	function page_contact($p){ $this->api->redirect('about/contact'); }
+	function page_contactus($p){ $this->api->redirect('about/contact'); }
 	function render(){
 		parent::render();
+	}
+	function pageNotFound($e){
+		$this->api->redirect('404',array('p'=>$this->page));
+		//return $this->loadStaticPage('p404');
 	}
 }

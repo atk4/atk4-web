@@ -16,8 +16,8 @@ class AtkMenu extends Menu {
 				$menu->addMenuItem('About','about');
 				$menu->addMenuItem('Features','about/features');
 				$menu->addMenuItem('License','about/license');
-				$menu->addMenuItem('FAQ','about/faq');
 				$menu->addMenuItem('History','about/history');
+				$menu->addMenuItem('Contact','about/contact');
 
 				break;
 
@@ -45,7 +45,9 @@ class AtkMenu extends Menu {
 			case'commercial':
 				$this->api->template->trySet('menu_services','class="current"');
 
-				$menu->addMenuItem('Commercial Use','commercial');
+
+				$menu->addMenuItem('Account','commercial');
+				$menu->addMenuItem('Prices','commercial/store');
 				$menu->addMenuItem('Services','commercial/services');
 				//$menu->addMenuItem('Products','commercial/products');
 				$menu->addMenuItem('Jobs','commercial/jobs');
