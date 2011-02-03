@@ -12,8 +12,9 @@ class page_doc_intro extends Page {
 		$this->add('H1')->set('Benefit 1 — An Organised Environment');
 
 		$p=$this->add('P');
-		$p->add('Text')->set('There are 5 qualities which define Agile Toolkit. One on each page. Once you finish reading
-				them, you should have a good idea about why Agile Toolkit is so beneficial for Web Applications');
+		$p->add('Text')->set('
+					There are 5 qualities which define Agile Toolkit. We have created a page for each one. Once you finish reading them, you should have a good idea about why Agile Toolkit is so beneficial for Web Applications
+					');
 
 
 		$this->add('H3')->set('Browser, Web Server, Database');
@@ -22,46 +23,50 @@ class page_doc_intro extends Page {
 			->set('
 					What you see on any web page is a product of a <u>HTML</u> code. Your web brouser receives it from the server
 					and shows to you.  In web applications some areas on your web page are dynamic
-					and change depending on conditions (also called Business Logic). 
-					Web developers have to understand those conditions and write software to modify produced HTML on the fly 
+					and change depending on conditions (also called Business Logic).
+					Web developers have to understand those conditions and write software to modify produced HTML on the fly
 					during the miliseconds, while visitors are waiting for Web 2.0 pages to appear.
 					');
 
 		$this->add('P')
 			->set('
-					Probably over 99% of web applications rely on the Database to store dynamic data. WebServer receives data
-					from Database, puts data into HTML and send to your browser. In order to communicate with the database,
-					a query-language is used: SQL');
+					Probably over 99% of web applications rely on the Database to store dynamic data. The WebServer receives data
+					from Database, puts the data into the HTML and send to your browser. In order to communicate with the database, a query-language is used: SQL
+					');
 
-		$this->add('H3')->set('What is the job of Framework?');
+		$this->add('H3')->set('What does a Framework do?');
 
 		$this->add('P')
 			->set('
-					Frameworks (also called Libraries and Toolkits) are designed to simplify developer\'s job. From example
-					above, you can see that Web Developer needs to know SQL and HTML to communicate with Browser and
-					Database. Majority of Web Frameworks simplify developer\'s experience when dealing with SQL, but they do
-					little when it comes to HTML interraction
+					Frameworks (also called libraries and toolkits) are designed to make the developer\'s job easier. As we discussed above, the Web Developer needs to know SQL and HTML to communicate with Database and Broswer. The majority of Web frameworks simplify developer\'s experience when dealing with SQL, but they do
+					little when it comes to HTML interraction.
 					');
 
 		$this->add('P')
 			->set('
-					The achievement of Agile Toolkit is that it simplifies developer\'s job when working with both - SQL
-					database and HTML browser. As a result, web developer needs to learn less to be able to master art of Web
-					Software Development. However that\'s not all
+					The achievement of Agile Toolkit is that it simplifies the developer\'s job for both the SQL
+					database and the HTML browser. As a result, the web developer needs to learn less to be able to master art of Web Software Development. However that\'s not all!
 					');
 
 		$this->add('P')
 			->set('
-					Because Agile Toolkit is responsible for both - the Browser and the Database side - it can do many things
-					for developers automatically. For instance, developer places a contact form on the page, and this
-					automatically takes care of both the looks and the data connection.
+					Because the Agile Toolkit is responsible for both the Database and Browser, it can do many things
+					for developers automatically. For instance, the developer places a contact form on the page, and this
+					automatically takes care of both how the data inputed in the form connects with the Database and how the form looks in the browser.
 					');
 
 		$this->add('P')
 			->set('
 					To help me, I would like to invite an example object with name "Alex". Please remember, that in his place
 					can be much more complex objects such as Comment-box (where your web app users can leave comments) or Mini-inbox
-					(where your web app users can send or receive messages with other users) ');
+					(where your web app users can send or receive messages with other users)
+					');
+
+		$this->add('Alex')->align('left');
+		$this->add('P')
+			->set('
+					Ladies and Gentlemen, meet Alex, the pink elephant! Today, we\'re going to learn how to make Alex do some tricks.
+					');
 
 		$this->add('conq1');
 
@@ -96,7 +101,7 @@ class page_doc_intro extends Page {
 
 		$this->add('P')
 			->set('
-					Modern Web Frameworks utilise Object-orineted programming more and more. Your application is an object
+					Modern web frameworks utilise Object-oriented programming more and more. Your application is an object
 					and sometimes even the page will be object.
 					');
 
@@ -105,7 +110,7 @@ class page_doc_intro extends Page {
 			->set('
 					Agile Toolkit moves step ahead and allows developer to define visual objects or in short - Views. By
 					definition View is an object which can be rendered and visible in Web Browser. To help you visualise
-					objects of Agile Toolkit, let me introduce an exmaple project — <b>Alex</b>. 
+					objects of Agile Toolkit, let me introduce an exmaple project — <b>Alex</b>.
 					');
 
 		$this->add('P')
@@ -170,12 +175,12 @@ class page_doc_intro extends Page {
 					Tolokit - most of the views are ready to use. Guideline of the toolkit regulates that each object must be
 					usable with minimum configuration. In practice you will need one line to get something added and that\'s
 					the $this->add(\'AnyObject\') line');
-		
+
 		$this->add('Alex')->setAttr('width',50)->align('left');
 		$this->add('P')
 			->set('Objects don\'t end their existance after this. They remain so that you can further Configrue them. As
 					example, lets configure Alex — our elephant view. We are going to add it into the page first, left from
-					this paragraph, then change alignment and size. 
+					this paragraph, then change alignment and size.
 					');
 
 		$this->add('Doc_Example')
@@ -232,7 +237,7 @@ class page_doc_intro extends Page {
 			->set('Company who made Agile Toolkit — Agile Technologies Limited can develop views and models for you as per
 					your order. There is a nice discount if you agree to contribute your view to ATK-addons.
 					');
-					
+
 		$this->add('P')
 			->set('Apart from Agile Technologies, there are other software companies and freelancers who can develop views
 					for you. Ask around!');
@@ -302,9 +307,9 @@ EOT
 					(or repositories) and can enhance your application with a set of new views, models, templates and so on.
 					In order to upgrade extension, you just need to repalce directory with a more up-to-date one.
 					');
-			
+
 		$this->add('conq4');
-			
+
 		$this->add('Button')
 			->set('Next Page')
 			->js('click')
@@ -396,10 +401,10 @@ $f->addButton('Try me')->js('click',$f->js()->submit());
 if($f->isSubmitted()){
   $f->js()->univ()->alert('Thank you, '.$f->get('name').' '.$f->get('surname'))->execute();
 }
-		
 
 
-	
+
+
 		$fade_out=array();
 		$delay=0;
 		foreach($this->elements as $e){
@@ -452,35 +457,35 @@ if($f->isSubmitted()){
             ->set('Sample Project "Colubris"')
             ->js('click')
             ->univ()->location('https://github.com/agiletech/colubris/');
-		
+
         $this->add('Button')
             ->set('Blog')
             ->js('click')
             ->univ()->location('http://blog.atk4.com/');
-		
+
 	}
 }
 class Quote extends HtmlElement { function init(){ parent::init(); $this->setElement('Quote'); } }
 
 class conq extends quote { function hide() { $this->addStyle('display','none'); return $this; } }
-class conq1 extends conq { function init(){ parent::init(); 
+class conq1 extends conq { function init(){ parent::init();
 		$this ->set(" <b>Benefit 1:</b><br/> \"Agile Toolkit simplifies data access <u>and</u> user interface building of your web application\" "); } }
 
-class conq2 extends conq { function init(){ parent::init(); 
+class conq2 extends conq { function init(){ parent::init();
 		$this->set('<b>Benefit 2:</b><br/>Agile Toolkit makes it possible to have a very complex and very interactive
 					views. It also makes it very easy to use objects, you just need to put this into your software:
 					'); } }
-class conq3 extends conq { function init(){ parent::init(); 
+class conq3 extends conq { function init(){ parent::init();
 		$this->set('<b>Benefit 3:</b><br/>Agile Toolkit provides ready-to-use simple view prototypes.
 					You can either use them as they are through configring or inherit and extend them. Also you can place
 					object virtually ANYWHERE on the page
 					'); } }
-class conq4 extends conq { function init(){ parent::init(); 
+class conq4 extends conq { function init(){ parent::init();
 		$this->set('<b>Benefit 4:</b><br/>Extensions are collections of Views, Templates, JavaScript code and other
 					goodies. Some Extensions are available for free, while there may be some commercial ones too. In either
 					case, using existing extension will greatly save you development time.
 					'); } }
-class conq5 extends conq { function init(){ parent::init(); 
+class conq5 extends conq { function init(){ parent::init();
 		$this->set('<b>Benefit 5:</b><br/>ANY object can have any type of jQuery powered transformations applied.
 					They can also interract with other objects. AJAX interactivity is made in a transparent way, which
 					prooves to be very durable and stable as your project grows
