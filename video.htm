@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Video</title>	
+		
+	<script src="/templates/js/mediaelement/build/mediaelement.js"></script>
+</head>
+<body style="margin: 0px">
+
+<video width="1024" height="768" id="player1" src="http://files.agiletech.ie/atk-present.mov" type="video/mp4"></video>
+
+<script>
+MediaElement('player1', {success: function(me) {
+	
+	me.play();
+}});
+</script>
+
+</body>
+</html>
