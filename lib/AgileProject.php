@@ -11,6 +11,7 @@ class AgileProject extends ApiFrontend {
 
 		// Keep this if you are going to use plug-ins
 		$this->addLocation('atk4-addons',array(
+					'template'=>'misc/templates',
 					'php'=>array('mvc',
 						'billing/lib',
 						'misc/lib',

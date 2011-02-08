@@ -1,16 +1,23 @@
 <?php
 class Doc_Example extends Doc_View {
 
-	function init(){
-		parent::init();
-		$this->js()
-			->_load('syntaxhighlighter/scripts/shCore')
-			->_load('syntaxhighlighter/scripts/shBrushPhp')
+	public $code;
+	public $exec;
+
+	function setCode($code){
+		//$this->setDescr($code);
+		$this->add('Doc_Code',null,'code')
+			->setDescr($code)
 			;
-	}
-	function setDescr($d){
-		$this->add('Text')->set(str_replace(array('&lt;?php','php?&gt;'),'',highlight_string('<?php'.$d.'php?>',true)));
+
+		$p=$this->add('View',null,'example');
+		$this->executeDemo($p,$code);
+
 		return $this;
+	}
+
+	function executeDemo($p,$code){
+		eval($code);
 	}
 
 	function defaultTemplate(){

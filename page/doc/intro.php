@@ -147,7 +147,7 @@ class page_doc_intro extends Page {
 
 		$this->add('conq2');
 
-		$this->add('Doc_Example')
+		$this->add('Doc_Code')
 			->setDescr("\$this->add('Alex')");
 
 		$this->add('Button')
@@ -178,7 +178,7 @@ class page_doc_intro extends Page {
 					this paragraph, then change alignment and size. 
 					');
 
-		$this->add('Doc_Example')
+		$this->add('Doc_Code')
 			->setDescr("\$this->add('Alex')->setAttr('width',50)->align('left');");
 
 
@@ -189,7 +189,7 @@ class page_doc_intro extends Page {
 					button below to see this in action.
 					');
 
-		$this->add('Doc_Example')
+		$this->add('Doc_Code')
 			->setDescr("\$this->api->add('Alex',null,'logo')->setAttr('width',50)->align('left');");
 
 		$b=$this->add('Button')->set('Execute the code');
@@ -254,7 +254,7 @@ class page_doc_intro extends Page {
 		$c=$this->add('View_Columns');
 
 		$l=$c->addColumn('50%');
-		$l->add('Doc_Example')
+		$l->add('Doc_Code')
 			->setDescr(<<<'EOT'
 $l->add('Alex')
 	->setAttr('width',50)
@@ -276,7 +276,7 @@ EOT
 		$m->add('Icon')->set('arrows-right')->addStyle('margin-top','40px');
 
 		$c->addColumn('50%')
-		->add('Doc_Example')
+		->add('Doc_Code')
 			->setDescr(<<<'EOT'
 class MiniAlex extends Alex {
 	function init(){
@@ -329,7 +329,7 @@ EOT
 					Alex now. If you worked with other frameworks, you would probably need to change at least 3 different
 					files to achieve simple JavaScript or AJAX functionality. In Agile Toolkit it\'s done with single line of code ');
 
-		$this->add('Doc_Example')
+		$this->add('Doc_Code')
 			->setDescr(<<<'EOT'
 $this->add('Alex')->setAttr('width',50)->align('left')
 	->js('click')->animate(array('width'=>'100'));
@@ -355,7 +355,7 @@ EOT
 					');
 
 
-		$this->add('Doc_Example')
+		$this->add('Doc_Code')
 			->setDescr(<<<'EOT'
 $left=$this->add('Alex')->align('left'); $right=$this->add('Alex');
 $left->js('click',$right->js()->animate(array('padding-right'=>'+=20px')));
@@ -375,7 +375,7 @@ EOT
 		$c=$this->add('View_Columns');
 
 		$l=$c->addColumn('50%');
-		$l->add('Doc_Example')
+		$l->add('Doc_Code')
 			->setDescr(<<<'EOT'
 $f=$p->add('Form');
 $f->addField('line','name');
