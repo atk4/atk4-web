@@ -18,6 +18,19 @@ $.each({
 
 		});
 	},
+	lightbox: function(){
+		var b=$('<div style="display: none; opacity:0;  right: 0px; bottom: 0px; height: auto; background: black; width: auto; position: fixed; top: 0px; text-align: center; left: 0px; display: block; z-index: 1002; "></div>').appendTo($('body'));
+		b.animate({opacity: 0.8},3000);
+
+		var v=$('<div style="width: 1024; height: 768; background: white; top: 0px; z-index: 1003; display: block; position: fixed"/>').appendTo($('body'));
+		v.css({left: ($(window).width()-1024)/2+"px"});
+		var vv=$('<iframe width="1024" height="768" src="/video.htm" scrolling="no">').appendTo(v);
+
+		b.click(function(){
+			b.remove();
+			v.remove();
+		});
+	},
 	moreInfoTrigger: function(){
 		/* Implements link which reveals more information when clicked */
 		var self=this.jquery;
