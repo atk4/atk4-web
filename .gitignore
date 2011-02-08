@@ -3,4 +3,5 @@ config.php
 .*swp
 *.bak
 upload
+distfiles
 .DS_Store
