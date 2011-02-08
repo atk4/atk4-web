@@ -12,7 +12,7 @@ class IndexTabs extends View {
 			'cut_page'=>false
 					));
 
-		$this->api->template->set('link_comparison',$u=$this->api->getDestinationURL(null,array($this->name=>null)));
+		$this->api->template->set('link_comparison',$u=$this->api->getDestinationURL(null,array($this->name=>'how')));
 		$this->api->template->set('link_example',$u=$this->api->getDestinationURL(null,array($this->name=>'example')));
 		$this->api->template->set('link_tour',$this->api->getDestinationURL(null,array($this->name=>'tour')));
 
@@ -50,21 +50,11 @@ if($f->isSubmitted()){
 				$this->add('MagicIntro');
 				break;
 
-			default:
+			case'how':
 				$this->js(true)->univ()->indexCompareSwitch();
 				break;
+			default:
 		}
-
-
-
-		/*
-		$u=clone $u;
-		$this->js(true)->_selector('#example')->click(
-				$this->js()->_enclose(null,true)->atk4_load($u->setArguments(array('cut_object'=>$this->name)))
-				);
-		$this->api->template->set('link_tour',$this->api->getDestinationURL(null,array($this->name=>'tour')));
-
-		*/
 	}
 	function defaultTemplate(){
 		switch($_GET[$this->name]){
@@ -72,8 +62,12 @@ if($f->isSubmitted()){
 				return array('view/index/tab_example');
 			case'tour':
 				return 'Content';
-			default:
+				//return array('view/index/tab_tour');
+			case'how':
 				return array('view/index/tab_compare');
+			default:
+				return array('view/index/empty');
+
 		}
 	}
 }

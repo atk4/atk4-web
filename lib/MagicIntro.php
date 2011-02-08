@@ -14,29 +14,39 @@ class MagicIntro extends View {
 		// First step of the introduction
 
 
-		$h1=$this->add('H3')->set('How to build <u>Rich</u> <u>Modern</u> and <u>Fast</u> Web Software');
-		$h2=$this->add('H3')->set('Which uses <u>JavaScript</u>, <u>MVC</u>, <u>AJAX</u> and other technologies');
+		$h1=$this->add('H3')->set('Start using Agile Toolkit TODAY!');
 
-		$t1=$this->add('H3')->set('With only basic knowledge of PHP?');
-		$t2=$this->add('H3')->set('there  .. is .. a .. way!');
+		$e=$this->add('HtmlElement')->addStyle('text-align: center');
+		$b1=$e->add('Button')->set('Video');
+		$b1->js('click')->univ()->lightbox();
 
-		$h2->js(true)->hide();
-		$t1->js(true)->hide();
-		$t2->js(true)->hide();
+		$b2=$e->add('Button')->set('Examples');
+		$b2->js('click')->univ()->location('http://demo.atk4.com/');
+
+		$b3=$e->add('Button')->set('Docs');
+		$b3->js('click')->univ()->location('/doc');
+
+		$b4=$e->add('Button')->set('Source');
+		$b4->js('click')->univ()->location('https://github.com/atk4/atk4');
+
+		$h1->js(true)->hide();
+		$b1->js(true)->hide()->removeClass('green')->addClass('orange');
+		$b2->js(true)->hide()->removeClass('green')->addClass('blue');
+		$b3->js(true)->hide()->removeClass('green')->addClass('green');
+		$b4->js(true)->hide()->removeClass('green')->addClass('red');
+
+		$j=$b1->js()->fadeIn(1000);
+		$j=$b2->js(null,$j)->fadeIn(2000);
+		$j=$b3->js(null,$j)->fadeIn(3000);
+		$j=$b4->js(null,$j)->fadeIn(4000);
 
 		// text
-		$h1->js(true)->hide()->fadeIn(2000)->delay(2000)->fadeOut('fast',
-				$h2->js()->_enclose()->fadeIn(2000)->delay(2000)->fadeOut('fast',
-					$t1->js()->_enclose()->fadeIn(2000)->delay(2000)->fadeOut('4000',
-						$t2->js()->_enclose()->fadeIn(4000,
-							$t2->js()->_enclose()->closest('.atk4_loader')->atk4_loader('loadURL',
-								$this->api->getDestinationURL(null,array('cut_object'=>$this->name,$this->name=>2))))
-						)
-					)
-				);
+		$h1->js(true)->hide()->fadeIn(2000)->delay(2000,$j->_enclose());
 
+		/*
 		$this->add('Button')->set('skip')->js('click')->closest('.atk4_loader')->atk4_loader('loadURL',
 								$this->api->getDestinationURL(null,array('cut_object'=>$this->name,$this->name=>2)));
+								*/
 
 	}
 	function d2(){
