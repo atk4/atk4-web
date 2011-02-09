@@ -3,72 +3,177 @@ class page_doc_intro extends Page {
 	function init(){
 		parent::init();
 
+		$this->sidebar=$this->add('Menu',null,null,array('view/sidebar','Menu'));
+		$this->sidebar->current_menu_class='current blue-i';
+		$this->sidebar->inactive_menu_class='';
+
+		$this->subPage('Introduction','../start');
+
+	}
+	function subPage($name,$ref=null){
+		$hr=$ref?$ref:$str_replace(array('page_','_'),array('','/'),get_class($this)).'/'.$name;
+				       //str_replace(array('page_','_'),array('','/'),get_class($this)).'/'.$name);
+		$this->sidebar->addMenuItem($name,$hr);
+		$this->sidebar->template->set('title','Basics');
+		return $this->sidebar->isCurrent($hr);
+
 	}
 	function initMainPage(){
-		$this->api->redirect('./1');
+		$this->api->redirect('./start');
 	}
 
-	function page_1(){
-		$this->add('H1')->set('Benefit 1 — An Organised Environment');
+	function page_start(){
+		$p=$this->add('Doc_View');
 
-		$p=$this->add('P');
-		$p->add('Text')->set('
-					There are 5 qualities which define Agile Toolkit. We have created a page for each one. Once you finish reading them, you should have a good idea about why Agile Toolkit is so beneficial for Web Applications
-					');
+		$p->add('H1')->set('How does Agile Toolkit Work?');
+
+		$p->add('P')->set('
+				If you are coming from a different development platform, you might have been used to dealing with a mixture
+				of different libraries and frameworks. As a developer you probably had to decide what to call and when.
+				');
+
+		$p->add('P')->set('
+				Agile Toolkit works by itself. Similar to those CMS systems. Unlike other CMS systems however, Agile Toolkit
+				does nothing by default. That\'s where you come in. Your job as developer is to extend the workings of your
+				system by writing a UI and business logic.
+				');
+
+		$p=$this;
+
+		$p->add('H2')->set('Agile Toolkit is bulit to be effective!');
+
+		$p->add('P')->set('
+				Without further delay, I\'d like to bring in the first example.
+				');
 
 
-		$this->add('H3')->set('Browser, Web Server, Database');
+		$p->add('Doc_Example')
+			->setCode(<<<'EOD'
+$f=$p->add('Form');
+$f->addField('line','name');
+$f->addField('line','surname');
+$f->addButton('Try me');
+EOD
+);
 
-		$this->add('P')
+
+		$p->add('P')->set('
+				You don\'t even need the understanding of objects and classes to know what this code does. That\'s the first
+				major principle of Agile Toolkit — all the code is simple and very intuitive.
+				');
+
+		$p->add('P')->set('
+				Another thing you might have noticed — is the lack of HTML inside or around the code. Truth is — Agile
+				Toolkit already comes with a nice and stylish template based on jQuery UI CSS, so unless you want that unique
+				and slick look — you might be better off with default skin. You don\'t even have to know how it works.
+				');
+
+		$p->add('Quote')->set('
+				Simplicity and bundled style, look and elements greatly contribute development\'s efficiency. Practically you
+				can put together a working UI in a matter of a single day.
+				');
+
+
+		$p->add('H2')->set('Agile Toolkit controls the universe. You control Agile Toolkit');
+
+		$p->add('P')
 			->set('
-					What you see on any web page is a product of a <u>HTML</u> code. Your web brouser receives it from the server
-					and shows to you.  In web applications some areas on your web page are dynamic
-					and change depending on conditions (also called Business Logic).
-					Web developers have to understand those conditions and write software to modify produced HTML on the fly
-					during the miliseconds, while visitors are waiting for Web 2.0 pages to appear.
+					Forms, Lists, Menus, Grids and other Views you will encounter while developing already know how to work
+					with the database. That is also true for more advanced Views — they would generally work with or without
+					database, depending on how you want it.
 					');
 
-		$this->add('P')
+		$p->add('P')
 			->set('
-					Probably over 99% of web applications rely on the Database to store dynamic data. The WebServer receives data
-					from Database, puts the data into the HTML and send to your browser. In order to communicate with the database, a query-language is used: SQL
+					Next is an example of a Grid which reads it\'s row contents from the database:
 					');
 
-		$this->add('H3')->set('What does a Framework do?');
+		$p->add('Doc_Example')
+			->setCode(<<<'EOD'
+$f=$p->add('Grid');
+$f->addColumn('text','name');
+$f->addColumn('text','surname');
+$f->setSource('user');
+$f->dq->limit(5);
+EOD
+);
 
-		$this->add('P')
-			->set('
-					Frameworks (also called libraries and toolkits) are designed to make the developer\'s job easier. As we discussed above, the Web Developer needs to know SQL and HTML to communicate with Database and Broswer. The majority of Web frameworks simplify developer\'s experience when dealing with SQL, but they do
-					little when it comes to HTML interraction.
-					');
+		$p->add('P')->set('
+				Just this small piece of code was sufficient to produce a nice looking table with the data from your
+				database. What\'s also very important is that data collected from the database and displayed is properly
+				encoded to avoid any HTML or JavaScript injection problems.
+				');
 
-		$this->add('P')
-			->set('
-					The achievement of Agile Toolkit is that it simplifies the developer\'s job for both the SQL
-					database and the HTML browser. As a result, the web developer needs to learn less to be able to master art of Web Software Development. However that\'s not all!
-					');
+		$p->add('Quote')->set('
+				Agile Toolkit connects your UI with the database. You specify the details, but all the tough work is done
+				in an efficient and secure way without making developer do any extra work.
+				');
 
-		$this->add('P')
-			->set('
-					Because the Agile Toolkit is responsible for both the Database and Browser, it can do many things
-					for developers automatically. For instance, the developer places a contact form on the page, and this
-					automatically takes care of both how the data inputed in the form connects with the Database and how the form looks in the browser.
-					');
 
-		$this->add('P')
-			->set('
-					To help me, I would like to invite an example object with name "Alex". Please remember, that in his place
-					can be much more complex objects such as Comment-box (where your web app users can leave comments) or Mini-inbox
-					(where your web app users can send or receive messages with other users)
-					');
 
-		$this->add('Alex')->align('left');
-		$this->add('P')
-			->set('
-					Ladies and Gentlemen, meet Alex, the pink elephant! Today, we\'re going to learn how to make Alex do some tricks.
-					');
 
-		$this->add('conq1');
+		$p->add('H2')->set('There are 10 ways to control views in Agile Toolkit. Here are two:');
+
+		$p->add('P')->set('
+				Countless products have tried to tie User Interface with the Database at the expense of flexibility. Driven
+				by a real Web Projects concepts in Agile Toolkit have been refined since 1999. One of the biggest test
+				for the toolkit was the flexibility. How to change from structure? How to rearrange fields? How to put text
+				after the field? How to add new field types? Those are the questions which Agile Toolkit deals very well.
+				');
+
+
+		$p->add('P')->set('
+				Another set of questions is about the database interraction of Agile Toolkit. Can Grid data come from 2
+				tables? How to include calculated field? How to do sub-select or join tables? Grid fetches it\'s data through
+				dynamic query which you can affect in a very flexible way.
+				');
+
+		$p->add('P')->set('
+				All of the above tasks is achieved by two significant features which adds to the overal flexibility:');
+
+		$p->add('Quote')->set('
+				When you "add()" view, you can specify where it appears and how. This way we are able to put navigation menu
+				in exactly the right spot on the page by using a built-in template system.
+				');
+
+		$p->add('Quote')->set('
+				Any view comes with default template, but you can change it\'s look completely by specifying your own
+				template. Only that specific view is affected giving you many style variation for same controls.
+				');
+
+		$p->add('Quote')->set('
+				After you create any view, you can still configure it. The view is not rendered until later. By chaining
+				function calls on that view you can make it look and work the way you want
+				');
+
+
+		$t=$p->add('Tabs');
+		$t1=$t->addTab('Placement');
+
+		$t1->add('Doc_Example')
+			->setCode(<<<'EOD'
+$f=$p->add('Form');
+$f->addField('line','name')
+  ->add('Icon',null,'before_field')
+  ->set('basic-check');
+$f->addField('line','surname')
+  ->add('Button',null,'after_field')
+  ->set('Try me');
+EOD
+);
+
+		$t2=$t->addTab('Templates');
+
+		$t2->add('Doc_Example')
+			->setCode(<<<'EOD'
+$f=$p->add('Grid');
+$f->addColumn('text','name');
+$f->addColumn('text','surname');
+$f->setSource('user');
+$f->dq->limit(5);
+EOD
+);
+
 
 		$this->add('Button')
 			->set('Next Page')

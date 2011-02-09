@@ -33,7 +33,7 @@ class Doc_View extends View {
 		return $n->setName($name);
 	}
 	function addExample($caption=null){
-		$e=$this->add('Doc_Example');
+		$e=$this->add('Doc_Code');
 		if($caption)$e->setName($caption);
 		return $e;
 	}
