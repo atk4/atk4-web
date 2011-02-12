@@ -3,18 +3,23 @@ class page_doc_intro extends Page {
 	function init(){
 		parent::init();
 
+
 		$this->sidebar=$this->add('Menu',null,null,array('view/sidebar','Menu'));
 		$this->sidebar->current_menu_class='current blue-i';
 		$this->sidebar->inactive_menu_class='';
 
-		$this->subPage('Introduction','../start');
+		$this->subPage('Foundation','../start');
+		$this->subPage('JavaScript','../javascript');
+		$this->subPage('Models (MVC)','../models');
+		$this->subPage('Add-ons','../addons');
+		$this->subPage('Conclusion','../conclusion');
 
 	}
 	function subPage($name,$ref=null){
 		$hr=$ref?$ref:$str_replace(array('page_','_'),array('','/'),get_class($this)).'/'.$name;
 				       //str_replace(array('page_','_'),array('','/'),get_class($this)).'/'.$name);
 		$this->sidebar->addMenuItem($name,$hr);
-		$this->sidebar->template->set('title','Basics');
+		$this->sidebar->template->set('title','Introduction');
 		return $this->sidebar->isCurrent($hr);
 
 	}
@@ -23,24 +28,26 @@ class page_doc_intro extends Page {
 	}
 
 	function page_start(){
+		$this->api->dbConnect();
+
 		$p=$this->add('Doc_View');
 
 		$p->add('H1')->set('How does Agile Toolkit Work?');
 
 		$p->add('P')->set('
-				If you are coming from a different development platform, you might have been used to dealing with a mixture
-				of different libraries and frameworks. As a developer you probably had to decide what to call and when.
+				A life of a common web developer requires a deep knowledge of many different libraries, protocols,
+				frameworks, concepts and paradigms. But what if development platform would be capable of managing all that.
+				Developers then would be able to focus on UI logic and business logic and get things done much quicker.
 				');
 
 		$p->add('P')->set('
-				Agile Toolkit works by itself. Similar to those CMS systems. Unlike other CMS systems however, Agile Toolkit
-				does nothing by default. That\'s where you come in. Your job as developer is to extend the workings of your
-				system by writing a UI and business logic.
+				Agile Toolkit is in control of things. While it remains flexible, it introduces a structure for both —
+				business logic and user interface. Developing with Agile Toolkit is much faster. Are you wondering why?
 				');
 
 		$p=$this;
 
-		$p->add('H2')->set('Agile Toolkit is bulit to be effective!');
+		$p->add('H2')->set('Agile Toolkit is built to be effective!');
 
 		$p->add('P')->set('
 				Without further delay, I\'d like to bring in the first example.
@@ -58,19 +65,20 @@ EOD
 
 
 		$p->add('P')->set('
-				You don\'t even need the understanding of objects and classes to know what this code does. That\'s the first
-				major principle of Agile Toolkit — all the code is simple and very intuitive.
+				You don\'t even need the know programming to understand what this code does. That\'s the first
+				major principle of Agile Toolkit — all the code is simple and very intuitive, yet it uses native PHP5
+				language.
 				');
 
 		$p->add('P')->set('
-				Another thing you might have noticed — is the lack of HTML inside or around the code. Truth is — Agile
-				Toolkit already comes with a nice and stylish template based on jQuery UI CSS, so unless you want that unique
-				and slick look — you might be better off with default skin. You don\'t even have to know how it works.
+				Did you notice how good form looks? Everything in Agile Toolkit looks great by default. Generic look of all
+				elements are described in "design theme" through HTML/CSS. One theme comes bundled with Agile Toolkit. Get
+				started with development and change theme anytime later.
 				');
 
 		$p->add('Quote')->set('
-				Simplicity and bundled style, look and elements greatly contribute development\'s efficiency. Practically you
-				can put together a working UI in a matter of a single day.
+				Simple and sufficient. Things just work out of the box. This applies to everything in Agile Toolkit: Views,
+				Models, Addons. Focus on your goals and Agile Toolkit will take care of the rest.
 				');
 
 
@@ -79,12 +87,19 @@ EOD
 		$p->add('P')
 			->set('
 					Forms, Lists, Menus, Grids and other Views you will encounter while developing already know how to work
-					with the database. That is also true for more advanced Views — they would generally work with or without
-					database, depending on how you want it.
+					with the database. That is also true for more advanced Views and Add-ons — they all are capable of
+					interacting with the database.
 					');
 
 		$p->add('P')
 			->set('
+					Agile Toolkit connects everything. Instead of keeping things separate, it integrates things. Components
+					rely on each-other to work in the most efficient way.
+					');
+
+		$p->add('P')
+			->set('
+
 					Next is an example of a Grid which reads it\'s row contents from the database:
 					');
 
@@ -100,57 +115,92 @@ EOD
 
 		$p->add('P')->set('
 				Just this small piece of code was sufficient to produce a nice looking table with the data from your
-				database. What\'s also very important is that data collected from the database and displayed is properly
-				encoded to avoid any HTML or JavaScript injection problems.
+				database. What\'s also very important is that components have a built-in security. Data is properly encoded
+				and validated as it is being exchanged.
 				');
 
 		$p->add('Quote')->set('
-				Agile Toolkit connects your UI with the database. You specify the details, but all the tough work is done
-				in an efficient and secure way without making developer do any extra work.
+				Agile Toolkit connects everything. Your UI, database, Models, Cloud services. You tweak the details, but
+				all the tough work is done in an efficient and secure way without a chance for developer to do introduce a
+				mistake.
 				');
 
 
 
 
-		$p->add('H2')->set('There are 10 ways to control views in Agile Toolkit. Here are two:');
+		$p->add('H2')->set('There are 10 ways to be flexible with Agile Toolkit. Here are three:');
 
 		$p->add('P')->set('
 				Countless products have tried to tie User Interface with the Database at the expense of flexibility. Driven
-				by a real Web Projects concepts in Agile Toolkit have been refined since 1999. One of the biggest test
-				for the toolkit was the flexibility. How to change from structure? How to rearrange fields? How to put text
-				after the field? How to add new field types? Those are the questions which Agile Toolkit deals very well.
+				by a real Web Projects concepts, Agile Toolkit have been <a href="/about/history">refined since 1999</a>.
+				One of the biggest challenges for the toolkit is the flexibility. Form. How to change its look? How to
+				rearrange fields? How to put text after the field? How to add new field type? How to add JavaScript or AJAX
+				or make form without JavaScript at all? Agile Toolkit holds answer for all those questions. (<a
+				href="/doc/form">The Perfect Form</a>)
 				');
 
 
 		$p->add('P')->set('
-				Another set of questions is about the database interraction of Agile Toolkit. Can Grid data come from 2
-				tables? How to include calculated field? How to do sub-select or join tables? Grid fetches it\'s data through
-				dynamic query which you can affect in a very flexible way.
+				By this point you might think — database tie-in is very in-flexible. Not in Agile Toolkit. All the database
+				operations are handled through <a href="/doc/dsql">Dynamic Queries</a>. You can change any query in the
+				system at any time by adding joins, clauses, limits, additional fields or sub-selects.
 				');
 
 		$p->add('P')->set('
-				All of the above tasks is achieved by two significant features which adds to the overal flexibility:');
-
-		$p->add('Quote')->set('
-				When you "add()" view, you can specify where it appears and how. This way we are able to put navigation menu
-				in exactly the right spot on the page by using a built-in template system.
+				Flexibility (or agility) is extremely important and as you become more familiar you will be able to master
+				new ways.
 				');
 
 		$p->add('Quote')->set('
-				Any view comes with default template, but you can change it\'s look completely by specifying your own
-				template. Only that specific view is affected giving you many style variation for same controls.
+				1. Templates — All Views come with default one. However you can specify different template to any View.
+				Skin can hold many template variations same view and you can add your own too.
 				');
 
 		$p->add('Quote')->set('
-				After you create any view, you can still configure it. The view is not rendered until later. By chaining
-				function calls on that view you can make it look and work the way you want
+				2. Spot — When you use
+				<span style="color: #0000BB">$f</span><span style="color: #007700">=</span><span style="color: #0000BB">$p</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">\'Form\'</span><span style="color: #007700">, </span><span style="color: #0000BB">null</span><span style="color: #007700">, </span><span style="color: #DD0000">\'destination_spot\'</span><span style="color: #007700">);</span>
+
+				the "destination_spot" defines the placement of your new object. This is placement within the template of
+				parent View. Typically Views would have many spots to choose.
 				');
 
+		$p->add('Quote')->set('
+				2. Configure — After you call
+				<span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #007700">);</span>
+				you can still configure your object. There are many things you can change about each copy of the View after
+				it was created.
+				');
 
 		$t=$p->add('Tabs');
-		$t1=$t->addTab('Placement');
+		$tab=$t->addTab('templates','Changing Default Template');
 
-		$t1->add('Doc_Example')
+		$tab->add('P')->set('
+				In this example, we are still adding the Form, but different form template is used. This can produce a
+				significantly different HTML. This method is ideal when CSS change is not sufficient.
+			');
+
+		$tab->add('Doc_Example')
+			->setCode(<<<'EOD'
+$f=$p->add('Form',null,null,array('form_empty'));
+$f->addField('line','name');
+$f->addField('line','surname');
+$f->addButton('Try me');
+EOD
+);
+
+
+		$tab=$t->addTab('spot','Choosing the Spot');
+
+		$tab->add('P')->set('
+				This example demonstrates how developer can decide where things appear. Every View can have many useful spots
+				in it\'s template. Field have "before_field" and "after_field" spots. Example below uses them to put Icon and
+				Button there.
+				');
+		$tab->add('P')->set('
+				Adding new spots is really easy. Define your own template, and put &lt;?$myspot?&gt; inside. You are done.
+			');
+
+		$tab->add('Doc_Example')
 			->setCode(<<<'EOD'
 $f=$p->add('Form');
 $f->addField('line','name')
@@ -162,23 +212,52 @@ $f->addField('line','surname')
 EOD
 );
 
-		$t2=$t->addTab('Templates');
 
-		$t2->add('Doc_Example')
+		$tab=$t->addTab('chain','Chaining');
+
+		$tab->add('P')->set('
+				Adding objects is quick and fast. It merely creates a new copy. By interacting with that object further
+				you can "configure" it to behave like you want. Like everything else chaining is optional but it allow you to
+				affect behaviour, appearance of the individual object.
+				');
+
+		$tab->add('Doc_Example')
 			->setCode(<<<'EOD'
-$f=$p->add('Grid');
-$f->addColumn('text','name');
-$f->addColumn('text','surname');
-$f->setSource('user');
-$f->dq->limit(5);
+$g=$p->add('Grid');
+$g->addColumn('text','gender');
+$g->addColumn('text','name');
+$g->addColumn('text','surname');
+$g->setSource('user');
+$g->dq->field('length(name)*300.20 - 1000 salary');
+$g->addColumn('money','salary');
+$g->addTotals();
+$g->addPaginator(5);
+
 EOD
 );
+
+		$this->add('P')->set('
+				As a bonus — it really matters WHERE you add your View. You can add them into 
+				<span style="color: #0000BB">$api</span>,
+				<span style="color: #0000BB">$page</span>
+				or ever another View. You never have to worry about conflicts. Each View is designed to be completely
+				self-sufficient and work anywhere. Even if you have 2 identical forms on your page, they will know, which one
+				was submitted.
+				');
+
+
+		$this->add('H2')->set('AJAX, jQuery w/plugins and a better way to write JavaScript');
+
+		$this->add('P')->set('
+				Are you getting excited? The best part is about to begin. Learn how Agile Toolkit finally binds JavaScript
+				with your Views
+				');
 
 
 		$this->add('Button')
 			->set('Next Page')
 			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../2'));
+			->univ()->redirect($this->api->getDestinationURL('../javascript'));
 
 
 	}
@@ -421,7 +500,68 @@ EOT
 			->univ()->redirect($this->api->getDestinationURL('../5'));
 
 	}
-	function page_5(){
+	function page_greeted(){
+		$this->sidebar->destroy();
+		$this->add('P')->set(htmlspecialchars($_GET['text']));
+		$this->add('HtmlElement')->setElement('a')->setAttr('href',$this->api->getDestinationURL('../javascript'))->set('Back');
+	}
+	function page_javascript(){
+
+		$p=$this->add('Doc_View');
+
+		$p->add('H1')->set('Agile Toolkit and JavaScript');
+
+		$p->add('P')->set('
+				The definition of Web 2.0 requires a site to be interactive and dynamic. jQuery, MooTools and some other
+				JavaScript libraries transformed the internet and is now a standard. Unfortunately Frameworks and Toolkits
+				either decide to ignore JavaScript and leave it to advanced developers or bundle their own proprietary JavaScript
+				libraries.
+				');
+
+		$p->add('P')->set('
+				Agile Toolkit contains a powerful integration with jQuery — library both popular and pursuing same ideals.
+				However even through jQuery is controlled by Agile Toolkit — you guessed it! — it is insanely flexible and
+				simple to use it and extend it.
+				');
+
+
+		$p=$this;
+
+		$this->add('H2')->set('Progressive Enhancement with JavaScript');
+
+		$p->add('P')->set('
+				True to ideals of "Progressive Enhancement" paradygm, all Views in Agile Toolkit will produce
+				JavaScript-agnostic code. Through the power of jQuery UI and widget factory, default views are enhanced to do
+				things more dynamically.
+				');
+
+		$p->add('Doc_Example')
+			->setCode($code=<<<'EOD'
+$f=$p->add('Form');
+$f->addField('line','name')->validateNotNull();
+$f->addSubmit('Greeting');
+if($f->isSubmitted()){
+	$result='Hello, '.$f->get('name');
+	$f->js()->univ()->alert($result)->execute();
+	$this->api
+	    ->redirect('../greeted',
+			array('text'=>$result));
+}
+EOD
+)->template->trySet('title1','Example with JavaScript');
+
+		$p->add('Doc_Example')
+			->setCode($code.<<<'EOD'
+
+$f->js_widget=false; // turn JS off
+
+EOD
+)->template->trySet('title1','Example WITHOUT JavaScript');
+
+
+
+
+
 		$this->add('H1')->set('Benefit 5 — Integration with jQuery');
 
 		$alex=$this->add('Alex')->setAttr('width',50)->align('left')

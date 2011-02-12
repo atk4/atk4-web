@@ -7,7 +7,6 @@ class AgileProject extends ApiFrontend {
 		parent::init();
 
 		// Keep this if you are going to use database
-		$this->dbConnect();
 
 		// Keep this if you are going to use plug-ins
 		$this->addLocation('atk4-addons',array(
