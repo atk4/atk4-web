@@ -20,7 +20,7 @@ class IndexTabs extends View {
 			case'example':
 
 				$p=$this;
-				$this->add('Doc_Example',null,'example')
+				$this->add('Doc_Code',null,'example')
 					->setDescr(<<<'EOT'
 $f=$p->add('Form');
 $f->addField('line','name')->validateNotNull();

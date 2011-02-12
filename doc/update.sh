@@ -1,1 +1,1 @@
-../atk/tools/update.sh
+../atk4/tools/update.sh
