@@ -119,6 +119,7 @@ class AgileProject extends ApiFrontend {
 		header('Location: http://demo.atk4.com/');
 		exit;
 	}
+	function page_amodules3($p){ $this->api->redirect('/'); }
 	function page_contact($p){ $this->api->redirect('about/contact'); }
 	function page_contactus($p){ $this->api->redirect('about/contact'); }
 	function render(){

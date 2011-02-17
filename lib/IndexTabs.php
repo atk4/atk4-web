@@ -6,15 +6,17 @@ class IndexTabs extends View {
 		// This will make sure content we add here will pass our current setting along
 		$this->api->stickyGET($this->name);
 
+		/*
 		$this->js(true)->_selector('#actionbar')->_load('ui.atk4_menu')->atk4_menu(array(
 			'target'=>$this,
 			'cut_object'=>$this->name,
 			'cut_page'=>false
 					));
+					*/
 
 		$this->api->template->set('link_comparison',$u=$this->api->getDestinationURL(null,array($this->name=>'how')));
 		$this->api->template->set('link_example',$u=$this->api->getDestinationURL(null,array($this->name=>'example')));
-		$this->api->template->set('link_tour',$this->api->getDestinationURL(null,array($this->name=>'tour')));
+		$this->api->template->set('link_tour',$this->api->getDestinationURL('intro'));
 
 		switch($_GET[$this->name]){
 			case'example':
