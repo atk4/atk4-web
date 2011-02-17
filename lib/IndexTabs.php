@@ -20,6 +20,7 @@ class IndexTabs extends View {
 
 		switch($_GET[$this->name]){
 			case'example':
+				$this->js(true)->_selector('#example')->addClass('current');
 
 				$p=$this;
 				$this->add('Doc_Code',null,'example')
@@ -53,6 +54,7 @@ if($f->isSubmitted()){
 				break;
 
 			case'how':
+				$this->js(true)->_selector('#comparison')->addClass('current');
 				$this->js(true)->univ()->indexCompareSwitch();
 				break;
 			default:
