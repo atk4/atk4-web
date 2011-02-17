@@ -317,6 +317,20 @@ EOD
 				<br/><br/>
 				');
 
+		$this->add('H2')->set('Agile Toolkit gets more advanced as you dig in. Too advanced?');
+
+		$this->add('P')->set('
+				Certainly, some of us simply wish to get things done in a simple way. And what can be more simple than
+				re-using existing solution? Agile Toolkit features a completely new outlook on compatibility between addons.
+				Continue reading to find out.
+				');
+
+
+		$this->add('Button')
+			->set('Next Page')
+			->js('click')
+			->univ()->redirect($this->api->getDestinationURL('../addons'));
+
 
 
 	}

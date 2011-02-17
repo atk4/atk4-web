@@ -295,5 +295,20 @@ EOD
 );
 
 		// $j - chain executed on button click
+
+
+		$this->add('H2')->set('Such a sophisticated front-end logic. Is there back-end to match it?');
+
+		$this->add('P')->set('
+				Agile Toolkit is not only about User Interface. It contains Model structure which is on the level with other
+				frameworks. Of course it is more felxible and more simple to use.
+				');
+
+
+		$this->add('Button')
+			->set('Next Page')
+			->js('click')
+			->univ()->redirect($this->api->getDestinationURL('../models'));
+
 	}
 }

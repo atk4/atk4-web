@@ -153,12 +153,28 @@ EOD
 				significantly different HTML. This method is ideal when CSS change is not sufficient.
 			');
 
-		$tab->add('Doc_Example')
-			->setCode(<<<'EOD'
-$f=$p->add('Form',null,null,array('form_empty'));
-$f->addField('line','name');
-$f->addField('line','surname');
-$f->addButton('Try me');
+		$cols=$tab->add('View_Columns');
+		$col=$cols->addColumn();
+		$col->add('H3')->set('Result');
+
+$g=$col->add('Grid',null,null,array('grid_striped'));
+$g->addColumn('text','gender');
+$g->addColumn('text','name');
+$g->addColumn('text','surname');
+$g->setSource('user');
+$g->dq->limit(5);
+
+		$col=$cols->addColumn();
+		$col->add('H3')->set('Code');
+
+		$col->add('Doc_Code')
+			->setDescr(<<<'EOD'
+$g=$p->add('Grid',null,null,array('grid_striped'));
+$g->addColumn('text','gender');
+$g->addColumn('text','name');
+$g->addColumn('text','surname');
+$g->setSource('user');
+$g->dq->limit(5);
 EOD
 );
 
