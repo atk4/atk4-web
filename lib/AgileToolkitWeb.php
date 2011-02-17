@@ -2,7 +2,7 @@
 /*
    Commonly you would want to re-define ApiFrontend for your own application.
  */
-class AgileProject extends ApiFrontend {
+class AgileToolkitWeb extends ApiFrontend {
 	function init(){
 		parent::init();
 
@@ -67,6 +67,37 @@ class AgileProject extends ApiFrontend {
 		}
 
 		if($this->page_object){
+			if($this->page_object->template->is_set('seo_keywords')){
+				$this->api->template->trySet('seo_keywords',
+						$this->page_object->template->get('seo_keywords'));
+			}
+			if($this->page_object->template->is_set('seo_descr')){
+				$this->api->template->trySet('seo_descr',
+						$this->page_object->template->get('seo_descr'));
+			}
+			if($this->page_object->template->is_set('page_title')){
+				$this->api->template->trySet('page_title',
+						$this->page_object->template->get('page_title').' | ');
+			}
+			if($this->page_object->template->is_set('page_title_del')){
+				$this->api->template->trySet('page_title',
+						$this->page_object->template->get('page_title_del').' | ');
+				$this->page_object->template->del('page_title_del');
+			}
+
+			if(@$this->page_object->seo_keywords){
+				$this->api->template->trySet('seo_keywords',
+						$this->page_object->seo_keywords);
+			}
+			if(@$this->page_object->seo_descr){
+				$this->api->template->trySet('seo_descr',
+						$this->page_object->seo_descr);
+			}
+			if(@$this->page_object->page_title){
+				$this->api->template->trySet('page_title',
+						$this->page_object->page_title.' | ');
+			}
+
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			if($this->page_object->template->is_set('ContactForm'))
 				$this->page_object->add('ContactForm',null,'ContactForm');
