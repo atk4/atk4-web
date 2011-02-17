@@ -70,10 +70,12 @@ class AgileToolkitWeb extends ApiFrontend {
 			if($this->page_object->template->is_set('seo_keywords')){
 				$this->api->template->trySet('seo_keywords',
 						$this->page_object->template->get('seo_keywords'));
+				$this->page_object->template->del('seo_keywords');
 			}
 			if($this->page_object->template->is_set('seo_descr')){
 				$this->api->template->trySet('seo_descr',
 						$this->page_object->template->get('seo_descr'));
+				$this->page_object->template->del('seo_descr');
 			}
 			if($this->page_object->template->is_set('page_title')){
 				$this->api->template->trySet('page_title',
