@@ -5,6 +5,7 @@
 .text-right30 i {float:left;}
 .text-right30 p {margin:0 0 0 70px;}
 
+
 /* -------------------------------------------------------------------------------------------------
    General
 ------------------------------------------------------------------------------------------------- */
@@ -146,6 +147,7 @@ h5 {font:16px 'frutiger','Lucida Grande',sans-serif;}
 h6 {font:bold 14px 'Lucida Grande',sans-serif;margin:1.4em 0 0.5em 0;}
 h4+p, h5+p, h6+p {margin-top:0;}
 h4+ul {margin-top:1em;}
+h1+.comment {margin-bottom:3em;}
 p {margin:1em 0;}
 
 quote {background:url(../images/quotes.png) 0 0.5em no-repeat;padding-left:60px;display:block;font-size:14px;line-height:1.6;font-style:italic;margin:2em 0;}
@@ -266,10 +268,10 @@ input[type=text], input[type=password], textarea {
 input[type=text]:focus, input[type=password]:focus, textarea:focus {color:#47657d;background:#eff8ff;border-color:#66bcff;-webkit-box-shadow:0 0 5px #bfddf5;-moz-box-shadow:0 0 5px #bfddf5;box-shadow:0 0 5px #bfddf5;}
 .input-search {display:inline-block;}
 .input-search .input-wrap {overflow:hidden;}
-.input-search .input-wrap, .input-search .input-wrap input[type=text], .input-search button {-webkit-border-radius:1em;-moz-border-radius:1em;border-radius:1em;}
+.input-search .input-wrap, .input-search .input-wrap input[type=text], .input-search .button {-webkit-border-radius:1em;-moz-border-radius:1em;border-radius:1em;}
 .input-search .input-wrap input[type=text] {padding:0.5em 0.8em;float:left;}
-.input-search button.button {padding:0.35em 0.6em;.padding-bottom:0.2em;position:relative;margin-left:0.3em;top:0;float:right;}
-BODY:nth-of-type(1) .input-search button.button, x:-moz-any-link, x:default {padding:0.35em 0.6em 0.3em 0.6em;}
+.input-search .button {padding:0.35em 0.6em;.padding-bottom:0.2em;position:relative;margin-left:0.3em;top:0;float:right;}
+BODY:nth-of-type(1) .input-search .button, x:-moz-any-link, x:default {padding:0.35em 0.6em 0.3em 0.6em;}
 .input-search button img {float:left;}
 
 .metallic input[type=text], .metallic input[type=password], .metallic textarea {
@@ -406,6 +408,8 @@ ul.submenu-body li a,
 /* -------------------------------------------------------------------------------------------------
    Styles
 ------------------------------------------------------------------------------------------------- */
+.block {margin-top:2em;}
+.block:first-child {margin-top:0;}
 .box {padding:2em;margin-top:2em;}
 .box:first-child {margin-top:0;}
 .box.metallic, .box.metallic label {color:#3f464d;}
@@ -422,6 +426,7 @@ label {font-family:'frutiger';text-transform:uppercase;color:#555;}
 p:first-child {margin-top:0;}
 .hr {clear:both;}
 .comment {color:#555;}
+.small {font-size:85%;}
 .submenu {width:220px;float:left;}
 .submenu-header {padding:0.7em 0.5em 0.35em 0.5em;color:#fff;text-shadow:0 1px 1px #000;}
 .submenu-header h6 {margin:0;line-height:1;}
@@ -450,7 +455,6 @@ table.zebra thead tr th {font-weight:bold;}
 table.zebra thead tr th, table tr.even td {background:#edf4fc;}
 table.zebra th, table.zebra td {padding:1em 2em;}
 
-
 .big-icon {margin-top:0.5em;width:50px;height:50px;background-image:url(../images/sprite.png);display:inline-block;}
 .big-icon.icon-molecule {background-position:0px 0px;}
 .big-icon.icon-trophy {height:51px;background-position:0 -69px;}
@@ -474,6 +478,9 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .box.blue-noised h2 {color:#2c3f53;}
 .box.blue-noised h2:after {background:#2c3f53;-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.7);-moz-box-shadow:0 1px 0 rgba(255,255,255,0.7);box-shadow:0 1px 0 rgba(255,255,255,0.7);}
 
+#content>.container+.sidebar {float:right;width:220px;}
+#content>.container {float:left;width:620px;}
+
 
 /* -------------------------------------------------------------------------------------------------
    Specific
@@ -494,7 +501,8 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 #history-table h6 {margin-bottom:0;}
 #atk-pricing {margin-bottom:2.5em;}
 #atk-pricing>div p {margin-bottom:0.5em;}
-#atk-pricing>div .buy {background:#eee;padding:0.5em 1em;line-height:1.3;}
+#atk-pricing>div .buy {background:#EDF4FC;padding:0.5em 1em;line-height:1.3;}
+
 
 /* -------------------------------------------------------------------------------------------------
    Various
@@ -508,7 +516,26 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .atk_doc_expander h6 {background:#fff;border:1px solid #ccc;display:inline-block;padding:.5em 1em .5em .5em;margin-bottom:1em;position:relative;z-index:2;}
 .atk-doc-expander-open h6 {border-bottom:none;margin-bottom:0;}
 .expanded-content {margin:0 0 2em 0;padding:2em;border:1px solid #ccc;position:relative;top:-1px;z-index:1;}
-
+.post h1 {margin-bottom:0.2em;}
+.comment-holder {overflow:hidden;margin-top:2em;}
+.comment:first-child {margin-top:0;}
+.comment-author, .comment-text {float:left;}
+.comment-author {width:220px;line-height:1;}
+.comment-author .gravatar {float:left;}
+.comment-author-text {margin-left:42px;}
+.comment-author-text .comment {margin-top:0.6em;}
+.comment-text {width:378px;border-left:2px solid #ccc;padding-left:20px;}
+.comment-form.box {margin-top:3em;}
+.comment-form form {margin:0;padding:0;}
+.comment-form label {display:block;}
+.comment-form-inputs {margin-bottom:1em;overflow:hidden;}
+.comment-form-inputs>div {width:30%;margin-left:5%;float:left;}
+.comment-form-inputs>div:first-child {margin-left:0;}
+.comment-form-inputs>div input {width:98%;}
+.comment-form textarea {width:98%;height:8em;display:block;margin-bottom:1em;}
+a.rss-link {color:#555;line-height:1;}
+a.rss-link:hover {color:#000;}
+.rss-link img {margin-right:0.4em;position:relative;top:0.1em;}
 
 
 /* -------------------------------------------------------------------------------------------------
