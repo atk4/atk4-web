@@ -24,12 +24,13 @@ class AtkMenu extends Menu {
 
 
 			case'doc': 
+			case'example': 
 				$this->api->template->trySet('menu_doc','class="current"');
 
 				$menu->addMenuItem('Documentation','doc');
 				$menu->addMenuItem('API Reference','doc/ref');
 				$menu->addMenuItem('Screencasts','doc/sc');
-				$menu->addMenuItem('Examples','examples');
+				$menu->addMenuItem('Examples','example/list');
 
 				break;
 

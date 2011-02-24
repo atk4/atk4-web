@@ -3,13 +3,15 @@ class Model_Employee extends Model_Person {
 	function defineFields(){
 		parent::defineFields();
 
-		$this->addField('name');
+		$this->addField('name')
+			->mandatory(true);
 
 		$this->addField('days_worked')
 			->system(true)
 			->datatype('int');
 
 		$this->addField('salary')
+			->mandatory(true)
 			->datatype('money');
 
 		$this->addField('money_owed')

@@ -7,6 +7,7 @@
 	<head>
 		<title><?page_title?>Agile Toolkit - PHP Framework with jQuery<?/?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="google-site-verification" content="mzMSBiCKspnt6Vpc_c2U2Ps6zhW3qMxid48vuhOdKPc" />
 		<meta name="keywords" content="agile toolkit, php ui, php ui framework, php ui controls, agile php, amodules3, atk4, php framework, agile framework, atk, best php frameworks, best ui framework, php5, jquery, framework jquery, modern php, zend, yii, cakephp, symphony, javascript <?$seo_keywords?>">
 		<meta name="description" content="<?seo_descr?>Agile Toolkit is a high-performance PHP framework for UI development with jQuery. High levels of efficiency are achieved because your database and your UI are seamlessly and securely integrated. Achieve more with less code.<?/?>" />
 		<meta name="google-site-verification" content="6fVnMpGZlmOyV_uFrn1BYexyJDA4sJeSmTotrM40dWk" />
@@ -17,12 +18,24 @@
 		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
 		<!-- <script type="text/javascript" src="js/general.js"></script> -->
 		<link rel="stylesheet" type="text/css" href="/templates/jui/css/<?os?>empty<?/?>.css" />
+		<link rel="alternate" type="application/rss+xml" title="Agile Toolkit news &raquo; Feed" href="http://agiletoolkit.org/blog/feed/" />
 
 		<?$js_include?>
 		<script type="text/javascript">
 			$(function(){
 				<?$document_ready?>
 			});
+		</script>
+		<script type="text/javascript">
+  			var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', 'UA-17702108-2']);
+  			_gaq.push(['_trackPageview']);
+
+  			(function() {
+    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  			})();
 		</script>
 	</head>
 	<body id="page-<?$section?>">
@@ -37,7 +50,7 @@
 						<li <?$menu_develop?>><a href="/develop/getinvolved.html"><i class="green-h"></i>Development</a></li>
 						<li <?$menu_services?>><a href="/commercial/"><i class="yellow-h"></i>Commercial</a></li>
 						<li <?$menu_download?>><a href="/download.html"><i class="orange-h"></i>Downloads</a></li>
-						<li><a href="http://blog.atk4.com"><i class="red-h"></i>Blog</a></li>
+						<li><a href="/blog/"><i class="red-h"></i>Blog</a></li>
 					</ul>
 				</div>
 				<div id="hero">
@@ -60,8 +73,8 @@
 						<a href="<?$link_comparison?>" id="comparison"><i 
 						class="icon-comparison"></i><span>Why is it better?</span><b></b></a>
 						<a href="<?$link_example?>" id="example"><i 
-						class="icon-magichat"></i><span>Example Form</span><b></b></a>
-						<a href="<?$link_tour?>" id="tour"><i class="icon-rightarrow"></i><span>Show me more</span></a>
+						class="icon-magichat"></i><span>Code Example</span><b></b></a>
+						<a href="<?$link_tour?>" id="tour"><i class="icon-rightarrow"></i><span>Interactive Introduction</span></a>
 					</div>
 				</div>	
 

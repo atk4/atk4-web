@@ -14,7 +14,7 @@ class IndexTabs extends View {
 					));
 					*/
 
-		$this->api->template->set('link_comparison',$u=$this->api->getDestinationURL(null,array($this->name=>'how')));
+		$this->api->template->set('link_comparison',$u=$this->api->getDestinationURL(null,array($this->name=>null)));
 		$this->api->template->set('link_example',$u=$this->api->getDestinationURL(null,array($this->name=>'example')));
 		$this->api->template->set('link_tour',$this->api->getDestinationURL('intro'));
 
@@ -22,6 +22,7 @@ class IndexTabs extends View {
 			case'example':
 				$this->js(true)->_selector('#example')->addClass('current');
 
+				$this->js(true)->_selector('#example')->addClass('current');
 				$p=$this;
 				$this->add('Doc_Code',null,'example')
 					->setDescr(<<<'EOT'
@@ -53,11 +54,10 @@ if($f->isSubmitted()){
 				$this->add('MagicIntro');
 				break;
 
-			case'how':
+			default:
 				$this->js(true)->_selector('#comparison')->addClass('current');
 				$this->js(true)->univ()->indexCompareSwitch();
 				break;
-			default:
 		}
 	}
 	function defaultTemplate(){
@@ -67,10 +67,8 @@ if($f->isSubmitted()){
 			case'tour':
 				return 'Content';
 				//return array('view/index/tab_tour');
-			case'how':
-				return array('view/index/tab_compare');
 			default:
-				return array('view/index/empty');
+				return array('view/index/tab_compare');
 
 		}
 	}

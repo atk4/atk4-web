@@ -1,5 +1,5 @@
 <?php
-class page_examples_form2 extends Page {
+class page_example_form2 extends Page {
 
 	// This page demonstrates advanced use of forms
 
