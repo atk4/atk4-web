@@ -90,4 +90,7 @@ if($f->isSubmitted()){
 		$p->add('View',null,null,array('view/features'));
 
 	}
+    function defaultTemplate(){
+        return 'Content';
+    }
 }
