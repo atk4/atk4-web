@@ -1,15 +1,23 @@
 <?php
-class ContactForm extends Form {
+class ContactForm extends MVCForm {
 	function init(){
 		parent::init();
+        $this->api->dbConnect();
 
-		$this->addField('line','your_name')->setProperty('size','60')->js(true)->focus();
-		$this->addField('line','your_email')->setProperty('size','60');
-		$this->addField('line','your_phone')->setProperty('size','60');
-		$this->addField('line','company')->setProperty('size','60');
+        $this->setModel('Contact');
 
-		$this->addField('text','more_information')->setProperty('rows','10')->setProperty('cols','50');
+		$this->getElement('name')->setProperty('size','60')->js(true)->focus();
+		$this->getElement('email')->setProperty('size','60');
+		$this->getElement('phone')->setProperty('size','60');
+		$this->getElement('company')->setProperty('size','60');
 
-		$this->addButton('Talk');
+		$this->getElement('moreinfo')->setProperty('rows','10')->setProperty('cols','50');
+		//$this->addSubmit('Talk');
+        $this->getElement('Save')->setLabel('Talk');
+
+        if($this->isSubmitted()){
+            $this->update();
+            $this->js()->univ()->successMessage('Thank you for getting in touch!')->execute();
+        }
 	}
 }
