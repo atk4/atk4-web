@@ -58,6 +58,7 @@ class AgileToolkitWeb extends ApiFrontend {
 		   $this->template->trySet('os','iphone');
 
 
+		$this->template->trySet('_page',preg_replace('/_.*/','',$this->page));
 		if($this->page_object){
 			if($this->page_object->template->is_set('seo_keywords')){
 				$this->api->template->trySet('seo_keywords',
