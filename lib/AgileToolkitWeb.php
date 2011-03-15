@@ -6,8 +6,6 @@ class AgileToolkitWeb extends ApiFrontend {
 	function init(){
 		parent::init();
 
-		// Keep this if you are going to use database
-
 		// Keep this if you are going to use plug-ins
 		$this->addLocation('atk4-addons',array(
 					'template'=>'misc/templates',
@@ -28,27 +26,15 @@ class AgileToolkitWeb extends ApiFrontend {
 			// ->_load('ui.atk4_expander')
 
 			;
-
-		// Alternatively you can use jQuery
-		// $this->add('jQuery');
-
-
-		/*
-		// Before going further you will need to verify access
-		$this->add('BasicAuth')
-			->allow('demo','demo')
-			// alternatively:
-			// setSource('user')  or
-			->check();
-			*/
-
-		// Alternatively 
-		// $this->add('MVCAuth')->setController('Controller_User')->check();
-
+		list($main,$junk)=explode('_',$this->page,2);
+		if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
 
 		$this->initLayout();
 	}
 	function initLayout(){
+		if($this->template->is_set('Menu')){
+			$this->api->menu=$menu2=$this->add('AtkMenu','Menu','Menu');
+		}
 		parent::initLayout();
 
 
@@ -62,9 +48,6 @@ class AgileToolkitWeb extends ApiFrontend {
 				)
 		   $this->template->trySet('os','iphone');
 
-		if($this->template->is_set('Menu')){
-			$menu2=$this->add('AtkMenu','Menu','Menu');
-		}
 
 		if($this->page_object){
 			if($this->page_object->template->is_set('seo_keywords')){
@@ -101,6 +84,8 @@ class AgileToolkitWeb extends ApiFrontend {
 			}
 
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
+			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
+			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			if($this->page_object->template->is_set('ContactForm'))
 				$this->page_object->add('ContactForm',null,'ContactForm');
 		}
@@ -117,6 +102,17 @@ class AgileToolkitWeb extends ApiFrontend {
 		$this->page_object->add('Doc_MoreInfo',null,$tag)
 			->setName($header)
 			->setDescr($content);
+	}
+	function enclose_Code($content,$tag){
+		list($header,$content)=preg_split('/\n/',$content,2);
+		$this->page_object->add('Doc_Code',null,$tag)
+			->setName($header)
+			->setDescr($content);
+	}
+	function enclose_Example($content,$tag){
+		list($header,$content)=preg_split('/\n/',$content,2);
+		$this->page_object->add('Doc_Example',null,$tag)
+			->setCode($content);
 	}
 	function locateTemplate($path){
 		return $this->locateURL('template',$path);

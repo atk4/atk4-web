@@ -1,0 +1,126 @@
+<h1>Simple Feedback Form with Agile Toolkit</h1>
+<?blogpost?>blog/simple-feedback-form<?/?>
+
+<p>
+<a style="float: right" href="http://agiletoolkit.org/blog/wp-content/uploads/2011/03/Screen-shot-2011-03-10-at-23.16.41.png"><img class="alignright size-medium wp-image-425" style="border: 1px solid black; margin-left: 2em;" title="Screen shot 2011-03-10 at 23.16.41" src="http://agiletoolkit.org/blog/wp-content/uploads/2011/03/Screen-shot-2011-03-10-at-23.16.41-275x300.png" alt="" width="275" height="300"></a>
+My company produces around 10-20 web projects per year for small companies and web entrepreneurs. Our clients, often business-oriented, are busy chasing investors and winning awards, while we are looking after their Web Software. However interacting with them is very important and we are looking for a better ways to do so.
+</p><p>
+Since we are developing web-software, why not use that web-software to interact with the client? In this article I am explaining how to go through a steps to develop a simple yet robust feedback system.
+</p>
+
+<h3>What will you need?</h3>
+<p>
+All the web software we are developing is based on Agile Toolkit. It is a platform which makes building of Web UI much easier and more consistent, while also looking at business logic structure in a very modern object-oriented fashion (<a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a>).
+</p>
+<p>
+You will also need to have a on-going project with a couple of pages.  For my testing page, I have chosen a sign-up form for our up-coming project.
+</p>
+<h3>Adding a button</h3>
+<p>I wanted to have a minimum impact on the page layout / design, therefore I decided to add a button on the page which would open the frame.
+</p>
+
+<?Code?>
+$p->add('Button')->setLabel('Feedback for this page')
+    ->js('click')->univ()->dialogURL('Feedback',$this->api->getDestinationURL(null,
+        array('discuss'=>true)),array('buttons'=>false,'width'=>'500x'));
+<?/?>
+
+<p>
+<img class="size-medium wp-image-428 alignleft" style="float: right; border: 1px solid black; margin-left: 2em;" title="Screen shot 2011-03-10 at 23.37.16" src="http://agiletoolkit.org/blog/wp-content/uploads/2011/03/Screen-shot-2011-03-10-at-23.37.16-300x158.png" alt="" width="300" height="158">
+This code creates button and binds click event on it. Whenever clicked it will open jQuery UI dialog with the same page it’s placed on, however with additional get argument: <br/> <i>"?discuss=true"</i></p>
+
+<h3>Creating a Model</h3>
+<p>
+In development branch of Agile Toolkit it’s no longer mandatory to create Controllers for each Model. Therefore I have only created a model.
+</p><p>
+Model represent a logical record in the database, describes it’s relations, fields, conditions, validations as well as possible actions. In my case I have created 4 fields in the model:
+</p>
+<?Code?>
+class Model_Feedback extends Model_Table {
+    public $entity_code='feedback';
+    public $table_alias='fb';
+
+    function init(){
+        parent::init();
+        $this->addField('name')->caption('Your Name');
+        $this->addField('page')->system(true);
+        $this->addField('descr')->caption('Suggestion or Feedback')->datatype('text');
+        $this->addField('date')->system(true)->defaultValue(date('Y-m-d'));
+    }
+}
+<?/?>
+<p>
+Reference will be the way how I tie certain feedback to my pages and date will be captured and saved without user having to enter it. Next I went to add the form into the new pop-up.
+</p>
+<h3>Frame for collecting feedback</h3>
+<p>
+Function univ().dialogURL(title,url) in Agile Toolkit creates a jQuery UI dialog with specified title and loads specified URL in the frame. URL is automatically appended with the “cut_page”, which will make sure that standard header/footer of my page is not showing up on the frame. The sub-request is executed with argument ?discuss=true therefore I need to intercept that and add a feedback form instead.
+<p>
+<?Code?>
+if($_GET['discuss']){
+    $p=$p->add('View','feedback');$_GET['cut_object']=$p->name;
+    $this->api->stickyGET('discuss');
+    $f=$p->add('MVCForm');
+    $f->setModel('Feedback')->setMasterField('page',$this->api->page);
+    if($f->isSubmitted()){
+        $f->update();
+        $f->js()->univ()->successMessage('Thank you')->closeDialog()->execute();
+    }
+    return;
+}
+<?/?>
+<p>
+
+<img style="float: right; border: 1px solid black; margin-left: 2em;" class="size-medium wp-image-438" title="Screen shot 2011-03-11 at 00.32.40" src="http://agiletoolkit.org/blog/wp-content/uploads/2011/03/Screen-shot-2011-03-11-at-00.32.40-300x152.png" alt="" width="300" height="152">
+I have inserted this code right before the code which adds button. Additionally I created a View which I automatically force being cut form the page. This approach is a little messy, however it works quite well. Next I need to create table in SQL:
+</p>
+<pre>
+create table feedback (
+	id int auto_increment not null primary key, 
+	name varchar(255), page varchar(255), 
+	descr text, date varchar(255) ); 
+</pre>
+<p>
+This worked perfectly. Clicking buttong brings a neat frame up for entering feedback. Result is saved into the database.
+</p>
+<p>
+The best part is that the code is easily portable into any software which is using Agile Toolkit. For example I have also added the same code into THIS page. 
+Due to a different theme it has a different look then on the screenshots, however the behaviour is identical.
+</p>
+<p>
+Enjoy and if you like it, copy the code to your own Agile Toolkit application.
+</p>
+
+<?MoreInfo?>What is Agile Toolkit?
+<p>
+Agile Toolkit is a modern PHP framework. It stands out by being more focused around building of Web User Interfaces.
+</p><p>
+<a class="button blue" href="/intro">See it in action</a>
+</p>
+<?/?>
+
+<?Example?>
+$this->api->dbConnect();
+if($_GET['discuss']){
+    $p=$p->add('View','feedback');
+	$_GET['cut_object']=$p->name;
+    $this->api->stickyGET('discuss');
+    $f=$p->add('MVCForm');
+    $f->setModel('Feedback')
+		->setMasterField('page',$this->api->page);
+    if($f->isSubmitted()){
+        $f->update();
+        $f->js()->univ()
+			->successMessage('Thank you')
+			->closeDialog()->execute();
+    }
+    return;
+}
+$p->add('Button')
+	->setLabel('Feedback for this page')
+    ->js('click')->univ()->dialogURL('Feedback',
+		$this->api->getDestinationURL(null,
+       array('discuss'=>true)),
+		array('buttons'=>false,'width'=>'500px'));
+
+<?/?>

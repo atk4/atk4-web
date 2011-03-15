@@ -83,6 +83,9 @@ $this->add('Alex')->setAttr('width',50)->align('left')
 	->js('click')->animate(array('width'=>'100'));
 EOT
 );
+
+			// TODO: show source code of Alex
+
 		$this->add('H2')->set('Multi-object interaction');
 
 		$left=$this->add('Alex')->align('left'); $right=$this->add('Alex');

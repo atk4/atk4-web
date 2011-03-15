@@ -57,7 +57,8 @@ EOD
 
 		$this->add('P')->set('
 				This code includes "atk4-addons", to find out more about this compliation of addons, <a
-				href="/develop/addons">visit our addon page</a>.
+				href="/develop/addons">visit our addon page</a>. Our current colleciton is quite smoll so we might need YOUR
+				help to add lots of new cool addons.
 				');
 
 
@@ -80,12 +81,34 @@ $map->width=390; $map->height=300;
 EOD
 );
 
-		$this->add('H2')->set('To be continued..');
+		$this->add('H2')->set('CRUD (Create, Read, Update and Delete)');
+
+		$this->add('P')->set('
+				A built-in CRUD implementation is a must nowdays. Fortunatelly in Agile Toolkit building your own CRUD is
+				really easy. Still if you don\'t have time to do so, you can use a built-in CRUD view
+				');
+
+		$p->add('Doc_Example')
+			->setCode(<<<'EOD'
+
+$crud=$p->add('CRUD');
+$crud->setModel('Employee',
+	array('name','days_worked','salary'));
+if($crud->grid)
+	$crud->grid->addPaginator(5);
+
+EOD
+);
+
+
+		// TODO: add demo of 3rd party auth here as one of the addons
+
+		// TODO: show how to integrate with jQuery addons
 
 		$this->add('Button')
 			->set('Next Page')
 			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../addons'));
+			->univ()->redirect($this->api->getDestinationURL('../conclusion'));
 
 
 
