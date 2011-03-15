@@ -12,6 +12,7 @@ class Doc_Page extends Page {
 
 
 
+		/*
 		$f=$this->sidebar->add('Form');
 		$f->template->set('form_class','vertical');
 		$help=$f->addField('text','help','Help us improve documentation!')
@@ -24,6 +25,7 @@ class Doc_Page extends Page {
 			$f->js(null,$help->js()->val(''))->univ()
 				->successMessage('Thank you for your feedback')->execute();
 		}
+		*/
 	}
 	function subPage($name){
 		$this->sidebar->addMenuItem($name,$hr=str_replace(array('page_','_'),array('','/'),
