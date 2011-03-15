@@ -4,7 +4,7 @@ class page_index extends Page {
 		parent::init();
 
         $this->js('click')->_selector('#index-download-button')->univ()->frameURL('Downloading...',
-                $this->js()->_selectorThis()->attr('href'));
+                $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-download'));
 
 		if($_GET['cut_page']){
 			$it=$this->add('IndexTabs');
