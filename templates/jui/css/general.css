@@ -24,13 +24,12 @@
 #header ul, #header ul li, #header-graybar ul, #header-graybar ul li {list-style-type:none;margin:0;padding:0;}
 #header #logo, #header ul#navigation li, #header-graybar ul#sub-navigation, #header-graybar ul#sub-navigation li {float:left;}
 #header ul#navigation, #header-graybar .input-search {float:right;}
-#header ul#navigation li {position:relative;margin-left:2.5em;padding-top:1.2em;}
+#header ul#navigation li {position:relative;margin-left:2.5em;padding-top:0;}
 #header ul#navigation li i {
+	margin-bottom:0.7em;
     height:4px;
     width:100%;
-    position:absolute;
-    top:0;
-    left:0;
+    display:block;
     -webkit-box-shadow:0 0 0 rgba(255,255,255,0);
        -moz-box-shadow:0 0 0 rgba(255,255,255,0);
             box-shadow:0 0 0 rgba(255,255,255,0);
@@ -69,7 +68,7 @@
 #header ul#navigation li i.orange-h:after, #header ul#navigation li i.orange-h:before {-webkit-box-shadow:0px 0px 10px #ffaa56;-moz-box-shadow:0px 0px 10px #ffaa56;box-shadow:0px 0px 10px #ffaa56;background:#ffe962;}
 #header ul#navigation li i.red-h:after, #header ul#navigation li i.red-h:before {-webkit-box-shadow:0px 0px 10px #ff7b7b;-moz-box-shadow:0px 0px 10px #ff7b7b;box-shadow:0px 0px 10px #ff7b7b;background:#ffc8c8;}
 #header ul#navigation li i.purple-h:after, #header ul#navigation li i.purple-h:before {-webkit-box-shadow:0px 0px 10px #d4ccff;-moz-box-shadow:0px 0px 10px #d4ccff;box-shadow:0px 0px 10px #d4ccff;background:#dad4ff;}
-#header ul#navigation li a {font-family:"frutiger";color:#e1e9ed;text-transform:uppercase;font-size:16px;}
+#header ul#navigation li a {font-family:"frutiger";color:#e1e9ed;text-transform:uppercase;font-size:16px;display:block;}
 #header ul#navigation li.current i:after, #header ul#navigation li.current i:before,
 #header ul#navigation li:hover i:after, #header ul#navigation li:hover i:before {opacity:1;}
 #header ul#navigation li.current a,
@@ -145,6 +144,7 @@ h3 span, h4 span, h5 span {text-transform:lowercase;font-family:'Lucida Grande',
 h4 {font:18px 'frutiger','Lucida Grande',sans-serif;}
 h5 {font:16px 'frutiger','Lucida Grande',sans-serif;}
 h6 {font:bold 14px 'Lucida Grande',sans-serif;margin:1.4em 0 0.5em 0;}
+h1+h2 {margin-top:0.7em;}
 h4+p, h5+p, h6+p {margin-top:0;}
 h4+ul {margin-top:1em;}
 h1+.comment {margin-bottom:3em;}
@@ -502,6 +502,8 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 #atk-pricing {margin-bottom:2.5em;}
 #atk-pricing>div p {margin-bottom:0.5em;}
 #atk-pricing>div .buy {background:#EDF4FC;padding:0.5em 1em;line-height:1.3;}
+#download-grid p {margin-top:0;}
+#download-grid ul, #download-grid ul li {margin-left:0;list-style-type:none;}
 
 
 /* -------------------------------------------------------------------------------------------------
