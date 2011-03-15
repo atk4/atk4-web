@@ -4,7 +4,7 @@ class page_download_success extends Page {
 		parent::init();
 		$f=$this->add('Form');
 
-		$this->js(true)->univ()->location('/distfiles/'.$_GET['file']);
+	//	$this->js(true)->univ()->location('/distfiles/'.$_GET['file']);
 
 		$this->template->trySet('file',addslashes(htmlspecialchars($_GET['file'])));
 		$f->addField('text','t','Tweet This')
