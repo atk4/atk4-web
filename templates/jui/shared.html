@@ -74,7 +74,10 @@
 					<?/Menu?>
 					</ul>
 					<div class="input-search">
-						<span class="input-wrap"><input type="text"/></span><button class="button blue"><img src="<?template?>images/button-search.png<?/?>" alt="" /></button>
+						<form id="sqf">
+						<span class="input-wrap"><input type="text" id="sq" /></span><button id="sqb"
+						type="submit" class="button blue"><img src="<?template?>images/button-search.png<?/?>" alt=""
+						/></button></form>
 					</div>
 				</div>
 			</div>
@@ -126,7 +129,7 @@
 			<div class="wrapper">
 				<div id="credit">
 					Copyright © 2011 <a href="http://www.agiletech.ie">Agile Technologies</a>. All rights reserved.
-					<div><a href="#">Subscribe to Newsletter</a><span class="atk-sep">|</span><a href="/about/contact.html">Contact Us</a></div>
+					<div><a href="/newsletter">Subscribe to Newsletter</a><span class="atk-sep">|</span><a href="/about/contact">Contact Us</a></div>
 				</div>
 				<div id="socials">
                 <?$socials?>

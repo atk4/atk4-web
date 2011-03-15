@@ -12,6 +12,7 @@ class AgileToolkitWeb extends ApiFrontend {
 					'php'=>array('mvc',
 						'billing/lib',
 						'misc/lib',
+						'crm/lib',
 						)
 					))
 			->setParent($this->pathfinder->base_location);
@@ -34,6 +35,14 @@ class AgileToolkitWeb extends ApiFrontend {
 	function initLayout(){
 		if($this->template->is_set('Menu')){
 			$this->api->menu=$menu2=$this->add('AtkMenu','Menu','Menu');
+			/*
+			$this->js(true)->_selector("#sqb")->click(
+				$this->js(null, "w=window.open('http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');w.focus();")->_enclose()
+			);
+			*/
+			$this->js(true)->_selector("#sqf")->submit(
+				$this->js(null, "w=window.open(u='http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');if(w)w.focus();else document.location=u")->_enclose()
+			);
 		}
 		parent::initLayout();
 

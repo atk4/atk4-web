@@ -2,8 +2,9 @@
 class page_doc extends Page {
 	function init(){
 		parent::init();
-		$this->add('Button',null,'start')->set('Start Interactive Introduction')->js('click')->univ()->redirect($this->api->getDestinationURL('/intro'));
+		//$this->add('Button',null,'start')->set('Start Interactive Introduction')->js('click')->univ()->redirect($this->api->getDestinationURL('/intro'));
 
+		/*
 
 		$this->add('Button',null,'vendors')
             ->setColor('orange')
@@ -12,7 +13,9 @@ class page_doc extends Page {
             ->js('click')->univ()
             ->redirect($this->api->getDestinationURL('/commercial/vendors'));
 
+			*/
 
+		/*
 		$this->add('Button',null,'getting_started_buttons')
             ->setColor('blue')
             ->set('Tutorial')
@@ -37,6 +40,7 @@ class page_doc extends Page {
             ->js('click')->univ()
             ->redirect($this->api->getDestinationURL('/doc/sc'));
 
+			*/
 
 	}
 	function defaultTemplate(){

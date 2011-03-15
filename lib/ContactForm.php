@@ -17,6 +17,9 @@ class ContactForm extends MVCForm {
 
         if($this->isSubmitted()){
             $this->update();
+			$m = $this->add("TMail")->loadTemplate("contact", ".html");
+			$m->setTag($this->getAllData());
+			$m->send($this->api->getConfig("email/contact", "j@agiletech.ie"));
             $this->js()->univ()->successMessage('Thank you for getting in touch!')->execute();
         }
 	}
