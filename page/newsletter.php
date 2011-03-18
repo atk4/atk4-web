@@ -4,6 +4,7 @@ class page_newsletter extends Page {
 		parent::init();
 
 		$f=$this->add('Form');
+		$f->js(true)->removeClass("atk-form-simple")->addClass("atk-form-vertical");
 		$f->addField('line','email')->setProperty('size',40)->setNotNull();
 		//$f->addField('checkbox','quote','I might want Agile to handle my next Web Software project');
 		//$f->addField('checkbox','atk','I would like to get updates on Agile Toolkit');

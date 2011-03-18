@@ -59,6 +59,14 @@ class AgileToolkitWeb extends ApiFrontend {
 
 
 		$this->template->trySet('_page',preg_replace('/_.*/','',$this->page));
+
+		$this->js('click')->_selector('#newsletter-button')->univ()->frameURL('<i class="icon-newsletter-big"></i>newsletter',
+                $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-newsletter', 'width' => 500, 'resizable' => false, 'draggable' => false));
+		$this->js('click')->_selector('#contact-button')->univ()->frameURL('<i class="icon-note-big"></i>Contact Us',
+                $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-contactus', 'width' => 700, 'resizable' => false, 'draggable' => false));
+
+
+
 		if($this->page_object){
 			if($this->page_object->template->is_set('seo_keywords')){
 				$this->api->template->trySet('seo_keywords',
@@ -96,8 +104,10 @@ class AgileToolkitWeb extends ApiFrontend {
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
 			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
-			if($this->page_object->template->is_set('ContactForm'))
+			if($this->page_object->template->is_set('ContactForm')){
+				$this->page_object->template->tryDel("page_title");
 				$this->page_object->add('ContactForm',null,'ContactForm');
+			}
 		}
 
 		// If you are using a complex menu, you can re-define

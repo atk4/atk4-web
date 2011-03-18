@@ -3,8 +3,8 @@ class page_index extends Page {
 	function init(){
 		parent::init();
 
-        $this->js('click')->_selector('#index-download-button')->univ()->frameURL('Downloading...',
-                $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-download'));
+        $this->js('click')->_selector('#index-download-button')->univ()->frameURL('<i class="icon-arrow-big"></i>Downloading...',
+                $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-download', 'width' => 500, 'resizable' => false, 'draggable' => false));
 
 		if($_GET['cut_page']){
 			$it=$this->add('IndexTabs');

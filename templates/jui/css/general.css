@@ -1,9 +1,9 @@
 /* -------------------------------------------------------------------------------------------------
 	TODO: sort this! (this section should be empty)
 ------------------------------------------------------------------------------------------------- */
-.text-right30 {float:right;width:30%;}
+.text-right30 {float:right;width:220px;font-size:12px;}
 .text-right30 i {float:left;}
-.text-right30 p {margin:0 0 0 70px;}
+.text-right30 p {margin:0 0 0 70px;text-align:left;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -172,7 +172,7 @@ button.button, .button {
     width:1;
     overflow:visible}
 input.button[class] {width:auto;}
-BODY:nth-of-type(1) .button, x:-moz-any-link, x:default {padding:0.4em 0.7em 0.2em 0.7em;}  
+/* BODY:nth-of-type(1) .button, x:-moz-any-link, x:default {padding:0.4em 0.7em 0.2em 0.7em;}   */
 button.button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
 button.input[type="button"]::-moz-focus-inner,
@@ -266,6 +266,7 @@ input[type=text], input[type=password], textarea {
             box-shadow:0 1px 2px rgba(70,84,111,0.3) inset;
     resize:none;}
 input[type=text]:focus, input[type=password]:focus, textarea:focus {color:#47657d;background:#eff8ff;border-color:#66bcff;-webkit-box-shadow:0 0 5px #bfddf5;-moz-box-shadow:0 0 5px #bfddf5;box-shadow:0 0 5px #bfddf5;}
+textarea {line-height:1.6;}
 .input-search {display:inline-block;}
 .input-search .input-wrap {overflow:hidden;}
 .input-search .input-wrap, .input-search .input-wrap input[type=text], .input-search .button {-webkit-border-radius:1em;-moz-border-radius:1em;border-radius:1em;}
@@ -428,7 +429,7 @@ p:first-child {margin-top:0;}
 .comment {color:#555;}
 .small {font-size:85%;}
 .submenu {width:220px;float:left;}
-.submenu-header {padding:0.7em 0.5em 0.35em 0.5em;color:#fff;text-shadow:0 1px 1px #000;}
+.submenu-header {padding:0.7em 0.5em 0.7em 0.5em;color:#fff;text-shadow:0 1px 1px #000;}
 .submenu-header h6 {margin:0;line-height:1;}
 ul.submenu-body, ul.submenu-body li {margin:0;padding:0;list-style-type:none;}
 ul.submenu-body li {border:1px solid #c8d3de;border-bottom:1px solid #aab6c3;border-top:1px solid #fff;position:relative;}
@@ -497,7 +498,7 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 #getting-started-shortcuts i {float:right;position:relative;}
 #getting-started-shortcuts i+h2 {margin-top:0;margin-right:75px;}
 #getting-started-shortcuts>div>div>div {clear:both;}
-#getting-started-shortcuts #examples i {top:-1em;}
+#getting-started-shortcuts #getting_started i {top:-1em;}
 #getting-started-shortcuts #community i {top:-1em;}
 #getting-started-shortcuts #update i {top:-0.8em;}
 #getting_started .button {margin-right:0.5em;}
@@ -511,6 +512,17 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 #doc-ref ul {margin-left:0;}
 #doc-ref ul ul {margin-left:20px;}
 #doc-ref ul, #doc-ref ul li {list-style-type:none;}
+.popup-newsletter .ui-dialog-titlebar,
+.popup-contactus .ui-dialog-titlebar,
+.popup-download .ui-dialog-titlebar {font-size:100%;}
+.popup-newsletter .ui-dialog-titlebar i,
+.popup-contactus .ui-dialog-titlebar i,
+.popup-download .ui-dialog-titlebar i {position:absolute;top:0;left:0;}
+.popup-newsletter.ui-dialog .ui-dialog-title,
+.popup-contactus.ui-dialog .ui-dialog-title,
+.popup-download.ui-dialog .ui-dialog-title {position:relative;margin:0;float:none;top:0;padding-left:90px;height:67px;display:block;line-height:75px;font-size:260%;}
+.popup-newsletter.ui-dialog .ui-dialog-title {padding-left:100px;}
+.popup-contactus h1 {display:none;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -542,9 +554,32 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .comment-form-inputs>div:first-child {margin-left:0;}
 .comment-form-inputs>div input {width:98%;}
 .comment-form textarea {width:98%;height:8em;display:block;margin-bottom:1em;}
+.sidebar .widget_search .input-wrap input {width:150px;}
 a.rss-link {color:#555;line-height:1;}
 a.rss-link:hover {color:#000;}
 .rss-link img {margin-right:0.4em;position:relative;top:0.1em;}
+.box-example table {background:#fff;font-size:12px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,0.3);-moz-box-shadow:0 1px 3px rgba(0,0,0,0.3);box-shadow:0 1px 3px rgba(0,0,0,0.3);}
+
+.icon-arrow-big, .icon-newsletter-big, .icon-note-big {background-image:url(../images/sprite.png);display:inline-block;}
+.icon-arrow-big {background-position:-300px -207px;width:67px;height:67px;}
+.icon-newsletter-big {background-position:-397px -207px;width:79px;height:66px;}
+.icon-note-big {background-position:-504px -207px;width:77px;height:74px;}
+.twitter-area {
+	background:#B8DFF4;
+    background:-webkit-gradient(linear,left top,left bottom, from(#B8DFF4), to(#B8DFF4));
+    background:-moz-linear-gradient(top, #B8DFF4, #B8DFF4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#B8DFF4", endColorstr="#B8DFF4");}
+.form_contact_form_layout.atk-form {width:660px;overflow:hidden;}
+.form_contact_form_layout.atk-form form dl {float:left;width:320px;margin:0 0 1em 20px;}
+.form_contact_form_layout.atk-form form dl:first-child,
+.form_contact_form_layout.atk-form form dl:first-child+dl+dl,
+.form_contact_form_layout.atk-form form dl.more-info,
+.form_contact_form_layout.atk-form form dl.atk-form-buttons {margin-left:0;}
+.form_contact_form_layout.atk-form form dl.atk-form-buttons {margin-bottom:0;text-align:right;}
+.form_contact_form_layout.atk-form form dl.more-info,
+.form_contact_form_layout.atk-form form dl.atk-form-buttons {width:100%;}
+.form_contact_form_layout.atk-form form dl input {width:302px;}
+.form_contact_form_layout.atk-form form dl textarea {width:644px;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -556,9 +591,47 @@ p {line-height:inherit;}
 .atk-layout.c2>div {width:460px;}
 .atk-layout>div {margin-left:20px;}
 .atk-form dl.atk-form-buttons {border-top:none;padding-top:0;}
-.field-error-text {color:#ff4848;}
+.atk-form-vertical .atk-error {margin-top:0.5em;}
 .atk-sep {padding:0 .5em;}
+
+.ui-state-error,
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {background:none;border:none;padding:0;}
+.atk-form > form > fieldset .ui-state-error {padding:0;}
 .ui-tabs {padding:4px;}
 .ui-tabs .ui-tabs-panel {padding:15px;}
 .ui-tabs-panel .atk-layout.c2>div {width:440px;}
-
+.ui-widget-header {
+    background:#002d5e;
+    background:-webkit-gradient(linear,left top,left bottom, from(#00070f), to(#002d5e));
+    background:-moz-linear-gradient(top, #00070f, #002d5e);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00070f", endColorstr="#002d5e");}
+.ui-dialog.ui-widget-content {
+	position:fixed !important;
+	top:50px !important;
+	padding:0;
+	border:none;
+	-webkit-box-shadow:0 5px 50px rgba(0,17,34,0.7);
+	-moz-box-shadow:0 5px 50px rgba(0,17,34,0.7);
+	box-shadow:0 5px 50px rgba(0,17,34,0.7);}
+.ui-dialog .ui-dialog-titlebar {text-transform:uppercase;padding:20px;text-shadow:0 1px 1px #000;}
+.ui-dialog .ui-dialog-titlebar-close {right:20px;border:1px solid #667483;border-radius:5px;-moz-border-radius:5px;}
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {padding:1px;border-color:#fff;}
+.ui-widget-overlay {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:-webkit-gradient(radial, center 0%, 800, center 0%, 0, from(rgba(0,17,34,1)), to(rgba(0,37,74,0.5)));
+	background-image:-moz-radial-gradient(50% -50% 0deg, circle, rgba(0,37,74,0.5) 0%, rgba(0,17,34,1) 60%);}
+/* Opera */
+.ui-dialog .ui-dialog-title {font-size:160%;line-height:1;font-family:'frutiger';font-weight:normal;}
+@media all and (-webkit-min-device-pixel-ratio:10000), not all and (-webkit-min-device-pixel-ratio:0) {
+	head~body .ui-widget-overlay { background:rgba(0,17,34,0.6); }
+	}
+.ui-dialog .ui-dialog-content {
+	padding:20px;
+	background:#b8c5d1;
+    background:-webkit-gradient(linear,left top,left bottom, from(#ecf3f9), to(#c8d3de));
+    background:-moz-linear-gradient(top, #ecf3f9, #c8d3de);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ecf3f9", endColorstr="#c8d3de");}
