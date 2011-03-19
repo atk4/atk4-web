@@ -60,9 +60,9 @@ class AgileToolkitWeb extends ApiFrontend {
 
 		$this->template->trySet('_page',preg_replace('/_.*/','',$this->page));
 
-		$this->js('click')->_selector('#newsletter-button')->univ()->frameURL('<i class="icon-newsletter-big"></i>newsletter',
+		if($this->page!='newsletter')$this->js('click')->_selector('#newsletter-button')->univ()->frameURL('<i class="icon-newsletter-big"></i>newsletter',
                 $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-newsletter', 'width' => 500, 'resizable' => false, 'draggable' => false));
-		$this->js('click')->_selector('#contact-button')->univ()->frameURL('<i class="icon-note-big"></i>Contact Us',
+		if($this->page!='about_contact')$this->js('click')->_selector('#contact-button')->univ()->frameURL('<i class="icon-note-big"></i>Contact Us',
                 $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-contactus', 'width' => 700, 'resizable' => false, 'draggable' => false));
 
 

@@ -22,7 +22,10 @@ class ContactForm extends MVCForm {
 			$m = $this->add("TMail")->loadTemplate("contact", ".html");
 			$m->setTag($this->getAllData());
 			$m->send($this->api->getConfig("email/contact", "j@agiletech.ie"));
-            $this->js()->univ()->successMessage('Thank you for getting in touch!')->execute();
+            $this->js()->univ()->closeDialog()->successMessage('Thank you for getting in touch!')->execute();
         }
+	}
+	function defaultTemplate(){
+		return array('form_contact');
 	}
 }

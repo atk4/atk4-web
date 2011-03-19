@@ -30,6 +30,7 @@ class page_intro_javascript extends page_intro_generic {
 				things more dynamically.
 				');
 
+		$e2=$p->add('Doc_Example');
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
 $f=$p->add('Form');
@@ -45,7 +46,7 @@ if($f->isSubmitted()){
 EOD
 )->template->trySet('title1','Example with JavaScript');
 
-		$p->add('Doc_Example')
+		$e2
 			->setCode($code.<<<'EOD'
 
 $f->js_widget=false; // turn JS off

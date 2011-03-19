@@ -11,6 +11,7 @@ class AtkMenu extends Menu {
 		$this->template->trySet('section',$section[0]);
 		switch($section[0]){
 			case'about':
+			case'newsletter':
 			case'intro': 
 				$this->api->template->trySet('menu_about','class="current"');
 
