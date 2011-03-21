@@ -15,6 +15,7 @@ class Model_Employee extends Model_Person {
 			->datatype('money');
 
 		$this->addField('money_owed')
+            ->caption('Owed')
 			->calculated(true);
 	}
 	function gotoWork(){

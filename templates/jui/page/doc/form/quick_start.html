@@ -1,0 +1,217 @@
+<?$Content?>
+
+
+<div class="atk_doc">
+
+<h1>Form Quick Start</h1>
+<p>
+Class Form in Agile Toolkit is designed to handle user data-input through HTML forms. 
+</p>
+<p>
+<?MoreInfo?>List of default features supported by Forms
+<ul>
+<li>Implement ready-to-use form</li>
+<li>Automate rendering, validation and submission</li>
+<li>Provide default template and allow to redefine it</li>
+<li>Integrate with JavaScript jQuery UI Widget for enhancing</li>
+<li>Database integration</li>
+<li>Warn if about to loose unsaved changes, prevent double-posting, track changed fields</li>
+<li>Field reloading, conditional display</li>
+<li>Unify behaviour across browsers</li>
+<li>Offer layout support</li>
+</ul>
+<?/?>
+<?MoreInfo?>Additionally functionality
+<ul>
+<li>Build forms automatically based on models</li>
+<li>Define set of displayable fields and their order</li>
+<li>Model-level validation</li>
+<li>Session expiration handling</li>
+</ul>
+<?/?>
+
+<h2>How Form Works?</h2>
+<p>
+Form is similar to any other View in Agile Toolkit. It is an object you add either on your page or inside another view. The minimum syntax to create, render, validate and handle submission of the form is the following:
+
+<?MoreInfo?>How Forms in Agile Toolkit are different with Forms in other Frameworks?
+Forms in Agile Toolkit are fully self-sufficient. Once you initialize the form, it will stand on the page
+on it\'s own, it will handle submission properly, it will automatically validate itself, encode received
+output and integrate with JavaScript. Other frameworks tend to focus primarily on form display
+
+</p><p>
+Forms are also designed for flexibility and with minimalism in mind. As developer you might be putting
+dozen of forms on your page and you would want them to work quickly and without conflicts.
+</p><p>
+Finally — Fields in Agile Toolkit are designed to cover basic data types. Additional input elements, such
+as sliders, can be created through progressive enhancement, where a numeric field is transformed into
+slider through JavaScript.
+<?/?>
+
+</div>
+<div class="clear"></div>
+
+<h3>Form Set-up</h3>
+<?Code?>
+$p->add('Form');
+<?/?>
+
+<p>Once you add the form as shown above, it will be automatically rendered by Agile Toolkit, it will have it's submit handler properly configured, it will perform necessary input data loading and validation. If you have multiple forms on the page, they will work independently without affecting each-other.</p>
+<p>Agile Toolkit uses POST to submit all forms, which is enhanced through jQuery UI widget and is sent through an AJAX request. Form will also receive unique ID attribute.</p>
+<p>Practically, use of Forms in Agile Toolkit require no set-up at all</p>
+
+<h3>Adding Fields</h3>
+
+
+<?MoreInfo?>Model-integration (MVC)
+    <p>
+    Forms in Agile Toolkit can be integrated with Models. This way you will need to define field once for the model, then
+    model will take care of necessary calls to MVCForm-&gt;addField(). However even though you would be using Models, you
+    might want to add few extra fields to your forms like explained in this section.
+    </p>
+<?/?>
+
+<?Code?>
+$f=$p->add('Form');
+$f->addField('line','name');
+<?/?>
+
+<p>Form class defines a method addField(), which is used to create Form_Field objects. Typically this field object will contain markup for label, error and hint. Objects returned by addField() can be further interacted with. At least 2 arguments must be passed to addField first being a field type and second is field name</p>
+
+<p>Label can be passed optionally as 3rd argument. If it's omitted then name is slightly converted to make a decent label (first_name is converted into 'First Name')</p>
+
+<p>When looking at examples, the variable $f is often used to reference forms. We suggest to keep variable $f to always reference a form. If you need to build cross-linking between multiple form, use object properties instead.</p>
+
+<h3>Adding Buttons</h3>
+
+<?Code?>
+$f=$p->add('Form');
+$f->addField('line','name');
+$f->addSubmit('Greet Me');
+<?/?>
+<p>Form defines 2 methods — addSubmit() and addButton(). Both are relying on 'Button' class, so technically you can add button elsewhere and instruct it to submit your form</p>
+
+<h3>Handling form submission</h3>
+<p>
+Forms are always submitted to the same page where they were added on. This is default and recommended approach for any web software. By doing this, you can perform validations in the same place, in the same file reducing the risk of human error of not doing any logical validation before showing the form.
+</p>
+<p>
+Additionally — form will be fully aware of the data it will be receiving, so instead of reading form data from $_POST, you can get the same data from the form object.
+</p>
+<?Example?>
+$f=$p->add('Form');
+$f->addField('line','name');
+$f->addSubmit('Greet Me');
+if($f->isSubmitted()){
+    $f->js()->univ()->alert('Hello, '.
+            $f->get('name'))->execute();
+}
+<?/?>
+
+
+<h3>Validation</h3>
+<p>
+Agile Toolkit introduces only one automated validator — NotNull(). Additional validation can be achieved by adding eval'ed code or by doing manual checks on submission. All the validation is always performed on server-side. Since form submission is handled through AJAX, it performs same benefits as browser-side validation. If you have disabled form widget on purpose, page will be reloaded and form will keep it's entered values automatically.
+</p><p>
+For browser-side validation you can make use of some jQuery plugins such as formValidator.
+</p>
+<?Example?>
+$f=$p->add('Form');
+$f->addField('line','email')
+    ->validateNotNull()
+    ->validateField('filter_var($this->get(), FILTER_VALIDATE_EMAIL)')
+    ;
+$f->addSubmit('Check email');
+if($f->isSubmitted()){
+    $f->js()->univ()->alert('Email '.
+            $f->get('email').' is valid')->execute();
+}
+<?/?>
+
+<h3>Advanced field types</h3>
+<p>
+There are some fields which are bundled with Agile Toolkit core.
+</p>
+<?Code?>
+$f->addField('DatePicker','next_birthday')
+    ->setFieldHint('Enter the date when you will have your next birthday');
+
+$f->addField('Slider','age')
+    ->setFieldHint('How old are you going to be on your next birthday?');
+
+<?/?>
+<p>
+
+<h3>Re-using forms</h3>
+<?Code?>
+class Form_Greeting extends Form {
+    function init(){
+        parent::init();
+        $f=$this;
+
+        $f->addField('line','name');
+        $f->addSubmit('Greet Me');
+
+        if($f->isSubmitted()){
+            $f->js()->univ()->alert('Email '.
+                    $f->get('email').' is valid')->execute();
+
+        }
+    }
+}
+<?/?>
+
+
+<h2>Sample form and form design philosophy</h2>
+<p>
+Most PHP frameworks this is as far as functionality goes. Agile Toolkit brings a lot of powerful ways to enhance forms, which are explained in further sections.
+</p>
+
+
+
+<?Example?>
+$f=$p->add('Form');
+$f->addField('line','username')->validateNotNull()
+    ->validateField('preg_match("/^[a-z]+$/",$this->get())')
+    ->validateField('strlen($this->get())>=6','Too short')
+    ->validateField('20>=strlen($this->get())','Too long');
+$f->addField('password','pasword')->validateNotNull();
+$f->addSubmit('Login');
+
+if($f->isSubmitted()){
+    $f->js()->univ()->alert('[Demo] Login Successful')->execute();
+}
+<?/?>
+
+<h2>Common questions answered about forms</h2>
+<p>
+
+
+<?MoreInfo?>Where will my form appear?
+Refer to our tutorial section, which will explain how to add views into pages, API or another views.
+<?/?>
+
+<?MoreInfo?>I want to change HTML/Layout of the form!
+<p>
+Usually changing HTML of the form is bad idea. Forms ought to be consistent throughout your application. You might want to create a couple of form styles through your CSS to position fields, labels and hints.
+</p>
+<p>
+If you need a more customized layout of your form, you can define a form layout. This allow to specify HTML for the form with placeholder for each field. This technique is described in later section.
+</p>
+<p>
+Agile Toolkit does not offer any more-advanced form layout beyond what's normally possible through CSS.
+</p>
+<?/?>
+
+<?MoreInfo?>What about file uploads?
+Agile Toolkit have a built-in support for file uploads using iframe (alternatively — flash) approach. This means that files are uploaded while you completing entering data into your form.
+<?/?>
+
+<?MoreInfo?>Is there way to re-order fields in the form, after they are defined?
+Yes. See class "Order", which can be used for ordering fields sequence too
+<?/?>
+
+<h3>Still have other generic question regarding form?</h3>
+<p>
+Please help us extend this section, contact us with your question and we will add it here.
+</p>

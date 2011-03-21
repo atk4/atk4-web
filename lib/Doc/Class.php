@@ -6,7 +6,7 @@ class Doc_Class extends Doc_View {
 		parent::setName($name);
 		$this->is_active=true;
 		if($this->owner instanceof Doc_Page){
-			$this->is_active=$this->owner->subPage($name);
+			$this->is_active=$this->owner->subPage($this->short_name,$name);
 		}
 		if($this->is_active){
 			$this->initMethods();

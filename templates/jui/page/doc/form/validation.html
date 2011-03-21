@@ -1,0 +1,97 @@
+
+
+<?$Content?>
+
+
+<div class="atk_doc">
+
+<h1>Validating data</h1>
+<p>
+Agile Toolkit provides a unified way to perform validation. Validation can be performed in 3 ways:
+<ul>
+<li>validateField() evail</li>
+<li>validate hook</li>
+<li>onSubmit() validation</li>
+</ul>
+Additionally you can use jQuery widget for client-side validation or filtering.
+</p>
+
+<h2>Server-side Validation</h2>
+<p>Client-side validation is not reliable. User can turn off javascript or modify the page and still bypass validation rules. Therefore if validation is done in the browser, it must also be performed on the server too. Problem here is that browser executes JavaScript and server executes PHP.</p>
+<p>To produce two set of validaiton codes some framework define a number of validatiors which are capable of generating both — server and client side code and perform identical validation. Agile Toolkit follows different approach.</p>
+</div>
+
+<p>Agile Toolkit always performs validation on the server. However submit form data is sent through AJAX without reloading page. If any field contins error, then it will be highlighted without reloading page and potentially loosing some of the data. This approach combines benefits of both server side validation and JavaScript field error highlighting.</p>
+
+
+<h3>Using validateField()</h3>
+<p>If you do not mind passing PHP code to be evaluated, than this is the easiest way to define form validators. First argument contains teh code which will be eval()'ed. You can reference field through $this and access current value through $this->get();</p>
+<?Example?>
+$f=$p->add('Form');
+$f->addField('line','email')
+    ->validateNotNull()
+    ->validateField(
+        'filter_var($this->get(), FILTER_VALIDATE_EMAIL)');
+$f->addSubmit();
+<?/?>
+
+
+<h3>Checking Inside isSubmitted() Condition</h3>
+<p>method isSubmitted() loads data from $_POST into form $f. Another common place to perform validation is inside the if() block which checks for form submission.
+
+<?Example?>
+$f=$p->add('Form');
+$f_email=$f->addField('line','email')
+    ->validateNotNull();
+$f->addSubmit();
+if($f->isSubmitted()){
+    if($f->get('email')=='test@example.com'){
+        return $f_email->displayFieldError('Choose other email');
+    }
+}
+<?/?>
+
+
+
+
+
+
+<h3>Using validate Hook</h3>
+<p>Hooks are internal mechanism of Agile Toolkit to inject code into object's method. Each form have it's own "validate" hook. You can use this approach to inject a code to be performed at validation stage.</p>
+
+<p><i>This approach semantics might change.</i></p>
+
+<?Example?>
+$f=$p->add('Form');
+$f_email=$f->addField('line','email')
+    ->validateNotNull();
+$f_email->addHook('validate',function() use ($f_email){
+    if($f_email->get()=='test@example.com')
+        $f_email->displayFieldError('Choose other email');
+});
+
+$f->addSubmit();
+<?/?>
+
+
+
+<h2>Client-side validation</h2>
+<p>
+Agile Toolkit leaves it up to developer to build client-side filters if necessary. A good example is the "univ().numerifcField()" field.The following function exists in univ.js, calling it on the field will introduce bindings for field validation.
+</p>
+
+<code><pre>
+numericField: function(){
+	this.jquery.bind('keyup change',function () {
+	var t= this.value.replace(/[^0-9\.-]/g,'');
+		if(t != this.value)this.value=t;
+	});
+}
+</pre></code>
+
+<?Example?>
+$f=$p->add('Form');
+$f->addField('line','age')->js(true)
+    ->univ()->numericField();
+<?/?>
+

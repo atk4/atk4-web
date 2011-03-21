@@ -7,6 +7,7 @@ class Model_Salary extends Model_Table {
 		parent::defineFields();
 
 		$this->addField('employee_id')
+            ->caption('Paid To')
 			->refModel('Model_Employee');
 
 		$this->addField('pay_date')

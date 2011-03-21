@@ -27,8 +27,9 @@ class Doc_Page extends Page {
 		}
 		*/
 	}
-	function subPage($name){
-		$this->sidebar->addMenuItem($name,$hr=str_replace(array('page_','_'),array('','/'),
+	function subPage($name,$title=null){
+        if(is_null($title))$title=ucwords(str_replace('_',' ',$name));
+		$this->sidebar->addMenuItem($title,$hr=str_replace(array('page_','_'),array('','/'),
 					get_class($this)).'/'.$name);
 		return $this->sidebar->isCurrent($hr);
 

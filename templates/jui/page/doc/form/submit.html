@@ -1,0 +1,81 @@
+<?$Content?>
+
+<div class="atk_doc">
+
+<h1>Handling Form Submit</h1>
+<p>Form class is used for both rendering and submit data fetching. There are 4 steps to form cycle
+<ol>
+<li>Initialize form</li>
+<li>Load default data</li>
+<li>If form submitted, it's handled</li>
+<li>Form is rendered</li>
+</ol>
+
+<?MoreInfo?>Execution process in more details
+<ul>
+<li>Initialization. $f=$p-&lt;add(); is called, template is loaded and form->init() is automatically executed. Inside init() form's tempalte is separated into chunks.</li>
+<li>Field are inserted into forms with addField();</li>
+<li>Optionally isSubmitted() is called.
+<ul>
+  <li>loadData() is called. It's used when form is linked with database for data loading.</li>
+  <li>submitted() is called. Verifies if form was really submitted.</li>
+  <li>It calls loadPOST() for all fields recurrsively</li>
+  <li>Calls validate() recursively. Any errors are accumulated in $f-&lt;errors</li>
+  <li>submitted() returns true if error didn't receive any validation errors</li>
+</ul>
+</li>
+<li>isSubmitted() returns true if error was submitted and contained no errors</li>
+<li>Before rendering — if isSubmitted() wasn't used then submitted() method of respective form is called then</li>
+<li>Execution is expected to be terminated when form submission is handled. If it wasn't done until rendering, lateSubmit() is called which output console warning about missing form handler.</li>
+<li>Global rendering starts which recursively renders fields first, then form</li>
+</ul>
+<?/?>
+<h2>Dynamically Submitted Forms</h2>
+<p>When form is added to the page, it's being a normal page with action and using POST for submitting. However form automatically initialise form widget. This widget (file ui.atk4_form.js) is based on jQuery UI Widget Factory. It does not provide any visual enhancement for the form, however is designed to improve submission as well as add some additional features to the form.</p>
+</div>
+<div class="clear"></div>
+<p>Form's submit event is redefined to use $('#form').atk4_form('submitForm'); method instead. This method collect field values, encodes them and sends using AJAX request using $.atk4.get()</p>
+
+<?MoreInfo?>Difference between $.atk4.get() and $.ajax
+<p>It is worth noting that instead of using $.ajax, form uses $.atk4.get(), which introduces number of improvements (timeout checking, on-js-loaded handler, tracking number of files being loaded, support for object-based URLs) but also relies on $.ajax. For more information on AJAX functions, see AJAX documentation of Agile Toolkit</p>
+<?/?>
+
+<p>If for some reason jQuery UI form enhancement component wasn't loaded, then form is being sent through POST like a normal form.</p>
+
+<h2>Using isSubmitted function</h2>
+<p>
+Use of this function is really simple. It returns true if form was submitted. If you are new to forms in Agile Toolkit, you must remember that Form and Page will be initialized twice. First time when form was rendered, second time when it is submitted. Therefore isSubmitted() must be always placed after form is fully initialized.</p>
+
+<p>
+Typical use would put isSubmitted() into the if block. This construction is used often, so you might want to place it into the snippet inside your IDE / Editor</p>
+
+<?Code?>
+if($f->isSubmitted()){
+
+    $f->js()->univ()->alert('Hello World')->execute();
+}
+<?/?>
+
+<p>
+When JavaScript chain is built and execute()'d, it will only be functional when Form was submitted through AJAX. If you are concerned about non-AJAX form functionality, you should use:</p>
+<?Code?>
+if($f->isSubmitted()){
+
+    $p=$this->api->getDestinationURL('./success');
+    $f->js()->univ()->location($p)->execute();
+    $this->api->redirect($p);
+}
+<?/?>
+
+<?MoreInfo?>Planned improvements in 4.1 version
+
+<p>
+Agile Toolkit 4.1 plans to introduce new way for form submission checking. It will be done through function onSubmit(callaback) which is specifically designed to be used with closures.</p>
+<p>Form will also include method $f-&gt;successMessage() which will deliver message about successful operation either through JavaScript / Growl or page refresh, inside form template. Method $f-&gt;displayError() and $f-&gt;redirect() will be added. Those methods will operate similarly regardless of use of AJAX.
+</p>
+<?/?>
+
+<h2>Redefining Form::submitted()</h2>
+<p>
+If you are defining your own form, you may want to re-define submitted() function. This approach offers no major benefits over isSubmitted approach, but is preserved for historical reasons.
+</p>
