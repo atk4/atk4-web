@@ -10,7 +10,7 @@ class page_intro_generic extends Page {
 		$this->subPage('JavaScript','intro/javascript');
 		$this->subPage('Models (MVC)','intro/models');
 		$this->subPage('Add-ons','intro/addons');
-		$this->subPage('Conclusion','intro/conclusion');
+		$this->subPage('Engage','intro/engage');
 	}
 	function subPage($name,$ref=null){
 		$hr=$ref?$ref:$str_replace(array('page_','_'),array('','/'),get_class($this)).'/'.$name;
