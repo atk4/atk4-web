@@ -3,6 +3,7 @@
 $config['atk']['base_path']='/atk4/';
 $config['dsn']='mysql://root:root@localhost/project';
 
+$config['url_postfix']='';
 $config['url_prefix']='?page=';
 
 # Agile Toolkit attempts to use as many default values for config file,
