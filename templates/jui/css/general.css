@@ -9,7 +9,7 @@
 /* -------------------------------------------------------------------------------------------------
    General
 ------------------------------------------------------------------------------------------------- */
-.wrapper {width:940px;margin:auto;padding:0 20px;}
+.gs-wrap {width:940px;margin:auto;padding:0 20px;}
 #content {padding:3.5em 20px 0 20px;}
 .atk-icon {background-image:url(../images/atk-icons.png);}
 .atk-icons-white {background-image:url(../images/atk-icons-white.png);}
@@ -19,8 +19,8 @@
    Header
 ------------------------------------------------------------------------------------------------- */
 #header {padding:2.5em 0;background:#0d4a87 url(../images/bg-gradient-darkblue-blue.png) repeat-x top;}
-#header>.wrapper {height:3em;}
-#header .wrapper, #header-graybar .wrapper {position:relative;}
+#header>.gs-wrap {height:3em;}
+#header .gs-wrap, #header-graybar .gs-wrap {position:relative;}
 #header ul, #header ul li, #header-graybar ul, #header-graybar ul li {list-style-type:none;margin:0;padding:0;}
 #header #logo, #header ul#navigation li, #header-graybar ul#sub-navigation, #header-graybar ul#sub-navigation li {float:left;}
 #header ul#navigation, #header-graybar .input-search {float:right;}
@@ -488,7 +488,7 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 ------------------------------------------------------------------------------------------------- */
 /*
 #page-doc {min-width:980px;}
-#page-doc .wrapper {min-width:940px;max-width:1400px;width:auto;padding-left:20px;padding-right:20px;}
+#page-doc .gs-wrap {min-width:940px;max-width:1400px;width:auto;padding-left:20px;padding-right:20px;}
 #page-doc #header-graybar ul#sub-navigation {left:20px;}
 */
 #getting-started-description {float:left;width:540px;}
@@ -580,7 +580,16 @@ a.rss-link:hover {color:#000;}
 .form_contact_form_layout.atk-form form dl.atk-form-buttons {width:100%;}
 .form_contact_form_layout.atk-form form dl input {width:302px;}
 .form_contact_form_layout.atk-form form dl textarea {width:644px;}
-
+.twitter-area {width:450px;margin:auto;}
+.twitter-area .twitter-area-header {height:50px;background:url(../images/twitarea-bg.png) repeat-x top;color:#fff;}
+.twitter-area .twitter-area-header h1 {padding:0 20px;font-family: 'Helvetica Neue', 'Lucida Grande', Helvetica, Tahoma, Verdana, Arial, sans-serif;font-size:20px;font-weight:bold;line-height:50px;height:50px;background:url(../images/twitarea-rays.png) no-repeat right bottom;text-transform:inherit;}
+.twitter-area .twitter-area-content {
+	padding:20px;
+	background:#b8dff4;
+    background:-webkit-gradient(linear,left top,left bottom, from(#d7ecf7), to(#b8dff4));
+    background:-moz-linear-gradient(top, #d7ecf7, #b8dff4);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00070f", endColorstr="#b8dff4");}
+.twitter-area .twitter-area-content textarea {width:390px;}
 
 /* -------------------------------------------------------------------------------------------------
    Tweaks
@@ -593,6 +602,7 @@ p {line-height:inherit;}
 .atk-form dl.atk-form-buttons {border-top:none;padding-top:0;}
 .atk-form-vertical .atk-error {margin-top:0.5em;}
 .atk-sep {padding:0 .5em;}
+.atk-form-basic dt, .atk-form-inline dt {text-align:right;}
 
 .ui-state-error,
 .ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error {background:none;border:none;padding:0;}
@@ -635,3 +645,18 @@ p {line-height:inherit;}
     background:-webkit-gradient(linear,left top,left bottom, from(#ecf3f9), to(#c8d3de));
     background:-moz-linear-gradient(top, #ecf3f9, #c8d3de);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ecf3f9", endColorstr="#c8d3de");}
+
+
+/* atk-layout */
+
+.atk-layout>div {float:left;margin-left:20px;}
+.atk-layout.fluid>div {margin-left:4%;}
+.atk-layout>div:first-child {margin-left:0!important;}
+.atk-layout.c2>div {width:460px;}
+.atk-layout.c3>div {width:300px;}
+.atk-layout.c4>div {width:215px;}
+.atk-layout.fluid.c2>div {width:48%}
+.atk-layout.fluid.c3>div {width:30.6%}
+.atk-layout.fluid.c4>div {width:22%}
+.atk-layout:after {content:".";display:block;height:0;clear:both;visibility:hidden;font-size:0;}
+.atk-layout {.zoom:1;.display:block;}

@@ -26,8 +26,8 @@
 #header #actionbar a#tour i {margin:1.2em 0 0 0.5em;top:0.4em;}
 
 
-#comparison-section>.wrapper,
-#features>.wrapper {padding-top:4em;padding-bottom:3em;}
+#comparison-section>.gs-wrap,
+#features>.gs-wrap {padding-top:4em;padding-bottom:3em;}
 #comparison-section h2,
 #features h2 {margin-bottom:1.2em;}
 

@@ -57,7 +57,7 @@ class page_intro_engage extends page_intro_generic {
                         Knowing your interest will help us to choose the right lingo and update type
                         '));
 
-		$f->addField('slider','booring','Impact')
+		$f->addField('Slider','booring','Impact')
             ->setLabels('Lifechanging','Minor')
             ->js('change',$this->showHint('Is Agile Toolkit a big deal?','
                         Do you think that approach used in Agile Toolkit could become big?
