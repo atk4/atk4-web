@@ -30,9 +30,16 @@ class page_intro_engage extends page_intro_generic {
         $f=$p->add('Form');
 
         // Prepare hint
-        $this->hint=$f->add('Hint',null,'hint')
+
+		$rfr=$f->add('HtmlElement',null,'hint')
+			->addStyle('float','right')->addStyle('width','300px');
+
+        $this->hint=$rfr->add('Hint')
             ->set('Field-related information will appear here');
-        $this->hint->js(true)->css(array('float'=>'right','width'=>'300px'));
+        //$this->hint->js(true)->css(array('float'=>'right','width'=>'300px'));
+
+		$rfr->add('P')->set('What do you think about Agile Toolkit so far?');
+
 
 		$f->addField('line','email','email')
             ->setFieldHint('&nbsp; optional')
@@ -46,6 +53,12 @@ class page_intro_engage extends page_intro_generic {
                         newsletters.
                         '));
 
+		$ff=$f->addField('text','feedback')->set('Your feedback, good or bad, is extremely important to us. Please '.
+			'type your impressions here, or suggest us how we can improve our site');
+		$ff->js(true)->closest('dl')->hide();
+		$ff->js(true)->appendTo($rfr)->css(array('height'=>'200px'));
+		$ff->js('click')->select();
+
 		$f->addField('dropdown','interest','Your Interest')
             ->setValueList(array(
                         'dev'=>'Developer',
@@ -57,7 +70,8 @@ class page_intro_engage extends page_intro_generic {
                         Knowing your interest will help us to choose the right lingo and update type
                         '));
 
-		$f->addField('Slider','booring','Impact')
+
+		$f->addField('Slider','impact','Impact')
             ->setLabels('Lifechanging','Minor')
             ->js('change',$this->showHint('Is Agile Toolkit a big deal?','
                         Do you think that approach used in Agile Toolkit could become big?
@@ -69,7 +83,7 @@ class page_intro_engage extends page_intro_generic {
                         project?
                         '));
 
-		$f->addField('radio','proj','Decision maker')
+		$f->addField('radio','decide','Decision maker')
             ->setValueList(array(
                         'me'=>'myself',
                         'boss'=>'someone else',
@@ -79,13 +93,27 @@ class page_intro_engage extends page_intro_generic {
                         Toolkit?
                         '));
 
-        $f->addSeparator('');
 		$f->addField('checkbox','subscribe','subscribe to Agile Toolkit newsletter')
             ->set(true);
-		$f->addField('checkbox','download','download Open-Source version of Agile Toolkit');
+
+		$f->setSource('intimate');
 
         $f->addSubmit('Proceed');
 
+		if($f->isSubmitted()){
+			if($f->get('subscribe') && $f->get('email')){
+				// yay subscribe
+				$c=$this->add('Controller_crm_CampaignMonitor');
+				$result=$c->addRequest('AddSubscriber')
+					->set('ListID',$this->api->getConfig('crm/cm/list/atk'))
+					->set('Email',$f->get('email'))
+					->set('Name',$f->get('name'))
+					->process()->result;
+			}
+			$f->update();
+
+			$f->js()->univ()->location($this->api->getDestinationURL('../tweet'))->execute();
+		}
 	}
     function showHint($hdr,$txt){
         return 
