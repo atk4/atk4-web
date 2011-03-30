@@ -12,6 +12,8 @@ $config['atk']['base_path']='/atk4/';
 # your database access, if you use $api->dbConnect();
 $config['dsn']='mysql://root:root@localhost/project';
 
+$config['url_prefix']='';
+
 # Agile Toolkit attempts to use as many default values for config file,
 # and you only need to add them here if you wish to re-define default
 # values. For more options look at:
