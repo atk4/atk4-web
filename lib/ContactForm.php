@@ -6,7 +6,7 @@ class ContactForm extends MVCForm {
 		$this->setLayout("contact_form_layout");
         $this->api->dbConnect();
 
-        $this->setModel('Contact');
+        $m=$this->setModel('Contact');
 
 		$this->getElement('name')->js(true)->focus();
 		$this->getElement('email');
@@ -18,7 +18,10 @@ class ContactForm extends MVCForm {
         $this->getElement('Save')->setLabel('Send it now');
 
         if($this->isSubmitted()){
-            $this->update();
+			$s=$this->api->recall('session_started',null);
+			if($s)$s=time()-$s;
+
+            $this->update(array('onsite'=>$s));
 			$m = $this->add("TMail")->loadTemplate("contact", ".html");
 			$m->setTag($this->getAllData());
 			$m->send($this->api->getConfig("email/contact", "j@agiletech.ie"));
