@@ -6,6 +6,11 @@ class AgileToolkitWeb extends ApiFrontend {
 	function init(){
 		parent::init();
 
+		if(!($this->recall('session_started',null))){
+			$this->memorize('session_started',time());
+		}
+
+
 		// Keep this if you are going to use plug-ins
 		$this->addLocation('atk4-addons',array(
 					'template'=>'misc/templates',

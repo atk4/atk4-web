@@ -16,5 +16,7 @@ class Model_Contact extends Model_Table {
             ->datatype('text')
             ->mandatory(true);
 
+		$this->addField('onsite')->datatype('int');
+
 	}
 }
