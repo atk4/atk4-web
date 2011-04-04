@@ -33,7 +33,7 @@ class page_intro_start extends page_intro_generic {
 $f=$p->add('Form');
 $f->addField('line','name');
 $f->addField('line','surname');
-$f->addButton('Try me');
+$f->addButton('Button Does nothing');
 EOD
 );
 

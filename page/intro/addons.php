@@ -105,10 +105,18 @@ EOD
 
 		// TODO: show how to integrate with jQuery addons
 
+		$this->add('H2')->set('What\'s next ?');
+
+		$this->add('P')->set('
+				Agile Toolkit is a young and very effective framework. Development of any web software is so much simpler.
+				However Agile Toolkit 4 relies on stable code-base of AModules3 (not publicly released) and is already
+				powering hundreds of commercial web products.
+				');
+
 		$this->add('Button')
 			->set('Next Page')
 			->js('click')
-			->univ()->redirect($this->api->getDestinationURL('../conclusion'));
+			->univ()->redirect($this->api->getDestinationURL('../engage'));
 
 
 
