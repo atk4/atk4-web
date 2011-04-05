@@ -1,8 +1,85 @@
-<div class="g-row">
-	<div class="g-3"><?$Content?></div>
-	<div class="g-9">
-		<h1>Styling and layouts</h1>
-		
-	
-	</div>
+<?$Content?>
+
+<div class="atk_doc">
+	<h1>Styling and layouts</h1>
+    <p>Styling defines several ready-to-use form layout styles. Those styles are defined inside CSS and are designed to give
+    you best out-of-the-box experience with forms.
+    </p>
 </div>
+<div class="clear"></div>
+
+<h2>Form Class Basic</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+// $f->setFormClass('basic');
+// set by default
+
+$f->add('Hint',null,'hint')->set('
+"basic" form is designed to be compact with some space on the right which can be used by a text or hint. Errors appear underneath the lines.
+');
+<?/?>
+
+<h2>Form Class Inline</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('inline');
+
+$f->add('Hint',null,'hint')->set('
+"inline" form class is similar to basic, but errors are displayed on the right.
+');
+<?/?>
+
+<h2>Form Class Vertical</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('vertical');
+
+$f->add('Hint',null,'hint')->set('
+"vertical" form class is designed to take as little horizontal space as possible. It is ideal to insert into a side-bar such as next to grid. Ideal for filters.
+');
+<?/?>
+
+<h2>Form Class Horizontal</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('horizontal');
+
+$f->add('Hint',null,'hint')->set('
+"horizontal" form class is will attempt to fit 4 fields per column. This form is well suited for filters which appear above grids.
+');
+
+<?/?>
+
+<h2>Form Class Basic (2 columns)</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('basic atk-form-basic-2col');
+
+$f->add('Hint',null,'hint')->set('
+"horizontal" form class is will attempt to fit 4 fields per column. This form is well suited for filters which appear above grids.
+');
+
+<?/?>
+
+<h2>Form Class Vertical (2 columns)</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('vertical atk-form-vertical-2col');
+
+$f->add('Hint',null,'hint')->set('
+"horizontal" form class is will attempt to fit 4 fields per column. This form is well suited for filters which appear above grids.
+');
+
+<?/?>
+
+
+<h2>Form Class Vertical (3 columns)</h2>
+<?Execute?>
+$f=$p->add('StylingForm');
+$f->setFormClass('vertical atk-form-vertical-3col');
+
+$f->add('Hint',null,'hint')->set('
+"horizontal" form class is will attempt to fit 4 fields per column. This form is well suited for filters which appear above grids.
+');
+
+<?/?>
