@@ -1,0 +1,49 @@
+<h1><?page_title?>What's new in Agile Toolkit (February 2011)?<?/?></h1>
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development verison, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="atk-layout c2" id="download-grid">
+	<div>
+		<h2>Stable Version</h2>
+
+
+	</div>
+	<div>
+		<h2>Development Branch</h2>
+
+
+        <h3><a href="https://github.com/atk4/atk4/commit/9d82cfcd4671d313cf4b4a60f79c83eb5bf58359">Feb 27</a>:
+        added &lt;?$_page?&gt; tag</h3>
+        <p>APIs template (shared.html) will now properly change _page tag. It will be set to the name of the page you are
+        opening. This is done to help designers define custom layouts on per-page basis inside global CSS.
+        </p>
+
+        <h3><a href="https://github.com/atk4/atk4/commit/ac0b2b544d36ede59f74366335e0631280d7d5b5">Feb 26</a>:
+        setModel() added</h3>
+        <p>Using $view-&gt;setModel() is a new best way to use models with generic controller. Previously you needd to define
+        controller for each model. This resulted in many controllers being created with no logic at all. Using setModel()
+        allows bypassing the need for a separate model, but also uses array in 2nd argument to specify list of actual fields.
+<?Code?>
+$f->setModel('Employee',array('name','salary'));
+<?/?>
+        setModel() will return model object. It also accepts either name of the model or existing model object. Note that
+        'Model_' will be automatically pre-pended to the 1st argument if it's string, so instead of Model_Employee you should
+        use simply Employee.
+        </p>
+
+        <h3>
+        New Objects P, H1, H2, etc</h3>
+        <p>Agile Toolkit now contains many classes which should help you building mark-up faster. We still recommend you to
+        use Templates where possible, but it's better to use:
+<?Code?>
+$p->add('H1')->set('Hello there');
+<?/?>
+        instead of 
+<?Code?>
+$p->add('Text')->set('<h1>Hello there</h1>');
+<?/?>
+        All those views are inherited from HtmlElement and therefore you can easily add classes, styles etc.
+        </p>
+    </div>
+</div>
