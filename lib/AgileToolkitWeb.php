@@ -154,7 +154,7 @@ class AgileToolkitWeb extends ApiFrontend {
 	}
 	protected function loadStaticPage($page){
         $p=explode('_',$page);
-        if($p[0]=='doc')throw new PathFinder_Exception('no direct loading for docs',null,null);
+        if($p[0]=='doc' && count($p)>2)throw new PathFinder_Exception('no direct loading for docs',null,null);
 		$this->page_object=$this->add($this->page_class,$page,'Content',array('page/'.str_replace('_','/',strtolower($page)),'_top'));
 		return $this->page_object;
 	}
