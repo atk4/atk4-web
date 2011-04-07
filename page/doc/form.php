@@ -3,7 +3,8 @@ class page_doc_form extends Doc_Page {
 	function init(){
 		parent::init();
 
-		$this->subPage('quick_start','Form Quick Start') ;
+        $this->sidebar->template->set('title','Form Documentation');
+		$this->subPage('quick_start','Quick Start') ;
 		$this->subPage('fields','Standard Fields') ;
 		$this->subPage('enhancing','Enhancing Form') ;
 		$this->subPage('validation','Validation') ;
@@ -94,14 +95,21 @@ class StylingForm extends Form {
         $f->addField('checkbox','agreeRules','I Agree to Rules and Terms'
                 )->validateNotNull('You must agree to the rules');
 
-        $f->addSubmit('Register');
 
+        $js=array();
+        $this->js()->atk4_form('fieldError','password2','Passwords do not match');
+        $this->js()->atk4_form('fieldError','age','Age is not entered - sample longer error which may span');
+        $this->js()->atk4_form('fieldError','about','Sample error on textarea field');
+
+
+        $f->addSubmit('Submit');
+        $f->addSubmit('Show More Errors');
+
+    }
+    function submit(){
+        parent::submit();
     }
     function render(){
         parent::render();
-        $this->js(true)->atk4_form('fieldError','password2','Passwords do not match');
-        $this->js(true)->atk4_form('fieldError','age','Age is not entered - sample longer error which may span');
-
-        $this->js(true)->atk4_form('fieldError','about','Sample error on textarea field');
     }
 }

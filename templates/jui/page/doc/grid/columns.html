@@ -1,0 +1,187 @@
+<?$Content?>
+
+<div class="atk_doc">
+<h1>Grid Columns</h1>
+<p>
+Grid columns are implemented as functions (for speed) and are designed to format database output. For instance, when you use "money" column type, then column will be passed through number_format() and then negative values would be colored in red. In practice often you would add your own column types to have universal way to show some value such as displaying image inside "progress" column.
+</p>
+<p>
+Below is the list of basic column types (formatters). Note that you can specify multiple several at the same time separated with comma.
+<ul>
+<li>text — simply output text. Will escape HTML automatically;</li>
+<li>html — outputs HTML. If you are using this, make sure not to output any user-input to avoid JavaScript injection;</li>
+<li>shorttext — shortens long text to 60 characters by skipping some of the text in the middle. (if you need to shorten text differently, define your own function);</li>
+<li>boolean — shows tick if value is "Y" (true);</li>
+<li>money — format with 2 digits after comma and thousand separator (number_format($n,2)), align right, highlight negative with red;</li>
+<li>date — format date;</li>
+<li>time — format time;</li>
+<li>datetime — format date and time;</li>
+<li>wrap,nowrap — disables or forces wrapping on the column;</li>
+<li>wrap,nowrap — disables or forces wrapping on the column;</li>
+<li>template — applies custom SMlite template;</li>
+<li>template — applies custom SMlite template;</li>
+<li>checkbox — adds checkbox for fields. On it's own this does not provide any functionality, but can be used through javascript widgets;</li>
+<li>inline — allows to click on value and enter new value;</li>
+<li>button — when clicked sends button_name=$id to server
+<li>prompt — similar to button, but when clicked uses javascript's prompt() then sends value through ajax to server;</li>
+<li>confirm — also similar to button, but asks user to confirm before sending anything to server;</li>
+</div>
+
+
+<?Example?>
+$data=(array(
+  array('name'=>'J<b>o</b>hn',
+      'surname'=>'S<b>m</b>ith',
+      'salary'=>12345.6,
+      'paid'=>'Y',
+      ),
+));
+
+$g=$p->add('Grid');
+$g->addColumn('name');
+$g->addColumn('html','surname');
+$g->addColumn('money','salary');
+$g->addColumn('boolean','paid');
+$g->setStaticSource($data);
+<?/?>
+
+<?Example?>
+$data=(array(
+  array('text'=>'Very long text very long text
+      very long text very long text very long text',
+      ),
+));
+
+$g=$p->add('Grid');
+$g->addColumn('shorttext','text');
+$g->setStaticSource($data);
+<?/?>
+
+<p>Date and Time is formatted according to the following configuration variables: locale/time, locale/date, locale/datetime.</p>
+
+<?Code?>
+$config['locale']['time']='H:i:s';
+$config['locale']['date']='d/m/Y';
+$config['locale']['datetime']='d/m/Y H:i:s';
+<?/Code?>
+
+<?Example?>
+$data=(array(
+  array('date'=>'2001-10-26',
+      'time'=>'23:39:00',
+      'datetime'=>'2001-10-26 23:39:00',
+      ),
+));
+
+$g=$p->add('Grid');
+$g->addColumn('date','date');
+$g->addColumn('time','time');
+$g->addColumn('datetime','datetime');
+$g->setStaticSource($data);
+<?/?>
+
+
+<?Example?>
+$data=(array(
+  array(
+      'text'=>'Very long text very 
+      long text very long text',
+      'text2'=>'Very long text very 
+      long text very long text'),
+));
+
+$g=$p->add('Grid');
+$g->addColumn('shorttext,nowrap','text');
+$g->addColumn('shorttext,wrap','text2');
+$g->setStaticSource($data);
+<?/?>
+
+<?Example?>
+$data=(array(
+  array(
+      'loan_amount'=>100,
+      'loan_rate'=>7,
+      )
+));
+
+$g=$p->add('Grid');
+$g->addColumn('template','loan')
+    ->setTemplate('Loan amount: € <'.'?$loan_amount?'.
+            '> @ <'.'?$loan_rate?'.'>');
+$g->setStaticSource($data);
+// You don't need to split string like that, 
+// I'm doing this because template parser on
+// this page finds them.
+<?/?>
+
+<?Example?>
+$g=$p->add('Grid');
+$g->setSource('user');
+$g->addColumn('inline','name');
+$g->addColumn('confirm','redundant');
+$g->addColumn('prompt','bonus');
+$g->dq->where('name is not null')->limit(5);
+if($_GET['redundant']){
+    $g->js()->univ()
+        ->alert('Made employee redundant')
+        ->execute();
+}
+if($_GET['bonus']){
+    $g->js()->univ()
+        ->alert('Paid bonus of '.$_GET['value'])
+        ->execute();
+}
+<?/?>
+
+<h2>Using checkboxes in grid</h2>
+<p>There are two approaches if you are willing to collect checkboxes from the grid. First is to associate your grid with a form field (which can be invisible too):</p>
+
+<?Example?>
+$g=$p->add('Grid'); // not related at all
+$f=$p->add('Form');
+
+$f_checked=$f->addField('line','checked');
+
+$g->setSource('user');
+$g->addColumn('text','name');
+$g->addColumn('text','surname');
+$g->dq->where('name is not null')->limit(5);
+$g->addSelectable($f_checked);
+
+$f_checked->js(true)->closest('dl')->hide();
+$f->addButton('Show')->js('click',
+        $f_checked->js()->closest('dl')->show());
+
+
+$f->addSubmit('Count checkboxes');
+if($f->isSubmitted()){
+    $cnt=count(json_decode($f->get('checked')));
+    $f->js()->univ()
+        ->alert('You checked '.$cnt.' checkboxes')
+        ->execute();
+}
+<?/?>
+
+<p>Alternatively you can place grid into a form and attempt to find checkboxes manually. Form wouldn't touch the date unless it's generated by the fields which exist on that form, so you would need to access $_POST directly. This approach is more of a hack anyway and probably should be avoided.
+</p>
+
+<?Example?>
+$f=$p->add('Form');
+$g=$f->add('Grid');
+$g->setSource('user');
+$g->addColumn('checkbox','cb');
+$g->addColumn('text','name');
+$g->addColumn('text','surname');
+$g->dq->where('name is not null')->limit(5);
+
+$f->addSubmit('Count checkboxes');
+if($f->isSubmitted()){
+    $cnt=0;
+    foreach($_POST as $key=>$val){
+        if(substr($key,0,3)=='cb_')$cnt++;
+    }
+    $f->js()->univ()
+        ->alert('You checked '.$cnt.' checkboxes')
+        ->execute();
+}
+<?/?>

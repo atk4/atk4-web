@@ -1,0 +1,100 @@
+<?$Content?>
+
+<div class="atk_doc">
+<h1>Grid Documentation</h1>
+<p>
+Grid is one of the fundamental views in Agile Toolkit. The goal of it's implementation is to be lightweight, extensible and fast.
+
+Select topic in the left sidebar, or you can also visit one of the resources below:
+</p>
+
+<p>
+<ul>
+<li><a href="/blog/grids">Blog post about grid documentation</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=1">Basic Grid Sample</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=3">Grid Buttons</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=4">Grid From Database</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=5">Dynamic Grid Reloading</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=21">Grid Inline Editing</a></li>
+<li><a href="http://demo.atk4.com/demo.html?t=23">Grid, Pagination, Totals and custom SQL</a></li>
+</ul>
+</p>
+</div>
+
+<h2>What is Grid?</h2>
+<p>Grid is designed to show structured data organised into rows and columns. Grid introduces ability to format each column depending on it's type as well as to perform a custom formatting. If you wish to specify a custom template for rows, then look at <a href="<?page?>../../lister<?/?>">Lister</a> instead.</p>
+
+<p>To get grid working, you would need some data to show in it. It can be either a static data or dynamic based on SQL query or a Model. Best practice is to use Grid with Models or dynamic data source, which also allows to use features such as column sorting and pagination. Grid never loads all the data into memory, so it's well suited for displaying data from large SQL tables.
+</p>
+
+<?Example?>
+$data=(array(
+  array('name'=>'John','surname'=>'Smith'.rand(1,20)),
+  array('name'=>'Peter','surname'=>'Tester'.rand(20,40))
+));
+
+$g=$p->add('Grid');
+$g->addColumn('name');
+$g->addColumn('surname');
+$g->setStaticSource($data);
+<?/?>
+
+<h2>Database example</h2>
+<p>Grid integrates directly with the database layer and dynamic queries and can fetch data once you specify which table to look into.
+</p>
+<?Example?>
+$g=$p->add('Grid');
+$g->addColumn('name');
+$g->addColumn('surname');
+$g->setSource('user');
+$g->dq->where('name is not null')->limit(5);
+<?/?>
+<p>
+Grid does not operate with the queries directly, instead it uses the <a href="<?page?>../../dsql<?/?>">dsql</a> to build the query. The same code as above uses the following query for data fetching:
+</p>
+<?Execute?>
+$g=$p->add('Grid');
+$g->addColumn('name');
+$g->addColumn('surname');
+$g->setSource('user');
+$g->dq->where('name is not null')->limit(5);
+$this->add('HtmlElement')->setStyle('border','1px solid black')->set($g->dq->select());
+$g->destroy();
+<?/?>
+<p>
+You can add joins, conditions, sorting calculated fileds and many more things by <a href="<?page?>../../dsql<?/?>">accessing $g-&gt;dq directly</a>.
+</p>
+<h2>Buttons, Quicksearch and Paginator</h2>
+<p>
+Area around the grid historically has a number of template tags which are commonly used by things like Buttons, Quicksearch form and Paginator. All those features are implemented outside of Grid, but they are added its template and may have impact on Grid's query.
+</p>
+<?Example?>
+$g=$p->add('Grid');
+$g->addColumn('text','gender');
+$g->addColumn('text','name');
+$g->setSource('user');
+
+$g->addPaginator(5);
+$g->addQuickSearch(array('name'));
+$g->addButton('Hello');
+<?/?>
+<h2>Interacting with Grid</h2>
+<p>
+Since Grid is designed to be rendered efficiently, it does not create objects on per-row basis. If you need to do some complex row calculation based on sub-selects then trust this work to SQL. Grid, however, allows few column types which are designed to control things. Button-columns.
+</p>
+
+<?Example?>
+$g=$p->add('Grid');
+$g->addColumn('text','gender');
+$g->addColumn('text','name');
+$g->setSource('user');
+$g->dq->where('name is not null')->limit(5);
+
+$g->addColumn('button','button');
+$g->addColumn('link','./link','Link');
+$g->addColumn('expander','expander');
+<?/?>
+
+<p>
+All of those requests carry over the ID of the row. Button performs an AJAX request to the page and can be used for virtually any action. There are more types, but those 3 are the most common.
+</p>

@@ -1,0 +1,215 @@
+
+<?$Content?>
+
+<div class="atk_doc">
+<h1>Interacting</h1>
+
+<p>
+
+</p>
+
+<h2>Opening dialog on button click</h2>
+<p>This is an obvious implementation if you are familiar with JavaScript use in Agile Toolkit, however just to show this often-used approach:</p>
+
+<div class="box metallic">
+<?Execute?>
+$g=$p->add('Grid');
+$g->setSource('user');
+$g->addColumn('name');
+$g->addColumn('surname');
+$g->addColumn('button','info','More Info');
+$g->dq->where('name is not null')->limit(5);
+
+if($_GET['info']){
+    $g->js()->univ()->dialogURL('More info',
+            $this->api->getDestinationURL(
+                null,array(
+                    'more_info'=>$_GET['info'],
+                    'cut_object'=>'myform'
+                    )))
+        ->execute();
+}
+
+if($_GET['more_info']){
+    $f=$this->add('Form','myform');
+    $f->addField('readonly','name');
+    $f->addField('readonly','surname');
+    $f->setSource('user');
+    $f->setConditionFromGET('id','more_info');
+}
+
+
+<?/?>
+</div>
+
+</div>
+<div class="clear"></div>
+
+<h3>Source Code</h3>
+<?Code?>
+$g=$p->add('Grid');
+$g->setSource('user');
+$g->addColumn('name');
+$g->addColumn('surname');
+$g->addColumn('button','info','More Info');
+$g->dq->where('name is not null')->limit(5);
+
+if($_GET['info']){
+    $g->js()->univ()->dialogURL('More info',
+            $this->api->getDestinationURL(
+                null,array(
+                    'more_info'=>$_GET['info'],
+                    'cut_object'=>'myform'
+                    )))
+        ->execute();
+}
+
+if($_GET['more_info']){
+    $f=$this->add('Form','myform');
+    $f->addField('readonly','name');
+    $f->addField('readonly','surname');
+    $f->setSource('user');
+    $f->setConditionFromGET('id','more_info');
+}
+
+
+<?/?>
+
+<h2>Exchanging rows between grids</h2>
+<?Execute?>
+class TSGrid extends Grid {
+
+  function setReloadThis($view){
+
+    if($id=$_GET[$this->name.'_chsex']){
+     // do note, usually we supply 2 arguments for set() function. Second
+     // argument is being properly quoted (or parametrized), however in this
+     // case no quoting is required. Hence all the statement goes into first 
+     // argument.
+      $this->dq->set('gender=if(gender="M","F","M")')
+         ->where('id',$id)
+         ->do_update();
+
+     // univ()->page() method updates page content through AJAX. In this case each
+     // grid is unaware of other objects on the page. So to keep it safe, we will refresh
+     // page completely.
+      $view->js()->reload()->execute();
+    }
+
+
+      return $this;
+  }
+
+  function init(){
+    parent::init();
+    $g=$this;
+
+    // When you are making your own classes, you must always keep in mind
+    // that those objects must be just as re-usable as original grids. In our case
+    // we do set the table and fields, however we leave it up to parent to set the
+    // additional conditions on our query. This is a major reason for the philosophy
+    // of Agile Toolkit saying to keep properties public.
+
+    $g->addColumn('text','name');
+    $g->addColumn('text','surname');
+    $g->addColumn('text','gender');
+    $g->addColumn('button','chsex','Change Sex');
+    $g->setSource('user');
+
+  }
+  function defaultTemplate(){
+      return array('grid_striped');
+  }
+}
+
+// This class splits page into even parts. Every time you call addColumn it returns
+// a new object. You can then use that object to add additional elements in there. 
+// In our example we are actually creating quite complicated structure:
+//     
+$c=$p->add('View_Columns');
+
+$col=$c->addColumn();
+$col->add('H3')->set('Male list');
+$col->add('TSGrid')
+  ->setReloadThis($c)
+  ->dq
+  ->where('gender','M');
+
+$col=$c->addColumn();
+$col->add('H3')->set('Female list');
+$col->add('TSGrid')
+  ->setReloadThis($c)
+  ->dq
+  ->where('gender','F');
+
+
+<?/?>
+
+<?Code?>
+class TSGrid extends Grid {
+
+  function setReloadThis($view){
+
+    if($id=$_GET[$this->name.'_chsex']){
+     // do note, usually we supply 2 arguments for set() function. Second
+     // argument is being properly quoted (or parametrized), however in this
+     // case no quoting is required. Hence all the statement goes into first 
+     // argument.
+      $this->dq->set('gender=if(gender="M","F","M")')
+         ->where('id',$id)
+         ->do_update();
+
+     // univ()->page() method updates page content through AJAX. In this case each
+     // grid is unaware of other objects on the page. So to keep it safe, we will refresh
+     // page completely.
+      $view->js()->reload()->execute();
+    }
+
+
+      return $this;
+  }
+
+  function init(){
+    parent::init();
+    $g=$this;
+
+    // When you are making your own classes, you must always keep in mind
+    // that those objects must be just as re-usable as original grids. In our case
+    // we do set the table and fields, however we leave it up to parent to set the
+    // additional conditions on our query. This is a major reason for the philosophy
+    // of Agile Toolkit saying to keep properties public.
+
+    $g->addColumn('text','name');
+    $g->addColumn('text','surname');
+    $g->addColumn('text','gender');
+    $g->addColumn('button','chsex','Change Sex');
+    $g->setSource('user');
+
+  }
+  function defaultTemplate(){
+      return array('grid_striped');
+  }
+}
+
+// This class splits page into even parts. Every time you call addColumn it returns
+// a new object. You can then use that object to add additional elements in there. 
+// In our example we are actually creating quite complicated structure:
+//     
+$c=$p->add('View_Columns');
+
+$col=$c->addColumn();
+$col->add('H3')->set('Male list');
+$col->add('TSGrid')
+  ->setReloadThis($c)
+  ->dq
+  ->where('gender','M');
+
+$col=$c->addColumn();
+$col->add('H3')->set('Female list');
+$col->add('TSGrid')
+  ->setReloadThis($c)
+  ->dq
+  ->where('gender','F');
+
+
+<?/?>

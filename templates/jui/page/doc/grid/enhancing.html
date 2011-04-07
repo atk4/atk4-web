@@ -1,0 +1,37 @@
+<?$Content?>
+
+<div class="atk_doc">
+<h1>Grid Enhancements</h1>
+
+<p>
+
+</p>
+
+<h2>Sorting</h2>
+<p>You can give user ability to sort grid data. This is done by calling makeSortable() function after field definition.</p>
+
+<div class="box metallic">
+<?Execute?>
+$g=$p->add('Grid');
+$g->addColumn('name')->makeSortable();
+$g->addColumn('surname')->makeSortable();
+$g->setSource('user');
+$g->dq->where('name is not null')->limit(5);
+<?/?>
+</div>
+
+</div>
+<div class="clear"></div>
+
+<h2>Sorting by calculated fields</h2>
+<?Example?>
+$g=$p->add('Grid');
+$g->setSource('user');
+$g->dq
+    ->where('name is not null')
+    ->field('length(name) namelength')
+    ->limit(5);
+$g->addColumn('name');
+$g->addColumn('namelength')
+    ->makeSortable('length(name)');
+<?/?>
