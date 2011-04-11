@@ -23,7 +23,7 @@ class page_example_list extends Page {
 		$this->add('H1')->set('Demo Files');
 
 		$this->add('Grid',null,null,array('grid_striped'))
-			->addColumn('text','name')
+			->addColumn('html','name')
 			->addColumn('text','link','Link for you to share')
 			->setStaticSource($demos);
 
