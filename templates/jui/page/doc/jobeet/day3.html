@@ -1,0 +1,67 @@
+<?$Content?>
+
+<h1>Day 3: The Data Model</h1>
+<p>Those of you itching to open your text editor and lay down some PHP will be happy to know today will get us into some development. We will define the Jobeet data model and use an ORM to interact with the database.</p>
+
+<h2>The Relational Model</h2>
+<p>The user stories we saw yesterday describe the main objects of our project: jobs, affiliates, and categories. Here is the corresponding entity relationship diagram:
+</p><p>
+In addition to the columns described in the stories, we have also added a created_dts, updated_dts and deleted field to some tables. created_dts will be set to the value to the current system time when a record is created. We will do the same for updated_dts fields: Their value will be set to the system time whenever the record is updated.</p>
+
+<h2>The Models</h2>
+<p>
+To store the jobs, affiliates, and categories, we obviously need a relational database. But as Agile Toolkit is an Object-Oriented framework, we like to manipulate objects whenever we can. For example, instead of writing SQL statements to retrieve records from the database, we’d rather prefer to use objects.
+</p><p>
+The relational database information must be mapped to an object model. This can be done with an ORM tool and thankfully, Agile Toolkit comes bundled with its own ORM.
+</p><p>
+The ORM in Agile Toolkit is slightly different to other ORM systems out there. It's not only trying to provide object-oriented access to your database, but it also bundles all the business logic into those classes.
+</p>
+<p>
+Agile Toolkit always gives preference to lightweight code instead of generating code. We are going to add a couple of files to destribe our models. Place this code into lib/Model/Job.php and lib/Model/Category.php. Do not forget to add &lt;?php. It's common practice in Agile Toolkit not to close the php-tag (see PHP documentation, why)</p>
+<?Code?>
+class Model_Job extends Model_Table {
+    function init(){
+        parent::init();
+
+        $this->addField('category_id')->refModel('Model_Category');
+        $this->addField('type');
+        $this->addField('company');
+        $this->addField('logo');
+        $this->addField('url');
+        $this->addField('position');
+        $this->addField('location');
+        $this->addField('description')->datatype('text');
+        $this->addField('how_to_apply')->datatype('text');
+        $this->addField('is_public')->boolean(true);
+        $this->addFiled('is_activated')->boolean(true);
+        $this->addField('email');
+
+        $this->addField('created_dns')->datatype('timestamp')->system(true);
+        $this->addField('updated_dts')->datatype('timestamp')->system(true);
+        $this->addField('expires_at')->datatype('date');
+    }   
+}
+<?/?>
+
+<?Code?>
+class Model_Category extends Model_Table {
+    function init(){
+        parent::init(); 
+
+        $this->addField('name');
+    }
+}       
+<?/?>
+
+<p>
+If you are willing for Agile Toolkit to generate SQL CREATE code for you, you can set up a page for that. Code generator exists as a class, but you need to enable it in order to use it. Add file page/generate.php with the following content:
+</p>
+<?Code?>
+class page_generate extends Page_SchemaGenerator {}
+<?/?>
+<p>Next navigate to http://localhost/jobeet/generate.html in your browser, pick Category model and click Generate button. The schema code will be shown on the right. You can also click "Generate" checkbox and "create" statement will be evaluated by sql automatically. Once you create 'Category' proceed to create 'Job'.
+
+<h2>Testing</h2>
+<p>It's now time to create our first test. Create the file inside page/tests/test1.php containing:
+<?Code?>
+<?/?>

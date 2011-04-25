@@ -1,0 +1,140 @@
+<?$Content?>
+
+<h1>Day 1: Starting the Project</h1>
+<h2>Pre-Introduction</h2>
+<p>Before I will go into details, I have to say a huge thangs to the Fabien Potencier and Jonathan Wage for providing original tutorial for Symfony and its port to SF2 <a href="http://sftuts.com/doc/jobeet/en/index.html">http://sftuts.com/doc/jobeet/en/index.html</a></p>
+<p>I have attempted to follow up through all the ideas and reasoning in creation of the application as well as best practices. Instead of using Symfony I am using Agile Toolkit, however.</p>
+<p>Contents of this book is distributed under Creative Commonts Attribution - ShareAlike license</p>
+<h2>Introduction</h2>
+<p>The Agile Toolkit has been developed for over 10 years as a commercial product and only recently have been released under Open-Source license. Agile Toolkit is one of the simplest frameworks to use and comes with a great User Interface.
+</p><p>
+This book describes the creation of a web application with the Agile Toolkit, step-by-step from the specifications to the implementation. It is targeted at beginners who want to learn Agile Toolkit, understand how it works, and also learn about the best web development practices.
+</p><p>
+The application to be designed could have been yet another blog engine. But we want to use Agile Toolkit on a useful project. The goal is to demonstrate that Agile Toolkit can be used to develop professional applications with style and little effort.
+</p><p>
+We will keep the content of the project secret for another day as we already have much for now. However, let’s give it a name: Jobeet.
+</p><p>
+Each day of this book is meant to last for 20 minutes to a hour, and will be the occasion to learn Agile Toolkit by coding a real website, from start to finish. Every day, new features will be added to the application, and we’ll take advantage of this development to introduce you to new Agile Toolkit functionalities as well as good practices in Agile Toolkit web development.
+<h2>Agile Toolkit is a different framework</h2>
+Validation, error handling, security, and tests are first-class citizens in many frameworks. However in most cases, frameworks only supply the tools, but developers must connect the dots. Agile Toolkit does many things on it's own. A very strong focus on "convention" is something many will love and many will hate, but that is what makes Agile Tolkit.
+</p><p>
+All the code you will read in this book is code you could use for a real project. We encourage you to copy and paste snippets of code or steal whole chunks.
+<p>
+<h2>What for Today?</h2>
+<p>We won’t write PHP code. But even without writing a single line of code, you will start understanding the benefits of using Agile Toolkit, just by bootstrapping a new project.
+</p><p>
+The objective of this day is to setup the development environment and display a page of the application in a web browser. This includes installation of Agile Toolkit, creation of an application, and web server configuration.
+</p><p>
+As this book will mostly focus on the Agile Toolkit framework, we will assume that you already have a some basic knowledge of PHP 5 and Object Oriented programming.
+</p><p>
+<h3>Prerequisites</h3>
+<p>Before installing Agile Toolkit, you need to check that your computer has everything installed and configured correctly. Take the time to conscientiously read this day and follow all the steps required to check your configuration, as it may save your day further down the road.
+</p>
+<h3>Third-Party Software</h3>
+<p>First of all, you need to check that your computer has a friendly working environment for web development. At a minimum, you need a web server (Apache, for instance), a MySQL, and PHP 5.2 or later.</p>
+<p>You can run Agile Toolkit software on Windows, Linux or Mac. It does not make use of command line, does not require any files or directories to be writable and will work in most of the environments without changes</p>
+
+<h2>Downloading and Installing Agile Toolkit</h2>
+<p>Ready? Now let’s start by downloading Agile Toolkit. For this guide you will need 4.1+ version of Agile Toolkit. There are 2 main components in Agile Tolokit - core and addons. They are distributed individually, but are also available as a example-project download from <a href="http://agiletoolkit.org/download" target="_blank">Agile Toolkit Download Page</a></p>
+
+<p>If you plan to use Git, then follow instructions on the download page which will help you get your own repository with the bootstraped code.</p>
+
+<p>Agile Toolkit can work with virtually almost no code and in order to show few things example-project already includes many things you can play with.</p>
+
+Download and unpack. You shave atk4-example directory. Let's rename it into 'jobeet' for the time being.
+</p>
+<pre>
+www/ &lt;-- your webroot
+  jobeet/ &lt;-- your new directory
+    atk4 &lt;-- Agile Toolkit Core
+    atk4-addons &lt;-- Agile Toolkit Addons
+    lib/ &lt;-- Class Library
+    page/ &lt;-- Page Classes
+    doc/ &lt;-- Your project documentation and schemas
+    templates/ &lt;-- Your project custom UI templates
+    index.php &lt;-- Front-Controller or Catch-all for all requests
+    config-default.php &lt;-- Your app's default configuration
+    config-distrib.php &lt;-- Your app's per-installation sensetive configuration
+</pre>
+
+<p>
+Agile Toolkit runs perfectly fine regardless of how it is installed.
+Point your browser at http://localhost/jobeet and you should see page with text:
+</p>
+<p>
+ <i>Hello World from your own copy of Agile Toolkit</i>
+</p>
+
+<p>Congratulations, Agile Toolkit is installed! 
+If you are in the hurry for today, you can skip this lession and go to <a href="<?page?>../day2<?/?>">Day 2</a></p>
+
+<h3>Realm</h3>
+<p>
+An essential part of your project is realm. It can be changed in index.php file and is a first argument in the line:
+</p>
+<?Code?>
+$api=new Frontend('sample_project','jui');
+<?/?>
+<p>
+Second argument specifies a theme. For now, we will leave it alone. jui is a theme based on jQueri UI CSS Framework.
+</p>
+
+<h2>Security</h2>
+
+<h3>Directory Structure Rights</h3>
+<p>Agile Toolkit does not require to set any rigts without reason. There are however cases when you want logging or file uploads to work. We recommend not to make any writable directories unless it's absolutely necessary. Agile Toolkit is a lightweight framework and makes no use of file-cache.</p>
+
+
+<h3>Files</h3>
+<p>Agile Toolkit uses only .php file extenions on purpose (even for configuration files). This is do avoid any need for you to disable any files in web directory (or possibly forgetting about it). It is safe to leave Agile Toolkit in the space accessible from the web. All the PHP files (except for atk4/loader.php and atk4/lib/static.php) contain only classes and will do nothing if requested directly. Be sure not to call files like config.php.distrib and turn off backups in your text editor.</p>
+
+<?MoreInfo?>Hide .svn and .git directories in your webserver config!
+<p>It is however advisable to disable access to .svn and .git directories. It's surprising how many guides manage to ommit this and as a result it may potentially give access to your sensetive information.</p><?/?>
+
+<h3>Webroot access</h3>
+<p>Many guides suggest to place files outside of the webroot directory for security reason. If you are using Agile Toolkit, there is no need to worry about that. If you do want to follow this rule, then you can move "atk4" folder elsewhere along with addons. Create alias /atk4/templates if you plan on using default UI.</p>
+
+<h2>Your files VS library files</h2>
+<p>It is important that you never change files inside atk4/ or atk4-addons directories. You might overwrite them yourself later on when you are doing upgrade. However if you want to substitute any of those files in your project, you can do it by creating them outside atk4 directory.</p>
+<p>As example, take a look at the logo in the left-top corner. Let's replace it with something different. Look into the source of the page. It uses the following URL: /jobeet/atk4/templates/jui/images/atk-logo.png by default. Copy your own logo into jobeet/templates/jui/images directory (create it if necessary) and name it atk-logo.png. Agile Toolkit will automatically notice this file and will use instead of default logo. The same rule applies to ANY file. Files outide atk4 folder will be included first.</p>
+<p>p.s.: default logo uses alpha channel so if you try look at it in your browser it seems to be invisible</p>
+
+
+<h2>Configuration</h2>
+<p>By default Agile Toolkit will output errors on the screen. Click on "database test" and if your MySQL connection is not configured yet, you most likely will see an exception. Having exceptions on a production environment is bad and there is a way to control your environment.</p>
+<p>Copy file config-distrib.php into config.php. Never add config.php to Git or Subversion. It will contain only things specific to your installation. Let's look closer into the file and set some settings there:</p>
+<?Code?>
+$config['atk']['base_path']='./atk4/';
+$config['dsn']='mysql://root:root@localhost/project';
+<?/?>
+<p>Change those to conform with your installation and let's add few more lines to redefine settings from config-default.php:</p>
+
+<?Code?>
+$config['atk']['base_path']='/jobeet/atk4/';
+$config['dsn']='mysql://jobeet:secret@localhost/jobeet';
+<?/?>
+
+<h3>Beautiful URLs</h3>
+<p>Since it's quite common practice, if you have mod_rewrite enabled, try to set it right away. If this does not work for you, you can skip this section, it's not essential for the functionality of your application. </p>
+<p>To use beautifyl URLs you need to instruct Agile Toolkit to use different URL generation rules by adding 2 lines into config.php file:</p>
+<?Code?>
+$config['url_postfix']='.html';
+$config['url_prefix']='';
+<?/?>
+<?/?>
+<p>Next you will need to create a .htaccess file:</p>
+
+<pre>
+RewriteEngine on
+RewriteRule ^(index.php.*)$      $1          [L]
+RewriteRule ^[^\.]*$            index.php    [L]
+RewriteRule .html$              index.php    [L]
+</pre>
+
+<p>URLs generated by the menu now should look pretty</p>
+
+<h2>Final Thoughts</h2>
+<p>Well, time is over! Even if we have not yet started talking about Jobeet, we have setup a solid development environment, we have talked about web development best practices, and we are ready to start coding.
+
+Tomorrow, we will reveal what the application will do and talk about the requirements we need to implement for Jobeet.
+
