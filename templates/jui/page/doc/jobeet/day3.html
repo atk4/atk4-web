@@ -61,7 +61,30 @@ class page_generate extends Page_SchemaGenerator {}
 <?/?>
 <p>Next navigate to http://localhost/jobeet/generate.html in your browser, pick Category model and click Generate button. The schema code will be shown on the right. You can also click "Generate" checkbox and "create" statement will be evaluated by sql automatically. Once you create 'Category' proceed to create 'Job'.
 
-<h2>Testing</h2>
-<p>It's now time to create our first test. Create the file inside page/tests/test1.php containing:
+<h2>Your first CRUD</h2>
+<p>I am sure you are waiting until you can insert some data into your tables. That's what we will do now. Create file page/test.php and put the following code into it:
+</p>
 <?Code?>
+class page_tests_test1 extends Page {
+    function init(){
+        parent::init();
+        $this->add('CRUD')->setModel('Category');
+        $this->add('CRUD')->setModel('Job');
+    }
+}
+
 <?/?>
+
+<h2>Testing</h2>
+<p>Agile Toolkit takes a passive approach to testing. First of all - when developing with Agile Toolkit your code will break much less often. The UI code is quite well tested already, similarly with the ORM code. What you need to test is your own custom methods in your Models (with unit testing) and your custom UI code (with user testing). At this point we haven't done much, therefore we will add testing scripts some other day, when it will be necessary.</p>
+
+<h2>Database consistency</h2>
+<p>Agile Toolkit uses technique called "dbupdate". It stores in a special directory all  "alter" statements to your database. Because Agile Toolkit only supports MySQL then maintaining upgrades is much simpler without abstraction. Using dbupgrade technique you can apply database updates consistently across all your software installations. Right now we are not going to create the scripts until our application gets a little bit more mature.</p>
+
+<h2>Final Thoughts</h2>
+<p>
+That’s all. By now you might start getting that thougth - <i>"It's way too simple"</i>. Don't worry. You will get used to it.
+</p>
+<p>
+Tomorrow we will talk about one of the most used paradigm in web frameworks, the MVC design pattern and how it is used in Agile Toolkit.
+

@@ -65,8 +65,7 @@ Point your browser at http://localhost/jobeet and you should see page with text:
  <i>Hello World from your own copy of Agile Toolkit</i>
 </p>
 
-<p>Congratulations, Agile Toolkit is installed! 
-If you are in the hurry for today, you can skip this lession and go to <a href="<?page?>../day2<?/?>">Day 2</a></p>
+<p>Congratulations, Agile Toolkit is installed! </p>
 
 <h3>Realm</h3>
 <p>
@@ -107,6 +106,11 @@ Second argument specifies a theme. For now, we will leave it alone. jui is a the
 $config['atk']['base_path']='./atk4/';
 $config['dsn']='mysql://root:root@localhost/project';
 <?/?>
+<p>Additionally we would want to do extensive use of database in Jobeet therefore uncomment the following line in lib/Frontend.php
+<?Code?>
+//$this->dbConnect();
+<?/?>
+
 <p>Change those to conform with your installation and let's add few more lines to redefine settings from config-default.php:</p>
 
 <?Code?>
