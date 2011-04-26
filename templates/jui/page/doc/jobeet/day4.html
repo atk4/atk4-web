@@ -80,10 +80,10 @@ Doing any of the above will probably add you extra few weeks of work you could h
 
 
 <h2>Adding Pages</h2>
-<p>Let's add a page for our current job listing. You will need to edit page/index.php file (which comes with atk4-example by default). You would need to get rid of everything in the file and put the following code there:</p>
+<p>Let's add a page for our current job listing. You will need to edit page/jobs.php file (which comes with atk4-example by default). You would need to get rid of everything in the file and put the following code there:</p>
 <?Code?>
-class page_index extends Page {
-    function init(){
+class page_jobs extends Page {
+    function initMainPage(){
         parent::init();
         $p=$this;
 
@@ -91,15 +91,98 @@ class page_index extends Page {
         $jobs->setModel('Job',array('location','position'));
         $jobs->addQuickSearch(array('location','position'));
         $jobs->addButton('Post a Job');
+
+        $jobs->addFormatter('company','link');
+        
     }
     function defaultTemplate(){
-        return array('page/index');
+        return array('page/jobs');
     }   
 }
 <?/?>
-<p>After open templates/jui/page/index.html and change it to this:</p>
+<p>After open templates/jui/page/jobs.html and change it to this:</p>
 <pre>
 &lt;h1&gt;Jobeet&lt;/h1&gt;
 &lt;?$Content?&gt;
 </pre>
+
+<p>Next we need to add the page which will show the details of the job. We will add it as a sub-page of page_jobs class. This can be done by creating function page_details(). When you have same page class treat multiple pages, then init() method is always executed. Method page_details will be executed for sub-page and method initMainPage() will be executed for the main page only.</p>
+
+<p>Next, let's create a template for the details page's View. We are not redefining template for all of the page, just for a single view, which will contain job details, therefore we will save it as templates/jui/view/job_details.html. Put the following code there:
+<?Html?>
+  &lt;h1&gt;&lt;?$company?&gt;&lt;/h1&gt;
+  &lt;h2&gt;&lt;?$location?&gt;&lt;/h2&gt;
+  &lt;h3&gt;
+    &lt;?$position?&gt;
+    &lt;small&gt; - &lt;?$type?&gt;&lt;/small&gt;
+  &lt;/h3&gt; 
+        
+  &lt;?has_logo?&gt;
+    &lt;div class=&quot;logo&quot;&gt;
+      &lt;a href=&quot;&lt;?$logo_url?&gt;&quot;&gt;
+        &lt;img src=&quot;&lt;?$logo?&gt;&quot; alt=&quot;&lt;?$company?&gt; logo&quot; /&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;?/?&gt; 
+ 
+  &lt;div class=&quot;description&quot;&gt;
+    &lt;?$description?&gt;
+  &lt;/div&gt;
+        
+  &lt;h4&gt;How to apply?&lt;/h4&gt;
+  &lt;p class=&quot;how_to_apply&quot;&gt;&lt;?$how_to_apply?&gt;&lt;/p&gt;
+ 
+  &lt;div class=&quot;meta&quot;&gt;
+    &lt;small&gt;posted on &lt;?$created_dts?&gt;&lt;/small&gt;
+  &lt;/div&gt;
+
+&lt;?$Buttons?&gt;
+<?/?>
+<p>You will also need to add a bit of PHP code to make this work with a model. Add this function to page/jobs.php</p>
+<?Code?>
+    function page_details(){
+        $v=$this->add('View',null,null,array('view/job_details'));
+        $m=$v->setModel('Job')->loadData($_GET['id']);
+        $v->template->del('has_logo');
+        $v->add('Button',null,'Buttons')->setLabel('Back')->js('click')->univ()->location(
+            $this->api->getDestinationURL('..'));
+        $v->add('Button',null,'Buttons')->setLabel('Edit');
+    }
+<?/?>
+<h3>See it working</h3>
+<p>Open http://localhost/jobleet/jobs.html in your browser</p>
+<p>It should show you list of jobs from the database. Each of them should contain a link. Clicking a link will send you to the page jobs/details.html?id=123 which will show details of that particular job.</p>
+<p>The views you have used on the pages are standard - Grid and View. You also coupled them with model through "setModel()". For the View on details page you specified a custom template through 4th argument of add() function. Further - you loaded data from the $_GET['id']. Finally 2 buttons were dynamically added to the details page to get back to the list or edit data.
+
+<h2>Setting page title</h2>
+<p>It would be awesome if we could have changed Title of the details page to contain job name. First we need to look into shared.html. It contains the following code:</p>
+<?Html?>
+&lt;title&gt;&lt;?page_title?&gt;&lt;?/?&gt;Agile Toolkit&lt;/title&gt;
+<?/?>
+<p>Knowing that shared.html template is associated with the API, we can set it from anywhere in the application through $this-&gt;api-&gt;template&gt;>set('page_title','Hello World'); Let's add this code to our details page.</p>
+<?Code?>
+        $this->api->template->trySet('page_title',
+            sprintf('%s is looking for %s',$m->get('company'),$m->get('position')));
+<?/?>
+
+<p>Next we would also like to add title to other pages. For best SEO practices this title should be customizable. We will add 'Controller_Seo' to our API class, which copies SEO information from the page class into shared.html template. You can look at the sources of this Controller, it is implemented very straightforward. To add it, go into lib/Frontend.php class and add this line before add('BasicAuth');</p>
+<?Code?>
+        $this->add('Controller_Seo');
+        $this->template->tryDel('fullscreen');
+<?/?>
+<p>While here, we also removed "fullscreen" tag contents from the shared file, which will set screen width to 960 pixels. Next open template/jui/page/jobs.html and add anywhere: &lt;?seo_title?&gt;Job Listings&lt;?/?&gt;</p>
+
+<h2>Handling errors</h2>
+<p>You might think, what would happen if you try to access page with non-existent ID. This would generate exception "InstanceNotLoaded". Calling loadData with non-existang ID does not produce error on it's own, however trying to get properties after that produces the error. You can either check this manually by calling $m->isInstanceLoaded() function after loadData(). Alternatively and preferably you should let Agile Toolkit handle this. If problem bubbles up, API catches it and depending on deployment setting will produce either an verbose error message or just a static screen.</p>
+
+<h2>See you Tomorrow</h2>
+<p>
+Today, we have described some design patterns used by Agile Toolkit. Hopefully the project structure now makes more sense. We have played with the templates by manipulating the tags. We have also used view and grid to display the data the way we want it.
+</p><p>
+Tomorrow, we will learn more about the routing.
+</p>
+
+
+
+
 

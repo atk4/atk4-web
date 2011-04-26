@@ -108,6 +108,7 @@ class AgileToolkitWeb extends ApiFrontend {
 
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
+			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
 			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			$this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
 			if($this->page_object->template->is_set('ContactForm')){
@@ -132,6 +133,12 @@ class AgileToolkitWeb extends ApiFrontend {
 	function enclose_Code($content,$tag){
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_Code',null,$tag)
+			->setName($header)
+			->setDescr($content);
+	}
+	function enclose_Html($content,$tag){
+		list($header,$content)=preg_split('/\n/',$content,2);
+		$this->page_object->add('Doc_Html',null,$tag)
 			->setName($header)
 			->setDescr($content);
 	}
