@@ -3,12 +3,16 @@ class page_doc_jobeet extends Doc_Page {
 	function init(){
 		parent::init();
         //$this->api->dbConnect();
-        return;
 
-        $this->sidebar->template->set('title','Learning Agile Toolkit');
-		$this->subPage('quick_start','Quick Start') ;
-		$this->subPage('adding','Adding Objects') ;
-		$this->subPage('..','Comming Soon') ;
+        $this->sidebar->template->set('title','Agile Jobeet Project');
+		$this->subPage('day1','1: The Agile Toolkit') ;
+		$this->subPage('day2','2: About Jobeet') ;
+		$this->subPage('day3','3: The Data Model') ;
+		$this->subPage('day4','4: Controller and View') ;
+		$this->subPage('day5','5: The Routing') ;
+		$this->subPage('day6','6: More with Model') ;
+		$this->subPage('day7','7: Category Page') ;
+		$this->subPage('..','To Be Continued') ;
         return;
 		$this->subPage('understanding','Understanding') ;
 		$this->subPage('enhancing','Reading Agile Toolkit') ;
