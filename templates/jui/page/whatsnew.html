@@ -1,42 +1,12 @@
-<h1><?page_title?>What's new in Agile Toolkit?<?/?></h1>
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
 
 <?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
 
 <?seo_keywords?>download, development verison, stable version, changes, updates, changelog, recent changes<?/?>
-<div class="atk-layout c2" id="download-grid">
-	<div>
-		<h2>Stable Version</h2>
-
-        <h3>4.0.3: Improved Example Bundle</h3>
-
-		<p>Agile toolkit 4.0.3 fixed bug <a
-		href="https://github.com/atk4/atk4/issues/9">https://github.com/atk4/atk4/issues/9</a> which was showing
-		on new installation mechanism (without .htaccess) if you use sub-pages</p>
-		</p>
-
-        <h3>4.0.2: Improved Example Bundle</h3>
-
-		<p>Example Bundle is the project you get when you click the big Download button on the index page. It contains a
-        small sample project which is designed to work out-of-the-box and help new users to get started. This project was
-        greatly cleaned up. No longer you need to create .htaccess or config.php file.
-        </p>
-        <p>Starting from v4.0.2 there is also automatic check for the new version of Agile Toolkit.</p>
-		
-
-        <h3>4.0.2: New Build Mechanics</h3>
-
-		<p>We use a script to build downloadable packages from "Git". The script has been updated and example project is
-        now living in it's separate Git repository. File was renamed from atk4-sample-project into atk4-example. Also
-        atk4-sample-website was dropped. We are all about software development, why bother with websites.
-        </p>
-		
-
-	</div>
-	<div>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
 		<h2>Development Branch</h2>
-
-        <h3><a href="https://github.com/atk4/atk4/commit/7ec46af5261da0d01f172d39a7ec966a53f04bee">Apr 4</a>:
-        form_body Tag Renamed</h3>
+        <h3><span class="date">April 4<em>th</em></span><a href="https://github.com/atk4/atk4/commit/7ec46af5261da0d01f172d39a7ec966a53f04bee">form_body Tag Renamed</a></h3>
         <p>Default Form template used to contain &lt;?form_body?&gt; tag. That's the place in the form.html template, where
         fields are located. It's now been renamed into standard &lt;?Content?&gt; tag making addition of other elements into
         form body much easier:
@@ -46,23 +16,20 @@ $f->add('H2')->set('appears after last field');
 
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/13d4e8daa7b26bfddb747fe05426154f3c7a1afe">Mar 26</a>:
-        url_prefix improvement</h3>
+        <h3><span class="date">March 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/13d4e8daa7b26bfddb747fe05426154f3c7a1afe">url_prefix improvement</a></h3>
         <p>Agile Toolkit allows you to define url_prefix and url_postfix inside config. By default postfix is '.html' but you
         can change it into anything else. Now url_prefix can also be defined using question mark. Set it to '?page='
         and you no longer need .htaccess file. This is now a default behaviour for 4.0.2 branch too.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/b884e0d0a79552a486e054a81adadc591c6e2587">Mar 26</a>:
-        default-config.php support</h3>
+        <h3><span class="date">March 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/b884e0d0a79552a486e054a81adadc591c6e2587">default-config.php support</a></h3>
         <p>Historically Agile Toolkit had no file with default config values. A sample use of
         getConfig('db/dsn','root@localhost/db'); was used where 2nd argument is providing a default value. In addition to
         that you can specify file with default config values inside config-default.php.
         </p>
         <p>Please, do not put your SQL password in there, it's not secure.</p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/5d918a7e7d20ca1ffa3dd15e9067a0c1309feca2">Mar 25</a>:
-        &lt;?page?&gt; and &lt;?template?&gt;</h3>
+        <h3><span class="date">March 25<em>th</em></span><a href="https://github.com/atk4/atk4/commit/5d918a7e7d20ca1ffa3dd15e9067a0c1309feca2">&lt;?page?&gt; and &lt;?template?&gt;</a></h3>
         <p>A few updates now adds support for global tags such as &lt;?page?&gt; and &lt;?template?&gt; to ALL Views.
         Previously only "template" tag was supported inside shared.html template. Now any template you can (and SHOULD) use 
         those tags. To remind — those tags substitute value inside them with the proper URL pointing to the resource. In case
@@ -71,8 +38,7 @@ $f->add('H2')->set('appears after last field');
         </p>
         <p>By using those tags your software links will always work even if you deploy your software NOT in the webroot</p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/30f63415c6c2962c9f09e3ebb6e6ebc6974136e4">Mar 24</a>:
-        univ().setTimeout() added</h3>
+        <h3><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/30f63415c6c2962c9f09e3ebb6e6ebc6974136e4">univ().setTimeout() added</a></h3>
         <p>This function now allows you to access setTimeout function from inside PHP. Below code will submit a $form 5
         seconds after $field contents are changed:
 <?Code?>
@@ -82,8 +48,7 @@ $field->js('change')->univ()->setTimeout(
 <?/?>
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/e6b430a3cdd33f2db49dab5621569b7783fb8628">Mar 24</a>:
-        form_hybrid.html added</h3>
+        <h3><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e6b430a3cdd33f2db49dab5621569b7783fb8628">form_hybrid.html added</a></h3>
         <p>Agile Toolkit already got several form styles: basic, horizontal, vertical. However now you can combine them
         inside the same form:
         
@@ -102,8 +67,7 @@ $f->addSeparator('basic'); //next section style
 <?/?>
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/c0a37811d751487d586065bd1e7a24840b2fd13a">Mar 24</a>:
-        page/path/to.html</h3>
+        <h3><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c0a37811d751487d586065bd1e7a24840b2fd13a">page/path/to.html</a></h3>
         <p>If page is not defined inside a .php class, then Agile Toolkit's ApiFrontend attempts to find a static template
         for this page. If page you are accessing is called my/sub/page.html then normally it would have loaded template from
         template/jui/page/my_sub_page.html. Now if this template is not found, Agile Toolkit will attempt to load
@@ -111,8 +75,7 @@ $f->addSeparator('basic'); //next section style
         multi-level page templates.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/6cf928f4cd4844ca99eadbfcb5a91d95193ac1fc">Mar 23</a>:
-        New Form Styles</h3>
+        <h3><span class="date">March 23<em>rd</em></span><a href="https://github.com/atk4/atk4/commit/6cf928f4cd4844ca99eadbfcb5a91d95193ac1fc">New Form Styles</a></h3>
         <p>Developers are not form designers. That's why Agile Toolkit looks to bundle some nice styles you can choose from.
         <a href="<?page?>playground<?/?>">take a look at form styles</a>. To use them use the following code:
 <?Code?>
@@ -127,8 +90,7 @@ $f->setFormClass('basic');
         You can check out those forms in your installation by pointing brower at /playground.html
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/6788f40c1fd8fb6d38df79c709c3f7990fffe11c">Mar 23</a>:
-        Expander's new ID field</h3>
+        <h3><span class="date">March 23<em>rd</em></span><a href="https://github.com/atk4/atk4/commit/6788f40c1fd8fb6d38df79c709c3f7990fffe11c">Expander's new ID field</a></h3>
         <p>If you have ever used Grid Column type 'expander', you should know that they automatically locate "id" field in the Grid and will
         pass them as a GET argument to your sub-page. Creation of expander within expander were producing clashes between
         ID fields. Now grids will also determine and pass a get argument based on the table name used inside grid. For
@@ -162,9 +124,8 @@ function page_details(){
         </p>
 
 
-        <h3><a href="https://github.com/atk4/atk4/commit/55ecffdd2ba4856e5666e3597da8dc914288867e">Mar 22</a>:
-        Agile Toolkit uses <a href="http://960.gs">960gs</a></h3>
-        <p>960 Grid System is designed for improved layouts inside your web applciations. The basic idea is to divide 960
+        <h3><span class="date">March 22<em>nd</em></span><a href="https://github.com/atk4/atk4/commit/55ecffdd2ba4856e5666e3597da8dc914288867e">Agile Toolkit uses 960gs</a></h3>
+        <p><a href="http://960.gs">960 Grid System</a> is designed for improved layouts inside your web applciations. The basic idea is to divide 960
         pixel width into 12 columns and provide classes with appropriate width for professional layout.
         </p>
         <p>Probably the biggest impact is on the forms, which now have proper width. The width depends on form class used,
@@ -175,8 +136,7 @@ function page_details(){
         in shared.html
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/44e76a80094d3d6608e271963006492ae5d262ce">Mar 21</a>:
-        Forms without submit handle</h3>
+        <h3><span class="date">March 21<em>st</em></span><a href="https://github.com/atk4/atk4/commit/44e76a80094d3d6608e271963006492ae5d262ce">Forms without submit handle</a></h3>
         <p>Often developers create form and forget to handle form's submit event. Because form expect to receive JavaScript
         when they are submitted, they wil attempt to evaluate wrongly returned HTML code and it usually comes up as AJAX
         parse error.</p>
@@ -184,8 +144,8 @@ function page_details(){
         putting error into standard javascript console about missing submit handler.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/356b0cb316d4e9742fba02118623b984627a7f9b">Mar 15</a>:
-        Extra class for jQuery UI dialog</h3>
+        <h3><span class="date">March 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/356b0cb316d4e9742fba02118623b984627a7f9b">Extra class for jQuery UI dialog</a>
+        </h3>
         <p>Normally to build a jQuery UI dialog you need a dedicated &lt;div&gt; element. univ().dialogURL() and similar
         functions are wrapper for jQuery UI dialogs and create that div automatically. However you might be willing to pass
         some class to that new dialog window. New Option for dialogURL() allows you to do that.
@@ -197,8 +157,7 @@ $b->js('click')->univ()->dialogURL('Frame Title',
 <?/?>
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/0686443822df61353d4d2e2b4f643895c210d8db">Mar 14</a>:
-        $dq-&gt;where('val in',$array)</h3>
+        <h3><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/0686443822df61353d4d2e2b4f643895c210d8db">$dq-&gt;where('val in',$array)</a></h3>
         <p>where() method of Dynamic Queryes is used to properly escape 2nd argument. When you are performing basic
         comparisons it's quite straightforward where('gender','M'). However "in" operator allows to specify a number of
         values. Previously it was working only in this format:
@@ -212,8 +171,7 @@ $dq->where('id in',array(1,2,3));
 <?/?>
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/119248b3f5f45ae8ad6473890d22f4c1e16c266f">Mar 14</a>:
-        Field's-&gt;setAttr()</h3>
+        <h3><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/119248b3f5f45ae8ad6473890d22f4c1e16c266f">Field's-&gt;setAttr()</a></h3>
         <p>Historically you could add properties to Form Fields using setProperty() metohd. Now you can use setAttr() which
         matches terminology of jQuery
 <?Code?>
@@ -223,16 +181,14 @@ $f->addField('line','cvv','CVV')
 <?/?>
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/976f4747be595d177c86f60f1cff620c28fef069">Mar 14</a>:
-        univ()->bindFillInFields()</h3>
+        <h3><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/976f4747be595d177c86f60f1cff620c28fef069">univ()->bindFillInFields()</a></h3>
         <p>New function of univ() library allows to automatically fill-in values into other form fields when dropdown has
         been changed. This relies on included "dictionary" within your dropdown with the list of pre-defined correspondences
         between dropdown field value and values to be filled in in other fileds. <a href="<?page?>example/bindfillinfields<?/?>">Example
         of bindFillInFields</a>.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/9ef5812a68fa882e6d85629e6e9b8ae5b8473a50">Mar 13</a>:
-        &lt;?field_type?&gt; in form tpl.</h3>
+        <h3><span class="date">March 13<em>th</em></span><a href="https://github.com/atk4/atk4/commit/9ef5812a68fa882e6d85629e6e9b8ae5b8473a50">&lt;?field_type?&gt; in form tpl.</a></h3>
         <p>Form's template (form.html) contains a section which defines how each field should look. This region is called
         &lt;?form_line?&gt;. Prevously same form_line was used for all filed types. Now you can use field_type tag which will
         be initialized to the type of the field. This allows hard-core designers to properly define field width based on
@@ -247,22 +203,19 @@ $f->addField('line','cvv','CVV')
         with reloading, please submit a bug.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/1baa2ebbf40c77a80f2644b33768e21f3ac25ff2">Mar 5</a>:
-        Specifying URL for URL Class</h3>
+        <h3><span class="date">March 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1baa2ebbf40c77a80f2644b33768e21f3ac25ff2">Specifying URL for URL Class</a></h3>
         <p>$api-&lt;getDestionationURL($page) can now be used with absolute URLs. It will still manage to properly append
         arguments to the URL (including sticky arguments).
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/134a9918cfbdb5b433d3a29af4b6d4f2f88464b9">Mar 5</a>:
-        NL2BR for Listers</h3>
+        <h3><span class="date">March 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/134a9918cfbdb5b433d3a29af4b6d4f2f88464b9">NL2BR for Listers</a></h3>
         <p>If your database contains HTML code and you will try to output it through Lister, then by default your HTML code
         will be escaped. To avoid this, you can disable this by setting $lister-&lt;safe_html_output=false;</p>
         <p>You can now also set $lister-&gt;nl2br_output=true; which will convert newlines into &lt;br/&gt; in your output.
         This is handy if you are outputing user-defined text with newlines.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/e1010293adc302dfbc249b678738ff1e4af909f8">Mar 1</a>:
-        Version Verification Function</h3>
+        <h3><span class="date">March 1<em>st</em></span><a href="https://github.com/atk4/atk4/commit/e1010293adc302dfbc249b678738ff1e4af909f8">Version Verification Function</a></h3>
         <p>If you are writing an Addon which requires Agile Toolkit of a certain version, you now can use the method
         versionRequirement().
 <?Code?>
@@ -279,8 +232,37 @@ if($this->api->versionRequirement('4.0.2',true))
 }
 <?/?>
         </p>
-
+		<div class="hr hr-small"></div>
         <a href="<?page?>./feb2011<?/?>">Older Entries</a>
 
     </div>
+	<div class="g-4">
+		<div class="box metallic">
+			<h3>Stable Version</h3>
+	
+	        <h5><span class="version">v4.0.3</span> Improved Example Bundle</h5>
+	
+			<p>Agile toolkit 4.0.3 <a
+			href="https://github.com/atk4/atk4/issues/9">fixed bug</a> which was showing
+			on new installation mechanism (without .htaccess) if you use sub-pages</p>
+			</p>
+	
+	        <h5><span class="version">v4.0.2</span> Improved Example Bundle</h5>
+	
+			<p>Example Bundle is the project you get when you click the big Download button on the index page. It contains a
+	        small sample project which is designed to work out-of-the-box and help new users to get started. This project was
+	        greatly cleaned up. No longer you need to create .htaccess or config.php file.
+	        </p>
+	        <p>Starting from v4.0.2 there is also automatic check for the new version of Agile Toolkit.</p>
+			
+	
+	        <h5><span class="version">v4.0.2</span> New Build Mechanics</h5>
+	
+			<p>We use a script to build downloadable packages from "Git". The script has been updated and example project is
+	        now living in it's separate Git repository. File was renamed from atk4-sample-project into atk4-example. Also
+	        atk4-sample-website was dropped. We are all about software development, why bother with websites.
+	        </p>
+		</div>
+
+	</div>
 </div>

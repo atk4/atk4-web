@@ -29,11 +29,11 @@ There are some rules:
  $new_view_object = $parent -> add($class, $short_name, $spot, $template );
 <?/?>
 
-<p><b>$parent</b> - must be an existing object. You can only add View into View, but you can add Controller and Model anywhere.</p>
-<p><b>$class</b> - name of the class. There is a convention on naming classes. 'Form_UserDetails' would be example class name.</p>
-<p><b>$short_name</b> - overrides generation of short_name. Always use "null".</p>
-<p><b>$spot</b> - defines where rendered version of Views template will be inserted. You can add multiple objects into same spot. Existing contents of the spot will be erased when object is being rendered. Default value is 'Content'.</p>
-<p><b>$template</b> - overrides View's default template. If array is used, then first argument is file name of template (such as "view/banner"). Second argument is optional and defines which region to use within template. If not specified "_top" is used, which means all contents of template file will be used. If $template is not array, but a string, then it specifies a region in parent's template which will be cloned and used by the view</p>
+<p><b>$parent</b> — must be an existing object. You can only add View into View, but you can add Controller and Model anywhere.</p>
+<p><b>$class</b> — name of the class. There is a convention on naming classes. 'Form_UserDetails' would be example class name.</p>
+<p><b>$short_name</b> — overrides generation of short_name. Always use "null".</p>
+<p><b>$spot</b> — defines where rendered version of Views template will be inserted. You can add multiple objects into same spot. Existing contents of the spot will be erased when object is being rendered. Default value is 'Content'.</p>
+<p><b>$template</b> — overrides View's default template. If array is used, then first argument is file name of template (such as "view/banner"). Second argument is optional and defines which region to use within template. If not specified "_top" is used, which means all contents of template file will be used. If $template is not array, but a string, then it specifies a region in parent's template which will be cloned and used by the view</p>
 
 <h2>init() method</h2>
 <p>Anytime when you add anything, Agile Toolkit creates an object, links it with api and parent by setting $obj->owner and $obj->api properties. For views it also initialize template. When it's all done, init() method is called.</p>
@@ -92,7 +92,8 @@ The region &lt;?BusinessInfo?&gt; inside page's template will be replaced by a v
 <p><b>$this->destroy()</b> remove current object from parent. For view this will remove it from rendered page.</p>
 <p>Properties: <b>$this->name</b> name unique on the system. <b>$this->short_name</b> is a short name. <b>$this->template</b> reference to SMlite template for current view. <b>$this->owner</b> reference to object whose add() was used(parent). <b>$this->api</b> refers to Api class of a parent object.</p>
 
-<p>
-<a class="button blue" href="<?page?>../adding<?/?>">Continue to "Adding Objects"</a>
+<div class="continue-block">
+<a class="button blue big" href="<?page?>../adding<?/?>">Continue to "Adding Objects"</a>
 
 </p>
+	
