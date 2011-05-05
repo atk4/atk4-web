@@ -35,10 +35,11 @@ class Model_Job extends Model_Table {
         $this->addField('is_public')->boolean(true);
         $this->addFiled('is_activated')->boolean(true);
         $this->addField('email');
+        $this->addField('token');
 
         $this->addField('created_dts')->datatype('timestamp')->system(true);
         $this->addField('updated_dts')->datatype('timestamp')->system(true);
-        $this->addField('expires_at')->datatype('date');
+        $this->addField('expires_at')->datatype('date')->system(true);
     }   
 }
 <?/?>

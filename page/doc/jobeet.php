@@ -12,6 +12,7 @@ class page_doc_jobeet extends Doc_Page {
 		$this->subPage('day5','5: The Routing') ;
 		$this->subPage('day6','6: More with Model') ;
 		$this->subPage('day7','7: Category Page') ;
+		$this->subPage('day8','8: The Form') ;
 		$this->subPage('..','To Be Continued') ;
         return;
 		$this->subPage('understanding','Understanding') ;

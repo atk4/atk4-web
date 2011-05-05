@@ -84,7 +84,6 @@ Doing any of the above will probably add you extra few weeks of work you could h
 <?Code?>
 class page_jobs extends Page {
     function initMainPage(){
-        parent::init();
         $p=$this;
 
         $jobs = $this->add('MVCGrid');
@@ -169,8 +168,9 @@ class page_jobs extends Page {
 <?Code?>
         $this->add('Controller_Seo');
         $this->template->tryDel('fullscreen');
+        $this->js()->_load('ui.atk4_notify');
 <?/?>
-<p>While here, we also removed "fullscreen" tag contents from the shared file, which will set screen width to 960 pixels. Next open template/jui/page/jobs.html and add anywhere: &lt;?seo_title?&gt;Job Listings&lt;?/?&gt;</p>
+<p>While here, we also removed "fullscreen" tag contents from the shared file, which will set screen width to 960 pixels. Last line here includes notification widget, which we will certainly make use of for status messages. Next open template/jui/page/jobs.html and add anywhere: &lt;?seo_title?&gt;Job Listings&lt;?/?&gt;</p>
 
 <h2>Handling errors</h2>
 <p>You might think, what would happen if you try to access page with non-existent ID. This would generate exception "InstanceNotLoaded". Calling loadData with non-existang ID does not produce error on it's own, however trying to get properties after that produces the error. You can either check this manually by calling $m->isInstanceLoaded() function after loadData(). Alternatively and preferably you should let Agile Toolkit handle this. If problem bubbles up, API catches it and depending on deployment setting will produce either an verbose error message or just a static screen.</p>
