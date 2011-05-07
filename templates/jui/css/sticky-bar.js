@@ -3,7 +3,7 @@ jQuery(function( $ ){
  
 // Get a reference to the message whose position
 // we want to "fix" on window-scroll.
-var message = $( "#sticky-bar" );
+var message = $( ".sticky-bar" );
  
 // Get the origional position of the message; we will
 // need this to compare to the view scroll for

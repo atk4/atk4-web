@@ -401,7 +401,8 @@ input[type=text], input[type=password], textarea,
 #footer #credit a,
 .button.black,
 #header #actionbar a span,
-.metallic input[type=text], .metallic input[type=password] {
+.metallic input[type=text], .metallic input[type=password],
+#introduction-bar .breadcrumb-item a i {
     -webkit-transition: all 0.2s ease-in-out;
        -moz-transition: all 0.2s ease-in-out;
          -o-transition: all 0.2s ease-in-out;
@@ -482,6 +483,10 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .big-icon.icon-book {height:56px;background-position:0 -630px;}
 .big-icon.icon-community {height:48px;background-position:-70px 0;}
 .big-icon.icon-core {height:51px;background-position:-70px -68px;}
+.big-icon.icon-column {height:55px;background-position:-70px -138px;}
+.big-icon.icon-jerrycan {height:49px;background-position:-70px -285px;}
+.big-icon.icon-lego {height:52px;background-position:-70px -213px;}
+.big-icon.icon-roadsign {height:54px;background-position:-70px -354px;}
 
 .icon-magichat, .icon-rightarrow, .icon-comparison {background-image:url(../images/sprite.png);display:inline-block;}
 .icon-magichat {background-position:-180px -20px;width:27px;height:33px;}
@@ -548,6 +553,22 @@ h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:no
 .popup-download.ui-dialog .ui-dialog-title {position:relative;margin:0;float:none;top:0;padding-left:90px;height:67px;display:block;line-height:75px;font-size:260%;}
 .popup-newsletter.ui-dialog .ui-dialog-title {padding-left:100px;}
 .popup-contactus h1 {display:none;}
+#introduction-bar-dock {height:70px;}
+#introduction-bar {top:110px;}
+#introduction-bar .breadcrumb-item a {display:block;text-decoration:none;}
+#introduction-bar .breadcrumb-item a i,
+#introduction-bar .breadcrumb-item a span {float:left;}
+#introduction-bar .breadcrumb-item a i {margin:0 10px 0 0;opacity:0.6;}
+#introduction-bar .breadcrumb-item a span {position:relative;top:20px;text-decoration:underline;}
+#introduction-bar .breadcrumb-item .icon-jerrycan,
+#introduction-bar .breadcrumb-item .icon-lego,
+#introduction-bar .breadcrumb-item .icon-gears,
+#introduction-bar .breadcrumb-item .icon-roadsign {margin-top:5px;}
+#introduction-bar .breadcrumb-item.current a {color:#003066;}
+#introduction-bar .breadcrumb-item.current a span {text-decoration:none;}
+#introduction-bar .breadcrumb-item a:hover i,
+#introduction-bar .breadcrumb-item.current a i {opacity:1;}
+#introduction-bar .breadcrumb-start span {margin:5px 5px 0 0;display:block;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -628,12 +649,12 @@ a.rss-link:hover {color:#000;}
 .details>div>em {margin-left:110px;display:block;}
 .continue-block {text-align:right;border-top:1px solid #ccc;padding-top:2em;}
 h5 .version {font-weight:bold;font-family:'Lucida Grande',sans-serif;text-transform:lowercase;font-size:14px;display:block;margin-bottom:0.3em;}
-#sticky-bar-dock {height:1em;}
-#sticky-bar {width:100%;z-index:99;background:#fff;background:rgba(255,255,255,0.95);} 
-#sticky-bar>.gs-wrap {padding-top:5px;padding-bottom:5px;}
+.sticky-bar-dock {height:1em;}
+.sticky-bar {width:100%;z-index:99;background:#fff;background:rgba(255,255,255,0.95);} 
+.sticky-bar>.gs-wrap {padding-top:5px;padding-bottom:5px;}
 div.sticky-bar-absolute {left:0px;position:absolute;top:15px;}
 div.sticky-bar-fixed {left:0px;position:fixed;top:0px;-webkit-box-shadow:0 1px 10px rgba(0,0,0,0.5);}
-.breadcrumb>.breadcrumb-item {-webkizt-box-shadow:1px 1px 1px rgba(0,0,0,0.3);background: url(../images/breadcrumb-arrow.png) no-repeat left center;float:left;position:relative;padding:0 5px 0 25px;}
+.breadcrumb>.breadcrumb-item {-webkizt-box-shadow:1px 1px 1px rgba(0,0,0,0.3);background: url(../images/breadcrumb-arrow.png) no-repeat left center;float:left;position:relative;padding:0 5px 0 28px;}
 .breadcrumb>.breadcrumb-start {font-weight:bold;}
 .breadcrumb>.breadcrumb-item .ui-icon, .breadcrumb>.breadcrumb-item em {display:inline-block;}
 .breadcrumb>.breadcrumb-item em {margin-left:0.3em;border:1px solid #0052c1;width:13px;height:13px;border-radius:5px;position:relative;top:0.2em;}
