@@ -1,0 +1,198 @@
+<?$Content?>
+
+<h1>Day 5: More with the Model</h1>
+<p>
+Yesterday was a great day. You learned how to create pretty URLs and how to use the symfony framework to automate a lot of things for you.
+</p><p>
+Today, we will enhance the Jobeet website by tweaking the code here and there. In the process, you will learn more about all the features we have introduced during the first five days of this tutorial.
+</p>
+<h2>Model Conditioning</h2>
+<p>
+From day 2 requirements: <i> "When a user comes to the Jobeet website, she sees a list of active jobs."</i> But as of now, all jobs are displayed, whether they are active or not. You must know that any Model defined in Agile Toolkit can have permanent conditions. Conditions add "where" clauses to the actual queries when performed. First, however, lets go to the Jobs page (page/jobs.php) and set up debugging for the model used there. You only need to change one line:</p>
+<?Code?>
+        $jobs->setModel('Job',array('location','position','company'))->debug();
+<?/?>
+<p>
+After you refresh the page you will see detailed query, which was used by the Grid, which look like this:
+<?Code?>
+select SQL_CALC_FOUND_ROWS a.location, a.position, a.company, a.id, 
+       a.category_id, a.created_dts, a.updated_dts from job a
+<?/?>
+<p>We have no intention to writing a new query, however modifying the query would suit us perfectly. There are however few ways to modify it. First, we could modify the query right here and that would impact only our jobs page. An active job is one that was posted less than 30 days ago. addCondition() method will add a 'where' condition which will be applied on grid contents
+</p>
+<?Code?>
+        $jobs->setModel('Job',array('location','position','company'))
+            ->addCondition('created_dts>',date('Y-m-d H:i:s',strtotime('-30 days')))
+            ->debug();
+<?/?>
+<p>As you can see from debug information, Model/ORM automatically takes care of table aliases. Another thing you probably have noticed, is that not all the columns are being queried. That's because we explicitly defined which columns we want in the grid the query is optimized to show only those columns. Columns defined as system(true) are always queried and are hidden by default.
+<p/><p>You might also have noticed, that that creation date was automatically inserted into the records. That's because model automatically looks out for 'created_dns' and 'modified_dts' fields and sets them if they are defined in the model.</p>
+<p>Due to nature of dynamic queries, parametrical arguments are not used at the moment. They might be introduced transparently in the future versions of Agile Toolkit. 2nd argument to addCondition is automatically quoted. It is also escaped for security reasons, to make sure no SQL injection cannot occur.</p>
+
+<h2>Object Standard Behaviour</h2>
+<p>
+Even if the above code works, it is far from perfect as it does not take into account some requirements from day 2:
+</p><p>
+"A user can come back to re-activate or extend the validity of the job ad for an extra 30 days..."
+</p><p>
+But as the above code only relies on the created_dts value, and because this column stores the creation date, we cannot satisfy the above requirement.
+</p><p>
+But if you remember the database schema we have described during day 3, we also have defined an expires_at column. Currently this value is always empty as it is not set in the fixture data. But when a job is created, it can be automatically set to 30 days after the current date.
+</p><p>
+When you need to do something automatically before a Model is saved, you can override the beforeUpdate(), beforeModify() or beforeInsert() method of the model class. beforeModify executes before either insert or update. beforeUpdate() and beforeInsert() only execute on corresponding events. All of those handlers will will receive array of data which is about to be updated. It can change any data in the array and those changes will be saved to the database. The following method should be added to Model_Job:</p>
+<?Code?>
+    function beforeInsert(&$data){
+        parent::beforeInsert($data);
+        $data['expires_at']=date('Y-m-d',strtotime('+30 days'));
+    }
+<?/?>
+<p>Now let's change the condition on our job listing, however instead of doing like we did it previously, let's create a new Model called "Job_Public". It will be based on Jobs but will add necessary conditions to match only those jobs allowed to advertise.</p>
+<?Code?>
+class Model_Job_Public extends Model_Job {
+    function init(){
+        parent::init();
+        $this->addCondition('expires_at>',date('Y-m-d')); 
+    }
+}
+<?/?>
+<p>We also need to take condition out from our UI code and make it use our new model. This is an important moment - business logic regarding how many days job posts continue to show should be described in business logic code and not UI.</p>
+
+<h2>Custom Configuration</h2>
+<p>
+In the Model_Job's beforeInsert() method we have hardcoded the number of days for the job to expire. It would have been better to make the 30 days configurable. Agile Toolkit provides a built-in configuration file support for application specific settings. It is advisable however, to always specify default value if you are requesting data from config file.</p>
+<?Code?>
+        $data['expires_at']=date('Y-m-d',strtotime('+'.$this->api->getConfig('job/expires','30 days')));
+<?/?>
+<p>You do not need to add anything to your configuration file for this to work, it would use the same value of 30 days, however you CAN specify the following in config.php or config-default.php:</p>
+<?Code?>
+$config['job']['expires']='2 months';
+<?/?>
+<p>Agile Toolkit do not separate configuration options between framework and your application. You have probably figured how property is accessed and the path 'job/expires' is looked up inside $config array structure.</p>
+
+
+<h2>Categories on the Homepage</h2>
+<p>
+From day 2 requirements:
+</p><p>
+"The jobs are sorted by category and then by publication date (newer jobs first)."
+</p><p>
+Until now, we have not taken the job category into account. From the requirements, the homepage must display jobs by category. First, we need to get all categories with at least one active job. Let's create "Category_Active" model for this.
+<?Code?>
+class Model_Category_Active extends Model_Category {
+    function init(){
+        parent::init();
+        $this->addField('job_count')
+            ->datatype('int')
+            ->calculated(true);
+
+        $this->addCondition('job_count>',0);
+        //$this->debug();
+        // uncomment this to see queries
+    }
+    function calculate_job_count(){
+        return $this->add('Model_Job_Public')
+            ->dsql()
+            ->where('j.category_id=c.id')
+            ->field('count(*)')
+            ->select();
+    }
+}
+<?/?>
+<p>Also we would need the following UI code (into jobs.php page)</p>
+<?Code?>
+        $categories=$this->add('Model_Category_Active')->getRows();
+        var_Dump($categories);
+<?/?>
+<p>Also we need to add property into our base models:</p>
+<?Code?>
+// Into Model_Job:
+    public $table_alias='j';
+// Into Model_Category
+    public $table_alias='c';
+<?/?>
+<p>Table aliases are used to resolve conflicts when multiple tables are joined and that's what we are doing when calculating job count. As expected, the condition defined inside Job_Public are automatically applied to our sub-query. This type of behavior in Agile Toolkit is very vital for consistency and security of web applications. Try the query and the following will appear:</p>
+<?Code?>
+select c.id, c.name, 
+       (select count(*) from job j where (j.expires_at> '2011-04-26') and (j.category_id=c.id) ) as job_count,
+       c.id from category c having (job_count> '0')
+<?/?>
+<p>Agile Toolkit ORM have automatically used "having" clause instead of "where" no a calculated column. Next on our page, we need to create iteration through data array. Note: If our output array would be big, we could have used setQueryFields and dsql() functions to return actual select instead of data, then use do_select() and fetchRow() to channel data.
+</p>
+<?Code?>
+// jobs.php
+        $categories=$this->add('Model_Category_Active')->getRows();
+        foreach($categories as $category){
+            $this->add('H3')->set($category['name'].' ('.$category['job_count'].')');
+            $jobs = $this->add('JobList');
+            $jobs->setModel('Job_Public',array('location','position','company'))
+                ->addCondition('category_id',$category['id']);
+            $jobs->addFormatter('company','link');
+        }
+
+<?/?>
+
+<h2>Limit the Results</h2>
+<p>
+There is still one requirement to implement for the homepage job list:<i> "For each category, the list only shows the first 10 jobs and a link allows to list all the jobs for a given category."</i>. That should be simple enough by limiting number of records per grid and adding link if job_count is more than 10.</p>
+<?Code?>
+            // jobs.php after this line
+            $jobs->addFormatter('company','link');
+
+            // add
+            $jobs->dq->limit(10);
+            if($category['job_count']>10){
+                $this->add('Button')->setLabel('Show More');
+            } 
+<?/?>
+
+<h2>Record population</h2>
+<p>
+Until now, we have used our "test" page to add records manually. However here we would need a bit more data for a reasonable testing and therefore we need
+data import. For population we are going to use a script which uses Model manually and creates 30 jobs.</p>
+<?Code?>
+class page_populate extends Page {
+    function init(){    
+        parent::init(); 
+                        
+        $category_id=$this->add('Model_Category')
+            ->set('name','Category '.rand(10,99))
+            ->update(); 
+                        
+        $m=$this->add('Model_Job');
+        for($i=0;$i<30;$i++){
+            $m->unloadData();
+            $m->set(array(
+                        'category_id'=>$category_id,
+                        'company'=>'Company '.$i,
+                        'position'=>'Web Developer',
+                        'location'=>'London, UK',
+                        'description'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+                        'how_to_apply'=>'Send your resume to lorem.ipsum [at] company_'.$i,
+                        'is_public'=>true,
+                        'is_activated'=>true,
+                        'email'=>'job@example.com'
+                        ));
+            $m->update();
+            echo "Done";
+            exit;
+        }
+    }       
+}
+<?/?>
+<p>After this page is added - open in it the browser and it will add one new category and 30 new jobs in that category.</p>
+<h2>Secure the Job details page</h2>
+<p>
+When a job expires, even if you know the URL, it must not be possible to access it anymore. Try the URL for the expired job (replace the id with the actual id in your database - SELECT id, token FROM jobeet_job WHERE expires_at < NOW());
+
+</p>
+<p>
+We should allow this page to be displayed. To secure this, simply change model from "Job" to "Job_Public".
+
+<h2>Link to the Category Page</h2>
+<p>
+Now, let's add a link to the category page on the homepage and create the category page.</p>
+<p>But, wait a minute. the hour is not yet over and we haven't worked that much. So, you have plenty of free time and enough knowledge to implement this all by yourself! Let's make an exercise of it. Check back tomorrow for our implementation.</p>
+<h2>See you Tomorrow</h2>
+<p>Do work on an implementation on your local Jobeet project. Please, abuse the online API documentation and all the free documentation available on the Agile Toolkit website to help you out. We'll see you again tomorrow with our take on this implementation.</p>
+<p>Good luck!</p>
+
