@@ -4,6 +4,7 @@ class page_doc_learn extends Doc_Page {
 		parent::init();
         $this->api->dbConnect();
 
+        /*
         $this->sidebar->template->set('title','Learning Agile Toolkit');
 		$this->subPage('quick_start','Quick Start') ;
 		$this->subPage('adding','Adding Objects') ;
@@ -16,11 +17,14 @@ class page_doc_learn extends Doc_Page {
 		$this->subPage('styling','Styling and layouts') ;
 		$this->subPage('ajax','AJAX and Dynamics') ;
 		$this->subPage('limitations') ;
+        */
 
 	}
+    /*
     function initMainPage(){
-        $this->api->redirect('./quick_start');
+      //  $this->api->redirect('./quick_start');
     }
+    */
     function defaultTemplate(){
 		$top_page=str_replace('page_','', get_class($this));
         if($this->api->page!=$top_page){

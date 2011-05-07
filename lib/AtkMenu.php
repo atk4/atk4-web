@@ -12,7 +12,6 @@ class AtkMenu extends Menu {
 		switch($section[0]){
 			case'about':
 			case'newsletter':
-			case'intro': 
 				$this->api->template->trySet('menu_about','class="current"');
 
 				$menu->addMenuItem('About','about');
@@ -26,12 +25,13 @@ class AtkMenu extends Menu {
 
 			case'doc': 
 			case'example': 
+			case'intro': 
 				$this->api->template->trySet('menu_doc','class="current"');
 
-				$menu->addMenuItem('Documentation','doc');
+				$menu->addMenuItem('Introduction','intro');
+				$menu->addMenuItem('Learning','doc/learn');
 				$menu->addMenuItem('API Reference','doc/ref');
-				$menu->addMenuItem('Screencasts','doc/sc');
-				$menu->addMenuItem('Examples','example/list');
+				$menu->addMenuItem('Add-ons','doc/a');
 
 				break;
 
@@ -64,5 +64,11 @@ class AtkMenu extends Menu {
 
 			default:
 		}
+	}
+	function isCurrent($href){
+		// returns true if item being added is current
+		$href=str_replace('/','_',$href);
+        $p2=substr($this->api->page,0,strlen($href));
+		return $href==$p2;
 	}
 }
