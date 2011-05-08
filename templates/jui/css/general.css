@@ -554,7 +554,7 @@ h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:no
 .popup-newsletter.ui-dialog .ui-dialog-title {padding-left:100px;}
 .popup-contactus h1 {display:none;}
 #introduction-bar-dock {height:70px;}
-#introduction-bar {top:110px;}
+#introduction-bar {top:0px;}
 #introduction-bar .breadcrumb-item a {display:block;text-decoration:none;}
 #introduction-bar .breadcrumb-item a i,
 #introduction-bar .breadcrumb-item a span {float:left;}

@@ -1,0 +1,113 @@
+<?$Content?>
+<h1>Agile Toolkit and JavaScript</h1>
+<p>In the era of Web 2.0 any website should be interactive and dynamic. jQuery, MooTools, Sencha JS have
+are just some powerful tools which can enhance website when it's loaded into the browser. </p>
+<p>Agile Toolkit is packed with useful JavaScript features.</p>
+<?MoreInfo?>Some of the Agile Toolkit features
+<div class="g-row">
+  <div class="g-6">
+<ul>
+<li>Integration of jQuery on component level;</li>
+<li>PHP wrapper class for converting PHP chain into jQuery chain;</li>
+<li>Use of progressive enhancement with objects;</li>
+<li>jQuery UI widgets - Tabs, Accordion, dialogs;</li>
+<li>$.univ() library for many common tasks;</li>
+<li>Unsaved form data verification with AJAX reloads, Session timeout handling in AJAX;</li>
+<li>Auto-complete and populating field values.</li>
+</ul>
+  </div>
+  <div class="g-5">
+<ul>
+<li>Simple integration with any jQuery plugin;</li>
+<li>Wrapper for evaluating AJAX response;</li>
+<li>Hot-keys and enter handling in forms;</li>
+<li>Many jQuery UI Widgets such as AJAX Forms, AJAX-menu, Grids, Notification;</li>
+<li>Expanders and AJAX buttons in grid;</li>
+<li>Adding arguments to URLs dynamically;</li>
+<li>Seamless object reloads, Form conditional field display and many more.</li>
+</ul>
+  </div>
+
+</div>
+<?/?>
+</p>
+<h2>Progressive Enhancement with JavaScript</h2>
+<p>Term progressive enhancement means that web page is functional even without JavaScript support. Presence
+of JavaScript support in the browser enhances and improves behavior of the page. Below are two form examples
+with identical source code and functionality, one will have JavaScript enhancement widget disabled.
+<?Example?>
+$form=$page->add('Form');
+$form->js_widget=false; // turn JS off
+$form->addField('line','name')->validateNotNull();
+$form->addSubmit('Greeting');
+if($form->isSubmitted()){
+	$result='Hello, '.$form->get('name');
+	$form->js()->univ()->alert($result)->execute();
+	$this->api->redirect('../greeted',
+			array('text'=>$result));
+}
+<?/?>
+
+<?Example?>
+$form=$page->add('Form');
+$form->addField('line','name')->validateNotNull();
+$form->addSubmit('Greeting');
+if($form->isSubmitted()){
+	$result='Hello, '.$form->get('name');
+	$form->js()->univ()->alert($result)->execute();
+	$this->api->redirect('../greeted',
+			array('text'=>$result));
+}
+<?/?>
+<h2>Transparent jQuery Chains</h2>
+<p>To breach the gap between Server-side language and Browser-side language Agile Toolkit is using dynamic
+catch-all class methods. Calling js() method on any view will return an initialized jQuery_Chain class.
+Any subsequent calls to that class are converted into jQuery calls and is included with the page.
+</p><p>
+<?Execute?>
+$page->add('Alex')->setAttr('width',50)->align('left')
+	->js('click')->animate(array('width'=>'100'));
+<?/?>
+To demonstrate use of this technique, we will need a simple View object. Alex is a View which is
+displayed as an image of a pink elephant. Alex has no specific code to support JavaScript or jQuery. Code
+below could be used on any View. To see this code in action, click on the elephant located at the start
+of this section.
+</p>
+<?Code?>
+$page->add('Alex')->setAttr('width',50)->align('left')
+	->js('click')->animate(array('width'=>'100'));
+<?/?>
+<?MoreInfo?>Who is Alex?
+<p>Alex is a Pink Elephant.
+<?/?>
+
+<h2>Multi-object interaction</h2>
+<p>
+<?Execute?>
+$left=$page->add('Alex')->align('left'); $right=$page->add('Alex');
+$left->js('click',$right->js()->animate(array('padding-right'=>'+=20px')));
+$right->js('click',$left->js()->animate(array('padding-left'=>'+=20px')));
+<?/?>
+jQuery_Chain looks carefully at arguments which are passed to it. While strings are properly escaped and
+boolean and arrays are properly converted into JavaScript datatypes, Objects receive a special treatment.
+Including any other jQuery_Chain will also be reflected as a JavaScript chain. (This principle can be
+used to copy value from one field to another).
+</p><p>
+If you pass any other view into jQuery Chain it will be transformed into appropriate jQuery selector. 
+<a href="/doc/jquery">More about jQuery Chains</a>.
+</p>
+<?Code?>
+$left=$page->add('Alex')->align('left'); $right=$page->add('Alex');
+$left->js('click',$right->js()->animate(array('padding-right'=>'+=20px')));
+$right->js('click',$left->js()->animate(array('padding-left'=>'+=20px')));
+<?/?>
+
+
+<h2>Partial Page Reloads (AJAX)</h2>
+<?Example?>
+$b=$p->add('Button')->set('Re-Generate');
+$l=$p->add('LoremIpsum')->setLength(1,20);
+$b->js('click',$l->js()->reload());
+<?/?>
+
+

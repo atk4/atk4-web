@@ -85,6 +85,7 @@ class Sitemap extends AbstractController{
             'day6'=>'Day 6: More with Models',
             'day7'=>'Day 7: Category Page',
             'day8'=>'Day 8: The Form',
+            'day9'=>'Day 8: The Admin System',
         );
 /*}}}*/
 //{{{ core - Agile Toolkit Core Concepts
