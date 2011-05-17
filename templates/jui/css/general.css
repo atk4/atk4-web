@@ -106,17 +106,7 @@ BODY:nth-of-type(1) #header-graybar .input-search input[type=text], x:-moz-any-l
 #footer #credit a {color:#c9daeb;}
 #footer #credit a:hover {color:#fff;text-shadow:0 0 5px #fff;}
 #footer #credit>div {margin-top:0.3em;}
-#footer #socials {float:right;margin-right:7px;padding:2em 0 0 0;}
-#footer #socials>a {height:61px;width:59px;margin:-6px -15px 0 15px;float:left;background-image:url(../images/icons-social.png);}
-#footer #socialis>a:first-child {margin-left:0;}
-#footer #socials>a#facebook {background-position:0px 0px;}
-#footer #socials>a:hover#facebook {background-position:0px -61px;}
-#footer #socials>a#twitter {background-position:-59px 0px;}
-#footer #socials>a:hover#twitter {background-position:-59px -61px;}
-#footer #socials>a#linkedin {background-position:-118px 0px;}
-#footer #socials>a:hover#linkedin {background-position:-118px -61px;}
-#footer #socials>a#github {background-position:-177px 0px;}
-#footer #socials>a:hover#github {background-position:-177px -61px;}
+#footer .socials {float:right;margin-right:7px;padding:2em 0 0 0;}
 div#footer-guard {height:11em;}
 
 
@@ -500,8 +490,8 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 #content>.container+.sidebar {float:right;width:220px;}
 #content>.container {float:left;width:620px;}
 
-h3 .date {font:16px Arial, sans-serif;color:#999;display:block;text-transform:capitalize;margin-bottom:0.3em;}
-h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:normal;font-weight:bold;}
+h3 .date, h4 .date {font:14px Arial, sans-serif;color:#999;display:block;text-transform:capitalize;margin-bottom:0.3em;}
+h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;font-style:normal;font-weight:bold;}
 
 /* -------------------------------------------------------------------------------------------------
    Specific
@@ -553,8 +543,18 @@ h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:no
 .popup-download.ui-dialog .ui-dialog-title {position:relative;margin:0;float:none;top:0;padding-left:90px;height:67px;display:block;line-height:75px;font-size:260%;}
 .popup-newsletter.ui-dialog .ui-dialog-title {padding-left:100px;}
 .popup-contactus h1 {display:none;}
-#introduction-bar-dock {height:70px;}
+#page-whatsnew .g-8 h4 {text-transform:none;}
+
+
+/* -------------------------------------------------------------------------------------------------
+   Introduction
+------------------------------------------------------------------------------------------------- */
+
+#page-intro #content>.gs-wrap {margin-top:30px;}
+#introduction-bar-dock {height:30px;}
 #introduction-bar {top:0px;}
+#introduction-bar .breadcrumb-item {padding:0 20px 0 40px;}
+#introduction-bar .breadcrumb-item:first-child {padding-left:0px;}
 #introduction-bar .breadcrumb-item a {display:block;text-decoration:none;}
 #introduction-bar .breadcrumb-item a i,
 #introduction-bar .breadcrumb-item a span {float:left;}
@@ -564,11 +564,14 @@ h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:no
 #introduction-bar .breadcrumb-item .icon-lego,
 #introduction-bar .breadcrumb-item .icon-gears,
 #introduction-bar .breadcrumb-item .icon-roadsign {margin-top:5px;}
-#introduction-bar .breadcrumb-item.current a {color:#003066;}
+#introduction-bar .breadcrumb-item.current a {color:#333;font-weight:bold;}
 #introduction-bar .breadcrumb-item.current a span {text-decoration:none;}
 #introduction-bar .breadcrumb-item a:hover i,
 #introduction-bar .breadcrumb-item.current a i {opacity:1;}
 #introduction-bar .breadcrumb-start span {margin:5px 5px 0 0;display:block;}
+#customizable-ui {padding:160px 20px 20px 20px;background:url(../images/customizable-ui.jpg) no-repeat;border-bottom:1px solid #fff;-webkit-box-shadow:0 1px 5px #000 inset;-moz-box-shadow:0 1px 5px #000 inset;box-shadow:0 1px 5px #000 inset;}
+#customizable-ui .screenshots>div {width:268px;height:180px;background:#fff;-webkit-box-shadow:0 1px 5px #000;-moz-box-shadow:0 1px 5px #000;box-shadow:0 1px 5px #000;float:left;margin-left:20px;}
+#customizable-ui .screenshots>div:first-child {margin-left:0;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -587,9 +590,43 @@ h3 .date em {position:relative;top:-0.7em;left:0.2em;font-size:9px;font-style:no
 .example-limited .example-expander>div>span {padding:4px 10px 3px 6px;border:1px solid #0180ff;float:right;font-size:14px;}
 .example-limited .example-expander>div>span i {float:left;position:relative;top:-0.15em;margin-right:0.2em;}
 .example-limited .example-expanded .example-expander>div {background:none;}
-.atk_doc_expander h6 {/* background:#fff;border:1px solid #ccc; */padding:.5em 0em .5em 0em;margin-bottom:1em;position:relative;z-index:2;}
-.atk-doc-expander-open h6 {border-bottom:none;margin-bottom:0;}
-.expanded-content {margin:0 0 2em 0;padding:1em 0 0 1.5em;/* border:1px solid #ccc; */position:relative;top:-1px;z-index:1;}
+.atk_doc_expander {position:relative;padding-left:10px;margin-bottom:0.5em;}
+.atk_doc_expander .expanded-title {font-weight:bold;height:2em;line-height:2em;padding:0 0.7em 0 0.5em;display:inline-block;position:relative;z-index:50;}
+.atk-doc-expander-open {position:relative;z-index:100;}
+.atk-doc-expander-open .expanded-title {
+	height:2em;
+	line-height:2em;
+	border-width:1px 1px 0 1px; 
+	background:#fff9d9;}
+.atk-doc-expander-open .expanded-title a {color:#222;border-color:#222;}
+.expanded-content {
+	margin-top:0px;
+	position:absolute;
+	top:2em;
+	left:10px;
+	z-index:40;
+	-webkit-box-shadow:0 10px 25px rgba(51,47,26,0.7);
+	width:90%;
+	padding:1em;
+	background:#fff9d9;
+    background:-webkit-gradient(linear,left top,left bottom, from(#fff9d9), to(#ffffff));
+    background:-moz-linear-gradient(top, #fff9d9, #ffffff);
+    background-image: -o-linear-gradient(#fff9d9,#ffffff);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#fff9d9", endColorstr="#ffffff");}
+.expanded-content>div {font-size:12px;}
+.expanded-close {
+	cursor:pointer;
+	font-size:0;
+	line-height:0;
+	background:#fff;
+	border:1px solid #1f74eb;
+	position:absolute;
+	top:-8px;
+	right:-8px;
+	-webkit-border-radius:10px;
+	   -moz-border-radius:10px;
+	        border-radius:10px;}
+.expanded-content p:last-child {margin-bottom:0;}
 .post h1 {margin-bottom:0.2em;}
 .comment-holder {overflow:hidden;margin-top:2em;}
 .comment:first-child {margin-top:0;}
@@ -649,7 +686,8 @@ a.rss-link:hover {color:#000;}
 .details>div>em {margin-left:110px;display:block;}
 .continue-block {text-align:right;border-top:1px solid #ccc;padding-top:2em;}
 h5 .version {font-weight:bold;font-family:'Lucida Grande',sans-serif;text-transform:lowercase;font-size:14px;display:block;margin-bottom:0.3em;}
-.sticky-bar-dock {height:1em;}
+.sticky-bar-dock {height:10px;margin-bottom:2em;border-bottom:1px solid #ccc;}
+.sticky-bar-dock+h1, .sticky-bar-dock+h2, .sticky-bar-dock+h3 {margin-top:0;}
 .sticky-bar {width:100%;z-index:99;background:#fff;background:rgba(255,255,255,0.95);} 
 .sticky-bar>.gs-wrap {padding-top:5px;padding-bottom:5px;}
 div.sticky-bar-absolute {left:0px;position:absolute;top:15px;}
@@ -679,6 +717,15 @@ div.sticky-bar-fixed {left:0px;position:fixed;top:0px;-webkit-box-shadow:0 1px 1
 .blue-noised>.white>table th  {font-weight:bold;text-transform:uppercase;font-size:12px;border-bottom:1px solid #ccc;}
 .blue-noised>.white>table td {border-top:1px solid #ccc;}
 .blue-noised>.white>table tr:first-child td {border-top:none;}
+.socials>a {height:61px;width:59px;margin:-6px -15px 0 15px;float:left;background-image:url(../images/icons-social.png);}
+.socials>a#facebook {background-position:0px 0px;}
+.socials>a:hover#facebook {background-position:0px -61px;}
+.socials>a#twitter {background-position:-59px 0px;}
+.socials>a:hover#twitter {background-position:-59px -61px;}
+.socials>a#linkedin {background-position:-118px 0px;}
+.socials>a:hover#linkedin {background-position:-118px -61px;}
+.socials>a#github {background-position:-177px 0px;}
+.socials>a:hover#github {background-position:-177px -61px;}
 
 
 /* -------------------------------------------------------------------------------------------------
@@ -737,7 +784,9 @@ p {line-height:inherit;}
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ecf3f9", endColorstr="#c8d3de");}
 
 
-/* atk-layout */
+/* -------------------------------------------------------------------------------------------------
+   Old ATK Layout
+------------------------------------------------------------------------------------------------- */
 
 .atk-layout>div {float:left;margin-left:20px;}
 .atk-layout.fluid>div {margin-left:4%;}

@@ -36,7 +36,7 @@ $.each({
 		var self=this.jquery;
 		var content=self.children('div:first').hide();
 		var icon=self.find('i:first');
-		self.find('h6:first').children().click(function(ev){
+		self.find('span:first').children().click(function(ev){
 			ev.preventDefault();
 			if(content.is(':visible')){
 				content.fadeOut();

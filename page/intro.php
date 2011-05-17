@@ -1,7 +1,9 @@
 <?php
 class page_intro extends Doc_Page {
     function initBar(){
-        $this->add('View',null,null,array('view/introbar'));
+		if($this->template->is_set('Content')){
+			$this->add('View',null,null,array('view/introbar'));
+		}
     }
 	function initMainPage(){
 		//parent::init();
