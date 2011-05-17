@@ -8,7 +8,7 @@ class Doc_Page extends Page {
         $this->initBar();
 	}
     function initBar(){
-        $this->add('BreadCrumb');
+		if($this->template->is_set('Content')) $this->add('BreadCrumb');
     }
     function initMainPage(){
         return $this->subPage('');

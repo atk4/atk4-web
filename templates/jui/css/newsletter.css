@@ -1,0 +1,29 @@
+body {background: url(http://new.agiletoolkit.org/templates/jui/images/pattern-dotted.png);font-size:12px;padding:30px;}
+.clear {clear:both;}
+h3:first-child, h5:first-child {margin-top:0;}
+.n-wrapper {width:720px;margin:auto;}
+
+#newsletter {
+	background:#fff;
+	-webkit-box-shadow:0 2px 10px rgba(31,41,51,0.7);
+	   -moz-box-shadow:0 2px 10px rgba(31,41,51,0.7);
+	   		box-shadow:0 2px 10px rgba(31,41,51,0.7);}
+#n-header {color:#fff;padding:20px;}
+#n-header #n-logo {float:left;}
+#n-header #n-date {float:right;font-size:160%;margin-top:0.3em;}
+
+#n-content {padding:20px;}
+#n-content>h3 {margin-top:0;}
+#n-content>table {width:100%;}
+#n-content>table td {padding-left:20px;vertical-align:top;}
+#n-content>table td:first-child {padding-left:0;}
+
+#n-footer {margin-top:1.5em;color:#B5C2CF;width:680px;}
+#n-footer a {color:#fff;text-decoration:none;}
+#n-footer a:hover {text-decoration:underline;}
+#n-footer #n-copyright {float:left;margin-top:1em;}
+#n-footer .socials {float:right;}
+
+#n-unsubscribe {text-align:center;margin-top:1em;color:#1f252b;}
+#n-unsubscribe a {background:#303742;color:#B5C2CF;text-decoration:none;padding:0.5em 1em;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;text-shadow:0 1px 1px #000;margin-left:0.3em;}
+#n-unsubscribe a:hover {background:#2e3a4d;color:#fff;}

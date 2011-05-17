@@ -1,6 +1,6 @@
 <?$Content?><?$db?>
 
-<h1>Foundation of Agile Toolkit</h1>
+<h1>Foundation</h1>
 
 <p>If you are a web programmer, Agile Toolkit will help you increase your efficiency. You no longer need to
 work hard on writing HTML, CSS, JavaScript, AJAX. Agile Toolkit will take care of your software appearance
@@ -15,115 +15,26 @@ listers and filters instead of making you write a custom HTML for every single a
 If you have a designer, he can create a new HTML/CSS skin for your software, in case you don't, Agile
 Toolkit comes bundled with HTML/CSS theme based on jQuery UI Themeroller.</p>
 
-<h2>Adding Objects in Agile Toolkit</h2><a name="adding" href="<?page?>.<?/?>#adding">Link</a>
-<?Example?>
-$form=$page->add('Form');
-$form->addField('line','name');
-$form->addField('line','surname');
-$form->addButton('Button Does nothing');
-<?/?>
+<div class="box blue-noised">
+	<h2>Simplicity</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-<img src="<?template?>images/ugly_images/adding.png<?/?>"/ style="float: right">
-<p>When you decide to put object on your page, you only need to write it once. Adding is a very powerful
-concept in Agile Toolkit. You can add any object into any other object. Example below adds form on the
-page, then adds few fields and button on the form. Just by adding, you can build really complex layout
-without limitations</p>
-
-<p>When writing in Agile Toolkit, all the code is easy to understand. Refactoring code is easy, you
-just move code between files without modifications. What you started as a very basic application can
-easily grow into huge project and it will always be easy to understand and maintain.</p>
-
-<p>Did you notice how good form looks? The code above was executed in real-time when you opened this page.
-This whole website is built as an application on Agile Toolkit. If you copy-paste same code into your
-local installation of Agile Toolkit, it will look different, depending on which skin you use.</p>
-
-<h2>Smart Objects of Agile Toolkit</h2><a name="adding" href="<?page?>.<?/?>#adding">Link</a>
-<p>Object in Agile Toolkit take advantage of Object-Oriented capabilities of PHP5 language. Each object
-contains a number of useful properties and methods, which can affect their appearance (template),
-java-script behaviour (js), behaviour (controller) and integration with ORM (model).</p>
-
-<p>It is very important that above statement is true for ANY object in the system. Even if it is a 3rd party
-vendor, your freelance developer or someone from open-source community who have created new View — you can
-expect it work like this.</p>
-
-<?Example?>
-    // Set custom template
-$grid=$page->add('MVCGrid',
-        null,null,array('grid_striped'));
-
-    // Set custom model
-$grid->setModel('Employee',
-	array('name','salary'));
-$grid->addPaginator(5);
-
-    // Set custom JavaScript. Try dragging grid.
-$grid->js(true)->draggable();
-
-
-<?/?>
-
-<h2>Significancy of HTML Templates</h2>
-<img src="<?template?>images/ugly_images/adding_w_templates.png<?/?>"/ style="float: right">
-<p>Agile Toolkit allows developers to bypass HTML and get a code working. However in real-life web application you would
-expect to have a customized HTML. Commonly frameworks require that each page has a HTML template. Agile Toolkit moves
-templates to the "object" level.</p>
-<p>A simple change in PHP syntax allows your designer to change template of any object in Agile Toolkit. The API class
-itself can have it's template changed which will affect header/footer of every page in your system.</p>
-
-<p>Each object by default is linked with a default template. It's also possible to substitute any default template in
-your project. This way you can affect look of all buttons, while keeping same template of all form objects.</p>
-
-<p>When adding objects, you can also specify where exactly in the template it will appear. Consider the following example,
-which make use of the following custom template:
-<div style="border: 1px solid black; width: 50%">
-  Hello &lt;?$spot1?&gt; from &lt;?$spot2?&gt;.
+	<?$Controls?>
+	<?$WhatYouWrite?>
+	<?$WhatYouGet?>
 </div>
-</p>
-
-<?Example?>
-$view=$page->add('View',null,null,
-        array('view/intro_example1'));
-$view->add('Button',null,'spot1')
-    ->setLabel('World');
-$view->add('Button',null,'spot2')
-    ->setLabel('Agile Toolkit');
-<?/?>
-
-<h2>Super-flexibility. 10 ways to customize objects from Agile Toolkit</h2>
-<p>All objects in Agile Toolkit are alive just after adding them. Some objects, such as form, will automatically establish
-communication with jQuery UI-enriched objects in web browser. This is how paginator and Form work. Once you add form to your
-page, it will already know how to collect submitted data.</p>
-
-<p>However there are at least 10 ways to customize objects in Agile Toolkit, which our more-advanced users find very essential.
-<ol>
-<li>Each object cant be customized after adding. For instance we changed labels of the buttons after they have been added.</li>
-
-<li>Custom template can be specified to any object. You can even define and switch "skins", which come with many custom templates.</li>
-
-<li>Apply JavaScript to any object. I have made grid draggable above using this approach.</li>
-
-<li>Specify models to populate form fields or grid columns.</li>
-
-<li>Specify controller to enhance Model behaviour, such as add soft-delete, timestamps or audit.</li>
-
-<li>Extending base classes to create your own, where you can re-define methods.</li>
-
-<li>Adding helpers to Views can enhance them. For example addPaginator function relies on a helper class.</li>
-
-<li>Pushing classes, templates is ability to override standard class with your own. Define "Button" to change it system-wide. This will
-affects even standard forms and 3rd party addons.</li>
-
-<li>Agile Toolkit allows to use hooks(). They are rarely used by user code, but can be used in some advanced cases.</li>
-
-<li>Select from one of the provided API classes or make your own API class. This will allow you to bundle functionality for projects where white-labeling is needed or multiple interfaces are required.</li>
-</ol>
-All of the techniques can be used together and when mastered will allow you to use Agile Toolkit most efficiently.
-</p>
-
-<h2>AJAX, jQuery w/plugins and a better way to write JavaScript</h2>
-<p>On next page you will find out why Agile Toolkit has the best integration with jQuery.</p>
-
-<div class="continue-block">
-<a class="button blue big" href="<?page?>../javascript<?/?>">Continue to "JavaScript Introduction"</a>
+<div class="box blue-noised">
+	<h2>Customizable UI</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+	<div id="customizable-ui">
+		<div class="screenshots clearafter">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
 </div>
-
+<div class="box blue-noised">
+	<h2>Live Examples</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
