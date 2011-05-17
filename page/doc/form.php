@@ -1,5 +1,6 @@
 <?php
 class page_doc_form extends Doc_Page {
+    /*
 	function init(){
 		parent::init();
 
@@ -29,6 +30,7 @@ class page_doc_form extends Doc_Page {
         }
         return parent::defaultTemplate(); //array('page/'.str_replace('_','/',$this->api->page));
     }
+*/
 }
 
 class GreetingForm extends Form {

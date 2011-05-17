@@ -41,6 +41,7 @@ class page_intro_speed extends page_intro_generic {
 				validation.
 				');
 
+        /*
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
 for($i=0;$i<200;$i++){
@@ -55,6 +56,7 @@ for($i=0;$i<200;$i++){
 EOD
 );
 
+*/
 
 
 

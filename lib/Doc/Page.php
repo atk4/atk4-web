@@ -21,7 +21,15 @@ class Doc_Page extends Page {
         if($this->api->page!=$top_page){
             // subpage
             $sub_page=str_replace($top_page.'_','',$this->api->page);
-            return array('page/'.str_replace('_','/',$top_page).'/'.$sub_page);
+            $sub_page=str_replace('_','/',$sub_page);
+            $sub_page='page/'.str_replace('_','/',$top_page).'/'.$sub_page;
+            try {
+                $x=$this->api->locate('template',$sub_page.'.html');
+            }catch(PathFinder_Exception $e){
+                //return $this->defaultIndexPage($top_page);
+                return array('page/empty');
+            }
+            return array($sub_page);
         }
         return $this->defaultIndexPage($top_page);
     }
