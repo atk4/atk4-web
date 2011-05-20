@@ -1,0 +1,83 @@
+
+<?$Content?>
+
+<div class="atk_doc">
+
+<h1>Model-Based Forms</h1>
+<p>
+In Agile Toolkit models are used to describe business entities. Controllers allow to build integration between Model and View, such as Form.
+</p>
+<?Code?>
+class Model_Employee extends Model_Person {
+	function defineFields(){
+		parent::defineFields();
+
+		$this->addField('name')
+			->mandatory(true);
+
+		$this->addField('days_worked')
+			->system(true)
+			->datatype('int');
+
+		$this->addField('salary')
+			->mandatory(true)
+			->datatype('money');
+
+		$this->addField('money_owed')
+            ->caption('Owed')
+			->calculated(true);
+	}
+}
+<?/?>
+</div><div class="clear"></div>
+
+<h2>Building from from Model</h2>
+<p>
+To use Model functionality you would need to use MVCForm instead of Form. Calling setModel() or setController() will initialize form by adding fields and binding it with the model.
+</p>
+<p>It's recommended to use setModel(), which will use default controller for integration between Form and Model.</p>
+
+<?Example?>
+$this->api->dbConnect();
+$f=$p->add('MVCForm');
+$f->setModel('Employee');
+<?/?>
+
+<p>Sometimes it is required to omit some fields from the form, or change field order. This can be done through 2nd argument to setModel.</p>
+
+<?Example?>
+$this->api->dbConnect();
+$f=$p->add('MVCForm');
+$f->setModel('Employee',array('name'));
+<?/?>
+
+<h3>Using existing Model</h3>
+<p>First argument for setModel() can also be existing model</p>
+<?Example?>
+$f=$p->add('MVCForm');
+$m=$p->add('Model_Employee');
+$m->addCondition('salary<=',3000);
+$f->setModel($m,array('name'));
+<?/?>
+
+
+<h2>Building from Custom Controller</h2>
+<p>Class Controller (or potentially other appropriate class) is used to integrate Form with Model. If you are willing to use your own controller, consider the following code. Using controller is beneficial when you are willing to add some additional functionality to all forms sharing the same model. For example the following controller will show hint for salary field, if that field is present.</p>
+
+<?Code?>
+class Controller_EmployeeWithHint extends Controller {
+    public $model_name='Model_Employee';
+    function initForm(){
+        parent::initForm();
+        if($this->owner->hasField('salary'))
+            $this->owner->getElement('salary')->setFieldHint('&nbsp;$3000 max');
+    }
+}
+<?/?>
+
+<?Example?>
+$this->api->dbConnect();
+$f=$p->add('MVCForm');
+$f->setController('Controller_EmployeeWithHint');
+<?/?>
+

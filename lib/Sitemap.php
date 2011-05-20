@@ -8,9 +8,8 @@ class Sitemap extends AbstractController{
 
             'install'=>array(
                 'Installing Agile Toolkit',
-                'blah'=>'[ google doc topics ]',
-                'lamp'=>'Installing LAMP / WAMP / MAMP',
-                'wcf'=>'How Agile Toolkit Works?',
+                'lamp'=>'Installing Required Software (LAMP)',
+                'how'=>'How Agile Toolkit Works?',
                 'dir'=>'Directory Structure',
                 'config'=>'Configuration File',
                 'dbc'=>'Database Connection',

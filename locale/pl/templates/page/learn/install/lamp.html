@@ -1,0 +1,92 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+        <h1>MONTAŻ wymagane oprogramowanie dla AGILE TOOLKIT</h1>
+
+        <p> Przed rozpoczęciem nauki Agile Toolkit, radzimy go mieć insstalled na komputerze lokalnym. Alternatywnie
+        można użyć autonomicznego serwera WWW, jednak w naszych przewodników będziemy zakładając, że można uzyskać
+        dostęp do lokalnych serwer na http://localhost/ </ p>
+
+        <p>We suggest you to use one of the Apache+PHP+MySQL bundles, which are available for any operating system. For 
+        example, if you are on windows, download and install WAMP. Of course there are alternatives, which you can also
+        use. You would need to have PHP verison 5.2, however we recommend to use 5.3+.</p>
+
+        <p>While developing in Agile Toolkit, you woul be creating a lot of *.php files. You should get a good text editor,
+        such as Notepad++ for Windows or Coda for Mac OSX.</p>
+
+        <p>All the software here is free and can be downloaded from the following links:</p>
+    </div>
+</div>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+        <h3>Windows Software</h3>
+        <ul>
+        <li>WAMP - <a href="http://www.wampserver.com/en/">http://www.wampserver.com/en/</a>
+        <li>Notepad++ - <a href="http://notepad-plus-plus.org/">http://notepad-plus-plus.org/</a>
+        </ul>
+    </div>
+	<div class="g-6">
+        <h3>Mac OSX Software</h3>
+        <ul>
+        <li>MAMP - <a href="http://www.mamp.info/en/index.html">http://www.mamp.info/en/index.html</a>
+        <li>Coda - <a href="http://www.panic.com/coda/">http://www.panic.com/coda/</a>
+        </ul>
+    </div>
+</div>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h3>Download and try it</h3>
+        <p>Download Agile Toolkit from <a href="http://agiletoolkit.org">agiletoolkit.org</a> and unpack it into
+        webroot. If you area already using webroot for something else, you can pick any other sub-directory. The
+        file you just downloaded called atk4-example.zip combines 3 things: Agile Toolkit, Add-ons and a very
+        simple example project structure.</p>
+
+        <p>Open index.php file in your browser and you should see "Hello World from your own copy of Agile Toolkit".
+        For your convenience, here is a sample installation on our server: <a href="http://example.agiletoolkit.org/">
+        http://example.agiletoolkit.org/</a>
+
+        If this works, then you are ready to proceed to the next step.
+
+        <h3>Alternative Installation</h3>
+
+        <p>If you are using Linux, then you probably already have Apache installed. You can also use more complex
+        configurations such as Nginx + PHP-FMP or lighttpd for improved performance.</p>
+
+        <h3>Git</h3>
+        <p>If you are well familiar with Git, you can "clone" atk4-example instead of downloading it. Alternatively
+        you can create your own repository and attach atk4 and atk4-addons as submodules.</a>
+
+<?Code?>
+$ git clone git://github.com/atk4/atk4-example
+$ cd atk4-example
+$ git submodule init
+$ git submodule update
+<?/?>
+
+        <h3>Deployment</h3>
+
+        <p>Finally, if you are looking to share your web application with others, we suggest you to use Platform as
+        a Service offering PHP hosting in the cloud. It will take care of your project deployment for you and will let
+        you focus on development. Agile Toolkit is tested and should work with most PHP platforms. Two deployment platforms
+        which we recommend are:
+
+    </div>
+</div>
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+        <ul>
+        <li>phpfog — <a href="http://phpfog.com/">http://phpfog.com/</a></li>
+        </ul>
+    </div>
+	<div class="g-6">
+        <ul>
+        <li>orchestra.io - <a href="http://orchestra.io/">http://orchestra.io/</a></li>
+        </ul>
+    </div>
+</div>
+
+<?$Next?>

@@ -3,6 +3,21 @@
    Commonly you would want to re-define ApiFrontend for your own application.
  */
 class AgileToolkitWeb extends ApiFrontend {
+    public $locale=null;
+    function __construct($locale=null){
+        $this->locale=$locale;
+        parent::__construct('AgileWeb','jui');
+    }
+    function addDefaultLocations($base_directory){
+        if($this->locale){
+            $this->addLocation('locale/'.$this->locale,array(
+                'php'=>'libhuj',
+			    'page'=>'page',
+			    'template'=>'templates',
+			    ))->setBasePath($base_directory.'/locale/'.$this->locale)
+			;
+        }
+    }
 	function init(){
 		parent::init();
 

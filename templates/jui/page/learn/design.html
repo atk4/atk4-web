@@ -1,0 +1,91 @@
+<h1>Using Agile Toolkit without any PHP code knowledge</h1>
+<p>
+To those who have a very little knowledge of programming, there are already many things you CAN do with Agile Toolkit. In this guide I will be looking at Agile Toolkit as alternative of the CMS systems you might want to use, and when use of toolkit is actually better. This guide is also useful for designers who are developing design for some ATK4 projects.</p>
+<p>You will learn:
+<ul>
+<li>how to download something that works right away.</li>
+<li>how to create a very basic website. Templates.</li>
+<li>difference between static and dynamic content.</li>
+<li>how to use View classes or create your own.</li>
+<li>about template skins.</li>
+<li>difference between APIs. Automatically processed tags.</li>
+<li>about integrating Addons. Using third party code.</li>
+</ul>
+</p>
+<p>
+You will need an Apache webserver with PHP installed.
+</p>
+<?MoreInfo?>How do I install Apache and PHP?
+<h3>Installing on Windows</h3>
+<p>Probably the easiest way to install is to use WAMP software. It comes with 3 main components you will need - Apache web server, PHP and MySQL database. This will allow you to turn your desktop computer or laptop into a full-featured webserver, although only you will be able to use it by typing http://localhost/ in your browser window. Follow dirrections on the <a href="http://www.wampserver.com/" target="_blank">WAMP site</a>.</p>
+<h3>Installing on Mac</h3>
+<p>Macs come with builtin web server, although it have it's PHP disabled. A better choise would be to download a MAMP software. It's free to use and delivers 3 main components you need — Apache web server, PHP and MySQL database. For more info and downloads visit <a href="http://www.mamp.info/" target="_blank">MAMP website</a>.</p>
+<h3>Installing on Linux</h3>
+<p>Linux has much higher level of customization and variations when it comes to any software. What you need is abbreviated as LAMP. L stands for Linux and you have it. Consult with your Linux Distribution website on how to get working Apache, PHP and MySQL</p>
+
+<p>
+For this guide you will not need MySQL, but we recommend to install it anyway as it will be useful further on</p>
+<?/?>
+
+<?MoreInfo?>How Agile Toolkit compares with CMS software?
+<h3>General approach</h3>
+<p>Content Management Systems in general come with some user interface, database and a lot of things you might not even need by default. The approach of CMS is to enable maximum amoun of features to be used by pointing your mouse and clicking. If you are making website for your client, that means he will be able to tinker with some of those settings potentially breaking the site or taking some of your work off you.</p>
+<p>Agile Toolkit does not have any UI but makes it extremely simple for you to build one. It does not use database by default, but makes it simple to start using it. And it comes with no UI features turned on, but you can easily activate them.</p>
+<h3>Extensibility</h3>
+<p>Content Management System have thousands of addons. However even by looking through all of them, sometimes what you are looking is not there. Developing addon for CMS system requires you a lot of extra knowledge. Agile toolkit addons are different. They are more focused on flexibility and customisation. They can have much better AJAX support and you can build your own modules on top of existing ones.</p>
+</p>
+<h3>Content diversity</h3>
+<p>Content Management System would generally allow you to put HTML data into the database, then on each request they would read that data and format it for display. Agile Toolkit uses the templates inside the files, making display speed much faster. If you will use dynamic elements they will automatically use the database, but only when it's really required. Agile Toolkit makes it easy to make any text editable on your page. (<a href="http://blog.atk4.com/lightweight-cms-in-atk/">Lightweight CMS in ATK4</a>)
+</p>
+<h3>Summary</h3>
+<p>By using Agile Toolkit you will receive much faster working website, much more lightweight and will have a absolute control over it's workings and look. However you would need to have some confidence and write few lines of code. If you don't want to learn anything and just want a website then CMS is a way to go, but if you want to extend and improve your website, learn more about programming and web software then Agile Toolkit will become ideal platform for your site.</p>
+<?/?>
+
+<h2>How to download something that works right away</h2>
+<div class="text-right30">
+	<p>For your convenience you can grab a <a href="http://files.agiletech.ie/website-atk4.zip">website-atk4.zip</a> from our download page</p>
+</div>
+
+<p>
+Agile Toolkit is collection of tools. You start with empty website and add components when you need them. This concept ensures high speed of your site.
+To help you get started, you should download a sample website, which will contain couple of pages. You can look through those pages, although this guide will be focusing on creating new pages.
+</p>
+<p>
+Download and unpack website-atk4.zip somewhere into your webroot. Once it's unpacked open this directory through the web browser. If you see directory structure, check that mod_rewrite is enabled.
+</p>
+
+<h2>How to create a very basic website. Templates.</h2>
+
+<p>
+Go straight into <u>templates/web</u> directory. This directory is a default location of your templates. Inside this directory you might find few standard directories such as <u>page</u>, <u>css</u>, <u>images</u>, <u>view</u> and also the file <i>shared.html</i>. This file, <i>shared.html</i> acts as a default header and footer of any other page on your website. Open this file in text editor of your choice.
+</p>
+<h3>shared.html</h3>
+<p>
+Inside this file you will find &lt;head&gt; and &lt;body&gt; definitions. Continue looking through it until you find the following text: &lt;?Content&gt;. This is the opening tag. Further below you shall find &lt;?/Content?&gt;, which is a closed tag. Those tags are recognized by the template management system of Agile Toolkit — <a href="/doc/DBlite">SMlite</a>. This template system designed to be extremely simple and very very fast. So the only thing which can be in the templates are those tags. There are few other formats for those tags, in particular &lt;?$some-tag?&gt; would be a self-closing tag, which is equivalent to an empty tag.
+</p>
+<h3>Adding more pages</h3>
+<p>The basic logic of your website, is that it finds a template matching the one in the URL inside <u>page/</u> directory, then inserts its contents into &lt;?$Content?&gt; tag during request and sends a combination to the browser. <u>page/index.html</u> will be your default page, however you can create as many pages as you want. As soon as you create those new templates they will become available on your website.</p>
+
+<?MoreInfo?>Why did we choose this tag format?
+<p>
+Tags such as &lt;anything&gt; are being ignored by browsers or HTML editors. Tags which use &lt;? or &lt;% are preserved by those editors, they believe they might contain some valuable code. You might be able to open <u>shared.html</u> or other template in your web browser and be able to preview content.
+</p>
+<p>
+The idea of templates is to leave designer files un-changed and simply add tags where necessary. The HTML provided by designers would always contain some sample content, possibly a Lorem Ipsum text. Don't bother to remove it, just put Content tag around it.
+</p>
+
+<?/?>
+
+
+<h2>Difference between static and dynamic content.</h2>
+<p>
+Whith your default .htaccess file in place requests to all the files ending with .html are being re-written and will be directed towards main.php. This file will initialize API of Agile Toolkit which then will process your request.
+</p>
+<p>
+The first thing Agile Toolkit will do is try to determine the name of the page you are requesting. It does that by trimming extension. If you use <u>somepage.html</u> then <u>somepage/</u> would also work just as well. If you look into .htaccess file, you can enable new patterns for your URLs so that you can trick people with some funny URL extensions.
+</p>
+<p>
+Once page name is determined, Agile Toolkit will attemt to perform 3 things<ul>
+<li>Find a function inside API class</li>
+<li>Find a class for appropriate page</li>
+<li>Find a template inside <u>page/</u> with same name and .html extension</li>

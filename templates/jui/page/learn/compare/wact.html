@@ -1,0 +1,19 @@
+<h1>Agile Toolkit vs WACT (Web Application Component Toolkit)</h1>
+<p>Similarly to Agile Toolkit, WACT focuses on component-based web application creation.</p>
+<p><a href="http://www.phpwact.org/wact/case_converter_tutorial">Case converter tutorial</a> helps building tiny application that accepts a text value as input and will convert that text to all lower case or all upper case text.</p>
+
+<p>Below is the implementation of same functionality using Agile Toolkit</p>
+<?Example?>
+$form=$page->add('Form');
+$form->js_widget=false;
+$line=$form->addField('line','text','Enter text to convert');
+$up=$form->addSubmit('Convert To UPPER Case');
+$lo=$form->addSubmit('Convetr To lower Case');
+if($form->isSubmitted()){
+    if($up->isClicked()){
+        $form->set('line',strtoupper($form->get('line')));
+    }elseif($lo->isClicked()){
+        $form->set('line',strtolower($form->get('line')));
+    }
+}
+<?/?>
