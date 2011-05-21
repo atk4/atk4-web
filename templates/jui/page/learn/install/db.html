@@ -1,0 +1,62 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Database</h1>
+        <p>Agile Toolkit focuses on tight integration with MySQL database. Although there are no artificial
+        restrictions, development team decided to focus on a single database engine. This might be seen as
+        an advantage or as a disadvantage.</p>
+
+        <p>MySQL is clearly the most successful companion for PHP applications and provides all the features
+        a typical Web application would use. You can still use Agile Toolkit with other databases on your own
+        risk.</p>
+
+        <h3>Establishing connection</h3>
+        <p>To establish connection with the database you should add the following command either on the API's init()
+        method or inside page's init() method.</p>
+<?Code?>
+$this->api->dbConnect();
+<?/Code?>
+        <p>Establishing connection and selecting database takes some time, so if your application is not database-intensive
+        then placing this statement into certain pages or even certain views might be a good idea.</p>
+
+        <p>Even if called several times, database connection will be establised only once. Therefore if you need a testing
+        suite with a different database connection, you can issue this manually:</p>
+<?Code?>
+$this->api->dbConnect($this->api->getConfig('dsn_testing'));
+<?/Code?>
+
+        <h3>SQL Access from Views</h3>
+        <p>Agile Toolkit was one of the first web framework to implement dynamic queries in 2003. DSQL is a very
+        imporant component of Agile Toolkit as is used by many View objects. In contrast, views from other frameworks rely on
+        ORM directly to perform operations introducing data-layer abstraction in this way.</p>
+
+        <p>To explain this in simple terms, I will use Form class as example. You can use $form->setSource('table'); on the
+        form which will make it fetch field data from database.</p>
+<?Code?>
+$form=$page->add('Form');
+$form->addField('line','name');
+$form->addField('line','surname');
+$form->setSource('user');
+$form->setCondition('id',123);
+<?/Code?>
+        
+        <p>Views can cary their own DSQL object, which they use in certain ways. Usually it's accessible through $object->dq
+        and you can manipulate it. It is actually what "Models" do in Agile Toolkit. When used with Form, they would
+        initialize fields for you and manipulate Form's DSQL as per configuration of the model.</p>
+
+        <p>If you wish to use one object with a different database for the purpose of dependency-injection, you should
+        manually create $object->dq.</p>
+
+        <h3>Debugging database queries</h3>
+        <p>To make any DSQL object expose it's queries execute debug() method:</p>
+<?Code?>
+$form->dq->debug();
+<?/?>
+        <p>This would output queries on the screen. A properly-written View will not perform any queries in it's init()
+        method, but will perform them during rendering phase.</p>
+
+    </div>
+</div>
+
+<?$Next?>

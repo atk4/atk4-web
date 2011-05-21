@@ -9,10 +9,11 @@ class Sitemap extends AbstractController{
             'install'=>array(
                 'Installing Agile Toolkit',
                 'lamp'=>'Installing Required Software (LAMP)',
+                'deploy'=>'Download and Deploy',
                 'how'=>'How Agile Toolkit Works?',
                 'dir'=>'Directory Structure',
                 'config'=>'Configuration File',
-                'dbc'=>'Database Connection',
+                'db'=>'Database Connection',
                 'auth'=>'Authorization',
                 'git'=>'Use with Git and SVN',
                 'dbupdate'=>'SQL upgrade tracking',
