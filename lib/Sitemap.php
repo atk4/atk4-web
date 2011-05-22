@@ -19,10 +19,10 @@ class Sitemap extends AbstractController{
                 'dbupdate'=>'SQL upgrade tracking',
                 ),
 
-            'demos'=>array(
-                'Trying it out with demos',
-                'find'=>'Where to find demos?',
-                'share'=>'How to write and share demos?',
+            'eco'=>array(
+                'Agile Toolkit Ecosystem',
+                'find'=>'Look for help from Community',
+                'share'=>'Contribute and Share',
                 ),
 
             'stuck'=>array(
