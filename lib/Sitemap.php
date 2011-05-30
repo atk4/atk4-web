@@ -19,6 +19,17 @@ class Sitemap extends AbstractController{
                 'dbupdate'=>'SQL upgrade tracking',
                 ),
 
+            'understand'=>array(
+                'Understanding Agille Toolkit',
+                'object'=>'Object Oriented Web',
+                'api'=>'API Classes',
+                'page'=>'Pages',
+                'view'=>'Views',
+                'model'=>'Models',
+                'controller'=>'Controllers',
+                'helper'=>'Helpers',
+                ),
+
             'eco'=>array(
                 'Agile Toolkit Ecosystem',
                 'find'=>'Look for help from Community',
@@ -32,15 +43,6 @@ class Sitemap extends AbstractController{
                 'discuss'=>'Discussing ideas',
                 ),
 
-            'understand'=>array(
-                'Understanding Class Types',
-                'api'=>'API Classes',
-                'page'=>'Pages',
-                'view'=>'Views',
-                'model'=>'Models',
-                'controller'=>'Controllers',
-                'helper'=>'Helpers',
-                ),
 
             'first'=>array(
                 'Before you start developing',
