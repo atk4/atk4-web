@@ -1,0 +1,55 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Pages, Objects and Links</h1>
+        <p>Web is greatly inspired by books. Similarly to book, the most fundamental part of the web is "a page". Page is
+        collection of related objects and links. Links would usually lead to other pages, while objects may dynamically
+        interact with user but they wouldn't take user to a different page.</p>
+
+        <h2>Page Implementation in Agile Toolkit</h2>
+        <p>In Agile Toolkit, pages are handled by a special objects instantiated from Page class. Any page has a name to
+        which it will respond. Usually one page object is automatically initialized by the API along with all the objects
+        on that page.</p>
+
+        <p>You might have noticed, how we were adding objects in the previous chapter into $page. This variable refers to a
+        current page object. In reality, you most probably would be putting the code directly into page/index.php which
+        defines class page_index and any objects you want to see on this page should be added inside init() method.</p>
+
+        <p>By it's nature Page object is also derived from AbstractView. It's not recommended to manually add page objects,
+        API will do it for you. But how does API knows which page class to use?</p>
+
+        <h3>Page Routing</h3>
+        <p>By default, Agile Toolkit is using front-controller approach. All the requests are being captured and executed
+        in the same way, through mod_rewrite and through index.php which creates and executes API. API relies on a specific
+        component called PageManager. The job of PageManager is to determine name of the Page Class from the used URL.</p>
+
+        <p>PageManager splits URL from your location bar into 3 parts: $api->pm->base_url points at the web-server of your
+        web application, such as http://yoursite.com:81. Next part is $api->pm->base_path is pointing to the root page of
+        your Agile Toolkit software. For example if you un-packed software under webroot/test/atk4 then
+        base_path="/test/atk4/". base_path always starts and ends with slash.</p>
+
+        <p>Final part is called "page" and it's relative location within your web application. The top-most page is called
+        "index" page. The page you are looking at right now is called "learn/understand/page" and is calculated from the url:
+        <?page?>.<?/?>.</p>
+
+        <p>Page follows standard pattern, and executes init() method after it's initialized. Page may have a custom template,
+        but if it does not, default page layout is used to display empty page.</p>
+
+        <h3>Adding new page</h3>
+
+        <p>Create a new file inside page/ called mypage.php. Inside there, create a class "page_mypage" extending "Page"
+        class and defining init() method. Call parent::init() then add some objects using $this->add(); If you can't think of
+        any interesting object to add, use LoremIpsum view.</p>
+
+        <p>Agile Toolkit allows to create pages in few different ways - by defining template only, by defining class only, by
+        defining both class and template or by defining none and setting up catch-all handler which might be useful if page
+        content is coming from database.
+
+
+
+    </div>
+</div>
+
+<?$Next?>

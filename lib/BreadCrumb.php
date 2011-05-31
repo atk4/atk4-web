@@ -49,9 +49,11 @@ class BreadCrumb extends View {
                 $crumb=$this->owner->add('CompleteLister',null,'toc',array('doc/view/toc'));
             }
             $data=array();
+            $npk=1;
             if(is_array($p))foreach($p as $page=>$val){
                 if($page===0)continue;
                 $row=array();
+                $row['npk']=$npk++;
                 $row['current']=$page==$part?'current':'';
                 $row['title']=$title=is_string($val)?$val:$val[0];
                 $row['name']=$page;

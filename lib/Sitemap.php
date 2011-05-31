@@ -21,9 +21,9 @@ class Sitemap extends AbstractController{
 
             'understand'=>array(
                 'Understanding Agille Toolkit',
-                'object'=>'Object Oriented Web',
+                'object'=>'Object Oriented Web Development',
+                'page'=>'Pages, Routing and Linking',
                 'api'=>'API Classes',
-                'page'=>'Pages',
                 'view'=>'Views',
                 'model'=>'Models',
                 'controller'=>'Controllers',
