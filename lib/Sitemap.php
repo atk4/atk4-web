@@ -378,6 +378,11 @@ class Sitemap extends AbstractController{
                 'extend'=>'Custom File Model',
                 'image'=>'Image Upload and Manipulation',
                 ),
+            'schemagenerator'=>array(
+                'SQL Schema Generator',
+                'how'=>'How to use',
+                'limitations'=>'Limitations and Notes',
+                ),
             'payment'=>array(
                 'Payment Gateway Integration',
                 'cc'=>array(
