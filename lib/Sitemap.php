@@ -21,7 +21,13 @@ class Sitemap extends AbstractController{
 
             'understand'=>array(
                 'Understanding Agille Toolkit',
-                'object'=>'Object Oriented Web Development',
+                'object'=>array(
+                    'Object Oriented Web Development',
+                    'example'=>'The Example',
+                    'adding'=>'Adding Objects',
+                    'simplicity'=>'What PHP features are not used',
+                    'oop'=>'What you do neet do know?',
+                    ),
                 'page'=>'Pages, Routing and Linking',
                 'api'=>'API Classes',
                 'view'=>'Views',

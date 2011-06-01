@@ -1,0 +1,170 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Power of Object Oriented Web Development</h1>
+        <p>Agile Toolkit is inspired by the flexibility and power of desktop UI frameworks but is also specifically desiged
+        to be lightweight enough for high performance on the web. For many years PHP community haven't seen a real potential
+        of object oriented design primarily restricted by capabilities of older PHP verisons, compatibility as well as
+        general mind-set of development community.</p>
+        <p>This page will demonstrate some of the UI capabilities which applies to absolutely ANY object in Agile
+        Toolkit using the following example.</p>
+
+        <h2>The Job: "Slot Machine"</h2>
+        <p>Suppose one day a curious client shows up and willing to put your skills to the test by paying you to develop a
+        simple "slot machine". Client is not yet sure of what he needs, but he says he'll figure it out once he gets his
+        hands on a first prototype. His requirements is to make a web page display 3 random digits to the visitor.</p>
+
+        <p><i>"Simple enough"</i> you say and write a HTML for this curious task putting it into
+        templates/default/view/slotmachine.html</p>
+<pre>
+ &lt;div id="&lt;?$_name?>" style="border: 2px solid black">
+   &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot1?>&lt;/div>
+   &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot2?>&lt;/div>
+   &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot3?>&lt;/div>
+ &lt;/div>
+</pre>
+
+        <p>Next think you'll do is to generate random numbers and place them into the template slots.</p>
+
+<?Code?>
+class View_SlotMachine extends AbstractView {
+    function init(){
+        parent::init();
+        $this->template->set('slot1',rand(1,9));
+        $this->template->set('slot2',rand(1,9));
+        $this->template->set('slot2',rand(1,9));
+    }
+    function defaultTemplate(){
+        return array('view/slotmachine');
+    }
+}
+<?/?>
+        <p>Excitedly you call your client and tell them that you have fineshed the job and ask him which page you need his
+        View added. <i>"Add it to the index page"</i> he says, <i>"Let me know when you have done it, so that I can
+        see"</i></p>
+
+        <p>As you follow his instruction you open page/index.php and type the following inside init() method:</p>
+<?Example?>
+$page->add('View_SlotMachine');
+<?/?>
+
+        <p><i>"Yeah, YEAH!, good start. How about having 3 of them?"</i> — <i>"No problem"</i> you reply and 2 more lines</p>
+<?Example?>
+$page->add('View_SlotMachine');
+$page->add('View_SlotMachine');
+$page->add('View_SlotMachine');
+<?/?>
+
+        <p><i>"Naaaw, make it two. But put them alongside"</i> — he says. <i>"OK"</i></p>
+
+<?Example?>
+$col=$page->add('Columns');
+$col->addColumn()->add('View_SlotMachine');
+$col->addColumn()->add('View_SlotMachine');
+<?/?>
+
+        <p><i>"Now make left-one react to mouse. When I point mouse on it, I want backgroud to change"</i></p>
+      
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$left->js('click')
+    ->animate(array('background-color'=>'#F82'));
+$col->addColumn()->add('View_SlotMachine');
+<?/?>
+
+        <p><i>"Hmm.. How about it changes color of the one on the right, not it's own?"</i></p>
+
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$right=$col->addColumn()->add('View_SlotMachine');
+$left->js('click',$right->js()
+    ->animate(array('background-color'=>'#F82')));
+<?/?>
+
+        <p><i>"I think this leads us nowhere. Let's go back and try something else. Can you add a button to re-dial numbers?"</i></p>
+
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$right=$col->addColumn()->add('View_SlotMachine');
+
+$page->add('Button')->setLabel('Pull')
+    ->js('click',
+      $left->js()->reload());
+<?/?>
+
+        <p><i>"Awesome. But how about using same button for both machines?"</i></p>
+
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$right=$col->addColumn()->add('View_SlotMachine');
+
+$page->add('Button')->setLabel('Pull')
+    ->js('click', array(
+          $left->js()->reload(),
+          $right->js()->reload(),
+    ));
+<?/?>
+
+        <p><i>"OK, but can't they appear at the same time?"</i></p>
+
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$right=$col->addColumn()->add('View_SlotMachine');
+
+$page->add('Button')->setLabel('Pull')
+    ->js('click', $col->js()->reload());
+<?/?>
+
+        <p><i>"You make changes faster than I can think of them! I bet you can do anything even put one machine into another!"</i></p>
+
+
+<?Example?>
+$col=$page->add('Columns');
+$left=$col->addColumn()->add('View_SlotMachine');
+$right=$left->add('View_SlotMachine',null,'after_slots');
+
+$page->add('Button')->setLabel('Pull')
+    ->js('click', $col->js()->reload());
+<?/?>
+
+        <p><i>"Oh you didn't need to actually do that, I was just teasing. Let me get back to you when my designer finishes
+        HTML. Great Job!"</i></p>
+
+        <h3>Making them happy</h3>
+        <p>Most clients are demanding. If yours are not, you are lucky, but more often than not you would find yourself
+        implementing something first, then adjusting it. Some would call it "agile software development", other call it
+        "client being picky".</p>
+
+        <h2>How Agile Toolkit saves your day?</h2>
+        <p>As a forward-thinking developer, you probably are inerested in getting "most" for "least" amount of code. Without
+        using it, you would find yourself either spending too much time implementing the widget, or being unable to implement
+        all of your client requests over the phone.</p>
+
+        <p>Even the simplest View in Agile Toolkit has a very sophisticated capabilities:
+        <ul>
+        <li>Ability to be displayed absolutely anywhere on the page, inside other object or in global template</li>
+        <li>Can have default template or be used with other template specified when adding object</li>
+        <li>Will have it's own globally unique name in $object->name</li>
+        <li>Can memorize thing on object level and then recall them. $object->memorize()</li>
+        <li>Apply jQuery actions immediately or on event: $object->js('click')->hide('slow');</li>
+        <li>Insert other objects into your object</li>
+        <li>Set controller or model with setController or setModel</li>
+        <li>Access template directly through $object->template->set();</li>
+        <li>Define object-level hooks (callbacks)</li>
+        <li>Raise object-specific exceptions through throw $object->exception('ouch')</li>
+        <li>Remove and destroy object without rendering: $object->destroy()</li>
+        <li>Manipulate elements such $object->getElement('foo');</li>
+        <li>Re-load object through AJAX, $object->js()->reload();</li></ul>
+
+        <p>All what you have saw happening, was due to the power of AbstractView class. All views in agile toolkit are based
+        upon this class. Which means you can add many of them on any page, change their template, adding JavaScript events
+        for them and even make them interact with other objects and even reload themselves in a very <b>unified</b> way.</p>
+
+        <?$Next?>

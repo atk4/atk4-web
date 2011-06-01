@@ -8,6 +8,7 @@ class BreadCrumb extends View {
 
         // determine current page
         $p=&$this->api->sitemap;
+        $next=$use_next=false;
 
         $base_link=array();
         foreach(explode('_',$this->api->page) as $part){
@@ -22,9 +23,16 @@ class BreadCrumb extends View {
                     $row=array();
                     $row['title']=$title=is_string($val)?$val:$val[0];
                     $row['page']=
-                        $this->api->getDestinationURL(implode('/',$base_link).'/'.$page);
+                        $this->api->getDestinationURL($pp=implode('/',$base_link).'/'.$page);
+
+                    if($use_next===true){
+                        $use_next=false;
+                        $next=$row;
+                    }
+
                     if($page==$part){
                         $row['current']='current';
+                        $use_next=true;
                         $crumb->template->set('page',$row['page']);
                     }else{
                         $row['current']='';
@@ -42,6 +50,8 @@ class BreadCrumb extends View {
         }
         $this->template->set('crumbs','');
 
+
+        $next2=false;
         if($this->owner->template->is_set('toc')){
             if($this->owner->template->get('toc')){
                 $crumb=$this->owner->add('CompleteLister',null,'toc','toc');
@@ -59,9 +69,15 @@ class BreadCrumb extends View {
                 $row['name']=$page;
                 $row['page']=
                     $this->api->getDestinationURL(implode('/',$base_link).'/'.$page);
+                if(!$next2)$next2=$row;
                 $data[]=$row;
             }
             $crumb->setStaticSource($data);
+        }
+
+        if($this->owner->template->is_set('Next')){
+            $n=$this->owner->add('View',null,'Next',array('doc/view/next_button'));
+            $n->template->set($next2?$next2:$next);
         }
     }
     function render(){
