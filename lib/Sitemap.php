@@ -26,9 +26,14 @@ class Sitemap extends AbstractController{
                     'example'=>'The Example',
                     'adding'=>'Adding Objects',
                     'simplicity'=>'What PHP features are not used',
-                    'oop'=>'What you do neet do know?',
+                    'oop'=>'What you do need do know?',
                     ),
-                'page'=>'Pages, Routing and Linking',
+                'page'=>array(
+                    'Pages, Routing and Linking',
+                    'route'=>'Determining current page',
+                    'link'=>'Building links to pages',
+                    'add'=>'Adding more pages'
+                    ),
                 'api'=>'API Classes',
                 'view'=>'Views',
                 'model'=>'Models',

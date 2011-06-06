@@ -11,7 +11,36 @@
         a typical Web application would use. You can still use Agile Toolkit with other databases on your own
         risk.</p>
 
-        <h3>Establishing connection</h3>
+        <h2>Configuring access</h2>
+        <p>The format of SQL connection string goes back to the old days of 2000 and is based on DB::Lite format of DSN. Here
+        is a typical connect string, which is normally placed inside config.php:</p>
+<?Code?>
+$config['dsn']='mysql://user:secret@localhost/dbname';
+
+// define port:
+// $config['dsn']='mysql://user:secret:8888@localhost/dbname';
+
+// through socket
+// $config['dsn']='mysql://user:secret:/tmp/sock@localhost/dbname';
+<?/Code?>
+        <p>Currently only MySQL is supported, however our move to PDO will ensure wider compatibility. </p>
+
+        <h3>Defining access through array</h3>
+        <p>If DSN string is impossible to define, for example your password contains '@' character, then the second
+        format is preferred:</p>
+
+<?Code?>
+$config['dsn']=array(
+    'hostspec'=>'localhost:1234',
+    'username'=>'dbuser',
+    'password'=>'secret'
+);
+        
+// Arguments passed to mysql_connect as
+// mysql_connect('localhost:1234','dbuser','secret');
+<?/Code?>
+
+        <h2>Establishing connection</h2>
         <p>To establish connection with the database you should add the following command either on the API's init()
         method or inside page's init() method.</p>
 <?Code?>

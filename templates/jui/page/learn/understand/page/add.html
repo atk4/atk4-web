@@ -1,0 +1,72 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Adding Pages</h1>
+
+        <p>Agile Toolkit facilitates several ways to define new pages. Depending on your situation you should choose the most
+        appropriate way.</p>
+
+        <p>The way how pages are located are defined by the API used. For example for command-line (ApiCLI) concept of pages
+        is not defined at all. Table below shows the behaviour of ApiFrontend based page routing.</p>
+
+<div class="box blue-noised p-10px">
+	<div class="white">
+		<table>
+			<thead>
+				<tr>
+					<th>Defined in</th>
+					<th>Class used</th>
+					<th>Template used</th>
+					<th width="50%">Notes</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>API Method</td>
+				<td>Page</td>
+                <td>Default</td>
+				<td>Probably the fastest way to create page handler is to define function inside API class. Function starts
+                with prefix "page_" and continues with the page name with slashes replaced into underscores. Try to avoid
+                using this method.</td>
+			</tr>
+			<tr>
+				<td>File page/mypage.php</td>
+				<td>custom</td>
+                <td>default or custom</td>
+				<td>This is preferred way to define new pages if you need dynamic content on them and optionally custom
+                layout.</td>
+			</tr>
+			<tr>
+				<td>Template Only</td>
+				<td>Page</td>
+                <td>custom</td>
+				<td>Ideal for custom pages. Simply create a single file with no PHP in it</td>
+			</tr>
+			<tr>
+				<td>Your own</td>
+				<td>Custom</td>
+                <td>Custom</td>
+				<td>Implement your own pattern in the API class. You can use this method to fetch pages from data-base or
+                generate them dynamically</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+        <h3>Defining new pages through API methods</h3>
+<?Code?>
+function page_helloworld($page){
+    $page->add('Button')->setLabel('Click Me');
+}
+<?/?>
+        <p>This is possibly the fastest way to add a new page to your Agile Toolkit application. API will automatically
+        create a standard page for you and will pass it to the function as an argument. You then can add objects into the
+        page.
+
+
+    </div>
+</div>
+
+<?$Next?>

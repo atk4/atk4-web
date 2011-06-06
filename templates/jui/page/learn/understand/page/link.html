@@ -1,0 +1,135 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Building URLs</h1>
+        <p>Since there are quite a few different ways to configure URLs in Agile Toolkit, there is also a way to produce
+        links. For example if you are willing to calculate how the URL would look for page 'preferences/user', you should use
+        the following construction:
+<?Example?>
+$url=$page->api
+    ->getDestinationURL('preferences/user');
+
+$page->add('P')->set('URL is '.$url);
+$page->add('P')->set('Absolute URL is '.
+    $url->useAbsoluteURL());
+<?/?>
+
+        <p>You might have noticed that $url is actually an object, which can also be used as a string.</p>
+
+        <p>To pass information between pages, a most convenient way is to use arguments. If you wish to complicate things by
+        creating arguments such as /book/39/delete you are free to spend some time on building them, however in most cases
+        such presentation might not be important. Agile Toolkit provides a convenient way to pass arguments to any page:</p>
+
+<?Example?>
+$url=$page->api
+    ->getDestinationURL('search',
+            array('q'=>'my book'));
+
+$page->add('P')->set('URL is '.$url);
+$page->add('P')->set('Absolute URL is '.
+    $url->useAbsoluteURL());
+<?/?>
+
+        <p>Arguments are always properly escaped / encoded. Setting argument's value to "false" or "null" will exclude it
+        from list of arguments.</p>
+
+        <h3>Sticky GET Arguments</h3>
+        <p>Sometimes our page would receive an argument which it shouldn't forget. Agile Toolkit allows you to mark some
+        arguments as "sticky", which means they will be passed on to all generated URLs automatically.</p>
+
+        <p>In the following example, if "user" GET argument is passed to the page, this argument will be included in all
+        subsequently generated URLs. Positioning of stickyGET() call is important. Effect of stickyGET can be undone by
+        calling stickiForget, although normally you wouldn't need to do it.</p>
+
+<?Example?>
+$page->api->stickyGET('user');
+
+$url=$page->api
+    ->getDestinationURL('search',
+            array('q'=>'my book'));
+
+$para=$page->add('P')->set('URL is '.$url.
+        ' but same URL without user '.
+        $url->set('user',false));
+
+$page->api->stickyForget('user');
+
+
+$page->add('Button')->setLabel('Refresh paragraph')
+    ->js('click',
+        $para->js()->reload(array('user'=>123)));
+
+<?/?>
+
+        <h3>Relative Pages</h3>
+        <p>Another handy feature in Agile Toolkit is ability to generate URLs from relative paths.</p>
+<div class="box blue-noised p-10px">
+	<div class="white">
+		<table>
+			<thead>
+				<tr>
+					<th>Page</th>
+					<th>Generated URL</th>
+					<th width="50%">Notes</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>/</td>
+				<td><?page?>/<?/?></td>
+				<td>Using "/" generates URL to index page.</td>
+			</tr>
+			<tr>
+				<td>.</td>
+				<td><?page?>.<?/?></td>
+				<td>Single dot refers to the current page. You can also pass "null" as 1st argument to getDestinationURL to
+                assume current page</td>
+			</tr>
+			<tr>
+				<td>..</td>
+				<td><?page?>..<?/?></td>
+				<td>Parent page in page hierarchy.</td>
+			</tr>
+			<tr>
+				<td>../object</td>
+				<td><?page?>../object<?/?></td>
+				<td>Adjacent page is specified as a sub-page of the parent page.</td>
+			</tr>
+			<tr>
+				<td>./test</td>
+				<td><?page?>./test<?/?></td>
+				<td>Finally you can link to a sub-page of a current page like this.</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+    <h3>Try your own examples</h3>
+
+
+<?Example?>
+$form=$page->add('Form');
+$in=$form->addField('line','page');
+$out=$form->addfield('line','relative_url');
+
+$in->js(true)->univ()
+    ->autoChange(200)->disableEnter();
+$in->js('change',$form->js()->submit());
+
+$form->onSubmit(function($form) use($out){
+    return $out->js()->val(
+        $form->api->getDestinationURL(
+            $form->get('page')));
+});
+
+<?/?>
+        <p>As you might have noticed, that no extra checks or escaping is performed on page name. You should never display
+        link, where user may directly affect the "page". It is, however, perfectly secure to pass user-supplied data through
+        arguments.</p>
+    </div>
+</div>
+
+<?$Next?>
