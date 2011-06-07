@@ -35,7 +35,12 @@ class Sitemap extends AbstractController{
                     'add'=>'Adding more pages',
                     'misc'=>'Best Practices and Misc. info',
                     ),
-                'api'=>'API Classes',
+                'api'=>array(
+                    'API Classes',
+                    'what'=>'Purpose of API Class',
+                    'exec'=>'Application Execution Steps',
+                    'multi'=>'Multiple Interface Apps',
+                    ),
                 'view'=>'Views',
                 'model'=>'Models',
                 'controller'=>'Controllers',

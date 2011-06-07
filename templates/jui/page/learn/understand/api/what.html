@@ -1,0 +1,44 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Understanding API Classes</h1>
+
+        <p>Agile Toolkit does not use any static elements or global variables. The only variable you are are using in
+        "index.php" class is "$api". All the additional classes are added into your API or into other objects inside API.</p>
+
+        <p>This leads to a several interesting points:
+        <ul>
+        <li>You can have more than one API running at the same time;</li>
+        <li>APIs are independent and will never share same ID, Cookie name or session name;</li>
+        <li>You can create one API from inside another one, but the later won't be able to access the former;</li>
+        </ul>
+
+        <h3>Controllers versus Singletons</h3>
+        <p>Agile Toolkit does not use singletons. Singletons does not provide any performance or persistence benefits in
+        PHP5.2. Instead Agile Toolkit has a concept of "Controllers". A controller can be added into an object, but one type
+        of controller can be added only once. This is a "soft" restrictions, you can still add second controller of same type
+        at your own risk if you specify a different name for it.</p>
+
+        <p>For example you can add "Logger" into API, which enhances the way how errors are being displayed. Adding Logger
+        into API again will do nothing and will simply return reference to your existing Logger.</p>
+
+        <p>Because it's possible to have multiple APIs at the same time, this opens up a new scenarios for testing. For
+        example a testing API can initialize your real API, but before executing test it can destroy() some of the
+        controllers and replace them with other ones. This implements dependency-injection based testing framework which
+        is really close to real-life environment of your application.</p>
+
+
+        <h3>Realms</h3>
+        <p>When API class is initialized it expects only one argument. This argument is the "realm". Realm must be unique per
+        application or even per-installation. Realm becomes the "name" of your $api and will be also used in all unique IDs
+        (cookies, DOM id's, session variables).</p>
+
+        <p>Through combining multi-API concept with proper realms, you can implement some unique features such as "Login As
+        User", through actually using front-end API and calling "login" method of the auth method.</p>
+
+    </div>
+</div>
+
+<?$Next?>
