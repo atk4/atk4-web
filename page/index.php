@@ -6,13 +6,14 @@ class page_index extends Page {
         $this->js('click')->_selector('#index-download-button')->univ()->frameURL('<i class="icon-arrow-big"></i>Downloading...',
                 $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-download', 'width' => 500, 'resizable' => false, 'draggable' => false));
 
-		if($_GET['cut_page']){
-			$it=$this->add('IndexTabs');
-			$it->js(true)->_selector(false)->_load('jquery.scrollTo-min')->scrollTo('#actionbar',500);
-		}else{
-			$this->add('IndexTabs',null,'TabContent');
-		}
+        $this->js('click')->_selector('.neon.mvc')->univ()->frameURL('Models in Agile Toolkit',
+                $this->api->getDestinationURL('./in/models'));
 
+        $this->js('click')->_selector('.neon.jquery')->univ()->frameURL('jQuery in Agile Toolkit',
+                $this->api->getDestinationURL('./in/jquery'));
+
+        $this->js('click')->_selector('.neon.ui')->univ()->frameURL('User Interface in Agile Toolkit',
+                $this->api->getDestinationURL('./in/ui'));
 
 	}
     function defaultTemplate(){

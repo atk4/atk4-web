@@ -1,0 +1,43 @@
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+        <h3>Fully-functional professional UI</h3>
+        <p>
+        Cross-browser and pixel-perfect Web User Interface based on Web Standards such as Grid System and jQuery UI Framework
+        are used by some high-end designers. Agile Toolkit includes all that and requires no effort from you to start usign
+        it. All the UI is completely built in HTML and can function even without JavaScript support.
+        </p>
+        <p>
+        Typography and many UI elements are bundled in Agile Toolkit making it a perfect platform for web software, website
+        or community portal.
+        </p>
+    </div>
+	<div class="g-6">
+        <h3>Web Platform Development</h3>
+        <p>
+        Agile Toolkit is well suited for web platform development as well as Software as a Service applications. It includes
+        ability to change CSS themes through Themeroller, add your own CSS or completely replace every bit of HTML produced.
+        What's even more amazing is that you can only change what you need to change, Agile Toolkit automatically looks in
+        several directories for that CSS file.
+        </p>
+        
+        <p>Below is the same object inserted twice with different templates:</p>
+    </div>
+</div>
+<?Execute?>
+$col=$page->add('Columns');
+$left=$col->addColumn(6);
+$right=$col->addColumn(6);
+
+$left->add('H3')->set('Default');
+$right->add('H3')->set('Custom');
+
+$g=$right->add('MVCGrid',null,null,array('grid_striped'));
+$g->setModel('Employee',array('name','salary'));
+$g->dq->limit(3);
+
+$g=$left->add('MVCGrid');
+$g->setModel('Employee',array('name','salary'));
+$g->dq->limit(3);
+$g->addTotals();
+
+<?/?>

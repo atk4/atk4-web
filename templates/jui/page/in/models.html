@@ -1,0 +1,29 @@
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+        <h3>Introducing Models</h3>
+        <p>
+        Model implementation in Agile Toolkit gives you a great opportunity to bind Views to a business entity. Models,
+        implemented as pure PHP classes, define properties, behaviour, relations and conditions of a business entity. Once
+        defined they can be inherited and used inside any View - Form, Grid, Lister, Auth and so on.
+
+        </p>
+    </div>
+	<div class="g-6">
+        <h3>View-level integration</h3>
+        <p>
+        Instead of associating each page with model, Agile Toolkit associates it on a View level. That means you can have
+        multiple elements on your page associated with different models working seamlessly.
+        </p>
+        <p>Form below actually adds employees to the database:</p>
+    </div>
+</div>
+<?Example?>
+$form=$page->add('MVCForm');
+$form->setModel('Employee',array('name','salary'));
+if($form->isSubmitted()){
+	$form->update();
+	$form->js()->univ()
+		->successMessage('Employee added')
+		->execute();
+}
+<?/?>

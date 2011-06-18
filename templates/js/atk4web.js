@@ -31,6 +31,11 @@ $.each({
 			v.remove();
 		});
 	},
+    demoFunction: function(){
+        this.jquery.fadeOut('slow',function(){
+            alert('Just executed custom method written by our JS Coder.');
+        });
+    },
 	moreInfoTrigger: function(){
 		/* Implements link which reveals more information when clicked */
 		var self=this.jquery;
