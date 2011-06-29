@@ -6,9 +6,11 @@ class Sitemap extends AbstractController{
 //{{{ learn - Learning
         $doc['learn']=array('Learning',
 
+            'intro'=>'Objects and Web',
+
             'install'=>array(
                 'Installing Agile Toolkit',
-                'lamp'=>'Installing Required Software (LAMP)',
+                'lamp'=>'Installing LAMP',
                 'deploy'=>'Download and Deploy',
                 'how'=>'How Agile Toolkit Works?',
                 'dir'=>'Directory Structure',
@@ -21,9 +23,10 @@ class Sitemap extends AbstractController{
 
             'understand'=>array(
                 'Understanding Agille Toolkit',
-                'object'=>array(
-                    'Object Oriented Web Development',
+                'base'=>array(
+                    'Basics of Agile Toolkit',
                     'example'=>'The Example',
+                    'chains'=>'Chaining Calls',
                     'adding'=>'Adding Objects',
                     'simplicity'=>'What PHP features are not used',
                     'oop'=>'What you do need do know?',
@@ -41,7 +44,12 @@ class Sitemap extends AbstractController{
                     'exec'=>'Application Execution Steps',
                     'multi'=>'Multiple Interface Apps',
                     ),
-                'view'=>'Views',
+                'view'=>array(
+                    'Views',
+                    'example'=>'Examples of Simple Views',
+                    'usage'=>'How to use Views',
+                    'add'=>'Adding your own',
+                    ),
                 'model'=>'Models',
                 'controller'=>'Controllers',
                 'helper'=>'Helpers',
