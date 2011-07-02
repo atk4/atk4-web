@@ -79,11 +79,11 @@
 						<div class="tron-screen-holder">
 							<a class="tron-screen-button next" href="#"><i></i></a>
 							<div class="tron-screen">
-								<h1>One Language. Three Layers.</h1>
+								<h1>One Framework. Three Benefits.</h1>
 								<div class="tron-icons">
-									<a class="neon tron-icon mvc" href="<?page?>in/models<?/?>"><span><b>MVC</b></span></a>
+									<a class="neon tron-icon mvc" href="<?page?>in/models<?/?>"><span><b>Business MVC</b></span></a>
 									<div class="neon stripe"></div>
-									<a class="neon tron-icon jquery" href="<?page?>in/jquery<?/?>"><span><b>jQuery Framework</b></span></a>
+									<a class="neon tron-icon jquery" href="<?page?>in/jquery<?/?>"><span><b>jQuery Integration</b></span></a>
 									<div class="neon stripe"></div>
 									<a class="neon tron-icon ui" href="<?page?>in/ui<?/?>"><span><b>User Interface</b></span></a>
 								</div>
@@ -97,39 +97,57 @@
 					<script>
 						$(function(){
 							$('#features .current').prepend('<i></i>');
+
+							$('#features-nav').children('a').click(function(){
+								var r=$(this).attr('rel');
+								$('#features').find('.active').hide().removeClass('active');
+									$('#features').find('.'+r).fadeIn().addClass('active');
+								$('#features').find('.current').removeClass('current');
+								$(this).addClass('current');
+							});
 						});
 					</script>
 					<div class="gs-wrap">
 						<div id="features-nav">
-							<a class="big-icon motion icon-molecule"></a>
-							<a class="big-icon motion icon-community"></a>
-							<a class="big-icon motion icon-trophy"></a>
-							<a class="big-icon motion icon-core"></a>
-							<a class="big-icon motion icon-gpl current"></a>
-							<a class="big-icon motion icon-re-use"></a>
-							<a class="big-icon motion icon-lego"></a>
-							<a class="big-icon motion icon-tree"></a>
-							<a class="big-icon motion icon-cubes"></a>
-							<a class="big-icon motion icon-wheel"></a>
-							<a class="big-icon motion icon-book"></a>
-							<a class="big-icon motion icon-jerrycan"></a>
+							<a rel="molecule" class="big-icon motion icon-molecule"></a>
+							<a rel="community" class="big-icon motion icon-community"></a>
+							<a rel="trophy" class="big-icon motion icon-trophy"></a>
+							<a rel="core" class="big-icon motion icon-core"></a>
+							<a rel="gpl" class="big-icon motion icon-gpl current"></a>
+							<a rel="re-use" class="big-icon motion icon-re-use"></a>
+							<a rel="lego" class="big-icon motion icon-lego"></a>
+							<a rel="tree" class="big-icon motion icon-tree"></a>
+							<a rel="cubes" class="big-icon motion icon-cubes"></a>
+							<a rel="wheel" class="big-icon motion icon-wheel"></a>
+							<a rel="book" class="big-icon motion icon-book"></a>
+							<a rel="jerrycan" class="big-icon motion icon-jerrycan"></a>
 						</div>
 						<div id="features-text" class="molecule" style="display: none">
 							<h3>Integration</h3>
-							<p>Like no other development tool, Agile Toolkit integrates various components of web application
-                            into a simple Object-Oriented architecture. Write only what you need, not a single line more.</p>
+							<p>Agile Toolkit reinvents web development for the rest of us. Compared to mainstream frameworks,
+							Agile Toolkit provides much simpler coding experience with much faster learning curve. At the
+							same time it gives you things no other frameworks do: Business-oriented MVC, User
+							Interface and Integrated jQuery.</p>
+
+							<p><i>It's elegant, well-designed structure gets you from A to B much faster.</i></p>
+
+							<p><i>Agile Toolkit is addictive</i></p>
 						</div>
 						<div id="features-text" class="community" style="display: none">
-							<h3>Support</h3>
-							<p>Consider using Agile Toolkit in your next commercial project. You will get a great support
-                            from the company who has created Agile Toolkit.
-                            </p>
+							<h3>Community</h3>
+							<p>Agile Toolkit is designed for sharing. Everything you develop is an addon. Sharing is easy and
+							same code fits all.</p>
+							<p>License choice for Agile Toolkit promotes sharing too. Either commercial sharing in exchange
+							for a payment or an open-source contributions.</p>
+							<p>Our forum will open soon along with a developer database and support platform</p>
 						</div>
 						<div id="features-text" class="trophy" style="display: none">
 							<h3>Fastest Development</h3>
 							<p>Agile Toolkit contributes so much to your future project. Integrated ORM, MVC, CSS Framework,
                             UI widgets, Plugins and deployment structure give you fastest development without any compromise
-                            on the flexibility, speed or security.
+                            on the flexibility, speed or security.</p>
+							<p>Along with add-ons there is anything for you. Of course you must not be afraid of writing a
+							code to use it.
                             </p>
 						</div>
 						<div id="features-text" class="core" style="display: none">
@@ -139,7 +157,7 @@
                             multi-regional software.
                             </p>
 						</div>
-						<div id="features-text" class="gpl">
+						<div id="features-text" class="gpl active">
 							<h3>AGPL Licensing</h3>
 							<p>Download and start using Agile Toolkit in your private projects for free. Distribution,
                             re-sale and customization is permitted. If you wish to protect intellectual property of your
@@ -193,14 +211,14 @@
 							<div class="g-5">
 								<a href="<?page?>learn<?/?>" class="bigarrow blue-w">
 									<b class="itc">Start Learning</b>
-									<span>Continue exploring and learning exciting world of Agile Toolkit on your own</span>
+									<span>+1 Word Continue exploring and learning exciting world of Agile Toolkit on your own</span>
 								</a>
 							</div>
 							<div class="g-2"><span class="itc">Engage</span></div>
 							<div class="g-5">
-								<a href="#" class="bigarrow red-e">
+								<a href="<?page?>engage<?/?>" class="bigarrow red-e">
 									<b class="itc">Hire a Developer</b>
-									<span>Look for a company or freelancer to build your project in Agile Toolkit</span>
+									<span>+1 Word Look for a company or freelancer to build your project in Agile Toolkit</span>
 								</a>
 							</div>
 						</div>
