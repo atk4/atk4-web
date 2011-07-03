@@ -4,50 +4,67 @@
 	<div class="g-12">
         <h1>Object Oriented Programming</h1>
 
-        <p>OOP is one of the major concepts in the world of Computing. The general idea of Object-oriented programming is
-        that you operate not with just chunks of data, but with objects. Objects consist of some structured data as well as
-        methods you can execute. Object would most likely describe a real objects around us such as User, Requests, Paymetns
-        and so on.</p>
+        <p>OOP is one of the major concepts in the world of Computing. Objects in computing are "Black Boxes". You can
+        interact with object, but you do not have to worry about it's implementation. Object contain data and methods. Also
+        objects are always created based on a "Class" prototype. (For more info on Object Oriented Software Design read
+                <a href="http://softwaredesign.com/objects.html" target="_blank">Read this article.</a>).</p>
 
-        <p>Objects are defined through a "class" which describes from which other object it derives and how it differs from
-        it's predcessor.</p>
+<div style="float: right">
+<?Execute?>
+$page->add('Button')->set('This is object');
+<?/?>
+</div>
+        <p>When Object Oriented Design is applied to Web Development it abstracts the way how you operate with Web Objects
+        such as forms, buttons, pages, links and other. Instead of writing HTML, CSS ad JavaScript code you now interact with
+        a native object in PHP.</p>
 
-        <p>PHP Language starting from version 5 has became a fully-featured platform for Object Oriented programming.
-        Unfortunatelly the software for various reasons (historical and performance) wouldn't take advantage of Object
-        Oriented programming.</p>
+        <p>The button on the right is a fairly simple example of an object in Agile Toolkit. A more complex objects can
+        implement forms, signup wizards, payment forms, file manager, poll, comment feed an so on. Regardless of which object
+        you are using, it's straightforward and simple.</p>
 
-        <p>Agile Toolkit implements Web Application in the way how it should be from a proper object-oriented architectural
-        design. However before going into technical details, let's review what it is we are looking to build</p>
+        <p>Another and very significant property of an Object is ability to inherit and extend it. When a new object class is
+        defined, it can inherit all methods and properties from another class. It can then override and re-define some of
+        them. This allows developer to extend functionality of the base class without messing with it.</p>
 
-        <h2>Components of Web Application</h2>
+        <h2>Fives types of objects in Agile Toolkit</h2>
+
+        <p>I have only mentioned "Visual" objects or views. There are actually 5 objects types in Agile
+        Toolkit and they are described below.
+        </p>
+
+        <h3>Application (API)</h3>
+
 
         <img src="<?template?>images/ugly_images/oop1.png<?/?>" style="float: right">
         <p>In simple terms, web application helps user manage server-side data. For each request by the user, web application
-        needs to collect information from the data storage and produce respons to that user.</p>
-
-        <p>Logically web applicaion can be separated from 4 type of components: pages, models, views and controllers.</p>
+        needs to collect information from the data storage and produce response to that user.</p>
 
         <h3>Pages</h3>
 
         <img src="<?template?>images/ugly_images/oop3.png<?/?>" style="float: right">
         <p>Page is a page. That's what we see when we open a book. It's also what we see when we open a website. On a websate
-        we navigate between the pages. Pages would be different, although they may share common components such as grids or
-        forms.</p>
+        we navigate between the pages. Pages can be different, but can also share common components such as look or layout.
+     </p>
 
         <p>It makes sense to build page through object oriented approach. This way one page may inherit another. For example
         you might have a generic signup page which is further extended by similar registration form for different
         scenarios, like in our example.</p>
 
-        <p>In Agile Toolkit — Pages define UI logic</p>
+        <p>In Agile Toolkit — Pages define UI logic. Often skilled designer could understand Page definitions or even change
+        some of the PHP code. It's essential to separate UI logic from business logic, which is defined in Models.</p>
 
         <h3>Models</h3>
 
-        <img src="<?template?>images/ugly_images/oop4.png<?/?>" style="float: right">
+        <img src="<?template?>images/ugly_images/oop6.png<?/?>" style="float: right">
         <p>Models are objects mimicking a real-world objects. Depending on your application, models will be defined
         differently. For instance for job site you may have JobApplication, User and similar other objects.</p>
 
         <p>Again, object-oriented approach makes a lot of sense for modeling your application classes. If you have different
-        user types, they would extend same anchestor class.</p>
+        user types, they would extend same parent class.</p>
+
+        <p>Some plug-ins may include some generic models. For instance there is model for "Country" along with database table
+        with content. It contains official list of ISO countries and codes. Including such a model can save you development
+        time and help you update your application when country list is updated or changed.</p>
 
         <h3>Views</h3>
 
@@ -61,7 +78,7 @@
 
         <h3>Controllers</h3>
 
-        <img src="<?template?>images/ugly_images/oop6.png<?/?>" style="float: right">
+        <img src="<?template?>images/ugly_images/oop4.png<?/?>" style="float: right">
         <p>Your application needs a lot of functionality. Some would help you deal with specific problems such as template
         parsing or database access.</p>
 
@@ -71,7 +88,7 @@
         <p>As controllers often have common things, object-oriented architecture helps here out. For instance you could have
         different authorization mechanisms based on generic authorization class.</p>
 
-        <h2>Application — The Glue</h2>
+        <h2>Application as a glue</h2>
 
         <img src="<?template?>images/ugly_images/oop2.png<?/?>" style="float: right">
         <p>Agile Toolkit is different from frameworks because each of the objects above are capable of automatically interact
@@ -81,14 +98,13 @@
         <p>Simple design of adding objects ultimatelly carries dependencies through the Application. Object will referr to
         application's default DB manager when trying to do data loading.</p>
 
-        <p>As developer, however, you may create multiple applications at the same time and this way define full environment
-        for the objects you are going to use.</p>
+        <p>As developer, however, you may create multiple applications at the same time. Having two applications at the same
+        time might seem unnatural at first, but it makes a lot of sense when one application is testing another or
+        authentication is exchanged.</p>
 
         <h2>Moving forward</h2>
-        <p>To learn agile toolkit, you need to first understand the concept of APMVC (Application, Page, Model, View,
-                Controller).</p>
-
-        <p>Further learning course will be focused on getting working examples first, then tweaking.</p>
+        <p>To learn Agile Toolkit, you need to first understand this concept of APMVC (Application, Page, Model, View,
+                Controller). If you do not yet understand this concept, we will re-visit it after "installation" section.</p>
 
     </div>
 </div>
