@@ -3,7 +3,7 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
-        <h1>Power of Object Oriented Web Development</h1>
+        <h1>Agile Toolkit Workflow — Views</h1>
         <p>Agile Toolkit is inspired by the flexibility and power of desktop UI frameworks but is also specifically desiged
         to be lightweight enough for high performance on the web. For many years PHP community haven't seen a real potential
         of object oriented design primarily restricted by capabilities of older PHP verisons, compatibility as well as
@@ -19,15 +19,15 @@
         <p><i>"Simple enough"</i> you say and write a HTML for this curious task putting it into
         templates/default/view/slotmachine.html</p>
 <pre>
- &lt;div id="&lt;?$_name?>" style="border: 2px solid black">
+ &lt;div id="&lt;?$_name?>" style="border: 2px solid black; padding: 10px; width: 150px; margin: 10px;">
    &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot1?>&lt;/div>
    &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot2?>&lt;/div>
    &lt;div style="padding: 4px; border: 1px solid red">&lt;?$slot3?>&lt;/div>
  &lt;/div>
 </pre>
 
-        <p>Next think you'll do is to generate random numbers and place them into the template slots. This logic should be
-        contained inside a new class file, which must be created inside lib/SlotMachine.php:</p>
+        <p>Next thing you'll do is to generate random numbers and place them into the template slots. This logic should be
+        contained inside a new class file, which must be created inside lib/View/SlotMachine.php:</p>
 
 <?Code?>
 class View_SlotMachine extends AbstractView {
@@ -35,7 +35,7 @@ class View_SlotMachine extends AbstractView {
         parent::init();
         $this->template->set('slot1',rand(1,9));
         $this->template->set('slot2',rand(1,9));
-        $this->template->set('slot2',rand(1,9));
+        $this->template->set('slot3',rand(1,9));
     }
     function defaultTemplate(){
         return array('view/slotmachine');
