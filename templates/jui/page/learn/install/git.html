@@ -63,7 +63,13 @@ $ cd ..
 <?/?>
         </li>
         <li>use "git status" and create your own .gitignore files. Add "config.php", ".htaccess" and other files which you do
-        not wish to share in there.</li>
+        not wish to share in there.
+<?MoreInfo?>Why placing config.php and .htaccess into Git / SVN is bad?
+<p>Config file contains server-specific configuration. It might be private keys, or mysql password or some other sensetive information. Adding this information into Git may expose it on-line or to people who woludn't normally have access to the server. </p>
+<p>File ".htaccess" might be OK for adding, although if you have some server-specific configuration in there, the same principle may apply.
+</p>
+<?/?>
+        </li>
         <li>"git add ." to add all files to your new repository</li>
         <li>"git push" to send your files to Github.com.</li>
         <li><a href="<?page?>contact<?/?>">Let us know about your project</a></li>

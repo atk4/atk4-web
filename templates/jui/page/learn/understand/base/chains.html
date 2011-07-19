@@ -4,12 +4,23 @@
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
         <h1>Chaining method calls</h1>
-        <p>Chaining is when the return value of object method is the object itself. This work well with functions which are
-        not returning any meaningfull output and can simply "return $this". User then can call several methods of the same
-        object without using variable.</p>
+        <p>There are no procedures in PHP and all the functions return something. When object's method has nothing
+        meaning-full to return, it returns same object back - $this. Methods like that are considered chain-able because
+        return of one method can be used to call further methods.</p>
+
+        <p>This approach is used a lot in practice and often improves code readability. You won't need those extra temporary
+        variables anymore. Below are some examples of code chaining in Agile Toolkit.</p>
 
 <?Code?>
-$query = $this->api->db->dsql();
+$users = $this->api->db->dsql()
+        ->table('user')
+        ->where('age>',30)
+        ->order('name')
+        ->do_getAllHash();
+
+
+$
+<?/?>
 
         <?$Next?>
     </div>

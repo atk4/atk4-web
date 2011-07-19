@@ -26,6 +26,12 @@ $config['logger']['log_dir'] = 'logs';
         <p>Method api->getConfig('sample/setting',400); is used to to retrieve config settings. Second argument
         to this function is default value and it's used extensively throughout Agile Toolkit add-ons and components.
         </p>
+        <h2>Loading additional config files</h2>
+        <p>By default Agile Toolkit will recognize config.php and config-defaults.php. The settings in config.php will be considered if same key is defined in both files. Files are loaded by Api using readConfig() method, therefore you may load configuration for additional files yourself using the same method.</p>
+<?Code?>
+$this->api->readConfig('config-extra.php');
+<?/?>
+        <p>config-distrib.php often found in Agile Toolkit applications is never loaded but is supposed to be a "template" for a local copy of config.php. Installation guide of typical application with Agile Toolkit would instruct to copy "config-distrib.php" into "config.php" and then edit it's contents. When new application is installed over existing one, it will not overwrite your config.php file.</p>
 
     </div>
 </div>
