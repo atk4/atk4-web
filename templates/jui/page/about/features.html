@@ -5,135 +5,204 @@
 
 <?seo_keywords?>re-usable modules, less time, scalable applications, design guidelines, web standards, built-in security, security standards, business oriented, goal oriented, HTML5, CSS, jQuery UI, MVC, AJAX, independent development, OOP, php extensions, DOM, XML, XSLT, 3rd party, software<?/?>
 
-<h1>Agile Toolkit features</h1>
+<h1>Agile Toolkit - 150 features</h1>
 
-<p>Agile Toolkit is a powerful Web User Interface framework which introduces high-level abstraction to almost all aspects of modern web development. Without leaving comfort of PHP language, you can change page contents, routing, AJAX behaviour, JavaScrit bindings, Model structure and ORM rules.</p>
+<p>Agile Toolkit packs a 3 major features but also has a huge amount of minor features.</p>
+<ul>
+<li>Small footprint but huge gain</li>
+<li>No need to know HTML / JavaScript to build your web app</li>
+<li>Zero configuration and no code generation</li>
+<li>Lets you focus on "what", not "how"</li>
+<li>Encouraging good quality code available for free or fairly priced</li>
+</ul>
 
-<p>The Toolkit was heavily influenced by the Object-Oriented windowed environments such as Turbo Vision, Object Windows, Cocoa. Agile Toolkit is modeled upon AModules3 and has about 10-year old history on it's own.</p>
+<h2>Business MVC</h2>
+<h3>Query Building - DSQL</h3>
+<ul>
+<li>Extremely easy to learn and use</li>
+<li>Object-oriented query model. Multiple queries are not conflicting</li>
+<li>Querying multiple tables through joins</li>
+<li>Vendor-independent database feature use</li>
+<li>Argument quoting and escaping</li>
+<li>Support for advanced expressions</li>
+<li>Parametrical queries through PDO</li>
+<li>Sub-query support (with parametric variables)</li>
+<li>Automated caching of prepared statements</li>
+<li>Multiple database connections</li>
+<li>Native integration with Views, Models, and the rest of Agile Toolkit</li>
+<li>Extremely lightweight</li>
+<li>Debugging support</li>
+<li>Extend to build your own queries using templates</li>
+</ul>
 
-<p>Agile Toolkit is remarkable due to few factors:</p>
+<h3>Models</h3>
+<ul>
+<li>Easy to learn and use</li>
+<li>Uses native PHP code to define</li>
+<li>Follows your business entities and can divert from your database schema</li>
+<li>Supports joined tables with different types of relation</li>
+<li>Foreign key support and subqueries</li>
+<li>Extensive support for calculated columns</li>
+<li>Model inheritance for more secure data model</li>
+<li>Conditions on physical, related and calculated fields</li>
+<li>Dynamic field types, flags and properties</li>
+<li>Add additional conditions, joins, fields for existing model on the fly</li>
+<li>Active record implementation, load, change and save data back</li>
+<li>Hooks and methods for controlling actions before or after operations (behaviours)</li>
+<li>One class per model. No XML/YAML or any extra files</li>
+<li>Define actual fields  to be used and their order when using with Views</li>
+<li>Extract dynamic query from model for multi-record SQL operations</li>
+<li>Support for "master" fields, which much be conditioned and defaulted to certain value</li>
+<li>Support for system fields, which will not appear on views. Read-only fields.</li>
+<li>Model-level validation.</li>
+<li>Related model traversing. Automatically pre-loads data.</li>
+<li>Default field values</li>
+<li>Captions for fields. Automatically produce caption from field name if undefined</li>
+<li>Extend to add your own properties to fields</li>
+<li>Model controllers can add behaviour, fields (timestamps, audit, soft delete)</li>
+<li>Separate table audit / logging</li>
+<li>Determining and updating only fields which value was changed</li>
+<li>Use conditions in complex calculated sub-query fields as defined in their respective model</li>
+<li>Load active record data by id or other field</li>
+<li>Customize display name by supplying your own SQL</li>
+</ul>
 
-<h2>Coding Style</h2>
+<h3>Controllers</h3>
+<ul>
+<li>Controllers have different responsiblities in Agile Toolkit</li>
+<li>Front-controller is implemented as Page object</li>
+<li>Libraries are Application-Controllers. They extend how application behaves</li>
+<li>Helpers in other frameworks may be either Controller or View for better structure</li>
+<li>Apply one or several controllers on a single object.</li>
+<li>Model controllers adds behvaiour, conditions, fields or encryption to models</li>
+<li>Controllers are transparent. Strong encryption controller is attached to model where fields continue to work ir a regular way</li>
+<li>Register system-wide fall-back functions.</li>
+<li>Inject methods into objects.</li>
+<li>Advanced object-level "hook" system</li>
+</ul>
 
-<p>Development in Agile Toolkit is fun and is very addictive. Agile Toolkit is popular amongst new developers. They are excited to step over huge chunk of technologies and concepts (HTML,CSS,JSON,HTTP,AJAX,YAML,XML,960GS) and just get to the coding without knowing the details. Mature developers mostly like efficient and flexible architecture or Agile Toolkit and ability to extend and re-use code.</p>
+<h3>Views</h3>
+<ul>
+<li>Views produce HTML markup, such as button, form, image or icon</li>
+<li>One view can recursively consist of other views</li>
+<li>All views rely on a simple-for-designers-to-understand HTML templates</li>
+<li>Template engine contain no business logic, only define regions</li>
+<li>When adding view to another, position it anywhere in owner's template</li>
+<li>Views generate and insert unique-name for each object</li>
+<li>Function js() allows to bind view with jQuery chains through behaviours</li>
+<li>Reload view through AJAX painlessly</li>
+<li>Regardless of complexity, multiple views will not conflict on same page</li>
+<li>AJAX request can render selective view</li>
+<li>Views are rendered after everything is initialized. Hence you can delete views after they are added.</li>
+<li>Because Views are classes, they can inherit each-other</li>
+<li>Agile Toolkit comes with many built-in views</li>
+<li>CRUD is implemented as view, hence you can have multiple CRUD controls on the page</li>
+<li>You can use views for layouting or tabs.</li>
+<li>View can have default template, but you can specify a different template when adding</li>
+<li>You can convert view into HTML by echoing it, but never do it. Render will echo everything for you</li>
+<li>Output is echo'ed only once, after render, so the page will not be displayed partially</li>
+<li>You can re-arrange objects in a view after they are added through controller</li>
+<li>Grid based on pure HTML with support for Paginator, Sorting, Totals and inline editing</li>
+</ul>
 
-<p>Framework can be clasified as <b>Integrated</b> and with focus on <b>Simplicity</b> and <b>Efficiency</b>. Dependencies in Agile Toolkit are defined on <b>Object rather than Class</b> level.</p>
+<h3>Application</h3>
+<ul>
+<li>Multiple API classes are available. Select the most appropriate for your web app</li>
+<li>Support for lightweight config file (php syntax)</li>
+<li>Full-featured implementation of exception handling</li>
+<li>Application is derived from View, hence it has a global template (shared.html)</li>
+<li>Through controllers, add more SEO capabilities to your web application</li>
+<li>Transparent localization support. Develop your app, then localize</li>
+<li>Upgrade full Agile Toolkit codebase or addons without loosing your customization</li>
+<li>Inject your own classes (Form, Grid) to be used everywhere</li>
+<li>Create multiple applicaiton instances</li>
+<li>Support for skins allowing to white-label software</li>
+<li>PathFinder helps locate files in multiple locations based on file type</li>
+<li>Certain template tags are universally changed to set proper page-links or location to HTML assets</li>
+<li>Add authentication controller to restrict access on white or black-list basis.</li>
+<li>Authentication can use default login form or your own</li>
+<li>Multiple encryptions for authentication - md5, sha1, sha256 and your own</li>
+<li>Presence of Sticky GET arguments</li>
+<li>Page-based routing. Can be extended through .htaccess into Ruby-style. Use any extension in URL</li>
+<li>Support for mod_rewrite.</li>
+<li>Apps can be deployed in webroot or subdirectory</li>
+<li>Support for sub-pages and page hierarchies.</li>
+<li>Inherit one page from another</li>
+<li>Backwards-compatibility controller</li>
+<li>Database migration scripts (alter table)</li>
+<li>Development and Production mode</li>
+<li>File pushing. Place file with the same name in local directory to override file from Agile Toolkit</li>
+<li>Compatible with your PaaS PHP Platform</li>
+</ul>
 
-<p>Website www.agiletoolkit.org also is built using Agile Toolkit. Sources are available under open-source license.</p>
 
-<p>Ability to use same framework for site like this one and also to build complex online financial software is a great testament for flexibility and scaling of Agile Toolkit. Once you are familiar with Agile Toolkit, you will see how it can help you with a very wide variety of tasks. Build a single-page contact-to-email form, customized CMS system, document management or financial system - Agile Toolkit always offers a faster, cleaner and more intuitive way to complete your project.</p>
+<h3>Addons</h3>
+<ul>
+<li>CRUD View — bind with your model to create, browse, edit or delete model entities</li>
+<li>Filestore — powerful models for storing meta information about uploaded files. Multi-volume support</li>
+<li>Image — extends File implementation of Filestore but adds ability for automatic cropping and thumbnails</li>
+<li>Strong Encryption — use OpenSSL for one-way encryption of model fields</li>
+<li>Payments / Paypal — implement support for charing visitors through PayPal</li>
+<li>Payments / Realex — credit card processing through Realex Payments</li>
+<li>Credit Card model — instantly create your payment form</li>
+<li>CampaignMonitor — taps into SOAP interface of CampaignMonitor</li>
+<li>OAuth — integrates with 3rd party authentication, Linkedin, Twitter, Google</li>
+<li>FormAndSave — simple addon adding MVC form with database saving on submit</li>
+</ul>
 
-<table class="zebra" width="100%">
-<thead>
-<tr>
-<th>Features</th>
-<th>Benefits</th>
-</tr>
-</thead>
-<tr>
-<td valign="top" width="200">1. Full Object Oriented MVC</td>
-<td>
-<p>Implementation of MVC in Agile Toolkit differs from the one introduced by Ruby-on-Rails. MVC is implemented on Object level (not page level). Also in contrast from using "YAML" to define models and "HTML" to describe views, all three are implemented as PHP class objects. Form, Button and Grid are examples of View class objects. Controllers are also implemented as classes which can be optionally used to extend behaviour. The special type of MVC controller can optionally bind View with ORM-powered object of Model class.Things on your pages are controlled by Page class objects.</p>
-<p>While it might sound like way more complex structure, in reality it is really intuitive and natural. A huge advantage is ability to use instances of generic classes as-is and omitting some elements. The code is much more logically linked and re-usability of components is on a really high level.</p>
 
-<ol><li>Much more modular built around true object-oriented design (not class singletons)</li>
-<li>Inheritance is optional. You do not need to define new class to build a form (but you can)</li>
-<li>Things working by default. Generic objects just work. More tweaking, less coding.</li></ol>
-</td>
-</tr>
-<tr class="even">
-<td valign="top">2. Web User Interface Included</td>
-<td><p>With Agile Toolkit you can forget your troubles with HTML, CSS, AJAX, JavaScript and User Interface in general. Instead of forcing web developers to provide endless chunks of HTML, Agile Toolkit comes with two high-quality themes. Featuring best practices of design, typography and layout building - you would be using jQuery UI CSS Framework integrated with flexible CSS Grid System.</p>
+<h2>JavaScript and jQuery Integration</h2>
+<p>JavaScript and jQuery are fundamental technologies in any modern web application. Agile Toolkit brings abstraction of powerful technologies such as AJAX making them more reliable and easier to use. It's very easy to start using: $page->add('Button')->js('click', $grid->js()->reload() );
 
-<p>Supplied JavaScript widgets compliment standard interface of jQuery UI to add many essential features and enable development of Rich Web Software.</p>
+<h3>jQuery Integration</h3>
+<ul>
+<li>Any view in the system can have jQuery chain attached through behaviour, such as "click"</li>
+<li>Behaviour on one object can trigger chain on another object</li>
+<li>Multiple PHP calls on chain transparently converted into JavaScript code. Argument types are converted.</li>
+<li>One behaviour can trigger multiple chains.</li>
+<li>You can use your own events and trigger them manually.</li>
+<li>Redefine selector or use "this", "document" or "window".</li>
+<li>Submitting form executes jQuery chain also.</li>
+<li>Enclose chain into function.</li>
+</ul>
 
-<p>Agile Toolkit allows to do things by either taking advantage of bundled UI, or by letting you do it your way. You may build custom templates for pages, forms, views or menu and then let developers selectively apply them where appropriate or globally.
+<h3>jQuery UI extension</h3>
+<ul>
+<li>Avoid multiple requests when user clicks AJAX button inpatiently</li>
+<li>Handle slow page loading to display global spinner</li>
+<li>Ability to handle session expiration in AJAX requests</li>
+<li>jQuery UI widget for form. Adds AJAX submit and nice error display</li>
+<li>jQuery UI widget for grid. Add field reloading, pagination</li>
+<li>jQuery UI widget for expander. Expands table and loads page inside</li>
+<li>Plugin for "atk4_loader". Improves for content loading and reloading</li>
+<li>Extensible univ.js chain allowing to add more custom JS methods accessible from PHP</li>
+<li>Support for dynamic loading and JS dependencies.</li>
+<li>Load AJAX page along with 3rd party jQuery plugins and widgets</li>
+<li>Growl-style JS success notification</li>
+<li>Native support of jQuery UI dialogs</li>
+<li>Widget for menu and link AJAX-ification</li>
+<li>Support for datepicker</li>
+</ul>
 
-<ol>
-<li>Agile Toolkit is bundled with gorgeous CSS/HTML templates. You still have full to customize the theme.</li>
-<li>If you wish, you can replace create your own HTML skin from scratch either for new or existing project.</li>
-<li>Templates for Agile Toolkit can be significantly enhanced with new components and rules suitable for multi-regional software and white-label solutions.</li>
+<h2>User Interface and design</h2>
+<p>Agile Toolkit comes with awesome and flexible design (skin). It will let you develop without worrying about the look of your application. If you have designer in your team, he can produce a new and unique skin.</p>
 
-</ol>
-</td>
-</tr>
-<tr>
-<td valign="top">3. Secure even considering human error.</td>
-<td><p>Abstraction layer significantly improves security when you copy data between database, JavaScript and templates. Even without validation, proper escaping and encoding is always in place. Developers not aware of security precautions will feel confident working in environment of Agile Toolkit</p>
-<ol>
-<li>Security applied by default and can not be lifted by accident.</li>
-<li>Integration between user interface and ORM ensures seamless and secure data handling.</li>
-<li>Any new component or addon will have the same security policies as anything else</li>
-</ol>
-</td>
-</tr>
-<tr class="even">
-<td valign="top">4. Business goal oriented design</td>
-<td>
-<!--
-<p>Agile Toolkit is a culmination of 10-years of web framework perfection and improvements. Initial versions in 2001 had model definition separated from CRUD implementation, very similar to CRUD components you can see today in many frameworks. However during 3 major rewrites and a lot of fine-tuning Agile Toolkit is on a completely new level. Components such as CRUD consist of many smaller components which in </p>
--->
+<h3>CSS features</h3>
+<ul>
+<li>Typography and CSS reset included, so that you don't need to worry</li>
+<li>GS-10 is used by default, but different Grid Systems can be used</li>
+<li>Six CSS classes for building form layouts. Since column, multi-column forms</li>
+<li>Support for hybrid form layouts. If everything fails, use custom form layout</li>
+<li>Based on jQuery UI CSS framework. Use themeroller for new theme</li>
+<li>128 extra icons included in addition to ones provided with jQuery UI</li>
+<li>Support for fixed width and full-screen layout</li>
+<li>Comes with two CSS skis: "default" and "elephant". Switch in index.php file</li>
+</ul>
 
-<p>Goals pursued by Agile Toolkit benefits most projects which focus on efficiency, scalability, performance. Approach of Agile Toolkit towards code ownership as well as separation of "your" code, "3rd party" code and "core components" is much better though through.</p>
-
-<p>Agile Toolkit focuses on your staff productiveness and steep learning curve. In our testing, average developer will be able to make a simple yet usable web application in few days since introduction. After one month developers are completely in love with the framework and can easily out-perform mature developers using other web frameworks.</p>
-
-<p>When it comes to bindings, Agile Toolkit chooses to support one, most popular technique. For instance, we spend our effort into improving integration with MySQL instead of building layers of CPU-burning abstractions to support 20 different databases in ORM. Front-end is clearly focused on jQuery / jQuery UI combination. With Agile Toolkit you get experience, not munch of components under 'no-warranty' license.
-<ol>
-<li>Great environment with a lot of focus on small and medium size business requirements.</li>
-<li>Training experience of your employees is highly efficient and completely free.</li>
-<li>Many low-level choices are done for you. You may decide to use them or not.</li>
-<li>No automated generation of bloated code. Achieve more with less files and simpler code.</li>
-</ol>
-</td>
-</tr>
-<tr>
-<td valign="top">5. Sustainable development and support</td>
-<td><p>Many PHP frameworks can be acquired for free. However we know that even free framework comes with a cost, which you spend on learning and using it. Agile Toolkit is free to use in open-source software, education and non-profit groups and organizations. However if you are making money by selling your on-line software as a service, you will need to acquire a per-developer license.</p>
-
-<p>Agile Technologies - a hi-end web development company who have developed and released Agile Toolkit continues to support and improve both the framework and documentation funded by your purchases and not over-priced consulting services.</p>
-
-<p>The free license used by Agile Toolkit - Affero GPL promotes open-source movement by prompting developers to contribute and open source their projects as well as give chance to smaller companies to release and distribute commercial software or components much easier.</p>
-
-<ol>
-<li>Highly-motivated developers work to improve Agile Toolkit on daily basis ensuring high quality of code, integration and consistency.</li>
-<li>You can get exactly the same code-base for free. If you go commercial, the value you are getting greatly exceeds commercial cost.</li>
-<li>Developers who chose to use Agile Toolkit for free are motivated by licensing terms to contribute and improve community based on quality code sharing.</li>
-</ol>
-</td>
-</tr>
-<tr class="even">
-<td valign="top">6. Proven to be best with Agile Methodologies</td>
-<td><p>Agile Manifesto provides a guidelines for building a better-motivated and more efficient development teams. Agile Toolkit greatly compliments principles such as "deliver early" and "refactoring".</p>
-
-<p>When you adopt Agile Toolkit in your team, separate developers, designers and content writers can work on your web software independently without friction. You can develop application completely and apply design after it's finished with even less effort than doing same thing other way around</p>
-
-<p>Testing in Agile Toolkit is much easier. Firstly there are many things you wouldn't need to test, such as your user interface. It's very robust is very stable even if your application only relies on AJAX interaction. Agile Toolkit focuses testing on back-end business logic in an automated and visual way.</p>
-<ol>
-<li>You can start one development then change any aspect of your software without any penalty.</li>
-<li>In your team each member can work on their professional area with minimum dependencies between members.</li>
-<li>You will achieve much higher quality build with less testing. You can use browser-side software for UI testing.</li>
-</ol>
-</td>
-</tr>
-<tr>
-<td valign="top">7. Way ahead of competition</td>
-<td>
-<p>Agile Toolkit have been developed for over 10 years. Some components and approaches pre-date mainstream. Dynamic query engine was introduced in 2004. ORM was designed in 2009 and is step ahead of other mainstream ORM implementation. JavaScript and jQuery integration designed in 2010 is few years ahead of competition.</p>
-
-<p>Agile Toolkit 4 culminates implementation of User Interface layer and by relying on many modern standards such as HTML5, Progessive Enhancemen, CSS degradation delivers a solid architecture for the next 5 years of web development.</p>
-
-<p>While competition is trying to add every possible feature, Agile Toolkit stays very focused on real-life scenarios and practices. Agile Toolkit does not use singletons, namespaces, globals, constants. It promotes use of PHP-based validation engine instead of bundling one. It discourages use of private and protected properties and clases due to specific nature of configuring objects externally and implementation of controllers. Agile Toolkit is not compatible with 3rd party ORM, Template engines. Native implementations of those components exhibit much better performance smaller code footprint due to integration and clever design.
-
-<ol>
-<li>For 10 years Agile Toolkit has been ahead of innovation and will remain strong.</li>
-<li>Agile Toolkit is proud to be lightweight and most full-featured. Agile Tolokit is often about "simple-yet-extensible" solution as opposed to "all-in-one" solutions.
-<li>Availability of technologies such as HTML5, CSS3, PHP5.2 makes Agile Toolkit much simpler than frameworks designed earlier.</li>
-<li>No caching. Agile Toolkit is to fast to use caching. Seriously.</li>
-</ol>
-</td>
-</tr>
-</table>
-<p>
-Agile Toolkit aims to deliver a pristine developer experience. It focuses on getting things done. What you saw here is only a beginning, it gets much more exciting from here on.
-</p>
+<h3>Templates</h3>
+<ul>
+<li>Views for error, info and warning boxes</li>
+<li>Form hints</li>
+<li>Menu template</li>
+<li>Grid template</li>
+</ul>
