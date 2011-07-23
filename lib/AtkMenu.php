@@ -14,7 +14,7 @@ class AtkMenu extends Menu {
 			case'newsletter':
 				$this->api->template->trySet('menu_about','class="current"');
 
-				$menu->addMenuItem('About','about');
+				$menu->addMenuItem('About','about/about');
 				$menu->addMenuItem('Features','about/features');
 				$menu->addMenuItem('License','about/license');
 				$menu->addMenuItem('History','about/history');
