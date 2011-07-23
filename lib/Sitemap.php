@@ -54,6 +54,21 @@ class Sitemap extends AbstractController{
                 'controller'=>'Controllers',
                 'helper'=>'Helpers',
                 ),
+            'js'=>array(
+                'JavaScript and jQuery',
+                'jui'=>'Adding jUI Controller',
+                'chain'=>'jQuery Chains',
+                'univ'=>'Using and extending Univ chain',
+                'addons'=>'Loading jQuery plugins',
+                'events'=>'Binding chain to events',
+                'custom'=>'Using Custom events',
+                'widget'=>array(
+                    'Widgets',
+                    'why'=>'Why are widgets needed',
+                    'form'=>'Form Widget',
+                    'grid'=>'Grid Widget',
+                    ),
+                ),
 
             'eco'=>array(
                 'Agile Toolkit Ecosystem',
@@ -196,21 +211,6 @@ class Sitemap extends AbstractController{
                     'mongo'=>'Mongo (4.2)',
                     ),
                 ),
-            'js'=>array(
-                'JavaScript and jQuery',
-                'jui'=>'Adding jUI Controller',
-                'chain'=>'jQuery Chains',
-                'univ'=>'Using and extending Univ chain',
-                'addons'=>'Loading jQuery plugins',
-                'events'=>'Binding chain to events',
-                'custom'=>'Using Custom events',
-                'widget'=>array(
-                    'Widgets',
-                    'why'=>'Why are widgets needed',
-                    'form'=>'Form Widget',
-                    'grid'=>'Grid Widget',
-                    ),
-                ),
             'dsql'=>array(
                 'Dynamic Queries',
                 'how'=>'How to use',
@@ -236,6 +236,9 @@ class Sitemap extends AbstractController{
                 'type'=>'Exception types',
                 'stopinit'=>'StopInit',
                 'stoprender'=>'StopRender',
+                ),
+            'session'=>array(
+                'Session properties',
                 ),
             'form'=>array('Basic Form',
                 'how'=>'How form works?',
