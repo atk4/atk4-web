@@ -561,11 +561,13 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .big-icon.icon-jerrycan {height:49px;background-position:-70px -285px;}
 .big-icon.icon-lego {height:52px;background-position:-70px -213px;}
 .big-icon.icon-roadsign {height:54px;background-position:-70px -354px;}
+.big-icon.icon-developers {height:54px;background-position:-70px -422px;}
 
-.icon-magichat, .icon-rightarrow, .icon-comparison {background-image:url(../images/sprite.png);display:inline-block;}
+.icon-magichat, .icon-rightarrow, .icon-comparison, .icon-success {background-image:url(../images/sprite.png);display:inline-block;position:relative;}
 .icon-magichat {background-position:-180px -20px;width:27px;height:33px;}
 .icon-comparison {background-position:-217px -20px;width:24px;height:24px;}
 .icon-rightarrow {background-position:-251px -20px;width:20px;height:14px;}
+.icon-success {background-position:-512px -79px;width:16px;height:16px;top:2px;}
 
 .box.blue-noised {border-top:1px solid #fff;}
 .box.blue-noised h2 {color:#2c3f53;}
@@ -596,9 +598,13 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 #getting-started-shortcuts #update i {top:-0.8em;}
 #getting_started .button {margin-right:0.5em;}
 #history-table h6 {margin-bottom:0;}
+/*
 #atk-pricing {margin-bottom:2.5em;}
 #atk-pricing>div p {margin-bottom:0.5em;}
 #atk-pricing>div .buy {background:#EDF4FC;padding:0.5em 1em;line-height:1.3;}
+*/
+#atk-pricing .box {padding:1em;}
+#atk-pricing .g-row {margin-bottom:20px;}
 #download-grid p {margin-top:0;}
 #download-grid ul, #download-grid ul li {margin-left:0;list-style-type:none;}
 #page-download #header-graybar {display:none;}
@@ -825,6 +831,20 @@ div.sticky-bar-fixed {left:0px;position:fixed;top:0px;-webkit-box-shadow:0 1px 1
 .bigarrow.blue-w:hover {background-position:0px -178px;text-shadow:0 -1px 0 #001a33,0 0 15px rgba(255,255,255,0.5);}
 .bigarrow.red-e {background-position:-386px 0px;padding-left:80px;text-shadow:0 -1px 0 #320000;right:-3px;}
 .bigarrow.red-e:hover {background-position:-386px -178px;text-shadow:0 -1px 0 #320000,0 0 15px rgba(255,255,255,0.5);}
+.growl {
+	text-shadow:0 1px 0 #fff;
+	width:160px;
+	color:#555;
+	padding:1em;
+	border:3px solid #fff;
+	background:rgba(255,255,255,0.9);
+	.background:transparent;
+	background:transparent\0/;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF90,endColorstr=#FFFFFF90);
+	.zoom:1;
+	-webkit-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+	   -moz-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+			box-shadow:0 5px 15px rgba(0,0,0,0.3);}
 
 
 /* -------------------------------------------------------------------------------------------------

@@ -135,7 +135,7 @@
 /* Features */
 
 #features-nav {margin-bottom:15px;height:55px;}
-#features-nav a {margin:0 0 0 30px;opacity:0.4;position:relative;height:55px;float:left;cursor:pointer;}
+#features-nav a {margin:0 0 0 37px;opacity:0.4;position:relative;height:55px;float:left;cursor:pointer;}
 #features-nav a:first-child {margin-left:0;}
 #features-nav a.current i {width:25px;height:11px;background:url(../images/white-triangle-n.png) no-repeat;cursor:default;}
 #features-nav a.current, #features-nav a:hover {opacity:1;}

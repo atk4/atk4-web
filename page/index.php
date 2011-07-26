@@ -15,6 +15,7 @@ class page_index extends Page {
         $this->js('click')->_selector('.neon.ui')->univ()->frameURL('User Interface in Agile Toolkit',
                 $this->api->getDestinationURL('./in/ui'));
 
+    //$this->js(true)->univ()->successMessage("<i class=\"icon icon-success\"></i> Growl Test");
 	}
     function defaultTemplate(){
         return 'Content';
