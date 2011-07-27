@@ -6,7 +6,7 @@ class Sitemap extends AbstractController{
 //{{{ learn - Learning
         $doc['learn']=array('Learning',
 
-            'intro'=>'Objects and Web',
+            'intro'=>'Introduction to Objects and Web',
 
             'install'=>array(
                 'Installing Agile Toolkit',
@@ -106,11 +106,11 @@ class Sitemap extends AbstractController{
 
             'template'=>array(
                 'Templates and Rendering',
-                'api'=>'API Shared Template',
-                'page'=>'Page templates',
-                'view'=>'View templates',
-                'tags'=>'Tags',
-                'manual'=>'Using template engine manualy',
+                'css'=>'Cascading Stylesheets',
+                'how'=>'Introduction to Templates',
+                'view'=>'Creating View with your own template',
+                'page'=>'Adding pages with custom templates',
+                'api'=>'Changing shared template of application',
                 ),
 
             'share'=>array(
