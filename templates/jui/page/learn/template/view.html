@@ -1,0 +1,79 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Creating your own Views with custom Templates</h1>
+        <p>If you don't know how to create your own View class, it's done like this:</p>
+<?Code?>
+class View_Disclaimer extends AbstractView {
+}
+<?/?>
+        <p>To make your view use a different template, redefine defaultTemplate function. You do not need to call parent's defaultTemplate().</p>
+
+<?Code?>
+class View_Disclaimer extends AbstractView {
+    function defaultTemplate(){
+        return array('view/textblocks','Disclaimer');
+    }
+}
+<?/?>
+
+        <p>You will also need to create templates/default/view/textblocks.html file with tag &lt;?Disclaimer?&gt; containing the actual disclaimer text and markup. View will ignore everything except Disclaimer region.</p>
+
+        <p>Next you might want to define init() method and possibly to auto-fill some of the template tags.</p>
+
+<?Code?>
+    function init(){
+        parent::init();
+        $this->add('Button',null,'MoreInfo')
+            ->setLabel('More Info')
+            ->js('click')
+                ->univ()
+                ->frameURL('Full Disclaimer Text',$this->api->getDestinationURL('disclamier/moreinfo'));
+
+        $this->template->trySet('company_name',$this->api->getConfig('owner/company_name','The Company'));
+    }
+<?/?>
+
+        <p>This code will add a button on all the disclaimers you might have across the system with a popup directed to a separate page. This code requires your template to have empty tag named "MoreInfo".</p>
+        <p>Tag company_name will be set to the value from configuration file.</p>
+
+        <h3>Unique object names</h3>
+        <p>When defining custom templates for your views, you must be mindful that JavaScript binding will only work if you define id= properly. The empty tag "_name" will have unique name of the object filled into template automatically. Here is a typical template for your disclaimer.
+
+<pre>
+
+&lt;div class="disclaimer-box" id="&lt;?$_name?&gt;"&gt;
+  &lt;div class="disclaimer-text"&gt;
+    Any expressions of opinion on this site belong to the individual writers and not to &lt;?$company_name?&gt;.
+  &lt;/div&gt;
+  &lt;div class="disclaimer-button"&gt;
+    &lt;?MoreInfo?&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</pre>
+
+        <p>It's always recommended to properly set id=. Although it can be ID of any element, the use of &lt;div&gt; is advised.</p>
+
+        <h3>Custom dynamic CSS</h3>
+        <p>Normally your objects CSS (such as disclaimer-box) will be define inside atk-custom.css. If your view, however, requires additional CSS files,
+        you can load them dynamically by placing this inside init() method:</p>
+<?Code?>
+$this->js(true)->_css('disclaimer'); // loads from templates/defaults/css/disclaimer.css
+<?/?>
+
+        <p>This is handy if you do not want this CSS to be loaded initially, but only if the object is being displayed. The CSS will be properly loaded even if your object as been loaded through AJAX. However due to the way how CSS inclusion works, any referenced images will be loaded relative to webroot. We advise not to use dynamic CSS loading if it relies on images.</p>
+
+        <p>Remember that you can add includes into shared.html file by appending to the region of "js_include" in API's template:</p>
+<?Code?>
+$this->api->append("js_include",'<link rel="stylesheet" type="text/css" href="'.
+        $this->api->locateURL('css','disclaimer.css').
+        '"/>');
+<?/?>
+
+
+    </div>
+</div>
+
+<?$Next?>
