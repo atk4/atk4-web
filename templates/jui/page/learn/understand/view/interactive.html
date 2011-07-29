@@ -1,0 +1,135 @@
+
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Interactive views</h1>
+
+        <p>The greatest benefit of view implementation in Agile Toolkit probably is their independence. Views never conflict between eachother and multiple views can be added. View can implement logic, which is quite complex, but it's just as easy to add and interract with it.</p>
+
+
+<?Example?>
+class Hangman extends HtmlElement {
+    function init(){
+        parent::init();
+
+// initialization
+if(!$_GET[$this->name]){
+    $this->add('H3')->set('Select Difficulty');
+    $f=$this->add('Form');
+    $f->addField('radio','difficulty')
+        ->setValueList(array(
+            10=>'Easy',5=>'Medium',3=>'Hard'));
+    $f->addSubmit('Start Game');
+
+    // Button clicked
+    if($f->isSubmitted()){
+        $this->memorize('word','back');
+        $this->memorize('tries',
+            $f->get('difficulty'));
+        $this->memorize('letters',range('a','z'));
+        $this->js()->reload(array($this->name=>1))
+            ->execute();
+    }
+    return;
+}
+
+// Main Game Loop
+$letter=$_GET[$this->name];
+$word=$this->recall('word');
+$tries=$this->recall('tries');
+$letters=$this->recall('letters');
+
+$this->api->stickyGET($this->name);
+if($letter!=1){
+    unset($letters[array_search($letter,$letters)]);
+    if(strpos($word,$letter)===false)$tries--;
+    $this->memorize('tries',$tries);
+    $this->memorize('letters',$letters);
+}
+$word=str_replace($letters,'-',$word);
+if($tries<0){
+    $this->add('P')->set('Game Over');
+    return;
+}
+if(strpos($word,'-')===false){
+    $this->add('P')->set('You won!');
+    return;
+}
+$this->add('H3')->set('Mistakes remaining: '.$tries);
+foreach ($letters as $i){
+    $l=$this->add('HtmlElement')
+        ->setElement('a')
+        ->setAttr('href','#')
+        ->set(strtoupper($i))
+        ->js('click',
+            $this->js()->reload(
+                array($this->name=>$i)));
+}
+
+$this->add('P')->set('Word: '.$word);
+
+    }
+}
+
+// Adding is just as simple and just as universal.
+$page->add('Hangman');
+<?/?>
+
+
+        <p>The logic of the game above is might take you some time to understand, but if you find it too confusing, don't worry about it. There are few principles used in the game, which I'd like to highlight.</p>
+
+        <p>The first principle was already mentioned before is ability for an object to incapsulate other objects. In our case outter div contain all sorts of headers and links which might be either added or not, depending on conditions</p>
+
+        <p>Next principle is ability of a view to reload itself. It is using AJAX technology and often causes problems even to senior developers, but it's so easy in Agile Toolkit. Here is another sample:</p>
+
+<?Example?>
+$b2=$page->add('Button')
+    ->set('Random: '.rand(1,100));
+
+if($b2->isClicked()){
+    $b2->js()->reload()->execute();
+}
+<?/?>        
+
+        <p>Final note I wanted to make is the memorize() and recall() functions. They are like session storage, but they are working on per-object level. If objects need to save it's state, it should use those functions and it will avoid conflicts between multiple objects. Here is another example:</p>
+
+<?Example?>
+class Adjuster extends View {
+
+    function init(){
+        parent::init();
+
+        $value=$this->recall('value',25);
+
+        $decr=$this->add('Button')->set('-');
+        $text=$this->add('HtmlElement')->setElement('span')->set($value);
+        $incr=$this->add('Button')->set('+');
+
+        if($decr->isClicked()){
+            $this->memorize('value',$value-1);
+            $text->js()->reload()->execute();
+        }
+
+        if($incr->isClicked()){
+            $this->memorize('value',$value+1);
+            $text->js()->reload()->execute();
+        }
+    }
+}
+
+$cc=$page->add('Adjuster');
+$cc=$page->add('Adjuster');
+$cc=$page->add('Adjuster');
+<?/?>
+
+
+        <h3>Conclusion on Interactive Views</h3>
+        <p>Agile Toolkit is a very fun way to make interractive views. The solution often is very straightforward and quite well implemented too. If you need greater flexibility, you can always create your own jQuery UI widget and slap in on top on the view, but more about that in JavaScript section.</p>
+
+
+    </div>
+</div>
+
+<?$Next?>

@@ -1,0 +1,80 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Introduction to Models</h1>
+
+        <p>Models describe your real business entities in a very object-oriented way. Models implement Active Record functionality as well as Dynamic Queries for multi-record actions.</p>
+
+        <p>Before going into how to define a model, let's look at some of the direct use of the models:</p>
+<?Code?>
+// Initialize object for employee
+$emp=$this->add('Model_Employee');
+
+// Load data for given id
+$emp->loadData($_GET['id']);
+
+// Interact with data
+$salary = $emp->get('salary');
+
+// Traverse foreign keys. Automatically loads proper model and data
+$company=$emp->getRef('company_id');
+
+// Model can define custom actions.
+$company->letGo($emp);
+
+// Standard actions can also be used
+$emp->delete();
+
+// Same Model_Employee, but adds condition/master field
+$emps = $company->getEmployees();
+
+// Model can produce dynamic queries for any actions
+$count = $emps->dsql()->field('count(*)')->do_getOne();
+
+// You can use customized model to create fully functional CRUD
+// If you add employee thorugh CRUD they will become company
+// employees automatically.
+$this->add('CRUD')->setModel($emps);
+
+<?/?>
+        <p>As you can see, model is an absolute necessity for a modern application. There are a number of goals which Model structure in Agile Toolkit tries to achieve. Some of those are unique to Agile Toolkit implementation of ORM.</p>
+
+        <h4>Low level features</h4>
+        <ul>
+        <li>Define all the fields of the model and type of those fields</li>
+        <li>Completely define model-related business logic inside model body</li>
+        <li>Provide and encourage inheritance of models: User, ExpiredUser, AdminUser etc</li>
+        <li>Implement dependencies between models as well as traversal</li>
+        <li>When it comes to SQL, model can use either single or multiple tables to store data (joins)</li>
+        <li>Provide ability for model to add mandatory conditions on SQL tables</li>
+        <li>Tracking which fields are changed</li>
+        <li>Encourage model-level validation and default values</li>
+        <li>Allow to add behaviours, either manually inside model functions or as extensions</li>
+        <li>Support SQL calculated fields</li>
+        <li>Offer extensions such as strong encryptions, audit log, timestamps, soft delete and so on</li>
+        </ul>
+
+        <p>When it comes to integration with User Interface, models become even more fun. Many views already know how to operate with models.</p>
+
+        <h4>Interface integration features</h4>
+        <ul>
+        <li>Bind Form with Model. It will populate field, validation, conditions and will offer to save form data automatically through model</li>
+        <li>Bind Grid with Model. Displays properly formatted fields, both physical, calculated, foreign and related</li>
+        <li>Define which fields and in which order you want to show when binding</li>
+        <li>Add more fields, more conditions or even remove fields before you bind with the view</li>
+        <li>Use custom controller when binding. This can allow you to bind view with multiple models</li>
+        <li>Validation exceptions inside models bubble up to the view and properly handled</li>
+        <li>After binding with model, tweak dynamic SQL statement even more, such as by joining to more tables</li>
+        <li>4.2: Will have support for MongoDB, Prepared query cache, Data/Memcached, PDO (PostreSQL, Oracle, SQLite) and parametric queries</li>
+        </ul>
+
+
+
+
+
+    </div>
+</div>
+
+<?$Next?>
