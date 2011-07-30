@@ -4,9 +4,9 @@
 	<div class="g-12">
         <h1>Creating your first model</h1>
 
-        <p>Like anything else in Agile Toolkit, Model is a class. There are 4 things you should take care when you create a model</p>
+        <p>Like anything else in Agile Toolkit, Model is a class.</p>
 
-        <h2>1. Defining table and alias</h2>
+        <h2>Defining table and alias</h2>
         <p>Models need a way to associate with a lower-level data container such as SQL server. Additionally you can specify an "alias" for your model, which is particularly handy for query debugging or when joining with other tables.<p>
 <?Code?>
 class Model_Book extends Model_Table {
@@ -16,7 +16,7 @@ class Model_Book extends Model_Table {
 <?/?>
 
         <p>Congrats, your model has been added</p>
-        <h2>2. Adding fields</h2>
+        <h2>Adding fields</h2>
         <p>By default model defines only a single field - "id".</p>
 
 <?MoreInfo?>Why "id"?
@@ -32,10 +32,9 @@ class Model_Book extends Model_Table {
     function init(){
         parent::init();
         $this->addField('name');
-        $this->addField('isbn')->mandatory(true);
+        $this->addField('isbn')->mandatory(true)->caption('ISBN');
         $this->addField('publisher_id')->refModel('Publisher');
         $this->addField('author_id')->refModel('Author');
-        $this->addField('is_in_stock')->type('boolean');
     }
 }
 <?/?>
@@ -61,55 +60,6 @@ refModel() actually allows you to use a different field, other than default disp
 
         <h3>Actual fields</h3>
         <p>Just defining field does not mean it will be queried. Model will try to be intelligent about which fields to use depending on how you use it with the View.</p>
-
-        <h2>Calculated Fields</h2>
-        <p>So far we have only defined init() method. However there are more fields to re-define. Here is our updated model class:</p>
-
-<?Code?>
-class Model_Book extends Model_Table {
-    public $entity_code='book';
-    public $table_alias='b';
-    function init(){
-        parent::init();
-        $this->addField('name');
-        $this->addField('isbn')->mandatory(true);
-        $this->addField('publisher_id')->refModel('Publisher');
-        $this->addField('author_id')->refModel('Author');
-
-        $this->addField('copies_borrowed')->type('int')->calculated(true);
-        $this->addField('copies_in_stock')->type('int')->calculated(true);
-    }
-
-    function calculate_copies_borrowed(){
-        $dq=$this->add('Model_Book_Borrower')->dsql();
-        $dq->where('bb.book_id = b.id');
-        $dq->field('count(*)');
-        return $dq;
-    }
-
-    function calculate_copies_in_stock(){
-        $dq_total=$this->add('Model_Book_Stock')->dsql();
-        $dq->where('bb.book_id = b.id');
-        $dq->field('count(*)');
-
-        return $dq.' - '.$this->calculate_copies_borrowed();
-    }
-
-}
-<?/?>
-        <p>Certainly a lot of magic here.</p>
-
-        <h3>Building queries from models</h3>
-        <p>Models can export dynamic query when you call $model->dsql(). This query will have a proper table and table aliass set but will also contain joins and conditions. It is essential that you rely on this method where possible. Once you will learn to use it efficiently, you will save yourself a lot of trouble.</p>
-
-        <p>For example, consider that the model "Borrower" has changed the new flag is added "is_book_returned". Now instead of deleting the record condition must be used for this field. You would want to have this condition defined inside Model_Borrower::init() which will automatically be added to the query exported by dsql().</p>
-
-        <p>As a result the count field will be properly and securely associated with only the right amount of borrowers</p>
-
-        <h3>Combining queries</h3>
-        <p>Dynamic qureies transform themselves into "select" when they are used in a string content. Our next function for calculating how many copies in stock needs to know how many copies we have in total, then substract the borrowed ones. As you can see, in a similar way we build sub-select for calculating total amount of books then substracting another calculated field from it.</p>
-
-        <p>Again this is great for consistency of your business logic and is much better than writing your queries manually.</p>
 
 
 
