@@ -127,7 +127,6 @@ class AgileToolkitWeb extends ApiFrontend {
 			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
 			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			$this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
-			$this->page_object->template->eachTag('Plus',array($this,'enclose_Plus'));
 			if($this->page_object->template->is_set('ContactForm')){
 				$this->page_object->template->tryDel("page_title");
 				$this->page_object->add('ContactForm',null,'ContactForm');
@@ -168,14 +167,6 @@ class AgileToolkitWeb extends ApiFrontend {
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_Execute',null,$tag)
 			->setCode($content);
-	}
-	function enclose_Plus($content,$tag){
-		list($header,$content)=preg_split('/\n/',$content,2);
-		$this->page_object->add('Text',null,$tag)
-			->set(<<<EOF
-<g:plusone size="small"></g:plusone>
-EOF
-);
 	}
 	function locateTemplate($path){
 		return $this->locateURL('template',$path);

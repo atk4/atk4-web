@@ -107,7 +107,6 @@ class Model_Book extends Model_Table {
         <p>As a result the count field will be properly and securely associated with only the right amount of borrowers</p>
 
         <h3>Combining queries</h3>
-        <?$Plus?>
         <p>Dynamic qureies transform themselves into "select" when they are used in a string content. Our next function for calculating how many copies in stock needs to know how many copies we have in total, then substract the borrowed ones. As you can see, in a similar way we build sub-select for calculating total amount of books then substracting another calculated field from it.</p>
 
         <p>Again this is great for consistency of your business logic and is much better than writing your queries manually.</p>
