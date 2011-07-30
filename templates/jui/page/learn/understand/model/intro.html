@@ -7,7 +7,28 @@
 
         <p>Models describe your real business entities in a very object-oriented way. Models implement Active Record functionality as well as Dynamic Queries for multi-record actions.</p>
 
-        <p>Before going into how to define a model, let's look at some of the direct use of the models:</p>
+
+<?MoreInfo?>Why not use 3rd party ORM?
+<p>The design of Models in other ORMs such as Propel and Doctrine focuses mainly on cross-database implementation of SQL requests. Models of Agile Toolkit focus on consistency of business logic and security features.</p>
+
+<p>Models in Agile Toolkit are simpler. You can define one with regular PHP class, do not need to generate any of the code or learn new model definition file format. Models are much more suitable for inheritance. In the same application you could have: User, Administrator, Client, Client_Banned models which internally are using the same table "user", but containing different field definitions, conditions or even joins.</p>
+
+<p>Security is one of the benefits of Agile Toolkit models. When your CRUD operates with "Client_Banned" model, it will only be able to create entries of this model in the database. Some of other restrictions can also be defined on a model level, such as restriction for the user to only access his record in the database and not those belonging to other users.</p>
+
+<p>Very often models in Agile Toolkit are more capable and incorporating logic normally found in Controllers of other frameworks. This is because "Controllers" in Agile Toolkit are generic.</p>
+
+<p>The UI stack knows how to integrate with Models directly, therefore quite often all you need to do is to specify proper model. Agile Toolkit Model also contains some additional information about the fields such as "caption", "system flag" etc.</p>
+
+<p>Business-logic validation is often handled by the model. User Interface performs validation through AJAX requests, so it's consistent, not duplicated and not carried outside of the server-side code. If more developers are working on your software, you would want some of them to focus on Models, others on User Interface.</p>
+
+<p>You will be pleased to find that Models are sufficient to define contents of your Forms, will bind with custom templates, will be handy to use even in complex situations and are a great way to export API from your system with very little extra effort.</p>
+
+<?/?>
+
+
+        <h2>What Model can do on it's own?</h2>
+        <p>See some examples of syntactic sugar of Models</p>
+
 <?Code?>
 // Initialize object for employee
 $emp=$this->add('Model_Employee');
@@ -39,9 +60,10 @@ $count = $emps->dsql()->field('count(*)')->do_getOne();
 $this->add('CRUD')->setModel($emps);
 
 <?/?>
-        <p>As you can see, model is an absolute necessity for a modern application. There are a number of goals which Model structure in Agile Toolkit tries to achieve. Some of those are unique to Agile Toolkit implementation of ORM.</p>
 
-        <h4>Low level features</h4>
+<table width=100%><tr><td width='49%' valign=top>
+
+        <h4>Direct use of Models</h4>
         <ul>
         <li>Define all the fields of the model and type of those fields</li>
         <li>Completely define model-related business logic inside model body</li>
@@ -56,7 +78,7 @@ $this->add('CRUD')->setModel($emps);
         <li>Offer extensions such as strong encryptions, audit log, timestamps, soft delete and so on</li>
         </ul>
 
-        <p>When it comes to integration with User Interface, models become even more fun. Many views already know how to operate with models.</p>
+</td><td width="2%"></td><td valign="top">
 
         <h4>Interface integration features</h4>
         <ul>
@@ -70,7 +92,7 @@ $this->add('CRUD')->setModel($emps);
         <li>4.2: Will have support for MongoDB, Prepared query cache, Data/Memcached, PDO (PostreSQL, Oracle, SQLite) and parametric queries</li>
         </ul>
 
-
+        </td></tr></table>
 
 
 

@@ -1,0 +1,120 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Creating your first model</h1>
+
+        <p>Like anything else in Agile Toolkit, Model is a class. There are 4 things you should take care when you create a model</p>
+
+        <h2>1. Defining table and alias</h2>
+        <p>Models need a way to associate with a lower-level data container such as SQL server. Additionally you can specify an "alias" for your model, which is particularly handy for query debugging or when joining with other tables.<p>
+<?Code?>
+class Model_Book extends Model_Table {
+    public $entity_code='book';
+    public $table_alias='b';
+}
+<?/?>
+
+        <p>Congrats, your model has been added</p>
+        <h2>2. Adding fields</h2>
+        <p>By default model defines only a single field - "id".</p>
+
+<?MoreInfo?>Why "id"?
+<p>"id" is universally considered a best practice for primray key field name (especially in MySQL). It is also much easier on the UI, when ID field name is consistent. If some of your tables don't have this field, you should probably add it for consistency anyway.</p>
+
+<p>This field is defined as a system numeric field from Models's init() by calling definePrimaryKey(). If for some reason you would like to use a different name for "id" field, redefine $id_field property. There might be some difficulties, especially when you are joining tables. You should also look into other objects such as CRUD as some of them might be incompatible with differently-named ID field (although this should be addressed and fixed, therefore file it as a bug)</p>
+<?/?>
+        <p>You should define all the fields you are going to use in the model. Agile Toolkit will not attempt to use or edit any fields you will not define for security purposes. Below is our definition of "Book" model with fields this time.</p>
+<?Code?>
+class Model_Book extends Model_Table {
+    public $entity_code='book';
+    public $table_alias='b';
+    function init(){
+        parent::init();
+        $this->addField('name');
+        $this->addField('isbn')->mandatory(true);
+        $this->addField('publisher_id')->refModel('Publisher');
+        $this->addField('author_id')->refModel('Author');
+        $this->addField('is_in_stock')->type('boolean');
+    }
+}
+<?/?>
+
+        <p>Calling $this->addField('field_name') returns a new object of a type "FieldDefinition" which you can further manipulate by calling it's methods. Methods of this class take one optional argument and if it's omitted, then the current value wil be returned instead. For example calling $this->getField('isbn')->mandatory() will return "true"</p>
+
+        <p>By default field is defined as "string", however you can set it to a different type. There will be a chapter further on listing all the available types as well as documentaiton on how you can create your own types.</p>
+
+        <h3>Sub-selects</h3>
+        <p>refModel defines a master-child one-to-many dependency between two models. In our case we instruct the model, that "author_id" is a reference to "id" field of the "Author" model. You would also need to define model for Model_Author and Model_Publisher if you using this model as example.</p>
+
+        <p>Calling refModel with the field ending with "_id" will actually create 2 field definitions. "publisher_id" will be defined as an integer and a type "reference" but a field "publisher" will also be added with exactly same properties, but it will be a calculated field and will use sub-select to determine the value.</p>
+
+        <p>By default the field called "name" (if defined) is considered a "display field". You will see "name" of that related table when you are building GRID with the Book model.</p>
+
+<?MoreInfo?>Why not use JOIN?
+You can use joins too. You can define JOIN with addRelatedEntity(), which is described further on in this guide.
+<?/?>
+
+<?MoreInfo?>What about more flexibility?
+refModel() actually allows you to use a different field, other than default display field of related model. You can even use a calculated field too. Finally, you can always destroy existing field and add the one you like more.
+<?/?>
+
+        <h3>Actual fields</h3>
+        <p>Just defining field does not mean it will be queried. Model will try to be intelligent about which fields to use depending on how you use it with the View.</p>
+
+        <h2>Calculated Fields</h2>
+        <p>So far we have only defined init() method. However there are more fields to re-define. Here is our updated model class:</p>
+
+<?Code?>
+class Model_Book extends Model_Table {
+    public $entity_code='book';
+    public $table_alias='b';
+    function init(){
+        parent::init();
+        $this->addField('name');
+        $this->addField('isbn')->mandatory(true);
+        $this->addField('publisher_id')->refModel('Publisher');
+        $this->addField('author_id')->refModel('Author');
+
+        $this->addField('copies_borrowed')->type('int')->calculated(true);
+        $this->addField('copies_in_stock')->type('int')->calculated(true);
+    }
+
+    function calculate_copies_borrowed(){
+        $dq=$this->add('Model_Book_Borrower')->dsql();
+        $dq->where('bb.book_id = b.id');
+        $dq->field('count(*)');
+        return $dq;
+    }
+
+    function calculate_copies_in_stock(){
+        $dq_total=$this->add('Model_Book_Stock')->dsql();
+        $dq->where('bb.book_id = b.id');
+        $dq->field('count(*)');
+
+        return $dq.' - '.$this->calculate_copies_borrowed();
+    }
+
+}
+<?/?>
+        <p>Certainly a lot of magic here.</p>
+
+        <h3>Building queries from models</h3>
+        <p>Models can export dynamic query when you call $model->dsql(). This query will have a proper table and table aliass set but will also contain joins and conditions. It is essential that you rely on this method where possible. Once you will learn to use it efficiently, you will save yourself a lot of trouble.</p>
+
+        <p>For example, consider that the model "Borrower" has changed the new flag is added "is_book_returned". Now instead of deleting the record condition must be used for this field. You would want to have this condition defined inside Model_Borrower::init() which will automatically be added to the query exported by dsql().</p>
+
+        <p>As a result the count field will be properly and securely associated with only the right amount of borrowers</p>
+
+        <h3>Combining queries</h3>
+        <?$Plus?>
+        <p>Dynamic qureies transform themselves into "select" when they are used in a string content. Our next function for calculating how many copies in stock needs to know how many copies we have in total, then substract the borrowed ones. As you can see, in a similar way we build sub-select for calculating total amount of books then substracting another calculated field from it.</p>
+
+        <p>Again this is great for consistency of your business logic and is much better than writing your queries manually.</p>
+
+
+
+    </div>
+</div>
+
+<?$Next?>

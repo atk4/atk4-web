@@ -18,9 +18,98 @@ $users = $this->api->db->dsql()
         ->order('name')
         ->do_getAllHash();
 
-
-$
 <?/?>
+
+        <p>In the code above, the first function being called belongs to the "DBlite" object, which can be accessed through $this->api->db. This function returns a new instance of DSQL object.</p>
+        <p>Calling "table", "where" and "order" on DSQL object returns exactly the same object. It's the equivalent of the following code:</p>
+
+<?Code?>
+$dsql = $users = $this->api->db->dsql();
+$dsql->table('user')
+$dsql->where('age>',30)
+$dsql->order('name')
+$users = $dsql->do_getAllHash();
+<?/?>
+
+        <h2>How to know what method returns?</h2>
+        <p>Most of the methods in Agile Toolkit return instance of same object for chaining. There are exceptions, which are easy to spot:</p>
+
+        <h3>add*() methods</h3>
+        <p>Those will most likely create or return a new object.</p>
+
+<?Code?>
+// any object has method add(), returning instance of specified class
+$form = $page->add('Form');
+
+// Form has addField(), returning Form_Field_<type>
+$field = $form->addField('type','name');
+
+// Models has addField also, but returns FieldDefinition
+$field_definition = $model -> addField('surname');
+
+// Grid's addColumn currently returns Grid, but potentially can return other object
+$do_not_chain = $gird->addColumn('type','name');
+
+$dsql->order('name')
+$users = $dsql->do_getAllHash();
+<?/?>
+
+        <h3>js(), dsql()</h3>
+        <p>$this->api->db->dsql() will return new instance of DBlite_dsql() object. Any view has method js() which returns new instance of jQuery_Chain class.</p>
+
+<?Code?>
+$chain = $form->js(true);
+$chain->hide();
+<?/?>
+
+        <h3>Methods get* return contextual value</h3>
+        <p>Methods starting with "get" often return some relevant value. You should look into documentation of those methods on what they are returning.</p>
+
+
+<?Code?>
+$child = $object->getElement('abc');
+
+$value = $model->get('name');
+
+$url_object = $api->getDestinationURL('user/account');
+
+$model = $view->getModel();
+
+$field_definition = $model->getField('name');
+
+<?/?>
+
+        <h3>DSQL chaining</h3>
+        <p>Chain returned by $this->api->db->dsql() has more exceptions from general rules. Functions "select", "insert", "update", "delete" etc will return string - a parsed query. If you pre-pend any of those string with "do_" you can execute it straigth away. Furthermore you can use do_getOne and do_getAllHash() functions which retrieve data and return it to you.</p>
+
+<?Code?>
+$query = $this->api->db->dsql()
+
+$query->where('parent_id',123);
+if($_GET['match']){
+    $query->where('name like',$_GET['match']);
+}
+$query->field('name')->limit(1);
+
+$this->add('Text')->set('Executing: '.$query->select());
+$name=$query->do_getOne();
+<?/?>
+
+        <h2>Considerations for method naming</h2>
+        <p>Apart from what was explained above, there are other guidelines and principles you should follow when creating methods:</p>
+
+        <h3>Prefixed dynamically-executed methods</h3>
+
+        <p>Agile Toolkit uses CamelCase method naming. When methods are called dynamically, they are always prefixed
+        with a keyword and underscope. For example, if you are willing to add a page into API your method starts with "page_".Similarly you use "page_" for sub-pages, "layout_" for ApiFrontend layouts and so on.</p>
+
+        <p>Those methods return nothing and you shouldn't casually call them</p>
+
+        <h3>Method init()</h3>
+        <p>This method is executed automatically in every object when added. You shouldn't call it manually and you do not need to return any value from init. You must call parent's init though. Best practice is to call it before your code, but in some cases you might want to execute code before parent::init();</p>
+
+        <h2>Method visibility</h2>
+        <p>Due to nature of Agile Toolkit, you will find most of the methods and properties defined as public. This is because some of the controllers require access to those, and there are no way to define "Friendly" class in PHP. Use your common sense when programming. Don't start manually creating objects and adding them into $obj->elements[] just because elements is public.
 
         <?$Next?>
     </div>

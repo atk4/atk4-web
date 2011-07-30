@@ -53,8 +53,8 @@ class Sitemap extends AbstractController{
                 'model'=>array(
                     'Models',
                     'intro'=>'Introduction to Models',
-                    'compare'=>'How we compare to other ORMs',
-                    'interactive'=>'Interactive AJAX views',
+                    'add'=>'Creating your first Model',
+                    'relations'=>'Relations betwene models and tables',
                     ),
                 'controller'=>'Controllers',
                 'helper'=>'Helpers',
