@@ -640,6 +640,10 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 #page-engage table.company-grid>tbody>tr>td a.company-logo {display:block;height:70px;}
 #page-engage table.freelancer td {vertical-align:top;}
 #page-engage table.freelancer td:first-child {padding-right:20px;}
+.doc-api {overflow:hidden;}
+.doc-api iframe {border:none;float:left;width:700px;margin:0 0 0 20px;}
+.doc-api iframe:first-child {width:220px;margin:0;}
+/* .doc-api>div.g-3>iframe {height:100%;} */
 
 
 /* -------------------------------------------------------------------------------------------------
