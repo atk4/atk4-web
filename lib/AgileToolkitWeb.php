@@ -45,8 +45,11 @@ class AgileToolkitWeb extends ApiFrontend {
 			->_load('atk4_univ')
 			->_load('atk4web')
 			// ->_load('ui.atk4_expander')
-
 			;
+
+        $this->auth=$this->add('BasicAuth')->allow('test','test');
+
+
 		list($main,$junk)=explode('_',$this->page,2);
 		if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
 
