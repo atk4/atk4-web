@@ -52,7 +52,7 @@ class AtkMenu extends Menu {
 				$this->api->template->trySet('menu_services','class="current"');
 
 
-				$menu->addMenuItem('Account','commercial');
+				$menu->addMenuItem('Account','commercial/account');
 				$menu->addMenuItem('Prices','commercial/store');
 				$menu->addMenuItem('Services','commercial/services');
 				//$menu->addMenuItem('Products','commercial/products');
