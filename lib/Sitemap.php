@@ -24,12 +24,12 @@ class Sitemap extends AbstractController{
             'understand'=>array(
                 'Understanding Agille Toolkit',
                 'base'=>array(
-                    'Basics of Agile Toolkit',
-                    'example'=>'The Example',
-                    'chains'=>'Chaining Calls',
+                    'Coding Style of Agile Toolkit',
                     'adding'=>'Adding Objects',
+                    'chains'=>'Chaining Calls',
                     'simplicity'=>'What PHP features are not used',
                     'oop'=>'What you do need do know?',
+                    'example'=>'The Example',
                     ),
                 'page'=>array(
                     'Pages, Routing and Linking',
@@ -60,7 +60,19 @@ class Sitemap extends AbstractController{
                     'debug'=>'Debugging models',
                     ),
                 'controller'=>'Controllers',
-                'helper'=>'Helpers',
+                'chains'=>array(
+                    'JavaScript Chains',
+                    'intro'=>'Introduction to Chains',
+                    'bind'=>'Binding Chains',
+                    'enclose'=>'Enclosing chains',
+                    'multi'=>'Using multiple chains',
+                    'own'=>'Callinng your own code',
+                    'customize'=>'Customizing selectors and triggers',
+                    ),
+                'jsapi'=>array(
+                    'JavaScript API',
+                    ''=>'Debugging models',
+                    ),
                 ),
             'js'=>array(
                 'JavaScript and jQuery',

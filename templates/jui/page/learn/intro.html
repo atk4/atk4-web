@@ -2,36 +2,50 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
-        <h1>Object Oriented Programming</h1>
+        <h1>Object Oriented Web Programming</h1>
 
-        <p>OOP is one of the major concepts in the world of Computing. Objects in computing are "Black Boxes". You can
-        interact with object, but you do not have to worry about it's implementation. Object contain data and methods. Also
-        objects are always created based on a "Class" prototype. (For more info on Object Oriented Software Design read
-                <a href="http://softwaredesign.com/objects.html" target="_blank">Read this article</a>).</p>
+        <p><b>OOP</b> is one of the major concepts in the world of Computing. For decades Object Oriented Programming was used in all environments.</p>
 
-        <p>For a practical example in PHP on how to use Objects efficiently, <a
-        href="http://agiletoolkit.org/blog/how-to-use-object-oriented-programming-in-php/" target="_blank">read this blog
-        post</a>.
+        <p>Web Programming, however, was initially design-driven. Scripting was supposed only to fill the gaps in static HTML files.</p>
 
+        <p>Agile Toolkit introduces the "Real" object-oriented web development. The principle of "abstraction" and "black boxes" is applied on all parts of web development - Models, Views, Controllers, Pages and Applications itself.</p>
+
+        <h2>What are Web Objects?</h2>
 <div style="float: right">
 <?Execute?>
 $page->add('Button')->set('This is object');
 <?/?>
 </div>
+        <p>Observe the button on the right. To your browser it's a sequence of HTML code. However for developer in Agile Toolkit, the button is the object. Developer may not want to know, how button presents itself, how it reacts to events or how it's communicating with the database. Like many other things around it — button is yet another object.</p>
+
+        <p>Without thinking too much about "<b>how?</b>" a developer can now focus on "<b>what?</b>".
+
+<?MoreInfo?>Need More info about Object-Oriented Programming?
+<p>Objects is our real life. Take a car for example. Car is an object. It has properties such as color, model, year. There are things you can do with a car - drive, wash, lock and unlock.</p>
+
+<p>The goal of Object Oriented Programming is to discover a self-sufficient objects in the software and describe them using classes. Behaviour and properties of the button are described in the Button's class.</p>
+
+<p>Properly constructed Object-oriented architecture hides the complexity of things while still allowing a developer to be in control of the behaviour. With the great Object-oriented capabilities since PHP5 web applications can also become very object-oriented.</p>
+
+<p>Agile Toolkit implements the general architecture as well as large amount of base classes. You can use the classes you like and build upon them. Programming with Agile Toolkit is like building a sky-scraper. You re-use, extend, enhance. You build upon the foundation, not merely use it as a code-generator.</p>
+
+<ul>
+<li>See also: <a href="http://softwaredesign.com/objects.html" target="_blank">Article about Objects</a>.</li>
+<li>Blog post about OOP in PHP: <a href="http://agiletoolkit.org/blog/how-to-use-object-oriented-programming-in-php/" target="_blank">How to use Object Oriented Programming in PHP</a>.</li>
+</ul>
+
+<?/?>
+
+<h2>Object-Oriented universe of Agile Toolkit</h2>
         <p>When Object Oriented Design is applied to Web Development it abstracts the way how you operate with Web Objects
         such as forms, buttons, pages, links and other. Instead of writing HTML, CSS ad JavaScript code you now interact with
         a native object in PHP.</p>
 
-        <p>The button on the right is a fairly simple example of an object in Agile Toolkit. A more complex objects can
-        implement forms, signup wizards, payment forms, file manager, poll, comment feed an so on. Regardless of which object
+        <p>The button example demonstrates just one object in Agile Toolkit. A more complex objects can
+        implement forms, signup wizards, payment forms, file manager, polls, comment feed an so on. Regardless of which object
         you are using, it's straightforward and simple.</p>
 
-        <p>Another and very significant property of an Object is ability to inherit and extend it. When a new object class is
-        defined, it can inherit all methods and properties from another class. It can then override and re-define some of
-        them. This allows developer to extend functionality of the base class without messing with it.</p>
-
-<?MoreInfo?>Why Objects are COOL?
-<?/?>
+        <p>When developing with Agile Toolkit, you will design your objects too. Primarily you would need to deal with two types of objects: <b>Models</b> and <b>Pages</b>. However, there are five major object types in Agile Toolkit.
 
         <h2>Fives types of objects in Agile Toolkit</h2>
 
@@ -95,23 +109,30 @@ $page->add('Button')->set('This is object');
         <p>As controllers often have common things, object-oriented architecture helps here out. For instance you could have
         different authorization mechanisms based on generic authorization class.</p>
 
-        <h2>Application as a glue</h2>
+        <h2>What is Abstraction?</h2>
 
         <img src="<?template?>images/ugly_images/oop2.png<?/?>" style="float: right">
-        <p>Agile Toolkit is different from frameworks because each of the objects above are capable of automatically interact
-        with each-other. For example when you add View on the page and bind it with Model, it will automatically figure out
-        which controllers to load and how to manipulate data or draw itself.</p>
+        <p>Back to our early example of a button object. The Button object is designed to do one thing only — implement a button. Form object on other hand is meant to implement forms. It may also rely on Button to do it's job.</p>
 
-        <p>Simple design of adding objects ultimatelly carries dependencies through the Application. Object will referr to
-        application's default DB manager when trying to do data loading.</p>
+        <p>Going further up, a Page object's job is to implement a single page. Page relies on objects such as Forms, Buttons blocks of text and so on. Finally the top-most object, which relies on Pages, Authentication, Database connectivity and other objects and which is meant to implement your whole web application is the Application object.</p>
 
-        <p>As developer, however, you may create multiple applications at the same time. Having two applications at the same
-        time might seem unnatural at first, but it makes a lot of sense when one application is testing another or
-        authentication is exchanged.</p>
+        <p>All of the objects have few qualities in common. They rely on each-other to do their job. They hide complexity of it's implementation in their own interface.</p>
+
+        <p>As a good and efficient developer, your job is to understand the importance of abstraction and be able to
+        implement additional objects to fit in their proper roles. Objects must always take advantages of other objects
+        if possible and each object must be simple to use.</p>
 
         <h2>Moving forward</h2>
-        <p>To learn Agile Toolkit, you need to first understand this concept of APMVC (Application, Page, Model, View,
-                Controller). If you do not yet understand this concept, we will re-visit it after "installation" section.</p>
+        <p>To learn Agile Toolkit, you need to first understand this concept of Applications and PMVC (Page, Model, View,
+                Controller). You don't have to learn in detail how each of them work right away, but you'll gradually
+        learn to understand and appreciate the structure.</p>
+
+        <p>The approach we take in the Learning chapter will focus at one thing at a time. However, first thing is to get
+        your own copy of Agile Toolkit where you can try things out. If you do not wish to install Agile Toolkit yet,
+        you can <a href="<?page?>learn/understand<?/?>">skip the installation part</a>.
+        </p>
+
+
 
     </div>
 </div>

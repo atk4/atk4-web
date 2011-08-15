@@ -1,0 +1,34 @@
+
+        /**
+         * Learn is a handy function when your object wants to store some
+         * data inside session with multiple initializers. Let's say there are
+         * various ways to specify a value: by $_GET['set_color'],
+         * $this->api->config['default_color'] and hard-coded color "#FF1212".
+         *
+         * Call this function and specify all arguments in order of priority.
+         * learn() will find first non-null argument and memorize it's value.
+         * It also will return that value.
+         *
+         * If all arguments are null, you'll get recalled version of a variable.
+         */
+
+        /**
+         * Memorize is a handy function when your object wants to store some
+         * data inside session. This function also ensures your data will not
+         * get mixed up with other object data or other projects.
+         *
+         * If you have multiple possible values, you might want using learn()
+         */
+
+        /**
+         * If you want to reset some memorized value, call this function. If
+         * you want to forget all the data memorized by object call
+         * $this->forget(); without arguments.
+         */
+
+        /**
+         * Load previously memorized data. You should specify name and you also
+         * can specify default value if value is not present.
+         *
+         * If you want $default value to be memorized as well, see learn()
+         */

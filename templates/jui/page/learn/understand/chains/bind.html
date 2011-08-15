@@ -1,0 +1,69 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+    <h1>Binding Chains</h1>
+
+    <p>When you execute js() method, the first argument you specify defines <b>when</b> the action is taking place. Below example demonstrates how you can bind chains on different events.</p>
+
+<?Example?>
+$page->add('H3')->set('never')
+    ->js()->effect('highlight');
+
+$page->add('H3')->set('load')
+    ->js(true)->effect('highlight');
+
+$page->add('H3')->set('click')
+    ->js('click')->effect('highlight');
+
+$page->add('H3')->set('mouseover')
+    ->js('mouseover')->effect('highlight');
+<?/?>
+
+    <h2>Re-binding</h2>
+    <p>You can bind one chain to multiple events. Below example binds exactly same chain on both buttons</p>
+
+<?Example?>
+$b1=$page->add('Button')->set('Left');
+$b2=$page->add('Button')->set('Right');
+
+$chain=$b1->js('click')->effect('highlight');
+$b2->js('click',$chain);
+<?/?>
+
+    <p>This combination allows you to enable many useful actions between different components on your page. In the form below, icon's "click" event and form field's "change" events are binding chain by other object.</p>
+
+<?Example?>
+
+$form=$page->add('Form');
+$age=$form->addField('line','age');
+$name=$form->addField('line','name');
+$res=$form->addField('line','result');
+
+$age->add('Icon',null,'after_field')->set('plus')
+    ->js('click',$age->js()->val('123'));
+
+$name->js('change',$form->js()->submit());
+
+if($form->isSubmitted()){
+    if($form->get('age')<20){
+        $res->js()->val('Credit Declined')
+            ->execute();
+    }else{
+        $res->js()->val('Credit Approved')
+            ->execute();
+    }
+}
+
+<?/?>
+
+    <p>I wish my bank would work like this.</p>
+    <p>Note in regards to the execute() function. It's a special function inside JavaScript chain, which will instantly send
+    chain back to the function widget and execute it. This can be used only when form is submitted. Note, that you do
+    not need to bind chain you are about to execute.</p>
+
+
+</div></div>
+<?$Next?>

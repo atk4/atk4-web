@@ -1,0 +1,41 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+    <h1>Introduction to Chains</h1>
+
+    <p>JavaScript chain is, like everything else, an object in Agile Toolkit. It is a sequence of actions such as traversing or modifications and is very well known to you if you ever used jQuery.</p>
+<?Code?>
+selector.find('div').show('slow');
+<?/?>
+    <p>In Agile Toolkit the same code looks like this:</p>
+<?Code?>
+$view->js(true)->find('div')->show('slow');
+<?/?>
+
+    <h2>Selectors</h2>
+    <p>In jQuery, you need to use $('selector') to specify where to star off. Agile Toolkit automatically starts with the $view of your choice. Any View object have a js() function which will create a new chain and use that object's selector. To add JS code for hiding any object on your page, such as grid, all you need to write is:</p>
+
+<?Code?>
+$grid->js(true)->hide();
+<?/?>
+
+    <h2>Arguments</h2>
+    <p>When Chains are converted into native JavaScript, arguments are are recursively converted:</p>
+
+<?Code?>
+$x = 2+2;
+$js = $page->js(true)
+    ->css(array('width'=>$x))
+    ->html('<b>O\'Relly</b>');
+
+// Produces: 
+// $('#AgileWeb_learn_understand_chains_intro_doc_example_view')
+//    .css({'width':4}).html('\x3cb\x3eO\x27Relly\x3c/b\x3e')
+
+<?/?>
+
+
+</div></div>
+<?$Next?>
