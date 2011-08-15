@@ -1,0 +1,70 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+    <h1>Customizing Selectors and Triggers</h1>
+
+    <p>It's amazing how much you can do with JS Chains. But even more is possible.</p>
+    <h2>Changing selectors</h2>
+<?Code?>
+$view->js(true)->hide();
+// $('#AgileWeb_learn_understand_unique_id').hide()
+
+$view->js(true)->_selector('.myclass')->hide();
+// $('.myclass').hide()
+
+$view->js(true)->_selector('#Content')->hide();
+// $('#Content').hide()
+
+$view->js(true)->_selectorThis->hide();
+// $(this).hide()
+
+$view->js(true)->_selectorDocument->hide();
+// $(document).hide()
+
+$view->js(true)->_selectorWindow->hide();
+// $(window).hide()
+
+$view->js(true)->_selectorRegion->hide();
+// $(region).hide()
+
+<?/?>
+    <p>You can already see the potential of this feature. When binding event selector you can reference "this" in enclosed function - works great!</p>
+
+    <p>The last example refers to "region", which is a global variable pointing to the area which is being loaded through AJAX request.</p>
+
+    <h2>Calling functions you can't call</h2>
+    <p>PHP might not let you use some of the function names such as "each" or "for". Function "execute" also have a special meaning to JS chain. If you want to use them, then:</p>
+<?Code?>
+$view->js(true)->_fn('execute',array(1));
+// converts into .execute(1)
+<?/?>
+
+
+    <h2>Using custom trigger</h2>
+    <p>jQuery allows you to define custom events and trigger them. Here is a good example.</p>
+
+<?Example?>
+$page->add('P')->set('Bouncy text')
+    ->js('all_bounce')->effect('bounce');
+
+$page->add('P')->set('Another Bouncy text')
+    ->js('all_bounce')->effect('bounce');
+
+$page->add('Button')->set('Bounce all')
+    ->js('click',$page->js()->find('p')
+    ->trigger('all_bounce'));
+<?/?>
+
+    <p>This approach is good when you can't physically access objects and yet need to bind actions between them. For example in CRUD, when you edit element in expander, it is using a custom reloading event to refresh the grid.</p>
+<?Code?>
+...
+$this->js('reload',$this->grid->js()->reload());
+...
+$this->form->js(null,$this->js()->trigger('reload'))->univ()->closeDialog()->execute();
+...
+<?/?>
+
+</div></div>
+<?$Next?>
