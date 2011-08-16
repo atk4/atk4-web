@@ -53,10 +53,10 @@ class AtkMenu extends Menu {
 
 
 				$menu->addMenuItem('Account','commercial/account');
-				$menu->addMenuItem('Prices','commercial/store');
-				$menu->addMenuItem('Services','commercial/services');
+				//$menu->addMenuItem('Prices','commercial/store');
+				//$menu->addMenuItem('Services','commercial/services');
 				//$menu->addMenuItem('Products','commercial/products');
-				$menu->addMenuItem('Jobs','commercial/jobs');
+				//$menu->addMenuItem('Jobs','commercial/jobs');
 
 				break;
 			case'download':

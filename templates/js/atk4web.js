@@ -41,13 +41,23 @@ $.each({
 		var self=this.jquery;
 		var content=self.children('div:first').hide();
 		var icon=self.find('i:first');
-		self.find('span:first').children().click(function(ev){
+
+
+		self.find('span:first').children().add(self.find('.expanded-close')).click(function(ev){
 			ev.preventDefault();
 			if(content.is(':visible')){
 				content.fadeOut();
 				icon.toggleClass('atk-icon-arrows-right2 atk-icon-arrows-bottom2');
 				self.removeClass('atk-doc-expander-open');
 			}else{
+				$('.atk-doc-expander-open').each(function(){
+					el=$(this);
+					el.find('i:first').toggleClass('atk-icon-arrows-right2 atk-icon-arrows-bottom2');
+					el.removeClass('atk-doc-expander-open');
+					el.find('div:first').hide();
+				});
+
+
 				content.fadeIn();
 				icon.toggleClass('atk-icon-arrows-right2 atk-icon-arrows-bottom2');
 				self.addClass('atk-doc-expander-open');

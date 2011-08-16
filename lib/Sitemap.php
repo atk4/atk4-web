@@ -6,7 +6,7 @@ class Sitemap extends AbstractController{
 //{{{ learn - Learning
         $doc['learn']=array('Learning',
 
-            'intro'=>'Introduction to Objects and Web',
+            'intro'=>'What is Object-Oriented Web Development?',
 
             'install'=>array(
                 'Installing Agile Toolkit',
@@ -71,58 +71,27 @@ class Sitemap extends AbstractController{
                     ),
                 'jsapi'=>array(
                     'JavaScript API',
-                    ''=>'Debugging models',
+                    'scructure'=>'Rich web apps with thin client',
+					'start'=>'JavaScript bootstraping sequence',
+					'univ'=>'Agile Toolkit Univ chain',
+					'widgets'=>'Bundled widgets',
+					'add'=>'Adding your own widgets',
+					'import'=>'Using 3rd party plugins',
                     ),
                 ),
-            'js'=>array(
-                'JavaScript and jQuery',
-                'jui'=>'Adding jUI Controller',
-                'chain'=>'jQuery Chains',
-                'univ'=>'Using and extending Univ chain',
-                'addons'=>'Loading jQuery plugins',
-                'events'=>'Binding chain to events',
-                'custom'=>'Using Custom events',
-                'widget'=>array(
-                    'Widgets',
-                    'why'=>'Why are widgets needed',
-                    'form'=>'Form Widget',
-                    'grid'=>'Grid Widget',
-                    ),
-                ),
-
-            'eco'=>array(
-                'Agile Toolkit Ecosystem',
-                'find'=>'Look for help from Community',
-                'share'=>'Contribute and Share',
-                ),
-
-            'stuck'=>array(
-                'What to do if you are stuck?',
-                'ask'=>'Asking questions',
-                'bugs'=>'Reporting bugs and issues',
-                'discuss'=>'Discussing ideas',
-                ),
-
-
-            'first'=>array(
-                'Before you start developing',
-                'code'=>'Business versus User Interface code',
-                'format'=>'File formatting',
-                'ui'=>'Variables in UI code',
-                'less'=>'Better less than more',
-                'copy'=>'Overriding by copying',
-                'sql'=>'SQL Queries',
-                'security'=>'Security considerations',
-                'debugging'=>'Debugging',
-                ),
-
-            'object'=>array(
-                'Adding Object to your Application',
-                'add'=>'Using add()',
-                'init'=>'Object Initialization',
-                'config'=>'Configuring object',
-                'create'=>'Creating your own object',
-                ),
+			'agile'=>'Why Agile Toolkit is Agile?',
+			'app'=>array(
+				'Pratcical Guide to your First Application',
+				'planning'=>'Planning!? What planning?',
+				'code'=>'Good code VS Bad code',
+				'models'=>'Adding Models',
+				'interface'=>'Front-end, Back-end and config',
+				'pages'=>'Mashing up Web Application',
+				'changes'=>'Handling Change Requests',
+				'tests'=>'Adding Unit Tests',
+				'deploy'=>'Deploying to Production',
+				'performance'=>'Optimizing performance',
+			),
 
             'template'=>array(
                 'Templates and Rendering',
@@ -152,13 +121,11 @@ class Sitemap extends AbstractController{
                     'day9'=>'Day 8: The Admin System',
                     ),
                 'make-addon'=>'Guide to making your own addon',
-                'Custom URLs',
-                'Avoiding Front Controller',
-                'Manipulating URLs',
+                'Customizing URLs (routing)',
+                'Manipulating themes',
                 'tools'=>array('Tools',
-                    'update',
-                    'tabfix',
-                    'makereleases',
+                    'gensql'=>'Generate SQL for your model',
+                    'update'=>'Database Schema Migration',
                     ),
                 ),
             );

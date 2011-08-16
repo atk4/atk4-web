@@ -7,6 +7,80 @@
 
 <h1>Agile Toolkit - 150 features</h1>
 
+<p>Agile Toolkit is a web framework and collection of web components aimed at giving developers a fully-functional Web User Interface. The web interface is built using a very smart Object-Oriented princeples, similar to those in Desktop Applications but heavily based on individual component templates and abstraction.</p>
+
+<?MoreInfo?>Familiar with CodeIgniter?
+<p>Agile Toolkit is completely designed for PHP5+. It does not have to maintain compatibility and therefore takes full advantage of Object Oriented features. Inheritance and overriding is actively in all classes including Models and Views.</p>
+
+<p>CodeIgniter is based around singletons. Developer extract data from one one class to feed into another. In Agile Toolkit classes interract with eachother. Models also rely on DSQL class, which is similar to DB in CodeIgniter but maintains each query as a separate instance. This class is also used by Views, so you can easily change the query used by Lister without modifying or inheriting the class.</p>
+
+<p>Agile Toolkit brings in the full stack of User Interface which is completely integrated with models and the rest of the framework. Both frameworks are quite good at being fast and flexible in terms of HOW you want to structure your application.</p>
+
+<p>Models in Agile Toolkit are more powerful, store field meta-information and relationship information. Models can span across multiple SQL tables, contain sub-queries and conditions.</p>
+
+<p>Validation is approached differently. Instead of defining rules, models now throw exceptions which User Interface intercepts and show to user through AJAX. Libraries in CI are similar to Controlers in Agile Toolkit. Helpers in CI are similar to Views in Agile Toolkit.</p>
+
+<p>Agile Toolkit does not aim to re-implement features already provided in PHP, so it does not provide advanced session handling features like CI, Image, FTP or Language classes. Other feature are implemented differently. For example, encryption in CI provides API interface to developer. Encryption in Agile Toolkit binds into model and magically auto-encrypts it's fields.</p>
+
+<p>Agile Toolkit allows existance of multiple APIs at the same time and does not use globals at all. Therefore features like Hooks differ slightly. Agile Toolkit has a distinctive Appliation object, while CI mostly relies on Front Controller</p>
+
+<p><a href="/contact" onclick="$('#contact-button').click(); return false">Help us clear up any mistakes in this comparison</a></p>
+<?/?>
+
+<?MoreInfo?>Familiar with Sencha or GWT?
+<p>Sencha Framework is amazing at building server-side applications which have logic on their own and can communicate with service provider in JSON. Agile Toolkit focuses on the server-side and produces a HTML output which can potentially work without JavaScript support.</p>
+
+<p>Agile Toolkit uses concept of Enhancement and Degradation. For example even though you can be using AJAX to load your application content it would stil work without AJAX (which is essential for search engines).</p>
+
+<p>Initial loading time of Agile Time is much shorter, because it does not rely on server-side JS and does not attempt to pre-load all the components. It will load them on demand and would rely on the server-side to do most of the rendering and processing. For example, form-validation in Agile Toolkit is done server-side, but because they're submitted with AJAX, user is getting same visual feedback as with JS-side validation.</p>
+
+<p>Agile Toolkit is tightly integrated with jQuery and jQuery UI. The general concept of coding of coding is "add first, tweak after" instead of supplying arrays with lots of prepared data to constructor of element.</p>
+
+<p>HTML code produced by Agile Toolkit is fully customizable. By default jQuery CSS framework is used along with 960gs, but that can be changed too.</p>
+
+<p><a href="/contact" onclick="$('#contact-button').click(); return false">Help us clear up any mistakes in this comparison</a></p>
+<?/?>
+
+<?MoreInfo?>Familiar with Ruby on Rails, Yii, or Symfony?
+<p>Agile Toolkit does not attempt to follow and copy concepts from success of Ruby on Rails. The whole MVC concept is shifted and re-balanced to meet requirements of User Interface.</p>
+
+<p>If you have been using code-generator to update 3-5 files at a time, in Agile Toolkit you work from one place. This place is a 'Page' and as you add views on your pages, you decide which models to bind them with. So by looking at a single page, you can see what's happening instead of having models, routes, views, controllers, helpers and stores just for a singe CRUD page. Of course you can define custom views, controllers but you will find that generic ones are actually quite handy.</p>
+
+<p>The interface library which is not-native elsewhere is built-into the core of Agile Toolkit. You will find yourself working 95% of your time with PHP and much less time (or no time at all) with XML, YAML, HTML or JavaScript.</p>
+
+<p>Symfony, especially it's 2nd version takes many of the advantages from PHP5.3. Agile Toolkit takes some of the features such as exceptions, inheritance but leaves out features such as interfaces, closures and namespaces.</p>
+
+<p>Basic components such as CRUD while both present in frameworks are implemented differently. Agile Toolkit does not generate any code but you can extend the crud class. Use of templates and meta-data in models helps manipulate CRUD in the way you want. Form implementation is more lightweight in Agile Toolkit and it trades all the layouting features for a simple "use your own tempalte" along with 6 built-in CSS-based form layouts.</p>
+
+<p>Separation of object initialization and rendering allows lots post-initialization tweaking. You can now squeeze some content into other object output even if it wasn't initially intended by the author.</p>
+
+<p><a href="/contact" onclick="$('#contact-button').click(); return false">Help us clear up any mistakes in this comparison</a></p>
+<?/?>
+
+<?MoreInfo?>Developing raw PHP application or using micro MVC?
+<p>Agile Toolkit is not introducing extra complexity. It provides abstraction only when there are benefits form that. Many things in Agile Toolkit are not abstracter. For example model validation is done in the old-fashioned way - with "if" and "throw". On pages we still use GET arguments and work with them directly.</p>
+
+<p>When it comes to templates, the template engine in Agile Toolkit is very simple. It only has concept of regions and tags. It's very similar to PHP native templates, except that you can get regions from them. PHP code decides what to do with the tempalte.</p>
+
+<p>On other hand, Agile Toolkit makes it awesomly easy for a PHP developers to make Rich, Stylish and well organised application with PHP code alone.</p>
+
+<p>Models in Agile Toolkit use get()/set() to access properties unlike defining them as native PHP properties. Oh and templates use get() and set(). And many other things can use get() and set(), which is an universal concept.</p>
+
+<p>Agile Toolkit gives you a choice of APIs. API controlls which parts of the toolkit will be loaded. You can make your own API class and decide what you want in there keeping everything very lightweight and speedy.</p>
+
+<p>Setter and getter functions are not very common in Agile Toolkit. Often things are accessed directly to reduce amount of code and keep things simple. For example you can get name of any object from $object->name. Technically you can change the name at your own risk. Agile Toolkit will not protect the property and expose it only through method for performance reasons.</p>
+
+<p>Many methods and functions will assume that the arguments are handed in properly reducing overheads. Few risky places, however, do perform a validation to avoid common mistakes. Finally, there is a freedom in the way how resources are loaded, you can place them in different folders of your choice, as long as you instruct loader about search locations. You can even place all the objects into a single index.php file and your application would work anyway.</p>
+
+<p>There are no hard dependencies, objects are loaded when needed. No direct includes. You can, however, search for "-&lt;add" and it will become very clear, what your objects are using and when.</p>
+
+<p>Finally, Agile Toolkit attempts to keep features of each class to a minimum. Most of the views, controllers are implemented in a 20-50 lines of code. All of the framework is written by a same author instead of highly de-coupled framework with many different coding styles and overlap of features. Agile Toolkit makes it easier to "add" features but not tries to implement all of them.</p>
+
+<p><a href="/contact" onclick="$('#contact-button').click(); return false">Help us clear up any mistakes in this comparison</a></p>
+<?/?>
+
+
+
 <p>Agile Toolkit packs a 3 major features but also has a huge amount of minor features.</p>
 <ul>
 <li>Small footprint but huge gain</li>

@@ -8,35 +8,59 @@
 		<h2>Stable Packages (4.0.x)</h2>
 		<ul>
 		<li><a class="download" id="download1" href="/download/success?file=atk4-example-4.0.3.zip"><b>atk4-example</b>-4.0.3.zip</a>
-		<p>Download, unpack into the webroot and open in your browser. Sample project comes with both atk4 and atk4-addons
-		and includes heavily documented files which will help you understand the structure of the project and get
-		started.</p>
-		<p><b>Recommended to new users</b>.</p>
+		<p>Agile Toolkit + Agile Toolkit Addons (includes MVC) + Example project. Contains everything to get started.</p>
 		</li>
 		
 		<li><a class="download" id="download3" href="/download/success?file=atk4-4.0.3.zip"><b>atk4</b>-4.0.3.zip</a>
-		<p>A stand-alone installation of Agile Toolkit core. Extract into your project directory replacing previous verison
-		of atk folder.</p></li>
+		<p>Core of Agile Toolkit. Extract into your project directory replacing <b>atk4</b> folder.</p></li>
 		
 		<li><a class="download" id="download4" href="/download/success?file=atk4-addons-4.0.3.zip"><b>atk4-addons</b>-4.0.3.zip</a>
-		<p>A stand-alone package containing some of the contributed addons for Agile Toolkit.</p></li>
-		</ul>
+		<p>A stand-alone package containing addons and extensions for Agile Toolkit (Including Model support).</p></li>
 
+		<li><a class="download" id="download4" href="https://github.com/atk4/atk4">Browse <b>stable</b> source on GitHub</a>
+		<li><a class="download" id="download4" href="<?page?>whatsnew<?/?>">Recent Changes</a></li>
+
+		</ul>
 	</div>
 	<div>
 		<h2>Development / Git repository</h2>
 		<ul>
-		
-		<li><b>master</b> (Download <a href="https://github.com/atk4/atk4/zipball/master">.zip</a> or <a href="https://github.com/atk4/atk4">browse</a>)<p>this branch contains the most recent stable branch of Agile Toolkit.</p>
-		<li><b>devel</b>  (Download <a href="https://github.com/atk4/atk4/zipball/devel">.zip</a> or <a href="https://github.com/atk4/atk4/tree/devel">browse</a>)<p>development branch of Agile Toolkit. This repository should be safe to use, although some of the features might not be documented.</p>
-		
-		</ul>
 
-        <h3>What's new?</h3>
-        <p>See <a href="<?page?>whatsnew<?/?>">What's new page</a> for list of changes in 4.1 branch.</p>
+		<li><a class="download" id="download1" href="/download/success?file=atk4-example-4.1b1.zip"><b>atk4-example</b>-4.1b1.zip</a>
+		<p>Agile Toolkit + Agile Toolkit Addons (includes MVC) + Example project. Contains everything to get started.</p>
+		</li>
+		
+		<li><a class="download" id="download3" href="/download/success?file=atk4-4.1b1.zip"><b>atk4</b>-4.1b1.zip</a>
+		<p>Core of Agile Toolkit. Extract into your project directory replacing <b>atk4</b> folder.</p></li>
+		
+		<li><a class="download" id="download4" href="/download/success?file=atk4-addons-4.1b1.zip"><b>atk4-addons</b>-4.1b1.zip</a>
+		<p>A stand-alone package containing addons and extensions for Agile Toolkit (Including Model support).</p></li>
+
+		<li><a class="download" id="download4" href="https://github.com/atk4/atk4/tree/devel">Browse <b>development</b> source on GitHub</a>
+		<li><a class="download" id="download4" href="<?page?>whatsnew<?/?>">Recent Changes</a></li>
 	</div>
 </div>
 <div class="hr hr-small"></div>
+<h3>Starting New Project with Git</h3>
+<p>Agile Toolkit development is hosted on GitHub. If you plan to use GitHub too, it's much easier to clone
+"atk4-example" project instead of downloading a ZIP. 
+<pre>
+git clone git://github.com/romaninsh/atk4-example.git myproject
+git submodule init
+git submodule update
+</pre>
+Next create empty directory hosting <a href="https://github.com/repositories/new">using GitHub</a> or other Git
+server.
+<pre>
+git remote rm origin
+git remote add origin git@github.com:yourname/yourproject.git
+git push -u origin master
+</pre>
+<p>Continue your development. "git submodule update" will update Agile Toolkit</p>
+
+<div class="hr hr-small"></div>
+<h3>Recent Releases</h3>
+
 <h4>Agile Toolkit 4.0.3</h4>
 <p>Agile toolkit 4.0.3 fixed bug 
 		<a href="https://github.com/atk4/atk4/issues/9">https://github.com/atk4/atk4/issues/9</a> which was showing on new installation mechanism (without .htaccess)</p>
