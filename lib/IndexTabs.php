@@ -38,7 +38,15 @@ if($f->isSubmitted()){
   $f->js()->univ()->alert('Thank you, '.$f->get('name').' '.$f->get('surname'))->execute();
 }
 
-
+				$this->add('Doc_MoreInfo',null,'link')
+					->setName('Where is MVC?')
+					->setDescr(<<<'EOT'
+<p>Model-View-Controller in Aglie Toolkit is the essential yet optional feature. For simple tasks such as 
+greeting user with the form, no MVC is needed. For complex projects, most of the forms will be built
+entirely with Models. 
+</p>
+EOT
+);
 
 				break;
 

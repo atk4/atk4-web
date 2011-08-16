@@ -7,7 +7,7 @@ class page_doc_learn extends Doc_Page {
         $this->sidebar->template->set('title','Learning Agile Toolkit');
 		$this->subPage('quick_start','Quick Start') ;
 		$this->subPage('adding','Adding Objects') ;
-		$this->subPage('..','Comming Soon') ;
+		$this->subPage('beta','BETA docs') ;
         return;
 		$this->subPage('understanding','Understanding') ;
 		$this->subPage('enhancing','Reading Agile Toolkit') ;
