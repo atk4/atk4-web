@@ -43,7 +43,7 @@ class AgileToolkitWeb extends ApiFrontend {
 		// Initialize any system-wide javascript libraries here
 		$this->js()
 			->_load('atk4_univ')
-			->_load('atk4web')
+			->_load('atk4web1')
 			// ->_load('ui.atk4_expander')
 			;
 
