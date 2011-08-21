@@ -206,19 +206,19 @@ class UserAuth extends SQLAuth {
 
 <h6>templates/default/index.html</h6>
 <div class="atk_doc example"><code><pre>
+&lt;div class="g-row"&gt;
+	&lt;div class="g-8"&gt;
+        &lt;p&gt;Welcome to the DVD rental program. Lorem ipsum dolor sit amet&lt;/p&gt;
+        &lt;?$Content?&gt;
+    &lt;/div&gt;
+    &lt;div class="g-2"&gt;
+        &lt;h4&gt;Customer Login&lt;/h3&gt;
+        &lt;?$LoginForm?&gt;
 
-
-<div class="g-row">
-	<div class="g-8">
-        <p>Welcome to the DVD revtal program. Lorem ipsum dolor sit amet</p>
-    </div>
-    <div class="g-4">
-        <?LoginForm?>
-    </div>
-</div>
-
-
-
+        &lt;div style="float: left"&gt;&lt;?$LoginButton?&gt;&lt;/div&gt;
+        &lt;div style="float: right"&gt;&lt;?$RegisterLink?&gt;&lt;br/&gt;&lt;?$ForgotLink?&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 </pre></code></div>
 
 
