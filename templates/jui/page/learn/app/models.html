@@ -1,0 +1,181 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+<h1>Creating Models</h1>
+<p>Agile Toolkit does not offer a generator for models. You can make a short snippet in your favourite text editor, which will in fact work for ANY class.</p>
+
+<?Code?>
+class Model_Customer extends Model_Table {
+    function init(){
+        parent::init();
+
+
+    }
+}
+<?/?>
+
+<p>There is only one property you should re-define in your model, called $entity_code and containing name of your SQL table. (Use with no-SQL is planned in 4.2 release of Agile Toolkit). Majority of the properties and methods in Agile Toolkit are public, so that they can be accessed by controllers.</p>
+
+<p>Second thing we are going to define are the fields. With very little information about our requirements we will try to keep our model definition very brief. By default Model also defines a system field "id" which is used as a primary index.</p>
+
+<p>Add the below code into files lib/Model/Customer.php, lib/Model/Movie.php, lib/Model/DVD.php and lib/Model/Rental.php.</p>
+
+<?Code?>
+class Model_Customer extends Model_Table {
+    public $entity_code='customer';
+    function init(){
+        parent::init();
+
+        $this->addField('name');
+    }
+}
+class Model_Movie extends Model_Table {
+    public $entity_code='movie';
+    function init(){
+        parent::init();
+
+        $this->addField('name');
+        $this->addField('year')->type(int);
+        $this->addField('imdb')->caption('IMDB Link');
+    }
+}
+class Model_DVD extends Model_Table {
+    public $entity_code='dvd';
+    function init(){
+        parent::init();
+
+        $this->addField('movie_id')->refModel('Model_Movie');
+        $this->addField('code');
+    }
+    function toStringSQL($source_field, $dest_fieldname){
+        return 'concat("DVD#",id,": ",(select name 
+                    from movie m,dvd d where m.id=d.movie_id and d.id='.$source_field.')) as '.$dest_fieldname;
+    }
+}
+class Model_Rental extends Model_Table {
+    public $entity_code='rental';
+    function init(){
+        parent::init();
+
+        $this->addField('customer_id')->refModel('Model_Customer');
+        $this->addField('dvd_id')->refModel('Model_DVD');
+        $this->addField('date_rented')->defaultValue(date('Y-m-d'))->type('date');
+        $this->addField('date_returned')->type('date');
+        
+        $this->addField('is_returned')->type('boolean');
+    }
+    function return(){
+        $this
+            ->set('date_returned',date('Y-m-d'))
+            ->set('is_returned',true)
+            ->update();
+    }
+}
+<?/?>
+
+<p>In Agile Toolkit inheritance of Models is a major tool which should be used. Further on we will define some additional models such as "RentedDVD" etc as well as introduce relation into Model_DVD. For now let's focus on simplicity and getting some initial data into the database.</p>
+
+<h2>Generating Schema</h2>
+<p>Agile Toolkit contains schema generator. It is implemented as a page class, and in order to use it you will need to extending yourself. Agile Toolkit by default does not add any pages to your application, so if you want to use something, you will need to incorporate it to your own page.</p>
+
+<p>Similarly as you did before with models, let's create two page classes for data visualization: page/sg.php and page/mgr.php. Remember that file and class case must always carefully match.</p>
+
+<?Code?>
+class page_sg extends Page_SchemaGenerator {
+}
+
+class page_mgr extends Page {
+    function init(){
+        parent::init();
+
+        $tabs=$this->add('Tabs');
+        $tabs->addTab('Customers')->add('CRUD')->setModel('Customer');
+        $tabs->addTab('Movies')->add('CRUD')->setModel('Movie');
+        $tabs->addTab('DVDs')->add('CRUD')->setModel('DVD');
+        $tabs->addTab('Rentals')->add('CRUD')->setModel('Rental');
+    }
+}
+<?/?>
+
+<p>You will also need to open your Application class (lib/Frontend.php) and add (or un-comment) call to dbConnect() as we will need to access database. Copy your config-distrib.php into config.php and edit it to make sure your database settings are set properly. <a href="<?page?>learn/install<?/?>">More info on configuration</a></p>
+
+<p>Finally let's add the page to the menu of our application, by locating 'Menu' object in lib/Frotnend and adding two new addMenuItem calls.</p>
+<?Code?>
+    $menu->addMenuItem('Schema Generator','sg');
+    $menu->addMenuItem('Manager','mgr');
+<?/?>
+
+<p>You can now refresh your application, find two menu items and use Schema Generator to generate the schema. <font color="red">Due to complexity of model definitions in Agile Toolkit, please do always re-check and adjust generated schema.</font>. For your convenience below is the database dump along with some data.
+
+<div class="atk_doc example"><code><pre>
+CREATE TABLE `movie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `year` int(11) DEFAULT NULL,
+  `imdb` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+INSERT INTO `movie` VALUES 
+    (1,'V for Vendetta',2006,'http://www.imdb.com/title/tt0434409/'),
+    (2,'The Matrix',1999,'http://www.imdb.com/title/tt0133093/'),
+    (3,'WALL-E',2008,'http://www.imdb.com/title/tt0910970/');
+
+CREATE TABLE `dvd` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `movie_id` int(11) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `dvd` VALUES
+    (1,2,'20397728'),
+    (2,1,'20397729'),
+    (3,1,'20397730');
+
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `customer` VALUES 
+    (1,'John Smith'),
+    (2,'Peter Taylor');
+
+CREATE TABLE `rental` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_id` int(11) DEFAULT NULL,
+  `dvd_id` int(11) DEFAULT NULL,
+  `date_rented` varchar(255) DEFAULT NULL,
+  `date_returned` varchar(255) DEFAULT NULL,
+  `is_returned` enum('Y','N') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `rental` VALUES 
+    (1,1,1,'2011-08-21','','N'),
+    (2,1,2,'2011-08-18','2011-08-21','Y');
+</pre></code></div>
+
+
+<p>Once your data structure is ready, go straight into the Management page and you will be able to have full control over created data.</p>
+
+
+---------- movie ----------
+
+<?MoreInfo?>Where is Testing??
+<p>Unfortunatelly testing is often left out by many. We, developers, all know that it is important, but our business aims often clash with things that
+may reduce our productivity in the early stage of development.</p>
+<p>Agile Toolkit allows to introduce testing and many other important features at a later stage. That's what we will be doing in this tutorial.</p>
+<?/?>
+
+<p>You have just created the simplest and most flexible administration interface. Believe me, we still have only touched the surface of our application.
+It might have taken you 15 minutes to create this yet if you show this to your client, he would be highly impressed and ready to come up with the next
+set of tasks.</p>
+
+
+
+</div></div>
+<?$Next?>
