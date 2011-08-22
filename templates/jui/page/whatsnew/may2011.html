@@ -9,8 +9,6 @@
 
         <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/42e6168584fea4d4b76e4e2988556fd87729c118">URL->set() implemented</a></h4>
         <p>When you execute $api->getDestinationURL() it returns an object. This object converts itself into URL in string context. You can execute few methods, to interact with that URL such as useAbsoluteURL(). Now you can also use set() to add more parameters</p>
-        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/42e6168584fea4d4b76e4e2988556fd87729c118">URL->set() implemented</a></h4>
-        <p>When you execute $api->getDestinationURL() it returns an object. This object converts itself into URL in string context. You can execute few methods, to interact with that URL such as useAbsoluteURL(). Now you can also use set() to add more parameters</p>
 
 <?Example?>
 $url=$page->api->getDestinationURL('..')->set('foo','bar?');
@@ -62,10 +60,6 @@ function addDefaultLocations($pathfinder,$base_dir){
 
         <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ae5489294f25c7177fd51a066d7fc4114fcc7901">Fix UI-test</a></h4>
         <p>Did you know that there is a page called "uitest" which is comes enabled by default? You can see different elements on it. Good for testing your theme. Try it, http://localhost/atk4-example/?page=uitest</p>
-
-        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/47769eae6b1c1a0b2cb4ace85344ff8c517608a4">Use 10-columns instead of 12 by default</a></h4>
-        <p>Give class="g-row" to your div and then inside that you can use classes like "g-4", "g-8" to slice the space horizontally. The total amount of values should be exactly 10. You can also use "g-max" for full-width column</p>
-
 
         <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/47769eae6b1c1a0b2cb4ace85344ff8c517608a4">Use 10-columns instead of 12 by default</a></h4>
         <p>Give class="g-row" to your div and then inside that you can use classes like "g-4", "g-8" to slice the space horizontally. The total amount of values should be exactly 10. You can also use "g-max" for full-width column</p>
@@ -194,8 +188,8 @@ if($form->isSubmitted()){
 
 
 		<div class="hr hr-small"></div>
-        <a href="<?page?>./apr2011<?/?>">Older Entries</a>
-        <a href="<?page?>./jun2011<?/?>">Newer Entries</a>
+        <a href="<?page?>../apr2011<?/?>">Older Entries</a>
+        <a href="<?page?>../jun2011<?/?>">Newer Entries</a>
 
     </div>
 	<div class="g-4">
