@@ -1,0 +1,39 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Configuration File</h1>
+        <p>Agile Toolkit uses PHP array for defining configuration. File config-default.php and config.php should
+        add more properties into $config variable, which is then copied into API after file inclusion. Below is a
+        sample of a config.php file.</p>
+
+        <p>Like many other things, configuration options are optional in config.php. This is just a sample, you
+        should add lines as you require.</p>
+
+<?Code?>
+$config['dsn']='mysql://user:secret@localhost/db';
+
+$config['sample']['setting']=123;
+
+$config['billing']['realex']['merchantid']='merchant';
+$config['billing']['realex']['account']='';
+$config['billing']['realex']['secret']='secret';
+
+$config['logger']['log_output'] = 'full';
+$config['logger']['log_dir'] = 'logs';
+<?/Code?>
+
+        <p>Method api->getConfig('sample/setting',400); is used to to retrieve config settings. Second argument
+        to this function is default value and it's used extensively throughout Agile Toolkit add-ons and components.
+        </p>
+        <h2>Loading additional config files</h2>
+        <p>By default Agile Toolkit will recognize config.php and config-defaults.php. The settings in config.php will be considered if same key is defined in both files. Files are loaded by Api using readConfig() method, therefore you may load configuration for additional files yourself using the same method.</p>
+<?Code?>
+$this->api->readConfig('config-extra.php');
+<?/?>
+        <p>config-distrib.php often found in Agile Toolkit applications is never loaded but is supposed to be a "template" for a local copy of config.php. Installation guide of typical application with Agile Toolkit would instruct to copy "config-distrib.php" into "config.php" and then edit it's contents. When new application is installed over existing one, it will not overwrite your config.php file.</p>
+
+    </div>
+</div>
+
+<?$Next?>

@@ -1,0 +1,119 @@
+
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>How Agile Toolkit keeps PHP Simple?</h1>
+        <p>PHP language packs insane amount of features. When all of them are mashed together, code starts to look complex, creepy and very Java-like. Agile Toolkit specifically tries to avoid some of the features and tone-down some other features.</p>
+
+        <h2>PHP5 Features Agile Toolkit avoids using</h2>
+        <p>Below are the list of features and concepts which Agile Toolkit avoids as well as reasoning:</p>
+
+        <h3>Command-line code generation</h3>
+        <p>There are no magic command-line utility to generate bunch of code on your behalf. Code generation is the violation
+        of the DRY (Don't Repeat Yourself) principle. It also adds stuff into your project, that you are not aware of, but
+        would need to continue to maintain.</p>
+
+        <p>Agile Toolkit relies on many ways to simplify your project structure and reduce amount of code you will
+        need to write, therefore code generation is not needed.</p>
+
+        <h3>Focus on solution, not on theory</h3>
+        <p>Agile Toolkit was created to get job done and to get developers paid. Certainly there are many things it can
+        do such as support every possible SQL flavor or add support for Sencha JS. We however believe that focusing
+        our limited resources on a single implementation, but giving you much more components to work with is much better
+        thing to do.</p>
+
+        <p><i>Note: Currently only MySQL is supported. Support for other database engines will be eventually added.</p>
+
+        <h3>Singletons</h3>
+        <p>Singletons are evil. Especially in PHP. They give no benefits, not even memory saving. They might have some use in
+        Java, but are generally considered a bad design in PHP software.</p>
+
+        <p>Agile Toolkit never relies on singletons. As a result, you may create 2 or more instances of API, completely
+        independent. "Controllers" can only be added once into the parent, but having them in each copy of API makes sense.
+        Consider example, where clicking link in Admin system logs you into Frontend as a specific user. The most correct way
+        to implement this is to initialize Frontend's API along with it's Auth and log user there directly.</p>
+
+        <h3>Protected and Private properties</h3>
+        <p>Access restriction is a way to tell users "keep away from the core". Unfortunately PHP does not implement any
+        support which would allow some specific classes (friendly as in C++ or package as in Java) access those
+        properties.</p>
+
+        <p>Agile Toolkit keeps properties an functions public. Even though you might not need to call them, some Controller
+        may use them directly to enhance functionality of the object in question.</p>
+
+        <h3>Setters and Getters</h3>
+        <p>There exists a belief, that all the properties should be declared as private and should only be accessible through
+        unctions such as getMyProperty / setMyProperty. This principle seems to work fine in C language which can optimize
+        use of those functions to the same level as using properties directly. In PHP using this approach slightly slows
+        down both the development and execution.</p>
+
+        <p>In Agile Toolkit you will often find use of $obj->set() and $obj->get() methods which functionality differ
+        depending on object type. Usually those deal with complex logic such as setting tag values in templates. Do not be
+        afraid to access properties directly.</p>
+
+        <p>The exception is field definitions in Models, which use functions primarily for chaining.</p>
+
+        <h3>Long variable or class names</h3>
+        <p>Typing long variable names adds up. Methods, classes and properties in Agile Toolkit are using compact naming
+        to produce as little code as possible</p>
+
+        <h3>Namespaces</h3>
+        <p>Starting from PHP5.3 namespaces are being introduced to avoid name collision and shorten class names. Agile
+        Toolkit would not benefit from any of those two features. Class naming is already short and quite to-the-point.
+        </p>
+        <p>Agile Toolkit uses class aliasing though empty extending classes. For instance class Form extends Basic/Form. If
+        you are willing to use 3rd party Form class it should fit into Agile naming scheme and then you could alias it.</p>
+        <p>If you are using code which is not built specifically for Agile Toolkit, than namespaces can and should be
+        used.</p>
+
+        <p>Finally - namespace definition and dependencies consume quite some amount of space and requires users to
+        understand them. Agile Toolkit might add transparent support for Namespaces at some point in the future releases.</p>
+
+        <h2>Featutres to be careful about</h2>
+        <h3>PHPDoc</h3>
+        <p>Adopted from JavaDoc this is a standard way to document PHP code. Agile Toolkit uses PHPDoc for short comments.
+        While PHPDoc supports many @tags and often have lengthy comments, we believe that there are other means to write
+        documentation. PHPdocs in Agile Toolkit usually consist of a single string, trying to contain useful info and 
+        avoid duplicating meaning already conveyed by the method name.</li>
+
+        <h3>XML and Yaml</h3>
+        <p>Those languages are used in Java and some other frameworks to aid in configuration and code generation. Agile
+        Toolkit is strictly opposing extra parsing of different formats. XML usually is more complex to understand for PHP
+        developers than native PHP code.</p>
+
+        <h3>IDEs and code type hinting</h3>
+        <p>Some of the constructions in Agile Toolkit make it impossible for type hinting in IDEs. For example a comment
+        suggesting variable type should be used with add() function if you want code hinting to work:
+<?Code?>
+/* @var $form Form */
+$form=$page->add('Form');
+$f->addFi.. /* completion works */
+
+<?/?>
+
+        <p>PHP is loosely typed language and Agile Toolkit takes advantage of that. IDEs were initially designed for
+        languages such as C++ or Java and struggle to properly understand PHP. Relying on your common sense and documentation
+        reference. If you can't give up code completion, you should look into other programming languages.</p>
+
+        <h3>Interfaces</h3>
+        <p>Interfaces is a design feature of PHP which sets requirement on a class implementation. While it might have some
+        use when designing software architecture, it has little use in Agile Toolkit.</p>  
+
+        <h3>Over-testing</h3>
+        <p>Agile Toolkit lets you write less code. Testing is still important, but Agile Toolkit narrows it down to 2 types
+        of testing. Unit testing is essential to test your business logic. However it does not work anymore when you are
+        building user interfaces. In this case you need to rely on browser-side testing, which is a different suite.</p>
+
+        <p>Agile Toolkit recognizes importance of tests, however you will be pleased to find that the advanced object
+        architecture in Agile Toolkit severely reduces potential problems in presentation logic and all you need to deal with
+        is the low-level testing.</p>
+
+        <p>Upgrading to newer Agile Toolkit may slightly affect your UI, but as long as you using it properly, there will be
+        no functional impact.</p>
+
+
+    </div>
+</div>
+        <?$Next?>

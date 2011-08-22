@@ -1,0 +1,396 @@
+<script src="<?template?>/css/sticky-bar.js<?/?>"></script>
+<script>
+
+	$(function(){
+	
+		$('.breadcrumb-item').mouseover(function(){
+		
+			$(this).find('.dropdown').show();
+			$(this).find('em').addClass("blue-noised");
+		
+		}).mouseout(function(){
+		
+			$(this).find('.dropdown').hide();
+			$(this).find('em').removeClass("blue-noised");
+		
+		});
+		
+				
+<!-- 		$('.example-limited>p>code').prepend('<div class="example-expander">View the rest</div>'). -->
+		
+		$('.example-expander>div>span').click(function(){
+		
+			$(this).parents('.example-wrap').css("height","auto").addClass("example-expanded");
+			$(this).html('<i class="ui-icon ui-icon-minus"></i>Hide Code')
+		});
+		
+		
+		
+	});
+
+</script>
+<div class="sticky-bar-dock"></div>
+<div class="sticky-bar-absolute sticky-bar">
+	<div class="gs-wrap breadcrumb clearafter">
+		<div class="breadcrumb-item breadcrumb-start">API Reference</div>
+		<div class="breadcrumb-item">
+			<a href="#" class="dynamic">Basic API Classes</a><em><i class="ui-icon ui-icon-triangle-1-s"></i></em>
+			<div class="dropdown">
+				<i class="dropdown-triangle"></i>
+				<div class="blue-noised">
+					<ul class="white">
+							  
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li class="current"><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="breadcrumb-item">
+			<a href="#" class="dynamic">Pathfinder</a><em><i class="ui-icon ui-icon-triangle-1-s"></i></em>
+			<div class="dropdown">
+				<i class="dropdown-triangle"></i>
+				<div class="blue-noised">
+					<ul class="white">
+							  
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li class="current"><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="agile_project_doc_dblite_doc_class_dblite" class="page_doc_dblite_doc_class_dblite">
+
+<h1>Class DBLite (controller)</h1>
+<p>DBLite is a lightweight replacement for PEAR::DB. It provides basic functionality for interraction with database.</p>
+
+
+<!-- Note is short semi-important information. It does not have header
+  and should be easily visible by all users -->
+
+<h4>Obsolete</h4>
+<p>
+This class is due to reimplementation in 4.1. New implementation will 
+				have the same interface, however will use PDO. It will also introduce new 
+				dynamic queries [Roadmap]
+</p>
+
+
+<!-- MoreInfo is additional information which is NOT interesting for 
+all users. it might be interested for beginners or people who
+are currious, but others might find it useless. Uses will be able
+to judge by the header
+-->
+<div id="agile_project_doc_dblite_doc_class_dblite_doc_class_dblite_doc_moreinfo" class="atk_doc note atk_doc_expander">
+<h6><i class="atk-icon atk-icon-arrows-right2"></i><a href="#" class="dynamic">Why executing SQL directly is a bad idea?</a></h6>
+<div class="expanded-content" style="display: none; ">
+When developer have to design all SQL queries in the software, there are several disadvantages:
+
+					First - developer must write every single query himself. Toolkit can't help you by creating them
+					automatically for you. 
+
+					Secondly - once query is written and passed to a function, that function is no longer able to change it
+					(for example to introduce additional WHERE clause or to JOIN related table).
+
+					Finally - by asking developer to take care of all the SQL queries, due to human error, they may 
+					introduce security risks, such as [SQL injections]. Parametric queries solve security issue, however they
+					do nothing about first two issues.
+
+					[Dynamic SQL] is a class instead of the string. After you create DSQL object, you can execute its methods
+					to change the query. Similarly other components of the framework can do some adjustments for you.
+					Arguments you pass to those methods are automatically validated / quoted as required.
+
+					<!-- examples are essential and will be coloured by
+plugin. Please add class "highlight-php" -->
+<div id="agile_project_doc_dblite_doc_class_dblite_doc_class_dblite_doc_moreinfo_doc_code" class="atk_doc example">
+<p>
+<code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #FF8000">//&nbsp;Creating&nbsp;new&nbsp;DSQL&nbsp;query<br></span><span style="color: #0000BB">$dynamic_query&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">dsql</span><span style="color: #007700">();<br><br></span><span style="color: #FF8000">//&nbsp;Specifying&nbsp;table,&nbsp;conditions&nbsp;and&nbsp;fields<br></span><span style="color: #0000BB">$dynamic_query<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">table</span><span style="color: #007700">(</span><span style="color: #DD0000">'employee'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'salary&gt;'</span><span style="color: #007700">,</span><span style="color: #0000BB">1000</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">field</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;;<br><br></span><span style="color: #FF8000">//&nbsp;Changes&nbsp;to&nbsp;query&nbsp;can&nbsp;be&nbsp;performed&nbsp;at&nbsp;any&nbsp;time.&nbsp;In&nbsp;this<br>//&nbsp;example&nbsp;we&nbsp;use&nbsp;user-supplied&nbsp;parameter&nbsp;"search"<br>//&nbsp;without&nbsp;additional&nbsp;validation.&nbsp;Method&nbsp;where()<br>//&nbsp;does&nbsp;those&nbsp;checks&nbsp;for&nbsp;us.<br></span><span style="color: #007700">if(isset(</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'search'</span><span style="color: #007700">])){<br>&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$dynamic_query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">where</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">,</span><span style="color: #0000BB">$_GET</span><span style="color: #007700">[</span><span style="color: #DD0000">'search'</span><span style="color: #007700">]);<br>}<br><br></span><span style="color: #FF8000">//&nbsp;If&nbsp;you&nbsp;try&nbsp;to&nbsp;use&nbsp;query&nbsp;as&nbsp;string,&nbsp;it&nbsp;will&nbsp;generate<br>//&nbsp;SQL&nbsp;line&nbsp;automatically.<br></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$dynamic_query</span><span style="color: #007700">;<br></span><span style="color: #FF8000">//&nbsp;Outputs:&nbsp;SELECT&nbsp;name&nbsp;FROM&nbsp;employee&nbsp;WHERE&nbsp;salary&gt;1000<br>//&nbsp;and&nbsp;name="Tom"<br><br>//&nbsp;You&nbsp;can&nbsp;execute&nbsp;query&nbsp;directly&nbsp;through&nbsp;one&nbsp;of&nbsp;the<br>//&nbsp;methods&nbsp;starting&nbsp;with&nbsp;"do_"<br></span><span style="color: #0000BB">$data&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$dynamic_query</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">do_getAll</span><span style="color: #007700">();</span><span style="color: #0000BB"></span>
+</span>
+</code>
+<i class="comment">Typical use of Dynamic SQL</i>
+</p>
+</div>
+
+</div>
+</div>
+<!-- MoreInfo is additional information which is NOT interesting for 
+all users. it might be interested for beginners or people who
+are currious, but others might find it useless. Uses will be able
+to judge by the header
+-->
+<div id="agile_project_doc_dblite_doc_class_dblite_doc_class_dblite_doc_moreinfo_2" class="atk_doc note atk_doc_expander">
+<h6><i class="atk-icon atk-icon-arrows-right2"></i><a href="#" class="dynamic">When you should use DBlite</a></h6>
+<div class="expanded-content" style="display: none; ">
+When Dynamic SQL does not provide required functionality. For example it
+					can be used to begin transactions, perform commits or use database-specific queries 
+					(such as "set names="UTF8") 
+</div>
+</div>
+
+
+<!-- methods go here -->
+<!-- examples are essential and will be coloured by
+plugin. Please add class "highlight-php" -->
+<div id="agile_project_doc_dblite_doc_class_dblite_doc_class_dblite_doc_code" class="atk_doc example">
+<p>
+<code><span style="color: #000000">
+<span style="color: #0000BB"><br></span><span style="color: #FF8000">//&nbsp;reads&nbsp;DSN&nbsp;from&nbsp;configuration&nbsp;file&nbsp;and&nbsp;establishes&nbsp;connection&nbsp;with&nbsp;database<br></span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">dbConnect</span><span style="color: #007700">();<br><br></span><span style="color: #FF8000">//&nbsp;executes&nbsp;query&nbsp;instantly<br></span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">db</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">query</span><span style="color: #007700">(</span><span style="color: #DD0000">'SET&nbsp;sort_buffer_size=10000'</span><span style="color: #007700">);</span><span style="color: #0000BB"></span>
+</span>
+</code>
+<i class="comment">Typical use of DBlite</i>
+</p>
+</div>
+<!-- examples are essential and will be coloured by
+plugin. Please add class "highlight-php" -->
+<div id="agile_project_doc_dblite_doc_class_dblite_doc_class_dblite_doc_code_2" class="atk_doc example example-limited">
+<div>
+	<div class="example-wrap">
+		<div class="example-expander"><div><span class="blue button"><i class="ui-icon ui-icon-plus"></i>Expand Code</span></div></div>
+	<code>
+	<span style="color: #000000">
+	<span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$p</span><span style="color: #007700">=</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'HtmlElement'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">addClass</span><span style="color: #007700">(</span><span style="color: #DD0000">'box&nbsp;metallic'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$p</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'H2'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Sample&nbsp;Feedback&nbsp;Form'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">=</span><span style="color: #0000BB">$p</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'Form'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rfr</span><span style="color: #007700">=</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'HtmlElement'</span><span style="color: #007700">,</span><span style="color: #0000BB">null</span><span style="color: #007700">,</span><span style="color: #DD0000">'hint'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">addStyle</span><span style="color: #007700">(</span><span style="color: #DD0000">'float'</span><span style="color: #007700">,</span><span style="color: #DD0000">'right'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">addStyle</span><span style="color: #007700">(</span><span style="color: #DD0000">'width'</span><span style="color: #007700">,</span><span style="color: #DD0000">'300px'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">hint</span><span style="color: #007700">=</span><span style="color: #0000BB">$rfr</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'Hint'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Field-related&nbsp;information&nbsp;will&nbsp;appear&nbsp;here'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//$this-&gt;hint-&gt;js(true)-&gt;css(array('float'=&gt;'right','width'=&gt;'300px'));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$rfr</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'P'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'What&nbsp;do&nbsp;you&nbsp;think&nbsp;about&nbsp;Agile&nbsp;Toolkit&nbsp;so&nbsp;far?'</span><span style="color: #007700">);<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'email'</span><span style="color: #007700">,</span><span style="color: #DD0000">'email'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">setFieldHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'optional'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'focus'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'Newsletter&nbsp;Subscription'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'We&nbsp;would&nbsp;like&nbsp;to&nbsp;ocassionally&nbsp;send&nbsp;you&nbsp;newsletter<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;containing&nbsp;Agile&nbsp;Toolkit&nbsp;security<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;updates,&nbsp;new&nbsp;feature&nbsp;highlights&nbsp;and&nbsp;other&nbsp;important&nbsp;information.'</span><span style="color: #007700">));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'line'</span><span style="color: #007700">,</span><span style="color: #DD0000">'name'</span><span style="color: #007700">,</span><span style="color: #DD0000">'Full&nbsp;Name'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">setFieldHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'optional'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'focus'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'Your&nbsp;Full&nbsp;Name'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Knowing&nbsp;your&nbsp;name&nbsp;will&nbsp;help&nbsp;us&nbsp;to&nbsp;properly&nbsp;address&nbsp;you&nbsp;in&nbsp;the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newsletters.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span style="color: #007700">));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ff</span><span style="color: #007700">=</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'text'</span><span style="color: #007700">,</span><span style="color: #DD0000">'feedback'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Your&nbsp;feedback,&nbsp;good&nbsp;or&nbsp;bad,&nbsp;is&nbsp;extremely&nbsp;important&nbsp;to&nbsp;us.&nbsp;Please&nbsp;'</span><span style="color: #007700">.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'type&nbsp;your&nbsp;impressions&nbsp;here,&nbsp;or&nbsp;suggest&nbsp;us&nbsp;how&nbsp;we&nbsp;can&nbsp;improve&nbsp;our&nbsp;site'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ff</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">closest</span><span style="color: #007700">(</span><span style="color: #DD0000">'dl'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">hide</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ff</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">appendTo</span><span style="color: #007700">(</span><span style="color: #0000BB">$rfr</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">css</span><span style="color: #007700">(array(</span><span style="color: #DD0000">'height'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'200px'</span><span style="color: #007700">));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$ff</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'click'</span><span style="color: #007700">)-&gt;</span><span style="color: #0000BB">select</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'dropdown'</span><span style="color: #007700">,</span><span style="color: #DD0000">'interest'</span><span style="color: #007700">,</span><span style="color: #DD0000">'Your&nbsp;Interest'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">setValueList</span><span style="color: #007700">(array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dev'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'Developer'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'busines'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'Business&nbsp;Owner'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'journalist'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'Journalist'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'other'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'Other'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'focus'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'What&nbsp;is&nbsp;your&nbsp;interest&nbsp;in&nbsp;Agile&nbsp;Toolkit?'</span><span style="color: #007700">,</span><span style="color: #DD0000">'<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Knowing&nbsp;your&nbsp;interest&nbsp;will&nbsp;help&nbsp;us&nbsp;to&nbsp;choose&nbsp;the&nbsp;right&nbsp;lingo&nbsp;and&nbsp;update&nbsp;type<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span style="color: #007700">));<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'Slider'</span><span style="color: #007700">,</span><span style="color: #DD0000">'impact'</span><span style="color: #007700">,</span><span style="color: #DD0000">'Impact'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">setLabels</span><span style="color: #007700">(</span><span style="color: #DD0000">'Lifechanging'</span><span style="color: #007700">,</span><span style="color: #DD0000">'Minor'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'change'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'Is&nbsp;Agile&nbsp;Toolkit&nbsp;a&nbsp;big&nbsp;deal?'</span><span style="color: #007700">,</span><span style="color: #DD0000">'<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do&nbsp;you&nbsp;think&nbsp;that&nbsp;approach&nbsp;used&nbsp;in&nbsp;Agile&nbsp;Toolkit&nbsp;could&nbsp;become&nbsp;big?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'</span><span style="color: #007700">));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,</span><span style="color: #DD0000">'proj'</span><span style="color: #007700">,</span><span style="color: #DD0000">'try&nbsp;Agile&nbsp;Toolkit&nbsp;in&nbsp;your&nbsp;next&nbsp;project?'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'change'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'Learning&nbsp;Agile&nbsp;Toolkit&nbsp;is&nbsp;exciting!'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'It&nbsp;takes&nbsp;1-3&nbsp;weeks&nbsp;to&nbsp;master&nbsp;Agile&nbsp;Toolkit.&nbsp;'</span><span style="color: #007700">.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Would&nbsp;you&nbsp;like&nbsp;to&nbsp;give&nbsp;Agile&nbsp;Toolkit&nbsp;a&nbsp;try&nbsp;in&nbsp;your&nbsp;next&nbsp;project?'</span><span style="color: #007700">));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'radio'</span><span style="color: #007700">,</span><span style="color: #DD0000">'decide'</span><span style="color: #007700">,</span><span style="color: #DD0000">'Decision&nbsp;maker'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">setValueList</span><span style="color: #007700">(array(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'me'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'myself'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'boss'</span><span style="color: #007700">=&gt;</span><span style="color: #DD0000">'someone&nbsp;else'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">(</span><span style="color: #DD0000">'change'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">showHint</span><span style="color: #007700">(</span><span style="color: #DD0000">'Who&nbsp;is&nbsp;the&nbsp;decision&nbsp;maker?'</span><span style="color: #007700">,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'Are&nbsp;you&nbsp;free&nbsp;to&nbsp;decide&nbsp;which&nbsp;framework&nbsp;to&nbsp;use&nbsp;or&nbsp;will&nbsp;'</span><span style="color: #007700">.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'you&nbsp;need&nbsp;to&nbsp;convince&nbsp;someone&nbsp;else&nbsp;to&nbsp;try&nbsp;Agile&nbsp;Toolkit?'</span><span style="color: #007700">));<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addField</span><span style="color: #007700">(</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,</span><span style="color: #DD0000">'subscribe'</span><span style="color: #007700">,</span><span style="color: #DD0000">'subscribe&nbsp;to&nbsp;Agile&nbsp;Toolkit&nbsp;newsletter'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #0000BB">true</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">setSource</span><span style="color: #007700">(</span><span style="color: #DD0000">'intimate'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addSubmit</span><span style="color: #007700">(</span><span style="color: #DD0000">'Proceed'</span><span style="color: #007700">);<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">isSubmitted</span><span style="color: #007700">()){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'subscribe'</span><span style="color: #007700">)&nbsp;&amp;&amp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'email'</span><span style="color: #007700">)){<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;yay&nbsp;subscribe<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$c</span><span style="color: #007700">=</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #DD0000">'Controller_crm_CampaignMonitor'</span><span style="color: #007700">);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$result</span><span style="color: #007700">=</span><span style="color: #0000BB">$c</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addRequest</span><span style="color: #007700">(</span><span style="color: #DD0000">'AddSubscriber'</span><span style="color: #007700">)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'ListID'</span><span style="color: #007700">,</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getConfig</span><span style="color: #007700">(</span><span style="color: #DD0000">'crm/cm/list/atk'</span><span style="color: #007700">))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Email'</span><span style="color: #007700">,</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'email'</span><span style="color: #007700">))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">set</span><span style="color: #007700">(</span><span style="color: #DD0000">'Name'</span><span style="color: #007700">,</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">get</span><span style="color: #007700">(</span><span style="color: #DD0000">'name'</span><span style="color: #007700">))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&gt;</span><span style="color: #0000BB">process</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">result</span><span style="color: #007700">;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">update</span><span style="color: #007700">();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">js</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">univ</span><span style="color: #007700">()-&gt;</span><span style="color: #0000BB">location</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">api</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">getDestinationURL</span><span style="color: #007700">(</span><span style="color: #DD0000">'../tweet'</span><span style="color: #007700">))-&gt;</span><span style="color: #0000BB">execute</span><span style="color: #007700">();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span><span style="color: #0000BB"></span>
+		</span>
+		</code>
+		</div>
+		<i class="comment">Establishing additional database connection</i>
+	</div>
+</div>
+<div id="" class="atk_doc method">
+<h2>method <span>init<em>(</em><em>)</em></span></h2>
+<p></p>
+
+<!-- notes here -->
+<!-- <div style="border: 3px solid green"> --><!-- </div> -->
+
+<!-- <div style="border: 3px solid red"> --><!-- </div> -->
+
+
+</div>
+<div id="" class="atk_doc method">
+<h2>method <span>connect<em>(</em><em>)</em></span></h2>
+<p></p>
+
+<!-- notes here -->
+<!-- <div style="border: 3px solid green"> --><!-- </div> -->
+
+<!-- <div style="border: 3px solid red"> --><!-- </div> -->
+
+Establishes connection with database. Returns database connection<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>dsn</span></h4>
+<p>
+<!-- Note is short semi-important information. It does not have header
+  and should be easily visible by all users -->
+</p><div id="" class="atk_doc note">
+<h4>Alternative DSN format</h4>
+<p>
+You can specify DSN as associative array instead of string. Example: 
+
+$dsn=array(
+	'type'=&gt;'mysql',
+	'user'=&gt;'john',
+	'pass'=&gt;'secret',
+	'host'=&gt;'127.0.0.1',
+	'db'=&gt;'mydb'
+);
+
+Different database drivers may have their specific DSN format or additional options in assocative array.
+</p>
+</div>
+
+
+DSN (Database Source Name) is a specifically formatted string identifying location and access
+				information for the database. Example: mysql://john:secret@127.0.0.1/mydb
+<p></p>
+</div>
+<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>default_assoc</span></h4>
+<p>
+
+
+OBSOLETE. Will be removed in v4.1
+</p>
+</div>
+
+</div>
+<div id="" class="atk_doc method">
+<h2>method <span>query<em>(</em><em>)</em></span></h2>
+<p></p>
+
+<!-- notes here -->
+<!-- <div style="border: 3px solid green"> --><!-- Note is short semi-important information. It does not have header
+  and should be easily visible by all users -->
+<div id="" class="atk_doc note">
+<h4>Multiple Cursors</h4>
+<p>
+
+				Execution of a query which returns data is typically implemented through use of cursor handles. Using this
+				handle data can be fetched even if additional queries are executed along the way. 
+
+				In reality fetching data from two queries at the same time is a very rare situation and to simplify access,
+				toolkit saves most recent cursor handle into $db-&gt;cursor.
+
+				However in a perfectly normal scenario it may happend that you need to execute a query while data is still
+				being fetched. For that reason, all instant queries such as getOne or getAll as well as those performed
+				through DSQL will not override current cursor.
+				
+</p>
+</div>
+<!-- </div> -->
+
+<!-- <div style="border: 3px solid red"> --><!-- </div> -->
+
+Executes query. If SELECT is executed, it will make data available, which you can fetch by subsequently
+				calling getRow(). 
+				<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>q</span></h4>
+<p>
+
+
+Query to execute. Can be either String or Dynamic SQL
+</p>
+</div>
+<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>param1</span></h4>
+<p>
+
+
+Array with values for parametric queries
+</p>
+</div>
+
+</div>
+<div id="" class="atk_doc method">
+<h2>method <span>fetchRow<em>(</em><em>)</em></span></h2>
+<p></p>
+
+<!-- notes here -->
+<!-- <div style="border: 3px solid green"> --><!-- </div> -->
+
+<!-- <div style="border: 3px solid red"> --><!-- </div> -->
+
+Same as fetchArray
+</div>
+<div id="" class="atk_doc method">
+<h2>method <span>fetchRow<em>(</em><em>)</em></span></h2>
+<p></p>
+
+<!-- notes here -->
+<!-- <div style="border: 3px solid green"> --><!-- </div> -->
+
+<!-- <div style="border: 3px solid red"> --><!-- </div> -->
+
+Receive next row of data for previously executed query()<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>handle</span></h4>
+<p>
+
+
+OBSOLETE. Will be removed in v4.1
+</p>
+</div>
+<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>fetchmode</span></h4>
+<p>
+
+
+OBSOLETE. Will be removed in v4.1
+</p>
+</div>
+<!-- Metod argument  -->
+<div id="" class="atk_doc argument">
+<h4>Argument <span>param1</span></h4>
+<p>
+
+
+Array with values for parametric queries
+</p>
+</div>
+
+</div>
+
+
+</div>
+
+<div class="box blue-noised p-10px">
+	<div class="white">
+		<table>
+			<thead>
+				<tr>
+					<th>Test123</th>
+					<th>Test123</th>
+					<th>Test123</th>
+					<th>Test123</th>
+					<th>Test123</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td><a href="#" class="dynamic">Method Name</a></td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+			</tr>
+			<tr>
+				<td><a href="#" class="dynamic">Method Name</a></td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+			</tr>
+			<tr>
+				<td><a href="#" class="dynamic">Method Name</a></td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+				<td>Test</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

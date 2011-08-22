@@ -1,0 +1,42 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Cascading Stylesheets in Agile Toolkit</h1>
+        <p>Cascading Stylesheets are quite powerful tool to change the look of your application. If you know CSS well you can implement many tweaks with no or very minor changes to HTML template files. This section will explain CSS structure of Agile Toolkit.</p>
+
+        <h2>Default CSS file locations</h2>
+        <p>You should probably know by now, that Agile Toolkit has a concept of "skins". By switching between different skins you can change set of template files. By default skin is set to "default" (although it used to be "jui" by default in 4.0 version). Skin can be changed inside index.php file as 2nd argument to "new Frontend(..)" constructor. By default this argument is omitted. If you wish to use another bundled skin called "elephant" you should have this in your index.php file:</p>
+<?Code?>
+$api=new Frontend('sample_project','elephant');   // Use something unique instead of sample_project
+<?/?>
+
+        <p>By default Agile Toolkit looks for templates inside the following directories:
+        <ul>
+        <li>templates/default/ (or templates/elephant/)</li>
+        <li>atk4/templates/default/ (or atk4/templates/elephant)</li>
+        <li>atk4/templates/shared/</li>
+        </ul>
+        <b>Note: Never change files inside atk4 folder. Copy only the files you want to change into templates/ and then change there.</b>
+        </p>
+        <h3>CSS files included by default</h3>
+        <p>File which contains CSS includes is called "shared.html". It is also referred to as Application Template, because it applies to all the pages in your application. Initially atk4/templates/shared/shared.html is used.</p>
+        <p>Application template is using tag &lt;?tepmlate?&gt; to look up files and substitute with proper location. This technique allows your application to find files in the right directory and insert them right into outputted HTML.</p>
+        <ul>
+        <li>css/jquery-ui.css — This file is compatible with jQuery UI Themeroller. You can use it to generate a new file for you (along with icons) and replace it completely with your own style.</li>
+        <li>css/atk-main.css — Here you can find <a href="http://google.com/search?q=css+reset" target="_blank">CSS "reset"</a> (removes browser-specific styles), <a href="http://960.gs/" target="_blank">Grid System 12</a> (allowing you to split your page horizontally into 12 columns), as well as many other elements typically used by Agile Toolkit layout. It's generally a good idea to keep this one unchanged and included, you can override some of the CSS properties later on</li>
+        <li>css/atk-visuals.css — Another portion of Agile Toolkit related stylesheets dealing with how things are presented in general</li>
+        <li>css/atk-icons.css — Agile Toolkit includes <a href="http://www.agiletech.ie/blog/128x16x16" target="_blank">128 great icons</a>. Those are also used by several elements. To improve loading speed you can copy this file locally and clean up icon colors you don't need.</li>
+        <li>css/atk-gs10.css — Contains implementation of Grid System 10. This requires class "gs-10" on your document body to function and is highly recommended. This also defines form layouts</li>
+        <li>css/atk-gs10-fluid.css — Contains implementation of Fluid Grid System 10. It's very similar to GS-10 but will resize your layout relatively to screen size. This layout implementation is entirely built on CSS and therefore displays very high performance to layouts implemented by JavaScript frameworks.
+        <li>css/atk-custom.css — This file is where your own customizations will go. Copy file into your templates/default and edit it there.</li>
+        </ul>
+        <p>If you wish you can add additional stylesheet files here, just remember to properly enclose paths into "template" tag.</p>
+
+
+
+
+    </div>
+</div>
+
+<?$Next?>

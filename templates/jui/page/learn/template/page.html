@@ -1,0 +1,58 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Adding pages with custom templates</h1>
+        <p>When you start polishing your pages, you might have a need to either add some static pages with just a text or change the layout of your dynamic pages. Both tasks can be easily done by using page templates</p>
+
+        <p>Because you do not add "Page" object yourself, you can't specify 4th argument. You will need to know how Application is loading those templates. Behaviour may vary depending on the API used.</p>
+
+        <h2>Page Template handling in ApiFrontend</h2>
+        <p>ApiFrontend is most popular API and is used for public applications as well as administrative back-ends. ApiFrontend determines page by the URL used. For example if the URL which was used is http://yoursite.com/disclaimer/moreinfo.html the page will be "disclaimer/moreinfo".</p>
+
+        <h3>Static Pages</h3>
+        <p>Static pages does not have their own class defined. They will be initialized using prototype of default "Page" class. You can globally change this by setting $api->page_class property.</p>
+
+        <p>If page/disclaimer/moreinfo.php was not found, then ApiFrontend will attempt to load template from templates/default/page/disclaimer/moreinfo.html. Actually it will look into atk4 folder as well as "shared" skin there.</p>
+
+        <p>Create such a file and put all the text you want in there. Do not forget to use a place-holder for ID in the same way how we did it for views in previous chapter.</p>
+
+<pre>        
+
+&lt;div id="&lt;?$_name?&gt;"&gt;
+  &lt;p&gt;
+    disclaimer text here........
+  &lt;/p&gt;
+&lt;/div&gt;
+
+</pre>
+        <p>Always use &lt;div&gt; with id of _name on pages. You may at some point to dynamically load pages and if elements in different pages do not match, there might be some confusion.</p>
+
+        <p>You can redefine $api->loadStaticPage if you wish that static pages are loaded differently.
+
+        <h3>Catch-all pages and 404</h3>
+        <p>If page class can't be loaded and template is not found method $api->pageNotFound() will be called as a last resort. By default this method throws exception, but you can use it to either load and display or redirect user to a 404 page. Below are examples for both.
+<?Code?>
+function pageNotFound($e){
+    $this->api->redirect('notfound',array('orig'=>$this->page));
+}
+<?/?>
+<?Code?>
+function pageNotFound($e){
+    $this->page_object=$this->add('page_NotFound');
+}
+<?/?>
+
+        <h3>Pages with Template</h3>
+        <p>Page class is derived from view, therefore it has many thing in common. One thing is that it also uses defaultTemplate() method. You can redefine this method to explicitly define which template to use for the page.</p>
+<?Code?>
+function defaultTemplate(){
+    return array('page/disclaimer/moreinfo');
+}
+<?/?>
+        <p>This will allow you to combine dynamic content with your own template. Inside this template you most probably would need to have &lt;?Content?&lt; region, where objects are outputted by default. You can however use other regions as long as you remember to specify 3rd argument to any $page->add() calls on your page.</p>
+
+    </div>
+</div>
+
+<?$Next?>

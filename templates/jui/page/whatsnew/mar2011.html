@@ -1,0 +1,230 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - Mart 2011</h2>
+
+
+        <h4><span class="date">March 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/13d4e8daa7b26bfddb747fe05426154f3c7a1afe">url_prefix improvement</a></h4>
+        <p>Agile Toolkit allows you to define url_prefix and url_postfix inside config. By default postfix is '.html' but you
+        can change it into anything else. Now url_prefix can also be defined using question mark. Set it to '?page='
+        and you no longer need .htaccess file. This is now a default behavior for 4.0.2 branch too.
+        </p>
+
+        <h4><span class="date">March 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/b884e0d0a79552a486e054a81adadc591c6e2587">default-config.php support</a></h4>
+        <p>Historically Agile Toolkit had no file with default config values. A sample use of
+        getConfig('db/dsn','root@localhost/db'); was used where 2nd argument is providing a default value. In addition to
+        that you can specify file with default config values inside config-default.php.
+        </p>
+        <p>Please, do not put your SQL password in there, it's not secure.</p>
+
+        <h4><span class="date">March 25<em>th</em></span><a href="https://github.com/atk4/atk4/commit/5d918a7e7d20ca1ffa3dd15e9067a0c1309feca2">&lt;?page?&gt; and &lt;?template?&gt;</a></h4>
+        <p>A few updates now adds support for global tags such as &lt;?page?&gt; and &lt;?template?&gt; to ALL Views.
+        Previously only "template" tag was supported inside shared.html template. Now any template you can (and SHOULD) use 
+        those tags. To remind — those tags substitute value inside them with the proper URL pointing to the resource. In case
+        with page you can use values such as "index", "account/password", "./step2", or ".." which will define page
+        relatively. Template tag will search for the file through PathFinder and substitute with the correct one.
+        </p>
+        <p>By using those tags your software links will always work even if you deploy your software NOT in the webroot.</p>
+
+        <h4><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/30f63415c6c2962c9f09e3ebb6e6ebc6974136e4">univ().setTimeout() added</a></h4>
+        <p>This function now allows you to access setTimeout function from inside PHP. Below code will submit a $form 5
+        seconds after $field contents are changed:        </p>
+<?Code?>
+$field->js('change')->univ()->setTimeout(
+    $form->js()->_enclose()->submit()
+5000);
+<?/?>
+
+        <h4><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e6b430a3cdd33f2db49dab5621569b7783fb8628">form_hybrid.html added</a></h4>
+        <p>Agile Toolkit already got several form styles: basic, horizontal, vertical. However now you can combine them
+        inside the same form:
+        </p>        
+<?Code?>
+$f->add('Form',null,null,array('form_hybrid'));
+$f->setClass('basic'); // style for first section
+// add fields here
+
+$f->addSeparator('vertical');//next section style
+// add fields here
+
+
+$f->addSeparator('basic'); //next section style
+// add fields here
+
+<?/?>
+
+
+        <h4><span class="date">March 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c0a37811d751487d586065bd1e7a24840b2fd13a">page/path/to.html</a></h4>
+        <p>If page is not defined inside a .php class, then Agile Toolkit's ApiFrontend attempts to find a static template
+        for this page. If page you are accessing is called my/sub/page.html then normally it would have loaded template from
+        template/jui/page/my_sub_page.html. Now if this template is not found, Agile Toolkit will attempt to load
+        template/jui/page/my/sub/page.html. This gives you a choice to select your own convention regarding storage of
+        multi-level page templates.
+        </p>
+
+        <h4><span class="date">March 23<em>rd</em></span><a href="https://github.com/atk4/atk4/commit/6cf928f4cd4844ca99eadbfcb5a91d95193ac1fc">New Form Styles</a></h4>
+        <p>Developers are not form designers. That's why Agile Toolkit looks to bundle some nice styles you can choose from.
+        <a href="<?page?>playground<?/?>">take a look at form styles</a>. To use them use the following code:</p>
+<?Code?>
+$f=>this->add('Form');
+$f->setFormClass('basic');
+//$f->setFormClass('inline');
+//$f->setFormClass('vertical');
+
+//$f->setFormClass('basic atk-form-basic-2col');
+//$f->setFormClass('vertical atk-form-vertical-2col');
+<?/Code?>
+<p>
+        You can check out those forms in your installation by pointing browser at /playground.html
+        </p>
+
+        <h4><span class="date">March 23<em>rd</em></span><a href="https://github.com/atk4/atk4/commit/6788f40c1fd8fb6d38df79c709c3f7990fffe11c">Expander's new ID field</a></h4>
+        <p>If you have ever used Grid Column type 'expander', you should know that they automatically locate "id" field in the Grid and will
+        pass them as a GET argument to your sub-page. Creation of expander within expander were producing clashes between
+        ID fields. Now grids will also determine and pass a get argument based on the table name used inside grid. For
+        example if you are listing users in your grid from 'user' table, then expanders will pass user_id=123 along.
+        </p>
+        <p>The way how this is being determined is quite sophisticated and works with all variations of data sources for
+        Grid.
+                </p>
+<?Code?>
+class page_test extends Pafe {
+function initMainPage(){
+    $g=this->add('MVCGrid');
+    $g->setModel('User');
+    $g->addColumn('expander','details');
+}
+
+function page_details(){
+    $f=$this->add('MVCForm');
+    $f->setModel('User')
+        ->loadData($_GET['user_id']);
+    if($f->isSubmitted()){
+        $f->update();
+        $f->js()->univ()
+            ->successMessage('Saved')
+            ->execute();
+    }
+}
+
+} // class
+<?/Code?>
+
+
+
+        <h4><span class="date">March 22<em>nd</em></span><a href="https://github.com/atk4/atk4/commit/55ecffdd2ba4856e5666e3597da8dc914288867e">Agile Toolkit uses 960gs</a></h4>
+        <p><a href="http://960.gs">960 Grid System</a> is designed for improved layouts inside your web applications. The basic idea is to divide 960
+        pixel width into 12 columns and provide classes with appropriate width for professional layout.
+        </p>
+        <p>Probably the biggest impact is on the forms, which now have proper width. The width depends on form class used,
+        but you can select best appropriate form based on your layout and space available.
+        </p><p>
+        By the nature 960 layout is a fixed-width layout, however for compatibility we have made a it full-screen by default.
+        If you would like to use a proper 960 fixed-width gs, then remove "atk-fullscreen" class from your &lt;body&gt; tag
+        in shared.html.
+        </p>
+
+        <h4><span class="date">March 21<em>st</em></span><a href="https://github.com/atk4/atk4/commit/44e76a80094d3d6608e271963006492ae5d262ce">Forms without submit handle</a></h4>
+        <p>Often developers create form and forget to handle form's submit event. Because form expect to receive JavaScript
+        when they are submitted, they wil attempt to evaluate wrongly returned HTML code and it usually comes up as AJAX
+        parse error.</p>
+        <p>This fix will add submit handler for all forms if you forgot to specify one. They will do nothing apart from
+        putting error into standard javascript console about missing submit handler.
+        </p>
+
+        <h4><span class="date">March 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/356b0cb316d4e9742fba02118623b984627a7f9b">Extra class for jQuery UI dialog</a>
+        </h4>
+        <p>Normally to build a jQuery UI dialog you need a dedicated &lt;div&gt; element. univ().dialogURL() and similar
+        functions are wrapper for jQuery UI dialogs and create that div automatically. However you might be willing to pass
+        some class to that new dialog window. New Option for dialogURL() allows you to do that.        </p>
+<?Code?>
+$b->js('click')->univ()->dialogURL('Frame Title',
+        $this->api->getDestinationURL('page2'),
+        array('customClass'=>'my_custom_frame_class')
+        );
+<?/?>
+
+
+        <h4><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/0686443822df61353d4d2e2b4f643895c210d8db">$dq-&gt;where('val in',$array)</a></h4>
+        <p>where() method of Dynamic Queries is used to properly escape 2nd argument. When you are performing basic
+        comparisons it's quite straightforward where('gender','M'). However "in" operator allows to specify a number of
+        values. Previously it was working only in this format:        </p>
+<?Code?>
+$dq->where('id in','1,2,3');
+<?/?>
+In this case each value separated by coma would be quoted separately. However this wouldn't work if the value you are trying to match would contain
+comma. The new use format fixes that shortcoming:
+<?Code?>
+$dq->where('id in',array(1,2,3));
+<?/?>
+
+
+        <h4><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/119248b3f5f45ae8ad6473890d22f4c1e16c266f">Field's-&gt;setAttr()</a></h4>
+        <p>Historically you could add properties to Form Fields using setProperty() method. Now you can use setAttr() which
+        matches terminology of jQuery.   </p>
+		<?Code?>
+		$f->addField('line','cvv','CVV')
+		    ->setAttr('size',3)
+		    ->setAttr('max-lenght',3);
+		<?/?>
+     
+
+        <h4><span class="date">March 14<em>th</em></span><a href="https://github.com/atk4/atk4/commit/976f4747be595d177c86f60f1cff620c28fef069">univ()->bindFillInFields()</a></h4>
+        <p>New function of univ() library allows to automatically fill-in values into other form fields when dropdown has
+        been changed. This relies on included "dictionary" within your dropdown with the list of pre-defined correspondences
+        between dropdown field value and values to be filled in in other fields. <a href="<?page?>example/bindfillinfields<?/?>">Example
+        of bindFillInFields</a>.</p>
+
+        <h4><span class="date">March 13<em>th</em></span><a href="https://github.com/atk4/atk4/commit/9ef5812a68fa882e6d85629e6e9b8ae5b8473a50">&lt;?field_type?&gt; in form tpl.</a></h4>
+        <p>Form's template (form.html) contains a section which defines how each field should look. This region is called
+        &lt;?form_line?&gt;. Perviously same form_line was used for all filed types. Now you can use field_type tag which will
+        be initialized to the type of the field. This allows hard-core designers to properly define field width based on
+        field type. For example textarea can now be bigger.</p>
+
+        <h4>atk4_loader undergone many changes</h4>
+        <p>Reloading of content is always a very delicate process. This method is used when you do $g-&lt;js()-&gt;reload().
+        The problem with reloading is that it should properly replace contents with new data without loosing any ID's then
+        re-apply javascript. When you are reloading contents of an element, then newly loaded data will typically contain new
+        initialization of that same element, so it's important to properly destroy previous element. If you find a problem
+        with reloading, please submit a bug.</p>
+
+        <h4><span class="date">March 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1baa2ebbf40c77a80f2644b33768e21f3ac25ff2">Specifying URL for URL Class</a></h4>
+        <p>$api-&lt;getDestionationURL($page) can now be used with absolute URLs. It will still manage to properly append
+        arguments to the URL (including sticky arguments).</p>
+
+        <h4><span class="date">March 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/134a9918cfbdb5b433d3a29af4b6d4f2f88464b9">NL2BR for Listers</a></h4>
+        <p>If your database contains HTML code and you will try to output it through Lister, then by default your HTML code
+        will be escaped. To avoid this, you can disable this by setting $lister-&lt;safe_html_output=false;</p>
+        <p>You can now also set $lister-&gt;nl2br_output=true; which will convert newlines into &lt;br/&gt; in your output.
+        This is handy if you are outputing user-defined text with newlines.</p>
+
+        <h4><span class="date">March 1<em>st</em></span><a href="https://github.com/atk4/atk4/commit/e1010293adc302dfbc249b678738ff1e4af909f8">Version Verification Function</a></h4>
+        <p>If you are writing an Add-on which requires Agile Toolkit of a certain version, you now can use the method
+        versionRequirement().</p>
+		<?Code?>
+		// my addon code
+		$this->api->versionRequirement('4.0.2');
+		<?/?>
+		        If version is older, it will terminate execution. Alternatively you can specify 2nd argument "true" and function will
+		        return boolean value instead.
+		
+		<?Code?>
+		// my addon code
+		if($this->api->versionRequirement('4.0.2',true))
+		    $this->api->useCoolFeature();
+		}
+		<?/?>
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>../feb2011<?/?>">Older Entries</a>
+        <a href="<?page?>../apr2011<?/?>">Newer Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>

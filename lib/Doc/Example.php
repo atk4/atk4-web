@@ -17,6 +17,7 @@ class Doc_Example extends Doc_View {
 	}
 
 	function executeDemo($p,$code){
+        $page=$p;
 		eval($code);
 	}
 

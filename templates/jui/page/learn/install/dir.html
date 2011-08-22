@@ -1,0 +1,112 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Directory Structure</h1>
+        <p>Let's go over your example installation and see which directories are there. The default directory layout
+        can be changed as per your requirement. For example, if you want to share certain libraries between multiple
+        sites or interfaces, this can be easily done through a clas of Agile Toolkit called PathFinder.</p>
+
+        <h3>Local files, atk4 and atk4-addons</h3>
+        <p>If you have looked inside 'atk4' directory you would have noticed that it has similar directories as your
+        example application. When Agile Toolkit is looking for certain file, it looks first in your "local" directory.
+        If file is not found there, then it looks inside atk4 directory. Finally it looks inside atk4-addons directories.
+
+        <h3>Copy-On-Modify principle</h3>
+        <p>Agile Toolkit virtually requires only one or two files at the minimum. As you enhance or change default 
+        behaviour of Agile Toolkit, you might want to change files. You must never change files inside 'atk4' folder.
+        Instead extend them if they are PHP classes. If it's impossible to achieve your result through extending, you
+        can "push" your own verson of the class, image, stylesheet or HTML template by placing it outside "atk4" folder
+        with identical name. For example by creating file templtes/jui/images/logo.png you can replace default logo
+        with your own. However, never store identical copy without modification. This may backfire if Agile Toolkit will
+        introduce changes to those files.</p>
+
+
+
+        <h3>Resource Types</h3>
+        <p>Agile Toolkit relies on the concept of "resource type" when it attempts to use a file. The most used resource
+        types are: <ul>
+        <li>php — class definition which are not directly available, but is loaded automatically, when class is used;</li>
+        <li>page — page classes, which are can be accessible by specifying class name in the URL;</li>
+        <li>js — javascript includes;</li>
+        <li>template — files related to presentation, HTML, CSS and Images;</li>
+        <li>mail — mail templates.</li>
+        </ul>
+        The resource types are looked up in certain location by default, however there are ways how new locations can be
+        added for a purpose such as storing shared content or introducing new logical separation</p>
+
+
+
+
+        <h3>Essential files and folders</h3>
+        <p>Nearly all the files and directories are optional. You shouldn't create them unless they are needed.</p>
+<?Higlight?><pre>
+.htaccess           — contains mod_rewrite instructions
+atk4                — unmodified copy of Agile Toolkit.
+atk4-addons         — unmodified copy of Agile Toolkit Addons.
+config-default.php  — default configuration settings.
+config-distrib.php  — template for config.php. This file typically is
+                        copied into config.php when your software is installed.
+config.php          — install-specific configuration options, such as database connection
+                        settings, etc. DO NOT add this file into Version Control System.
+doc                 — your software documentation, database initialzation and update scripts
+index.php           — file containing Agile Toolkit bootstrap code.
+lib                 — your PHP code, php resource type.
+page                — contains classes used for routing, "page" resource type.  test/foo.html
+                        would use class from page/test/foo.php named page_test_foo 
+templates/          — technically, the only location apart from index.php to be accessible
+                        directly from the web.
+templates/default   — overrides certain files of default template. Only place changed files here.
+templates/js        — contains your own javascript plugins.
+templates/mail      — mail templates
+upload              — webserver-writable directory for filestore add-on
+</pre><?/?>
+        <h3>Essential files in atk4</h3>
+        <p>You will notice, that atk4 folder have a similar structure:</p>
+<?Higlight?><pre>
+lib                 — Agile Toolkit PHP code, php resource type.
+loader.php          — File, which you must include from index.php.
+templates/          — technically, the only location apart from index.php to be accessible
+                        directly from the web.
+templates/default   — default HTML/CSS theme
+templates/elephant  - alternative HTML/CSS theme
+templates/shared    — shared components for all HTML/CSS themes
+templates/js        — JavaScript libraries including jQuery and jQuery UI
+templates/xslt      — some XSLT templates
+tools               — supplimentary command-line utilities
+</pre><?/?>
+
+        <h3>Essential files in atk4-addons</h3>
+        <p>Addon structure contains some additional classes and other resources. Typically
+        when you are using addon documentation, it will include instructions on how to enable
+        that addon. By default no resources are looked up in atk4-addons. You will need to add
+        this inside API init method:</p>
+<?Code?>
+$this->addLocation('atk4-addons',array(
+    'template'=>'misc/templates',
+    'php'=>array('mvc',
+        'billing/lib',
+        'misc/lib',
+        'crm/lib',
+        )
+    ))
+    ->setParent($this->pathfinder->base_location);
+<?/Code?>
+<?Higlight?><pre>
+misc/templates      — some additional HTML/CSS templates
+misc/lib            — small classes and views, which can be considered helpers. Feel free to
+                        either use them as they are or copy them into your local lib/ directory
+                        if you need to introduce modifications. If you contribute some useful
+                        classes, they will be added here
+misc/docs           — some universal resources, such as create script for 'country' table with
+                        up-to-date list of countries, filestore creation scripts. If you need
+                        to use them in your application, create symlink from inside your
+                        docs directory.
+mvc                 — Model-View-Controller implementation. To be moved into atk4/ soon
+billing             — implementation of some billing processors
+</pre><?/?>
+
+    </div>
+</div>
+
+<?$Next?>

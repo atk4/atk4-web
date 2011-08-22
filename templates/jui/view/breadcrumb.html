@@ -1,0 +1,115 @@
+<script src="<?template?>/css/sticky-bar.js<?/?>"></script>
+<script>
+
+	$(function(){
+	
+		$('.breadcrumb-item').mouseover(function(){
+		
+			$(this).find('.dropdown').show();
+			$(this).find('em').addClass("blue-noised");
+		
+		}).mouseout(function(){
+		
+			$(this).find('.dropdown').hide();
+			$(this).find('em').removeClass("blue-noised");
+		
+		});
+		
+				
+<!-- 		$('.example-limited>p>code').prepend('<div class="example-expander">View the rest</div>'). -->
+		
+		$('.example-expander>div>span').click(function(){
+		
+			$(this).parents('.example-wrap').css("height","auto").addClass("example-expanded");
+			$(this).html('<i class="ui-icon ui-icon-minus"></i>Hide Code')
+		});
+		
+		
+		
+	});
+
+</script>
+<div class="sticky-bar-dock"></div>
+<div class="sticky-bar-absolute sticky-bar">
+	<div class="gs-wrap breadcrumb clearafter">
+
+        <?first?>
+		<div class="breadcrumb-item breadcrumb-start">
+			<!-- <a href="<?$page?>">--> <?title?>Documentation<?/?> <!-- </a> -->
+        </div>
+        <?/?>
+
+        <?crumbs?>
+        <?crumb?>
+		<div class="breadcrumb-item">
+			<a href="<?$page?>" class="dynamic"><?title?>Basic API Classes<?/?></a><em><i class="ui-icon ui-icon-triangle-1-s"></i></em>
+			<div class="dropdown">
+				<i class="dropdown-triangle"></i>
+				<div class="blue-noised">
+					<ul class="white">
+							  
+                    <?rows?>
+                        <?row?>
+						<li class="<?current?>current<?/?>"><a href="<?$page?>"><?title?>DBLite<?/?></a></li>
+                        <?/?>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li class="current"><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+                    <?/?>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <?/?>
+
+		<div class="breadcrumb-item">
+			<a href="#" class="dynamic">Pathfinder</a><em><i class="ui-icon ui-icon-triangle-1-s"></i></em>
+			<div class="dropdown">
+				<i class="dropdown-triangle"></i>
+				<div class="blue-noised">
+					<ul class="white">
+							  
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li class="current"><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_2">DBLite_psql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_3">DBLite_mysql</a></li>
+						
+						<li class=""><a href="/?page=doc/dblite/doc_class_4">DBLite_mysql_cluster</a></li>
+						<li><a href="/?page=doc/dblite/doc_class_dblite">DBLite</a></li>
+						<li class=""><a href="/?page=doc/dblite/doc_class">DBLite_dsql</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <?/crumbs?>
+	</div>
+</div>
+

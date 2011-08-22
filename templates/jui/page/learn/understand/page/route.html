@@ -1,0 +1,94 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+        <h1>How Agile Toolkit translates URL into Page</h1>
+        <p>In Agile Toolkit, pages are handled by a special objects instantiated from Page class. Any page has a name to
+        which it will respond. Usually one page object is automatically initialized by the API along with all the objects
+        on that page.</p>
+
+        <p>You might have noticed, how we were adding objects in the previous chapter into $page. This variable refers to a
+        current page object. In reality, you most probably would be putting the code directly into page/index.php which
+        defines class page_index and any objects you want to see on this page should be added inside init() method.</p>
+
+        <p>By it's nature Page object is also derived from AbstractView. All you need to do is define page classes. Do not
+        manually add page objects,
+        API will do it for you. But how does API knows which page class to use?</p>
+
+        <h3>Page Routing</h3>
+        <p>By default, Agile Toolkit is using front-controller approach. All the requests are being captured and executed
+        in the same way, through mod_rewrite and through index.php which creates and executes API. API relies on a specific
+        component called PageManager. The job of PageManager is to determine name of the Page Class from the used URL.</p>
+
+        <p>The actual logic is always quite intuitive. Look at the following page for examples:</p>
+<div class="box blue-noised p-10px">
+	<div class="white">
+		<table>
+			<thead>
+				<tr>
+					<th>Browser URL</th>
+					<th>Page</th>
+					<th width="50%">Notes</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>http://example.com/preferences.html</td>
+				<td>preferences</td>
+				<td>Agile Toolkit completely ignores the extension and uses remaining location to determine page name.</td>
+			</tr>
+			<tr>
+				<td>http://example.com/index.php?page=user/add</td>
+				<td>user/add</td>
+				<td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore URL in browser will
+                appear to have index.php in front of it. Passing page=XX will always override page name, which is very useful
+                in in building beautiful URLs</td>
+			</tr>
+			<tr>
+				<td>http://example.com/profile/change-password.do</td>
+				<td>profile/changepassword</td>
+				<td>Dashes cannot be used in a function or class, they are eliminated from the page name automatically. Any
+                extension can be used as long as .htaccess directs them into index.php</td>
+			</tr>
+			<tr>
+				<td>http://example.com/?abc=123</td>
+				<td>index</td>
+				<td>If URL does not contain page, then "index" page name is used.</td>
+			</tr>
+			<tr>
+				<td>http://example.com/admin/logout</td>
+				<td>logout</td>
+				<td>Most often site administration is implemented as a separate site with it's other entry point. Pages are
+                relative to installation point.</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+        <h3>URL Components</h3>
+
+        <p>PageManager splits URL from your location bar into 3 parts:
+
+        <ol><li>base_url</li>
+        <li>base_path</li>
+        <li>page</li></ol>
+       
+        $api->pm->base_url points at the web-server of your
+        web application, such as http://yoursite.com:81. Next part is $api->pm->base_path is pointing to the root page of
+        your web software. For example, if you un-pack software under webroot/test/app then
+        base_path="/test/app/". base_path always starts and ends with slash.</p>
+
+        <p>Final part is called "page" and it's relative location within your web application. The top-most page is called
+        "index" page. The page you are looking at right now is called "learn/understand/page" and is calculated from the url:
+        <?page?>.<?/?>.</p>
+
+        <p>Page follows standard pattern, and executes init() method after it's initialized. Page may have a custom template,
+        but if it does not, default page layout is used to display empty page.</p>
+
+    </div>
+</div>
+
+<?$Next?>

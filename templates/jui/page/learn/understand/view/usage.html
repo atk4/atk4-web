@@ -1,0 +1,114 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>How to use Views?</h1>
+
+        <p>As you have already seen, adding views is quite simple. Once you perform adding operation, you can further interact with a view to achieve many different things.</p>
+
+        <p>Below are some of the simple views bundled with Agile Toolkit</p>
+
+        <h3>LoremIpsum and reloading objects on the page</h3>
+        <p>Tired of copy-pasting lorem ipsum on your page? Use view LoremIpsum which automatically generates some text. You can define how much of text do you want.</p>
+<?Example?>
+
+$form=$page->add('Form');
+$form
+    ->addField('Slider','words')
+    ->setRange(10,150)
+    ->set(30)
+    ->js('change',
+        $form->js()->submit());
+
+$len=$_GET['words'];
+if(!$len)$len=30;
+if($len>150)$len=150;
+if($len<10)$len=10;
+
+$l=$page->add('LoremIpsum');
+$l->setLength(1,$len);
+
+if($form->isSubmitted()){
+    $l->js()
+        ->reload(array(
+            'words'=>$form->get('words')))
+        ->execute();
+}
+<?/?>
+        <p>Above sample demonstrates quite a few things. Let's go through it step by step. Firstly, there are 2 views in that example. The first is the form, and the second view is the LoremIpsum. Form view consists of other views - slider field.</p>
+
+        <p>The form is added in a very simple way. addField adds a new view inside the form of type form_field_slider and returns instance of that view. setRange is a method of the slider. Finally we bind action on change event which will submit the whole form, when the slider value is changed.</p>
+
+        <p>When the form is submitted, it will not leave the page, instead it will send AJAX request to the server with form values. That request goes through initialization of the same page, however not through rendering. Inside initialization same form identifies submit request and isSubmitted function returns true</p>
+
+        <p>Script then creates a JavaScript chain for a "LoremIpsum" object which instructs browser to reload view from the server. Any view can be reloaded like that. Here, in addition we are passing argument to reload, which will be found inside _GET argument.</p>
+
+        <p>If you have developed AJAX before, might find it unusual the way how objects interract with themselves and the same piece of code is executed 3 times - on initial display, on form submit and on lorem ipsum reload. What's important is that adding objects on the page is inexpensive operation. Objects which are not supposed to be rendered, will not consume CPU.</p>
+
+        <h3>HtmlElement</h3>
+        <p>This view can be used for any one-element view. In fact it has many direct descendants such as H1, H2 and so on. You can easily create more on your own if you need them.
+<?Example?>
+
+class MyTitle extends HtmlElement {
+    function init(){
+        parent::init();
+        $this->setElement('h4');
+        $this->addStyle('float','right');
+    }
+}
+
+
+$page->add('MyTitle')->set('Subtitle');
+
+
+$page->add('HtmlElement')
+    ->setElement('a')
+    ->setAttr('href', '#yo')
+    ->set('Link Element');
+
+<?/?>
+
+
+        <p>Like with many other views, you can add them inside another views. Let's create a div and add image inside.</p>
+
+<?Example?>
+$div=$page->add('HtmlElement')
+    ->setStyle('padding','4px')
+    ->setStyle('border','1px dashed black');
+
+$div->add('HtmlElement')
+    ->setElement('img')
+    ->setAttr('src',$this->api->locateURL('template','images/PinkElephant.jpg'))
+    ->set('');
+<?/?>
+
+        <p>Your view can actually incoprorate other views inside itself, either standard ones or the one you have defined.</p>
+
+<?Example?>
+class MyCompositeView extends View {
+    public $b1,$b2,$b3;
+
+    function init(){
+        parent::init();
+
+        $this->b1=$this->add('Button')->set('Hello');
+        $this->b2=$this->add('Button')->set('Cruel');
+        $this->b3=$this->add('Button')->set('World');
+    }
+}
+
+$cc=$page->add('MyCompositeView');
+$cc->b3->set('Earth');
+$cc->b2->destroy();
+<?/?>
+
+        <p>As you can see, you can see, even if the composite view adds sub-elements you can still interact with them from outside the view and even destroy them. You can add a complex view on the page and then interact with elements inside that view.</p>
+
+        <h3>Views with templates</h3>
+        <p>If we would add an object for every HTML tag, then performance of Agile Toolkit would be appaling. Single-element views are rather exception than the rule. In many cases you would want view to contain a template. You will find more information on how to build such a view under <a href="<?page?>learn/template<?/?>">Templates and Rendering</a> section.
+
+    </div>
+</div>
+
+<?$Next?>

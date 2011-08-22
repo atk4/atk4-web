@@ -1,0 +1,128 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Adding Pages</h1>
+
+        <p>Agile Toolkit facilitates several ways to define new pages. Depending on your situation you should choose the most
+        appropriate way.</p>
+
+        <p>The way how pages are located are defined by the API used. For example for command-line (ApiCLI) concept of pages
+        is not defined at all. Table below shows the behaviour of ApiFrontend based page routing.</p>
+
+<div class="box blue-noised p-10px">
+	<div class="white">
+		<table>
+			<thead>
+				<tr>
+					<th>Defined in</th>
+					<th>Class used</th>
+					<th>Template used</th>
+					<th width="50%">Notes</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>API Method</td>
+				<td>Page</td>
+                <td>Default</td>
+				<td>Probably the fastest way to create page handler is to define function inside API class. Function starts
+                with prefix "page_" and continues with the page name with slashes replaced into underscores. Try to avoid
+                using this method.</td>
+			</tr>
+			<tr>
+				<td>File page/mypage.php</td>
+				<td>custom</td>
+                <td>default or custom</td>
+				<td>This is preferred way to define new pages if you need dynamic content on them and optionally custom
+                layout.</td>
+			</tr>
+			<tr>
+				<td>Template Only</td>
+				<td>Page</td>
+                <td>custom</td>
+				<td>Ideal for custom pages. Simply create a single file with no PHP in it</td>
+			</tr>
+			<tr>
+				<td>Your own</td>
+				<td>Custom</td>
+                <td>Custom</td>
+				<td>Implement your own pattern in the API class. You can use this method to fetch pages from data-base or
+                generate them dynamically</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+        <h3>Defining new pages through API methods</h3>
+<?Code?>
+    function page_helloworld($page){
+        $page->add('Button')->setLabel('Click Me');
+    }
+<?/?>
+        <p>This is possibly the fastest way to add a new page to your Agile Toolkit application. API will automatically
+        create a standard page for you and will pass it to the function as an argument. You then can add objects into the
+        page.</p>
+
+        <h3>Creating separate class for each page</h3>
+<?Code?>
+class page_helloworld extends Page {
+    function init(){
+        parent::init();
+        $page=$this;
+
+        $page->add('Button')->setLabel('Click Me');
+    }
+}
+<?/?>
+        <p>Creating file inside page/helloworld.php with contents above has the same effect. However this time instead of
+        generic Page class your own class is used. This gives you flexibility to create more methods and have more complex 
+        presentation logic without polluting API class.
+        </p>
+
+        <h3>Static Pages</h3>
+        <p>Static pages is the fastest way how to get content into your web software. To build a high-performance
+        application, you must make it simple and fast to retrieve content. The fastest way is to get content from the
+        file.</p>
+
+        <p>Agile Toolkit allows to create static pages simply by creating a file page/helloworld.html (inside directory with
+        your templates such as: templates/default)</p>
+
+
+<div class="atk_doc example"><div><div class="example-wrap">
+<code><span style="color: #000000">
+<span style="color: #0000BB"></span><span style="color: #007700">&lt;</span><span style="color: #0000BB">div&nbsp;id</span><span style="color: #007700">=</span><span style="color: #DD0000">"&lt;?</span><span style="color: #0000BB">$_name</span><span style="color: #DD0000">?&gt;"&nbsp;</span><span style="color: #007700">class=</span><span style="color: #DD0000">"g-10"</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">div&nbsp;</span><span style="color: #007700">class=</span><span style="color: #DD0000">"g-5"</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">h2</span><span style="color: #007700">&gt;</span><span style="color: #0000BB">Left&nbsp;Column</span><span style="color: #007700">&lt;/</span><span style="color: #0000BB">h2</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">p</span><span style="color: #007700">&gt;</span><span style="color: #0000BB">Hello</span><span style="color: #007700">&lt;/</span><span style="color: #0000BB">p</span><span style="color: #007700">&gt;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color: #0000BB">div</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">div&nbsp;</span><span style="color: #007700">class=</span><span style="color: #DD0000">"g-5"</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">h2</span><span style="color: #007700">&gt;</span><span style="color: #0000BB">Right&nbsp;Column</span><span style="color: #007700">&lt;/</span><span style="color: #0000BB">h2</span><span style="color: #007700">&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color: #0000BB">p</span><span style="color: #007700">&gt;</span><span style="color: #0000BB">World</span><span style="color: #007700">&lt;/</span><span style="color: #0000BB">p</span><span style="color: #007700">&gt;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color: #0000BB">div</span><span style="color: #007700">&gt;<br>&lt;/</span><span style="color: #0000BB">div</span><span style="color: #007700">&gt;<br></span><span style="color: #0000BB"></span>
+</span>
+</code>
+</div></div></div>
+
+
+        <p>The definition of id= property of the outer-most element enables Agile Toolkit to seamlessly interact with
+        elements and although it's not mandatory, it is a good practice to always define id= like this.
+        </p>
+        <p>This example also is using a built-in Grid System for 10 columns and should show 2 columns. Similarly, you can use
+        your own HTML code snippet. We will get back to page layouts later.</p>
+
+
+        <h3>Catch-all and 404 pages</h3>
+        <p>If ApiFrontend is unable to determine location of your templates, it executes function api->pageNotFound($e); The
+        argument is exception raised when trying to include page class or its ancestors.</p>
+
+        <p>You can re-define this function either for placing a redirect on by showing custom 404 page. It is safe to do
+        "throw $e" to signal about non-existant page. API will catch this exception and act according to logging
+        settings, therefore do not use this for error-handling.</p>
+
+        <h2>Other API Classes</h2>
+        <p>Pages is a concept implemented on API level and some API classes may not implement Page concept at all or
+        implement it differently. For example when you build command-line utility using ApiCLI, it will never go and look for
+        pages at all. ApiWeb on other hand will use API method page_helloworld(), and will attempt to load page from
+        'page/helloworld.php' but will not support "static" page.</p>
+
+        <p>Page implementation is a case of a more broad "Layout" concept. You must have &lt;?$Content?&gt; tag inside your
+        shared.html template. See api->layout_Content method implementation for more info or creating your own logic.
+
+    </div>
+</div>
+
+<?$Next?>

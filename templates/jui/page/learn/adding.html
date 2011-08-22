@@ -1,0 +1,99 @@
+<?$Content?>
+
+<div class="atk_doc">
+<h1>Adding</h1>
+<p>
+Adding is a most powerful concept in Agile Toolkit. Here is the simple form of adding:
+</p>
+<?Code?>
+ $new_object = $parent -> add('ClassName');
+<?/?>
+<p>
+There are some rules:
+<ul>
+<li>All new objects are added. Never use "new" statement</li>
+<li>There are nothing static (such as User::checkPassword()). Always add before using method.</li>
+<li>Object is added into other object. Both objects will become linked.</li>
+<li>Each object is assigned a short_name. Short Name is unique within parent.</li>
+<li>Each object has a "name". It's unique in your server.</li>
+<li>After you added object, you can configure it.</li>
+<li>There are only 4 arguments for adding. You can't specify more. This is intentional.</li>
+</ul>
+</div>
+
+<div class="clear"></div>
+
+<h2>Arguments for add()</h2>
+<p>All arguments for add() except the first are optional. When Controllers, Models and Helpers are added, only first argument is used. Views can use 4 arguments.</p>
+<?Code?>
+ $new_view_object = $parent -> add($class, $short_name, $spot, $template );
+<?/?>
+
+<p><b>$parent</b> — must be an existing object. You can only add View into View, but you can add Controller and Model anywhere.</p>
+<p><b>$class</b> — name of the class. There is a convention on naming classes. 'Form_UserDetails' would be example class name.</p>
+<p><b>$short_name</b> — overrides generation of short_name. Always use "null".</p>
+<p><b>$spot</b> — defines where rendered version of Views template will be inserted. You can add multiple objects into same spot. Existing contents of the spot will be erased when object is being rendered. Default value is 'Content'.</p>
+<p><b>$template</b> — overrides View's default template. If array is used, then first argument is file name of template (such as "view/banner"). Second argument is optional and defines which region to use within template. If not specified "_top" is used, which means all contents of template file will be used. If $template is not array, but a string, then it specifies a region in parent's template which will be cloned and used by the view</p>
+
+<h2>init() method</h2>
+<p>Anytime when you add anything, Agile Toolkit creates an object, links it with api and parent by setting $obj->owner and $obj->api properties. For views it also initialize template. When it's all done, init() method is called.</p>
+<p>This is true for any object in Agile Toolkit, therefore you should never use object constructors but should use init() method instead. There are several important notes:<ul>
+<li>init() does not take arguments. Configuration is done through chaining.</li>
+<li>add() prepares your object so that you can use it in a reasonable way inside init().</li>
+<li>you can add() other objects recursively from inside init().</li>
+<li>you must never use "echo" when in agile toolkit. Only for debugging.</li>
+<li>it's suggested not to assume anything about your object's parent.</li>
+<li>don't do heavy-duty work in init(). There is chance that your object will be initialized but not rendered.</li>
+<li>always call parent::init(), preferably before you do anything.</li>
+</ul>
+<?Code?>
+class Form_ContactForm extends Form {
+    function init(){
+        parent::init();
+
+        $this->add('Disclaimer');
+
+        $this->addField('line','name');
+        $this->addField('line','surname');
+        $this->addSubmit('Send');
+    }
+}
+<?/?>
+<h2>Other forms of adding</h2>
+<p>There are large amount of wrappers for add() functions. For example when you add field to a form, you would use addField('line','name'). This function is a wrapper for add(), however it transforms type into class as well as doing few other things. Wrappers for add() start with "add" in most cases. However there are some functions which do not use this convention such as js(), exception(), $grid-&gt;addColumn() (does not create new object). In your code, always try to follow the convention and call function 'addSomething' if it adds new object and returns new object.
+</p>
+<p>
+
+<h2>Other Examples</h2>
+<?Code?>
+$admin=$this->add('Model_User')->addCondition('admin',true);
+<?/?>
+<p>
+Adds model to current object. add() returns instance of a new object making it possible for you to chain-call methods of a newly added object.
+</p>
+<?Code?>
+$menu=$this->api->add('Menu',null,'Menu');
+<?/?>
+<p>
+Adds menu inside api, and use spot 'Menu' inside api's template for output.
+</p>
+
+<?Code?>
+$view=$page->add('View',null,'BusinessInfo','BusinessInfo');
+$view->template->set($data);
+<?/?>
+<p>
+The region &lt;?BusinessInfo?&gt; inside page's template will be replaced by a view. The template chunk however will be cloned by the view, so just adding it like this will have no effect on resulting output. Second line however will place contents of associative array into template of a view.
+</p>
+
+<h2>Working with existing object</h2>
+<p><b>$this->hasElement($short_name)</b> return object of child if found or false if not found.</p>
+<p><b>$this->getElement($short_name)</b> similar to hasElement() but will produce exception if not found. Use this when chaining.</p>
+<p><b>$this->destroy()</b> remove current object from parent. For view this will remove it from rendered page.</p>
+<p>Properties: <b>$this->name</b> name unique on the system. <b>$this->short_name</b> is a short name. <b>$this->template</b> reference to SMlite template for current view. <b>$this->owner</b> reference to object whose add() was used(parent). <b>$this->api</b> refers to Api class of a parent object.</p>
+
+<div class="continue-block">
+<a class="button blue big" href="<?page?>../adding<?/?>">Continue to "Adding Objects"</a>
+
+</p>
+	

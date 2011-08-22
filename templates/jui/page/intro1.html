@@ -1,0 +1,46 @@
+<h1>Interactive Introduction</h1>
+<script src="<?template?>/css/sticky-bar.js<?/?>"></script>
+<script>
+
+	$(function(){
+	
+		$('.breadcrumb-item').mouseover(function(){
+		
+			$(this).find('.dropdown').show();
+			$(this).find('em').addClass("blue-noised");
+		
+		}).mouseout(function(){
+		
+			$(this).find('.dropdown').hide();
+			$(this).find('em').removeClass("blue-noised");
+		
+		});
+		
+				
+<!-- 		$('.example-limited>p>code').prepend('<div class="example-expander">View the rest</div>'). -->
+		
+		$('.example-expander>div>span').click(function(){
+		
+			$(this).parents('.example-wrap').css("height","auto").addClass("example-expanded");
+			$(this).html('<i class="ui-icon ui-icon-minus"></i>Hide Code')
+		});
+		
+		
+		
+	});
+
+</script>
+<div class="sticky-bar-dock" id="introduction-bar-dock"></div>
+<div class="sticky-bar-absolute sticky-bar" id="introduction-bar">
+	<div class="gs-wrap breadcrumb clearafter">
+<!-- 		<div class="breadcrumb-item breadcrumb-start"><span>Interactive<br/>Introduction</span></div> -->
+		<div class="breadcrumb-item current"><a href="#1" class="blue-noised"><i class="big-icon icon-column"></i><span>Foundation</span></a></div>
+		<div class="breadcrumb-item"><a href="#2"><i class="big-icon icon-jerrycan"></i><span>JavaScript</span></a></div>
+		<div class="breadcrumb-item"><a href="#3"><i class="big-icon icon-lego"></i><span>Models (MVC)</span></a></div>
+		<div class="breadcrumb-item"><a href="#4"><i class="big-icon icon-gears"></i><span>Add-ons</span></a></div>
+		<div class="breadcrumb-item"><a href="#5"><i class="big-icon icon-roadsign"></i><span>Engage</span></a></div>
+	</div>
+</div>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

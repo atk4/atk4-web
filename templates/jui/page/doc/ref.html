@@ -1,63 +1,135 @@
-<h1>API Reference</h1>
-<div class="atk-layout c2" id="doc-ref">
-	<div>
+<script>
+	$(document).ready(function(){
+		$(".doc-api iframe").iframeAutoHeight({heightOffset:20});
+	});
+</script>
+<div class="doc-api g-row">
+<iframe src="/PhpDocumentor/docs-atk4/li_default.html" name="left_bottom" scrolling="no"></iframe>
+<iframe src="/PhpDocumentor/docs-atk4/blank.html" name="right" scrolling="no"></iframe>
+<!--
+	<div class="g-4"></div>
+	<div class="g-8"></div>
+-->
+</div>
+<!--
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
 		<h2>Core Classes</h2>
-		<ul>
-		<li><a href="<?page?>doc/abstract<?/?>">Abstract Object</a> — common ancestors for all classes</li>
-		<li><a href="<?page?>doc/api<?/?>">Base API classes</a> — select the right API class for your application</li>
-		<ul>
-			<li><a href="<?page?>doc/logger<?/?>">Logger</a> — Enhance your API with error and event display / logging</li>
-			<li><a href="<?page?>doc/pathfinder<?/?>">PathFinder</a> — Resource locations, lookup and file paths</li>
-			<li><a href="<?page?>doc/dblite<?/?>">DBlite</a> — Database Connectivity, regular and Dynamic Queries</li>
-			<li><a href="<?page?>doc/smlite<?/?>">SMlite</a> — Lightweight template engine</li>
-			<li><a href="<?page?>doc/location<?/?>">Location</a> — URL awareness, creating relative links and URL with arguments</li>
-			<li><a href="<?page?>doc/auth<?/?>">Auth</a> — User authentication</li>
-			<li><a href="<?page?>doc/jquery<?/?>">jQuery</a> — jQuery and UI integration framework</li>
-			<li><a href="<?page?>doc/exception<?/?>">Exception</a> — Exception classes and handling</li>
-		</ul>
-		<li><a href="<?page?>doc/view<?/?>">View</a> — Standard Views</li>
-		<ul>
-			<li><a href="<?page?>doc/form<?/?>">Form</a> — UI Form class</li>
-			<li><a href="<?page?>doc/lister<?/?>">Lister</a> — User—defined lists</li>
-			<li><a href="<?page?>doc/grid<?/?>">Grid</a> — Multi—column type—aware tables</li>
-			<li><a href="<?page?>doc/info<?/?>">Info</a> — Informative controls: warning, info and error boxes, icons</li>
-		</ul>
-		<li><a href="<?page?>doc/htmlelement<?/?>">HtmlElement</a> — Java—Script enabled controls</li>
-		<ul>
-			<li><a href="<?page?>doc/button<?/?>">Button</a> — Standalone Buttons, button enhancement</li>
-			<li><a href="<?page?>doc/layout<?/?>">Layout</a> — Laying out views on the pages: Tabs, Accordions and more</li>
-		</ul>
-		</li>
-		<li>Non-visual supplementary frameworks</li>
-		<ul>
-			<li><a href="<?page?>doc/tmail<?/?>">TMail</a> — Template—based emails</li>
-			<li><a href="<?page?>doc/processio<?/?>">ProcessIO</a> — Interaction with system—processes in a secure way</li>
-			<li><a href="<?page?>doc/htmlsanitizer<?/?>">HTMLSanitizer</a> — Cleans up HTML you supply using XSLT</li>
-			<li><a href="<?page?>doc/recordorder<?/?>">RecordOrder</a> — Flexible way to change array order</li>
-			<li><a href="<?page?>doc/versioncontrol<?/?>">VerionControl</a> — SQL Database version control scripts and classes</li>
-		</ul>
-		</li>
-		<li>MVC — Model View Controller</li>
-		<ul>
-			<li><a href="<?page?>doc/model<?/?>">Model</a> — Basic models and SQL Models</li>
-			<li><a href="<?page?>doc/controller<?/?>">Controller</a> — Interaction between Views and Models — Controllers</li>
-		</ul>
-		</ul>
+		
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/abstract<?/?>">Abstract Object</a></b>
+			<p>Common ancestors for all classes</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/api<?/?>">Base API classes</a></b>
+			<p>Select the right API class for your application</p>
+			<div class="details white">
+				<div>
+					<b><a href="<?page?>doc/logger<?/?>">Logger</a></b>
+					<em>Enhance your API with error and event display/logging.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/pathfinder<?/?>">PathFinder</a></b>
+					<em>Resource locations, lookup and file paths.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/dblite<?/?>">DBlite</a></b>
+					<em>Database Connectivity, regular and Dynamic Queries.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/smlite<?/?>">SMlite</a></b>
+					<em>Lightweight template engine.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/location<?/?>">Location</a></b>
+					<em>URL awareness, creating relative links and URL with arguments.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/auth<?/?>">Auth</a></b>
+					<em>User authentication.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/jquery<?/?>">jQuery</a></b>
+					<em>jQuery and UI integration framework.</em>
+				</div>
+				<div>
+					<b><a href="<?page?>doc/exception<?/?>">Exception</a></b>
+					<em>Exception classes and handling.</em>
+				</div>
+			</div>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/api<?/?>">View</a></b>
+			<p>Standard views</p>
+			<div class="details white">
+				<div><b><a href="<?page?>doc/form<?/?>">Form</a></b><em>UI Form class</em></div>
+				<div><b><a href="<?page?>doc/lister<?/?>">Lister</a></b><em>User-defined lists</em></div>
+				<div><b><a href="<?page?>doc/grid<?/?>">Grid</a></b><em>Multi-column type-aware tables</em></div>
+				<div><b><a href="<?page?>doc/info<?/?>">Info</a></b><em>Informative controls: warning, info and error boxes, icons</em></div>
+			</div>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/htmlelement<?/?>">HtmlElement</a></b>
+			<p>Java-Script enabled controls</p>
+			<div class="details white">
+				<div><b><a href="<?page?>doc/button<?/?>">Button</a></b><em>Standalone Buttons, button enhancement.</em></div>
+				<div><b><a href="<?page?>doc/layout<?/?>">Layout</a></b><em>Laying out views on the pages: Tabs, Accordions and more.</em></div>
+			</div>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b>Non-visual supplementary frameworks</b>
+			<div class="details white">
+				<div><b><a href="<?page?>doc/tmail<?/?>">TMail</a></b><em>Template-based emails</em></div>
+				<div><b><a href="<?page?>doc/processio<?/?>">ProcessIO</a></b><em>Interaction with system-processes in a secure way</em></div>
+				<div><b><a href="<?page?>doc/htmlsanitizer<?/?>">HTMLSanitizer</a></b><em>Cleans up HTML you supply using XSLT</em></div>
+				<div><b><a href="<?page?>doc/recordorder<?/?>">RecordOrder</a></b><em>Flexible way to change array order</em></div>
+				<div><b><a href="<?page?>doc/versioncontrol<?/?>">VerionControl</a></b><em>SQL Database version control scripts and classes</em></div>
+			</div>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b>MVC</b>
+			<p>Model View Controller</p>
+			<div class="details white">
+				<div><b><a href="<?page?>doc/model<?/?>">Model</a></b><em>Basic models and SQL Models</em></div>
+				<div><b><a href="<?page?>doc/controller<?/?>">Controller</a></b><em>Interaction between Views and Models — Controllers</em></div>
+			</div>
+		</div>
 	</div>
-	<div>
+	<div class="g-6">
 		<h2>New to Agile Toolkit?</h2>
-		<ol>
-			<li><a href="<?page?>doc/learn/quick_start<?/?>">Quick Start</a> — Introduction to core concepts</li>
-			<li><a href="<?page?>doc/learn/adding<?/?>">Adding Objects</a> — How to create class instances - objects</li>
-		</ol>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/learn/quick_start<?/?>">Quick Start</a></b>
+			<p>Introduction to core concepts</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/learn/adding<?/?>">Adding Objects</a></b>
+			<p>How to create class instances (objects)</p>
+		</div>
 		<h2>atk4 add-ons extensions</h2>
-		<ul>
-			<li><a href="<?page?>doc/filestore<?/?>">FileStore</a> — Storing files and it's meta—information in a unified way</li>
-			<li><a href="<?page?>doc/howto<?/?>">HowTo</a> — Test—cases / example suite</li>
-			<li><a href="<?page?>doc/entitymanager<?/?>">EntityManager</a> — Entity Manager page for adding, editing, deleting your models</li>
-			<li><a href="<?page?>doc/payments<?/?>">Payments</a> — Support for on—line payments: PayPal, Realex</li>
-			<li><a href="<?page?>doc/campaignmonitor<?/?>">CampaignMoitor</a> — SOAP API implementation for CampaignMonitor</li>
-			<li><a href="<?page?>doc/doc<?/?>">Doc</a> — Documenting your own software in a smart way</li>
-		</ul>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/filestore<?/?>">FileStore</a></b>
+			<p>Storing files and it's meta-information in a unified way</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/howto<?/?>">HowTo</a></b>
+			<p>Test-cases/Example suite</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/entitymanager<?/?>">EntityManager</a></b>
+			<p>Entity Manager page for adding, editing, deleting your models</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/payments<?/?>">Payments</a></b>
+			<p>Support for on-line payments: PayPal, Realex</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/campaignmonitor<?/?>">CampaignMoitor</a></b>
+			<p>SOAP API implementation for CampaignMonitor</p>
+		</div>
+		<div class="ref-item box blue-noised">
+			<b><a href="<?page?>doc/doc<?/?>">Doc</a></b>
+			<p>Documenting your own software in a smart way</p>
+		</div>
 	</div>
 </div>
+-->

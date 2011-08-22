@@ -12,6 +12,7 @@ class Doc_Execute extends Doc_View {
 	}
 
 	function executeDemo($p,$code){
+        $page=$p;
 		eval($code);
 	}
 

@@ -3,24 +3,18 @@
 <?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
 
 <?seo_keywords?>download, development verison, stable version, changes, updates, changelog, recent changes<?/?>
-<div class="atk-layout c2" id="download-grid">
-	<div>
-		<h2>Stable Version</h2>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - February 2011</h2>
 
+        <h4><span class="date">February 27<em>th</em></span><a href="https://github.com/atk4/atk4/commit/9d82cfcd4671d313cf4b4a60f79c83eb5bf58359">Added &lt;?$_page?&gt; tag</a></h4>
 
-	</div>
-	<div>
-		<h2>Development Branch</h2>
-
-
-        <h3><a href="https://github.com/atk4/atk4/commit/9d82cfcd4671d313cf4b4a60f79c83eb5bf58359">Feb 27</a>:
         added &lt;?$_page?&gt; tag</h3>
         <p>APIs template (shared.html) will now properly change _page tag. It will be set to the name of the page you are
         opening. This is done to help designers define custom layouts on per-page basis inside global CSS.
         </p>
 
-        <h3><a href="https://github.com/atk4/atk4/commit/ac0b2b544d36ede59f74366335e0631280d7d5b5">Feb 26</a>:
-        setModel() added</h3>
+        <h4><span class="date">February 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ac0b2b544d36ede59f74366335e0631280d7d5b5">Added setModel()</a></h4>
         <p>Using $view-&gt;setModel() is a new best way to use models with generic controller. Previously you needd to define
         controller for each model. This resulted in many controllers being created with no logic at all. Using setModel()
         allows bypassing the need for a separate model, but also uses array in 2nd argument to specify list of actual fields.
@@ -32,8 +26,8 @@ $f->setModel('Employee',array('name','salary'));
         use simply Employee.
         </p>
 
-        <h3>
-        New Objects P, H1, H2, etc</h3>
+        <h4>
+        New Objects P, H1, H2, etc</h4>
         <p>Agile Toolkit now contains many classes which should help you building mark-up faster. We still recommend you to
         use Templates where possible, but it's better to use:
 <?Code?>
@@ -45,5 +39,13 @@ $p->add('Text')->set('<h1>Hello there</h1>');
 <?/?>
         All those views are inherited from HtmlElement and therefore you can easily add classes, styles etc.
         </p>
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>../mar2011<?/?>">Earler Entries</a>
+
+
     </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
 </div>

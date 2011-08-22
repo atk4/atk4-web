@@ -1,0 +1,39 @@
+
+
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+
+
+        <h1>Structuring multi-API application</h1>
+        <p>There are several cases when it makes sense to create multiple API classes. Below are few typical scenarios.
+        Because some functionality might be needed throughout all APIs it's incorporated into System Controller.</p>
+
+        <h3>Multiple Interfaces</h3>
+        <img src="<?template?>images/ugly_images/multiapi.png<?/?>" style="float: right">
+        <p>Most of the web packages will be using multiple web interfaces. User Front-End and Admin are Web interfaces which
+        take advantage of page concept. Then there are usually some command-line utilities which are designed for doing a
+        single purpose such as cron-job or command-line manipulations.</p>
+
+        <h3>Multi-lingual or satellite sites</h3>
+        <img src="<?template?>images/ugly_images/satellite.png<?/?>" style="float: right">
+        <p>Sometimes you will want a software which runs in multiple regions mostly without changes, however you wish to
+        preserve the flexibility to add regional or site specific changes. In this case you will want to create intermediate
+        API which is then extended for each site.</p>
+
+        <p>Site1 and Site2 classes can change theme, skin or add additional template/translations for localization.</p>
+
+        <h3>Specific Applications</h3>
+        <p>If your Agile Toolkit-based software requires installation, you would want to create a simple interface which can
+        help user to set up your Web Software. You might want to create a new API for installer in general, then extend it to
+        customize it with your installation steps. This way you can share generic installer class with community or with
+        other projects while retaining flexibility of customization.</p>
+
+
+    </div>
+</div>
+
+<?$Next?>

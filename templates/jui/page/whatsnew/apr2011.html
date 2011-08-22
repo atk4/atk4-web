@@ -1,0 +1,187 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - Apr 2011</h2>
+
+
+
+        <h4><span class="date">April 4<em>th</em></span><a href="https://github.com/atk4/atk4/commit/7ec46af5261da0d01f172d39a7ec966a53f04bee">form_body Tag Renamed</a></h4>
+        <p>Default Form template used to contain &lt;?form_body?&gt; tag. That's the place in the form.html template, where
+        fields are located. It's now been renamed into standard &lt;?Content?&gt; tag making addition of other elements into
+        form body much easier:</p>
+<?Code?>
+$f->add('H2')->set('appears after last field');
+<?/?>
+
+        <h4><span class="date">April 4<em>th</em></span><a href="https://github.com/atk4/atk4/commit/58110a38973b28df9c3e290246e71ea670bb70b5">Align "money" column type in the grid to the right</a></h4>
+        <p>Properly aligns not only the money, but also the title</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+
+
+
+
+
+
+        <h4><span class="date">April 7<em>th</em></span><a href="https://github.com/atk4/atk4/commit/8e59753a049276ed6984e902c628888c068ba69e">DSQL debug output is better</a></h4>
+        <p>Setting debug mode on DSQL object will output breakdown of parameters</p>
+        
+<?Code?>
+$str=$page->api->db->dsql()->debug()
+    ->table('foo')
+    ->field('bar')
+    ->where('x>',123)
+    ->limit(10)
+    ->select();
+<?/?>
+
+
+        <h4><span class="date">April 9<em>th</em></span><a href="https://github.com/atk4/atk4/commit/f11ba29d236abdf4c567463e93c0d20e34976375">Growl (ui.atk_notify.js) shows messages better</a></h4>
+        
+<?Example?>
+$page->add('Button')->js('click')
+    ->univ()
+    ->successMessage
+        ('Yey, it works!');
+<?/?>
+
+
+
+
+        <h4><span class="date">April 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/fedb024c6e91504b3c9143471f0a3a7dfbcdaa49">removed object->getName(), use object->name instead</a></h4>
+        
+<?Example?>
+$page->add('Text')
+  ->set($page->name);
+<?/?>
+
+        <h4><span class="date">April 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/06106d577e5c262c610a3d5d0b876af755462b2f">New way for handling exceptions</a></h4>
+        <p>Introducing new way of producing exception in Agile Toolkit. Calling exception() method will return object of the right exception class. For example calling $db->exception() will properly return database-related exceptino and might also include some object-related information, while exception generated in model, would generate validity exception.</p>
+
+        <p>Be sure to not include any variables into 1st argument to exception, this string will be localized. Instead specify relevant arguments by calling addMoreInfo()
+        
+<?Code?>
+throw $this->exception('Something went wrong')
+    ->addMoreInfo('niceinfo',$info);
+<?/?>
+
+
+
+        <h4><span class="date">April 13<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a54afabc414ba3d40ac4a87c58ee0babc7c0f676">Add zebra template for grid</a></h4>
+        <p>use 4nd argument of array('grid_stripped') to use this new template. Remember that you can always add your own templates to further ehance look of your objects.</p>
+<?Example?>
+$grid=$page->add('Grid',null,null,array('grid_striped'));
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+
+        <h4><span class="date">April 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1b7033d8600dadb0e50d94571471cafd49442e9c">Implement Auto-complete</a></h4>
+        <p>use 4nd argument of array('grid_stripped') to use this new template. Remember that you can always add your own templates to further ehance look of your objects.</p>
+<?Example?>
+$form=$page->add('Form');
+$form->addField('autocomplete','test')
+    ->setValueList(
+            array('John','Peter','Jane'));
+<?/?>
+
+
+        <h4><span class="date">April 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a2890c1488b19ca43b19e6d316e665409e9cd7e8">add ability to disable full-screen mode (for true gs960)</a></h4>
+        <p>By default your Agile Toolkit application uses full width of the screen. If you want to have true 960gs, then you should add the following to your Api's init() method.</p>
+<?Code?>
+$this->template->del('fullscreen');
+<?/?>
+
+
+        <h4><span class="date">April 19<em>th</em></span><a href="https://github.com/atk4/atk4/commit/6257874420d3e3ee84ddbd8ccf0566d3a1eb3a75">Showing timestamps</a></h4>
+        <p>To change format, add $config['locale']['timestamp']='Y-m-d'; or $config['locale']['datetime'].</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('timestamp','ts');
+$grid->addColumn('datetime','dt');
+$grid->setStaticSource(array(
+            array('ts'=>date('Y/m/d'),'dt'=>date('Y/m/d')),
+            ));
+<?/?>
+
+        <h4><span class="date">April 25<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ee306dea32066f28e7f8f02097fbc448ab9479d3">Allow to substitute "Grid" class</a></h4>
+        <p>Many components rely on Grid component. Often a developer would want to make system-wide changes to the Grid component. Push mechanism allows for all the components to use the new version. Push is implementing by redefining "Grid" class. By default it's defined like this:</p>
+<?Code?>
+class Grid extends Grid_Basic{}
+<?/?>
+        <p>All of the documentation, addons and user code must use "Grid" and not "Grid_Basic". This allows you to define this class locally inside your lib/Grid.php and redefine some of the methods there.</p>
+
+
+
+
+        <h4><span class="date">April 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/d050b624eb22da017c3d6e39d7c072a7352b28b5">Improve "link" format in Grid</a></h4>
+        <p>You can use &lt;?_link?&gt; or any other field tag as a template for "link" column, in setTemplate().</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('link','details');
+$grid->addColumn('link','proflie')
+    ->setTemplate('<a href="..">xx</a>');
+$grid->setStaticSource(array(
+            array('id'=>1,'name'=>'John',
+                'details'=>'John Details'),
+            array('id'=>2,'name'=>'Peter',
+                'details'=>'Peter Details'),
+            ));
+<?/?>
+
+
+        <h4><span class="date">April 27<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e1ec9e24c4d505fe485c8cb8bf1229e8393b4daa">Our standard menu is joined by Menu_Light</a></h4>
+        <p>This menu operates entirely on templates.</p>
+<?Code?>
+// Regular
+$menu=$page->add('Menu');
+$menu->addMenuItem('hello');
+$menu->addMenuItem('world');
+
+// Lightweight
+$menu=$page->add('Menu_Light',null,null,array('mymenu'));
+// items are defined in mymenu.html
+<?/?>
+
+
+        <h4><span class="date">April 28<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af55786bde900bbe4ed011f84fa24569de8179e4">Removed "jui" theme, added "default" and "elephant"</a></h4>
+        <p>Look into your index.php file. It might still be using "jui" theme. We suggest to remove argument alltogether or set to "elephant" for the older look of Agile Toolkit.
+<?Code?>
+$api=new Frontend('myapp');
+$api->main();
+<?/?>
+
+        <h4><span class="date">April 29<em>th</em></span><a href="https://github.com/atk4/atk4/commit/432343f48cde7e1ee76d09249f0730bc06d24d9d">Login form looks much cooler</a></h4>
+
+
+
+
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>../mar2011<?/?>">Older Entries</a>
+        <a href="<?page?>../may2011<?/?>">Newer Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Adding Actions</h1>
+
+        <p>Actions are methods which are defined inside model. Because Agile Toolkit follows principles of "Object Oriented" design, it properly implements encapsulation inside a single class. Basic methods such as update(), delete() are already implemented by the model but you are encouraged to add more methods: </p>
+
+<?Code?>
+class Model_Book extends Model_Table {
+    public $entity_code='book';
+    public $table_alias='b';
+    function init(){
+        parent::init();
+        $this->addField('name');
+        $this->addField('isbn')->mandatory(true)->caption('ISBN');
+        $this->addField('publisher_id')->refModel('Publisher');
+        $this->addField('author_id')->refModel('Author');
+    }
+    function addMultipleBooks($data){
+        $this->unloadData();
+        foreach($data as $row){
+            $this->insert($data);
+        }
+    }
+}
+<?/?>
+        <p>This newly added method must not rely on any User Interface capabilities. It should try to avoid using the API also, as models may share several APIs. If you need to put some code which is shared between models, you should create model controller and add it,</p>
+
+        <p>You can easily call the new action like this:</p>
+<?Code?>
+$this->add('Model_Book')
+    ->addMultipleBooks($data);
+<?/?>
+        <h2>before/after handlers</h2>
+        <p>You can add methods to the model, which will be executed before/after actions such as insert, update, modify and delete. Modify and Update can be confused, but remember that the method for storing data is called update() and therefore beforeUpdate/afterUpdate is called for both modification of existing records and insertion of new ones.</p>
+
+<?Code?>
+function beforeUpdate(){
+    if(!$this->isbnCheck($this->get('isbn')))
+        throw $this->exception('Incorrect format')->setField('isbn');
+
+    return parent::beforeUpdate();
+}
+
+<?/?>
+        <p>This function implements lightweight validation of ISBN fields for newly added or modified books. If record was being added by form, then form will properly intercept exception and highlight "ISBN" field. That's basically how simple validation is.</p>
+
+    </div>
+</div>
+<?$Next?>

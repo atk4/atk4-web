@@ -1,0 +1,42 @@
+<script src="<?template?>/css/sticky-bar.js<?/?>"></script>
+<script>
+
+	$(function(){
+	
+		$('.breadcrumb-item').mouseover(function(){
+		
+			$(this).find('.dropdown').show();
+			$(this).find('em').addClass("blue-noised");
+		
+		}).mouseout(function(){
+		
+			$(this).find('.dropdown').hide();
+			$(this).find('em').removeClass("blue-noised");
+		
+		});
+		
+				
+/* 		$('.example-limited>p>code').prepend('<div class="example-expander">View the rest</div>'). */
+		
+		$('.example-expander>div>span').click(function(){
+		
+			$(this).parents('.example-wrap').css("height","auto").addClass("example-expanded");
+			$(this).html('<i class="ui-icon ui-icon-minus"></i>Hide Code')
+		});
+		
+		
+		
+	});
+
+</script>
+<div class="sticky-bar-dock" id="introduction-bar-dock"></div>
+<div class="sticky-bar-absolute sticky-bar" id="introduction-bar">
+	<div class="gs-wrap breadcrumb clearafter">
+<!-- 		<div class="breadcrumb-item breadcrumb-start"><span>Interactive<br/>Introduction</span></div> -->
+		<div class="breadcrumb-item tab1"><a href="<?page?>intro/start<?/?>" class="blue-noised"><i class="big-icon icon-column"></i><span>Foundation</span></a></div>
+		<div class="breadcrumb-item tab2"><a href="<?page?>intro/javascript<?/?>"><i class="big-icon icon-jerrycan"></i><span>JavaScript</span></a></div>
+		<div class="breadcrumb-item tab3"><a href="<?page?>intro/models<?/?>"><i class="big-icon icon-lego"></i><span>Models (MVC)</span></a></div>
+		<div class="breadcrumb-item tab4"><a href="<?page?>intro/addons<?/?>"><i class="big-icon icon-gears"></i><span>Add-ons</span></a></div>
+		<div class="breadcrumb-item tab5"><a href="<?page?>/<?/?>#engage"><i class="big-icon icon-roadsign"></i><span>Engage</span></a></div>
+	</div>
+</div>

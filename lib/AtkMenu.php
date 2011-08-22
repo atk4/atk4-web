@@ -12,13 +12,12 @@ class AtkMenu extends Menu {
 		switch($section[0]){
 			case'about':
 			case'newsletter':
-			case'intro': 
 				$this->api->template->trySet('menu_about','class="current"');
 
-				$menu->addMenuItem('About','about');
+				$menu->addMenuItem('About','about/about');
 				$menu->addMenuItem('Features','about/features');
+				$menu->addMenuItem('Authors','about/authors');
 				$menu->addMenuItem('License','about/license');
-				$menu->addMenuItem('History','about/history');
 				$menu->addMenuItem('Contact','about/contact');
 
 				break;
@@ -26,12 +25,15 @@ class AtkMenu extends Menu {
 
 			case'doc': 
 			case'example': 
+            case'learn':
+            case'a':
+			case'intro': 
 				$this->api->template->trySet('menu_doc','class="current"');
 
-				$menu->addMenuItem('Documentation','doc');
+				$menu->addMenuItem('Introduction','intro');
+				$menu->addMenuItem('Learning','learn');
 				$menu->addMenuItem('API Reference','doc/ref');
-				$menu->addMenuItem('Screencasts','doc/sc');
-				$menu->addMenuItem('Examples','example/list');
+				$menu->addMenuItem('Add-ons','a');
 
 				break;
 
@@ -50,11 +52,11 @@ class AtkMenu extends Menu {
 				$this->api->template->trySet('menu_services','class="current"');
 
 
-				$menu->addMenuItem('Account','commercial');
-				$menu->addMenuItem('Prices','commercial/store');
-				$menu->addMenuItem('Services','commercial/services');
+				$menu->addMenuItem('Account','commercial/account');
+				//$menu->addMenuItem('Prices','commercial/store');
+				//$menu->addMenuItem('Services','commercial/services');
 				//$menu->addMenuItem('Products','commercial/products');
-				$menu->addMenuItem('Jobs','commercial/jobs');
+				//$menu->addMenuItem('Jobs','commercial/jobs');
 
 				break;
 			case'download':
@@ -64,5 +66,11 @@ class AtkMenu extends Menu {
 
 			default:
 		}
+	}
+	function isCurrent($href){
+		// returns true if item being added is current
+		$href=str_replace('/','_',$href);
+        $p2=substr($this->api->page,0,strlen($href));
+		return $href==$p2;
 	}
 }

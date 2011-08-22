@@ -1,0 +1,91 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - June 2011</h2>
+
+
+        <h4><span class="date">June 28<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1e34669a7ed56344ae0bf74e9eccc00c418b16f4">Added implementation of plain forms</a></h4>
+        <p>Agile Toolkit forms are full featured. What if you want to make a plain form? Such as the one to send output to PayPal. Now there is implementation you can use and it's insanely simple and powerful.</p>
+        <p>If you want to use custom template, pass a 4th argument to add('Form_Plain') and use 4th argument for addInput to specify tag, where input should appear.</p>
+<?Example?>
+$form=$page->add('Form_Plain');
+$form->setAttr('method','post');
+$form->addInput('text','name','John');
+$form->addInput('text','surname','Blogs');
+$form->addInput('submit','submit','Send');
+<?/?>
+
+        <h4><span class="date">June 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/b9e3e075b67e3a20f8430f16a97ef6794f03b844">Stored procedure import extension is now *.sql</a></h4>
+        <p>Do you know that you can create doc/storedfx/ directory and put source of your stored procedures in there? After each run it will always execute storedfx/*.sql files. It used to be files ending with *.manual, but *.sql makes so much more sense.</p>
+
+        <h4><span class="date">June 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0d92af200653c5a15b1e7bd75cce585b5a7af55">Added support for logout without redirect</a></h4>
+        <p>Traditionally calling $api->auth->logout() would destroy login info, issue redirect to index and never return. Now, passing "false" can avoid redirect: logout(false);</p>
+
+        <h4><span class="date">June 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/81d47a2d57d161ecf8250e3f3b04ef3517ace734">Added implementation of sha256/salt encryption</a></h4>
+        <p>Auth classes allow you to call ->usePasswordEncryption(). This change the way how encryptPassword() function works
+        and also how login is validated. Now you can use "sha256/salt" encryption, and also encryptPassword takes second
+        argument, which is a salt.</p>
+<?Example?>
+
+$encryptions=array('md5','sha1','rot13','sha256/salt');
+
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('password','password');
+$form->addField('line','salt');
+$form->addField('dropdown','enc')
+  ->setValueList($encryptions);
+$form->addField('text','result')
+  ->setProperty('style','width: 250px');
+$form->addSubmit();
+if($form->isSubmitted()){
+    $auth=$this->add('BasicAuth');
+    $auth->usePasswordEncryption($encryptions[$form->get('enc')]);
+    $form->getElement('result')->js()->val(
+        $auth->encryptPassword($form->get('password'),
+          $form->get('salt'))
+        )->execute();
+}
+<?/?>
+
+        <h4><span class="date">June 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/2f15f7a9dbf3e0f52ec3a5fec10503fa893e3493">Trim password field and enable normalize() in general for fields</a></h4>
+        <p>If you are building custom field, you can now use normalize() function.</p>
+<?Code?>
+function normalize(){
+    $this->set(trim($this->get()));
+    parent::normalize();
+}
+<?/?>
+
+<p>Additionally password field will automatically normalize itself by trimming</p>
+
+<?Example?>
+$form=$page->add('Form');
+$form->addField('password','password')
+  ->add('Text',null,'after_field')
+  ->set('<ins>Use Spaces!</ins>');
+$form->setFormClass('vertical');
+$form->addSubmit();
+if($form->isSubmitted()){
+    $form->js()->univ()->alert('Length is '.
+        strlen($form->get('password')))
+      ->execute();
+}
+<?/?>
+
+
+
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>../may2011<?/?>">Older Entries</a>
+        <a href="<?page?>../jul2011<?/?>">Newer Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>

@@ -33,20 +33,23 @@
 				<?$document_ready?>
 			});
 		</script>
-		<script type="text/javascript">
-  			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-17702108-2']);
-  			_gaq.push(['_trackPageview']);
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17702108-2']);
+  _gaq.push(['_setDomainName', 'agiletoolkit.org']);
+  _gaq.push(['_setAllowHash', false]);
+  _gaq.push(['_trackPageview']);
 
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-		</script>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script src="<?template?>css/iframe.js<?/?>" type="text/javascript"></script>
 	</head>
 	<body id="page-<?$_page?>" class="gs-12">
-	
 		<div id="layout">
 			<div id="header">
 				<div class="gs-wrap clearafter">
@@ -81,7 +84,9 @@
 					</div>
 				</div>
 			</div>
-			<div class="gs-wrap" id="content"> <!-- Content Starts -->
+			
+			<div id="content"> <!-- Content Starts -->
+				<div class="gs-wrap">
 				<?Content?>
 				<h1>Documentation</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -122,6 +127,7 @@
 					<button class="button orange">Orange</button>
 				</div>
 				<?/?>
+				</div>
 			</div><!-- Content ends -->
 			<div id="footer-guard"></div>
 		</div>
@@ -132,7 +138,7 @@
 					<div><a id="newsletter-button" href="/newsletter">Subscribe to Newsletter</a><span
 					class="atk-sep">|</span><a id="contact-button" href="/about/contact">Contact Us</a></div>
 				</div>
-				<div id="socials">
+				<div class="socials">
                 <?$socials?>
 					<a href="http://www.twitter.com/atk4/" id="twitter"></a>
 					<a href="http://www.linkedin.com/company/agile-toolkit?trk=fc_badge" id="linkedin"></a>
@@ -140,6 +146,7 @@
 				</div>
 			</div>
 		</div>
+		<div id="atk-growl-holder" class="atk-growl-holder"></div>
 <script type="text/javascript">
 var clicky = { log: function(){ return; }, goal: function(){ return; }};
 var clicky_site_id = 66401179;
@@ -150,6 +157,13 @@ var clicky_site_id = 66401179;
   s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
   ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
 })();
+</script>
+<script type="text/javascript">
+(function() {
+ var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+ po.src = 'https://apis.google.com/js/plusone.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+ })();
 </script>
 <a title="Real Time Web Analytics" href="http://getclicky.com/66401179"></a>
 <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66401179ns.gif" /></p></noscript>

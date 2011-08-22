@@ -1,0 +1,28 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+    <h1>Controllers in Agile Toolkit</h1>
+
+<p>In Agile Toolkit controllers are generic. They resemble "helpers" and "libraries" in other frameworks. Like any other object, you need to "add" your controller. Controllers are designed to enhance the functionality of the object, where you add them.
+</p>
+
+<?Code?>
+// Changing order of form fields
+$form->add('Controller_Order')->move('surname','first')->now();
+
+// Enabling encryption in the model
+$model->add('Controller_Encryption')->useFields(array('sort_code','acc_name'));
+<?/?>
+
+<p>In some cases, controllers are used transparently by the object itself:</p>
+<?Code?>
+// Add paginator to Grid
+$grid->addPaginator(25);
+<?/?>
+
+
+</div></div>
+<?$Next?>

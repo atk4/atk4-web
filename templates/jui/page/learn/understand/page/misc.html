@@ -1,0 +1,47 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Best practices and Miscellaneous Information</h1>
+
+        <h2>Keeping Your Functionality Scalable</h2>
+        <p>Scalability means ability to grow without encountering limitations. When functionality of the application
+        increases or changes, a poorly planned and maintained project will encounter severe problems.</p>
+
+        <p>The two major cures against the curse of "spaghetti code" are a decent frame-work and refactoring. Re-factoring
+        implies moving from one file to another.</p>
+
+        <h3>Avoid using API methods to define page</h3>
+        <p>In a mature web software API method reaches around 1000 lines of code and is containing application-related logic.
+        Having page definitions in the same file makes it increasingly difficult to work with the file. It's suggested to use
+        class-based approach from the start in your software.</p>
+
+        <h3>Inherit page classes</h3>
+        <p>If you have had a proper training in Object-Oriented development, you should know that inheriting similar pages
+        from common parent might be good idea. For example you may have 2 preferences pages for 2 different type of users and
+        the structure and objects on those pages might be similar enough to share them through OOP.</p>
+        <p>In this case, create lib/Page/Preferences.php then extend it twice as you find appropriate. Because class is
+        inside "lib" and not "page" it won't be accessible directly.</p>
+        <p>Alternatively you can put page into page/preferences.php but define page class as "abstract". From those two
+        approaches the first one is recommended, because the "not found" case will be properly handled.</p>
+
+
+
+        <h2>Upper and Lower Cases</h2>
+        <p>If you are developing on Windows or Mac they use case-insensitive operating system. However always assume that
+        your deployment platform would be case-sensitive. Page classes always start with "page" and follow this pattern:
+        "page_user_preferences_twitter" where underscores correspond with directory structure. When placed inside "lib",
+        classes use CamelCase such as "Page_FileManager", however can use underscores to define areas or zones as well as
+        inheritance, eg: "Page_User_Settings".</p>
+
+        <h2>Use of Slashes Versus Underscores</h2>
+        <p>If you are having page_user_preferences_twitter, then it can be accessed as either 'user_preferences_twitter' or
+        'user/preferences/twitter'. Link building will work properly regardless on how you use those, however if you are
+        using slashes with mod_rewrite with your own template, you may encounter issue with relative image/css paths. Proper
+        use of &lt;?template?&gt; tag inside your templates will help you avoid this problem.
+
+    </div>
+</div>
+
+<?$Next?>

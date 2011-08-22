@@ -1,0 +1,58 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Using model to work with multiple tables</h1>
+        <p>So far we have only worked with a single table. Agile Toolkit allows you to join in on additional tables. This method can be combined with inheritance for some awesome data modeling.</p>
+
+        <p>Let's continue example from the previous chapter. There we had a model for "Book" which defined a few field and was storing the data in database table "book". Book can be borrowed by a person through many-to-many relationship. Below is the database schema.</p>
+
+        <img src="<?template?>images/ugly_images/book_borrower.png<?/?>"/>
+<?Code?>
+class Model_Book extends Model_Table {
+    public $entity_code='book';
+    public $table_alias='b';
+    function init(){
+        parent::init();
+        $this->addField('name');
+        $this->addField('isbn')->mandatory(true);
+        $this->addField('publisher_id')->refModel('Publisher');
+        $this->addField('author_id')->refModel('Author');
+    }
+}
+<?/?>
+
+        <p>Agile Toolkit allows you to build model on top of existing one but this time with relation. Let's create a model, which would show all the borrowed books.</p>
+<?Code?>
+class Model_Book_Borrowed extends Model_Book {
+    function init(){
+        parent::init();
+        $this->addRelatedEntity('bb','book_borrower','book_id','inner','otm');
+        $this->addField('person_id')->relEntity('bb')->refModel('Person');
+    }
+}
+<?/?>
+        <p>This minimalistic piece of code added a new model, which now will incorporate join between table "book" and "book_borrower". In addition to all the fileds inherited from the Book model we are adding "person_id" field, which will show us who did borrow that particular book.</p>
+
+        <p>When calling dsql this will return the query of two tables joined as well, therefore the references we have made in the previous page for calculated fields will also function properly.</p>
+
+        <p>When you have multiple entities in the model, you can use relEntity to specify which table physically contains this field. </p>
+
+        <p>Last two arguments define "inner" joins to be used and relation type - One to Many (otm) - one book may have many book_borrower records.
+
+        <h3>Many-to-one</h3>
+        <p>It's also possible to use many-to-one relation. In fact, we can use them at the same time. This apprach can help us join some field from Publisher database.</p>
+
+<?Code?>
+$this->addRelatedEntity('bp','publisher','publisher_id');
+$this->addField('publisher_name')->relEntity('bb','name');
+<?/?>
+
+<?MoreInfo?>Inserting records in model with relations...
+<p>There might be some uncertainty when records are being added. Should related table be populated? At this time we advise not to insert records into tables with heavy relations. Alternatively you can redefine insertRecord() function to make sure it performs as you like.</p>
+<p>This will be handled better in the future versions of Agile Toolkit.</p>
+<?/?>
+
+    </div>
+</div>
+<?$Next?>

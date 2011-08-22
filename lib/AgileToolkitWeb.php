@@ -3,6 +3,21 @@
    Commonly you would want to re-define ApiFrontend for your own application.
  */
 class AgileToolkitWeb extends ApiFrontend {
+    public $locale=null;
+    function __construct($locale=null){
+        $this->locale=$locale;
+        parent::__construct('AgileWeb','jui');
+    }
+    function addDefaultLocations($base_directory){
+        if($this->locale){
+            $this->addLocation('locale/'.$this->locale,array(
+                'php'=>'libhuj',
+			    'page'=>'page',
+			    'template'=>'templates',
+			    ))->setBasePath($base_directory.'/locale/'.$this->locale)
+			;
+        }
+    }
 	function init(){
 		parent::init();
 
@@ -28,14 +43,15 @@ class AgileToolkitWeb extends ApiFrontend {
 		// Initialize any system-wide javascript libraries here
 		$this->js()
 			->_load('atk4_univ')
-			->_load('atk4web')
+			->_load('atk4web1')
 			// ->_load('ui.atk4_expander')
-
 			;
+
+        $this->auth=$this->add('BasicAuth')->allow('test','test');
+
+
 		list($main,$junk)=explode('_',$this->page,2);
 		if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
-
-		$this->initLayout();
 	}
 	function initLayout(){
 		if($this->template->is_set('Menu')){
@@ -106,6 +122,7 @@ class AgileToolkitWeb extends ApiFrontend {
 						$this->page_object->page_title.' | ');
 			}
 
+            if($this->page_object->template->is_set('db'))$this->dbConnect();
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
 			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
@@ -161,7 +178,12 @@ class AgileToolkitWeb extends ApiFrontend {
 	}
 	protected function loadStaticPage($page){
         $p=explode('_',$page);
+        if($p[0]=='a' && count($p)>1)throw new PathFinder_Exception('no direct loading for a',null,null);
         if($p[0]=='doc' && count($p)>2)throw new PathFinder_Exception('no direct loading for docs',null,null);
+        if($p[0]=='intro' && count($p)>1)throw new PathFinder_Exception('no direct loading for intro',null,null);
+        if($p[0]=='learn' && count($p)>1)throw new PathFinder_Exception('no direct loading for learn',null,null);
+        if($p[0]=='whatsnew' && count($p)>1)throw new PathFinder_Exception('no direct loading for whatsnew',null,null);
+        if($p[0]=='in' && count($p)>1)throw new PathFinder_Exception('no direct loading for in',null,null);
 		$this->page_object=$this->add($this->page_class,$page,'Content',array('page/'.str_replace('_','/',strtolower($page)),'_top'));
 		return $this->page_object;
 	}

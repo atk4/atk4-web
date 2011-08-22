@@ -1,0 +1,37 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Getting Examples to work</h1>
+        <p>All the documentation of Agile Toolkit is filled with numerous examples. What's really exciting is that
+        examples are executed right in the documentation and you can actually see what each code sinppet
+        produces. Here is an example:</p>
+
+<?Example?>
+$button=$page->add('Button')
+    ->setLabel('Button')
+    ->js('click')
+        ->univ()
+        ->alert('My First Button');
+<?/?>
+
+        <p>First, let's make sure you can execute this example in your local copy of Agile Toolkit. Select the
+        code and "copy" it with Ctrl+C (Cmd+C on Mac). Then open file located in page/index.php and place
+        it inside "init" method.</p>
+
+        <p>Refresh your browser window and you should see now your new button on your page.</p>
+
+        <h3>How does that work?</h3>
+        <p>With Agile Toolkit, your code is separated from the "look and feel". That's why you didn't need to worry about how
+        button will appear in your browser. Most probably the way how it looks in your local installation
+        of Agile Toolkit is different to this documentation, your button might not be green at all.</p>
+
+        <p>That is because button class has it's own template, and template on aglietoolkit.org is different
+        to the one you are using. Actually the CSS part is different, unless you are designer too, you wouldn't
+        need to know this.</p>
+
+
+    </div>
+</div>
+
+<?$Next?>

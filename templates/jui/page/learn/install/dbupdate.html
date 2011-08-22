@@ -1,0 +1,48 @@
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>SQL Upgrade Tracking</h1>
+        <p>When building version 0.1 of your project, your database structure might be undergoing a lot of changes. Once you
+        have finalized your database structure, produce a "create" script and place it into 'doc' of your project called
+        doc/myproject-01.sql</p>
+        <p>Exclude any non-essential or sensitive data from your database creation script.</p>
+        <p>Next, go into doc and create symlink "update.sh" pointing to "../atk4/tools/update.sh" by executing:
+        <pre>ln -s ../atk4/tools/update.sh .</pre>
+        Executing this shell script will look for new database update scripts under "dbupdates" directory and import them
+        into database.</p>
+        <p>Next time when you will need to change database structure, create docs/dbupdate/myproject-01-001.sql containing
+        ALTER statement. Of course you should replace "myproject" with the name of your project.</p>
+
+        <p>Execute ./update.sh from within "doc" directory. By default it will look for ~/.my.cnf file which normally
+        contains your default mysql connection info. If that file is not present, script will read database user/password
+        from "config.php" file.</p>
+
+        <p>If you need to change update.sh script, remove the link and copy it instead, then adjust.</p>
+
+        <h3>Using MySQL Workbench</h3>
+        <p>MySQL Workbench is a free and extremely powerful software for (but not limited to) designing your SQL schema. We
+        highly recommend to use it. In your normal work-flow you would perform changes to your model, save them, choose from
+        menu: Database -&gt; Synchronize Model. Click "continue" through all the steps until you see "Preview changes to be
+        applied".</p>
+        <p>Here you copy-paste generated code into a newly created dbupdates/.. file. You would need to manually remove
+        references to your database such as:
+        <pre>
+ALTER TABLE `colubris`.`task` DROP FOREIGN KEY `fk_task_screen1` ;
+        </pre>
+        to
+        <pre>
+ALTER TABLE `task` DROP FOREIGN KEY `fk_task_screen1` ;
+        </pre>
+        since the database will be automatically selected by "update.sh". Save update file and cancel synchronize dialog.
+        Execute "update.sh" manually. If you already performed changes to the database, you should still ad them into
+        dbupdates, but also create an empty file dbupadtes/myproject-01-001.sql.ok which means that the update was
+        successfully applied.
+        </p>
+        <p>Use doc/myproject.mwb as your mysql workbench filesave. If you are using a different modeling application, be sure
+        to specify how to properly change your database schema from Windows, Linux and Mac computers.</p>
+    </div>
+</div>
+
+<?$Next?>

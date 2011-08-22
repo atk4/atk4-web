@@ -1,0 +1,31 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Changing shared template of application</h1>
+        <p>Your application would usually have a consistent look throughout all pages. This look is defined by a "shared" template. This template is used by the Api class and its content will appear on all pages produced by Agile Toolkit.</p>
+
+        <p>It was already mentioned that you can change or completely replace this template. You should, however, put some of the important tags back into the template, such as: Content, js_include, document_ready, page_title, and version. If you don't want certain tags to be displayed, comment them inside HTML, prevent them from being added or destroy() them after they are added.</p>
+
+        <h3>Conditional templates</h3>
+
+        <p>At the time when defaultTemplate is called, some of the initialization has been done. You can rely on $this->page to determine which page is being requested and based on this information return name of the template. Below code will use templates/default/index.html instead of templates/default/shared.html for the index page.
+<?Code?>
+if($this->page=='index')return array('index');
+return parent::defaultTemplate();
+<?/?>
+        <p>Do not confuse this with page templates. This replaces API templates and should not be located inside "page" folder.</p>
+
+<?MoreInfo?>WARNING: If you will NOT add &lt;?Content?&gt; into your shared template... 
+<p>... then function layout_Content in API will not be called and the pages will not be loaded silently. That is the correct behaviour and allows you to initialize only the sections of the layout which present in the template.</p>
+
+<p>You can define other sections like this too. Use $this->addLayout('Sidebar'); inside API->init(); and then define layout_Sidebar() function in API. This function will only be called if region Sidebar is found in the template.</p>
+<?/?>
+
+        <h3>Conditioning based on authentication status</h3>
+        <p>defaultTemplate() is called before init(), therefore if you define any authentication in the application, it will not be ready yet by the time API's template is initialized.</p>
+        <p>If you need to change something on your pages for logged-in users, then do it inside initLayout() function by either adding views or adding login for or just manipulating API's template.</p>
+    </div>
+</div>
+
+<?$Next?>

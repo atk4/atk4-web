@@ -40,11 +40,12 @@ class page_intro_speed extends page_intro_generic {
 				It must be noted that each form is fully functional, includes validation, uses AJAX for submission and
 				validation.
 				');
+        $this->api->add('Controller_Compat');
 
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
 for($i=0;$i<200;$i++){
-	$f=$p->frame('Form '.$i)->add('Form');
+	$f=$p->add('Frame')->setTitle('Form '.$i)->add('Form');
 	$f->addField('line','name')->validateNotNull();
 	$f->addSubmit('Greeting');
 	if($f->isSubmitted()){
