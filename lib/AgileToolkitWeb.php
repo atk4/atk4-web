@@ -52,8 +52,6 @@ class AgileToolkitWeb extends ApiFrontend {
 
 		list($main,$junk)=explode('_',$this->page,2);
 		if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
-
-		$this->initLayout();
 	}
 	function initLayout(){
 		if($this->template->is_set('Menu')){
