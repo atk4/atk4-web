@@ -1,0 +1,85 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - July 2011</h2>
+
+
+
+        <h4><span class="date">July 10<em>th</em></span><a href="https://github.com/atk4/atk4/commit/3aa08b37fea406c6b7fbe520729281ed6b48389d">PDO DB under construction</a></h4>
+        <p>It's not in the works. lib/DB.php and also lib/DB/dsql.php contain half-finished implementation of PDO layer. If you need to implement it yourself and you can't wait, you can use this class to make your own. We expect PDO to arrive sometime in 4.1.1 or bit more later.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af0f0f4dc023085c864afa52dc2385b1bcc55738">Dynamic Methods</a></h4>
+        <p>Agile Toolkit now supports dynamic methods. Avoid using them at any costs, since they are slower than regular methods and are quite confusing
+        for developers. Dynamic method allows to register method for one or all objects</p>
+<?Code?>
+$this->api->addGlobalMethod('helloworld',array($this,'helloworld'));
+<?/?>
+        <p>This code will allow calling $anyobject->helloworld();. This is quite effective way to maintain backwards compatibility when methods are being cleaned up.
+        There is also a function for registering method for single function. It is useful if controller wants to register function inside API namespace.
+        Possibly PathFinder could have registered locate() and locateURL() functions through this approach, to keep API clean, however since it's very
+        essential controller, it's been done in old-fashioned way for simplicity and speed.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af0f0f4dc023085c864afa52dc2385b1bcc55738">$this->frame() is no more</a></h4>
+        <p>$view->frame() used to be a handy method to add a frame with a header. This method is now obsolete in favour of the new form:</p>
+<?Code?>
+// $frame=$view->frame('My Frame Title');
+
+$frame=$view->add('Frame')->setTitle('My Frame Title');
+<?/?>
+        <p>If you have been relying on this function, there is actually a compatibility controller. If you add it, then old format would still work. 
+<?Code?>
+$this->api->add('Controller_Compat');
+$frame=$view->frame('My Frame Title');
+<?/?>
+        <p>This controller also adds removed support for ajax() function for all views.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/923b6c5556e2270d2c7595da9849bfba4131be6c">Added Unit Test suite</a></h4>
+        <p>Unit tests basics is quite simple. Execute a function and compare results with expected. Agile Toolkit provides
+        a simple implementation for Unit tests, however with few nifty features</p>
+<?Code?>
+class page_mytest extends Page_Tester {
+    function prepare(){
+        return $this->add('View');
+    }
+    function test_name($t){
+        return $t->name;
+    }
+    function test_shortname($t){
+        return $t->short_name;
+    }
+}
+<?/?>
+
+        <p>Firstly, there are no value to compare with. Testing framework aims at remembering correct value on it's own and comparing with new value. Secondly, each
+        test is a function, which makes it possible for a testing script to execute each test multiple times. Additionally, function prepare() is called before
+        each test, which is designed to prepare data to be used within test. This way you can always start test with a clean object to play with.</p>
+
+        <p>This testing framework will be further enhanced. We plan to add stress-test and storing results in mysql as well as automated re-testing of multiple
+        pages like this without verbose output.</p>
+
+        <p>Another feature supported is "variations". It allows you to use different prepare functions for tests. For example if you implementing new version
+        of your controller and you want to test it against old one - it will show you output side-by-side.</p>
+
+        <p>There is also a new project called atk4-tester, which is growing collection of tests for testing framework</p>
+
+
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>../jun2011<?/?>">Older Entries</a>
+        <a href="<?page?>../aug2011<?/?>">Newer Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>

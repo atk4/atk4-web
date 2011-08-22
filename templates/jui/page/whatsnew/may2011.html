@@ -1,0 +1,204 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - May 2011</h2>
+
+        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/42e6168584fea4d4b76e4e2988556fd87729c118">URL->set() implemented</a></h4>
+        <p>When you execute $api->getDestinationURL() it returns an object. This object converts itself into URL in string context. You can execute few methods, to interact with that URL such as useAbsoluteURL(). Now you can also use set() to add more parameters</p>
+        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/42e6168584fea4d4b76e4e2988556fd87729c118">URL->set() implemented</a></h4>
+        <p>When you execute $api->getDestinationURL() it returns an object. This object converts itself into URL in string context. You can execute few methods, to interact with that URL such as useAbsoluteURL(). Now you can also use set() to add more parameters</p>
+
+<?Example?>
+$url=$page->api->getDestinationURL('..')->set('foo','bar?');
+$page->add('Text')->set($url);
+<?/?>
+
+
+
+        <h4><span class="date">May 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/3c1f42b46ef24ffa44cba401b36cea80b68fdf4e">Implemented argument passing to init()</a></h4>
+        <p>Normally all the dependencies object is receiving through $this->api. It's generally a bad practice in Agile Toolkit to take any
+        input inside init() method. Instead chaining should be used and logic should be stored in render(). However if you think that you
+        still need to pass something into init() method, now there is a way.</p>
+
+        <p>Pass array as a second argument to add() function and it will be available through $this->di_config;</p>
+
+<?Example?>
+class MyDI extends Text {
+    function init(){
+        parent::init();
+        $this->set($this->di_config['text']);
+    }
+}
+
+$page->add('MyDI',array('text'=>'test123'));
+<?/?>
+
+        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c6e13f8b29cfa11a48766433780d656292714ef3">Added ButtonSet</a></h4>
+<?Code?>
+$bs=$page->add('ButtonSet');
+$bs->add('Button')->set('<b>B</b>');
+$bs->add('Button')->set('<i>I</i>');
+$bs->add('Button')->set('<u>U</u>');
+<?/?>
+        <h4><span class="date">May 20<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c5039ef778b11c560cd3b46c7e54eba77c1312a5">Add ability to setup default pathfinder locations</a></h4>
+        <p>Pathfinder class needs to be loaded very early in your application. By the time init() is executed, it's already been initialized and ready to load your classes. How do push some paths before default ones are in effect? Now you can re-define $api->addDefaultLocations($pathfinder);</p>
+
+        <p>In following example, directory "myplugin" located in the base directory of your application can contain "includes", "javascript" and "tpl" folders. Resources in those folders will take precedence over any other location</p>
+
+<?Code?>
+function addDefaultLocations($pathfinder,$base_dir){
+    $pathfinder->addLocation('myplugin',array(
+        'php'=>'includes',
+        'js'=>'javascript',
+        'template'=>'tpl',
+      ))
+      ->setBasePath($base_dir);
+}
+<?/?>
+
+        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ae5489294f25c7177fd51a066d7fc4114fcc7901">Fix UI-test</a></h4>
+        <p>Did you know that there is a page called "uitest" which is comes enabled by default? You can see different elements on it. Good for testing your theme. Try it, http://localhost/atk4-example/?page=uitest</p>
+
+        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/47769eae6b1c1a0b2cb4ace85344ff8c517608a4">Use 10-columns instead of 12 by default</a></h4>
+        <p>Give class="g-row" to your div and then inside that you can use classes like "g-4", "g-8" to slice the space horizontally. The total amount of values should be exactly 10. You can also use "g-max" for full-width column</p>
+
+
+        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/47769eae6b1c1a0b2cb4ace85344ff8c517608a4">Use 10-columns instead of 12 by default</a></h4>
+        <p>Give class="g-row" to your div and then inside that you can use classes like "g-4", "g-8" to slice the space horizontally. The total amount of values should be exactly 10. You can also use "g-max" for full-width column</p>
+
+
+        <h4><span class="date">May 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/aa6a8a9ab8ab9ba8c13cd7990b560fc18115deee">Delete button is always last in grid</a></h4>
+        <p>Adding some consistency by always moving column with delete button to be the last in grid.</p>
+
+<?Example?>
+$page->api->dbConnect();
+$grid=$page->add('Grid');
+$grid->addColumn('delete','delete');
+$grid->addColumn('text','name');
+$grid->addColumn('text','surname');
+$grid->setSource('user');
+$grid->dq->limit(5);
+<?/?>
+
+        <h4><span class="date">May 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e8ffe5d2534393e973828d0f7f9f3596460cc6ba">column->setButtonClass</a></h4>
+        <p>setButtonClass allows you to add additional class to Grid button.</p>
+
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->addColumn('button','b1');
+$grid->addColumn('button','b2')->setButtonClass('red ');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+        <h4><span class="date">May 8<em>th</em></span><a href="https://github.com/atk4/atk4/commit/2059c2758c106b3d2f2e07bf31c0d77ea74b2b70">add getModel() to all views</a></h4>
+        <p>You can now call setModel() and getModel() on any view. If you specify name of the model (string) to setModel() it will be instantiated and getModel() would always return object</p>
+
+        <h4><span class="date">May 8<em>th</em></span><a href="https://github.com/atk4/atk4/commit/88f4c79d48db810b3f47299e476bba9b3778a137">Grid->getColumn</a></h4>
+        <p>As you know, according to convention, add* methods return instance of a new column. Grid, however, does not add any objects
+        when you use addColumn. It however remembers which column was last added and makes possible for such constructions:
+<?Code?>
+$grid->addColumn('text','name')->makeSortable();
+<?/?>
+      <p>What if you didn't manage to make column sortable right away? Now there is getColumn function to help:</p>
+<?Code?>
+$grid->addColumn('text','name');
+$grid->addColumn('text','surname');
+
+$grid->getColumn('name')->makeSortable();
+<?/?>
+    <p>This is particularly helpful if you are using setModel() to initialize columns</p>
+
+
+
+        <h4><span class="date">May 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/4bef7c00ece83c0319c7d8a93f69c31c77751278">Default excetpion for form = validity check</a></h4>
+        <p>Any object in Agile Toolkit has a exception() function. This function takes the string and returns new exception which you can throw.
+        The primary reason for the function is syntactic sugar - you can chain calls on a function, while you can't chain if you use "new".
+        Chaining of exceptions is used for adding more information. Remember that parameter for the exception() will be localized, and possibly
+        displayed to user, while additional data can be passed for debugging.</p>
+        <p>Different objects can use different exceptions classes. Now function thrown Exception_ValidityCheck exception by default.</p>
+<?Code?>
+throw $form->exception('Message For User')
+  ->setField('fieldname')
+  ->addMoreInfo('foo',$bar);
+<?/?>
+      <p>There is another type of exception, called Exception_ForUser. Executing $page->exception() will trigger that instead.</p>
+
+
+
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/03fd2256b20736b466b3c15342c07505fd2cf9a5">added button->isClicked() handler</a></h4>
+        <p>Similarly how you can check form conditions, you can now do the same with buttons.</p>
+<?Example?>
+if($page->add('Button')->isClicked()){
+    $this->js()->univ()->alert('Random is: '.rand(1,100))->execute();
+}
+
+
+<?/?>
+
+
+
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/0a96d4968b7977bf747a7f81bed8df6d1956258a">added form->onSubmit()</a></h4>
+        <p>Historically form would have a method onSubmit() which would return "true" when page was pulled from the form's "submit" AJAX request.
+        With the release of PHP 5.3 closures are now available. onSubmit() method accepts one argument, a callable, which is executed right away
+        if form is submitted. The benefit of this approach is that form will automatically capture validation errors and display them. You can also
+        return JS from that function which would be executed automatically.</p>
+<?Example?>
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('line','age');
+$form->addSubmit();
+$form->onSubmit(function($form){
+    if($form->get('age')<5)
+      throw $form->exception('Too young')
+        ->setField('age');
+
+    return $form->js()->univ()->successMessage('thank you');
+});
+<?/?>
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/061cfbc69428559baafb5bbed01dbec8cac182a1">added PathFinder's methods: search() and searchDir()</a></h4>
+        <p>Pathfinder is here to search for resources. $api->locate() is one function you migth already know. $api->pathfinder->search() and searchDir() allows you to receive list of files in directories across multiple paths. Great for implementing dynamic plug-ins in your application.</p>
+<?Example?>
+$models=$this->api->pathfinder->searchDir('template',
+    'css');
+
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('dropdown','models')
+    ->setValueList($models);
+$form->addfield('line','path');
+$form->addfield('line','url');
+$form->addSubmit('Resolve');
+
+if($form->isSubmitted()){
+    $js=array(); $i=$form->get('models');
+    $js[]=$form->getElement('path')->js()->val($this->api->locate('template','css/'.$models[$i]));
+    $js[]=$form->getElement('url')->js()->val($this->api->locateURL('template','css/'.$models[$i]));
+    $form->js(null,$js)->execute();
+}
+<?/?>
+
+
+
+
+		<div class="hr hr-small"></div>
+        <a href="<?page?>./apr2011<?/?>">Older Entries</a>
+        <a href="<?page?>./jun2011<?/?>">Newer Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>
