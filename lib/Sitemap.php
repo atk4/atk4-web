@@ -54,6 +54,7 @@ class Sitemap extends AbstractController{
                     'Models',
                     'intro'=>'Introduction to Models',
                     'add'=>'Creating your first Model',
+                    'db'=>'Database Considerations',
                     'calculated'=>'Calculated Fields',
                     'relations'=>'Relations betwene models and tables',
                     'actions'=>'Adding actions (behavor)',
