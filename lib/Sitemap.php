@@ -81,12 +81,11 @@ class Sitemap extends AbstractController{
                 ),
 			'agile'=>'Why Agile Toolkit is Agile?',
 			'app'=>array(
-				'Pratcical Guide to your First Application',
+				'Practical Guide to your First Application',
 				'planning'=>'Requirements!? What requirements?',
 				//'code'=>'Good code VS Bad code',
 				'models'=>'Adding Models',
 				'interface'=>'Front-end, Back-end and config',
-				'pages'=>'Mashing up Web Application',
 				'changes'=>'Handling Change Requests',
 				'tests'=>'Adding Unit Tests',
 				'deploy'=>'Deploying to Production',

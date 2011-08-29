@@ -2,6 +2,7 @@
 class page_intro_engage extends page_intro_generic {
 	function init(){
 		parent::init();
+		$this->api->redirect('/#engage');
 		$this->api->dbConnect();
 
 		$p=$this->add('Doc_View');
