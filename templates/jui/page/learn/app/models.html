@@ -37,7 +37,7 @@ class Model_Movie extends Model_Table {
         parent::init();
 
         $this->addField('name');
-        $this->addField('year')->type(int);
+        $this->addField('year')->type('int');
         $this->addField('imdb')->caption('IMDB Link');
     }
 }

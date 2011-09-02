@@ -149,7 +149,7 @@ $this->addField('email');
     }
 <?/?>
 
-<p>Since we referr to UserAuth here, we also need to define that class by placing it into our webroot/lib folder. It will make sure we are using consistent authentication between frontend and backend.</p>
+<p>Since we referr to UserAuth here, we also need to define that class by placing it into our [webroot]/lib folder. It will make sure we are using consistent authentication between frontend and backend.</p>
 <?Code?>
 class UserAuth extends SQLAuth {
     function init(){
@@ -202,7 +202,7 @@ class UserAuth extends SQLAuth {
 <h2>Front-end</h2>
 <p>Let's quickly create a basic dashboard page protected with Login and along with registration page. We would also need a static page to explain what the service is about.</p>
 
-<p>Be sure to check that your are using "default" skin not "jui" in your webroot/index.php file (it's 2nd argument to Application constructor. "jui" was default in 4.0 version of Agile Toolkit). Next you will need to create few files:</p>
+<p>Be sure to check that your are using "default" skin not "jui" in your [webroot]/index.php file (it's 2nd argument to Application constructor. "jui" was default in 4.0 version of Agile Toolkit). Next you will need to create few files:</p>
 
 <h6>templates/default/index.html</h6>
 <div class="atk_doc example"><code><pre>
@@ -221,6 +221,7 @@ class UserAuth extends SQLAuth {
 &lt;/div&gt;
 </pre></code></div>
 
+<h6>
 
 </div></div>
 <?$Next?>
