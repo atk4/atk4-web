@@ -1,6 +1,19 @@
 
 <?$Content?>
 
+<?Execute?>
+class GreetingForm extends Form {
+    function init(){
+        parent::init();
+        $this->addField('line','name')->validateNotNull();
+        $this->addSubmit('Greet');
+        if($this->isSubmitted()){
+            $this->js()->univ()->alert('Hello, '.$this->get('name'))->execute();
+        }
+    }
+}
+<?/?>
+
 
 <div class="atk_doc">
 
@@ -272,3 +285,19 @@ class Form_Field_DatePicker extends Form_Field {
 	}
 }
 <?/?>
+
+<?Code?>
+class GreetingForm extends Form {
+    function init(){
+        parent::init();
+        $this->addField('line','name')->validateNotNull();
+        $this->addSubmit('Greet');
+        if($this->isSubmitted()){
+            $this->js()->univ()->alert('Hello, '.$this->get('name'))->execute();
+        }
+    }
+}
+<?/?>
+
+
+<?$Next?>
