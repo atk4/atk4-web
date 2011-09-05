@@ -80,7 +80,7 @@ class Sitemap extends AbstractController{
 					'import'=>'Using 3rd party plugins',
                     ),
                 ),
-			'agile'=>'Why Agile Toolkit is Agile?',
+			'agile'=>'Best Practices with Agile Toolkit',
 			'app'=>array(
 				'Practical Guide to your First Application',
 				'planning'=>'Requirements!? What requirements?',

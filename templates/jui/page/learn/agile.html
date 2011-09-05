@@ -1,0 +1,134 @@
+
+<?$Content?>
+
+        <h1>Best Practices with Agile Toolkit</h1>
+        <p>Assuming you are well familiar with the topics in the learning book and have already played with some examples on your own installation of Agile Toolkit, there are number of concepts you should learn before you can make a successful software with Agile Toolkit</p>
+
+        <h2>Why Agile Toolkit is Agile</h2>
+
+        <p>There are many goals in Agile Toolkit which correlate with principles of Agile Development Methodology. For example, development of Agile Software is based on user stories and much more fluid approach. When you start project with Agile Toolkit, you create just a few models first and get something work-able. Within a hour you should have something to show to your users and get their feedback.</p>
+
+        <p>Abstraction and Documentation is important in Agile Toolkit. Any new class you add is there for a purpose and it's designed to make developer's life easier in some way. Any developer who uses Agile Toolkit must know this and retain those values. "Can use of this class be even easier?".</p>
+
+        <p>Agile Toolkit does not attempt to de-couple different software libraries. It slices your application horizontally. It decouples your code from design. It separates JavaScript and CSS. AJAX and effects are not essential at the start and can be dealt with later without loosing code you already wrote.</p>
+
+        <p>The default approach to page routing relies on simplicity and transparency. As user navigate between pages, you can be sure that there is a class corresponding to each page. If you at some point feel that page should be named differently, you can rename the class. The class itself would continue to work consistently. Ability of Agile Toolkit to create relative paths will only make your code more elegant.</p>
+
+        <p>Agile Toolkit recognizes and supports your own modifications. For example you can completely change the way how routing works. Write replacement class for ApiFrontend and create completely different routing schemes. If you are not satisfied with Forms or Models, you can also create your own. You can replace database engine and many other things without changing a single character inside /atk4/ folder. Not many frameworks can do that.</p>
+
+        <p>Take advantage of Agile Development in your projects. Focus on quick feature implementation and getting stuff done. Don't worry about the details just yet.</p>
+
+
+        <h2>Database and Models</h2>
+
+        <h3>Designing your Model Hierarchy</h3>
+        <p>Start your application by selecting some basic entities and implementing them. You can either create model first and then generate SQL or create SQL first and generate models. In both cases you should pay attention to the generated code as it might need some tweaking.</p>
+
+        <p>Think about the hierarchy for your models. Models in Agile Toolkit are classes which are designed to inherit each-other. Use that to full extent. Here is an example model inheritance structure:</p>
+
+<div class="atk_doc example"><code><pre>
+User
+ + User_Pending      // addCondition('is_approved','N');
+ + User_Publisher    // addCondition('is_publisher','Y');
+ + Moderator         // addRelatedEntity('user_privileges'), addField(), addCondition();
+
+User_Privileges
+
+Publication
+ + Publication_Published  // available to users
+ + Publication_Archived   // old publications
+ + Publication_Flagged    // flagged by users
+ + Publication_Draft      // while user edits publication
+
+// Statistics
+
+User_TopPublishers    // orders publishers by amount of publications, adds calculated fields
+</pre></code></div>
+
+<p>You can see a lot of overlapping models here. This is uncommon in many frameworks, but in Agile Toolkit it's the great way to define your models. The basic 
+models define fields. When you inherit User you add conditions. You also do that with relations, for example, author_id for publication would link to User_Publisher and not just user. They do use the same table, but conditions will help you avoid accidentally selecting non-approved user as author of a publication.</p>
+
+<p>If you have a team of multiple developers, then put someone in charge of the models. His task would be to develop all the necessary models and document them. Model developer would be responsible that the back-end logic works properly and database is consistent, while other developers should not access database directly. If some model is not there, they can always create a dummy model, which would then be changed by your back-end developer.
+</p>
+
+<p>Do not try to create ALL of your models right from the start. Start with few tables and about 5-10 models. Add more as required.</p>
+
+<h3>Database Migration</h3>
+<p>Make use of database migration as early as possible in your project lifetime. It's suggested that each of your developers would have their own local environment for editing and would contribute code through Code Versioning System. Any changes to the database should be similarly saved into the dbupdate/*.sql files and applied on all environments. This will always give you ability to check-out older code and re-create database structure for that particular version specifically.</p>
+
+<p>If you plan to use stored procedures, import them through the same update.sh script (by placing in doc/storedfx/*.sql) and the proper version will be re-imported every time.</p>
+
+<h2>Create Administration system first</h2>
+<p>Before you get to work on the front-end, start with the back-end. It takes exactly 2 function calls for you to add a CRUD to a page. Typically you would want to separate your model CRUDs into multiple pages an you can use sub-pages or tabs</p>
+<?Code?>
+$tabs = $page->add('Tabs');
+$tabs->addTab('Pending')->add('MVCGrid')->setModel('User_Pending');
+$tabs->addTab('Publishers')->add('CRUD')->setModel('User_Publisher');
+<?/?>
+<p>It's important to see what is in your database. Once you create some data, export it and place into doc/. Other developers on your project can import your test-data manually.</p>
+
+<h3>Create actions</h3>
+<p>Add methods to your models. Those are actions. For example you can define action $publisher->suspend(); which will terminate publisher's account for 24 hours. How would that work? Perhaps by adding new field to the database and adding one more condition to Publisher's model. This way, publishers can still act as a normal users during the cool-down period. Your back-end developer can take care of those things and your front-end developers don't even need to know anything about it making it very simple for all of them.</p>
+<p>When you create method for model (action), add a button to a crud, which would help trigger it on the selected record:<p>
+<?Code?>
+$crud=$tabs->addTab('Publishers')->add('CRUD');
+$crud->setModel('User_Publisher');
+if($crud->grid){
+  $crud->grid->addColumn('button','suspend');
+  if($_GET['suspend']){
+    $crud->grid->getModel()->loadData($_GET['suspend'])->suspend();
+    $crud->grid->reload()->univ()->successMessage('Suspended')->execute();
+  }
+}
+<?/?>
+
+<h3>Use form layouts</h3>
+<p>It takes one line of code to set layout of your form, but it makes it so much nicer for whoever is using it. Even when using CRUD, it relies on standard form for editing, so you still can affect it's layout.</p>
+
+<?Code?>
+$crud=$tabs->addTab('Publishers')->add('CRUD');
+$crud->setModel('User_Publisher');
+if($crud->form){
+  $crud->form->setFormClass('vertical');
+}
+<?/?>
+
+<h2>Designing front-end</h2>
+<p>Try to think of all the pages you are going to have and add them to the menu right away. By having all the links, you can get a feel of how the application would look. As you click through your application you can also see what is not implemented yet and needs some work.</p>
+
+<h3>Set up playground for your designer</h3>
+<p>Agile Toolkit relies on standard CSS frameworks and many things can be themed through CSS alone. Create a few pages for your designer which would contain all the possible UI elements. Your designer will be able to test effect on CSS by looking at the page.</p>
+
+<h3>Separate front-end from admin</h3>
+<p>It's always a good idea to keep your regular user login separate from your admin logins. Administration system should be under a difficult-to-guess URL (such as /admin382773), without any links to it from public pages. Create separate table for your administrators although initially you can hard-code username and password into your Admin Application class</p>
+<?Code?>
+// in lib/Admin.php, which defines class extending ApiFrontend, inside init() method:
+
+$this->add('BasicAuth')->allow('admin','secret')->check();
+<?/?>
+
+<h3>Watch where you put that code</h3>
+<p>Some time ago, there was a good post on the blog: <a href="http://agiletoolkit.org/blog/what-goes-where/" target="_blank">What goes where?</a>. Even through it's old, it's very useful.</p>
+
+<h3>When to create new classes?</h3>
+<p>Flexibility of Agile Toolkit allows you to avoid creating new classes. For example you can use default form. Question is - when DO you need to define new class? The answer is - if you plan on using it more than once. The principle is called don't repeat yourself. If you are building form once - define it inside page. If you need same or similar form for other page, create a separate class.</p>
+
+<h3>When to use underscores?</h3>
+<p>Many developers wonder, if class should be named User_Registration or UserRegistration. The basic rule is the following: User_Registration would normally extend User class or offer alternative for the User class. For example User_Expired and User_Admin should certainly use underscore, UserRegistration should not. If you have table named "user_publication" then the model should be UserPublication.</p>
+
+<h3>Using CamelCase or not?</h3>
+<p>CamelCase is adopted throughout Agile Toolkit. Reading UserPublication is easier than reading userpublication. Your previous framework might have given you a bad habit of using only lower-case. Fix your habit.</p>
+
+<h3>Naming tags in templates</h3>
+<p>Typically tags also use either underscores or CamelCase. If the tag is meant for an object - CamelCase should be used. If the field is meant for value only, it should use lowercases and underscore preferably matching the field from the database, so that you do not need to re-assign fields</p>
+
+<h3>Documenting your code</h3>
+<p>Nicely looking code is the best documentation. Try to keep your code readable.</p>
+
+<h3>Initializer function</h3>
+<p>Sometimes you would want to move that Form initialization into a separate function, because it's too large. $this->initLoginForm($form); It's possible but it's bad. Don't use this. Create a separate class instead and use $this->add('LoginForm'). If class is only used on one page, you can append it to the same file at the bottom.</p>
+
+<h3>Use Spaces, not Tab characters</h3>
+<p>Agile Toolkit switched to use "spaces" in all files. Spaces are better if you have multiple developers on your team, you won't need to smack them when they break indentation for a few lines in your file</p>
+
+<?$Next?>
