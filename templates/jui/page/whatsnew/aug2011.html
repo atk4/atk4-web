@@ -1,0 +1,37 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit?<?/?></h1> -->
+
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row" id="download-grid">
+	<div class="g-8">
+		<h2>Development Changes - August 2011</h2>
+
+
+                <p>July and August were relatively calm and not many changes were done. This is because we were preparing and testing 4.1 release</p>
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0e46a0aaa0061c173ed716b5dc8c36c308c71bd">Add getColumn() to DBlite</a></h4>
+<?Code?>
+$array_of_values = $this->api->db->getColumn($query);
+
+
+$array_of_values = $dq->do_getColumn();
+<?/?>
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
+        <p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
+        that. Previously developer would had to manually add include text into shared template, now you can simply call:
+<?Code?>
+$this->api->jui->addStaticInclude('myjsfile');
+<?/?>
+
+
+		<div class="hr hr-small"></div>
+        <!-- <a href="<?page?>./apr2011<?/?>">Earler Entries</a> -->
+        <a href="<?page?>../jul2011<?/?>">Older Entries</a>
+
+    </div>
+	<div class="g-4">
+        <?$sidebar?>
+	</div>
+</div>

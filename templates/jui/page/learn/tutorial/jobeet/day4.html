@@ -87,7 +87,7 @@ class page_jobs extends Page {
         $p=$this;
 
         $jobs = $this->add('MVCGrid');
-        $jobs->setModel('Job',array('location','position'));
+        $jobs->setModel('Job',array('location','position','company'));
         $jobs->addQuickSearch(array('location','position'));
         $jobs->addButton('Post a Job');
 

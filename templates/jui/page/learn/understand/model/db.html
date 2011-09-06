@@ -1,0 +1,77 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+        <h1>Database Considerations</h1>
+        <p>By designing your database in a certain way, you can save yourself some time and some trouble. Agile Toolkit makes certain assumptions about field naming and types. If you follow the below guidelines, model creation will be simpler. Otherwise, you might need to do some tweaking.</p>
+
+<h3>ID Column</h3>
+<p>For every table cerate an ID field, numeric, preferably auto-incremented and named exactly "id". </p>
+<div class="atk_doc example"><code><pre>
+CREATE TABLE mytable (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ...
+);
+</pre></code></div>
+
+<?MoreInfo?>What if I can't?
+<p>There are number of problems. For example, column editing with Grid will not be as easy, since they rely on presence of "id" column. You will need to alias it through $grid->dq->field('other_id id');</p>
+<p>Models do not fully support ID fields named differently. Actually models do support them, but the relations will give you problems. You would need to avoid using refModel() and would need to define calculated fields manually if your table is joined with other table by non-id field</p>
+<p>Use of tables with non-ID is not impossible, but will present a number of challenges.</p>
+<?/?>
+
+<h3>Foreign keys</h3>
+<p>Agile Toolkit handles foreign keys quite well, however you should remember to name foreign keys by combining their name from foreign table name and _id postfix. For example if table1 needs reference to table2, then table1.table2_id = table2.id would be the join condition.</p>
+
+<div class="atk_doc example"><code><pre>
+CREATE TABLE mytable (
+    ...
+  `user_id` INT(11) DEFAULT NULL,
+  KEY `fk_mytable_user1` (`user_id`),
+  CONSTRAINT `fk_mytable_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+    ...
+);
+</pre></code></div>
+
+<h3>Special fields</h3>
+<p>Some fields will have special meaning if defined. "name" will be used if you cast model into string or use it inside dropdown or through references. If "name" field is not defined, then you'll see something like 'mytable #23' where 23 is ID.</p>
+<h3>Soft-delete and Audit</h3>
+<p>If you excute $this->defineAuditFields(), the model will register 4 fields: "created_dts", "updated_dts", "deleted_dts" and "deleted".</p>
+<p>Those fileds will automatically be filled-in on creation, update and deletion operations. If "deleted" field is defined for a model, it will be used as a boolean for soft delete. That means instead of physically deleting your record with $model->delete() it will only be marked with deleted="Y".</p>
+
+<h3>Booleans</h3>
+<p>Type "boolean" in Agile Toolkit is saved as either 'Y' or 'N' in the database. Creating a char(1) field or enum('Y','N') is most common. It is also typical for boolean fields to be called starting with "is_".</p>
+<div class="atk_doc example"><code><pre>
+CREATE TABLE mytable (
+    ...
+  `is_active` ENUM('Y','N') DEFAULT 'N',
+    ...
+);
+</pre></code></div>
+
+<h3>Money</h3>
+<p>Typically money would need to be stored in DECIMAL(8,2) or something similar.</p>
+<div class="atk_doc example"><code><pre>
+CREATE TABLE mytable (
+    ...
+  `balance` DECIMAL(8,2),
+    ...
+);
+</pre></code></div>
+
+<h3>Dates</h3>
+<p>Date operations with SQL are always using format: 'yyyy-mm-dd'. Views can then change the format of the date field, but it's stored in SQL in exactly this format.</p>
+
+<h3>Encoding and Collations</h3>
+<p>Agile Toolkit does not have any preferences towards charsets, although if you are setting up a database, use utf8_general_ci or utf8_unicode_ci and not latin1. </p>
+<div class="atk_doc example"><code><pre>
+CREATE TABLE mytable (
+    ...
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+</pre></code></div>
+
+<h3>Field cases and special characters</h3>
+<p>Although you can use different cases and special characters in field names and perhaps even table names (by surrounding them with ticks `my field`) this might not play well with Agile Toolkit. In most cases Agile Toolkit would escape those names, but there might be some complications.</p>
+
+</div></div>
+<?$Next?>

@@ -1,4 +1,7 @@
 <?$Content?>
+<?Execute?>
+$this->api->dbConnect();
+<?/?>
 
 <div class="atk_doc">
 <h1>Grid Columns</h1>
@@ -17,8 +20,6 @@ Below is the list of basic column types (formatters). Note that you can specify 
 <li>time — format time;</li>
 <li>datetime — format date and time;</li>
 <li>wrap,nowrap — disables or forces wrapping on the column;</li>
-<li>wrap,nowrap — disables or forces wrapping on the column;</li>
-<li>template — applies custom SMlite template;</li>
 <li>template — applies custom SMlite template;</li>
 <li>checkbox — adds checkbox for fields. On it's own this does not provide any functionality, but can be used through javascript widgets;</li>
 <li>inline — allows to click on value and enter new value;</li>

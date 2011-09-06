@@ -1,0 +1,48 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+<h1>Requirements!? What Requirements?</h1>
+<quote>Requirements: Build a web application to help clients of a small DVD rental shops book or order movies on-line.</quote>
+<p>
+Not much, eh?
+</p><p>
+In the real world, developers need to be creative and flexible. Initial requirements are often shallow and can be changed easily. Agile methodology approach will help you deal with such a situation, but you also will need a very flexible framework and architecture. That's where Agile Toolkit comes in.</p>
+<h2>Initial planning</h2>
+<p>
+Knowing so little, we can deduct a number of things right from the start.</p>
+<ul>
+<li>We need two interfaces. One for the customers to log-in and order movies (the frontend). Other for store owner to use (the backend).</li>
+<li>The frontend will require customers to enter their email and password</li>
+<li>After logging in, customers need to see list of DVDs they rented, be able to browse other titles and rent them if any DVDs are available.</li>
+<li>Backend will also contain authentication, although we will use name / password</li>
+<li>Store assistant should be able to type in numbers of returned DVDs</li>
+<li>There should be option for adding new movie titles and also registering new DVDs</li>
+<li>Sometimes DVDs get damaged, lost or stolen, so should be a way to remove DVDs from the database</li>
+<li>Store assistant should be able to add new customers, amend them or delete them</li>
+</ul>
+<p>Our initial system should be as compact as possible and be implemented with the minimum of effort. It's quite possible that client will have change-requests. Delivering inital prototype is essential and will probably give us a lot of feedback and additional requirements.</p>
+
+<h3>Model Planing</h3>
+<p>As mentinoed before, in Agile Toolkit development is separated into Business development and User Interface development. We will start by planning our business logic first.</p>
+<ul>
+<li>Customer - Describes a customer - user of our system</li>
+<li>Movie - A Single movie title</li>
+<li>DVD - A physical box containing a DVD and bearing unique code</li>
+<li>Rental - A record about rented movie</li>
+</ul>
+
+<h3>User Interface Planning</h3>
+<p>Here we decide on some initial pages for the front-end.</p>
+<ul>
+<li>index - info about the store, some static text such as how to become a customer.</li>
+<li>login - will contain branded login form, possibly also registration form in the future.</li>
+<li>rentals - shows list of rented titles</li>
+<li>browse - for registered user will show movies as well as availability of un-rented DVDs.</li>
+</ul>
+
+<p>That's about all the planning we will do at this stage. We're going to start writing some code next</p>
+
+</div></div>
+<?$Next?>

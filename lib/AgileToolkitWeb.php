@@ -43,7 +43,7 @@ class AgileToolkitWeb extends ApiFrontend {
 		// Initialize any system-wide javascript libraries here
 		$this->js()
 			->_load('atk4_univ')
-			->_load('atk4web')
+			->_load('atk4web1')
 			// ->_load('ui.atk4_expander')
 			;
 
@@ -52,8 +52,6 @@ class AgileToolkitWeb extends ApiFrontend {
 
 		list($main,$junk)=explode('_',$this->page,2);
 		if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
-
-		$this->initLayout();
 	}
 	function initLayout(){
 		if($this->template->is_set('Menu')){
@@ -128,8 +126,8 @@ class AgileToolkitWeb extends ApiFrontend {
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
 			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
-			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			$this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
+			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			if($this->page_object->template->is_set('ContactForm')){
 				$this->page_object->template->tryDel("page_title");
 				$this->page_object->add('ContactForm',null,'ContactForm');
@@ -181,7 +179,7 @@ class AgileToolkitWeb extends ApiFrontend {
 	protected function loadStaticPage($page){
         $p=explode('_',$page);
         if($p[0]=='a' && count($p)>1)throw new PathFinder_Exception('no direct loading for a',null,null);
-        if($p[0]=='doc' && count($p)>2)throw new PathFinder_Exception('no direct loading for docs',null,null);
+        if($p[0]=='doc' && count($p)>1)throw new PathFinder_Exception('no direct loading for docs',null,null);
         if($p[0]=='intro' && count($p)>1)throw new PathFinder_Exception('no direct loading for intro',null,null);
         if($p[0]=='learn' && count($p)>1)throw new PathFinder_Exception('no direct loading for learn',null,null);
         if($p[0]=='whatsnew' && count($p)>1)throw new PathFinder_Exception('no direct loading for whatsnew',null,null);

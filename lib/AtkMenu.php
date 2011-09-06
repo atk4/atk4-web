@@ -11,14 +11,15 @@ class AtkMenu extends Menu {
 		$this->template->trySet('section',$section[0]);
 		switch($section[0]){
 			case'about':
+			case'whatsnew': 
 			case'newsletter':
 				$this->api->template->trySet('menu_about','class="current"');
 
 				$menu->addMenuItem('About','about/about');
+				$menu->addMenuItem('What\'s New?','whatsnew');
 				$menu->addMenuItem('Features','about/features');
+				$menu->addMenuItem('Authors','about/authors');
 				$menu->addMenuItem('License','about/license');
-				$menu->addMenuItem('History','about/history');
-				$menu->addMenuItem('Contact','about/contact');
 
 				break;
 
@@ -37,11 +38,9 @@ class AtkMenu extends Menu {
 
 				break;
 
-			case'whatsnew': 
 			case'develop': 
 				$this->api->template->trySet('menu_develop','class="current"');
 
-				$menu->addMenuItem('What\'s New?','whatsnew');
 				$menu->addMenuItem('Get Involved','develop/getinvolved');
 				$menu->addMenuItem('Roadmap','develop/roadmap');
 				$menu->addMenuItem('Addons','develop/addons');

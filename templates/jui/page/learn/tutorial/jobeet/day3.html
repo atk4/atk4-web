@@ -30,16 +30,16 @@ class Model_Job extends Model_Table {
         $this->addField('url');
         $this->addField('position');
         $this->addField('location');
-        $this->addField('description')->datatype('text');
-        $this->addField('how_to_apply')->datatype('text');
-        $this->addField('is_public')->boolean(true);
-        $this->addFiled('is_activated')->boolean(true);
+        $this->addField('description')->type('text');
+        $this->addField('how_to_apply')->type('text');
+        $this->addField('is_public')->type('boolean');
+        $this->addField('is_activated')->type('boolean');
         $this->addField('email');
         $this->addField('token');
 
-        $this->addField('created_dts')->datatype('timestamp')->system(true);
-        $this->addField('updated_dts')->datatype('timestamp')->system(true);
-        $this->addField('expires_at')->datatype('date')->system(true);
+        $this->addField('created_dts')->type('timestamp')->system(true);
+        $this->addField('updated_dts')->type('timestamp')->system(true);
+        $this->addField('expires_at')->type('date')->system(true);
     }   
 }
 <?/?>
@@ -66,7 +66,7 @@ class page_generate extends Page_SchemaGenerator {}
 <p>I am sure you are waiting until you can insert some data into your tables. That's what we will do now. Create file page/test.php and put the following code into it:
 </p>
 <?Code?>
-class page_tests_test1 extends Page {
+class page_test1 extends Page {
     function init(){
         parent::init();
         $this->add('CRUD')->setModel('Category');

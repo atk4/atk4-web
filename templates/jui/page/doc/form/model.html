@@ -64,7 +64,8 @@ $f->setModel($m,array('name'));
 <h2>Building from Custom Controller</h2>
 <p>Class Controller (or potentially other appropriate class) is used to integrate Form with Model. If you are willing to use your own controller, consider the following code. Using controller is beneficial when you are willing to add some additional functionality to all forms sharing the same model. For example the following controller will show hint for salary field, if that field is present.</p>
 
-<?Code?>
+
+<?Example?>
 class Controller_EmployeeWithHint extends Controller {
     public $model_name='Model_Employee';
     function initForm(){
@@ -73,11 +74,9 @@ class Controller_EmployeeWithHint extends Controller {
             $this->owner->getElement('salary')->setFieldHint('&nbsp;$3000 max');
     }
 }
-<?/?>
-
-<?Example?>
 $this->api->dbConnect();
 $f=$p->add('MVCForm');
 $f->setController('Controller_EmployeeWithHint');
 <?/?>
 
+<?$Next?>
