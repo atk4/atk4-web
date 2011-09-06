@@ -28,20 +28,22 @@ are way many obstacles down this road - difference in design, access level, menu
 </p>
 
 <p>Create a completely new directory called "admin" and inside there place the following files:</p>
-<h6>index.php</h6>
+<h6>admin/index.php</h6>
 <?Code?>
 include '../atk4/loader.php';
 $api=new Admin('rentaladmin','default');
 $api->main();
 <?/?>
-<h6>config.php</h6>
+<h6>admin/config.php</h6>
 <?Code?>
+// You can also include ../config.php from here
+
 $config['atk']['base_path']='../atk4/';
-$config['dsn']='mysql://root:root@localhost/project'; // use your own
+$config['dsn']='mysql://root:root@localhost/dvdrental'; // use your own
 $config['url_postfix']='';
 $config['url_prefix']='?page=';
 <?/?>
-<h6>lib/Frontend.php</h6>
+<h6>admin/lib/Admin.php</h6>
 <?Code?>
 class Admin extends ApiFrontend {
 
@@ -73,8 +75,6 @@ class Admin extends ApiFrontend {
         $menu=$this->add('Menu',null,'Menu');
         $menu->addMenuItem('Schema Generator','sg');
         $menu->addMenuItem('Manager','mgr');
-
-        $this->initLayout();
     }
     function page_index($p){
         $this->api->redirect('mgr');
@@ -86,9 +86,8 @@ class Admin extends ApiFrontend {
 <p>With admin pages out of the way, we can now create authentication for our front-end users. Before that, however, we would need to perform database migration (alters). and the best way to do so would be to use "dbupdate" techniques.</p>
 
 <h2>Adding password for users</h2>
-<p>First, make sure you have a "doc" folder in your top-level directory. Create a .htaccess file inside it to restrict direct access (you can also keep the folder outside of your web root). Database migration requires you to have "bash" which comes with any unix or linux. If you are on windows, you can install cygwin or bash, or execute upgrade files manually. The reason why upgardes are done through the command-line is because in secure environment you would have a separate username with create/alter priviledges and database user from config.php wouldn't be able to perform those operations.</p>
 
-<p>create file doc/rental-001.sql. This is a base version of database. Create file doc/dbupdates/rental-001-01.sql containing:</p>
+<p>Create file doc/dbupdates/rental-001-01.sql containing:</p>
 
 <div class="atk_doc example"><code><pre>
 alter table customer add email varchar(255);
