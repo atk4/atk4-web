@@ -1,11 +1,10 @@
-
 <?$Content?>
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
         <h1>Agile Toolkit Workflow — Views</h1>
         <p>Agile Toolkit is inspired by the flexibility and power of desktop UI frameworks but is also specifically desiged
-        to be lightweight enough for high performance on the web. For many years PHP community haven't seen a real potential
+        to be lightweight enough for high performance on the web. For many years the PHP community haven't seen a real potential
         of object oriented design primarily restricted by capabilities of older PHP verisons, compatibility as well as
         general mind-set of development community.</p>
         <p>This page will demonstrate some of the UI capabilities which applies to absolutely ANY object in Agile
@@ -13,10 +12,10 @@
 
         <h2>The Job: "Slot Machine"</h2>
         <p>Suppose one day a curious client shows up and willing to put your skills to the test by paying you to develop a
-        simple "slot machine". Client is not yet sure of what he needs, but he says he'll figure it out once he gets his
+        simple "slot machine". The client is not yet sure of what he needs, but he says he'll figure it out once he gets his
         hands on a first prototype. His requirements is to make a web page display 3 random digits to the visitor.</p>
 
-        <p><i>"Simple enough"</i> you say and write a HTML for this curious task putting it into
+        <p><i>"Simple enough"</i> you say and write some HTML for this curious task putting it into
         templates/default/view/slotmachine.html</p>
 <pre>
  &lt;div id="&lt;?$_name?>" style="border: 2px solid black; padding: 10px; width: 150px; margin: 10px;">
@@ -137,7 +136,7 @@ $page->add('Button')->setLabel('Pull')
 <?/?>
 
         <p><i>"Oh you didn't need to actually do that, I was just teasing. Let me get back to you when my designer finishes
-        HTML. Great Job!"</i></p>
+        the HTML. Great Job!"</i></p>
 
         <h3>Making them happy</h3>
         <p>Most clients are demanding. If yours are not, you are lucky, but more often than not you would find yourself
@@ -145,7 +144,7 @@ $page->add('Button')->setLabel('Pull')
         "client being picky".</p>
 
         <h2>How Agile Toolkit saves your day?</h2>
-        <p>As a forward-thinking developer, you probably are inerested in getting "most" for "least" amount of code. Without
+        <p>As a forward-thinking developer, you probably are interested in getting "most" for "least" amount of code. Without
         using it, you would find yourself either spending too much time implementing the widget, or being unable to implement
         all of your client requests over the phone.</p>
 
@@ -154,7 +153,7 @@ $page->add('Button')->setLabel('Pull')
         <li>Ability to be displayed absolutely anywhere on the page, inside other object or in global template</li>
         <li>Can have default template or be used with other template specified when adding object</li>
         <li>Will have it's own globally unique name in $object->name</li>
-        <li>Can memorize thing on object level and then recall them. $object->memorize()</li>
+        <li>Can memorize things on object level and then recall them. $object->memorize()</li>
         <li>Apply jQuery actions immediately or on event: $object->js('click')->hide('slow');</li>
         <li>Insert other objects into your object</li>
         <li>Set controller or model with setController or setModel</li>
@@ -162,11 +161,11 @@ $page->add('Button')->setLabel('Pull')
         <li>Define object-level hooks (callbacks)</li>
         <li>Raise object-specific exceptions through throw $object->exception('ouch')</li>
         <li>Remove and destroy object without rendering: $object->destroy()</li>
-        <li>Manipulate elements such $object->getElement('foo');</li>
+        <li>Manipulate elements such as $object->getElement('foo');</li>
         <li>Re-load object through AJAX, $object->js()->reload();</li></ul>
 
-        <p>All what you have saw happening, was due to the power of AbstractView class. All views in agile toolkit are based
-        upon this class. Which means you can add many of them on any page, change their template, adding JavaScript events
-        for them and even make them interact with other objects and even reload themselves in a very <b>unified</b> way.</p>
+        <p>All of what you have seen happening, is due to the power of AbstractView class. All views in agile toolkit are based
+        upon this class. Which means you can add many of them on any page, change their template, add JavaScript events
+        for them and even make them interact with other objects and reload themselves in a very <b>unified</b> way.</p>
 
         <?$Next?>
