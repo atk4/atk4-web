@@ -1,4 +1,3 @@
-
 <?$Content?>
 
 <div class="g-row" id="doc-ref">
@@ -24,7 +23,7 @@ There are some rules:
 </ul>
 
 <h2>Arguments for add()</h2>
-<p>All arguments for add() except the first are optional. When Controllers, Models and Helpers are added, only first argument is used. Views can use 4 arguments.</p>
+<p>All arguments for add() except the first are optional. When Controllers, Models and Helpers are added, only first argument is used. Views can use four arguments.</p>
 <?Code?>
  $new_view_object = $parent -> add($class, $short_name, $spot, $template );
 <?/?>
@@ -60,7 +59,7 @@ class Form_ContactForm extends Form {
 }
 <?/?>
 <h2>Other forms of adding</h2>
-<p>There are large amount of wrappers for add() functions. For example when you add field to a form, you would use addField('line','name'). This function is a wrapper for add(), however it transforms type into class as well as doing few other things. Wrappers for add() start with "add" in most cases. However there are some functions which do not use this convention such as js(), exception(), $grid-&gt;addColumn() (does not create new object). In your code, always try to follow the convention and call function 'addSomething' if it adds new object and returns new object.
+<p>There are many wrappers for add() functions. For example when you add field to a form, you would use addField('line','name'). This function is a wrapper for add(), however it transforms type into a class as well as doing a few other things. Wrappers for add() start with "add" in most cases. However there are some functions which do not use this convention such as js(), exception(), $grid-&gt;addColumn() (does not create new object). In your code, always try to follow the convention and call function 'addSomething' if it adds new object and returns new object.
 </p>
 <p>
 
