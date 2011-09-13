@@ -1,5 +1,4 @@
 
-
 <?$Content?>
 
 <div class="g-row" id="doc-ref">
@@ -15,14 +14,14 @@
         of the DRY (Don't Repeat Yourself) principle. It also adds stuff into your project, that you are not aware of, but
         would need to continue to maintain.</p>
 
-        <p>Agile Toolkit relies on many ways to simplify your project structure and reduce amount of code you will
+        <p>Agile Toolkit provides many ways to simplify your project structure and reduce the amount of code you will
         need to write, therefore code generation is not needed.</p>
 
         <h3>Focus on solution, not on theory</h3>
-        <p>Agile Toolkit was created to get job done and to get developers paid. Certainly there are many things it can
+        <p>Agile Toolkit was created to get the job done and to get developers paid. Certainly there are many things it can't
         do such as support every possible SQL flavor or add support for Sencha JS. We however believe that focusing
-        our limited resources on a single implementation, but giving you much more components to work with is much better
-        thing to do.</p>
+        our limited resources on a single implementation, but giving you many more components to work with is a much better
+        approach.</p>
 
         <p><i>Note: Currently only MySQL is supported. Support for other database engines will be eventually added.</p>
 
@@ -30,7 +29,7 @@
         <p>Singletons are evil. Especially in PHP. They give no benefits, not even memory saving. They might have some use in
         Java, but are generally considered a bad design in PHP software.</p>
 
-        <p>Agile Toolkit never relies on singletons. As a result, you may create 2 or more instances of API, completely
+        <p>Agile Toolkit never relies on singletons. As a result, you may create two or more instances of API, completely
         independent. "Controllers" can only be added once into the parent, but having them in each copy of API makes sense.
         Consider example, where clicking link in Admin system logs you into Frontend as a specific user. The most correct way
         to implement this is to initialize Frontend's API along with it's Auth and log user there directly.</p>
@@ -102,7 +101,7 @@ $f->addFi.. /* completion works */
         use when designing software architecture, it has little use in Agile Toolkit.</p>  
 
         <h3>Over-testing</h3>
-        <p>Agile Toolkit lets you write less code. Testing is still important, but Agile Toolkit narrows it down to 2 types
+        <p>Agile Toolkit lets you write less code. Testing is still important, but Agile Toolkit narrows it down to two types
         of testing. Unit testing is essential to test your business logic. However it does not work anymore when you are
         building user interfaces. In this case you need to rely on browser-side testing, which is a different suite.</p>
 
