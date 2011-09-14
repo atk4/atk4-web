@@ -45,7 +45,8 @@ class AtkMenu extends Menu {
 				$menu->addMenuItem('Share Help','community/help');
 				$menu->addMenuItem('Share Code','community/code');
 				$menu->addMenuItem('Share Love','community/love');
-				$menu->addMenuItem('Addons','develop/addons');
+				$menu->addMenuItem('Get Involved','develop/getinvolved');
+				//$menu->addMenuItem('Addons','develop/addons');
 
 				break;
 
