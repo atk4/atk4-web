@@ -128,6 +128,8 @@ class AgileToolkitWeb extends ApiFrontend {
 			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
 			$this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
 			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
+			$this->page_object->template->eachTag('Vimeo',array($this,'enclose_Vimeo'));
+			$this->page_object->template->eachTag('YouTube',array($this,'enclose_YouTube'));
 			if($this->page_object->template->is_set('ContactForm')){
 				$this->page_object->template->tryDel("page_title");
 				$this->page_object->add('ContactForm',null,'ContactForm');
@@ -163,6 +165,12 @@ class AgileToolkitWeb extends ApiFrontend {
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_Example',null,$tag)
 			->setCode($content);
+	}
+	function enclose_Vimeo($content,$tag){
+		$this->page_object->add('View',null,$tag,array('doc/view/doc_vimeo'))->template->trySet('video_id',$content);
+	}
+	function enclose_YouTube($content,$tag){
+		$this->page_object->add('View',null,$tag,array('doc/view/doc_youtube'))->template->trySet('video_id',$content);
 	}
 	function enclose_Execute($content,$tag){
 		list($header,$content)=preg_split('/\n/',$content,2);
