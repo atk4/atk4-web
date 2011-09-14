@@ -1,0 +1,139 @@
+<?$Content?>
+
+<h1>Log-in, Log-out, Signup and Password Reminder</h1>
+
+<h2>Front-end</h2>
+<p>Let's quickly create a basic index page layout which would contain a log-in form on the side.</p>
+
+<h6>templates/default/index.html</h6>
+<div class="atk_doc example"><code><pre>
+&lt;div class="g-row"&gt;
+	&lt;div class="g-8"&gt;
+        &lt;p&gt;Welcome to the DVD rental program. Lorem ipsum dolor sit amet&lt;/p&gt;
+        &lt;?$Content?&gt;
+    &lt;/div&gt;
+    &lt;div class="g-2"&gt;
+        &lt;h4&gt;Customer Login&lt;/h3&gt;
+        &lt;?$LoginForm?&gt;
+
+        &lt;div style="float: left"&gt;&lt;?$LoginButton?&gt;&lt;/div&gt;
+        &lt;div style="float: right"&gt;&lt;?$RegisterLink?&gt;&lt;br/&gt;&lt;?$ForgotLink?&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre></code></div>
+
+<p>Next, open page/index.php and instead of what there is right now, put this code in:</p>
+<?Code?>
+class page_index extends Page {
+    function init(){
+        parent::init();
+
+        $form = $this->add('Form',null,'LoginForm');
+        $form->setFormClass('vertical');
+        $form->addField('line','login');
+        $form->addfield('password','password');
+        $form->addSubmit('Login');
+
+        if($form->isSubmitted()){
+
+            // Short-cuts
+            $auth=$this->api->auth;
+            $l=$form->get('login');
+            $p=$form->get('password');
+
+            // Manually encrypt password
+            $enc_p = $auth->encryptPassword($p,$l);
+
+            // Manually verify login
+            if($auth->verifyCredintials($l,$enc_p)){
+
+                // Manually log-in
+                $auth->login($l);
+                $form->js()->univ()->redirect('video')->execute();
+            }
+            $form->getElement('password')->displayFieldError('Incorrect login');
+        }
+    }
+    function defaultTemplate(){
+        return array('page/index');
+    }
+}
+<?/?>
+<p>Let's go over the contens of that index page. First we create a simple form with 2 fields. setFormClass() makes field labels appear over the fields.
+When form is submitted, we are encrypting password with the
+standard Authentication class, verify credentials and if they match, manually login the user and redirect him to the "video" page. If login wasn't successful, display message about incorrect login instead. We've also switched to use our new template, which defines "LoginForm" tag.</p>
+
+<p>Next we should configure system-wide Auth class for our frontend. Edit the lib/Frontend.php file to add this:</p>
+
+<?Code?>
+        $this->auth=$this->add('RentalAuth');
+        $this->auth->allow('demo','demo');
+
+        $menu = $this->add('Menu',null,'Menu');
+        if($this->auth){
+            $menu->addMenuItem('Home','video');
+            $menu->addMenuItem('account');
+            $menu->addMenuItem('logout');
+        }else{
+            $menu->addMenuItem('Home','index');
+        }
+<?/?>
+
+<p>Remove previous declaration of the menu, as we have new one now. The last and important thing you need to do is to configure "auth" secret. You have already placed it into the admin/config.php. The secret should match and it's used in password hash generation. Changing the secret will also make it impossible to check hashes anymore, so be sure to keep it safe.</p>
+<h6>Edit config.php to add</h6>
+<?Code?>
+$config['auth']['key']='secret';  // should match the one used by admin
+<?/?>
+
+<p>Create the page/video.php containing list of available videos and make it protected from non-authenticated users.</p>
+<?Code?>
+class page_video extends Page {
+    function init(){
+        parent::init();
+        $this->api->auth->check();
+
+        $this->add('MVCGrid')->setModel('Movie');
+    }
+}
+<?/?>
+
+<p>You can now test your interface by trying to log-in with the user you have created on the back-end. Let's also add a simple user-management page</p>
+
+<?Code?>
+class page_account extends Page {
+    function init(){
+        parent::init();
+
+        $this->api->auth->check();
+
+        $model = $this->add('Model_Customer');
+        $model->getField('email')->system(true);
+        $this->add('FormAndSave')->setModel($model)->loadData($this->api->auth->get('id'));
+    }
+}
+<?/?>
+<p>We don't users to be able to change password themselves, so we simply mark that field as a system before using the model on the FormAndSave. The
+FormAndSave widget is a simple extension of MVCForm which saves data into database once it's submitted. Nothing fancy.</p>
+
+<h2>Signup Form</h2>
+<p>The sign-up form is now really easy to create.</p>
+<?Code?>
+class page_signup extends Page {
+    function init(){
+        parent::init();
+
+        if($this->api->auth->isLoggedIn())$this->api->redirect('/');
+
+        $model=$this->add('Model_Customer');
+        $model->addField('password')->type('password');
+
+        $form = $this->add('MVCForm');
+        $form->setModel('Customer');
+        $form->addFormSeparator();
+        $form->addField('password','confirm_password');
+
+        $form->onSubmit(function($form){
+        });
+    }
+}
+<?/?>

@@ -47,7 +47,21 @@ class AgileToolkitWeb extends ApiFrontend {
 			// ->_load('ui.atk4_expander')
 			;
 
-        $this->auth=$this->add('BasicAuth')->allow('test','test');
+
+        list($fp,$junk)=explode('_',$this->page,2);
+        if($fp=='commercial'||$fp=='account'){
+            // will need database
+            $this->dbConnectATK();
+        }
+
+
+        $this->auth=$this->add('AtkAuth');
+        $this->auth->setModel('ATK_User_Valid');
+        if($this->auth->isLoggedIn()){
+            $this->template->trySet('user',$this->auth->get('email'));
+        }else{
+            $this->template->trySet('user','Login');
+        }
 
 
 		list($main,$junk)=explode('_',$this->page,2);
@@ -143,6 +157,16 @@ class AgileToolkitWeb extends ApiFrontend {
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
 	}
+    function dbConnect($dsn=null){
+        //$dbs=$this->api->db;
+        parent::dbConnect($dsn);
+        $this->api->db_examples = $this->api->db;
+        //$this->api->db=$dbs;
+    }
+    function dbConnectATK(){
+        // Connect to administrative database
+        parent::dbConnect($this->getConfig('atk_dsn'));
+    }
 	function enclose_MoreInfo($content,$tag){
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_MoreInfo',null,$tag)

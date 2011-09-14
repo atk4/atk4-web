@@ -11,7 +11,15 @@ class Doc_Example extends Doc_View {
 			;
 
 		$p=$this->add('View',null,'example');
+
+        // Connect to alternative database
+        $dbs=$this->api->db;
+        @$this->api->db = $this->api->db_examples;
+
 		$this->executeDemo($p,$code);
+
+        $this->api->db_examples = $this->api->db;
+        $this->api->db=$dbs;
 
 		return $this;
 	}
