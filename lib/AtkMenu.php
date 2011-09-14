@@ -38,11 +38,13 @@ class AtkMenu extends Menu {
 
 				break;
 
+			case'community': 
 			case'develop': 
 				$this->api->template->trySet('menu_develop','class="current"');
 
-				$menu->addMenuItem('Get Involved','develop/getinvolved');
-				$menu->addMenuItem('Roadmap','develop/roadmap');
+				$menu->addMenuItem('Share Help','community/help');
+				$menu->addMenuItem('Share Code','community/code');
+				$menu->addMenuItem('Share Love','community/love');
 				$menu->addMenuItem('Addons','develop/addons');
 
 				break;
