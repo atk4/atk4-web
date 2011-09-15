@@ -2,7 +2,7 @@
 
 <h1>Day 5: More with the Model</h1>
 <p>
-Welcome to the second week of Agile Toolkit. I am saying that assuming that you have a nice weekend. If you haven't took a day off, you probably should go and enjoy life some more. That's the reason to use framework in the first place, right? They make your life easier and take care of many things so you wouldn't have to worry about them.</p>
+Welcome to the second week of Agile Toolkit. I am saying that assuming that you have had a nice weekend. If you haven't taken a day off, you probably should go and enjoy life some more. That's the reason to use a framework in the first place, right? They make your life easier and take care of many things so you don't have to worry about them.</p>
 <p>
 Today, we will enhance the Jobeet website by tweaking the code here and there. In the process, you will learn more about all the features we have introduced during the first five days of this tutorial.
 </p>
@@ -18,16 +18,16 @@ After you refresh the page you will see detailed query, which was used by the Gr
 select SQL_CALC_FOUND_ROWS a.location, a.position, a.company, a.id, 
        a.category_id, a.created_dts, a.updated_dts from job a
 <?/?>
-<p>We have no intention to writing a new query, however modifying the query would suit us perfectly. There are however few ways to modify it. First, we could modify the query right here and that would impact only our jobs page. An active job is one that was posted less than 30 days ago. addCondition() method will add a 'where' condition which will be applied on grid contents
+<p>We have no intention of writing a new query, however modifying the existing query will suit us perfectly. There are however a few ways to modify it. First, we could modify the query right here and that would impact only our jobs page. An active job is one that was posted less than thirty days ago. The addCondition() method will add a 'where' condition which will be applied on grid contents
 </p>
 <?Code?>
         $jobs->setModel('Job',array('location','position','company'))
             ->addCondition('created_dts>',date('Y-m-d H:i:s',strtotime('-30 days')))
             ->debug();
 <?/?>
-<p>As you can see from debug information, Model/ORM automatically takes care of table aliases. Another thing you probably have noticed, is that not all the columns are being queried. That's because we explicitly defined which columns we want in the grid the query is optimized to show only those columns. Columns defined as system(true) are always queried and are hidden by default.
+<p>As you can see from debug information, Model/ORM automatically takes care of table aliases. Another thing you have probably noticed, is that not all the columns are being queried. That's because we explicitly defined which columns we want in the grid so the query is optimized to show only those columns. Columns defined as system(true) are always queried and are hidden by default.
 <p/><p>You might also have noticed, that that creation date was automatically inserted into the records. That's because model automatically looks out for 'created_dns' and 'modified_dts' fields and sets them if they are defined in the model.</p>
-<p>Due to nature of dynamic queries, parametrical arguments are not used at the moment. They might be introduced transparently in the future versions of Agile Toolkit. 2nd argument to addCondition is automatically quoted. It is also escaped for security reasons, to make sure no SQL injection cannot occur.</p>
+<p>Due to the nature of dynamic queries, parametric arguments are not used at the moment. They might be introduced transparently in a future version of Agile Toolkit. The second argument to addCondition is automatically quoted. It is also escaped for security reasons, to make sure no SQL injection cannot occur.</p>
 
 <h2>Object Standard Behaviour</h2>
 <p>
@@ -46,7 +46,7 @@ When you need to do something automatically before a Model is saved, you can ove
         $data['expires_at']=date('Y-m-d',strtotime('+30 days'));
     }
 <?/?>
-<p>Now let's change the condition on our job listing, however instead of doing like we did it previously, let's create a new Model called "Job_Public". It will be based on Jobs but will add necessary conditions to match only those jobs allowed to advertise.</p>
+<p>Now let's change the condition on our job listing, however instead of doing it the way we did previously, let's create a new Model called "Job_Public". It will be based on Jobs but will add necessary conditions to match only those jobs allowed to advertise.</p>
 <?Code?>
 class Model_Job_Public extends Model_Job {
     function init(){
@@ -67,7 +67,7 @@ In the Model_Job's beforeInsert() method we have hardcoded the number of days fo
 <?Code?>
 $config['job']['expires']='2 months';
 <?/?>
-<p>Agile Toolkit do not separate configuration options between framework and your application. You have probably figured how property is accessed and the path 'job/expires' is looked up inside $config array structure.</p>
+<p>Agile Toolkit does not separate configuration options between framework and your application. You have probably figured out how each property is accessed with the path 'job/expires' which is looked up inside $config array structure.</p>
 
 
 <h2>Categories on the Homepage</h2>
@@ -116,7 +116,7 @@ select c.id, c.name,
        (select count(*) from job j where (j.expires_at> '2011-04-26') and (j.category_id=c.id) ) as job_count,
        c.id from category c having (job_count> '0')
 <?/?>
-<p>Agile Toolkit ORM have automatically used "having" clause instead of "where" no a calculated column. Next on our page, we need to create iteration through data array. Note: If our output array would be big, we could have used setQueryFields and dsql() functions to return actual select instead of data, then use do_select() and fetchRow() to channel data.
+<p>Agile Toolkit ORM have automatically used "having" clause instead of "where" on a calculated column. Next on our page, we need to create iteration through data array. Note: If our output array would be big, we could have used setQueryFields and dsql() functions to return actual select instead of data, then use do_select() and fetchRow() to channel data.
 </p>
 <?Code?>
 // jobs.php
@@ -147,7 +147,7 @@ There is still one requirement to implement for the homepage job list:<i> "For e
 
 <h2>Record population</h2>
 <p>
-Until now, we have used our "test" page to add records manually. However here we would need a bit more data for a reasonable testing and therefore we need
+Until now, we have used our "test" page to add records manually. However here we would need a bit more data for a reasonable test and therefore we need
 data import. For population we are going to use a script which uses Model manually and creates 30 jobs.</p>
 <?Code?>
 class page_populate extends Page {
@@ -186,7 +186,7 @@ When a job expires, even if you know the URL, it must not be possible to access 
 
 </p>
 <p>
-We should allow this page to be displayed. To secure this, simply change model from "Job" to "Job_Public".
+We should not allow this page to be displayed. To secure this, simply change model from "Job" to "Job_Public".
 
 <h2>Link to the Category Page</h2>
 <p>
