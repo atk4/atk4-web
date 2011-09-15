@@ -2,8 +2,8 @@
 
 <h1>Day 1: Starting the Project</h1>
 <h2>Pre-Introduction</h2>
-<p>Before I will go into details, I have to say a huge thangs to the Fabien Potencier and Jonathan Wage for providing original tutorial for Symfony and its port to SF2 <a href="http://sftuts.com/doc/jobeet/en/index.html">http://sftuts.com/doc/jobeet/en/index.html</a> as well at <a href="http://www.symfony-project.org/jobeet/1_4/Doctrine/en">http://www.symfony-project.org/jobeet/1_4/Doctrine/en/</a></p>
-<p>I have attempted to follow up through all the ideas and reasoning in creation of the application as well as best practices. Instead of using Symfony I am using Agile Toolkit, however.</p>
+<p>Before I will go into details, I have to say a huge thangs to the Fabien Potencier and Jonathan Wage for providing the original tutorial for Symfony and its port to SF2 <a href="http://sftuts.com/doc/jobeet/en/index.html">http://sftuts.com/doc/jobeet/en/index.html</a> as well at <a href="http://www.symfony-project.org/jobeet/1_4/Doctrine/en">http://www.symfony-project.org/jobeet/1_4/Doctrine/en/</a></p>
+<p>I have attempted to follow up through all the ideas and reasoning in creation of the application as well as best practices. However, Instead of using Symfony I am using Agile Toolkit.</p>
 <p>Contents of this book is distributed under Creative Commonts Attribution - ShareAlike license</p>
 <h2>GitHub branches for Each Day</h2>
 <p>The source code for this project is hosted on GitHub. In fact it has branch for every day. <a href="https://github.com/romaninsh/jobeet">https://github.com/romaninsh/jobeet</a>. If you wonder how much code is changed every day, run:</p>
@@ -40,13 +40,13 @@ As this book will mostly focus on the Agile Toolkit framework, we will assume th
 <p>You can run Agile Toolkit software on Windows, Linux or Mac. It does not make use of command line, does not require any files or directories to be writable and will work in most of the environments without changes</p>
 
 <h2>Downloading and Installing Agile Toolkit</h2>
-<p>Ready? Now let’s start by downloading Agile Toolkit. For this guide you will need 4.1+ version of Agile Toolkit. There are 2 main components in Agile Tolokit - core and addons. They are distributed individually, but are also available as a example-project download from <a href="http://agiletoolkit.org/download" target="_blank">Agile Toolkit Download Page</a></p>
+<p>Ready? Now let’s start by downloading Agile Toolkit. For this guide you will need 4.1+ version of Agile Toolkit. There are 2 main components in Agile Toolkit - core and addons. They are distributed individually, but are also available as a example-project download from <a href="http://agiletoolkit.org/download" target="_blank">Agile Toolkit Download Page</a></p>
 
-<p>If you plan to use Git, then follow instructions on the download page which will help you get your own repository with the bootstraped code.</p>
+<p>If you plan to use Git, then follow instructions on the download page which will help you get your own repository with the bootstrapped code.</p>
 
-<p>Agile Toolkit can work with virtually almost no code and in order to show few things example-project already includes many things you can play with.</p>
+<p>Agile Toolkit can work with virtually almost no code and in order to show few things, the example project already includes many things you can play with.</p>
 
-Download and unpack. You shave atk4-example directory. Let's rename it into 'jobeet' for the time being.
+Download and unpack will create the atk4-example directory. Let's rename it into 'jobeet' for the time being.
 </p>
 <pre>
 www/ &lt;-- your webroot
@@ -86,7 +86,7 @@ Second argument specifies a theme. For now, we will leave it alone. jui is a the
 <h2>Security</h2>
 
 <h3>Directory Structure Rights</h3>
-<p>Agile Toolkit does not require to set any rigts without reason. There are however cases when you want logging or file uploads to work. We recommend not to make any writable directories unless it's absolutely necessary. Agile Toolkit is a lightweight framework and makes no use of file-cache.</p>
+<p>Agile Toolkit does not require to set any rights without reason. There are however cases when you want logging or file uploads to work. We recommend not to make any writable directories unless it's absolutely necessary. Agile Toolkit is a lightweight framework and makes no use of file-cache.</p>
 
 
 <h3>Files</h3>
@@ -100,7 +100,7 @@ Second argument specifies a theme. For now, we will leave it alone. jui is a the
 
 <h2>Your files VS library files</h2>
 <p>It is important that you never change files inside atk4/ or atk4-addons directories. You might overwrite them yourself later on when you are doing upgrade. However if you want to substitute any of those files in your project, you can do it by creating them outside atk4 directory.</p>
-<p>As example, take a look at the logo in the left-top corner. Let's replace it with something different. Look into the source of the page. It uses the following URL: /jobeet/atk4/templates/jui/images/atk-logo.png by default. Copy your own logo into jobeet/templates/jui/images directory (create it if necessary) and name it atk-logo.png. Agile Toolkit will automatically notice this file and will use instead of default logo. The same rule applies to ANY file. Files outide atk4 folder will be included first.</p>
+<p>As an example, take a look at the logo in the left-top corner. Let's replace it with something different. Look into the source of the page. It uses the following URL: /jobeet/atk4/templates/jui/images/atk-logo.png by default. Copy your own logo into jobeet/templates/jui/images directory (create it if necessary) and name it atk-logo.png. Agile Toolkit will automatically notice this file and will use instead of default logo. The same rule applies to ANY file. Files outide atk4 folder will be included first.</p>
 <p>p.s.: default logo uses alpha channel so if you try look at it in your browser it seems to be invisible</p>
 
 
@@ -116,7 +116,7 @@ $config['dsn']='mysql://root:root@localhost/project';
 //$this->dbConnect();
 <?/?>
 
-<p>Change those to conform with your installation and let's add few more lines to redefine settings from config-default.php:</p>
+<p>Change those to conform with your installation and let's add a few more lines to redefine settings from config-default.php:</p>
 
 <?Code?>
 $config['atk']['base_path']='/jobeet/atk4/';
@@ -125,7 +125,7 @@ $config['dsn']='mysql://jobeet:secret@localhost/jobeet';
 
 <h3>Beautiful URLs</h3>
 <p>Since it's quite common practice, if you have mod_rewrite enabled, try to set it right away. If this does not work for you, you can skip this section, it's not essential for the functionality of your application. </p>
-<p>To use beautifyl URLs you need to instruct Agile Toolkit to use different URL generation rules by adding 2 lines into config.php file:</p>
+<p>To use beautiful URLs you need to instruct Agile Toolkit to use different URL generation rules by adding 2 lines into config.php file:</p>
 <?Code?>
 $config['url_postfix']='.html';
 $config['url_prefix']='';
