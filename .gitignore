@@ -9,3 +9,5 @@ config.php
 upload
 distfiles
 .DS_Store
+
+page/parsetest.php
