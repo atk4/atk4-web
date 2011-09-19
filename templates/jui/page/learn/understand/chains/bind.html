@@ -6,7 +6,7 @@
 
     <h1>Binding Chains</h1>
 
-    <p>When you execute js() method, the first argument you specify defines <b>when</b> the action is taking place. Below example demonstrates how you can bind chains on different events.</p>
+    <p>When you execute the js() method, the first argument you specify defines <b>when</b> the action is to take place. The example below demonstrates how you can bind chains to different events.</p>
 
 <?Example?>
 $page->add('H3')->set('never')
@@ -23,7 +23,7 @@ $page->add('H3')->set('mouseover')
 <?/?>
 
     <h2>Re-binding</h2>
-    <p>You can bind one chain to multiple events. Below example binds exactly same chain on both buttons</p>
+    <p>You can bind one single chain to multiple events. The example below binds the same chain to both buttons:</p>
 
 <?Example?>
 $b1=$page->add('Button')->set('Left');
@@ -33,7 +33,7 @@ $chain=$b1->js('click')->effect('highlight');
 $b2->js('click',$chain);
 <?/?>
 
-    <p>This combination allows you to enable many useful actions between different components on your page. In the form below, icon's "click" event and form field's "change" events are binding chain by other object.</p>
+    <p>This combination allows you to enable many useful actions involving different components on your page. In the form below, the icon's "click" event and the age field's "change" event have binding chains interacting other objects.</p>
 
 <?Example?>
 
@@ -60,9 +60,9 @@ if($form->isSubmitted()){
 <?/?>
 
     <p>I wish my bank would work like this.</p>
-    <p>Note in regards to the execute() function. It's a special function inside JavaScript chain, which will instantly send
-    chain back to the function widget and execute it. This can be used only when form is submitted. Note, that you do
-    not need to bind chain you are about to execute.</p>
+    <p>A note in regards to the execute() function: it's a special function inside the JavaScript chain, which will instantly send
+    the chain back to the function widget and execute it. This can be used only when the form is submitted. Note, that you do
+    not need to bind a chain you are about to execute.</p>
 
 
 </div></div>

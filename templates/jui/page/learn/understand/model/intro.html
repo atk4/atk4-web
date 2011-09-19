@@ -5,35 +5,35 @@
 	<div class="g-12">
         <h1>Introduction to Models</h1>
 
-        <p>Models describe your real business entities in a very object-oriented way. Models implement Active Record functionality as well as Dynamic Queries for multi-record actions.</p>
+        <p>Models describe your real business entities in a very object-oriented way. Models implement Active Record functionality, as well as Dynamic Queries for multi-record actions.</p>
 
 
-<?MoreInfo?>Why not use 3rd party ORM?
-<p>The design of Models in other ORMs such as Propel and Doctrine focuses mainly on cross-database implementation of SQL requests. Models of Agile Toolkit focus on consistency of business logic and security features.</p>
+<?MoreInfo?>Why not use a 3rd party ORM?
+<p>The design of Models in other ORMs such as Propel and Doctrine focuses mainly on cross-database implementation of SQL requests. The Models in Agile Toolkit focus on consistency of business logic and security features.</p>
 
-<p>Models in Agile Toolkit are simpler. You can define one with regular PHP class, do not need to generate any of the code or learn new model definition file format. Models are much more suitable for inheritance. In the same application you could have: User, Administrator, Client, Client_Banned models which internally are using the same table "user", but containing different field definitions, conditions or even joins.</p>
+<p>Models in Agile Toolkit are simpler. You can define one with a regular PHP class, do not need to generate any of the code or learn a new model definition file format. Models like this are much more suitable for inheritance. In the same application you could have: User, Administrator, Client, Client_Banned models, which internally use the same "user" table, but contain different field definitions, conditions or even joins.</p>
 
-<p>Security is one of the benefits of Agile Toolkit models. When your CRUD operates with "Client_Banned" model, it will only be able to create entries of this model in the database. Some of other restrictions can also be defined on a model level, such as restriction for the user to only access his record in the database and not those belonging to other users.</p>
+<p>Security is one of the benefits of Agile Toolkit models. When your CRUD operates with a "Client_Banned" model, it will only be able to create entries of this model in the database. Some other restrictions can also be defined on a model level, such as a restriction so the user cam only access their own record in the database, and not those belonging to other users.</p>
 
-<p>Very often models in Agile Toolkit are more capable and incorporating logic normally found in Controllers of other frameworks. This is because "Controllers" in Agile Toolkit are generic.</p>
+<p>Very often models in Agile Toolkit have more functionality and incorporate logic normally found in Controllers in other frameworks. This is because "Controllers" in Agile Toolkit are generic.</p>
 
-<p>The UI stack knows how to integrate with Models directly, therefore quite often all you need to do is to specify proper model. Agile Toolkit Model also contains some additional information about the fields such as "caption", "system flag" etc.</p>
+<p>The UI stack knows how to link with Models directly, therefore quite often all you need to do is to specify a proper model. The Agile Toolkit Model also contains some additional information about fields such as "caption", "system flag" etc.</p>
 
-<p>Business-logic validation is often handled by the model. User Interface performs validation through AJAX requests, so it's consistent, not duplicated and not carried outside of the server-side code. If more developers are working on your software, you would want some of them to focus on Models, others on User Interface.</p>
+<p>Business-logic validation is often handled by the model. The User Interface performs validation through AJAX requests, so it's consistent, not duplicated, and not carried outside of the server-side code. If more developers start working on your software, you will want some of them to focus on Models, others on User Interface.</p>
 
-<p>You will be pleased to find that Models are sufficient to define contents of your Forms, will bind with custom templates, will be handy to use even in complex situations and are a great way to export API from your system with very little extra effort.</p>
+<p>You will find that Models are sufficient to define the content of your Forms, will bind with custom templates, and will be handy to use even in complex situations - and are a great way to export an API from your system with very little extra effort.</p>
 
 <?/?>
 
 
-        <h2>What Model can do on it's own?</h2>
+        <h2>What can a Model on its own?</h2>
         <p>See some examples of syntactic sugar of Models</p>
 
 <?Code?>
 // Initialize object for employee
 $emp=$this->add('Model_Employee');
 
-// Load data for given id
+// Load data for a given id
 $emp->loadData($_GET['id']);
 
 // Interact with data
@@ -42,7 +42,7 @@ $salary = $emp->get('salary');
 // Traverse foreign keys. Automatically loads proper model and data
 $company=$emp->getRef('company_id');
 
-// Model can define custom actions.
+// a Model can define custom actions.
 $company->letGo($emp);
 
 // Standard actions can also be used
@@ -51,11 +51,11 @@ $emp->delete();
 // Same Model_Employee, but adds condition/master field
 $emps = $company->getEmployees();
 
-// Model can produce dynamic queries for any actions
+// a Model can produce dynamic queries for any actions
 $count = $emps->dsql()->field('count(*)')->do_getOne();
 
-// You can use customized model to create fully functional CRUD
-// If you add employee thorugh CRUD they will become company
+// You can use a customized model to create a fully functional CRUD
+// If you add employee through a CRUD they will become company
 // employees automatically.
 $this->add('CRUD')->setModel($emps);
 
@@ -65,17 +65,17 @@ $this->add('CRUD')->setModel($emps);
 
         <h4>Direct use of Models</h4>
         <ul>
-        <li>Define all the fields of the model and type of those fields</li>
-        <li>Completely define model-related business logic inside model body</li>
+        <li>Define all the fields of the model and the type of those fields</li>
+        <li>Completely define model-related business logic inside the model body</li>
         <li>Provide and encourage inheritance of models: User, ExpiredUser, AdminUser etc</li>
         <li>Implement dependencies between models as well as traversal</li>
-        <li>When it comes to SQL, model can use either single or multiple tables to store data (joins)</li>
-        <li>Provide ability for model to add mandatory conditions on SQL tables</li>
-        <li>Tracking which fields are changed</li>
+        <li>When it comes to SQL, the model can use either single or multiple tables to store data (joins)</li>
+        <li>Provide the ability for the model to add mandatory conditions to SQL tables</li>
+        <li>Track which fields are changed</li>
         <li>Encourage model-level validation and default values</li>
-        <li>Allow to add behaviours, either manually inside model functions or as extensions</li>
+        <li>Allow adding behaviours, either manually inside model functions or as extensions</li>
         <li>Support SQL calculated fields</li>
-        <li>Offer extensions such as strong encryptions, audit log, timestamps, soft delete and so on</li>
+        <li>Offer extensions such as strong encryptions, audit log, timestamps, soft delete, and so on</li>
         </ul>
 
 </td><td width="2%"></td><td valign="top">
@@ -86,8 +86,8 @@ $this->add('CRUD')->setModel($emps);
         <li>Bind Grid with Model. Displays properly formatted fields, both physical, calculated, foreign and related</li>
         <li>Define which fields and in which order you want to show when binding</li>
         <li>Add more fields, more conditions or even remove fields before you bind with the view</li>
-        <li>Use custom controller when binding. This can allow you to bind view with multiple models</li>
-        <li>Validation exceptions inside models bubble up to the view and properly handled</li>
+        <li>Use custom controller when binding. This can allow you to bind a view to multiple models</li>
+        <li>Validation exceptions inside models bubble up to the view and are properly handled</li>
         <li>After binding with model, tweak dynamic SQL statement even more, such as by joining to more tables</li>
         <li>4.2: Will have support for MongoDB, Prepared query cache, Data/Memcached, PDO (PostreSQL, Oracle, SQLite) and parametric queries</li>
         </ul>

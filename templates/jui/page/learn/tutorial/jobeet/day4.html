@@ -1,7 +1,7 @@
 <?$Content?>
 <h1>Day 4: The Controller and the View</h1>
 <p>
-Yesterday, we explored how Agile Toolkit simplifies database management and connect it to your first CRUD. And by usign relationship you saw how dropdown values were automatically populated from the right table.
+Yesterday, we explored how Agile Toolkit simplifies database management and connect it to your first CRUD and by using relationship you saw how dropdown values were automatically populated from the right table.
 </p><p>
 Today, we are going to customize the basic job module we created yesterday. The job module already has all the code we need for Jobeet:
 <ul>
@@ -18,7 +18,7 @@ You may use a templating engine to separate the logic from the HTML. Perhaps you
 </p><p>
 As with every problem, there are nice solutions. For web development, the most common solution for organizing your code nowadays is the MVC design pattern. In short, the MVC design pattern defines a way to organize your code according to its nature. This pattern separates the code into three layers:
 </p><p>
-The Model layer defines the business logic (the database and models we created yesterday belongs to this layer). You already know that Agile Toolkit stores models in the lib/Model/ directory. Model in Agile Toolkit is a class. Model examples are: User, Job, Category, Admin etc.
+The Model layer defines the business logic (the database and models we created yesterday belong to this layer). You already know that Agile Toolkit stores models in the lib/Model/ directory. Model in Agile Toolkit is a class. Model examples are: User, Job, Category, Admin etc.
 </p><p>
 The View in Agile is also a class. If you looked at some other frameworks you might have thought it would be a HTML template. Nope. It's a class. However any View class is connected with a template - a chunk of HTML code which View uses to draw itself.
 </p><p>
@@ -26,13 +26,13 @@ The Controller is a piece of code which binds Model with View. It teaches view h
 </p>
 <h2>How MVC in Agile Toolkit is different?</h2>
 <p>
-Agile Toolkit is challenged with a difficult task - provide a flexible User Interface. Therefore a traditional approach to MVC does not work here. While at it, there are a number of simplification.</p>
+Agile Toolkit is challenged with a difficult task - provide a flexible User Interface. Therefore a traditional approach to MVC does not work here, instead there are a number of simplification needed.</p>
 <h3>Optional MVC</h3>
-<p>Traditionally in frameworks developer needed to create all 3 pieces of M.V.C. In Agile Toolkit you can often use standard ones. If you look at the example you have (page/test.php), then you can see that we only have used standard View ("CRUD") and our own Model. The controller also got initialized in the process and Agile Toolkit picks the best crontroller for the job. You can access controller through $view->getController(); With this approach, there is much less code to develop.</p>
+<p>Traditionally in frameworks a developer needed to create all three pieces of M.V.C. In Agile Toolkit you can often use standard ones. If you look at the example you have (page/test.php), then you can see that we only have used standard View ("CRUD") and our own Model. The controller also got initialized in the process and Agile Toolkit picks the best crontroller for the job. You can access controller through $view->getController(); With this approach, there is much less code to develop.</p>
 <h3>Everything is a class</h3>
-<p>The view is implemented as a class. It contains some UI logic on its own and can interract with browser in certain ways. It is not necesserily complex, because views often inherit things and rely on other things. You would be surprised to find out that the CRUD View you used yesterday is implemented in under 50 lines of code. That's because it relies on other views such as Button, Grid, Form, Paginator etc</p>
+<p>The view is implemented as a class. It contains some UI logic on its own and can interract with the browser in certain ways. It is not necessarily complex, because views often inherit things and rely on other things. You would be surprised to find out that the CRUD View you used yesterday is implemented in under 50 lines of code. That's because it relies on other views such as Button, Grid, Form, Paginator etc</p>
 <h3>Initialize then Render</h3>
-<p>A very major aspect of Agile Toolkit is separation of initialization and drawing. You might have added 2 CRUDs in your test.php init() method, but only later they produced any code. As a result, many things can happen with them inbetween - you can load data, add more fields, more buttons, more columns.</p>
+<p>A very major aspect of Agile Toolkit is separation of initialization and drawing. You might have added two CRUDs in your test.php init() method, but only later they produced any code. As a result, many things can happen with them inbetween - you can load data, add more fields, more buttons, more columns.</p>
 <h3>Pages</h3>
 <p>Agile Toolkit introduces a concept of "page". Any class stored under "page" directory becomes a page. That means it can be requested through the browser. You as developer control and create all the pages. Page is used as a glue to put things together. Pages also control the flow and handle requests from the user.</p>
 
@@ -42,11 +42,11 @@ Agile Toolkit is challenged with a difficult task - provide a flexible User Inte
 Before we go into Design and HTML, there are some important things to consider.
 </p>
 <p>
-First, if you have a closer look at the mockups, you will notice that much of each page looks the same. You already know that code duplication is bad, whether we are talking about HTML or PHP code. In fact, most of web application and websites will have a common HTML code in them. Agile Toolkit comes with a flexible templating system.
+First, if you have a closer look at the mockups, you will notice that much of each page looks the same. You already know that code duplication is bad, whether we are talking about HTML or PHP code. In fact, most of web application and websites will have common HTML code in them. Agile Toolkit comes with a flexible templating system.
 </p><p>
 Templates in Agile Toolkit contains a lot of useful things which PHP developres wouldn't know how to use and designers might be too lazy to add. If you have been following progress on the web, you would know that CSS can pretty much define the look of your page completely. If you do not agree, take a look at CSS Zend garden. 
 </p><p>
-As a result rewriting HTML without thinking is pretty lousy job. In fact the phase "cut into HTML" should soudn more like... "cut into CSS". Agile Toolkit produces both HTML and CSS for your needs and it relies on a powerful jQuery UI CSS Frameworks / Themeroller.
+As a result rewriting HTML without thinking is a pretty lousy job. In fact the phase "cut into HTML" should sound more like... "cut into CSS". Agile Toolkit produces both HTML and CSS for your needs and it relies on the powerful jQuery UI CSS Framework and Themeroller.
 </p>
 <h3>What not to do</h3>
 <p>So before we continue, let's agree on things we will NOT do.
@@ -76,7 +76,7 @@ Doing any of the above will probably add you extra few weeks of work you could h
 
 
 <h3>Being a PHP Developer</h3>
-<p>As a PHP developer you now have a very rare choice to focus on the PHP part of your project. Design certainly wil be improved later by a skilled designer on your team and JavaScript enhancements will be added too, but not now. Agile Toolkit will try to enable you do everything what is needed without dipping your head into those areas.</p>
+<p>As a PHP developer you now have a very rare choice to focus on the PHP part of your project. Design certainly will be improved later by a skilled designer on your team and JavaScript enhancements will be added too, but not now. Agile Toolkit will try to enable you do everything that is needed without dipping your head into those areas.</p>
 
 
 <h2>Adding Pages</h2>
@@ -151,7 +151,7 @@ class page_jobs extends Page {
 <h3>See it working</h3>
 <p>Open http://localhost/jobleet/jobs.html in your browser</p>
 <p>It should show you list of jobs from the database. Each of them should contain a link. Clicking a link will send you to the page jobs/details.html?id=123 which will show details of that particular job.</p>
-<p>The views you have used on the pages are standard - Grid and View. You also coupled them with model through "setModel()". For the View on details page you specified a custom template through 4th argument of add() function. Further - you loaded data from the $_GET['id']. Finally 2 buttons were dynamically added to the details page to get back to the list or edit data.
+<p>The views you have used on the pages are standard - Grid and View. You also coupled them with model through "setModel()". For the View on details page you specified a custom template through the fourth argument of the add() function. Further - you loaded data from the $_GET['id']. Finally two buttons were dynamically added to the details page to get back to the list or edit data.
 
 <h2>Setting page title</h2>
 <p>It would be awesome if we could have changed Title of the details page to contain job name. First we need to look into shared.html. It contains the following code:</p>

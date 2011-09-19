@@ -3,31 +3,30 @@
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
         <h1>Database</h1>
-        <p>Agile Toolkit focuses on tight integration with MySQL database. Although there are no artificial
-        restrictions, development team decided to focus on a single database engine. This might be seen as
-        an advantage or as a disadvantage.</p>
+        <p>Agile Toolkit has a tight integration with MySQL. The development team decided to focus on a single database engine,
+        but there are no architectural restrictions in the framework to using other databases. Although only MySQL is currently
+        supported, our move to PDO will ensure wider compatibility with other databases in the future.</p>
 
-        <p>MySQL is clearly the most successful companion for PHP applications and provides all the features
-        a typical Web application would use. You can still use Agile Toolkit with other databases on your own
+        <p>MySQL is clearly the most successful companion to PHP applications, and it provides all the features
+        a typical Web application uses. You can still use Agile Toolkit with other databases, at your own
         risk.</p>
 
         <h2>Configuring access</h2>
-        <p>The format of SQL connection string goes back to the old days of 2000 and is based on DB::Lite format of DSN. Here
-        is a typical connect string, which is normally placed inside config.php:</p>
+        <p>The definition of the format of an SQL connection string goes back to the old days of 2000 and is based on the 
+        DB::Lite format of DSN. Here is a typical connection string - which is normally placed inside your config.php:</p>
 <?Code?>
-$config['dsn']='mysql://user:secret@localhost/dbname';
+$config['dsn']='mysql://user:password@localhost/dbname';
 
 // define port:
-// $config['dsn']='mysql://user:secret:8888@localhost/dbname';
+// $config['dsn']='mysql://user:password:8888@localhost/dbname';
 
 // through socket
-// $config['dsn']='mysql://user:secret:/tmp/sock@localhost/dbname';
+// $config['dsn']='mysql://user:password:/tmp/sock@localhost/dbname';
 <?/Code?>
-        <p>Currently only MySQL is supported, however our move to PDO will ensure wider compatibility. </p>
 
-        <h3>Defining access through array</h3>
-        <p>If DSN string is impossible to define, for example your password contains '@' character, then the second
-        format is preferred:</p>
+        <h3>Defining Access through an Array</h3>
+        <p>If the DSN string is impossible to define - for example, if your password contains the '@' character - then this
+        alternative format is preferred:</p>
 
 <?Code?>
 $config['dsn']=array(
@@ -40,28 +39,32 @@ $config['dsn']=array(
 // mysql_connect('localhost:1234','dbuser','secret');
 <?/Code?>
 
-        <h2>Establishing connection</h2>
-        <p>To establish connection with the database you should add the following command either on the API's init()
-        method or inside page's init() method.</p>
+        <h2>Establishing a Connection</h2>
+        <p>To establish a connection with the database you should add the following command either inside the init() method
+        of the API or of the page:</p>
+        
 <?Code?>
 $this->api->dbConnect();
 <?/Code?>
-        <p>Establishing connection and selecting database takes some time, so if your application is not database-intensive
-        then placing this statement into certain pages or even certain views might be a good idea.</p>
 
-        <p>Even if called several times, database connection will be establised only once. Therefore if you need a testing
-        suite with a different database connection, you can issue this manually:</p>
+        <p>Establishing a connection and selecting the database takes some time, so if your application is not database-intensive,
+         placing this statement into only the pages - or even views - that need it might be a good idea.</p>
+
+        <p>Even if called several times, the database connection will be established only once. Therefore if you need a separate or
+         different database connection - for instance, because you want to run a test suite against a different database - you need 
+         to establish a new database connection using separate configuration settings, manually:</p>
 <?Code?>
 $this->api->dbConnect($this->api->getConfig('dsn_testing'));
 <?/Code?>
 
         <h3>SQL Access from Views</h3>
-        <p>Agile Toolkit was one of the first web framework to implement dynamic queries in 2003. DSQL is a very
-        imporant component of Agile Toolkit as is used by many View objects. In contrast, views from other frameworks rely on
-        ORM directly to perform operations introducing data-layer abstraction in this way.</p>
+        <p>Agile Toolkit was one of the first web frameworks to implement dynamic queries, in 2003. DSQL is a very
+        important component of Agile Toolkit, and it is used by many View objects. In contrast, views in other frameworks rely on
+        an ORM to perform data operations, unnecessarily introducing the complexity of a data-layer abstraction to what is often 
+        a simple operation.</p>
 
-        <p>To explain this in simple terms, I will use Form class as example. You can use $form->setSource('table'); on the
-        form which will make it fetch field data from database.</p>
+        <p>To explain this in simple terms, I will use the Form class as an example. You can use the $form->setSource('table'); method 
+        on the form, which will make it fetch field data directly from database.</p>
 <?Code?>
 $form=$page->add('Form');
 $form->addField('line','name');
@@ -70,20 +73,20 @@ $form->setSource('user');
 $form->setCondition('id',123);
 <?/Code?>
         
-        <p>Views can cary their own DSQL object, which they use in certain ways. Usually it's accessible through $object->dq
-        and you can manipulate it. It is actually what "Models" do in Agile Toolkit. When used with Form, they would
-        initialize fields for you and manipulate Form's DSQL as per configuration of the model.</p>
+        <p>Views can cary their own DSQL object, which they use in specific ways. Usually this object is accessible through $object->dq,
+        and you can manipulate it - this is actually what "Models" do in Agile Toolkit. When used with a Form, a Model will
+        initialize fields in the Form for you, and will manipulate the Form's DSQL, according to the configuration of the model.</p>
 
-        <p>If you wish to use one object with a different database for the purpose of dependency-injection, you should
+        <p>If you wish to use an object with a different database - ie., for the purpose of dependency-injection - you should
         manually create $object->dq.</p>
 
-        <h3>Debugging database queries</h3>
-        <p>To make any DSQL object expose it's queries execute debug() method:</p>
+        <h3>Debugging Database Queries</h3>
+        <p>To make any DSQL object expose its queries, execute the debug() method:</p>
 <?Code?>
 $form->dq->debug();
 <?/?>
-        <p>This would output queries on the screen. A properly-written View will not perform any queries in it's init()
-        method, but will perform them during rendering phase.</p>
+        <p>This will output the queries to the screen. A properly written View will not perform any queries in its init()
+        method, but will perform them during its rendering phase.</p>
 
     </div>
 </div>
