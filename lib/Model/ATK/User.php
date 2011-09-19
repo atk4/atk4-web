@@ -10,6 +10,11 @@ class Model_ATK_User extends Model_Table {
 
         $this->addField('full_name');
         $this->addField('name')->calculated(true);
+        $this->addField('status')->calculated(true);
+
+        $this->addField('created_dts')->defaultValue('Y-m-d H:i:s');
+        $this->addField('logged_dts');
+
 
         // 3rd party auth services
         $this->addField('twitter_token');
@@ -19,14 +24,29 @@ class Model_ATK_User extends Model_Table {
         $this->addField('token_email');
     }
     function calculate_name(){
-        return 'coalesce(full_name,email)';
+        return 'coalesce(if(full_name="",email,full_name),email)';
+    }
+    function toStringSQL($id,$alias){
+        return '(select '.$this->calculate_name().' from '.$this->entity_code.' where id='.$id.') '.$alias;
+    }
+    function calculate_status(){
+        return <<<EOF
+if(is_email_confirmed!='Y', 'Pending',
+ if(password is null or password='', 'No Password',
+
+     'Active'
+ )
+)
+EOF;
     }
 
     /* {{{ Registration  */
-    function sendEmail($email,$template){
+    function prepareEmail($template){
         $m=$this->add('TMail');
-        $m->loadTemplate('user_'.$template);
-        return $m->send($email);
+        $m->loadTemplate('user/'.$template,'.html');
+        $m->setTag($this->get());
+
+        return $m;//->send($email);
     }
     function softRegister($email,$name=null){
         $m=$this->add('Model_ATK_User')->getBy('email',$email);
@@ -35,7 +55,8 @@ class Model_ATK_User extends Model_Table {
         $m=$this->add('Model_ATK_User_Pending');
         $m->set('email',$email);
         if(!is_null($name))$m->set('name',$name);
-        $m->update();
+
+        //$m->update();, sending token will update again
         $m->sendToken();
         return $m->get('id');
     }

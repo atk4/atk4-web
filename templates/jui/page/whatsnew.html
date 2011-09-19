@@ -5,7 +5,37 @@
 <?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
 <div class="g-row" id="download-grid">
 	<div class="g-8">
-		<h2>What's new in 4.1 compared with 4.0</h2>
+
+		<h2>What's new in 4.1.2?</h2>
+                <p>Version 4.1.2 adds a whole <b>4 new examples</b> into the downloadable ZIP archive. To keep things simple we decided to drop all the different ZIP files and have only one - agiletoolkit-4.1.2.zip. There are also bugfixes such as ability to use full url with getDestinationURL().</p>
+
+        <h4><span class="date">August 16<em>th</em></span>Enable use of callback in $field->validateField()</h4>
+<?Code?>
+$form = $page->add('Form');
+$field = $form->addField('line','age');
+$field->validateField(function($field){
+    if($field->get()<18)return 'Must be 18+';
+});
+$form->addSubmit();
+<?/?>
+<?Execute?>
+$form = $page->add('Form');
+$field = $form->addField('line','age');
+$field->validateField(function($field){
+    if($field->get()<18)return 'Must be 18+';
+});
+$form->addSubmit();
+<?/?>
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
+        <p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
+        that. Previously developer would had to manually add include text into shared template, now you can simply call:
+<?Code?>
+$this->api->jui->addStaticInclude('myjsfile');
+<?/?>
+
+
+		<h2>What's new in 4.1 (since 4.0)</h2>
 
 
 

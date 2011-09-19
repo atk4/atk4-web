@@ -5,6 +5,6 @@ class Model_ATK_Download extends Model_Table {
         parent::init();
         $this->addField('file');
         $this->addField('atk_user_id')->refModel('Model_ATK_User');
-        $this->addField('datetime')->defaultValue(date('Y-m-d H-i-s'))->system(true);
+        $this->addField('datetime')->defaultValue(date('Y-m-d H-i-s'));
     }
 }

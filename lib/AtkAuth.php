@@ -21,6 +21,10 @@ class AtkAuth extends BasicAuth {
     }
     function verifyCredintials($login,$password){
         $this->model->loadBy('email',$login);
+        if(!$this->model->isInstanceLoaded()){
+            $this->debug('No user matched');
+            return false;
+        }
         $p=$this->model->get('password');
         if($p==$password){
             $this->addInfo($this->model->get());
