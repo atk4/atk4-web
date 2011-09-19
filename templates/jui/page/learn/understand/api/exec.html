@@ -5,38 +5,38 @@
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
 
-        <h1>Execution of API class</h1>
+        <h1>Execution of The API Class</h1>
         <img src="<?template?>images/ugly_images/apiseq.png<?/?>" style="float: right">
-        <p>API of Agile Toolkit splits the whole execution of application into 2 parts. The first part deals with
-        initialization of the objects and coupling them with proper models. The second part is an execution part and it will
-        cause objects to query database, iterate through results, render and output output.</p>
+        <p>An API in Agile Toolkit splits the whole execution of the application into 2 parts. In the first part, the API initializes
+        the objects, coupling them with proper models. The second part is the execution: the API will cause objects to query the 
+        database, iterate through results, produce and render output.</p>
 
-        <p>Agile Toolkit objects never output anything directly, instead they insert their output into parent's template. API
-        sends combined output to user's browser through "echo".</p>
+        <p>Agile Toolkit objects never output anything directly. Instead, they insert their output into their parent's template. The API
+        sends the combined output to the user's browser through "echo".</p>
 
         <h3>Initialization</h3>
-        <p>Depending on which API you are using they will initialize several sub-components which call Controllers. When you
-        are extending API class, you should re-define init() function and add initialization in there, things like connecting
+        <p>Depending on which API you use, it will initialize several sub-components which call Controllers. When you
+        extend an API class, you should re-define the init() function and add initialization in there - things like connecting
         to the database, adding controllers, etc.</p>
 
         <p>ApiFrontend will automatically initialize Logger() which makes error logging more bearable.</p>
 
         <h3>Layouts</h3>
-        <p>Layout is a region in the shared template (shared.html) which is used by API class. If region is defined, then a
-        respective layout function is called.</p>
+        <p>A Layout is a region in the shared template (shared.html), which is parsed by the API class. If the region is defined, then a
+        corresponding layout function is called.</p>
 
         <p>The first and most significant layout element is "Content". Content will determine which page is requested and
-        proceed with all the logic of page initialization. However if "Content" is not present in API's template, page will
+        proceed with all the logic of page initialization. However if "Content" is not present in the API template, the page will
         not be initialized.</p>
 
-        <p>You can add additional layout elementns. For example calling addLayout('Menu') inside api->init() will instruct
-        API to call layout_Menu() method if tag &lt;?Menu?&gt; is found in the template.</p>
+        <p>You can add additional layout elements. For example, calling addLayout('Menu') inside api->init() will instruct
+        API to call layout_Menu() method if tag &lt;?Menu?&gt; is found when parsing the template.</p>
 
-        <p>This approach can be used to initialize certain things such as side-bars, tool-bars and widgets if they exist
-        inside API's template. You can manipulate different templates from inside defaultTemplate() function of your API.</p>
+        <p>This approach can be used to initialize various things such as sidebars, toolbars and widgets, if they exist
+        inside the API template. You can manipulate different templates from inside the defaultTemplate() function of your API.</p>
 
         <h3>Initializing Auth and checking Auth</h3>
-        <p>While you can also execute auth->check() inside init(), we recommend performing auth-check inside initLayout()
+        <p>While you can also execute auth->check() inside init(), we recommend performing auth-check inside an initLayout()
         function:</p>
 <?Code?>
     function init(){
@@ -54,22 +54,22 @@
         }
     }
 <?/?>
-        <p>Did you notice that call to auth->check() is done before calling parent::initLayout()? That's because we do not
-        want any pages to be initialized before authentication is checked.</p>
+        <p>Did you notice that the call to auth->check() is done before calling parent::initLayout()? That's because we do not
+        want any pages to be initialized before authentication is done.</p>
 
         <h3>Form Submission</h3>
         <p>Form submission is normally handled after all other views are initialized. When form is submitted, the rendering
-        phase is skipped also. Submission occurs only if the form with a proper ID has been found.</p>
+        phase is skipped also. Submission occurs only if a form with a proper ID has been found.</p>
 
 
         <h3>Rendering</h3>
         <p>Agile Toolkit provides support for partial rendering of views based on 3 criteria: cut_page - outputs only page's
-        content, cut_object - output content of certain object and cut_region - outputs content of certain region. This is
+        content, cut_object - outputs content of a certain object and cut_region - outputs content of a certain region. This is
         explained in more depth later</p>
 
         <h3>Interrupting initialization phase</h3>
-        <p>It is possible to interrupt execution of init() phase. This might be necessary if you wish to avoid any more
-        objects to be added into the from some view. To terminate execution of init</p>
+        <p>It is possible to interrupt execution of the init() phase. This might be necessary if you wish to avoid any more
+        objects being added to some view. To terminate execution of init:</p>
 <?Code?>
 // from inside View
 
@@ -81,8 +81,8 @@ if(!$product){
         // throws Exception_StopInit
 }
 <?/?>
-        <p>This approach should be used only if calling "return" is not sufficient. That is from either a view which has been
-        placed inside page or if your page extends other, common abstract page.</p>
+        <p>This approach should be used only if calling "return" is not sufficient - that is: from either a view which has been
+        placed inside page, or if your page extends another, common abstract page.</p>
 
 
 
