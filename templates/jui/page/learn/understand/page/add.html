@@ -4,11 +4,11 @@
 	<div class="g-12">
         <h1>Adding Pages</h1>
 
-        <p>Agile Toolkit facilitates several ways to define new pages. Depending on your situation you should choose the most
+        <p>Agile Toolkit has several ways to define new pages. Depending on the situation you should choose the most
         appropriate way.</p>
 
-        <p>The way how pages are located are defined by the API used. For example for command-line (ApiCLI) concept of pages
-        is not defined at all. Table below shows the behaviour of ApiFrontend based page routing.</p>
+        <p>Where a page is located depends on the API used. For example, for the command-line API (ApiCLI), the concept of pages
+        is not defined at all. The table below shows the behaviour of ApiFrontend-based page routing.</p>
 
 <div class="box blue-noised p-10px">
 	<div class="white">
@@ -26,15 +26,15 @@
 				<td>API Method</td>
 				<td>Page</td>
                 <td>Default</td>
-				<td>Probably the fastest way to create page handler is to define function inside API class. Function starts
-                with prefix "page_" and continues with the page name with slashes replaced into underscores. Try to avoid
+				<td>Probably the fastest way to create a page handler is to define a function inside the API class. The function must start
+                with the prefix "page_", and continue with the page name, with slashes replaced by underscores. Try to avoid
                 using this method.</td>
 			</tr>
 			<tr>
 				<td>File page/mypage.php</td>
 				<td>custom</td>
                 <td>default or custom</td>
-				<td>This is preferred way to define new pages if you need dynamic content on them and optionally custom
+				<td>This is preferred way to define new pages, if you need dynamic content on them and optionally custom
                 layout.</td>
 			</tr>
 			<tr>
@@ -47,25 +47,25 @@
 				<td>Your own</td>
 				<td>Custom</td>
                 <td>Custom</td>
-				<td>Implement your own pattern in the API class. You can use this method to fetch pages from data-base or
-                generate them dynamically</td>
+				<td>Implement your own pattern in the API class. You can use this method to fetch pages from the database, or
+                to generate them dynamically</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
 
-        <h3>Defining new pages through API methods</h3>
+        <h3>Defining new pages through the API methods</h3>
 <?Code?>
     function page_helloworld($page){
         $page->add('Button')->setLabel('Click Me');
     }
 <?/?>
-        <p>This is possibly the fastest way to add a new page to your Agile Toolkit application. API will automatically
-        create a standard page for you and will pass it to the function as an argument. You then can add objects into the
+        <p>This is possibly the fastest way to add a new page to your Agile Toolkit application. The API will automatically
+        create a standard page for you and will pass it to the function as an argument. You can then add objects to the
         page.</p>
 
-        <h3>Creating separate class for each page</h3>
+        <h3>Creating a separate class for each page</h3>
 <?Code?>
 class page_helloworld extends Page {
     function init(){
@@ -76,17 +76,16 @@ class page_helloworld extends Page {
     }
 }
 <?/?>
-        <p>Creating file inside page/helloworld.php with contents above has the same effect. However this time instead of
-        generic Page class your own class is used. This gives you flexibility to create more methods and have more complex 
-        presentation logic without polluting API class.
+        <p>Creating a file inside page/helloworld.php with the contents above has the same effect. However, this time instead of
+        a generic Page class your own class is used. This gives you the flexibility to create more methods and have more complex 
+        presentation logic without polluting the API class.
         </p>
 
         <h3>Static Pages</h3>
-        <p>Static pages is the fastest way how to get content into your web software. To build a high-performance
-        application, you must make it simple and fast to retrieve content. The fastest way is to get content from the
-        file.</p>
+        <p>Static pages are the fastest way to get content into your web software. To build a high-performance
+        application, you must make it simple and fast for it to retrieve content. The fastest way is to get content from a file.</p>
 
-        <p>Agile Toolkit allows to create static pages simply by creating a file page/helloworld.html (inside directory with
+        <p>Agile Toolkit allows you to create static pages simply by creating a file page/helloworld.html (inside the directory with
         your templates such as: templates/default)</p>
 
 
@@ -98,29 +97,29 @@ class page_helloworld extends Page {
 </div></div></div>
 
 
-        <p>The definition of id= property of the outer-most element enables Agile Toolkit to seamlessly interact with
-        elements and although it's not mandatory, it is a good practice to always define id= like this.
+        <p>The definition of the id= property in the outermost element enables Agile Toolkit to seamlessly interact with
+        it. Although it's not mandatory, it is a good practice to always define the id= like this.
         </p>
-        <p>This example also is using a built-in Grid System for 10 columns and should show 2 columns. Similarly, you can use
+        <p>This example also uses a built-in Grid System for 10 columns, and should show 2 columns. Similarly, you can use
         your own HTML code snippet. We will get back to page layouts later.</p>
 
 
         <h3>Catch-all and 404 pages</h3>
-        <p>If ApiFrontend is unable to determine location of your templates, it executes function api->pageNotFound($e); The
-        argument is exception raised when trying to include page class or its ancestors.</p>
+        <p>If ApiFrontend is unable to determine the location of your templates, it executes the function api->pageNotFound($e); The
+        argument is the exception raised when trying to include the page class or its ancestors.</p>
 
-        <p>You can re-define this function either for placing a redirect on by showing custom 404 page. It is safe to do
-        "throw $e" to signal about non-existant page. API will catch this exception and act according to logging
-        settings, therefore do not use this for error-handling.</p>
+        <p>You can re-define this function either by placing a redirect or by showing a custom 404 page. It is safe to 
+        "throw $e" to signal a non-existant page. The API will catch this exception and act according to the logging
+        settings - therefore, do not use this for error-handling.</p>
 
         <h2>Other API Classes</h2>
-        <p>Pages is a concept implemented on API level and some API classes may not implement Page concept at all or
-        implement it differently. For example when you build command-line utility using ApiCLI, it will never go and look for
-        pages at all. ApiWeb on other hand will use API method page_helloworld(), and will attempt to load page from
-        'page/helloworld.php' but will not support "static" page.</p>
+        <p>Pages are a concept implemented at the API level, and some API classes may not implement the Page concept at all or
+        implement it differently. For example, when you build a command-line utility using ApiCLI, it will never go and look for
+        pages at all. ApiWeb, on the other hand, will use the API method page_helloworld(), and will attempt to load the page from
+        'page/helloworld.php', but it will not support "static" pages.</p>
 
-        <p>Page implementation is a case of a more broad "Layout" concept. You must have &lt;?$Content?&gt; tag inside your
-        shared.html template. See api->layout_Content method implementation for more info or creating your own logic.
+        <p>Page implementation is a case of a broader "Layout" concept. You must have a &lt;?$Content?&gt; tag inside your
+        shared.html template. See the api->layout_Content method implementation for more info on creating your own logic.
 
     </div>
 </div>
