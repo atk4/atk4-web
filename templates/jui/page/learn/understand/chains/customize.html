@@ -30,12 +30,12 @@ $view->js(true)->_selectorRegion->hide();
 // $(region).hide()
 
 <?/?>
-    <p>You can already see the potential of this feature. When binding event selector you can reference "this" in enclosed function - works great!</p>
+    <p>You can already see the potential of this feature. When binding to an event selector you can reference "this" in the enclosed function - it works great!</p>
 
-    <p>The last example refers to "region", which is a global variable pointing to the area which is being loaded through AJAX request.</p>
+    <p>The last example refers to "region", which is a global variable pointing to the area which is being loaded via the AJAX request.</p>
 
     <h2>Calling functions you can't call</h2>
-    <p>PHP might not let you use some of the function names such as "each" or "for". Function "execute" also have a special meaning to JS chain. If you want to use them, then:</p>
+    <p>PHP might not let you use some of the function names such as "each" or "for". The "execute" function also has a special meaning to JS chain. If you want to use these functions, then:</p>
 <?Code?>
 $view->js(true)->_fn('execute',array(1));
 // converts into .execute(1)
@@ -43,7 +43,7 @@ $view->js(true)->_fn('execute',array(1));
 
 
     <h2>Using custom trigger</h2>
-    <p>jQuery allows you to define custom events and trigger them. Here is a good example.</p>
+    <p>jQuery allows you to define custom events, and then trigger them. Here is a good example.</p>
 
 <?Example?>
 $page->add('P')->set('Bouncy text')
@@ -57,7 +57,7 @@ $page->add('Button')->set('Bounce all')
     ->trigger('all_bounce'));
 <?/?>
 
-    <p>This approach is good when you can't physically access objects and yet need to bind actions between them. For example in CRUD, when you edit element in expander, it is using a custom reloading event to refresh the grid.</p>
+    <p>This approach is good when you can't physically access objects, and yet need to bind actions between them. For example, in CRUD, when you edit an element in the expander, it uses a custom reloading event to refresh the grid.</p>
 <?Code?>
 ...
 $this->js('reload',$this->grid->js()->reload());
