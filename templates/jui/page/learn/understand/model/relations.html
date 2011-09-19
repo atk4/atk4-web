@@ -2,10 +2,10 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
-        <h1>Using model to work with multiple tables</h1>
-        <p>So far we have only worked with a single table. Agile Toolkit allows you to join in on additional tables. This method can be combined with inheritance for some awesome data modeling.</p>
+        <h1>Using a model to work with multiple tables</h1>
+        <p>So far we have only worked with a single table. Agile Toolkit allows you to join a model with additional tables. This method can be combined with inheritance to achieve some awesome data modeling.</p>
 
-        <p>Let's continue example from the previous chapter. There we had a model for "Book" which defined a few field and was storing the data in database table "book". Book can be borrowed by a person through many-to-many relationship. Below is the database schema.</p>
+        <p>Let's continue the example from the previous chapter. There we had a model for "Book" which defined a few fields, and stored its data in a database table named "book". A Book can be borrowed by a person through a many-to-many relationship. Below is the database schema.</p>
 
         <img src="<?template?>images/ugly_images/book_borrower.png<?/?>"/>
 <?Code?>
@@ -22,7 +22,7 @@ class Model_Book extends Model_Table {
 }
 <?/?>
 
-        <p>Agile Toolkit allows you to build model on top of existing one but this time with relation. Let's create a model, which would show all the borrowed books.</p>
+        <p>Agile Toolkit allows you to build a model on top of an existing one, but this time with a relation. Let's create a new model class which would show us all the borrowed books.</p>
 <?Code?>
 class Model_Book_Borrowed extends Model_Book {
     function init(){
@@ -32,25 +32,25 @@ class Model_Book_Borrowed extends Model_Book {
     }
 }
 <?/?>
-        <p>This minimalistic piece of code added a new model, which now will incorporate join between table "book" and "book_borrower". In addition to all the fileds inherited from the Book model we are adding "person_id" field, which will show us who did borrow that particular book.</p>
+        <p>This minimalistic piece of code added a new model class, which will now incorporate a join between tables "book" and "book_borrower". In addition to all the fields inherited from the Book model, we add a "person_id" field, which will show us who borrowed that particular book.</p>
 
-        <p>When calling dsql this will return the query of two tables joined as well, therefore the references we have made in the previous page for calculated fields will also function properly.</p>
+        <p>When calling dsql this will return the query of two joined tables as well, and the references we have made in the previous page for calculated fields will also function properly.</p>
 
         <p>When you have multiple entities in the model, you can use relEntity to specify which table physically contains this field. </p>
 
         <p>Last two arguments define "inner" joins to be used and relation type - One to Many (otm) - one book may have many book_borrower records.
 
         <h3>Many-to-one</h3>
-        <p>It's also possible to use many-to-one relation. In fact, we can use them at the same time. This apprach can help us join some field from Publisher database.</p>
+        <p>It's also possible to use many-to-one relation. In fact, we can use them both at the same time. This approach can help us join some fields from the Publisher database table.</p>
 
 <?Code?>
 $this->addRelatedEntity('bp','publisher','publisher_id');
 $this->addField('publisher_name')->relEntity('bb','name');
 <?/?>
 
-<?MoreInfo?>Inserting records in model with relations...
-<p>There might be some uncertainty when records are being added. Should related table be populated? At this time we advise not to insert records into tables with heavy relations. Alternatively you can redefine insertRecord() function to make sure it performs as you like.</p>
-<p>This will be handled better in the future versions of Agile Toolkit.</p>
+<?MoreInfo?>Inserting records in a model with relations...
+<p>There might be some uncertainty when records are added. Should the related table be populated? At this time we advise you not to insert records into tables with heavy relations. Alternatively, you can redefine the insertRecord() function to make sure it performs as you expect.</p>
+<p>This will be handled better in future versions of Agile Toolkit.</p>
 <?/?>
 
     </div>

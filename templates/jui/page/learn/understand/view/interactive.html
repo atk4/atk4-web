@@ -6,7 +6,7 @@
 	<div class="g-12">
         <h1>Interactive views</h1>
 
-        <p>The greatest benefit of view implementation in Agile Toolkit probably is their independence. Views never conflict between eachother and multiple views can be added. View can implement logic, which is quite complex, but it's just as easy to add and interract with it.</p>
+        <p>The greatest benefit of view implementation in Agile Toolkit is probably their independence. Views never conflict with each other, and multiple views can be added jointly. Views can implement logic which is quite complex, but it's just as easy to add and interact with them.</p>
 
 
 <?Example?>
@@ -78,11 +78,11 @@ $page->add('Hangman');
 <?/?>
 
 
-        <p>The logic of the game above is might take you some time to understand, but if you find it too confusing, don't worry about it. There are few principles used in the game, which I'd like to highlight.</p>
+        <p>The logic of the game above might take you some time to understand, but if you find it too confusing, don't worry. There are a few principles used in the game, however, which I'd like to highlight to you.</p>
 
-        <p>The first principle was already mentioned before is ability for an object to incapsulate other objects. In our case outter div contain all sorts of headers and links which might be either added or not, depending on conditions</p>
+        <p>The first principle was already mentioned before: it is the ability for an object to encapsulate other objects. In our case, the outter div contains all sorts of headers and links which might be either added or not, depending on the conditions.</p>
 
-        <p>Next principle is ability of a view to reload itself. It is using AJAX technology and often causes problems even to senior developers, but it's so easy in Agile Toolkit. Here is another sample:</p>
+        <p>The next principle is the ability of a view to reload itself. This is done using AJAX technology, which often causes problems even to senior developers - but is easy in Agile Toolkit. Here is another example:</p>
 
 <?Example?>
 $b2=$page->add('Button')
@@ -93,7 +93,7 @@ if($b2->isClicked()){
 }
 <?/?>        
 
-        <p>Final note I wanted to make is the memorize() and recall() functions. They are like session storage, but they are working on per-object level. If objects need to save it's state, it should use those functions and it will avoid conflicts between multiple objects. Here is another example:</p>
+        <p>The final note I wanted to make is about the memorize() and recall() functions. They are like session storage, but they work on the object level. If an object needs to save its state, it should use those functions, and it will avoid conflicts between multiple objects. Here is another example:</p>
 
 <?Example?>
 class Adjuster extends View {
@@ -126,7 +126,7 @@ $cc=$page->add('Adjuster');
 
 
         <h3>Conclusion on Interactive Views</h3>
-        <p>Agile Toolkit is a very fun way to make interractive views. The solution often is very straightforward and quite well implemented too. If you need greater flexibility, you can always create your own jQuery UI widget and slap in on top on the view, but more about that in JavaScript section.</p>
+        <p>Agile Toolkit has a very fun way to make interactive views. The solution often is very straightforward and quite easy to implement, too. If you need greater flexibility, you can always create your own jQuery UI widget, and slap in on top on the view, but more about that in the JavaScript section.</p>
 
 
     </div>

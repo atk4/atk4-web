@@ -4,23 +4,22 @@
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
 
-        <h1>How Agile Toolkit translates URL into Page</h1>
-        <p>In Agile Toolkit, pages are handled by a special objects instantiated from Page class. Any page has a name to
-        which it will respond. Usually one page object is automatically initialized by the API along with all the objects
+        <h1>How Agile Toolkit translates the URL into a Page</h1>
+        <p>In Agile Toolkit, pages are handled by special objects instantiated with the Page class. Any page has a name to
+        which it will respond. Usually a page object is automatically initialized by the API, along with all the objects
         on that page.</p>
 
-        <p>You might have noticed, how we were adding objects in the previous chapter into $page. This variable refers to a
-        current page object. In reality, you most probably would be putting the code directly into page/index.php which
-        defines class page_index and any objects you want to see on this page should be added inside init() method.</p>
+        <p>You might have noticed, how we were adding objects to a Page in previous chapters, using $page. This variable refers to the
+        current page object. In reality, you would probably would put the code directly into page/index.php, which
+        defines the class page_index. All objects you want to see on this page should be added to its init() method.</p>
 
-        <p>By it's nature Page object is also derived from AbstractView. All you need to do is define page classes. Do not
-        manually add page objects,
-        API will do it for you. But how does API knows which page class to use?</p>
+        <p>A Page object is also derived from AbstractView. All you need to do is define page classes. Do not
+        manually add page objects, the API will do this for you. But how does API knows which page class to use?</p>
 
         <h3>Page Routing</h3>
-        <p>By default, Agile Toolkit is using front-controller approach. All the requests are being captured and executed
-        in the same way, through mod_rewrite and through index.php which creates and executes API. API relies on a specific
-        component called PageManager. The job of PageManager is to determine name of the Page Class from the used URL.</p>
+        <p>By default, Agile Toolkit uses a front-controller approach. All the requests are captured and executed
+        in the same way, by mod_rewrite, and routed through index.php, which creates and executes the API. The API relies on a specific
+        component called a PageManager. The job of PageManager is to determine the name of the Page Class from the URL used.</p>
 
         <p>The actual logic is always quite intuitive. Look at the following page for examples:</p>
 <div class="box blue-noised p-10px">
@@ -42,15 +41,15 @@
 			<tr>
 				<td>http://example.com/index.php?page=user/add</td>
 				<td>user/add</td>
-				<td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore URL in browser will
-                appear to have index.php in front of it. Passing page=XX will always override page name, which is very useful
-                in in building beautiful URLs</td>
+				<td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore the URL in the browser will
+                appear with index.php in front of it. Passing page=XX will always override the page name, which is very useful
+                in building beautiful URLs</td>
 			</tr>
 			<tr>
 				<td>http://example.com/profile/change-password.do</td>
 				<td>profile/changepassword</td>
 				<td>Dashes cannot be used in a function or class, they are eliminated from the page name automatically. Any
-                extension can be used as long as .htaccess directs them into index.php</td>
+                extension can be used as long as .htaccess directs them to index.php</td>
 			</tr>
 			<tr>
 				<td>http://example.com/?abc=123</td>
@@ -60,8 +59,8 @@
 			<tr>
 				<td>http://example.com/admin/logout</td>
 				<td>logout</td>
-				<td>Most often site administration is implemented as a separate site with it's other entry point. Pages are
-                relative to installation point.</td>
+				<td>Most often site administration is implemented as a separate site with another entry point (directory). Pages are
+                relative to the installation point (directory).</td>
 			</tr>
 			</tbody>
 		</table>
@@ -70,23 +69,23 @@
 
         <h3>URL Components</h3>
 
-        <p>PageManager splits URL from your location bar into 3 parts:
+        <p>PageManager splits the URL in your location bar into 3 parts:
 
         <ol><li>base_url</li>
         <li>base_path</li>
         <li>page</li></ol>
        
-        $api->pm->base_url points at the web-server of your
-        web application, such as http://yoursite.com:81. Next part is $api->pm->base_path is pointing to the root page of
-        your web software. For example, if you un-pack software under webroot/test/app then
+        $api->pm->base_url points to the web-server of your
+        web application, such as http://yoursite.com:81. The next part - $api->pm->base_path - points to the root page of
+        your web software. For example, if you unpack the software in webroot/test/app then
         base_path="/test/app/". base_path always starts and ends with slash.</p>
 
-        <p>Final part is called "page" and it's relative location within your web application. The top-most page is called
-        "index" page. The page you are looking at right now is called "learn/understand/page" and is calculated from the url:
+        <p>The final part is called "page" and it's a relative location within your web application. The top-most page is called
+        the "index" page. The page you are looking at right now is called "learn/understand/page" and it is calculated from the url:
         <?page?>.<?/?>.</p>
 
-        <p>Page follows standard pattern, and executes init() method after it's initialized. Page may have a custom template,
-        but if it does not, default page layout is used to display empty page.</p>
+        <p>The page follows the standard object pattern, and executes the init() method after it's initialized. A Page may have a custom template,
+        but if it does not, the default page layout is used to display an empty page.</p>
 
     </div>
 </div>

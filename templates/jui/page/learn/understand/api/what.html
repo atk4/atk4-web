@@ -5,38 +5,38 @@
 	<div class="g-12">
         <h1>Understanding API Classes</h1>
 
-        <p>Agile Toolkit does not use any static elements or global variables. The only variable you are are using in
-        "index.php" class is "$api". All the additional classes are added into your API or into other objects inside API.</p>
+        <p>Agile Toolkit does not use any static elements or global variables. The only global variable you use in the
+        "index.php" class is "$api". All additional classes are added into your API, or into other objects inside the API.</p>
 
-        <p>This leads to a several interesting points:
+        <p>This leads to several interesting points:
         <ul>
         <li>You can have more than one API running at the same time;</li>
-        <li>APIs are independent and will never share same ID, Cookie name or session name;</li>
-        <li>You can create one API from inside another one, but the later won't be able to access the former;</li>
+        <li>APIs are independent, and will never share same ID, Cookie name or session name;</li>
+        <li>You can create one API from inside another one, but the latter won't be able to access the former;</li>
         </ul>
 
         <h3>Controllers versus Singletons</h3>
-        <p>Agile Toolkit does not use singletons. Singletons does not provide any performance or persistence benefits in
-        PHP5.2. Instead Agile Toolkit has a concept of "Controllers". A controller can be added into an object, but one type
-        of controller can be added only once. This is a "soft" restrictions, you can still add second controller of same type
-        at your own risk if you specify a different name for it.</p>
+        <p>Agile Toolkit does not use singletons. Singletons do not provide any performance or persistence benefits in
+        PHP5.2 or higher. Instead, Agile Toolkit has the concept of "Controllers". A controller can be added into an object, but a
+        controller of a certain type can only be added to a certain object once. This is a "soft" restriction: you can still add second 
+        controller of same type to the same object at your own risk, if you specify a different name for it.</p>
 
-        <p>For example you can add "Logger" into API, which enhances the way how errors are being displayed. Adding Logger
-        into API again will do nothing and will simply return reference to your existing Logger.</p>
+        <p>For example: you can add a "Logger" controller into the API, which enhances the way errors are displayed. Adding another Logger
+        into the API again will do nothing, and will simply return a reference to your existing Logger.</p>
 
-        <p>Because it's possible to have multiple APIs at the same time, this opens up a new scenarios for testing. For
-        example a testing API can initialize your real API, but before executing test it can destroy() some of the
-        controllers and replace them with other ones. This implements dependency-injection based testing framework which
-        is really close to real-life environment of your application.</p>
+        <p>Because it's possible to have multiple APIs at the same time, this opens up new strategies for testing. For
+        instance, a 'testing' API can initialize your 'real' API. Before executing a test, the 'test' API can destroy() some of the
+        controllers in the 'real' API, and replace them with new ones. This implements a dependency-injection based testing framework, which
+        is really close to the real-life environment of your application.</p>
 
 
         <h3>Realms</h3>
-        <p>When API class is initialized it expects only one argument. This argument is the "realm". Realm must be unique per
-        application or even per-installation. Realm becomes the "name" of your $api and will be also used in all unique IDs
+        <p>When the API class is initialized it expects only one argument: the "realm". A Realm must be unique to an
+        application or even to an installation. The realm becomes the "name" of your $api, and it will also be used in all unique IDs
         (cookies, DOM id's, session variables).</p>
 
-        <p>Through combining multi-API concept with proper realms, you can implement some unique features such as "Login As
-        User", through actually using front-end API and calling "login" method of the auth method.</p>
+        <p>Through combining the concept of multiple APIs with proper realms, you can implement some unique features - such as a "Login As
+        User" feature, by actually using the frontend API and calling the "login" method of its auth object.</p>
 
     </div>
 </div>

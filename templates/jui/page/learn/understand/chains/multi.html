@@ -5,9 +5,9 @@
 
     <h1>Binding multiple chains</h1>
 
-    <p>So far you've seen how we can make chains and bind them to one or multiple triggers. What about binding multiple chains to a single trigger? That's where second argument to js() function is used.</p>
+    <p>So far you've seen how we can make chains, and then bind them to one - or multiple - triggers. What about binding multiple chains to a single trigger? That's where the second argument to js() function is used.</p>
 
-    <p>The call semantics is js(trigger, prepend_js). As a second argument, you can pass either a JS chain or array of JS chains.</p>
+    <p>The call syntax is js(trigger, prepend_js). As a second argument, you can pass either a JS chain, or an array of JS chains.</p>
 
 <?Example?>
 $js=array();
@@ -22,7 +22,7 @@ $page->add('Button')->set('Trigger Both')
     ->js('click',$js);
 <?/?>
 
-<p>Alternatively you can also bind same action several times. This semantics can be used when actions are applied by controllers or from multiple objects.</p>
+<p>Alternatively you can also bind the same action several times. This syntax can be used when actions are applied by controllers, or from multiple objects.</p>
 
 <?Example?>
 $js1=$page->add('P')->set('Bounce')
