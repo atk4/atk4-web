@@ -6,17 +6,17 @@
         <h1>Examples of Simple Views</h1>
 
         <p>What we call View in Agile Toolkit, other frameworks may refer to as widgets, helpers and so on. The reason we use
-        word "View" is because that's what you do with data. View shows the data on the page.</p>
+        the word "View" is because it allows you to view the data on the page.</p>
 
-        <p>Some views are really sipmple, other rely on complex logic and are interactive. Some views may contain other views
-        in themselves but all the views have common traits.</p>
+        <p>Some views are really simple, while others rely on complex logic and are interactive. Some views may contain other views
+        in themselves. All views have certain common traits.</p>
 
 <?Example?>
 $page->add('HelloWorld');
 <?/?>
 
-        <p>Although it is not a rule, most views will use a &lt;div&gt; in their HTML output with "id" attribute equal to
-        full name of the object. This ID is used if you are callin js() method to build a jQuery chain for your object</p>
+        <p>Although it is not a rule, most views will use a &lt;div&gt; in their HTML output with the "id" attribute equal to
+        the full name of the object. This ID is used if you are calling the js() method to build a jQuery chain for your object</p>
 
 <?Example?>
 $page->add('H1')->set('Drag me')

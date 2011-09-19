@@ -5,7 +5,7 @@
 
     <h1>Adding native JavaScript code</h1>
 
-    <p>The intention of JS chains in Agile Toolkit is to provide a glue between JavaScript and PHP. It is NOT the intention of JS Chains to completely replace native JavaScript.</p>
+    <p>The purpose of JS chains in Agile Toolkit is to provide a glue between JavaScript and PHP. It is NOT to completely replace native JavaScript.</p>
     <h3>The Bad JavaScript code</h3>
 <?Code?>
 <script>
@@ -15,13 +15,13 @@
   }
 </script>
 <?/?>
-    <p>You might wonder - why is this bad? This might have been how you wrote your JavaScript code before. Perhaps it's the $(function(){ missing?</p>
+    <p>You might wonder, why is this bad? This might have been how you wrote your JavaScript code before. Perhaps it's the missing $(function(){ ?</p>
 
-    <p>There is another fundamental problem with the code. It is its scope.</p>
+    <p>There is another fundamental problem with the code: its scope.</p>
 
-    <p>In Agile Toolkit objects can be loaded dynamically, through AJAX. In best traditions of Agile Toolkit, they will be loaded with the proper java-script bindings. Functions with same name will clash. Placing them incorrectly might not have them loaded. It's a mess.</p>
+    <p>In Agile Toolkit objects can be loaded dynamically, through AJAX. In the best tradition of Agile Toolkit, they will be loaded with the proper javascript bindings. Functions with the same name will clash. Placing them incorrectly might stop them from loading. It's a mess.</p>
 
-    <p>Agile Toolkit offers a better way to organise your JavaScript code. It is by putting it inside jQuery name-space. The way you call your function will be slightly different:
+    <p>Agile Toolkit offers a better way to organise your JavaScript code. It is by putting it inside a jQuery namespace. The way you call your function will be slightly different:
 <?Code?>
 // Before
 myfunc(123);
@@ -33,8 +33,8 @@ $.univ().myfunc(123);
 $view->js(true)->univ()->myfunc(123);
 <?/?>
 
-    <h3>Extending Universal library</h3>
-    <p>The way how this scope is implemented is quite similar to how jQuery plugins work. The purpose of univ() is being able to absorb new functions through this semantics:</p>
+    <h3>Extending The Universal library</h3>
+    <p>The way this scope is implemented is quite similar to how jQuery plugins work. The purpose of univ() is to 'absorb' new functions through this syntax:</p>
 
 <?Code?>
 $.each({
@@ -52,7 +52,7 @@ $.each({
     <h2>Including JS files</h2>
     <p>Agile Toolkit has 3 different ways to include your files. Open atk4/templates/shared/shared.html and find the "js_include" tag. When Agile Toolkit is rendering your page, it will place some includes in there.<p>
 
-    <p>Said that, Agile Toolkit is capable of dynamically including JavaScript code after your document have been loaded. This makes sense for content which will be loaded through AJAX</p>
+    <p>Having said that, Agile Toolkit is capable of dynamically including JavaScript code after your document has loaded. This makes sense for content which will be loaded through AJAX</p>
 
     <h3>Dynamic Includes</h3>
     <p>Those includes will be loaded through AJAX and evaluated after they are loaded. Using them is extremely simple:</p>
@@ -61,23 +61,23 @@ $page->add('Button')->set('Click Me')
     ->js('click')->_load('secret')
     ->univ()->myfunc('hello world');
 <?/?>
-    <p>Agile Toolkit will search for "secret.js" file in your JavaScript folders (such as templates/js) and include it when found. Framework will also ensure that your function is called after the libraries are properly loaded and evaluated.</p>
+    <p>Agile Toolkit will search for "secret.js" file in your JavaScript folders (such as templates/js) and include it when found. The framework will also ensure that your function is called after the libraries are properly loaded and evaluated.</p>
 
-    <p>If you will happen to move this code into a AJAX-loaded pop-up window, it will continue to work flawlessly. You must note that you do not need to wrap code inside dynamic includes. You shouldn't also execute any of the JavaScript directly, because file will be loaded only once, even if you do _load it several times.</p>
+    <p>If you happen to move this code into an AJAX-loaded pop-up window, it will continue to work flawlessly. You must note that you do not need to wrap code inside dynamic includes. Also, you shouldn't execute any of the JavaScript directly, because the file will be loaded only once, even if you do _load it several times.</p>
 
-    <p>Again, thanks to Agile Toolkit your code is portable, compact and works great.</p>
+    <p>Again, thanks to Agile Toolkit, your code is portable, compact and works great.</p>
 
     <h3>Static Includes</h3>
-    <p>If you are including some 3rd party code, they sometimes might not like dynamic loading. Third party code might assume that the on-ready is not yet triggered or do some other kind of magic. Google Maps code, for example, wishes to be loaded along with your page.</p>
-    <p>If this happens, you can specifically instruct Agile Toolkit to put include inside the HTML.</p>
+    <p>If you are including some 3rd party code, they sometimes might not like dynamic loading. Third party code might assume that the on-ready is not yet triggered or do some other kind of magic. Google Maps code, for example, wants to be loaded along with your page.</p>
+    <p>If this happens, you can specifically instruct Agile Toolkit to put the include inside the HTML.</p>
 <?Code?>
 $this->api->jui->addStaticInclude('myfile');
 // or
 $this->api->jui->addStaticInclude('http://pathto/cdn/file.js');
 <?/?>
-    <p>You must be mindful to include this on the page, which is loaded directly and can potentially open other page through AJAX requiring this include. If un-sure, add this code to your API's init() method.</p>
+    <p>You must be mindful to include this on the page, which is loaded directly, and can potentially open other pages through AJAX, requiring this include. If unsure, add this code to your API's init() method.</p>
 
-    <p>If you want to go even more hardcore with the include you can do this:</p>
+    <p>If you want to go even more 'hardcore' with the include you can do this:</p>
 <?Code?>
 $this->api->template->append('js_include',
     '<script type="text/javascript" src="http://..."></script>'."\n");
@@ -87,7 +87,7 @@ $this->api->template->append('js_include',
     <h2>Executing any JS code</h2>
     <p>One of the goals of JS Chains is security. JavaScript injection is a common problem and by having a nice interface between your JavaScript and server backend you become immune to it.</p>
 
-    <p>If you think that you know better, you can execute string of JavaScript code from anywhere like this:</p>
+    <p>If you think that you know better, you can execute a string of JavaScript code from anywhere like this:</p>
 <?Code?>
 // DANGER: Contains JavaScript injection vulnerability
 $view->js(true,"alert('$my_message')");
@@ -96,7 +96,7 @@ $view->js(true,"alert('$my_message')");
 $view->js(true)->univ()->alert($my_message);
 <?/?> 
 
-    <p>I must note, that by default univ() chain has functions for showing alerts, sending debug through Firebug console and implement many other amusing things. It is further described under JavaScript API section.</p>
+    <p>I must note, that by default univ() chain has functions for showing alerts, sending debug through the Firebug console and implements many other amusing things. It is further described under the JavaScript API section.</p>
 
 </div></div>
 <?$Next?>
