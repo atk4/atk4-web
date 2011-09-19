@@ -4,8 +4,8 @@
 	<div class="g-12">
         <h1>Building URLs</h1>
         <p>Since there are quite a few different ways to configure URLs in Agile Toolkit, there is also a way to produce
-        links. For example if you are willing to calculate how the URL would look for page 'preferences/user', you should use
-        the following construction:
+        links. For example, if you want to figure out how the URL would look for the page 'preferences/user', you can use
+        one of the following methods:
 <?Example?>
 $url=$page->api
     ->getDestinationURL('preferences/user');
@@ -17,9 +17,10 @@ $page->add('P')->set('Absolute URL is '.
 
         <p>You might have noticed that $url is actually an object, which can also be used as a string.</p>
 
-        <p>To pass information between pages, a most convenient way is to use arguments. If you wish to complicate things by
-        creating arguments such as /book/39/delete you are free to spend some time on building them, however in most cases
-        such presentation might not be important. Agile Toolkit provides a convenient way to pass arguments to any page:</p>
+        <p>To pass information between pages, a convenient way is to use arguments in the URL, as in a GET form request. 
+        If you wish to complicate things by creating URLs such as /book/39/delete you are free to spend some time building
+        them, however in most cases such presentation might not be important. Agile Toolkit provides a convenient way to pass
+        arguments as GET URLs to any page:</p>
 
 <?Example?>
 $url=$page->api
@@ -31,16 +32,16 @@ $page->add('P')->set('Absolute URL is '.
     $url->useAbsoluteURL());
 <?/?>
 
-        <p>Arguments are always properly escaped / encoded. Setting argument's value to "false" or "null" will exclude it
-        from list of arguments.</p>
+        <p>GET URL Arguments are always properly escaped / encoded. Setting an argument's value to "false" or "null" will exclude it
+        from the list of arguments.</p>
 
         <h3>Sticky GET Arguments</h3>
-        <p>Sometimes our page would receive an argument which it shouldn't forget. Agile Toolkit allows you to mark some
-        arguments as "sticky", which means they will be passed on to all generated URLs automatically.</p>
+        <p>Sometimes our page will receive an argument which it shouldn't forget. Agile Toolkit allows you to mark some
+        GET arguments as "sticky", which means they will be passed on to all generated URLs automatically.</p>
 
-        <p>In the following example, if "user" GET argument is passed to the page, this argument will be included in all
-        subsequently generated URLs. Positioning of stickyGET() call is important. Effect of stickyGET can be undone by
-        calling stickiForget, although normally you wouldn't need to do it.</p>
+        <p>In the following example, if a "user" GET argument is passed to the page, this argument will be included in all
+        subsequently generated URLs. Positioning of the stickyGET() call is important. The effect of stickyGET can be undone by
+        calling stickyForget, although normally you wouldn't need to do it.</p>
 
 <?Example?>
 $page->api->stickyGET('user');
@@ -63,7 +64,7 @@ $page->add('Button')->setLabel('Refresh paragraph')
 <?/?>
 
         <h3>Relative Pages</h3>
-        <p>Another handy feature in Agile Toolkit is ability to generate URLs from relative paths.</p>
+        <p>Another handy feature in Agile Toolkit is the ability to generate URLs from relative paths.</p>
 <div class="box blue-noised p-10px">
 	<div class="white">
 		<table>
@@ -126,9 +127,9 @@ $form->onSubmit(function($form) use($out){
 });
 
 <?/?>
-        <p>As you might have noticed, that no extra checks or escaping is performed on page name. You should never display
-        link, where user may directly affect the "page". It is, however, perfectly secure to pass user-supplied data through
-        arguments.</p>
+        <p>As you might have noticed, no extra checks or escaping is performed on the page name. You should never display
+        a link, where the user may directly affect the "page". It is, however, perfectly secure to pass user-supplied data through
+        GET arguments.</p>
     </div>
 </div>
 
