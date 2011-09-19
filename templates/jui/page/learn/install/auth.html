@@ -3,40 +3,41 @@
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
         <h1>Authentication and Authorization</h1>
-        <p>Different web applications will employ different authorization and authentication strategies. Such as in some
-        cases access to the application is restricted unless user enters password. In other case users can interact with most
-        of the functions, however gain additional privileges if authenticated.</p>
+        <p>Different web applications will employ different authorization and authentication strategies. In some
+        cases, access to the entire application is restricted unless the user enters a password. In other cases, the users can 
+        access most of the functions in the application, however gain additional functionality if authenticated.</p>
 
-        <p>Agile Toolkit provides a basic implementation for authentication and supports white-list and black-list
-        strategies.</p>
+        <p>Agile Toolkit provides a basic authentication mechanism, with support for white-list and black-list strategies.</p>
 
-<?MoreInfo?>Terminology explanation
+<?MoreInfo?>Terminology
 <ul>
-<li>Authentication — a process where user enters his username and password or uses some other means for authentication, such as OpenID</li>
-<li>Authorization — defining type of operations which current user can or cannot do.</li>
-<li>white-list — scenario when all actions/pages are restricted unless specifically allowed. White-list is considered more secure over black-list.</li>
-<li>black-list - a manual check on restricted pages to not allow user access.</li>
+<li>Authentication — a process where a user provides their username and password, or uses some other means for identifying themselves, such as OpenID</li>
+<li>Authorization — defining the type of operations which the current user can or cannot do.</li>
+<li>white-list — an authorization strategy under which all actions/pages are restricted, unless specifically allowed. White-list is considered more secure than black-list.</li>
+<li>black-list - an autorization strategy under which a check for restricted actions/pages is performed in order to disallow user access.</li>
 </ul>
 <?/MoreInfo?>
 
-        <h3>Using BasicAuth class</h3>
-        <p>Controller BasicAuth is a simple implementation of Authentication class. Below is a sample use from inside API
+        <h3>Using The BasicAuth Class</h3>
+        <p>The BasicAuth controller is a simple implementation of the Authentication class. Below is an example of usage from inside the API
         class:</p>
 <?Code?>
 $this->add('BasicAuth')->allow('john','secret')->allow('peter','shoeshine')->check();
 <?/Code?>
 
-        <p>The above code will add BasicAuth into API, manually allow 2 users to have access then perform the check. You will
+        <p>The above code will add BasicAuth into the API, manually allow 2 users to have access, then perform the check. You will
         see a login form when accessing any page handled by this API. Class SQLAuth can be used if you wish to authenticate
         users against the database.</p>
 <?Code?>
 $this->add('SQLAuth')->setSource('user','login','password')->useEncryption('sha1')->check();
 <?/Code?>
 
-        <h3>Implementing white-list</h3>
-        <p>Both black-list and white-list implementation rely on executing or bypassing "check" method. If check is not
-        executed, then authentication is not required. However if user is logged in already, then even without calling
-        check() his login information is preserved.</p>
+        <h3>Implementing White-List</h3>
+        <p>Both black-list and white-list implementation depend on executing - or bypassing - the "check" method. In a white-list
+        implementation, if check() is not executed, then authentication is not required. You can use allowPage() to specify which
+        pages do not need authentication, and then use isPageAllowed() to determine when to perform the check(). Note that if the 
+        user is logged in, even without having explicitly called check() - ie., when visiting an allowed page - their login information 
+        will be available.</p>
 
 <?Code?>
 $this->add('SQLAuth');     // automatically sets $api->auth to self
@@ -50,18 +51,19 @@ if($this->auth->isPageAllowed($this->page)){
 <?/Code?>
 
         <h3>Implementing black-list</h3>
-        <p>To keep non-authenticated users away from some pages you should move call to $api->check() inside those pages.</p>
+        <p>To keep non-authenticated users away from certain pages you should move the call to $api->check() to inside those pages.</p>
 
 <?Code?>
-// inside page/secret.php, method init()
+// inside page/secret.php, in page's init() method
 
 $this->api->auth->check();
 $this->add('Text')->set('Hello user with id=',$this->api->auth->get('id'));
 <?/Code?>
 
-        <h3>Enhancing authentication query</h3>
-        <p>Like explained on previous page, you can enhance your authentication query by interacting $auth->dq object between
-        adding of SQLAuth object and check(). Calling setSource will return newly created DSQL object for your convenience.
+        <h3>Enhancing The Authentication Query</h3>
+        <p>As mentioned on a previous page, you can enhance your authentication query by interacting directly with the $auth->dq object.
+         Adding an SQLAuth object, then calling setSource will return a newly created DSQL object for your convenience. The query can 
+         then be customised with this object, before calling check().</p>
 
 <?Code?>
 $this->add('SQLAuth')
@@ -71,7 +73,7 @@ $this->add('SQLAuth')
     ->field('last_login, name');
 
 if($this->auth->check()){
-    // Executed only first tame when user has authenticated.
+    // Executed only first time user has authenticated.
 
     $this->js(true)->univ()->successMessage('Welcome back, '.
             $this->auth->get('name').' your previous login was on '.

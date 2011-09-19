@@ -3,46 +3,46 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
-        <h1>Use with Git and Subversion</h1>
-        <p>Source control system is an absolute necessity in modern software development. Depending on type of the project
-        you might want to use either Git or Subversion. Agile Toolkit uses Git due to it's open-source nature. If you are
+        <h1>Usage with Git and Subversion</h1>
+        <p>Source control system is an absolute necessity in modern software development. Depending on the type of project
+        you might want to use either Git or Subversion. Agile Toolkit uses Git due to its open-source nature. If you are
         willing to add changes to Agile Toolkit, you can <a href="http://github.com/atk4/atk4/">fork it on GitHub.com</a>.
         </p>
 
-        <h3>Git introduction</h3>
-        <p>If you are willing to use most up-to-date copy of Agile Toolkit, then you would need to use "git". Git is a
-        command-line utility which is executed as "git command arguments ..'. A good starting guide on Git is: <a
+        <h3>Git Introduction</h3>
+        <p>If you want to use the most up-to-date copy of Agile Toolkit, then you will need to use "git". Git is a
+        command-line interface utility, which is executed as "git command arguments ..'. A good starting guide on Git is: <a
         href="http://book.git-scm.com/">http://book.git-scm.com</a>.</p>
 
-        <p><a href="https://github.com/atk4/atk4">https://github.com/atk4/atk4</a> is GitHub page for Agile Toolkit. You will
-        find "branch" switch as well as selection for tags. There are two major branches: "devel" and "master". All the
-        stable releases are based on "master" branch and beta releases are based on "devel" branch. Sometimes new feature
-        branches will appear as experimental features are being developed.</p>
+        <p><a href="https://github.com/atk4/atk4">https://github.com/atk4/atk4</a> is the GitHub page for Agile Toolkit. You will
+        find a "branch" switch as well as a selection of tags. There are two major branches: "devel" and "master". All the
+        stable releases are based on the "master" branch, while beta releases are based on the "devel" branch. Sometimes new feature
+        branches will appear, as experimental features are being developed.</p>
 
-        <p>Documentation on this site applies to 4.1 branch (or later where specified). Throughout the code improvements
-        some functions might be renamed. A backwards compatibility is maintained throughout one major release, for instance
-        migrating 4.0 code to 4.1 might work well, but migrating to 4.2 might require you to change calls to some obsolete
-        functions. Some older classes may be removed and placed under "atk4-obsolete" repository. If your code relies on
-        them, copy them into local lib or use addLocation.</p>
+        <p>The documentation on this site applies to the 4.1 branch (or later, where specified). As the code in the project is improved,
+        some functions might be renamed. Backwards compatibility is maintained throughout one major upgrade release, for instance: 
+        migrating 4.0 code to 4.1 probably works well and requires little change, but migrating from 4.0 to 4.2 might require you to change 
+        several calls to functions which have been made obsolete. Some older classes may be removed and placed under the "atk4-obsolete" 
+        repository. If your legacy code still relies on them, copy them into your local lib directory or, use the addLocation() method.</p>
 
-        <h3>Essential repositories</h3>
+        <h3>Essential Repositories</h3>
         <ul>
         <li>https://github.com/atk4/atk4 (git://github.com/atk4/atk4.git) - Agile Toolkit</li>
         <li>https://github.com/atk4/atk4-addons (git://github.com/atk4/atk4-addons.git) - Agile Toolkit Addons</li>
         <li>https://github.com/atk4/atk4-web (git://github.com/atk4/atk4-web.git) - Sources for THIS website</li>
         <li>https://github.com/atk4/atk4-codepad (git://github.com/atk4/atk4-codepad.git) - Sources for
-        <a href="http://codepad.agiletoolkit.org/">http://codepad.agiletoolkit.org</a>, which contains some examples for code
+        <a href="http://codepad.agiletoolkit.org/">http://codepad.agiletoolkit.org</a>, which contain examples for code
         sharing</li>
-        <li>https://github.com/atk4/atk4-example (git://github.com/atk4/atk4-example.git) - Contents of default downloadable
-        package which is liked form http://agiletoolkit.org/</li>
+        <li>https://github.com/atk4/atk4-example (git://github.com/atk4/atk4-example.git) - Contents of the default downloadable
+        package, which is linked from http://agiletoolkit.org/</li>
         <li>https://github.com/agiletech/colubris (git://github.com/agiletech/colubris.git) - A real budget-tracking project
         developed in Agile Toolkit and released under open-source license</li>
 
-        <h3>Share your project</h3>
-        <p>If you are developing non-commercial project with Agile Toolkit under AGPL license, we invite you to share this
+        <h3>Share Your Project</h3>
+        <p>If you are developing a non-commercial project with Agile Toolkit under the AGPL license, we invite you to share this
         project on GitHub.</p>
         <ul>
-        <li>Open <a href="http://github.com/">github.com</a>, login and create new repository. Follow instruction.</li>
+        <li>Open <a href="http://github.com/">github.com</a>, login and create a new repository. Follow instructions.</li>
         <li>Remove atk4 / atk4-addons if you have downloaded them through ZIP</li>
         <li>Checkout atk4 and atk4-addons directly through Git<br/>
 <?Code?>
@@ -51,7 +51,7 @@ $ git submodule add git@github.com:atk4/atk4-addons.git
 $ git submodule update
 <?/?>
         </li>
-        <li>If you need development branch:<br/>
+        <li>If you want the development branch:<br/>
 <?Code?>
 $ cd atk4
 $ git checkout devel
@@ -62,11 +62,12 @@ $ git checkout devel
 $ cd ..
 <?/?>
         </li>
-        <li>use "git status" and create your own .gitignore files. Add "config.php", ".htaccess" and other files which you do
-        not wish to share in there.
-<?MoreInfo?>Why placing config.php and .htaccess into Git / SVN is bad?
-<p>Config file contains server-specific configuration. It might be private keys, or mysql password or some other sensetive information. Adding this information into Git may expose it on-line or to people who woludn't normally have access to the server. </p>
-<p>File ".htaccess" might be OK for adding, although if you have some server-specific configuration in there, the same principle may apply.
+        <li>use "git status" and create your own .gitignore file. Add "config.php", ".htaccess" and other files which you do
+        not wish to share to your .gitignore.
+        
+<?MoreInfo?>Why is placing config.php and .htaccess into Git/SVN bad?
+<p>The config.php file contains server-specific configuration. This configuration might include private keys, a mysql password or some other sensitive information. Adding this information to Git may expose it publicly on-line to people who woludn't normally have access to your server.</p>
+<p>The ".htaccess" file might be OK for public viewing, although if you have some server-specific configuration in there, the same principle applies.
 </p>
 <?/?>
         </li>
