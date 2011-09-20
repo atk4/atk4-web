@@ -2,6 +2,7 @@
 class page_login extends Page {
     function init(){
         parent::init();
+        $this->api->stickyGET('return');
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
         $r=$cc->addColumn(6)->add('HtmlElement','rightbox');
@@ -36,6 +37,11 @@ class page_login extends Page {
                 $auth->login($l);
 
                 $auth->model->set('logged_dts',date('Y-m-d H:i:s'))->update();
+
+                if($_GET['return']){
+                    $this->js(true)->atk4_load($this->api->getDestinationURL($_GET['return'],array('cut_page'=>1,'return'=>false)))
+                        ->execute();
+                }
 
                 $form->js()->univ()->redirect($this->api->getDestinationURL('commercial'))->execute();
             }

@@ -75,7 +75,11 @@ class AgileToolkitWeb extends ApiFrontend {
 				$this->js(null, "w=window.open(u='http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');if(w)w.focus();else document.location=u")->_enclose()
 			);
 
-            $this->js('click')->_selector('.login')->univ()->frameURL('Login',$this->api->getDestinationURL('login'));
+            if($this->auth->isLoggedIn()){
+                $this->js('click')->_selector('.login')->univ()->frameURL('Profile',$this->api->getDestinationURL('account/profile'));
+            }else{
+                $this->js('click')->_selector('.login')->univ()->frameURL('Login',$this->api->getDestinationURL('login'));
+            }
 		}
 		parent::initLayout();
 

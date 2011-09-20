@@ -52,7 +52,11 @@ class page_download_box extends Page {
         if($form->isSubmitted()){
 
             $this->api->dbConnectATK();
-            $id=$form->add('Model_ATK_User_Pending')->softRegister($form->get('email'));
+            if($this->api->auth->isLoggedIn()){
+                $id=$this->api->auth->get('id');
+            }else{
+                $id=$form->add('Model_ATK_User_Pending')->softRegister($form->get('email'));
+            }
             $this->add('Model_ATK_Download')->set(array(
                         'file'=>$file,
                         'atk_user_id'=>$id

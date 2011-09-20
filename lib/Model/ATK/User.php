@@ -56,7 +56,7 @@ EOF;
         $m->set('email',$email);
         if(!is_null($name))$m->set('name',$name);
 
-        //$m->update();, sending token will update again
+        $m->update();
         $m->sendToken();
         return $m->get('id');
     }

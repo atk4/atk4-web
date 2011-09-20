@@ -604,6 +604,10 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 /* -------------------------------------------------------------------------------------------------
    Specific
 ------------------------------------------------------------------------------------------------- */
+.right-section {float:right;width:230px;padding-left:70px;margin-left:100px;position:relative;}
+.right-section i {position:absolute;top:0;left:0;}
+.right-section i+p {margin-top:0;}
+
 #getting-started-description {float:left;width:540px;}
 #getting-started-core {float:right;width:230px;padding-left:70px;margin-left:100px;position:relative;}
 #getting-started-core i {position:absolute;top:0;left:0;}
