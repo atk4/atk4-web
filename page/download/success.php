@@ -4,6 +4,7 @@ class page_download_success extends Page {
 		parent::init();
 		$this->add('Controller_JSProxy')->proxy('http://platform.twitter.com/widgets.js');
 		$this->template->trySet('file',addslashes(htmlspecialchars($_GET['file'])));
+		$this->js(true)->univ()->setTimeout($this->js()->_enclose()->univ()->location('/distfiles/'.$_GET['file']),1000);
 	}
 	function defaultTemplate(){
 		return array('page/download/success');
