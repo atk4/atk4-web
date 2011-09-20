@@ -1,5 +1,5 @@
 <?php
-class Page_forgot extends page {
+class Page_forgot extends Page {
     function init(){
         parent::init();
         $form=$this->add('Form');
