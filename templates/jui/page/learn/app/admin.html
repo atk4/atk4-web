@@ -1,0 +1,203 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-12">
+
+<h1>Creating Administrator's Interface</h1>
+<p>What we just did is the very basics of the User Interface - only the start. Since we got our client all excited let's listen
+to our further requirements or "user stories" how they properly call them in Agile Development.</p>
+
+<quote>Manager should be able to access and edit all this data through Administrator's interface. Users need to be able to
+use frontend to signup themselves. They also should be able to login with their email and password and see their own data.
+They should be able to see what they have rented currently and in the past.</quote>
+
+<p>Not mutch, but let's try to split it into the list of the further tasks we will focus on:
+
+<ul>
+<li>Users certainly need their own login. Need to add email / password fields into database and turn on authentication</li>
+<li>Registration of new users is probably needed</li>
+<li>When logged in, users should see video list and rent movies</li>
+</ul>
+
+
+<h2>Setting up Administrator's interface</h2>
+<p>
+Right now we have added just added the pages for how they are, but it would be probably a good idea to separate them into a
+separate interface only available to the managers. To do that, we will create new Application Class, which will have it's
+own authentication rules and its own pages, but would share models. 
+</p>
+
+<p>Create a completely new directory called "admin" and inside there place the following files:</p>
+<h6>admin/index.php</h6>
+<?Code?>
+include '../atk4/loader.php';
+$api=new Admin('rentaladmin','default');
+$api->main();
+<?/?>
+<h6>admin/config.php</h6>
+<?Code?>
+// You can also include ../config.php from here
+
+$config['atk']['base_path']='../atk4/';
+$config['dsn']='mysql://root:root@localhost/dvdrental'; // use your own
+$config['url_postfix']='';
+$config['url_prefix']='?page=';
+$config['auth']['key']='secret';
+<?/?>
+<h6>admin/lib/Admin.php</h6>
+<?Code?>
+class Admin extends ApiFrontend {
+
+    public $is_admin=true;
+    
+    function init(){
+        parent::init();
+        $this->dbConnect();
+
+        $this->addLocation('..',array(
+                    'php'=>array(
+                        'lib',
+                        'atk4-addons/mvc',
+                        'atk4-addons/billing/lib',
+                        'atk4-addons/misc/lib',
+                        )
+                    ))
+            ->setParent($this->pathfinder->base_location);
+
+        $this->add('jUI');
+        $this->js()
+            ->_load('atk4_univ')
+            ->_load('ui.atk4_notify')
+            ;
+
+        // Allow user: "admin", with password: "demo" to use this application
+        $this->add('BasicAuth')->allow('admin','demo')->check();
+
+        $menu=$this->add('Menu',null,'Menu');
+        $menu->addMenuItem('Manager','mgr');
+    }
+    function page_index($p){
+        $this->api->redirect('mgr');
+    }
+}
+<?/?>
+<p>after you are done, move page/mgr.php into admin/page/mrg.php. You should be able now to add /admin/ at the end of your URL and be able to access your brand new administration interface. Location engine will properly look for models in the main lib directory, but pages must be defined locally to avoid unauthorized access.</p>
+
+<p>With admin pages out of the way, we can now create authentication for our front-end users. Before that, however, we would need to perform database migration (alters). and the best way to do so would be to use "dbupdate" techniques.</p>
+
+<h2>Adding password for users</h2>
+
+<p>Create file doc/dbupdates/rental-001-01.sql containing:</p>
+
+<div class="atk_doc example"><code><pre>
+alter table customer add email varchar(255);
+alter table customer add password varchar(255);
+</pre></code></div>
+
+<p>Next you would need to copy, or sym-link atk4/tools/update.sh into doc/ and execute it. If it complains about missing 'config.php', then copy config-defaults.php into config.php. You should see this in your terminal:</p>
+
+<div class="atk_doc example"><code><pre>
+$ cd doc/
+$ ln -s ../atk4/tools/update.sh .
+$ ./update.sh 
+cat: ../../../config.php: No such file or directory
+Error: Can't read config file
+$ cd ..
+$ cp config-default.php config.php
+
+$ cd doc/
+$ ./update.sh 
+* Applying updates on database 'project'
+ rental-001-01.sql... ok
+* Done
+$ 
+</pre></code></div>
+
+<?MoreInfo?>WAIT! No command-line please!
+<p>Fine. Let's leave command-line for your admin. For now simply import file doc/dbupdates/rental-001-01.sql into your MySQL database.</p>
+</p>
+<?/?>
+
+<p>Next you need to update customer's models by defining new field "email". We specifically leave out password from the model. This way UI elements will not be able to access it.</p>
+
+<?Code?>
+// add into lib/Model/Customer.php, init():
+
+$this->addField('email');
+<?/?>
+
+
+<p>We would like to create our own way for authenticating. There are two classes - BasicAuth and SQLAuth. While you could just use SQLAuth which already supports authentication against data-base, for the sake of excercise, let's use BaseAuth instead. It's very important that you learn how to create your own objects in Agile Toolkit using inheritance instead of only using existing ones. Create file lib/RentalAuth.php. (not admin/lib/RentalAuth.php!): </p>
+
+<?Code?>
+class RentalAuth extends BasicAuth {
+    /** Initialize our auth. Set model and password encryption */
+    function init(){
+        parent::init();
+        $this->setModel('Model_Customer');
+        $this->getModel()->addField('password')->system(true);
+
+        $this->usePasswordEncryption('sha256/salt');
+    }
+
+    /** Do not show form, simply redirect to index page, if not authorized */
+    function check(){
+        if(!$this->isLoggedIn()){
+            $this->api->redirect('/');
+        }
+    }
+
+    /** Password validation routine, now using the model. */
+    function verifyCredintials($email,$password){
+        $model = $this->getModel()->loadBy('email',$email);
+        if(!$model->isInstanceLoaded())return false;
+        if($password == $model->get('password')){
+            $this->addInfo($model->get());
+			unset($this->info['password']);
+            return true;
+        }else return false;
+
+    }
+}
+<?/?>
+
+<p>When verification takes place, if it is successful we use addInfo() function which will accumulate more information about currently-logged user.
+Once this information is memorized, it will be accessible through $auth->get() at all times while user is logged-in.</p>
+
+<p>And finally admin should be able to set passwords. Let's first create the User Interface for that. We are going to enhance standard CRUD a little. First,
+  you should remember that CRUD object actually relies on MVCGrid and MVCForm to do all of it's work. After initializing CRUD you can interact with those
+  components directly too. We will add new column to our CRUD. Open file admin/page/mgr.php and replace line containing add('CRUD')->setModel('Customer') 
+  with the following code:</p>
+<?Code?>
+        $crud=$tabs->addTab('Customers')->add('CRUD');
+        $crud->setModel('Customer');
+
+        if($crud->grid){
+            $crud->grid->addColumn('prompt','set_password');
+            if($_GET['set_password']){
+                $auth = $this->add('RentalAuth');
+                $model = $auth->getModel()->loadData($_GET['set_password']);
+                $enc_p = $auth->encryptPassword($_GET['value'],$model->get('email'));
+                $model->set('password',$enc_p)->update();
+                $this->js()->univ()->successMessage('Changed password for '.$model->get('email'))
+                    ->execute();
+            }
+        }
+<?/?>
+
+<p>Initialization code is executed during the initial render but also when the button is clicked. However during button-click the GET argument will be passed
+and output is expected to be JavaScript. The "prompt" column also will provide us with the "value" through the GET argument, which we will encrypt
+and save into database. Finally, we execute a chain to produce JavaScript action.</p>
+
+<p>
+
+<?MoreInfo?>Password is common functionality. Isn't it a lot to do for simple functionality?
+<p>Agile Toolkit is designed not to limit developer in any way. Password changing routine might have been different, encryption and field names might have been different as well as the user interface or responses in password change might have been different. If you find that this technique works for you, you can create your own set of classes which you would re-use across all of your projects - "User" model, your default "Auth", "UserCRUD" which implements your user management.</p>
+<p>Once you do that, you can re-use those piece of code in all of your applications or share with others in form of "addon"</p>
+<?/?>
+
+<h2>Test this</h2>
+<p>You should be able now to open /admin/ section in your browser, login with "admin" / "demo" and see the "Set Password" button in your user management section. Clicking on that button should ask you for a password, which should be then saved into a database encrypted.
+
+</div></div>
+<?$Next?>

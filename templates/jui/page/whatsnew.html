@@ -5,11 +5,530 @@
 <?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
 <div class="g-row" id="download-grid">
 	<div class="g-8">
-		<h2>Development Branch</h2>
 
-<?Execute?>
-$page->api->redirect('./aug2011');
+		<h2>What's new in 4.1.2?</h2>
+                <p>Version 4.1.2 adds a whole <b>4 new examples</b> into the downloadable ZIP archive. To keep things simple we decided to drop all the different ZIP files and have only one - agiletoolkit-4.1.2.zip. There are also bugfixes such as ability to use full url with getDestinationURL().</p>
+
+        <h4><span class="date">August 16<em>th</em></span>Enable use of callback in $field->validateField()</h4>
+<?Code?>
+$form = $page->add('Form');
+$field = $form->addField('line','age');
+$field->validateField(function($field){
+    if($field->get()<18)return 'Must be 18+';
+});
+$form->addSubmit();
 <?/?>
+<?Execute?>
+$form = $page->add('Form');
+$field = $form->addField('line','age');
+$field->validateField(function($field){
+    if($field->get()<18)return 'Must be 18+';
+});
+$form->addSubmit();
+<?/?>
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
+        <p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
+        that. Previously developer would had to manually add include text into shared template, now you can simply call:
+<?Code?>
+$this->api->jui->addStaticInclude('myjsfile');
+<?/?>
+
+
+		<h2>What's new in 4.1 (since 4.0)</h2>
+
+
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0e46a0aaa0061c173ed716b5dc8c36c308c71bd">Add getColumn() to DBlite</a></h4>
+<?Code?>
+$array_of_values = $this->api->db->getColumn($query);
+
+
+$array_of_values = $dq->do_getColumn();
+<?/?>
+
+        <h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
+        <p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
+        that. Previously developer would had to manually add include text into shared template, now you can simply call:
+<?Code?>
+$this->api->jui->addStaticInclude('myjsfile');
+<?/?>
+
+
+
+        <h4><span class="date">July 10<em>th</em></span><a href="https://github.com/atk4/atk4/commit/3aa08b37fea406c6b7fbe520729281ed6b48389d">PDO DB under construction</a></h4>
+        <p>It's not in the works. lib/DB.php and also lib/DB/dsql.php contain half-finished implementation of PDO layer. If you need to implement it yourself and you can't wait, you can use this class to make your own. We expect PDO to arrive sometime in 4.1.1 or bit more later.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af0f0f4dc023085c864afa52dc2385b1bcc55738">Dynamic Methods</a></h4>
+        <p>Agile Toolkit now supports dynamic methods. Avoid using them at any costs, since they are slower than regular methods and are quite confusing
+        for developers. Dynamic method allows to register method for one or all objects</p>
+<?Code?>
+$this->api->addGlobalMethod('helloworld',array($this,'helloworld'));
+<?/?>
+        <p>This code will allow calling $anyobject->helloworld();. This is quite effective way to maintain backwards compatibility when methods are being cleaned up.
+        There is also a function for registering method for single function. It is useful if controller wants to register function inside API namespace.
+        Possibly PathFinder could have registered locate() and locateURL() functions through this approach, to keep API clean, however since it's very
+        essential controller, it's been done in old-fashioned way for simplicity and speed.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af0f0f4dc023085c864afa52dc2385b1bcc55738">$this->frame() is no more</a></h4>
+        <p>$view->frame() used to be a handy method to add a frame with a header. This method is now obsolete in favour of the new form:</p>
+<?Code?>
+// $frame=$view->frame('My Frame Title');
+
+$frame=$view->add('Frame')->setTitle('My Frame Title');
+<?/?>
+        <p>If you have been relying on this function, there is actually a compatibility controller. If you add it, then old format would still work. 
+<?Code?>
+$this->api->add('Controller_Compat');
+$frame=$view->frame('My Frame Title');
+<?/?>
+        <p>This controller also adds removed support for ajax() function for all views.</p>
+
+
+
+        <h4><span class="date">July 6<em>th</em></span><a href="https://github.com/atk4/atk4/commit/923b6c5556e2270d2c7595da9849bfba4131be6c">Added Unit Test suite</a></h4>
+        <p>Unit tests basics is quite simple. Execute a function and compare results with expected. Agile Toolkit provides
+        a simple implementation for Unit tests, however with few nifty features</p>
+<?Code?>
+class page_mytest extends Page_Tester {
+    function prepare(){
+        return $this->add('View');
+    }
+    function test_name($t){
+        return $t->name;
+    }
+    function test_shortname($t){
+        return $t->short_name;
+    }
+}
+<?/?>
+
+        <p>Firstly, there are no value to compare with. Testing framework aims at remembering correct value on it's own and comparing with new value. Secondly, each
+        test is a function, which makes it possible for a testing script to execute each test multiple times. Additionally, function prepare() is called before
+        each test, which is designed to prepare data to be used within test. This way you can always start test with a clean object to play with.</p>
+
+        <p>This testing framework will be further enhanced. We plan to add stress-test and storing results in mysql as well as automated re-testing of multiple
+        pages like this without verbose output.</p>
+
+        <p>Another feature supported is "variations". It allows you to use different prepare functions for tests. For example if you implementing new version
+        of your controller and you want to test it against old one - it will show you output side-by-side.</p>
+
+        <p>There is also a new project called atk4-tester, which is growing collection of tests for testing framework</p>
+
+        <h4><span class="date">June 28<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1e34669a7ed56344ae0bf74e9eccc00c418b16f4">Added implementation of plain forms</a></h4>
+        <p>Agile Toolkit forms are full featured. What if you want to make a plain form? Such as the one to send output to PayPal. Now there is implementation you can use and it's insanely simple and powerful.</p>
+        <p>If you want to use custom template, pass a 4th argument to add('Form_Plain') and use 4th argument for addInput to specify tag, where input should appear.</p>
+<?Example?>
+$form=$page->add('Form_Plain');
+$form->setAttr('method','post');
+$form->addInput('text','name','John');
+$form->addInput('text','surname','Blogs');
+$form->addInput('submit','submit','Send');
+<?/?>
+
+        <h4><span class="date">June 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/b9e3e075b67e3a20f8430f16a97ef6794f03b844">Stored procedure import extension is now *.sql</a></h4>
+        <p>Do you know that you can create doc/storedfx/ directory and put source of your stored procedures in there? After each run it will always execute storedfx/*.sql files. It used to be files ending with *.manual, but *.sql makes so much more sense.</p>
+
+        <h4><span class="date">June 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0d92af200653c5a15b1e7bd75cce585b5a7af55">Added support for logout without redirect</a></h4>
+        <p>Traditionally calling $api->auth->logout() would destroy login info, issue redirect to index and never return. Now, passing "false" can avoid redirect: logout(false);</p>
+
+        <h4><span class="date">June 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/81d47a2d57d161ecf8250e3f3b04ef3517ace734">Added implementation of sha256/salt encryption</a></h4>
+        <p>Auth classes allow you to call ->usePasswordEncryption(). This change the way how encryptPassword() function works
+        and also how login is validated. Now you can use "sha256/salt" encryption, and also encryptPassword takes second
+        argument, which is a salt.</p>
+<?Example?>
+
+$encryptions=array('md5','sha1','rot13','sha256/salt');
+
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('password','password');
+$form->addField('line','salt');
+$form->addField('dropdown','enc')
+  ->setValueList($encryptions);
+$form->addField('text','result')
+  ->setProperty('style','width: 250px');
+$form->addSubmit();
+if($form->isSubmitted()){
+    $auth=$this->add('BasicAuth');
+    $auth->usePasswordEncryption($encryptions[$form->get('enc')]);
+    $form->getElement('result')->js()->val(
+        $auth->encryptPassword($form->get('password'),
+          $form->get('salt'))
+        )->execute();
+}
+<?/?>
+
+        <h4><span class="date">June 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/2f15f7a9dbf3e0f52ec3a5fec10503fa893e3493">Trim password field and enable normalize() in general for fields</a></h4>
+        <p>If you are building custom field, you can now use normalize() function.</p>
+<?Code?>
+function normalize(){
+    $this->set(trim($this->get()));
+    parent::normalize();
+}
+<?/?>
+
+<p>Additionally password field will automatically normalize itself by trimming</p>
+
+<?Example?>
+$form=$page->add('Form');
+$form->addField('password','password')
+  ->add('Text',null,'after_field')
+  ->set('<ins>Use Spaces!</ins>');
+$form->setFormClass('vertical');
+$form->addSubmit();
+if($form->isSubmitted()){
+    $form->js()->univ()->alert('Length is '.
+        strlen($form->get('password')))
+      ->execute();
+}
+<?/?>
+
+        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/42e6168584fea4d4b76e4e2988556fd87729c118">URL->set() implemented</a></h4>
+        <p>When you execute $api->getDestinationURL() it returns an object. This object converts itself into URL in string context. You can execute few methods, to interact with that URL such as useAbsoluteURL(). Now you can also use set() to add more parameters</p>
+
+<?Example?>
+$url=$page->api->getDestinationURL('..')->set('foo','bar?');
+$page->add('Text')->set($url);
+<?/?>
+
+
+
+        <h4><span class="date">May 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/3c1f42b46ef24ffa44cba401b36cea80b68fdf4e">Implemented argument passing to init()</a></h4>
+        <p>Normally all the dependencies object is receiving through $this->api. It's generally a bad practice in Agile Toolkit to take any
+        input inside init() method. Instead chaining should be used and logic should be stored in render(). However if you think that you
+        still need to pass something into init() method, now there is a way.</p>
+
+        <p>Pass array as a second argument to add() function and it will be available through $this->di_config;</p>
+
+<?Example?>
+class MyDI extends Text {
+    function init(){
+        parent::init();
+        $this->set($this->di_config['text']);
+    }
+}
+
+$page->add('MyDI',array('text'=>'test123'));
+<?/?>
+
+        <h4><span class="date">May 24<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c6e13f8b29cfa11a48766433780d656292714ef3">Added ButtonSet</a></h4>
+<?Code?>
+$bs=$page->add('ButtonSet');
+$bs->add('Button')->set('<b>B</b>');
+$bs->add('Button')->set('<i>I</i>');
+$bs->add('Button')->set('<u>U</u>');
+<?/?>
+        <h4><span class="date">May 20<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c5039ef778b11c560cd3b46c7e54eba77c1312a5">Add ability to setup default pathfinder locations</a></h4>
+        <p>Pathfinder class needs to be loaded very early in your application. By the time init() is executed, it's already been initialized and ready to load your classes. How do push some paths before default ones are in effect? Now you can re-define $api->addDefaultLocations($pathfinder);</p>
+
+        <p>In following example, directory "myplugin" located in the base directory of your application can contain "includes", "javascript" and "tpl" folders. Resources in those folders will take precedence over any other location</p>
+
+<?Code?>
+function addDefaultLocations($pathfinder,$base_dir){
+    $pathfinder->addLocation('myplugin',array(
+        'php'=>'includes',
+        'js'=>'javascript',
+        'template'=>'tpl',
+      ))
+      ->setBasePath($base_dir);
+}
+<?/?>
+
+        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ae5489294f25c7177fd51a066d7fc4114fcc7901">Fix UI-test</a></h4>
+        <p>Did you know that there is a page called "uitest" which is comes enabled by default? You can see different elements on it. Good for testing your theme. Try it, http://localhost/atk4-example/?page=uitest</p>
+
+        <h4><span class="date">May 18<em>th</em></span><a href="https://github.com/atk4/atk4/commit/47769eae6b1c1a0b2cb4ace85344ff8c517608a4">Use 10-columns instead of 12 by default</a></h4>
+        <p>Give class="g-row" to your div and then inside that you can use classes like "g-4", "g-8" to slice the space horizontally. The total amount of values should be exactly 10. You can also use "g-max" for full-width column</p>
+
+
+        <h4><span class="date">May 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/aa6a8a9ab8ab9ba8c13cd7990b560fc18115deee">Delete button is always last in grid</a></h4>
+        <p>Adding some consistency by always moving column with delete button to be the last in grid.</p>
+
+<?Example?>
+$page->api->dbConnect();
+$grid=$page->add('Grid');
+$grid->addColumn('delete','delete');
+$grid->addColumn('text','name');
+$grid->addColumn('text','surname');
+$grid->setSource('user');
+$grid->dq->limit(5);
+<?/?>
+
+        <h4><span class="date">May 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e8ffe5d2534393e973828d0f7f9f3596460cc6ba">column->setButtonClass</a></h4>
+        <p>setButtonClass allows you to add additional class to Grid button.</p>
+
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->addColumn('button','b1');
+$grid->addColumn('button','b2')->setButtonClass('red ');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+        <h4><span class="date">May 8<em>th</em></span><a href="https://github.com/atk4/atk4/commit/2059c2758c106b3d2f2e07bf31c0d77ea74b2b70">add getModel() to all views</a></h4>
+        <p>You can now call setModel() and getModel() on any view. If you specify name of the model (string) to setModel() it will be instantiated and getModel() would always return object</p>
+
+        <h4><span class="date">May 8<em>th</em></span><a href="https://github.com/atk4/atk4/commit/88f4c79d48db810b3f47299e476bba9b3778a137">Grid->getColumn</a></h4>
+        <p>As you know, according to convention, add* methods return instance of a new column. Grid, however, does not add any objects
+        when you use addColumn. It however remembers which column was last added and makes possible for such constructions:
+<?Code?>
+$grid->addColumn('text','name')->makeSortable();
+<?/?>
+      <p>What if you didn't manage to make column sortable right away? Now there is getColumn function to help:</p>
+<?Code?>
+$grid->addColumn('text','name');
+$grid->addColumn('text','surname');
+
+$grid->getColumn('name')->makeSortable();
+<?/?>
+    <p>This is particularly helpful if you are using setModel() to initialize columns</p>
+
+
+
+        <h4><span class="date">May 5<em>th</em></span><a href="https://github.com/atk4/atk4/commit/4bef7c00ece83c0319c7d8a93f69c31c77751278">Default excetpion for form = validity check</a></h4>
+        <p>Any object in Agile Toolkit has a exception() function. This function takes the string and returns new exception which you can throw.
+        The primary reason for the function is syntactic sugar - you can chain calls on a function, while you can't chain if you use "new".
+        Chaining of exceptions is used for adding more information. Remember that parameter for the exception() will be localized, and possibly
+        displayed to user, while additional data can be passed for debugging.</p>
+        <p>Different objects can use different exceptions classes. Now function thrown Exception_ValidityCheck exception by default.</p>
+<?Code?>
+throw $form->exception('Message For User')
+  ->setField('fieldname')
+  ->addMoreInfo('foo',$bar);
+<?/?>
+      <p>There is another type of exception, called Exception_ForUser. Executing $page->exception() will trigger that instead.</p>
+
+
+
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/03fd2256b20736b466b3c15342c07505fd2cf9a5">added button->isClicked() handler</a></h4>
+        <p>Similarly how you can check form conditions, you can now do the same with buttons.</p>
+<?Example?>
+if($page->add('Button')->isClicked()){
+    $this->js()->univ()->alert('Random is: '.rand(1,100))->execute();
+}
+
+
+<?/?>
+
+
+
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/0a96d4968b7977bf747a7f81bed8df6d1956258a">added form->onSubmit()</a></h4>
+        <p>Historically form would have a method onSubmit() which would return "true" when page was pulled from the form's "submit" AJAX request.
+        With the release of PHP 5.3 closures are now available. onSubmit() method accepts one argument, a callable, which is executed right away
+        if form is submitted. The benefit of this approach is that form will automatically capture validation errors and display them. You can also
+        return JS from that function which would be executed automatically.</p>
+<?Example?>
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('line','age');
+$form->addSubmit();
+$form->onSubmit(function($form){
+    if($form->get('age')<5)
+      throw $form->exception('Too young')
+        ->setField('age');
+
+    return $form->js()->univ()->successMessage('thank you');
+});
+<?/?>
+
+        <h4><span class="date">May 2<em>th</em></span><a href="https://github.com/atk4/atk4/commit/061cfbc69428559baafb5bbed01dbec8cac182a1">added PathFinder's methods: search() and searchDir()</a></h4>
+        <p>Pathfinder is here to search for resources. $api->locate() is one function you migth already know. $api->pathfinder->search() and searchDir() allows you to receive list of files in directories across multiple paths. Great for implementing dynamic plug-ins in your application.</p>
+<?Example?>
+$models=$this->api->pathfinder->searchDir('template',
+    'css');
+
+$form=$page->add('Form');
+$form->setFormClass('vertical');
+$form->addField('dropdown','models')
+    ->setValueList($models);
+$form->addfield('line','path');
+$form->addfield('line','url');
+$form->addSubmit('Resolve');
+
+if($form->isSubmitted()){
+    $js=array(); $i=$form->get('models');
+    $js[]=$form->getElement('path')->js()->val($this->api->locate('template','css/'.$models[$i]));
+    $js[]=$form->getElement('url')->js()->val($this->api->locateURL('template','css/'.$models[$i]));
+    $form->js(null,$js)->execute();
+}
+<?/?>
+
+        <h4><span class="date">April 4<em>th</em></span><a href="https://github.com/atk4/atk4/commit/7ec46af5261da0d01f172d39a7ec966a53f04bee">form_body Tag Renamed</a></h4>
+        <p>Default Form template used to contain &lt;?form_body?&gt; tag. That's the place in the form.html template, where
+        fields are located. It's now been renamed into standard &lt;?Content?&gt; tag making addition of other elements into
+        form body much easier:</p>
+<?Code?>
+$f->add('H2')->set('appears after last field');
+<?/?>
+
+        <h4><span class="date">April 4<em>th</em></span><a href="https://github.com/atk4/atk4/commit/58110a38973b28df9c3e290246e71ea670bb70b5">Align "money" column type in the grid to the right</a></h4>
+        <p>Properly aligns not only the money, but also the title</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+
+
+
+
+
+
+        <h4><span class="date">April 7<em>th</em></span><a href="https://github.com/atk4/atk4/commit/8e59753a049276ed6984e902c628888c068ba69e">DSQL debug output is better</a></h4>
+        <p>Setting debug mode on DSQL object will output breakdown of parameters</p>
+        
+<?Code?>
+$str=$page->api->db->dsql()->debug()
+    ->table('foo')
+    ->field('bar')
+    ->where('x>',123)
+    ->limit(10)
+    ->select();
+<?/?>
+
+
+        <h4><span class="date">April 9<em>th</em></span><a href="https://github.com/atk4/atk4/commit/f11ba29d236abdf4c567463e93c0d20e34976375">Growl (ui.atk_notify.js) shows messages better</a></h4>
+        
+<?Example?>
+$page->add('Button')->js('click')
+    ->univ()
+    ->successMessage
+        ('Yey, it works!');
+<?/?>
+
+
+
+
+        <h4><span class="date">April 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/fedb024c6e91504b3c9143471f0a3a7dfbcdaa49">removed object->getName(), use object->name instead</a></h4>
+        
+<?Example?>
+$page->add('Text')
+  ->set($page->name);
+<?/?>
+
+        <h4><span class="date">April 11<em>th</em></span><a href="https://github.com/atk4/atk4/commit/06106d577e5c262c610a3d5d0b876af755462b2f">New way for handling exceptions</a></h4>
+        <p>Introducing new way of producing exception in Agile Toolkit. Calling exception() method will return object of the right exception class. For example calling $db->exception() will properly return database-related exceptino and might also include some object-related information, while exception generated in model, would generate validity exception.</p>
+
+        <p>Be sure to not include any variables into 1st argument to exception, this string will be localized. Instead specify relevant arguments by calling addMoreInfo()
+        
+<?Code?>
+throw $this->exception('Something went wrong')
+    ->addMoreInfo('niceinfo',$info);
+<?/?>
+
+
+
+        <h4><span class="date">April 13<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a54afabc414ba3d40ac4a87c58ee0babc7c0f676">Add zebra template for grid</a></h4>
+        <p>use 4nd argument of array('grid_stripped') to use this new template. Remember that you can always add your own templates to further ehance look of your objects.</p>
+<?Example?>
+$grid=$page->add('Grid',null,null,array('grid_striped'));
+$grid->addColumn('text','name');
+$grid->addColumn('money','salary');
+$grid->setStaticSource(array(
+            array('name'=>'John','salary'=>'2000'),
+            array('name'=>'Peter','salary'=>'4200'),
+            array('name'=>'Minus','salary'=>'-200'),
+            ));
+<?/?>
+
+
+        <h4><span class="date">April 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/1b7033d8600dadb0e50d94571471cafd49442e9c">Implement Auto-complete</a></h4>
+        <p>use 4nd argument of array('grid_stripped') to use this new template. Remember that you can always add your own templates to further ehance look of your objects.</p>
+<?Example?>
+$form=$page->add('Form');
+$form->addField('autocomplete','test')
+    ->setValueList(
+            array('John','Peter','Jane'));
+<?/?>
+
+
+        <h4><span class="date">April 15<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a2890c1488b19ca43b19e6d316e665409e9cd7e8">add ability to disable full-screen mode (for true gs960)</a></h4>
+        <p>By default your Agile Toolkit application uses full width of the screen. If you want to have true 960gs, then you should add the following to your Api's init() method.</p>
+<?Code?>
+$this->template->del('fullscreen');
+<?/?>
+
+
+        <h4><span class="date">April 19<em>th</em></span><a href="https://github.com/atk4/atk4/commit/6257874420d3e3ee84ddbd8ccf0566d3a1eb3a75">Showing timestamps</a></h4>
+        <p>To change format, add $config['locale']['timestamp']='Y-m-d'; or $config['locale']['datetime'].</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('timestamp','ts');
+$grid->addColumn('datetime','dt');
+$grid->setStaticSource(array(
+            array('ts'=>date('Y/m/d'),'dt'=>date('Y/m/d')),
+            ));
+<?/?>
+
+        <h4><span class="date">April 25<em>th</em></span><a href="https://github.com/atk4/atk4/commit/ee306dea32066f28e7f8f02097fbc448ab9479d3">Allow to substitute "Grid" class</a></h4>
+        <p>Many components rely on Grid component. Often a developer would want to make system-wide changes to the Grid component. Push mechanism allows for all the components to use the new version. Push is implementing by redefining "Grid" class. By default it's defined like this:</p>
+<?Code?>
+class Grid extends Grid_Basic{}
+<?/?>
+        <p>All of the documentation, addons and user code must use "Grid" and not "Grid_Basic". This allows you to define this class locally inside your lib/Grid.php and redefine some of the methods there.</p>
+
+
+
+
+        <h4><span class="date">April 26<em>th</em></span><a href="https://github.com/atk4/atk4/commit/d050b624eb22da017c3d6e39d7c072a7352b28b5">Improve "link" format in Grid</a></h4>
+        <p>You can use &lt;?_link?&gt; or any other field tag as a template for "link" column, in setTemplate().</p>
+<?Example?>
+$grid=$page->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('link','details');
+$grid->addColumn('link','proflie')
+    ->setTemplate('<a href="..">xx</a>');
+$grid->setStaticSource(array(
+            array('id'=>1,'name'=>'John',
+                'details'=>'John Details'),
+            array('id'=>2,'name'=>'Peter',
+                'details'=>'Peter Details'),
+            ));
+<?/?>
+
+
+        <h4><span class="date">April 27<em>th</em></span><a href="https://github.com/atk4/atk4/commit/e1ec9e24c4d505fe485c8cb8bf1229e8393b4daa">Our standard menu is joined by Menu_Light</a></h4>
+        <p>This menu operates entirely on templates.</p>
+<?Code?>
+// Regular
+$menu=$page->add('Menu');
+$menu->addMenuItem('hello');
+$menu->addMenuItem('world');
+
+// Lightweight
+$menu=$page->add('Menu_Light',null,null,array('mymenu'));
+// items are defined in mymenu.html
+<?/?>
+
+
+        <h4><span class="date">April 28<em>th</em></span><a href="https://github.com/atk4/atk4/commit/af55786bde900bbe4ed011f84fa24569de8179e4">Removed "jui" theme, added "default" and "elephant"</a></h4>
+        <p>Look into your index.php file. It might still be using "jui" theme. We suggest to remove argument alltogether or set to "elephant" for the older look of Agile Toolkit.
+<?Code?>
+$api=new Frontend('myapp');
+$api->main();
+<?/?>
+
+        <h4><span class="date">April 29<em>th</em></span><a href="https://github.com/atk4/atk4/commit/432343f48cde7e1ee76d09249f0730bc06d24d9d">Login form looks much cooler</a></h4>
+
+
 
     </div>
 	<div class="g-4">

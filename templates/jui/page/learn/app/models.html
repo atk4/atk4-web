@@ -66,7 +66,7 @@ class Model_Rental extends Model_Table {
         
         $this->addField('is_returned')->type('boolean');
     }
-    function return(){
+    function returnMovie(){
         $this
             ->set('date_returned',date('Y-m-d'))
             ->set('is_returned',true)
@@ -77,15 +77,12 @@ class Model_Rental extends Model_Table {
 
 <p>In Agile Toolkit inheritance of Models is a major tool which should be used. Further on we will define some additional models such as "RentedDVD" etc as well as introduce relation into Model_DVD. For now let's focus on simplicity and getting some initial data into the database.</p>
 
-<h2>Generating Schema</h2>
-<p>Agile Toolkit contains schema generator. It is implemented as a page class, and in order to use it you will need to extending yourself. Agile Toolkit by default does not add any pages to your application, so if you want to use something, you will need to incorporate it to your own page.</p>
+<h2>Building administrative CRUDs</h2>
+<p>It's suggested that as soon as you create models, you also visualise them in the backend. It requires virtually no effort at all.</p>
 
-<p>Similarly as you did before with models, let's create two page classes for data visualization: page/sg.php and page/mgr.php. Remember that file and class case must always carefully match.</p>
+<p>Let's create a new page "mgr" through the file page/mgr.php. Remember that file and class case must always carefully match.</p>
 
 <?Code?>
-class page_sg extends Page_SchemaGenerator {
-}
-
 class page_mgr extends Page {
     function init(){
         parent::init();
@@ -101,13 +98,24 @@ class page_mgr extends Page {
 
 <p>You will also need to open your Application class (lib/Frontend.php) and add (or un-comment) call to dbConnect() as we will need to access database. Copy your config-distrib.php into config.php and edit it to make sure your database settings are set properly. <a href="<?page?>learn/install<?/?>">More info on configuration</a></p>
 
-<p>Finally let's add the page to the menu of our application, by locating 'Menu' object in lib/Frotnend and adding two new addMenuItem calls.</p>
+<p>Finally let's add the page to the menu of our application, by locating 'Menu' object in lib/Frotend.php and adding new addMenuItem calls.</p>
 <?Code?>
-    $menu->addMenuItem('Schema Generator','sg');
-    $menu->addMenuItem('Manager','mgr');
+        $menu->addMenuItem('Manager','mgr');
+<?/?>
+<p>Also make sure that atk4-addons directory is properly included into resource paths. The followind should already be inside init() method:</p>
+<?Code?>
+        $this->addLocation('atk4-addons',array(
+                    'php'=>array(
+                        'mvc',
+                        'misc/lib',
+                        )
+                    ))
+            ->setParent($this->pathfinder->base_location);
 <?/?>
 
-<p>You can now refresh your application, find two menu items and use Schema Generator to generate the schema. <font color="red">Due to complexity of model definitions in Agile Toolkit, please do always re-check and adjust generated schema.</font>. For your convenience below is the database dump along with some data.
+<p>Create folder "doc" in your application root. Create a doc/.htaccess file with "deny from all" inside it to restrict direct access (you can also keep the folder outside of your web root). Database migration requires you to have "bash" which comes with any unix or linux. If you are on windows, you can install cygwin, bash port, or execute upgrade files manually. The reason why upgardes are done through the command-line is because in secure environment you would have a separate username with create/alter priviledges and database user from config.php wouldn't be able to perform those operations.</p>
+
+<p>Below is the "base" schema. Save it in doc/dvdrental-001.sql.</p>
 
 <div class="atk_doc example"><code><pre>
 CREATE TABLE `movie` (

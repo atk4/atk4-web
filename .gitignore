@@ -1,3 +1,6 @@
+/logs
+/PhpDocumentor
+/upgrade_check
 /blog
 config.php
 .htaccess
@@ -6,3 +9,5 @@ config.php
 upload
 distfiles
 .DS_Store
+
+page/parsetest.php

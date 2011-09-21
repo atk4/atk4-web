@@ -38,7 +38,7 @@ class AgileToolkitWeb extends ApiFrontend {
 			->setParent($this->pathfinder->base_location);
 
 		// Keep this if you will use jQuery UI in your project
-		$this->add('jUI');
+		$this->add('jMyUI');
 
 		// Initialize any system-wide javascript libraries here
 		$this->js()
@@ -47,7 +47,21 @@ class AgileToolkitWeb extends ApiFrontend {
 			// ->_load('ui.atk4_expander')
 			;
 
-        $this->auth=$this->add('BasicAuth')->allow('test','test');
+
+        list($fp,$junk)=explode('_',$this->page,2);
+        if($fp=='commercial'||$fp=='account'){
+            // will need database
+            $this->dbConnectATK();
+        }
+
+
+        $this->auth=$this->add('AtkAuth');
+        $this->auth->setModel('ATK_User_Valid');
+        if($this->auth->isLoggedIn()){
+            $this->template->trySet('user',$this->auth->get('email'));
+        }else{
+            $this->template->trySet('user','Login');
+        }
 
 
 		list($main,$junk)=explode('_',$this->page,2);
@@ -56,14 +70,16 @@ class AgileToolkitWeb extends ApiFrontend {
 	function initLayout(){
 		if($this->template->is_set('Menu')){
 			$this->api->menu=$menu2=$this->add('AtkMenu','Menu','Menu');
-			/*
-			$this->js(true)->_selector("#sqb")->click(
-				$this->js(null, "w=window.open('http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');w.focus();")->_enclose()
-			);
-			*/
+
 			$this->js(true)->_selector("#sqf")->submit(
 				$this->js(null, "w=window.open(u='http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');if(w)w.focus();else document.location=u")->_enclose()
 			);
+
+            if($this->auth->isLoggedIn()){
+                $this->js('click')->_selector('.login')->univ()->frameURL('Profile',$this->api->getDestinationURL('account/profile'));
+            }else{
+                $this->js('click')->_selector('.login')->univ()->frameURL('Login',$this->api->getDestinationURL('login'));
+            }
 		}
 		parent::initLayout();
 
@@ -126,8 +142,10 @@ class AgileToolkitWeb extends ApiFrontend {
 			$this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
 			$this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
 			$this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
-			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
 			$this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
+			$this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
+			$this->page_object->template->eachTag('Vimeo',array($this,'enclose_Vimeo'));
+			$this->page_object->template->eachTag('YouTube',array($this,'enclose_YouTube'));
 			if($this->page_object->template->is_set('ContactForm')){
 				$this->page_object->template->tryDel("page_title");
 				$this->page_object->add('ContactForm',null,'ContactForm');
@@ -141,6 +159,16 @@ class AgileToolkitWeb extends ApiFrontend {
 		// If you want to use ajax-ify your menu
 		// $m->js(true)->_load('ui.atk4_menu')->atk4_menu(array('content'=>'#Content'));
 	}
+    function dbConnect($dsn=null){
+        //$dbs=$this->api->db;
+        parent::dbConnect($dsn);
+        $this->api->db_examples = $this->api->db;
+        //$this->api->db=$dbs;
+    }
+    function dbConnectATK(){
+        // Connect to administrative database
+        parent::dbConnect($this->getConfig('atk_dsn'));
+    }
 	function enclose_MoreInfo($content,$tag){
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_MoreInfo',null,$tag)
@@ -164,6 +192,12 @@ class AgileToolkitWeb extends ApiFrontend {
 		$this->page_object->add('Doc_Example',null,$tag)
 			->setCode($content);
 	}
+	function enclose_Vimeo($content,$tag){
+		$this->page_object->add('View',null,$tag,array('doc/view/doc_vimeo'))->template->trySet('video_id',$content);
+	}
+	function enclose_YouTube($content,$tag){
+		$this->page_object->add('View',null,$tag,array('doc/view/doc_youtube'))->template->trySet('video_id',$content);
+	}
 	function enclose_Execute($content,$tag){
 		list($header,$content)=preg_split('/\n/',$content,2);
 		$this->page_object->add('Doc_Execute',null,$tag)
@@ -179,7 +213,7 @@ class AgileToolkitWeb extends ApiFrontend {
 	protected function loadStaticPage($page){
         $p=explode('_',$page);
         if($p[0]=='a' && count($p)>1)throw new PathFinder_Exception('no direct loading for a',null,null);
-        if($p[0]=='doc' && count($p)>2)throw new PathFinder_Exception('no direct loading for docs',null,null);
+        if($p[0]=='doc' && count($p)>1)throw new PathFinder_Exception('no direct loading for docs',null,null);
         if($p[0]=='intro' && count($p)>1)throw new PathFinder_Exception('no direct loading for intro',null,null);
         if($p[0]=='learn' && count($p)>1)throw new PathFinder_Exception('no direct loading for learn',null,null);
         if($p[0]=='whatsnew' && count($p)>1)throw new PathFinder_Exception('no direct loading for whatsnew',null,null);

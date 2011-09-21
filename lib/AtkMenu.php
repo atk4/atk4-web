@@ -38,12 +38,15 @@ class AtkMenu extends Menu {
 
 				break;
 
+			case'community': 
 			case'develop': 
 				$this->api->template->trySet('menu_develop','class="current"');
 
+				$menu->addMenuItem('Share Help','community/help');
+				$menu->addMenuItem('Share Code','community/code');
+				$menu->addMenuItem('Share Love','community/love');
 				$menu->addMenuItem('Get Involved','develop/getinvolved');
-				$menu->addMenuItem('Roadmap','develop/roadmap');
-				$menu->addMenuItem('Addons','develop/addons');
+				//$menu->addMenuItem('Addons','develop/addons');
 
 				break;
 
@@ -52,10 +55,10 @@ class AtkMenu extends Menu {
 
 
 				$menu->addMenuItem('Account','commercial/account');
-				//$menu->addMenuItem('Prices','commercial/store');
-				//$menu->addMenuItem('Services','commercial/services');
-				//$menu->addMenuItem('Products','commercial/products');
-				//$menu->addMenuItem('Jobs','commercial/jobs');
+				$menu->addMenuItem('Prices','commercial/store');
+				$menu->addMenuItem('Services','commercial/services');
+				$menu->addMenuItem('Products','commercial/products');
+				$menu->addMenuItem('Jobs','commercial/jobs');
 
 				break;
 			case'download':

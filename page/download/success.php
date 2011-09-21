@@ -5,21 +5,7 @@ class page_download_success extends Page {
 		$this->add('Controller_JSProxy')->proxy('http://platform.twitter.com/widgets.js');
 		$this->template->trySet('file',addslashes(htmlspecialchars($_GET['file'])));
 		$this->js(true)->univ()->setTimeout($this->js()->_enclose()->univ()->location('/distfiles/'.$_GET['file']),1000);
-		/*
-		$f=$this->add('Form',null,null,array('form_empty'));
-		//$f->js(true)->addClass('tweet_this_form');
-		$f->setFormClass('form-twitter');
-		$f->setLayout("download_success_form_layout");
-
-
-		$f->addField('text','t','Tweet This')
-			->set('I just downloaded Agile Toolkit (PHP UI Framework). Check out their interactive introduction http://agiletoolkit.org/intro. #atk4');
-		$f->addSubmit('Tweet');
-		if($f->isSubmitted()){
-			$f->js()->univ()->location('http://twitter.com?status='.rawurlencode($f->get('t')))->execute();
-			exit;
-		}
-		*/
+        $this->js(true)->univ()->clickyGoal('Downloaded '.$_GET['file']);
 	}
 	function defaultTemplate(){
 		return array('page/download/success');
