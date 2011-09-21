@@ -16,7 +16,7 @@ class page_users extends Page {
         //echo $this->api->locate('php','Model_User.php');
 
         $crud=$this->add('CRUD');
-        $crud->setModel('ATK_User',null,array('id','email','name','status'));
+        $crud->setModel('ATK_User',null,array('id','email','name','status','logged_dts'));
         if($crud->grid){
             $crud->grid->addColumn('expander','more','More...');
         }

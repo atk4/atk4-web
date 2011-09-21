@@ -7,6 +7,7 @@ class page_commercial_checkout extends Page {
             ->loadData($this->api->auth->get('id'));
         if(!$user_model->isInstanceLoaded()){
             $this->js(true)->atk4_load($this->api->getDestinationURL('login',array('cut_page'=>1,'return'=>'commercial/checkout')));
+			return;
         }
 
         $this->add('P')->set('<b>Refund policy:</b> if you are not satisfied with Agile Toolkit and it does not live to your commercial
