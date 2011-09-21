@@ -24,7 +24,7 @@ class Admin extends ApiFrontend {
 
         $this->auth = $this->add('AtkAuth');
         $this->auth->setModel('ATK_Admin');
-        //$this->auth->check();
+        $this->auth->check();
 
         $m = $this->add('Menu', null, 'Menu');
 

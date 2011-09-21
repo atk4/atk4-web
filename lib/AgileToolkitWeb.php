@@ -38,7 +38,7 @@ class AgileToolkitWeb extends ApiFrontend {
 			->setParent($this->pathfinder->base_location);
 
 		// Keep this if you will use jQuery UI in your project
-		$this->add('jUI');
+		$this->add('jMyUI');
 
 		// Initialize any system-wide javascript libraries here
 		$this->js()
