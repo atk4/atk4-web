@@ -6,8 +6,19 @@ class jMyUI extends jUI {
                 $sel=array();
                 foreach($chains as $chain){
                     $s=$chain->selector?$chain->selector:'#'.$chain->owner->name;
-                    $js=$obj->js('click','clicky.log("'.$this->api->page.'#'.$s.'")')
-                        ->_enclose(false)
+
+                    $n=$chain->owner->short_name;
+                    if(!$n)$n=$chain->owner->name;
+
+                    if($chain->owner instanceof Button){
+                        $nn=preg_replace('/[^a-zA-Z0-9]/','',$chain->owner->template->get('Content'));
+                        if($nn)$n=$nn;
+                    }
+
+                    $p=$this->api->getDestinationURL();
+
+                    $js=$obj->js('click','clicky.log("'.$p.'#'.$n.'")')
+                        ->_enclose(false,false)
                         ->_selector($s);
                 }
             }
