@@ -5,9 +5,10 @@ class jMyUI extends jUI {
             if($key=='click'){
                 $sel=array();
                 foreach($chains as $chain){
-                    $s=$chain->selector?$chain->selector:'#'.$obj->name;
-                    $js=$obj->js('click','clicky.log("'.$this->api->page.'#'.$s.'")');
-                    if($chain->selector)$js->_selector($chain->selector);
+                    $s=$chain->selector?$chain->selector:'#'.$chain->owner->name;
+                    $js=$obj->js('click','clicky.log("'.$this->api->page.'#'.$s.'")')
+                        ->_enclose(false)
+                        ->_selector($s);
                 }
             }
         }
