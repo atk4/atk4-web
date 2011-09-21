@@ -15,7 +15,21 @@
 #header #hero-download .button {margin:0.7em 0 0.3em 0;}
 #header #hero-download #size {font-size:10px;color:#397cbf;text-align:center;}
 #header a:link, #header a:visited {color:#fff;text-decoration:none;}
-
+#header #news-box {
+	color:#c7e2ff;
+	text-shadow:0 0 5px rgba(255,255,255,0.6);
+	background:#1a528a;
+	border:1px solid #1d5b99;
+	margin-top:25px;
+	padding:3px 6px;
+	overflow:hidden;}
+#header #news-box>div {float:left;border-left:1px dotted #226ab3;padding-left:10px;margin-left:10px;font-size:12px;}
+#header #news-box>div:first-child {border-left:none;padding-left:0;margin-left:0;}
+#header #news-box>div.label .icon-tweet {background:url(../images/sprite.png) -547px -78px;width:17px;height:14px;display:inline-block;position:relative;top:2px;}
+#header #news-box>div.tweet {width:720px;overflow:hidden;}
+#header #news-box>div.follow {float:right;}
+#header #news-box a {color:#c7e2ff;}
+#header #news-box a:hover {color:#fff;	text-shadow:0 0 5px rgba(255,255,255,0.8);}
 
 #carousel, #engage {background:url(../images/bg-hex.png);}
 #carousel, #features, #engage {padding:3em 0;position:relative;}

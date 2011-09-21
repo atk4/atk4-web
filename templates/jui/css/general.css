@@ -502,6 +502,7 @@ ul.submenu-body li a,
 .box.metallic h2 {color:#3f464d !important;}
 .box.metallic h2:after {background:#3f464d;}
 .box.white {background:#fff;}
+.box.outline {border:1px solid #d0d9e4;background:#fff;}
 .box.p-10px {padding:10px;}
 
 h2+.box, h3+.box, h4+.box {margin-top:0;}
@@ -645,6 +646,26 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 .doc-api iframe:first-child {width:220px;margin:0;}
 /* .doc-api>div.g-3>iframe {height:100%;} */
 
+#authors .box {position:relative;padding-bottom:70px;height:200px;}
+#authors .photo {float:left;box-shadow:0 1px 0 rgba(255,255,255,0.7),0 1px 3px rgba(20,40,60,0.7) inset;border-radius:2px;width:133px;height:199px;}
+#authors #romans .photo {background:url(../images/romans-malinovskis.jpg);}
+#authors #mayack .photo {background:url(../images/mayack.jpg);}
+#authors .about {margin-left:160px;font-size:12px;}
+#authors .contact {
+	background:#617183;
+	box-shadow:0 1px 1px rgba(0,0,0,0.7) inset;
+	color:#fff;
+	text-shadow:0 1px 1px rgba(0,0,0,0.6);
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+	overflow:hidden;}
+#authors .contact>a {float:left;padding:10px 15px;color:#fff;text-decoration:none;border-right:1px solid #4d5a69;}
+#authors .contact>a:hover {background:#208afb;text-shadow:0 1px 1px rgba(20,70,115,0.5);box-shadow:0 1px 1px rgba(20,70,115,1) inset;}
+
+#authors-facts table {width:100%;border-collapse:separate;border-spacing:10px;}
+#authors-facts td {vertical-align:top;}
 
 /* -------------------------------------------------------------------------------------------------
    Introduction
