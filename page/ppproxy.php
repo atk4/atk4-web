@@ -16,5 +16,8 @@ class page_ppproxy extends Page {
 
             $this->api->redirect('commercial/thankyou');
         }
+        if($_GET['cancel']){
+            $this->api->redirect($this->api->getDestinationURL('commercial/account'));
+        }
     }
 }
