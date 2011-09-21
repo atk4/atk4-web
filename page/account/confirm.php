@@ -5,12 +5,15 @@ class page_account_confirm extends Page {
         if(!$_GET['t'])$this->api->redirect('/');
         $this->api->stickyGET('t');
 
+
         $m=$this->add('Model_ATK_User_Pending');
         $m->addField('password')->system(true);
         $m->loadBy('token_email',$_GET['t']);
         if(!$m->isInstanceLoaded()){
             $this->api->redirect($this->api->getDestinationURL('/',array('t'=>false)));
         }
+
+        $this->js(true)->univ()->clickyGoal('Confirmed account');
 
         $form=$this->add('Form');
         $form->addField('readonly','email',$m->get('email'));
