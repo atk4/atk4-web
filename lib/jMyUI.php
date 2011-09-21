@@ -6,7 +6,8 @@ class jMyUI extends jUI {
                 $sel=array();
                 foreach($chains as $chain){
                     $s=$chain->selector?$chain->selector:'#'.$obj->name;
-                    $obj->js('click','clicky.log("'.$this->api->page.'#'.$s.'")')->_selector($s);
+                    $js=$obj->js('click','clicky.log("'.$this->api->page.'#'.$s.'")');
+                    if($chain->selector)->_selector($chain->selector);
                 }
             }
         }
