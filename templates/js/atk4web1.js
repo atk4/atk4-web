@@ -36,6 +36,12 @@ $.each({
             alert('Just executed custom method written by our JS Coder.');
         });
     },
+    clickyLog: function(href,title,type){
+        clicky.log(href,title,type);
+    },
+    clickyGoal: function(id,revenue){
+        clicky.goal(id,revenue);
+    },
 	moreInfoTrigger: function(){
 		/* Implements link which reveals more information when clicked */
 		var self=this.jquery;
