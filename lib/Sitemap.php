@@ -135,11 +135,13 @@ class Sitemap extends AbstractController{
         $doc['doc']=array('Agile Toolkit API Reference',
             'api'=>array(
                 'API Classes',
-                'frontend'=>'ApiFrontend',
-                'cli'=>'ApiCLI',
-                'web'=>'ApiWeb',
-                'extending'=>'Adding Your Own Application Class',
+                'cli'=>'Minimalistic Use With ApiCLI',
+                'layouts'=>'Using Layouts',
+                'multi'=>'Multiple Application Instances',
+                'extend'=>'Register Methods in API',
+                'own'=>'Building Re-Usable Application Class',
                 ),
+            /*
             'page'=>array(
                 'Page Classes',
                 'adding'=>'Different Ways of Adding Pages',
@@ -228,6 +230,7 @@ class Sitemap extends AbstractController{
             'session'=>array(
                 'Session Properties',
                 ),
+            */
             'form'=>array('Basic Form',
                 'how'=>'How Does a Form Work?',
                 'fields'=>'Adding Fields',
@@ -260,6 +263,7 @@ class Sitemap extends AbstractController{
                 'model'=>'Using with Models',
                 'sort'=>'Sorting Controls',
                 ),
+            /*
             'lister'=>array(
                 'Lister',
                 'lister/how'=>'How to Use',
@@ -367,6 +371,7 @@ class Sitemap extends AbstractController{
                     'order'=>'Order',
                     ),
                 ),
+                */
             );
 //}}}
 //{{{ a - Addons

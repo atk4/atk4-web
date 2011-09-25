@@ -1,0 +1,46 @@
+<?$Content?>
+
+<h1>Registering Methods in Application</h1>
+<p>Application relies on "Controllers" to delegate most of it's functionality. For example, $api->locate() method uses PathFinder->locate() to get the actual results. The proxy method is defined in ApiCLI because it's an often-used one, however sometimes you need to create Application Controller which is used only rarely, but it still needs to be accessible through the $api.</p>
+
+<p>Let's look at how you might want to create controller "System" which would define some of your system-wide logic. We would also want this controller to add few methods into the API class.</p>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+<?Code?>
+class Controller_System extends AbstractController {
+    function init(){
+        parent::init();
+
+        // register ourselves with API
+        $this->api->system=$this;
+
+        // add short-cut functions
+        $this->api->addMethod('getUser',
+            array($this,'getUser'));
+    }
+    function getUser(){
+        $user=$this->add('Model_User')
+            ->loadData($this->api->auth->get('id'));
+        if(!$user->isInstanceLoaded()){
+            $this->api->redirect('login');
+        }
+
+        return $user;
+    }
+}
+<?/?>
+</div>
+	<div class="g-6">
+        <h4>What happens?</h4>
+        <p>This example registers two ways how you can access the "System" controller. First from anywhere you can use $this->api->system. Secondly, new method is added into API which you can execute as $this->api->getUser();</p>
+
+        <h4>Legacy support</h4>
+        <p>Another great use for registered methods is legacy support. Throughout system refactoring some methods may cease to exist. However to handle compatibility a controller may register a method for backwards compatibility. Agile Toolkit comes with Controller_Compat which register few things needed for compatibility and you can use a similar technique inside your application</p>
+
+        <h4>System-wide methods</h4>
+        <p>Using addGlobalMethod() you can add method to <b>all</b> the objects of Agile Toolkit. The syntax is same and the first argument of the function will be reference to the object. See file atk4/Controller/Compat.php for more information.</p>
+        </div>
+</div>
+
+<?$Next?>

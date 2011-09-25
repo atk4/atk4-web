@@ -1,0 +1,143 @@
+<?$Content?>
+
+<h1>Using Agile Toolkit in a very minimalistic way</h1>
+
+<p>Normally Api uses some logic to determine which Page class to use, initializations and rendering, but these concepts introduced by ApiWeb can be clearly avoided if you are using ApiCLI class. An example could be creating an execute-once service-type applications which you might want to call directly.</p>
+
+<p>Create a new file demo.php inside the root folder of your Agile Toolkit local installation containing the following:</p>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+<?Code?>
+include 'atk4/loader.php';
+
+$api=new ApiCLI('sample_project');
+$api->addLocation('atk4-addons',array(
+            'php'=>array(
+                'mvc',
+                'misc/lib',
+                )
+            ))
+->setParent($api->pathfinder->base_location);
+
+
+class Model_Employee extends Model_Table {
+    public $entity_code='employee';
+
+    function init(){
+        parent::init();
+        $this->addField('name');
+        $this->addField('is_greeted')
+          ->type('boolean');
+        $this->addField('email');
+    }
+
+    function sendGreeting(){
+
+        $mail = $this->add('TMail');
+        $mail->loadTemplate('greeting');
+
+        $mail->setTag($user->get());
+
+        echo "<pre>".$mail->getBody()."</pre>";
+        echo "sending to ".$user->get('email').'<br/>';
+
+        // $mail->send($user->get('email'));
+
+        $this->set('is_greeted',true)->update();
+    }
+}
+
+$api->dbConnect();
+$user = $api->add('Model_Employee');
+$user->addCondition('is_greeted',false);
+foreach($user->getRows(array('id')) as $row){
+
+    $this_user=$this->add('Model_Employee');
+    $this_user->loadData($row['id']);
+    $this_user->sendGreeting();
+    $this_user->destroy();
+}
+<?/?>
+
+</div>
+<div class="g-6">
+  <h4>Bootstraping</h4>
+  <p>
+  Agile Toolkit's loader adds "lib" and "atk4/lib" directory into your INCLUDE path and enables a simple class auto-loader. This is usually sufficient to
+  find your API class definition. When Application class is loaded, it initializes much more powerful Application Controller called PathFinder, which can
+  then be used to locate the classes.
+  </p>
+
+  <p>
+  Notice that examples does not refer to $this, but uses $api instead. This is because example does not belong to any class and runs outside of class
+  context.
+  </p>
+
+  <h4>Class definitions</h4>
+  <p>When class is used prior to defining, application attempts to include it automatically. However we can still define classes inside our "demo.php"
+  file which makes them available right away. Class definition relies on "Model_Table" which resides under atk4-addons and for that reason must be placed
+  after our extra location is added to pathfinder.</p>
+
+  <p>Our model defines a very simple Employee entity, whom we would need to greet in the first work-day morning.</p>
+
+  <h4>Thick Models</h4>
+  <p>A good MVC practice would always encourage you to keep business logic inside the Model. For this reason we are defining email greeting inside the
+  model itself.</p>
+
+  <h4>Interaction</h4>
+  <p>Initialization of a database and any further checks which you would normally put inside init() method of your API can also be defined here. Note
+  that we can't use any visual classes (Views) because rendering infrastructure is not implemented in ApiCLI, but in this case it's not needed anyway.</p>
+
+  <p>We can still use TMail class which relies on SMlite to generate and send emails.</p>
+
+  <h4>Keep it clean</h4>
+  <p>We might need to loop through large database of employees and while adding objects is simple, they will actually pile up in the memory. To keep
+  things clean we are creating new object for each new email we are sending an destroying object when it is no longer needed.</p>
+
+  <h4>Other purposes</h4>
+  <p>In this example, we send out emails, but a very similar application structure can handle job processing queues and much more complex tasks either
+  run manually or through a cron scheduler.</p>
+
+
+</div>
+</div>
+
+
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+<h4>Database Structure</h4>
+<pre>
+CREATE TABLE `employee` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `is_greeted` enum('Y','N') DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+INSERT INTO `employee2` VALUES 
+  (1,'John Smith','joe@example.com','N'),
+  (2,'Peter Falcon','peter@example.com','Y'),
+  (3,'Joe Blogs','jb@example.com','N'),
+  (4,'Mathew Taylor','mathew@example.com','N');
+</pre>
+        </div>
+	<div class="g-6">
+          <h4>Mail template (templates/mail/greeting.txt)</h4>
+<pre>
+&lt;?from?&gt;hello@example.com&lt;?/from?&gt;
+&lt;?subject?&gt;Welcome to our company&lt;?/?&gt;
+&lt;?body?&gt;
+
+Dear, &lt;?$name?&gt;
+
+We love to see you as a member of our team! I hope you will
+find your first day exciting!
+
+&lt;?sign?&gt;
+&lt;?/sign?&gt;&lt;?/body?&gt;
+</pre>
+</div>
+</div>
+
+<?$Next?>
