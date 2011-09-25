@@ -44,7 +44,7 @@ class page_commercial_checkout extends Page {
 
             $url=$this->add('billing_Model_PaymentMethod_PayPal')->charge($license_model->get('cost','USD'));
 
-            $url->set('descr','Blah blah');
+            $url->set('descr','Agile Toolkit license');
 
             $form->js()->univ()->location($url->set('id',$purchase->get('id')))->execute();
 

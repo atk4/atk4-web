@@ -16,9 +16,15 @@ class page_users extends Page {
         //echo $this->api->locate('php','Model_User.php');
 
         $crud=$this->add('CRUD');
-        $crud->setModel('ATK_User',null,array('id','email','name','status','logged_dts'));
+        $crud->setModel('ATK_User',null,array('id','email','name','status','logged_dts','token_email'));
         if($crud->grid){
             $crud->grid->addColumn('expander','more','More...');
+            $crud->grid->addColumn('button','token');
+			if($_GET['token']){
+				$m=$this->add('Model_ATK_User_Pending')->loadData($_GET['token']);
+				$m->sendToken();
+				$this->js(null,$crud->grid->js()->reload())->univ()->successMessage('sent')->execute();
+			}
         }
     }
     function page_more(){

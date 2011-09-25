@@ -17,6 +17,7 @@ class page_register extends Page {
         $form->onSubmit(function($form){
             $form->update();
             $id=$form->getModel()->get('id');
+			$form->getModel()->sendToken();
             $form->js()->univ()->successMessage('Registration confirmation have been sent to your email')->closeDialog()->execute();
         });
     }
