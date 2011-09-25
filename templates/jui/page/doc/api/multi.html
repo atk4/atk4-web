@@ -1,0 +1,34 @@
+<?$Content?>
+
+<h1>Use of multiple APIs</h1>
+
+<p><font color="red">This feature has the experimental status</font></p>
+
+<p>Multiple API allow you to exchange information between multiple APIs. For example in a typical scenario you would have front-end located at http://example.com/ and an admin back-end located under http://example.com/admin/. Even through they share things such as models, sometimes you might need to make use of one API from another. In our exapmle, we will be attempting to log-in user into the frontend from the back-end. </p>
+
+<p>We would need to assume few things first. The we need to know which "realm" is used for the front-end. Look inside webroot/index.php:</p>
+
+<?Code?>
+include 'atk4/loader.php';
+$api=new Frontend('my_frontend');
+$api->main();
+<?/?>
+
+<p><b>my_frontend</b> here defines realm. It is the global prefix for all cookies, sessions, get, post arguments, id's and other things. By using different realms in front-end and back-end we ensure that user logged into front-end won't have access to admin. In our case we do need to initialize front-end from admin, so we add this code into admin/page/su.php<:/p>
+<?Code?>
+class page_su extends Page {
+    function init(){
+        parent::init();
+
+        $user = $this->add('Model_User')->loadData($_GET['id']);
+        
+        $frontend = new Frontend('my_frontend');
+        $frontend->auth->login($user->get('email'));
+
+    }
+}
+<?/?>
+
+<p><font color="red">Experimental</font>: This might require you to use addInfo() for the auth() also and you might run into some other bumps. Report your success in the comments.</p>
+
+<?$Next?>

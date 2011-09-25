@@ -1,0 +1,48 @@
+<?$Content?>
+
+<h1>Using Layouts</h1>
+<p>ApiWeb introduces Layouts but ApiFrontend further extends them into self-sufficient class. In your application, the Layout is the region on the main template which can change under certain conditions.</p>
+<p>The most common is the layout_Content, which uses various pages depending on currently used Page class as determined by routing logic.</p>
+<p>The other example is the "User Menu". It's that small area on the page in the right-top corner which may contain either log-in form or user links. By default ApiFrontend only initializes the "Content" logic, but here is the example on how you can create user menu.</p>
+
+<h3>User Menu Example</h3>
+<p>First you will need your own application template. Create file templates/default/shared.html by copying it from atk4/templates/shared/shared.html. Open that new file in your editor and define &lt;?UserMenu?> region somewhere. I have added it like this:</p>
+
+<h4>Before</h4>
+<pre>
+&lt;div id="atk-version"&gt;&lt;b&gt;&lt;?name?&gt;Agile Toolkit™&lt;?/?&gt;&lt;/b&gt;&lt;br/&gt;&lt;i&gt;&lt;?$version?&gt;&lt;/i&gt;&lt;/div&gt;
+</pre>
+<h4>After</h4>
+<pre>
+&lt;div id="atk-version"&gt;&lt;?UserMenu?&gt;&lt;b&gt;&lt;?name?&gt;Agile Toolkit™&lt;?/?&gt;&lt;/b&gt;&lt;br/&gt;&lt;i&gt;&lt;?$version?&gt;&lt;/i&gt;&lt;?UserMenu/?&gt;&lt;/div&gt;
+</pre>
+
+<p>Next you will need to add this line inside your application class's (lib/Frontend.php) init():</p>
+<?Code?>
+$this->addLayout('UserMenu');
+<?/?>
+
+<p>And then add the following function into your application class:</p>
+<?Code?>
+    function layout_UserMenu(){
+        if($this->auth->isLoggedIn()){
+            $this->add('Text',null,'UserMenu')
+                ->set('Hello, '.$this->auth->get('username').' | ');
+            $this->add('HtmlElement',null,'UserMenu')
+                ->setElement('a')
+                ->set('Logout')
+                ->setAttr('href',$this->getDestinationURL('logout'))
+                ;
+        }else{
+            $this->add('HtmlElement',null,'UserMenu')
+                ->setElement('a')
+                ->set('Login')
+                ->setAttr('href',$this->getDestinationURL('authtest'))
+                ;
+        }
+    }
+<?/?>
+
+<p>Provided that the function is defined and tag exists in Application's template (match is case-sensitive) you should have a new dynamic element on your page. If your application uses different templates, for example for document printing, which wouldn't have such a tag, then the function will not be called and user menu will not be displayed.</p>
+
+<?$Next?>

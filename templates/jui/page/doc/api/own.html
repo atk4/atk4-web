@@ -1,0 +1,42 @@
+<?$Content?>
+
+<h1>Re-usable Application Classes</h1>
+<p>You might be the type of developer, who likes when things are exactly how he wants. In this case you will find yourself carrying around some code snippets.</p>
+
+<p>Agile Toolkit finally gives you a great way to move things around without actually copy-pasting things. First, create your own repository or a shared directory,
+  which you can include in all your projects. Let's say it's located along the "atk4" and "atk4-addons" in a folder called "my-stuff".</p>
+
+<p>Inside your own directories you would have your own API base-class along with some libraries.</p>
+
+<h4>my-stuff/MyApi.php</h4>
+<?Code?>
+class MyApi extends ApiFrontend {
+    function init(){
+        parent::init();
+        $api->addLocation('my-stuff',array(
+            'php'=>'lib',
+            'js'=>'js',
+            'templates'=>'templates'
+            ))
+        ->setParent($api->pathfinder->base_location);
+
+        $this->add('Controller_MyUtils');
+    }
+}
+<?/?>
+
+<p>When you are starting new application you would additionally need to do the following:<ul>
+<li>Copy or link "my-stuff" folder inside your new project</li>
+<li>Manually include your application definition class inside index.php:
+<?Code?>
+include 'atk4/loader.php';
+include 'my-stuff/MyApi.php';
+$api=new Frontend();
+$api->main();
+<?/?>
+<li>lib/Frontend should extend MyApi instead of ApiFrontend</li>
+</ul></p>
+
+<p>That's all you need to create a great way to re-use your code, templates or base models.</p>
+
+<?$Next?>

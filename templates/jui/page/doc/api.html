@@ -1,7 +1,80 @@
-<?page_title?>API Tutorial<?/?>
-<?seo_descr?>API tutorial<?/?>
-<?seo_keywords?>api<?/?>
+<?$Content?>
 
-Coming soon..
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+    <p>Application class is what binds and holds your web application together. During the execution of your web applcation, a single Application class is created
+    and carries all the necessary tasks. Appplication class relies on many other classes such as <a href="<?page?>doc/api/controller<?/?>">Application Controllers</a> or <a href="<?page?>doc/page<?/?>">Pages</a> to do routing, URL generation, rendering, database operations and more.</p>
 
-<p><a href="/intro">See Interactive Introduction</a></p>
+    <p>In your application you will define your own Application class. Of course you would excend it from one of the pre-defined Api classes, whichever suits yor nedes:</p>
+
+
+    <h4>Api Classes</h4>
+
+    <div class="box blue-noised p-10px">
+      <div class="white">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Extends</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="<?page?>ref/ApiCLI<?/?>" class="dynamic">ApiCLI</a></td>
+              <td>AbstractView*</td>
+              <td>Minimum API Implementation for Command-Line</td>
+            </tr>
+            <tr>
+              <td><a href="<?page?>ref/ApiWeb<?/?>" class="dynamic">ApiWeb</a></td>
+              <td>ApiCLI</td>
+              <td>Minimum Web Application</td>
+            </tr>
+            <tr>
+              <td><a href="<?page?>ref/ApiFrontend<?/?>" class="dynamic">ApiFrontend</a></td>
+              <td>ApiWeb</td>
+              <td>Includes Routing, Layouts adn Pages</td>
+            </tr>
+            <tr>
+              <td colspan=3>addons</td>
+            </tr>
+
+
+            <tr>
+              <td><a href="#" class="dynamic">ApiCMS (planned)</a></td>
+              <td>ApiWeb</td>
+              <td>Shows content from database</td>
+            </tr>
+            <tr>
+              <td><a href="#" class="dynamic">ApiInstaller (planned)</a></td>
+              <td>ApiFrontend</td>
+              <td>Installs your app, addons, databases</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <?MoreInfo?>* Why API is also a View?
+        <p>You may wonder, why Application class designed for command-line use extends the View. Why application is based on view in the first place?</p>
+        <p>The reason is because in descendants such as ApiFrontend it's essential that application would have it's own template and be capable of rendering itself. This could have been done through a separate object, but we decided to keep it simple and make it this way.</p>
+        <?/?>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="g-6">
+    <div class="ref-item box blue-noised">
+      <b>Other Resources:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/api<?/?>">Introduction to Application Classes</a></div>
+      </div>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Form-related documentation</b>
+      <p>Select section:</p>
+      <?$toc?>
+    </div>
+  </div>
+</div>
