@@ -30,6 +30,7 @@ class Admin extends ApiFrontend {
 
         $m->addMenuItem('Dashboard', 'index');
         $m->addMenuItem('Users', 'users');
+        $m->addMenuItem('purchases');
         $m->addMenuItem('Log out','logout');
 
     }

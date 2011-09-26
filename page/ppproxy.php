@@ -10,9 +10,15 @@ class page_ppproxy extends Page {
 
         if($this->add('billing_Model_PaymentMethod_PayPal')->ppproxy()){
             $purchase = $user_model->getPurchases();
-            $purchase->loadData($_GET['ipn']);
+			$id=null;
+			if(!$id)$id=$_POST['item_number'];
+			if(!$id)$id=$_GET['ipn'];
+			if(!$id)$id=$_GET['id'];
+			if(!$id)$id=$_GET['success'];
+            $purchase->loadData($id);
 
             $purchase->set('is_paid',true)->update();
+			if($_POST['txt_id'])$purchase->set('purchase_ref',$_POST['txt_id']);
 
             $this->api->redirect('commercial/thankyou');
         }

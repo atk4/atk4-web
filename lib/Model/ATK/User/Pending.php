@@ -10,6 +10,7 @@ class Model_ATK_User_Pending extends Model_ATK_User {
         if(!$url)$url=$this->api->getDestinationURL('account/confirm');
 
         $url = $url->set('t',$token)->useAbsoluteURL();
+		$url=str_replace('/admin/','/',$url);
 
         $t=$this->prepareEmail('token');
         $t->setTag('url',$url);

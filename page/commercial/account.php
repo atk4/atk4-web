@@ -10,7 +10,9 @@ class page_commercial_account extends Page {
         $this->add('View',null,'AccountBox','AccountBox')->template->set($i=$this->api->auth->get());
 
         $this->add('H3')->set('Licenses');
-        $this->add('MVCGrid')->setModel($this->add('Model_ATK_User_Me')->getPurchases(),array('domain','type','expires','cost'));
+        $g=$this->add('MVCGrid');
+		$g->setModel($this->add('Model_ATK_User_Me')->getPurchases(),array('domain','type','expires','cost','is_paid'));
+		$g->addColumn('expander','info');
 
         $this->js('click')->_selector('a.popup')->univ()->frameURL($this->js()->_selectorThis()->attr('name'),$this->js()->_selectorThis()->attr('href'));
 

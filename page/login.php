@@ -2,6 +2,7 @@
 class page_login extends Page {
     function init(){
         parent::init();
+        $this->api->stickyGET('type');
         $this->api->stickyGET('return');
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
