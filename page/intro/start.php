@@ -139,7 +139,7 @@ EOD
 				');
 
 		$p->add('Quote')->set('
-				2. Configure — After you call
+				3. Configure — After you call
 				<span style="color: #0000BB">add</span><span style="color: #007700">(</span><span style="color: #007700">);</span>
 				you can still configure your object. There are many things you can change about each copy of the View after
 				it was created.
