@@ -1,4 +1,3 @@
-
 <?$Content?>
 
 
@@ -15,7 +14,7 @@ class GreetingForm extends Form {
         $this->addField('line','name')->validateNotNull();
         $this->addSubmit('Greet');
         if($this->isSubmitted()){
-            $this->js()->uni()->alert('Hello, '.$this->get('name'))->execute();
+            $this->js()->univ()->alert('Hello, '.$this->get('name'))->execute();
         }
     }
 }
