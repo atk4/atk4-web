@@ -1,0 +1,49 @@
+<?$Content?>
+<h1>Bootstraping JavaScript in Agile Toolkit</h1>
+
+<p>When you are making a simple app in Agile Toolkit, chances are that you have "jUI" controller initialized in your API class (lib/Frontend.php):</p>
+<?Code?>
+$this->add('jUI');
+$this->js()->_load('atk4_univ');
+<?/?>
+
+<p>Including jUI controller will bootstrap the client-side JavaScript code of Agile Toolkit which is contained inside the file <a href="https://github.com/atk4/atk4/blob/master/templates/js/start-atk4.js" target="_blank">start-atk4.js</a>
+
+<p>As you look through the start-atk4.js file, you'll see that Agile Toolkit implements it's own "on-ready" mechanism. It also has the support for "slow loading" screen, evaluation of dynamically added JavaScript files and also registering functino which is executed when all other on-ready handlers have completed.</p>
+
+<p>This builds a flexible framework for on-demand widget loading. Look at the following code:</p>
+
+<?Example?>
+$page->add('Button')
+  ->setLabel('Click me')
+  ->js('click',$page->js()
+      ->reload(array('clicked'=>1)));
+
+if($_GET['clicked']){
+  $form=$page->add('Form');
+  $form->addField('line','phone')->js(true)
+      ->_load('jquery.maskedinput-1.3.min')
+     ->mask('(999) 999-9999')
+     ->univ()->disableEnter()
+     ;
+  $_GET['cut_object']=$form->name;
+}
+<?/?>
+
+<p>From the common sense of your PHP knowledge, you can notice that on the initial render the PHP will not execute code inside the if() block and by no means it can know that the jquery.maskedinput plugin is needed. Only when the button is actually clicked, and when reload() action is performed Agile Toolkit will have the knowledge of the dependance.</p>
+
+<p>To resolve this situation, Agile Toolkit sends code like this on reload request:</p>
+<pre>
+$.atk4.includeJS("/templates/js/jquery.maskedinput-1.3.min.js");
+$.atk4.includeJS("/atk4/templates/js/ui.atk4_form.js");
+$.atk4(function(){
+    $('#AgileWeb_learn_understand_jsapi_start_doc_example_view_form_phone')
+      .mask('(999) 999-9999')
+      .univ().disableEnter();
+$('#AgileWeb_learn_understand_jsapi_start_doc_example_view_form').atk4_form([]);
+; });
+</pre>
+
+<p>the $.atk4.includeJS() will dynamically load the JavaScript by loading it through AJAX request and evaluating. This will only happen, however, if that particular file wasn't loaded before. The $.atk4(function()) construct is similar to $(function()), but it will be executed when all the includes are loaded and evaluated.</p>
+
+<?$Next?>

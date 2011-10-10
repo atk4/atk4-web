@@ -1,0 +1,21 @@
+<?$Content?>
+
+<h1>Bundled Widgets</h1>
+<p>The alternative way to extend JavaScript is by using jQuery UI Widget Factory. It is similar to jQuery plugins, but Widget Factory is much more considerate to dynamic page modifications, multiple object instances on the page and cleaning up after element plugin is binded to is being destroyed.</p>
+
+<p>A some examples of widgets are $.draggable() or $.dialog().</p>
+
+<p>Agile Toolkit implements a lot of it's view-centrict functionality as widgets too. For example, Form view will initialize <a href="https://github.com/atk4/atk4/blob/master/templates/js/ui.atk4_form.js" target="_blank">ui.atk4_form.js</a> file and apply it on the form. This gives our form a lot of benefits such as: <ul>
+<li>Submit results through ajax</li>
+<li>Track changes on form and prevent AJAX reload actions which might loose those  changes</li>
+<li>Support background file uploading</li>
+<li>Support field reloading</li>
+<li>Display form errors</li>
+</ul>
+
+<p>Agile Toolkit does not attempt to create a best and most full-featured Form Widget, but instead it's designed to provide most of the frequently required functionality. If something else is missing such as browser-side validation, it can be added by adding extra widget</p>
+
+<h2>Other Widgets</h2>
+<p>There are many widgets in Agile Toolkit core distribution such as "notify" widget, which <a href="javascript:$.univ.successMessage('That\'s me ')">shows the Growl-like messages</a> on the page; file upload widget, grid in-line editing widget, grid expander widget, ajax menu, replace checkboxes with bigger images and more.</p>
+
+<?$Next?>

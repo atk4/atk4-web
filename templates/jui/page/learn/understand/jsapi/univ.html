@@ -1,0 +1,56 @@
+<?$Content?>
+
+<h1>Agile Toolkit Univ Chain</h1>
+<p>Often developers behave very neatly on the server - all functions arranged into classes, no global variables; but when it comes to JavaScript functions are defined in a very messy way, they are scattered across several files and are defined in global content.</p>
+
+<p>Agile Toolkit relies on jQuery library but it does want number of it's own functions to be accessible. To implement this, $.univ() function is defined which returns a copy of Universal chain object.</p>
+
+<p>Universal object defines quite a few functions which you can use in your application. For example, executing this in JavaScript concole (inspector or firebug) will show a success message on yoru current pagee:</p>
+
+<pre>$.univ().successMessage('Hello World');</pre>
+
+<p>Methods defined inside univ() chain by default return reference to the same chain, so that you can perform multiple actions:</p>
+
+<pre>$.univ().alert('hello').dialogOK('agile','world');</pre>
+
+<p>Try some more examples:</p>
+
+<pre>
+$.univ().dialogURL('test','/learn');
+$.univ().confirm('are you sure').alert('you are');
+</pre>
+
+<p>To see other functions, which are already defined in univ.js chain, <a href="https://github.com/atk4/atk4/blob/master/templates/js/atk4_univ.js" target="_blank">see it's source</a>.
+
+<h2>Extending Univ() chain</h2>
+
+<?MoreInfo?>How to override methods in Univ chain?
+<p>In your application you might need to have more than just few lines of code and extending univ() chain might be a reasonable way. Currently JavaScript loader in Agile Toolkit does not evaluate JS in a particular sequence but on a first-served basis, so redefining existing methods in univ() chain by adding method with same name wouldn't work consistently. Instead, you can copy atk4_univ.js file into your local templates/js/ and modify it there. (We have plans to introduce evaluation in a proper order in next major release of Agile Toolkit)</p>
+<?/?>
+
+<p>Start by creating a new file inside templates/js/ folder called mychain.js. Place the following inside the file:
+</p>
+
+<pre>
+$.each({
+
+  myfunc1: function(a){
+    alert(a);
+  },
+
+  myfunc2: function(){
+    this.jquery.fadeOut();
+  }
+
+},$.univ._import);
+</pre>
+
+<p>Pay attention to missing comma. Inserting comma after last function might break Internet Explorer browsers. Next you would need to include this file, therefore you need to call js()->_load('mychain');</p>
+
+<p>The trick is to only call this when you really need it. The standard univ() chain is commonly used and is included inside Application class. In your case you might want to include your file only for particular page, particular view or even from controller.</p>
+
+<p>The 'myfunc2' references this.jquery which is automatically initialized to the selector on which you have executed univ(). For instance after the code above you should be able to fade-out all text from your page by calling:</p>
+
+<pre>$('p').univ().myfunc2();</pre>
+
+<?$Next?>

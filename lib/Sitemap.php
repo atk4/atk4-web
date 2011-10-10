@@ -72,13 +72,14 @@ class Sitemap extends AbstractController{
                     ),
                 'jsapi'=>array(
                     'JavaScript API',
-                    'scructure'=>'Rich Web Apps with a Thin Client',
+                    'structure'=>'Rich Web Apps with a Thin Client',
 					'start'=>'JavaScript Bootstraping Sequence',
 					'univ'=>'Agile Toolkit Univ Chain',
 					'widgets'=>'Bundled Widgets',
 					'add'=>'Adding Your Own Widgets',
 					'import'=>'Using 3rd-Party Plugins',
                     ),
+                'source'=>'Use The Source, Luke',
                 ),
 			'agile'=>'Best Practices with Agile Toolkit',
 			'app'=>array(

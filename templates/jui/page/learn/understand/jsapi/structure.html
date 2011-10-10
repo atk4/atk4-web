@@ -1,0 +1,144 @@
+<?$Content?>
+
+<h1>Rich Web Apps with Thin Client</h1>
+<p>Before I get into details on "how" Agile Toolkit implements Rich Thin Web Apps, I would like to discuss "why?".</p>
+
+<p>Conventionally Rich Web applications are relying on a heavy JavaScript logic running in user browser. This custom-bulit logic allows apps to communicate with the server using JSON RESTful API.</p>
+
+<p>Agile Toolkit relies on a similar concept, except that HTML rendering and server-side communication part is carried out by the same component - a View. Such Views in most cases are generic classes of Agile Toolkit and to make them work dynamically requires almost no effort on the part of Developer. Additionally Agile Toolkit allows multiple components to co-exist and each of them to work with their own API independently.</p>
+
+<p>Agile Toolkit introduces a new concept of a "Thin Rich Client". This means that JavaScript is used minimally, to bind actions and reload parts of the pages and would contain as little logic as possible. By moving all the logic to the server-side, performance and security is improved and developer can focus on the server-side assuming that the client would work properly</p>
+
+<p>The way how Agile Toolkit handles reloads makes it possible to develop HTML pages which are fully functional without JavaScript, but work better with with JavaScript enhancements.</p>
+
+<h2>The Game</h2>
+<p>Since we are in the middle of the HTML page, why not play a game?</p>
+<?Execute?>
+class Hangman extends HtmlElement {
+    function init(){
+        parent::init();
+        if(!$_GET[$this->name]){
+            $this->add('H3')->set('Select Difficulty');
+            $f=$this->add('Form');
+            $f->addField('radio','difficulty')->setValueList(array(10=>'Easy',5=>'Medium',3=>'Hard'));
+            $f->addSubmit('Start Game');
+            if($f->isSubmitted()){
+                $this->memorize('word','back');
+                $this->memorize('tries',$f->get('difficulty'));
+                $this->memorize('letters',range('a','z'));
+                $this->js()->reload(array($this->name=>1))->execute();
+            }
+            return;
+        }
+        $letter=$_GET[$this->name];
+        $word=$this->recall('word');
+        $tries=$this->recall('tries');
+        $letters=$this->recall('letters');
+
+        $this->api->stickyGET($this->name);
+        if($letter!=1){
+            unset($letters[array_search($letter,$letters)]);
+            if(strpos($word,$letter)===false)$tries--;
+            $this->memorize('tries',$tries);
+            $this->memorize('letters',$letters);
+        }
+        $word=str_replace($letters,'-',$word);
+        if($tries<0){
+            $this->add('P')->set('Game Over');
+            return;
+        }
+        if(strpos($word,'-')===false){
+            $this->add('P')->set('You won!');
+            return;
+        }
+        $this->add('H3')->set('Mistakes remaining: '.$tries);
+        foreach ($letters as $i){
+            $l=$this->add('HtmlElement')
+                ->setElement('a')
+                ->setAttr('href','#')
+                ->set(strtoupper($i))
+                ->js('click',$this->js()->reload(array($this->name=>$i)));
+        }
+
+        $this->add('P')->set('Word: '.$word);
+    }
+}
+<?/?>
+<?Example?>
+$page->add('Hangman');
+<?/?>
+
+<p>Curiously the above game is implemented completely in PHP-only code in under 50 lines. What happens there really is actually quite simple. Eeach letter is assigned a "onclick" action which reloads the actual game and passes argument containing the letter you have clicked. How about a simpler example?</p>
+
+<a name="hello"></a>
+<?Example?>
+$element = $page->add('HtmlElement');
+if($_GET['hello']){
+  $element->add('Text')->set('Hello');
+}else{
+  $element->add('Button')
+    ->setLabel('Say "Hello"')
+    ->js('click',
+        $element->js()
+          ->reload(array('hello'=>1))
+      );
+}
+<?/?>
+
+<p>What's curious is that the same code would work if you simply open the URL: <a href="<?page?><?/?>?hello=1#hello"><?page?><?/?>?hello=1#hello</a>.</p>
+
+<h2>Agile Toolkit's contribution to JavaScript and jQuery</h2>
+<p>For everything to work this smoothly Agile Toolkit adds quite a few additional functions into JavaScript space. For instance - that "js()->reload()" we used before is clearly NOT a function implemented by jQuery or jQuery UI. In fact this function appears in the browser as $('#id_here').atk4_reload('/learn/understand/...',{'hello':1},null);</p>
+
+<p>atk4_reload() relies on ui.atk4_loader.js widget which enhances the way how AJAX loading work, but esentially is quite similar to jQuery.load().</p> 
+
+<h2>How this approach is used with Grid?</h2>
+<p>Lets look into how Grid in Agile Toolkit is different from jGrid (or jqGrid or some other JavaScript based Grid):</p>
+
+
+<table width="100%" class="zebra" id="history-table">
+<thead><tr><th><h6>Task</h6></th><th><h6>Conventional JavaScript Grid</h6></th><th><h6>Agile Toolkit Grid</h6></th></tr></thead>
+
+<tbody>
+<tr>
+ <td><b>Including the code</b></td>
+ <td>The JavaScript code is added into global header and most often is included on all the pages of your website.</td>
+ <td>JavaScript code bindings for the Grid is loaded only Grid appears on the page. For pages loaded through AJAX, the code is loaded dynamically.</td>
+</tr>
+
+<tr class="even">
+ <td><b>Initializing Grid Content</b></td>
+ <td>When document is loaded, JavaScript onReady() action sends AJAX request to the back-end and fetches data for the Grid in JSON or XML.</td>
+ <td>Grid is rendered on the server-side and is transmitted as regular HTML. Data appears on the page along with all other content.</a>
+</td></tr>
+
+<tr>
+ <td><b>Displaying Paginator</b></td>
+ <td>Either all the available data should be sent to JavaScript Grid then split into pages in your browser or the XML/JSON data should contain number of total records</td>
+ <td>Paginator is rendered on the server and is transmitted as a regular HTML. Additionally links in the paginator are enhanced to use AJAX for reloading grid if JavaScript is available.</td>
+</tr>
+
+<tr class="even">
+ <td><b>Clicking page links or sorting links</b></td>
+ <td>JavaScript Grid handles those clicks internally. It will request data from the server if necessary</td>
+ <td>Clicking link send AJAX request to Agile Toolkit on the server, which will respond with properly sorted, relevant data only.</td>
+</tr>
+
+<tr>
+ <td><b>Formatting fields</b></td>
+ <td>Commonly is done in the JavaScript</td>
+ <td>All done on the server side</td>
+</tr>
+
+<tr>
+ <td><b>Enhancing</b></td>
+ <td>By writing plug-ins for the JavaScript Grid, if it supports them</td>
+ <td>Create a simple widget and apply on the grid</td>
+</tr>
+
+<p>In a separate tutorial I'll demonstrate how to build jQuery UI Widget for Grid enhancement</p>
+
+
+</tbody></table>
+
+<?$Next?>

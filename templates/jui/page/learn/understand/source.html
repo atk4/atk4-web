@@ -1,0 +1,61 @@
+<?$Content?>
+
+<h1>Use The Source, Luke</h1>
+<p>
+If you plan to do some hard-core development using Agile Toolkit, you will need to learn how to use the source code. The reason, why you need to look into the source is not because lack of documentation, but the extreme simplicity of teh components.
+</p>
+
+<p>Agile Toolkit does not aim to include all of the possible functionaly. On the contrary, it tries to make it possible for you to implement that functionality yourself in a most efficient way.</p>
+
+<p>Let's look at some examples:
+
+<h2>Why there is "P" class but no "A" class?</h2>
+<p>Look at how "P" class <a href="https://github.com/atk4/atk4/blob/master/lib/P.php" target="_blank">is implemented</a> and add it yourself.</p>
+<?Code?>
+class a extends HtmlElement {
+  function init(){ 
+    parent::init(); 
+    $this->setElement('a'); 
+  } 
+}
+<?/?>
+
+<h2>Grid does not have the formatter I want!</h2>
+<p>Look into the <a href="https://github.com/atk4/atk4/blob/master/lib/Grid.php" target="_blank">Grid.php</a> just to discover that it's a proxy class. This makes it super-easy for you to extend the class without re-writing your code to show buttons only for certain rows (based on condition):</p>
+
+<?Code?>
+class Gird extends Grid_Basic {
+  function format_activeonly($field){
+    if($this->current_row['status']!='active'){
+      $this->current_row[$field]='&nbsp;';
+    }
+  }
+}
+
+$grid = $this->add('Grid');
+$grid->addColumn('button,activeonly','edit');
+    // will remove button if condition is not met
+<?/?>
+
+<h2>Make a simpler paginator for Grid!</h2>
+<p>Look into existing "<a href="https://github.com/atk4/atk4/blob/master/lib/Paginator.php" target="_blank">Paginator</a>" implementation for grid. It works but it's implementation might not suit you. Either you would want more pages to be displayed or text to be different. Instead of enhancing existing Paginator, simply write your own alternative. Below code could be a good start:</p>
+<?Code?>
+class MyPaginator extends View {
+  function render(){
+    foreach($this->getPages() as $page=>$text){
+      $this->add('HtmlElement')
+        ->set($text)
+        ->js('click',$this->owner->js()->reload('page'=>$page));
+    }
+    $this->recursiveRender();
+  }
+  function getPages(){
+    $results = $this->owner->dq->foundRows();
+  }
+  function defaultTemplate(){
+    return array('mypaginator');  // think about this..
+  }
+}
+<?/Code?>
+
+<?$Next?>

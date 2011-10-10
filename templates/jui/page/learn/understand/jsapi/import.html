@@ -1,0 +1,20 @@
+<?$Content?>
+
+<h1>Using 3rd party plugins</h1>
+
+<p>When you are using jQuery plugins or even some JavaScript libraries masquerading as jQuery plugins you might discover that they might not work out as they should. The reason is that Agile Toolkit loads JS files dynamically and is using lazy-loading. Plugins such as google-map plugin or WYSIWYG plugins are implemented outside of jQuery UI principles and they want to be included on the page-load.</p>
+
+<p>Similar problem might happen if you are loading library from CDN, located on other server. AJAX will not permit loading code from other servers than your own.</p>
+
+<p>To include files natively (static include) use api->jquery->addStaticInclude();</p>
+
+<?Example?>
+$page->api->jquery->addStaticInclude(
+    'http://ditrw.com/time-dot-js/releases/v1.0/time.min.js');
+$page->add('Button')
+  ->setLabel('Calculate')
+  ->js('click',
+      'alert(new Time(2008, 2).daysInMonth())');
+<?/?>
+
+<?$Next?>

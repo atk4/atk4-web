@@ -1,0 +1,27 @@
+<?$Content?>
+
+<h1>Adding your own Widgets</h1>
+
+<p>Before we look how widgets are added in Agile Toolkit, you need to learn how jQuery UI widgets are working in general. Try this tutorial to get basic understanding of a jQuery UI widget: <a href="http://bililite.com/blog/understanding-jquery-ui-widgets-a-tutorial/">http://bililite.com/blog/understanding-jquery-ui-widgets-a-tutorial/</a>
+
+<p>After you learned this, you just need to know how to load and apply widget to your view</p>
+
+<?Code?>
+class MyView extends View {
+  function init(){
+    parent::init();
+
+    $this->js(true)
+      ->_load('mywidget')
+      ->mywidget();
+  }
+
+  function defaultTemplate(){
+     ....
+  }
+}
+<?/?>
+
+<p>Look into <a href="https://github.com/atk4/atk4/blob/master/lib/Form/Field/DatePicker.php">sources for DatePicker field</a> for inspiration.</p>
+
+<?$Next?>
