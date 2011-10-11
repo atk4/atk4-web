@@ -14,7 +14,7 @@ class SuggestExample extends View {
 		$c1->add('P')->set('Do you have a great idea for example? Post your idea here!');
 		$f=$c1->add('MVCForm');
 		$f->setModel('ExampleRequest',array('suggestion'));
-		$f->getElement('Save')->set('Suggest');
+		$f->addSubmit('Suggest');
 
 		$g=$cc->addColumn()->add('MVCGrid',null,null,array('grid_striped'));
 		$g->setModel('ExampleRequest',array('suggestion'));

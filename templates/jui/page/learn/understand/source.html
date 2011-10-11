@@ -24,7 +24,7 @@ class a extends HtmlElement {
 <p>Look into the <a href="https://github.com/atk4/atk4/blob/master/lib/Grid.php" target="_blank">Grid.php</a> just to discover that it's a proxy class. This makes it super-easy for you to extend the class without re-writing your code to show buttons only for certain rows (based on condition):</p>
 
 <?Code?>
-class Gird extends Grid_Basic {
+class Grid extends Grid_Basic {
   function format_activeonly($field){
     if($this->current_row['status']!='active'){
       $this->current_row[$field]='&nbsp;';
