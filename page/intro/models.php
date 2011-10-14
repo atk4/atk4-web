@@ -9,32 +9,24 @@ class page_intro_models extends page_intro_generic {
 		$p->add('H1')->set('Business Logic in Agile Toolkit');
 
 		$p->add('P')->set('
-				Which of the following two is your approach?
+				Never worry about Busines Logic Integrity.
 				');
 
 		$c=$p->add('View_Columns');
-		$col=$c->addColumn(350);
+		$col=$c->addColumn(4);
 
-		$col->add('H3')->set('Mixed Logic');
-
-		$col->add('P')->set('
-				Website is created as many .php files containing HTML code. Developer puts some PHP snippets inside this
-				design where he executes SQL queries for fetching data and output dynamic database content using echo.
-				');
-
-		$col=$c->addColumn();
-
-		$col->add('H3')->set('Separated Logic');
+		$col->add('H3')->set('Business Logic');
 
 		$col->add('P')->set('
-				Separate classes is created for Entities (or models) which represent real-world objects. UI logic operates
-				with those entities instead of accessing database directly.
+				When you code Models in Agile Toolkit, you do much more. You define how data is stored in database, how it is accessed or interacted with. The basic functionality like Adding, Updating, Deleting and Listing is there and you can use Object Oriented approach to add more actions.
 				');
 
+		$col=$c->addColumn(4);
 
-		$p->add('P')->set('
-				Agile Toolkit supports both approaches. However up till now we demonstrated only the "Mixed" approach. Let\'s
-				look at the benefits of separating business logic from UI.
+		$col->add('H3')->set('User Interface Logic');
+
+		$col->add('P')->set('
+				By creating Pages you define which generic Views will appear to the user and which Models they will be associated with. Here you can define logic which is only applicable to the Web Interface - place buttons, define templates and interaction rules.
 				');
 
 
@@ -62,14 +54,14 @@ class page_intro_models extends page_intro_generic {
 
 
 		$c=$p->add('View_Columns');
-		$col=$c->addColumn();
+		$col=$c->addColumn(6);
 
 		$col->add('H3')->set('Model/Employee.php');
 		$col->add('Doc_Code')
 			->setDescr(<<<'EOT'
 class Model_Employee extends Model_Person {
-	function defineFields(){
-		parent::defineFields();
+	function init(){
+		parent::init();
 
 		$this->addField('name')
 			->mandatory(true);
@@ -109,7 +101,7 @@ class Model_Employee extends Model_Person {
 EOT
 );
 
-		$col=$c->addColumn();
+		$col=$c->addColumn(6);
 
 
 
@@ -119,9 +111,9 @@ EOT
 			->setDescr(<<<'EOT'
 class Model_Person extends Model_Table {
 	public $entity_code='person';
-	public $table_alias='p';
-	function defineFields(){
-		parent::defineFields();
+
+	function init(){
+		parent::init();
 
 		$this->addField('name');
 	}
@@ -135,10 +127,9 @@ EOT
 			->setDescr(<<<'EOT'
 class Model_Salary extends Model_Table {
 	public $entity_code='salary';
-	public $table_alias='s';
 
-	function defineFields(){
-		parent::defineFields();
+	function init(){
+		parent::init();
 
 		$this->addField('employee_id')
 			->refModel('Model_Employee');
@@ -217,11 +208,12 @@ EOT
 
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
-$f=$p->add('MVCForm');
-$f->setModel('Employee',array('name','salary'));
-if($f->isSubmitted()){
-	$f->update();
-	$f->js()->univ()
+$form=$page->add('MVCForm');
+$form->setModel('Employee',array('name','salary'));
+$form->addSubmit();
+if($form->isSubmitted()){
+	$form->update();
+	$form->js()->univ()
 		->successMessage('Employee added')
 		->execute();
 }
@@ -237,22 +229,22 @@ EOD
 
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
-$g=$p->add('MVCGrid');
+$grid=$p->add('MVCGrid');
 
-$emp=$g->setModel('Employee',
+$emp=$grid->setModel('Employee',
 	array('name','salary','money_owed'));
 
-$g->addButton('Refresh')
-	->js('click',$g->js()->reload());
-$g->addColumn('delete','delete');
-$g->addColumn('button','goto_work');
-$g->addPaginator(5);
-$g->dq->order('id desc');
+$grid->addButton('Refresh')
+	->js('click',$grid->js()->reload());
+$grid->addColumn('delete','delete');
+$grid->addColumn('button','goto_work');
+$grid->addPaginator(5);
+$grid->dq->order('id desc');
 
 if($_GET['goto_work']){
 	$emp->loadData($_GET['goto_work']);
 	$emp->gotoWork()->update();
-	$g->js()->reload()->execute();
+	$grid->js()->reload()->execute();
 }
 
 EOD
@@ -265,31 +257,31 @@ EOD
 
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
-$f=$p->add('Form');
+$form=$p->add('Form');
 $c=$p->add('Model_Employee');
 
-$f->addField('reference','employee')
+$form->addField('reference','employee')
 	->setValueList($c)
 	->validateNotNull()
 
 	->add('Icon',null,'after_field')
 	->set('arrows-left3')
 	->addStyle('cursor','pointer')
-	->js('click',$f->js()
-		->atk4_form('reloadField','employee'));
+	->js('click',$form->js()->reload())
+    ;
 
-$f->addSubmit('Pay Salary');
+$form->addSubmit('Pay Salary');
 
-if($f->isSubmitted()){
-	$c->loadData($f->get('employee'));
+if($form->isSubmitted()){
+	$c->loadData($form->get('employee'));
 	if($c->get('money_owed')<0.01)
-		$f->showAjaxError('employee',
+		$form->showAjaxError('employee',
 			'Nothing to pay');
 
 	$amount=$c->paySalary()
 		->get('amount');
 
-	$f->js()->univ()->successMessage(
+	$form->js()->univ()->successMessage(
 		'Paid: '.$amount)->execute();
 }
 EOD
@@ -301,16 +293,16 @@ EOD
 
 		$p->add('Doc_Example')
 			->setCode($code=<<<'EOD'
-$g=$p->add('MVCGrid');
+$grid=$p->add('MVCGrid');
 
-$emp=$g->setModel('Salary',
+$emp=$grid->setModel('Salary',
 	array('amount','pay_date','employee_id'));
 
-$g->addButton('Refresh')
-	->js('click',$g->js()->reload());
-$g->addColumn('delete','delete');
-$g->addPaginator(5);
-$g->dq->order('id desc');
+$grid->addButton('Refresh')
+	->js('click',$grid->js()->reload());
+$grid->addColumn('delete','delete');
+$grid->addPaginator(5);
+$grid->dq->order('id desc');
 
 EOD
 );
