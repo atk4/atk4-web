@@ -2,6 +2,26 @@
 
 <h1>Log-in, Log-out, Signup and Password Reminder</h1>
 
+
+<div class="g-row" id="doc-ref">
+	<div class="g-8">
+
+<?YouTube?>DvYUwYQWBdw<?/?>
+</div>
+	<div class="g-4">
+<p>
+<b>Summary:</b> Today I it's time to build a login form for the front-end part of our application. It will restrict access to paged such as "Videos" and "Account" until user is logged-in.
+<p>
+<ul>
+<li><a href="https://github.com/atk4/dvdrental/tree/day4" target="_blank">Browse PHP source from this day</a></li>
+<li><a href="https://github.com/atk4/dvdrental/compare/day3...day4" target="_blank">Show differences added today</a></li>
+<li>Added: 100 lines of code approximatelly.</li>
+</ul>
+</p>
+
+</div>
+</div>
+
 <h2>Front-end</h2>
 <p>Let's quickly create a basic index page layout which would contain a log-in form on the side.</p>
 
@@ -112,7 +132,7 @@ class page_account extends Page {
     }
 }
 <?/?>
-<p>We don't users to be able to change password themselves, so we simply mark that field as a system before using the model on the FormAndSave. The
+<p>We don't want users to be able to change password as a regular fields, so we simply mark that field as a system before using the model on the FormAndSave. The
 FormAndSave widget is a simple extension of MVCForm which saves data into database once it's submitted. Nothing fancy.</p>
 
 <h2>Signup Form</h2>
@@ -122,20 +142,37 @@ class page_signup extends Page {
     function init(){
         parent::init();
 
-        if($this->api->auth->isLoggedIn())$this->api->redirect('/');
+        if($this->api->auth->isLoggedIn())$this->api->redirect('video');
 
         $model=$this->add('Model_Customer');
-        $model->addField('password')->type('password');
+        $model->addField('password')->type('password')->mandatory(true);
 
         $form = $this->add('MVCForm');
-        $form->setModel('Customer');
-        $form->addFormSeparator();
+        $form->setModel($model);
         $form->addField('password','confirm_password');
+        $form->addSubmit();
+        
 
         $form->onSubmit(function($form){
+            if($form->get('password') != $form->get('confirm_password'))
+                throw $form->exception('Passwords do not match')->setField('confirm_password');
+
+            $form->set('password',
+                $form->api->auth->encryptPassword($form->get('password'),$form->get('email')));
+
+            $form->update();
+
+            $form->js()->hide('slow')->univ()->successMessage('Registered successfully')->execute();
+            
         });
     }
 }
 <?/?>
 
-<h3>To Be Continued...</h3>
+<p>Finally you would need a "Sign-up" button on your login-form which would send user to the signup page:</p>
+<?Code?>
+        $form->addButton('Sign-up')->js('click')
+            ->univ()->location($this->api->getDestinationURL('signup'));
+<?/?>
+
+<?$Next?>

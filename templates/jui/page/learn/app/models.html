@@ -1,9 +1,21 @@
 <?$Content?>
 
+<h1>Day2 - Adding Models and few CRUDs</h1>
 <div class="g-row" id="doc-ref">
-	<div class="g-12">
+	<div class="g-8">
+<?YouTube?>xJ0rfjaqfT0<?/?>
+</div>
+	<div class="g-4">
+<p>
+<b>Summary:</b> Today I plan to add model classes, create database and vizualize my data. Vizualization is the most important as it will help me to confirm that my model structure works, will allow me to enter some data in and test dependencies between models.</p>
+<p>
+<a href="https://github.com/atk4/dvdrental/tree/day2" target="_blank">Browse PHP source from this day</a>
+</p>
 
-<h1>Creating Models</h1>
+</div>
+</div>
+
+<h2>Creating Models Classes</h2>
 <p>Agile Toolkit does not offer a generator for models. You can make a short snippet in your favourite text editor, which will in fact work for ANY class.</p>
 
 <?Code?>
@@ -64,7 +76,7 @@ class Model_Rental extends Model_Table {
         $this->addField('date_rented')->defaultValue(date('Y-m-d'))->type('date');
         $this->addField('date_returned')->type('date');
         
-        $this->addField('is_returned')->type('boolean');
+        $this->addField('is_returned')->type('boolean')->defaultValue(false);
     }
     function returnMovie(){
         $this
@@ -182,8 +194,4 @@ may reduce our productivity in the early stage of development.</p>
 <p>You have just created the simplest and most flexible administration interface. Believe me, we still have only touched the surface of our application.
 It might have taken you 15 minutes to create this yet if you show this to your client, he would be highly impressed and ready to come up with the next
 set of tasks.</p>
-
-
-
-</div></div>
 <?$Next?>

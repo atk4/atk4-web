@@ -1,0 +1,231 @@
+
+<?$Content?>
+
+<h1>Day 5 - Creating Busines Logic and binding with Interface</h1>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-8">
+
+<?YiouTube?>NnC6yoJzrgU<?/?>
+</div>
+	<div class="g-4">
+<p>
+<b>Summary:</b> Finally we can focus on what's Agile Toolkit is best at: Business Logic and User Interface. Today our plan is to create several sub-models for "available" movies and make UI for users to choose which movies to rend or return DVDs.
+<p>
+<ul>
+<li><a href="https://github.com/atk4/dvdrental/tree/day5" target="_blank">Browse PHP source from this day</a></li>
+<li><a href="https://github.com/atk4/dvdrental/compare/day4...day5" target="_blank">Show differences added today</a></li>
+<li>Added: 100 lines of code approximatelly, 12 lines deleted.</li>
+</ul>
+</p>
+
+</div>
+</div>
+
+<h2>Enhancing models with more logic</h2>
+
+<p>Before we touch UI, let's add more logic to support the required functionality. I need a field, which can tell me for each DVD if it is currently rented or not. The following code goes into Model_DVD</p>
+<?Code?>
+        // Into init();
+        $this->addfield('is_rented')
+            ->type('boolean')
+            ->calculated(true);
+
+    function calculate_is_rented(){
+        return $this->add('Model_Rental')
+            ->dsql()
+            ->field('id')
+            ->where('rental.dvd_id=dvd.id')
+            ->where('is_returned!=','Y')
+            ->select()
+            ;
+    }
+<?/?>            
+<p>Here calculate_is_rented() function returns an SQL statement. In our case we need to make it a sub-select. However instead of writing it, we are getting that basic query from the model through dsql() method. </p>
+
+<p>To test this, go to Admin / DVDs and you'll see a new column "Is Rentend" which will indicate DVDs currently NOT in store. Let's add a model on top of that with implicit condition for DVD to be in-store.</p>
+
+<?Code?>
+class Model_DVD_InStore extends Model_DVD {
+    function init(){
+        parent::init();
+        $this->addCondition('is_rented',false);
+    }
+}
+<?/?>
+
+<p>This should be handy for us if we want to list only DVDs available for renting in some grid, list or dropdown. Make note, that condition is placed on a calculated field and Agile Toolkit handles the query properly. To test it, add this to some of the pages temporarily to see debug information:</p>
+
+<?Code?>
+$this->add('Model_DVD_InStore')->debug()->getRows();
+<?/?>
+
+<p>You should see a query break-down like this:</p>
+<div style="border: 1px solid lightgray; padding: 5px">
+<p><font color="blue">select dvd.id, dvd.movie_id, (select name from movie where id = dvd.movie_id) as movie, dvd.code, (select id from rental rental where (rental.dvd_id=dvd.id) and (is_returned!= 'Y') ) as is_rented, dvd.id, dvd.movie_id from dvd dvd having (is_rented = 'N')</font>
+<ul class="atk-sqldump"><li><b>select</b></li><li><b>fields</b> <ul><li>(select  id from rental rental  where (rental.dvd_id=dvd.id) and (is_returned!= 'Y')    ) as is_rented</li><li>(select name from movie  where id = dvd.movie_id) as movie</li><li>dvd.code</li><li>dvd.id</li><li>dvd.id</li><li>dvd.movie_id</li><li>dvd.movie_id</li></ul></li><li><b>from</b></li><li><b>table</b> dvd dvd </li><li><b>having</b> <ul><li>is_rented = 'N'</li></ul></li></ul>
+</p>
+</div>
+
+<h3>Adding availability counter</h3>
+<p>Now I want to define a new field inside Model_Movie saying how many DVDs are in store. Editing Model_Movie:</p>
+
+
+<?Code?>
+        // Into init();
+        $this->addField('available')->calculated(true);
+
+
+
+    function calculate_available(){
+        return $this->add('Model_DVD_InStore')
+            ->dsql()
+            ->field('count(*)')
+            ->select()
+            ;
+    }
+<?/?>            
+
+
+<p>Which results in the message like this: "Unknown column 'is_returned' in 'where clause'". In our attempt to investigate, lets add debug() just before select(). You should see something like this: <b>select count(*) from dvd dvd having (is_rented = 'N')</b>. The problem here is that dsql() function properly applies calculated condition, but as the fields are not defined by dsql(), it errors out.</p>
+<p>My attempt to define the field by manually calling calculate_is_returned() was not successful, because sub-select only wishes to receive one argument.</p>
+
+<p>Possibly if we include the expression of "is_returned" inside the query itself it would work. Let's define calculation like this:</p>
+<?Code?>
+    function calculate_available(){
+        $m=$this->add('Model_DVD_InStore');
+        return $m
+            ->dsql(null,false)
+            ->field('count(*)')
+            ->where('('.$m->calculate_is_rented().')!=','Y')
+            ->where('dvd.movie_id=movie.id')
+            ->select()
+            ;
+    }
+<?/?>
+<p>Finally this have worked and Admin / Movies section now contains new field "Available" with the count of available DVDs. One things remains to be done and it's to place some of the field-logic ofr in-store filtering into appropriate model.</p>
+
+<?Code?>
+    // replace inside Model_Movie
+    function calculate_available(){
+        return $this->add('Model_DVD_InStore')
+            ->dsql_count()->select();
+    }
+
+
+    // add into Model_DVD_InStore
+    function dsql_count(){
+        return $this
+            ->dsql(null,false)
+            ->field('count(*)')
+            ->where('('.$this->calculate_is_rented().')!=','Y')
+            ->where('dvd.movie_id=movie.id')
+            ;
+    }
+<?/?>
+
+<p>Let's draw a little conclusion here. Agile Toolkit is not a complete replacement for what you know about SQL. In many cases it helps out, but sometimes it needs to get out of the way and let you do things in a more elegant way. Being Object-Oriented, you can build a lot of tools and enhancements on top of Agile Toolkit backbone.</p>
+
+<p>The second argument for dsql() instructed it not to add any conditions to the query.</p>
+
+<p>Next, let's add a new model, Model_Movie_Available which would contain at least one DVD in store.</p>
+
+<?Code?>
+class Model_Movie_Available extends Model_Movie {
+    function init(){
+        parent::init();
+        $this->addCondition('available>',0);
+    }
+}
+<?/?>
+
+<p>and now you can open page/video.php and change "Movie" to "Movie_Available" like this:
+
+<?Code?>
+    $this->add('MVCGrid')->setModel('Movie_Available');
+<?/?>
+
+<p>After refresh of the UI page, you will now see only titles which are available to rent. To find out more about what's happening inside the system, add the ->debug() after setModel(); While the result seem to work, there is a weird comparison in the query: "(select id from rental rental where (rental.dvd_id=dvd.id) and (is_returned!= 'Y') )!= 'Y'". To find out why it is like that, look into DVD->calculate_is_rented() function, which is not very correct obviously. Let's change it to:</p>
+
+<?Code?>
+    function calculate_is_rented(){
+        $select=$this->add('Model_Rental')
+            ->dsql()
+            ->field('id')
+            ->where('rental.dvd_id=dvd.id')
+            ->where('is_returned!=','Y')
+            ->select()
+            ;
+
+        return "if(($select) is null,'N','Y')";
+    }
+<?/?>
+
+<p>Being able to locate your errors through Agile Toolkit is certainly a challenge, but fixing errors in one place only is a great benefit deriving from the basic Don't Repeat Yourself principle.</p>
+
+<p>Another thing you might notice is that quite a few selects are being used. While Agile Toolkit ensures that they are all working properly and they follow the logic you have defined, you might have an urge to implement the query more efficiently. Sometimes you might be able to optimize model queries by re-defining dsql(), re-defining calculated columns with a more direct requests but you can probably leave that to the later stages of your application development.</p>
+
+<h3>Adding renting button</h3>
+<p>Now that we have a specific model for the "Available" titles, it should be much safer to implement the renting logic. When user rents a movie, he does not care which DVD he'll be getting. Let's make a function inside the model, Model_Movie_Available-&gt;rent();</p>
+
+<h4>Model_Movie_Available, add method</h4>
+<?Code?>
+    function rent($customer_id){
+        $m=$this->add('Model_DVD_InStore')
+            ->loadBy('movie_id',$this->get('id'));
+
+        return $m->rent($customer_id);
+    }
+<?/?>
+
+<h4>Model_DVD_InStore, add method</h4>
+<?Code?>
+    function rent($customer_id){
+        $m=$this->add('Model_Rental')
+            ->set('dvd_id',$this->get('id'))
+            ->set('customer_id',$customer_id)
+            ;
+        $m->update();
+        return $m;
+    }
+<?/?>
+
+<h4>page/video.php, add into init()</h4>
+<?Code?>
+        $grid->addColumn('button','rent');
+        if($_GET['rent']){
+            $rental = $grid->getModel()->loadData($_GET['rent'])->rent($this->api->auth->get('id'));
+
+            $grid->js(null,
+                    $this->js()->reload())->univ()->successMessage('Rented successfully #'.$rental->get('id'))
+                ->execute();
+        }
+<?/?>
+
+<p>Finally, let's add Grid for returning DVDs by adding the following into page/video.php, method init()</p>
+<?Code?>
+        $grid=$this->add('MVCGrid');
+        $grid->setModel('Rental')
+            ->addCondition('customer_id',$this->api->auth->get('id'))
+            ->addCondition('is_returned',false)
+            ;
+        $grid->addColumn('button','return');
+
+        if($_GET['return']){
+            $rental = $grid->getModel()->loadData($_GET['return'])->returnMovie();
+
+            $grid->js(null,
+                    $this->js()->reload())->univ()->successMessage('Returned #'.$_GET['return'])
+                ->execute();
+        }
+<?/?>
+
+<h2>Review</h2>
+<p>We've established quite a elegant structure for both listing data from the database and manipulating with the data. Even though we have very little validations in place, things are being implemented in a safe way very seamlessly. For example even if user supplies the ID of a movie with is already rented, it will not be able to load a valid "Movie_Available" record and thus will generate exception</p>
+
+<p>Injecting JavaScript into GET['return'] might seem like an opportunity for exploit, but because of the JS abstraction it will be safely displayed inside the message with no harm to the user.</p>
+
+<p>Next we are going to to implement some of the change-requests to our growing application</p>
+
+<h3>To be continued...</h3>
+

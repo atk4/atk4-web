@@ -89,6 +89,7 @@ class Sitemap extends AbstractController{
 				'models'=>'Adding Models',
 				'admin'=>'Creating Admin',
 				'auth'=>'Front-end Authorization',
+				'logic'=>'Binding busines logic with UI',
 				'changes'=>'Handling Change Requests',
 				'tests'=>'Adding Unit Tests',
 				'deploy'=>'Deploying to Production',

@@ -20,6 +20,7 @@
 <?Example?>
 $form=$page->add('MVCForm');
 $form->setModel('Employee',array('name','salary'));
+$form->addSubmit();
 if($form->isSubmitted()){
 	$form->update();
 	$form->js()->univ()
