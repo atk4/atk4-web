@@ -15,7 +15,7 @@ class ContactForm extends MVCForm {
 
 		$this->getElement('moreinfo')->setProperty("rows", 4)->setProperty("cols","");
 		//$this->addSubmit('Talk');
-        $this->getElement('Save')->setLabel('Send it now');
+        $this->addSubmit('Send it now');
 
         if($this->isSubmitted()){
 			$s=$this->api->recall('session_started',null);
