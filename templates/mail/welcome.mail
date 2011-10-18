@@ -1,0 +1,7 @@
+<?subject?>This is the subject<?/?>
+Dear, <?$Name?>
+
+Welcome to <a href="http://agiletoolkit.org/">Agile Toolkit</a>
+
+Yours,
+    <?$Sign?>

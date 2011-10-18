@@ -1,5 +1,5 @@
 <?php
-class page_commercial_account extends Page {
+class page_account extends Page {
     function init(){
         parent::init();
 

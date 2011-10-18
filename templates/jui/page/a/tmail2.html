@@ -1,0 +1,141 @@
+<?$Content?>
+
+<h1>Template Mail Version 2</h1>
+
+<p>This add-on is a complete rewrite of regular "TMail" class. It adds a lot of simplicity and is much more compact than TMail at the same time it offers the following features:</p>
+
+<ul>
+<li>Support building of multi-part mime messages</li>
+<li>By default contains email containing both text and html</li>
+<li>Customizable global template and exensive part types</li>
+</ul>
+
+<h2>Basic Usage</h2>
+
+<p>Sends simple message with the same text used for both HTML and PlainText</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+$mail->set('Quick Brown Fox');
+$mail->set('subject','Test Email');
+$mail->send('to@example.com','from@example.com');
+<?/?>
+
+<p>Sets different HTML and Text, also specifies "from" through argument list. Arguments are set as an array, not individually. Also demonstrates that email address may contain full name of the user.</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+
+$mail->setHTML('<a href="http://yahoo.com/">Click here</a>');
+$mail->setText('Click Here: http://yahoo.com/');
+$mail->set(array(
+      'subject'=>'Test Email',
+      'from'=>'John Smith <john@yahoo.com>'
+      ));
+$mail->send('Rob Williams <rob@example.com>');
+<?/?>
+
+<p>Will load file from templates/mail/welcome.mail and use it's content as a template for HTML and Text. Does not explicitly specify "from" so $config['tmail']['from'] will be used.</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+$mail->send('to@example.com');
+<?/?>
+
+<p>Shows how you can add new part types. The template will be loaded from templates/mail/mymail.mail by cloning &lt;?mypart?&gt;</p>
+
+<?Code?>
+class TMail_Part_MyPart extends TMail_Part {
+  ...
+  function defaultTemplate(){
+    return array('mymail','mypart');
+  }
+}
+
+$mail=$this->add('TMail2');
+$mail->addPart('MyPart');
+$mail->send('to@example.com');
+<?/?>
+
+<p>Demonstrates how same object can be reused several times to produce emails</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+foreach($emails as $to){
+  $mail->send($to);
+}
+<?/?>
+
+<p>Log email into database instead of sending it</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+
+$mail->addTransport('DBStore')->setModel('MailLog');
+$mail->addTransport('Fallback'); // use default sending method
+
+$mail->send($to);
+<?/?>
+
+<p>Discard email. Won't send it.</p>
+
+<?Code?>
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+
+$mail->addTransport('Discard');
+
+$mail->send($to);
+<?/?>
+
+<p>Add your own condition. On successful condition check will use SES transport to send over Amazon's Simple Email Service</p>
+
+<?Code?>
+class TMail_Transport_CheckUser extends TMail_Transport {
+  function init(){
+    parent::init();
+    if(!$this->api->getUser()->acceptsMail())
+      $this->breakHook(true);
+  }
+}
+
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+
+$mail->addTransport('CheckUser');
+$mail->addTransport('SES');
+
+$mail->send($to);
+<?/?>
+
+<p>Sending file</p>
+
+<?Code?>
+$file=$this->add('Model_Filestore_File')->loadData($file_id);
+
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+$mail->addPart('Attachment')->setModel($file);
+
+$mail->send($to);
+<?/?>
+
+<p>Sending files in multiple emails with same template</p>
+
+<?Code?>
+$file=$this->add('Model_Filestore_File');
+$ids=$file->loadData(array('id'));
+
+$mail=$this->add('TMail2');
+$mail->setTemplate('welcome');
+
+foreach($ids as $row){
+  $file->loadData($row['id']);
+  $m = clone $mail;
+  $mail->addPart('Attachment')->setModel($file);
+  $mail->send($to);
+}
+<?/?>
