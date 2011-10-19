@@ -7,7 +7,7 @@ class page_testtmail extends Page {
         $t=$this->add('TMail2');
         $t->addTransport('Echo');//->setModel('ATK_MailLog');
         $t->addTransport('SES');
-        $t->setTemplate('welcome');
+        $t->setTemplate('user/welcome');
         $t->set('Name','John Smith');
         $t->set('Sign','Signature');
 

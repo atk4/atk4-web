@@ -42,9 +42,10 @@ EOF;
 
     /* {{{ Registration  */
     function prepareEmail($template){
-        $m=$this->add('TMail');
+        $m=$this->add('TMail2');
         $m->loadTemplate('user/'.$template,'.html');
         $m->setTag($this->get());
+        $m->addTransport('SES');
 
         return $m;//->send($email);
     }

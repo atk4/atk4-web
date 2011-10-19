@@ -12,7 +12,7 @@ class Model_ATK_User_Pending extends Model_ATK_User {
         $url = $url->set('t',$token)->useAbsoluteURL();
 		$url=str_replace('/admin/','/',$url);
 
-        $t=$this->prepareEmail('token');
+        $t=$this->prepareEmail('welcome');
         $t->setTag('url',$url);
         $t->send($this->get('email'));
 

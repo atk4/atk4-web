@@ -9,6 +9,7 @@ class Admin extends ApiFrontend {
                     'mail'=>'templates/mail',
                 ));
         $this->addLocation('atk4-addons', array(
+                    'mail'=>'misc/templates/mail',
                     'php' => array(
                         'mvc',
                         'misc/lib',
