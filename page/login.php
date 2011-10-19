@@ -4,6 +4,7 @@ class page_login extends Page {
         parent::init();
         $this->api->stickyGET('type');
         $this->api->stickyGET('return');
+        $this->api->stickyGET('redirect');
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
         $r=$cc->addColumn(6)->add('HtmlElement','rightbox');
@@ -41,6 +42,10 @@ class page_login extends Page {
 
                 if($_GET['return']){
                     $this->js(true)->atk4_load($this->api->getDestinationURL($_GET['return'],array('cut_page'=>1,'return'=>false)))
+                        ->execute();
+                }
+                if($_GET['redirect']){
+                    $this->js(true)->univ()->location($this->api->getDestinationURL($_GET['redirect'],array('redirect'=>false)))
                         ->execute();
                 }
 

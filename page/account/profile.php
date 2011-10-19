@@ -14,6 +14,7 @@ class page_account_profile extends Page {
         $form=$c->add('MVCForm');
         $form->setModel($user_model,
                 array('full_name'));
+        $form->addSubmit('Update');
         if($form->isSubmitted()){
             $form->update();
             $form->js()->univ()->closeDialog()->execute();

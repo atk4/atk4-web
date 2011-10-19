@@ -56,7 +56,7 @@ class AgileToolkitWeb extends ApiFrontend {
         }
 
 
-        $this->auth=$this->add('AtkAuth');
+        $this->auth=$this->add('FrontendAuth');
         $this->auth->setModel('ATK_User_Valid');
 
         if($_GET['t_recovery'] || $_GET['t_register'])
@@ -76,6 +76,7 @@ class AgileToolkitWeb extends ApiFrontend {
         if($_GET['t_recovery'])$t=$_GET['t_recovery'];
         if($_GET['t_register'])$t=$_GET['t_register'];
 
+        $this->dbConnectATK();
         // Attempt to identify user by token
         $user = $this->add('Model_ATK_User')->loadBy('token_email',$t);
         if(!$user->isInstanceLoaded())return;
@@ -234,6 +235,7 @@ class AgileToolkitWeb extends ApiFrontend {
     }
     protected function loadStaticPage($page){
         $p=explode('_',$page);
+        if($p[0]=='survey')return parent::loadStaticPage($page);
         if($p[0]=='a' && count($p)>1)throw new PathFinder_Exception('no direct loading for a',null,null);
         if($p[0]=='doc' && count($p)>1)throw new PathFinder_Exception('no direct loading for docs',null,null);
         if($p[0]=='intro' && count($p)>1)throw new PathFinder_Exception('no direct loading for intro',null,null);
