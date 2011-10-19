@@ -58,6 +58,10 @@ class AgileToolkitWeb extends ApiFrontend {
 
         $this->auth=$this->add('AtkAuth');
         $this->auth->setModel('ATK_User_Valid');
+
+        if($_GET['t_recovery'] || $_GET['t_register'])
+            $this->checkTokens();
+
         if($this->auth->isLoggedIn()){
             $this->template->trySet('user',$this->auth->get('email'));
         }else{
@@ -67,6 +71,23 @@ class AgileToolkitWeb extends ApiFrontend {
 
         list($main,$junk)=explode('_',$this->page,2);
         if($main=='blog-article'||$main=='blog')$this->page_class='Page_Blog';
+    }
+    function checkTokens(){
+        if($_GET['t_recovery'])$t=$_GET['t_recovery'];
+        if($_GET['t_register'])$t=$_GET['t_register'];
+
+        // Attempt to identify user by token
+        $user = $this->add('Model_ATK_User')->loadBy('token_email',$t);
+        if(!$user->isInstanceLoaded())return;
+
+        if(!$user->get('is_email_confirmed')){
+            $user->set('is_email_confirmed',true)->update();
+            $this->js(true)->univ()->clickyGoal('Confirmed account');
+        }
+
+        $this->api->auth->login($user);
+        $this->js(true)->univ()->dialogURL('Set Your New Password',
+                $this->api->getDestinationURL('account/passwd'),array('width'=>'450px'));
     }
     function initLayout(){
         if($this->template->is_set('Menu')){

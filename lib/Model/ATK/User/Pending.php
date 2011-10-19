@@ -7,9 +7,9 @@ class Model_ATK_User_Pending extends Model_ATK_User {
     function sendToken($url=null){
         if(!$this->isInstanceLoaded())throw $this->exception('Pending user record is not loaded for sendToken');
         $this->set('token_email',$token=uniqid('atketk',true));
-        if(!$url)$url=$this->api->getDestinationURL('account/confirm');
+        if(!$url)$url=$this->api->getDestinationURL('account');
 
-        $url = $url->set('t',$token)->useAbsoluteURL();
+        $url = $url->set('t_register',$token)->useAbsoluteURL();
 		$url=str_replace('/admin/','/',$url);
 
         $t=$this->prepareEmail('welcome');

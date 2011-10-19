@@ -1,0 +1,17 @@
+
+<h2><?subject?>Password Recovery for agiletoolkit.org<?/?></h2>
+
+<p>Someone have requested a password recovery for account: "<?$email?>".
+If you would like to reset your password, click on the link below:</p>
+
+<a href="<?$url?>"><?$url?></a>
+
+<p>If you didn't request password reset, you can note down the following
+IP address:</p>
+
+<?$ip?>
+
+
+<p><i>With Regards<br/>
+Agile Toolkit Core Team</i></p>
+

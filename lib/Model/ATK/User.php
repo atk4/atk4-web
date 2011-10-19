@@ -49,6 +49,22 @@ EOF;
 
         return $m;//->send($email);
     }
+    function sendReminder($url=null){
+        if(!$this->isInstanceLoaded())throw $this->exception('User is not loaded for sending out Password Reminder');
+        $this->set('token_email',$token=uniqid('atketk',true));
+        if(!$url)$url=$this->api->getDestinationURL('account');
+
+        $url = $url->set('t_recovery',$token)->useAbsoluteURL();
+		$url=str_replace('/admin/','/',$url);
+
+        $t=$this->prepareEmail('reminder');
+        $t->setTag('url',$url);
+        $t->set('ip',$_SERVER['REMOTE_ADDR']);
+        $t->send($this->get('email'));
+
+        $this->update();
+        return $this;
+    }
     function softRegister($email,$name=null){
         $m=$this->add('Model_ATK_User')->getBy('email',$email);
         if($m)return($m['id']);

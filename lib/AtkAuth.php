@@ -12,6 +12,13 @@ class AtkAuth extends BasicAuth {
         $this->usePasswordEncryption('sha256/salt');
         return $m;
     }
+    function login($l){
+        if(is_object($l)){
+            $this->addInfo($data=$l->get());
+            return parent::login($data['email']);
+        }
+        return parent::login($l);
+    }
 	function addInfo($key,$val=null){
 		if($key=='password')return $this;        // skip password field
 		return parent::addInfo($key,$val);
