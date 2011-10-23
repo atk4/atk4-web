@@ -6,7 +6,7 @@ class Model_ATK_Survey extends Model_Table {
 
         $this->addField('name');
         $this->addField('descr')->datatype('text');
-        $this->addField('model');
+        $this->addField('page');
 
         $this->addField('is_public')->type('boolean');
     }

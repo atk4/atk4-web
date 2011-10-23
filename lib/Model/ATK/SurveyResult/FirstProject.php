@@ -1,6 +1,6 @@
 <?php
 class Model_ATK_SurveyResult_FirstProject extends Model_ATK_SurveyResult {
-    public $entity_code='atk_survey';
+    public $entity_code='atk_survey_1';
 
     function init(){
         parent::init();
@@ -278,5 +278,101 @@ class Model_ATK_SurveyResult_FirstProject extends Model_ATK_SurveyResult {
                     ));
 
 
+    }
+    function getSuggestion(){
+        $profs=array('prof_ui','prof_js','prof_ajax','prof_models','prof_views','prof_templates','prof_deploy','prof_share','prof_educate');
+
+        $res=array();
+
+        $zz=0;
+        foreach($profs as $x){
+            $zz+=0.1;
+
+            $choices=array_keys($this->getField($x)->listData());
+
+            $val=$this->get($x);
+            
+            $pos=array_search($val,$choices);
+
+            $res[$x]=$pos+$zz;
+        }
+
+        list($worst_skill,$worst_score)=each($res);
+
+        switch($worst_skill){
+            case 'prof_ui':$res=array(2=>'Agile Toolkit is the UI library. While many things seem to be doable just by using
+                                   existing views, the true power is in building your own UI elements. Read more about
+                                   Object-Oriented programming and look into lib/view of some public projects.</p><p><a href="/learn/understand/view/usage">About Views</a>',
+                                   4=>'You seem to have a really good grasp on creating and extending views. However in many
+                                   cases you would want to customize existing view from external class. This is what
+                                   controllers do. Try to implement an A-Z index shortcuts on top of Lister through a
+                                   separate view or controller</p><p><a href="/learn/understand/controller">Read More</a>',
+                                   6=>false);
+                           break;
+            case 'prof_js':$res=array(2=>'JavaScript is a very powerful language. While Agile Toolkit lets you do things
+                                   without messing with JavaScript, you can achieve much greater results if you learn how to
+                                   use univ() chains or plugins.</p><p><a href="/learn/understand/jsapi">Read More</a>',
+                                   4=>'Read more about jQuery UI Widget factory. It really makes making UI elemetns much
+                                   easier. Also read about progressive enhancements with JavaScripts.',
+                                   6=>false);
+                           break;
+            case 'prof_ajax':$res=array(2=>'While sometimes it makes sense to use regular links (such as for SEO purposes), i
+                                     nother cases you can do great things with AJAX. Try putting more controls on the same
+                                     page and reload them dynamically. Users always appreciate some dynamics on the pages</p><p><a href="/learn/understand/jsapi/structure">Read More</a>',
+                                     4=>'Your skill with AJAX quite awesome. One advice though, if you are building public
+                                     pages, remember that search engines will not follow javascript-generated pages. You need
+                                     to keep the actual links for crawlers and non-JS browsers</p><p><a href="http://demo.atk4.com/demo.html?t=13">Read about Ajaxification</a>',
+                                     5=>false);
+                             break;
+            case 'prof_models':$res=array(3=>'Models in Agile Toolkit play a very important role. While you can still
+                                       generate some of the UI without them, I highly recommend you to build all your
+                                       business logic with Models. If you use no-SQL, you can still benefit from models
+                                       to define your structure</p><p><a href="/learn/understand/model/add">Read More</a>',
+                                       5=>'If you are coming from other framework, you must know that models in Agile
+                                       Toolkit are more powerful when you are using inheritance. You are not limiting to
+                                       have only a single model class per table, you can have multiple classes depending
+                                       on how you are willign to use models<a href="/learn/app/logic">Read More</a>',
+                                       7=>false);
+                               break;
+            case 'prof_templates':$res=array(1=>'Your use of templates seems to be OK for the basic and personal projects.
+                                          However if you are working on the project for your client, you can easily change
+                                          the look of Agile Toolkit through jQuery UI ThemerollerClients will love your work
+                                          beccause of that small detail.</p><p><a href="/learn/template/how">Read More</a>',
+                                          4=>'When you are making your own views, you should rely on templates to make them
+                                          universal and extensible. Define multiple regions inside the template, clone master
+                                          template (like Form does) and use those template chunks to produce HTML output.',
+                                          6=>false);
+                                  break;
+            case 'prof_deploy':$res=array(2=>'It is really important that you learn and use Git (or SVN) in all of your work.
+                                       There are way too many benefits in using it.</p><p><a href="/learn/install/git">Read more</a>',
+                                       4=>'Learn to use branches and write some server-side script to monitor your Agile Toolkit log
+                                       files. Do launch the "staging" server and test all releases and their installation
+                                       procedure before publishing them to the live site',
+                                       6=>false);
+                               break;
+            case 'prof_share':$res=array(2=>'Sharing some of your code is good, but give us a hand and 
+                                      tell others about Agile Toolkit. You indicated that you love at least 
+                                      '.count(explode(',',$this->get('atk_features'))).' features of Agile Toolkit,
+                                      why don\'t you tell that to your friends, followers or on your blog?</p><p><a href="/community/love">Share Love</a>',
+                                      4=>'Contributing the code is awesome thing to do, but you should make your code
+                                      accessible to others and have some good documentation on it. If you haven\'t contacted
+                                      us yet about your accomplishment, please do and we will place a link to your site',
+                                      6=>false);
+                              break;
+            case 'prof_educate':$res=array(0=>'Any questions or answers you find is a really valuable info for anyone else
+                                        who is learning Agile Toolkit. Don\'t hesitate to ask about Agile Toolkit on a public
+                                        sites, we try to answer all the questions quickly and precisely. Often it can save
+                                        you hours of your time</p><p><a href="/community/help">Connect with community</a>',
+                                        5=>'We are making lots of articles and documentation on Agile Toolkit every week. But
+                                        one thing we can\'t do is to generate other user success story. If Agile Toolkit was
+                                        helpful to you, let the world know.',
+                                        8=>false);
+        }
+        for($i=$worst_score;$i<10;$i++){
+            if(isset($res[$i]) && $res[$i]){
+                return $res[$i];
+                break;
+            }
+        }
     }
 }

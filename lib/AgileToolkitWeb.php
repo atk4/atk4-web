@@ -192,6 +192,9 @@ class AgileToolkitWeb extends ApiFrontend {
         // Connect to administrative database
         parent::dbConnect($this->getConfig('atk_dsn'));
     }
+    function getUser(){
+        return $this->auth->getModel()->loadData($this->auth->get('id'));
+    }
     function enclose_MoreInfo($content,$tag){
         list($header,$content)=preg_split('/\n/',$content,2);
         $this->page_object->add('Doc_MoreInfo',null,$tag)

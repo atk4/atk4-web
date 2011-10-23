@@ -6,6 +6,7 @@ class page_content extends Page {
         $tt=$this->add('Tabs');
         $t_sc=$tt->addTab('screencasts');
         $tt->addTabURL('./surveys','Surveys');
+        $tt->addTabURL('./survey1','Survey Results');
 
         $crud=$t_sc->add('CRUD');
         $crud->setModel('ATK_Video_Screencast',null,array('name','is_public','atk_version','complexity','type'));

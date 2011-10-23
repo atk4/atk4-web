@@ -6,5 +6,6 @@ abstract class Model_ATK_SurveyResult extends Model_Table {
         $this->addField('user_id')->refModel('Model_ATK_User_Valid');   // can be only filled by valid user
 
         $this->addField('created_dts')->system(true);
+        $this->addField('is_completed')->type('boolean');
     }
 }
