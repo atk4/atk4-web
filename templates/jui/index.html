@@ -3,7 +3,7 @@
 <!-- Agile Toolkit Website (c) Agile Technologies // Design by http://www.agiletech.ie/ -->
 <!-- This site source code can be downloaded from https://github.com/atk4/atk4-web      -->
 
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<html>
 	<head>
 		<title><?page_title?>Agile Toolkit - PHP Framework with jQuery<?/?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -121,7 +121,7 @@
 							$('#features .current').prepend('<i></i>');
 
 							$('#features-nav').children('a').click(function(){
-								var r=$(this).attr('rel');
+								var r=$(this).attr('data-rel');
 								$('#features').find('.active').hide().removeClass('active');
 									$('#features').find('.'+r).show().addClass('active');
 								$('#features').find('.current').removeClass('current');
@@ -132,22 +132,22 @@
 					<div class="gs-wrap">
 						<div id="features-nav">
 
-							<a rel="re-use" class="big-icon motion icon-re-use"></a>
-							<a rel="tree" class="big-icon motion icon-tree"></a>
+							<a data-rel="re-use" class="big-icon motion icon-re-use"></a>
+							<a data-rel="tree" class="big-icon motion icon-tree"></a>
 
-							<a rel="core" class="big-icon motion icon-core"></a>
-							<a rel="molecule" class="big-icon motion icon-molecule"></a>
-							<a rel="book" class="big-icon motion icon-book"></a>
-							<a rel="wheel" class="big-icon motion icon-wheel current"></a>
-							<a rel="trophy" class="big-icon motion icon-trophy"></a>
-							<a rel="gpl" class="big-icon motion icon-gpl"></a>
-							<a rel="community" class="big-icon motion icon-community"></a>
-							<a rel="cubes" class="big-icon motion icon-cubes"></a>
+							<a data-rel="core" class="big-icon motion icon-core"></a>
+							<a data-rel="molecule" class="big-icon motion icon-molecule"></a>
+							<a data-rel="book" class="big-icon motion icon-book"></a>
+							<a data-rel="wheel" class="big-icon motion icon-wheel current"></a>
+							<a data-rel="trophy" class="big-icon motion icon-trophy"></a>
+							<a data-rel="gpl" class="big-icon motion icon-gpl"></a>
+							<a data-rel="community" class="big-icon motion icon-community"></a>
+							<a data-rel="cubes" class="big-icon motion icon-cubes"></a>
 
-							<a rel="lego" class="big-icon motion icon-developers"></a>
+							<a data-rel="lego" class="big-icon motion icon-developers"></a>
 						</div>
 
-						<div id="features-text" class="wheel active">
+						<div class="features-text wheel active">
 							<h3>You Decide</h3>
 							<p>Agile Toolkit is a powerful development environment which is equally targeted at
                             <b>Developers</b> as well as <b>Business</b> needs. It's no longer compromise between "fast" or
@@ -158,7 +158,7 @@
 						</div>
 
 
-						<div id="features-text" class="molecule" style="display: none">
+						<div class="features-text molecule" style="display: none">
 							<h3>Web Development – Reinvented</h3>
 							<p>We have reinvented web development, so that you wouldn't have to. Agile Toolkit development
                             is more simple than conventional PHP development or developing using mainstream Frameworks.</p>
@@ -172,7 +172,7 @@
 						</div>
 
 
-						<div id="features-text" class="trophy" style="display: none">
+						<div class="features-text trophy" style="display: none">
                             <h3>Think "Success"</h3>
                             <p>The key elements to on-line business success are timing, flexibility and budget. With Agile
                             Toolkit you can achieve all three and have a much better chance to make your idea successful.</p>
@@ -184,7 +184,7 @@
                             <p>How about change requests? Agile Toolkit can handle them elegantly. At any stage you can
                             introduce even such fundamental features as Audit, Design changes and URL restructuring.
 						</div>
-						<div id="features-text" class="community" style="display: none">
+						<div class="features-text community" style="display: none">
 							<h3>Community</h3>
 							<p>
                             You will find Agile Toolkit community consists of professionals focused on getting the job done.
@@ -197,7 +197,7 @@
                             benefits.</p>
 
 						</div>
-						<div id="features-text" class="cubes" style="display: none">
+						<div class="features-text cubes" style="display: none">
 							<h3>Ready-to-use components</h3>
 							<p>Most of web software use many similar elements such as comment forms or 
                             payment forms. Two major problems prevented any generic solutions from emerging.</p>
@@ -219,7 +219,7 @@
 
 
 
-						<div id="features-text" class="core" style="display: none">
+						<div class="features-text core" style="display: none">
 							<h3>Beautiful Inside</h3>
 							<p>How many times you have tried to slightly adjust CMS plugin just to find some awful code
                             behind a shiny interface?</p>
@@ -233,7 +233,7 @@
                             <p>The structure of Agile Toolkit makes it ideal choice for development of Platforms:
                             white-labeling, customization, localization, add-ons are there when you need them.</p>
 						</div>
-						<div id="features-text" class="gpl" style="display: none">
+						<div class="features-text gpl" style="display: none">
 							<h3>Take and Share Licensing</h3>
 							<p>We truly love Open-Source and you can download full-featured version of Agile Toolkit at no
                             cost. We believe in Open-Source movement and are willing to promote it. If you have got Agile
@@ -253,7 +253,7 @@
 
 
 
-						<div id="features-text" class="tree" style="display: none">
+						<div class="features-text tree" style="display: none">
 							<h3>Start small. Grow fast.</h3>
 							<p>Remember you had that great idea, but during the course of development you needed to focus on
                             technical details? Happened to many of us.</p>
@@ -263,7 +263,7 @@
                             with your needs
                             </p>
 						</div>
-						<div id="features-text" class="re-use" style="display: none">
+						<div class="features-text re-use" style="display: none">
 							<h3>Platform Development</h3>
 							<p>Congratulations! Your first project is complete. Look through your classes, there are
                             probably many of them which you could use in your next project. Copy them into a shared folder
@@ -272,11 +272,9 @@
                             <p>Why not publish your classes, templates or resources for others to use? It's as simple as
                             that.</p>
 
-                            do not generate code in Agile Toolkit. Elegant structure beats code generation by all means.
-                            </p>
 						</div>
 
-						<div id="features-text" class="lego" style="display: none">
+						<div class="features-text lego" style="display: none">
 							<h3>Don't have a team? Pick our team!</h3>
 							<p>Why not select a seasoned team of professional to develop your project for you?</p>
 
@@ -290,7 +288,7 @@
 
 						</div>
 
-						<div id="features-text" class="book" style="display: none">
+						<div class="features-text book" style="display: none">
 							<h3>Develop Smarter</h3>
 							<p>If you are new to Web Development, your friends might have pointed you towards a pile of
                             documentation, resources and concepts to learn before you make your first form.</p>
@@ -308,7 +306,6 @@
 					</div>		
 				</div>
                 <?/?>
-				<a name="engage"></a>
 				<div id="engage" class="hex">
 					<div class="gs-wrap">
 						<div class="g-row">

@@ -51,7 +51,7 @@ EOF;
     }
     function sendReminder($url=null){
         if(!$this->isInstanceLoaded())throw $this->exception('User is not loaded for sending out Password Reminder');
-        $this->set('token_email',$token=uniqid('atketk',true));
+        $this->set('token_email',$token=uniqid('atketk',true).'-'.$this->get('id'));
         if(!$url)$url=$this->api->getDestinationURL('account');
 
         $url = $url->set('t_recovery',$token)->useAbsoluteURL();

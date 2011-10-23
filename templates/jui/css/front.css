@@ -154,7 +154,7 @@
 #features-nav a.current i {width:25px;height:11px;background:url(../images/white-triangle-n.png) no-repeat;cursor:default;}
 #features-nav a.current, #features-nav a:hover {opacity:1;}
 #features-nav a.current:after {width:23px;height:11px;background:url(../images/white-triangle-n.png) no-repeat;content:'';position:absolute;z-index:3;bottom:-15px;left:50%;margin-left:-11px;}
-#features-text {
+.features-text {
 	position: relative;
 	padding:20px;
 	margin:auto;
@@ -162,7 +162,7 @@
 	-webkit-box-shadow:0 0 5px rgba(25,50,80,0.2);
 	   -moz-box-shadow:0 0 5px rgba(25,50,80,0.2);
 	        box-shadow:0 0 5px rgba(25,50,80,0.2);}
-#features-text:before, #features-text:after {
+.features-text:before, .features-text:after {
 	position: absolute;
 	width:40%;
 	height:10px;
@@ -179,7 +179,7 @@
 	-moz-box-shadow: 0 6px 12px rgba(25,50,80,0.3);
 	box-shadow: 0 6px 12px rgba(25,50,80,0.3);
 	z-index: -1;} 
-#features-text:after {
+.features-text:after {
 	left: auto;
 	right: 12px;
 	-webkit-transform: skew(5deg) rotate(5deg);
@@ -187,7 +187,7 @@
 	-ms-transform: skew(5deg) rotate(5deg);
 	-o-transform: skew(5deg) rotate(5deg);
 	transform: skew(5deg) rotate(5deg);} 
-#features-text p {margin-bottom:0;}
+.features-text p {margin-bottom:0;}
 
 
 /* Engage */

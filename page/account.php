@@ -3,9 +3,9 @@ class page_account extends Page {
     function init(){
         parent::init();
 
-        if(!$this->api->auth->isLoggedIn()){
-            $this->api->redirect('commercial/store');
-        }
+        $this->api->auth->check();
+            //$this->api->redirect('commercial/store');
+        //}
 
         $this->add('View',null,'AccountBox','AccountBox')->template->set($i=$this->api->auth->get());
 
