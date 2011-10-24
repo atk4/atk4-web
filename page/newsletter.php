@@ -3,6 +3,27 @@ class page_newsletter extends Page {
 	function init(){
 		parent::init();
 
+
+        $this->api->dbConnectATK();
+        $form=$this->add('MVCForm');
+        $form->setModel('ATK_User_Pending',array('email','full_name'));
+
+        $form->addSubmit('Subscribe');
+
+        $backjs=$this->js()->parent()->atk4_load($this->api->getDestinationURL('login',array('cut_object'=>'rightbox')));
+        $focusjs=$this->js()->closest('.page_login')->find('input')->eq(0)->focus();
+
+
+        $form->onSubmit(function($form){
+            $form->update();
+            $id=$form->getModel()->get('id');
+			$form->getModel()->sendToken();
+            $form->js()->univ()->successMessage('Thank you for subscribing. We have sent you email confirmation')->closeDialog()->execute();
+        });
+
+
+
+        return;
 		$f=$this->add('Form');
 		$f->js(true)->removeClass("atk-form-simple")->addClass("atk-form-vertical");
 		$f->addField('line','email')->setProperty('size',40)->setNotNull();
@@ -10,7 +31,7 @@ class page_newsletter extends Page {
 		//$f->addField('checkbox','atk','I would like to get updates on Agile Toolkit');
 		$f->addField('line','name','Full Name')->setProperty('size',40)->setNotNull();
 		$f->addSubmit('Subscribe');
-		$c=$this->add('Controller_crm_CampaignMonitor');
+	//	$c=$this->add('Controller_crm_CampaignMonitor');
 
 		if($f->isSubmitted()){
 			$result=$c->addRequest('AddSubscriber')

@@ -4,7 +4,7 @@ class page_testtmail extends Page {
         parent::init();
         $this->api->dbConnectATK();
 
-        $t=$this->add('TMail2');
+        $t=$this->add('TMail');
         $t->addTransport('Echo');//->setModel('ATK_MailLog');
         $t->addTransport('SES');
         $t->setTemplate('user/welcome');

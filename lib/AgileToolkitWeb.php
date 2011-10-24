@@ -59,6 +59,8 @@ class AgileToolkitWeb extends ApiFrontend {
         $this->auth=$this->add('FrontendAuth');
         $this->auth->setModel('ATK_User_Valid');
 
+        $this->auth->cookieLogin();
+
         if($_GET['t_recovery'] || $_GET['t_register'] || $_GET['t'])
             $this->checkTokens();
 

@@ -33,6 +33,8 @@ class Model_ATK_User_Surveyable extends Model_ATK_User {
     }
     function sendInvite(){
         // First - generate UserSurvey
+        $this->api->stickyForget('atk_survey_id');
+
         $us=$this->add('Model_ATK_UserSurvey');
         $us->setMasterField('user_id',$this->get('id'));
         $us->setMasterField('survey_id',$this->survey_id);
@@ -40,7 +42,15 @@ class Model_ATK_User_Surveyable extends Model_ATK_User {
         if(!$us->isInstanceLoaded())$us->update();
 
 
-        //$this->prepareEmail('
-        //$us->set('is_invited',true);
+        $m=$this->prepareEmail('survey');
+        $m->set('url',$this->getMailURL($us->getRef('survey_id')->get('page')));
+        $m->set('subject','Agile Toolkit Survey: '.$us->getRef('survey_id')->get('name'));
+        $m->set('title',$us->getRef('survey_id')->get('name'));
+        $m->set('descr',nl2br($us->getRef('survey_id')->get('descr')));
+        $m->send($this->get('email'));
+
+        $this->api->stickyGET('atk_survey_id');
+
+        $us->set('is_invited',true)->update();
     }
 }

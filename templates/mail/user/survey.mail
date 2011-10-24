@@ -1,9 +1,11 @@
 
-<h2><?subject?>Agile Toolkit Survey<?/?></h2>
+<h1><?$title?></h1>
 
-<h1><?$name?></h1>
-
+<p>
 <?$descr?>
+</p>
+
+<?$url?>
 
 
 <hr/>

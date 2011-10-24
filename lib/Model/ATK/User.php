@@ -42,7 +42,7 @@ EOF;
 
     /* {{{ Registration  */
     function prepareEmail($template){
-        $m=$this->add('TMail2');
+        $m=$this->add('TMail');
         $m->loadTemplate('user/'.$template,'.html');
         $m->setTag($this->get());
         $m->addTransport('SES');
@@ -50,6 +50,8 @@ EOF;
         if($this->get('token_email')){
             $this->api->stickyGET('t',$this->get('token_email'));
         }
+
+        $m->set('pref',$this->getMailURL('account/mail'));
 
         return $m;//->send($email);
     }
@@ -111,6 +113,11 @@ EOF;
     function getDownloads(){
         return $this->add('Model_ATK_Download')
             ->setMasterField('atk_user_id',$this->get('id'));
+    }
+    function getMailURL($page){
+        $url=$this->api->getDestinationURL($page)->useAbsoluteURL();
+		$url=str_replace('/admin/','/',$url);
+        return $url;
     }
 
     function beforeInsert($data){
