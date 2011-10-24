@@ -21,7 +21,7 @@ class Model_ATK_User extends Model_Table {
         $this->addField('google_token');
         $this->addField('facebook_token');
 
-        $this->addField('token_email');
+        $this->addField('token_email')->system(true);
     }
     function calculate_name(){
         return 'coalesce(if(full_name="",email,full_name),email)';
@@ -48,7 +48,8 @@ EOF;
         $m->addTransport('SES');
 
         if($this->get('token_email')){
-            $this->api->stickyGET('t',$this->get('token_email'));
+            $_GET['t']=$this->get('token_email');
+            $this->api->stickyGET('t');
         }
 
         $m->set('pref',$this->getMailURL('account/mail'));
