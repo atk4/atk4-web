@@ -9,14 +9,15 @@ class FrontendAuth extends AtkAuth {
                 // Cookie is found, but is it valid?
                 // passwords are always passed encrypted
                 if($this->verifyCredintials(
-                            $_COOKIE[$this->name."_username"],
-                            $_COOKIE[$this->name."_password"]
+                            $l=$_COOKIE[$this->name."_username"],
+                            $this->encryptPassword( $_COOKIE[$this->name."_password"],$l)
                             )){
                     // Cookie login was successful. No redirect will be performed
                     $this->loggedIn($_COOKIE[$this->name."_username"],$_COOKIE[$this->name."_password"]);
                     $this->memorize('info',$this->info);
                     return;
                 }
+                var_dump($a,$b);
             }
 
             $this->api->js(true)->univ()->dialogURL('Login to access this page',

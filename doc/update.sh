@@ -11,6 +11,7 @@ u=`echo $dsn | cut -d: -f1`
 p=`echo $dsn | cut -d: -f2 | cut -d@ -f1`
 db=`echo $dsn | cut -d/ -f2`
 
+
 [ "$db" ] || { echo "Error: Can't read config file"; exit; }
 
 if [ -f ~/.my.cnf ]; then
