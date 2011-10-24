@@ -1,3 +1,27 @@
-Coming soon...
+<?$Content?>
 
-<p><a href="/intro">See Interactive Introduction</a></p>
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+    <p>Dynamic SQL is a object-oriented model for building your query. It allows you to interact with the object in a structured way by adding additioal criterias, fields, joins or parameters, then the object is used natively by View elements.</p>
+
+    <p>By it's nature DSQL allows some logical transparency of the back-end database storage, although the only actively used implementation is for MySQL</p>
+
+    <p>To create new dsql instance call $this->api->db->dsql(); Connection to database must be established through (api->dbConnect). You can re-use same criteria different queries such as select and then update on a same object. Dsql object can also be safely cloned.</p>
+
+  </div>
+  <div class="g-6">
+    <div class="ref-item box blue-noised">
+      <b>Other Resources:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/api<?/?>">Introduction to Application Classes</a></div>
+      </div>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Form-related documentation</b>
+      <p>Select section:</p>
+      <?$toc?>
+    </div>
+  </div>
+</div>
+<?$Next?>

@@ -1,0 +1,12 @@
+
+<h2><?subject?>Agile Toolkit Survey<?/?></h2>
+
+<h1><?$name?></h1>
+
+<?$descr?>
+
+
+<hr/>
+<p>To change your email preferences or unsubscribe change the below link:<br/>
+<?$pref?>
+</p>

@@ -47,6 +47,10 @@ EOF;
         $m->setTag($this->get());
         $m->addTransport('SES');
 
+        if($this->get('token_email')){
+            $this->api->stickyGET('t',$this->get('token_email'));
+        }
+
         return $m;//->send($email);
     }
     function sendReminder($url=null){

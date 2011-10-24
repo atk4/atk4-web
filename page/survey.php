@@ -53,7 +53,7 @@ class page_survey extends Page {
     function page_index(){
 
         if(!$this->recall('compl_checked',false)){
-            if($m->get('is_completed')){
+            if($this->m->get('is_completed')){
                 $this->js(true)->univ()->dialogOK('Warning',
                         'You have already completed this survey once, but if you wish to review your answers, go ahead');
                 if($this->memorize('compl_checked',true));
@@ -87,7 +87,7 @@ class page_survey extends Page {
         $this->title->set('Thank you for filling out the survey!');
         $this->form->destroy();
 
-        $this->m->set('is_completed',true)->update();
+        $this->m->complete();
 
         $this->add('P')->set('Based on your specified experienced we have build some suggestions for you on how to get better
                 with agile toolkit');

@@ -6,8 +6,25 @@
 <div class="g-row" id="download-grid">
 	<div class="g-8">
 
-		<h2>What's new in 4.1.2?</h2>
-                <p>Version 4.1.2 adds a whole <b>4 new examples</b> into the downloadable ZIP archive. To keep things simple we decided to drop all the different ZIP files and have only one - agiletoolkit-4.1.2.zip. There are also bugfixes such as ability to use full url with getDestinationURL().</p>
+		<h2>What's new in 4.1.3?</h2>
+                <p>Version 4.1.3 has incorporated a number of bugfixes and improvements since the last release such as:</p>
+
+                <ul>
+                <li>Added basic caching into Template Engine for about 30% speed improvement</li>
+                <li>setModel() on forms no longer adds "Save" button by default.</li>
+                <li>Rewrite of "TMail" class. New one being <a href="<?page?>a/tmail<?/?>">much more powerful</a>.</li>
+                <li>Compat controller updated if your software is affected by the changes.</li>
+
+                </ul>
+
+                <h4>Compatible Upgrade</h4>
+                <p>If you are upgrading from 4.1.2 and are concerned about compatibility, you should add this to your API initialization:</p>
+<?Code?>
+  $this->add('Controller_Compat');
+<?/?>
+
+
+                adds a whole <b>4 new examples</b> into the downloadable ZIP archive. To keep things simple we decided to drop all the different ZIP files and have only one - agiletoolkit-4.1.2.zip. There are also bugfixes such as ability to use full url with getDestinationURL().</p>
 
         <h4><span class="date">August 16<em>th</em></span>Enable use of callback in $field->validateField()</h4>
 <?Code?>

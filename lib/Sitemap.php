@@ -203,6 +203,7 @@ class Sitemap extends AbstractController{
                     'mongo'=>'Mongo (4.2)',
                     ),
                 ),
+                */
             'dsql'=>array(
                 'Dynamic Queries',
                 'how'=>'How to Use',
@@ -212,6 +213,7 @@ class Sitemap extends AbstractController{
                 '...',
                 'extend'=>'Extending',
                 ),
+            /*
             'auth'=>array(
                 'Authentication',
                 'basic'=>'Basic Authentication Class',

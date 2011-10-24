@@ -59,7 +59,7 @@ class AgileToolkitWeb extends ApiFrontend {
         $this->auth=$this->add('FrontendAuth');
         $this->auth->setModel('ATK_User_Valid');
 
-        if($_GET['t_recovery'] || $_GET['t_register'])
+        if($_GET['t_recovery'] || $_GET['t_register'] || $_GET['t'])
             $this->checkTokens();
 
         if($this->auth->isLoggedIn()){
@@ -75,6 +75,7 @@ class AgileToolkitWeb extends ApiFrontend {
     function checkTokens(){
         if($_GET['t_recovery'])$t=$_GET['t_recovery'];
         if($_GET['t_register'])$t=$_GET['t_register'];
+        if($_GET['t'])$t=$_GET['t'];
 
         $this->dbConnectATK();
         // Attempt to identify user by token
