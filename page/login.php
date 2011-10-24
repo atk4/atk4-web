@@ -36,6 +36,9 @@ class page_login extends Page {
             if($auth->verifyCredintials($l,$enc_p)){
 
                 // Manually log-in
+
+                setcookie($auth->name."_username",$l,time()+60*60*24*30*6);
+                setcookie($auth->name."_password",$p,time()+60*60*24*30*6);
                 $auth->login($l);
 
                 $auth->model->set('logged_dts',date('Y-m-d H:i:s'))->update();
