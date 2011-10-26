@@ -30,6 +30,7 @@ class page_content_surveys extends Page {
 
         if($surv_crud->grid){
             $surv_crud->grid->addColumn('button','invite');
+            $surv_crud->grid->addPaginator(50);
             if($_GET['invite']){
                 $surv_crud->grid->getModel()->loadData($_GET['invite'])->sendInvite();
                 $surv_crud->grid->js(null,$this->js()->univ()->successMessage('Invited'))->reload()->execute();
