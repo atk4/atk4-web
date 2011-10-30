@@ -11,7 +11,7 @@ class AgileToolkitWeb extends ApiFrontend {
     function addDefaultLocations($base_directory){
         if($this->locale){
             $this->addLocation('locale/'.$this->locale,array(
-                        'php'=>'libhuj',
+                        'php'=>'lib',
                         'page'=>'page',
                         'template'=>'templates',
                         ))->setBasePath($base_directory.'/locale/'.$this->locale)
@@ -30,6 +30,7 @@ class AgileToolkitWeb extends ApiFrontend {
         $this->addLocation('atk4-addons',array(
                     'template'=>'misc/templates',
                     'mail'=>'misc/templates/mail',
+                    'js'=>'misc/templates/js',
                     'php'=>array('mvc',
                         'billing/lib',
                         'misc/lib',

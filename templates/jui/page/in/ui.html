@@ -1,43 +1,72 @@
-<div class="g-row" id="doc-ref">
+<div class="g-row">
 	<div class="g-6">
-        <h3>Fully-functional professional UI</h3>
+        <h3>Graphics User Interface for The Web</h3>
         <p>
-        Cross-browser and pixel-perfect Web User Interface based on Web Standards such as Grid System and jQuery UI Framework
-        are used by some high-end designers. Agile Toolkit includes all that and requires no effort from you to start usign
-        it. All the UI is completely built in HTML and can function even without JavaScript support.
-        </p>
+        Agile Toolkit implements an object-oriented approach to building Web User Interface. Inspired by the Desktop Graphical
+        User Interfaces, everything in Agile Toolkit is an object with ability to "render" into HTML.</p>
+
         <p>
-        Typography and many UI elements are bundled in Agile Toolkit making it a perfect platform for web software, website
-        or community portal.
-        </p>
-    </div>
-	<div class="g-6">
-        <h3>Web Platform Development</h3>
+        Powerful Object-Oriented architecture enables you to efficiently use existing View classes as-is or
+        extend them to customize.</p>
+
         <p>
-        Agile Toolkit is well suited for web platform development as well as Software as a Service applications. It includes
-        ability to change CSS themes through Themeroller, add your own CSS or completely replace every bit of HTML produced.
-        What's even more amazing is that you can only change what you need to change, Agile Toolkit automatically looks in
-        several directories for that CSS file.
-        </p>
-        
-        <p>Below is the same object inserted twice with different templates:</p>
-    </div>
-</div>
+        Agile Toolkit allows you to specify a custom template on the "object" level. It will allow some of the generic
+        object look fresh, create complex layouts on your pages or create re-usable HTML-snippets.</p>
+
+<h4>What can you do in 8 lines of ONLY-PHP code!</h4>
+
 <?Execute?>
-$col=$page->add('Columns');
-$left=$col->addColumn(6);
-$right=$col->addColumn(6);
-
-$left->add('H3')->set('Default');
-$right->add('H3')->set('Custom');
-
-$g=$right->add('MVCGrid',null,null,array('grid_striped'));
-$g->setModel('Employee',array('name','salary'));
-$g->dq->limit(3);
-
-$g=$left->add('MVCGrid');
-$g->setModel('Employee',array('name','salary'));
-$g->dq->limit(3);
-$g->addTotals();
-
+$view=$page->add('View');
+$form=$view->add('Form');
+$form->addField('line','name');
+$form->addSubmit('Greet');
+if($form->isSubmitted()){
+  $js=$form->js()->remove();
+  $js=$view->js(null,$js)->text('Hello, '.$form->get('name'))->hide()->fadeIn();
+  $form->js()->fadeOut('slow',$js->_enclose())->execute();
+}
 <?/?>
+
+    </div>
+	<div class="g-6">
+        <h3>Standard Elements</h3>
+
+<div class="g-row">
+	<div class="g-4">
+        <p>
+        Agile Toolkit ships with dozens of standard components you can use out-of-the-box. These include
+        Buttons, Forms, Lists, Grids, Trees, Frames. Some are further enhanced with jQuery UI Widgets such as sliders,
+        drag&amp;drop, lasso-selection. If you miss one, it's a snap to create your own class.
+        </p>
+
+</div> <div class="g-2">
+
+<div style="float: right; border: 1px dashed gray; padding: 4px">
+<?Execute?>
+$page->add('Alex');
+<?/?>
+  <center>"Alex" View Class</center> 
+  </div>
+
+
+    </div></div>
+<h3>View inside View</h3>
+<div class="g-row">
+	<div class="g-4">
+<p>Agile Toolkit makes it possible to add View into any other View and position it anywhere. "Icon" is a
+stand-alone class and has no relations with "Frame", yet one can be placed into another with just 3 lines of PHP code. Real-time rendered result:</p>
+</div> <div class="g-2">
+
+<?Execute?>
+$b=$page->add('Frame')->setTitle('Sample');
+$b->add('Icon')->set('fun-happy');
+$b->add('Text')->set('Text Label');
+<?/?>
+  <br/>
+
+<?Execute?>
+// $page->add('Button')->set('Continue »')->setStyle('float','right');
+<?/?>
+  </div></div>
+ </div>
+</div>

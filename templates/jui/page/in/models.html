@@ -1,30 +1,60 @@
-<div class="g-row" id="doc-ref">
+<div class="g-row">
 	<div class="g-6">
-        <h3>Introducing Models</h3>
+        <h3>Open for Business</h3>
         <p>
+        Today Agile Toolkit already powers over thousands of sites big and small — On-Line accounting SaaS, loan calculators,
+        time planners, bug-trackers, finance and inventory managers, blogs and personal sites. This is made possible by
+        features such as:
+        <ul>
+          <li>Built-in Integrated ORM system</li>
+          <li>Database Dynamic Query Language</li>
+          <li>Object-Oriented Model Layer</li>
+          <li>Transparent injection prevention</li>
+          <li>Development and Deployment mode</li>
+          <li>Visual Unit-testing framework</li>
+          <li>Customizable Routing, Application</li>
+          <li>Integrated Filestore with volume support</li>
+          <li>Many more...</li>
+
+        </ul>
+
+
+
+
+
+
         Model implementation in Agile Toolkit gives you a great opportunity to bind Views to a business entity. Models,
-        implemented as pure PHP classes, define properties, behaviour, relations and conditions of a business entity. Once
-        defined they can be inherited and used inside any View - Form, Grid, Lister, Auth and so on.
+        implemented as pure PHP classes. They define properties, behaviour, relations and conditions of a business entity. Once
+        defined they can be inherited and used inside any View.
 
         </p>
     </div>
 	<div class="g-6">
-        <h3>View-level integration</h3>
-        <p>
-        Instead of associating each page with model, Agile Toolkit associates it on a View level. That means you can have
-        multiple elements on your page associated with different models working seamlessly.
+        <h3>Goal-focused development</h3>
+        <p>Need results fast? Focus on your goals rather than technical implementation. You can always come and re-vise things.
+        With Agile Toolkit the maintainability of your code will be on a completely new level
         </p>
-        <p>Form below actually adds employees to the database:</p>
-    </div>
-</div>
-<?Example?>
+
+        <h4>Example using "Employee" model</h4>
+
+<?Execute?>
 $form=$page->add('MVCForm');
+$form->js(true)->addClass('ignore_changes');
+$grid=$page->add('MVCGrid');$grid->addPaginator(5)->setModel('Employee',array('name','salary'));
+$grid->dq->order('id',true);$grid->addColumn('delete','delete');
 $form->setModel('Employee',array('name','salary'));
-$form->addSubmit();
-if($form->isSubmitted()){
+$form->addSubmit('Add');
+$form->onSubmit(function($form) use($grid){
 	$form->update();
-	$form->js()->univ()
+        $form->js(null,array(
+          $grid->js()->reload(),
+          $form->getElement('name')->js()->val('')->focus(),
+          $form->getElement('salary')->js()->val(''),
+        ))->univ()
 		->successMessage('Employee added')
 		->execute();
-}
+});
 <?/?>
+
+    </div>
+</div>

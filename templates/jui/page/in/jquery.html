@@ -1,35 +1,77 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-6">
-        <h3>jQuery (UI) back-bone</h3>
+        <h3>jQuery UI Based API and AJAX</h3>
         <p>
-        Pick almost any jQuery Add-on, save it into local directory and with single line of code you can get this working.
-        Below is the demo of a masked-input. What's even cooler is that addon was loaded dynamically when you first opened
-        this pop-up.
-        </p>
-        <p>
-        Agile Toolkit takes advantage of jQuery UI widget factory and provides a lot of extensions. For example, if you type
-        anything into the field then attempt to close this frame, you will get un-saved data warning.
-        </p>
+        Agile Toolkit is based on industry-standard jQuery and jQuery UI to build interactivity between user interface and
+        server-side. Through abstraction, you will be able to harness power of AJAX, jQuery Plugins and jQuery UI Widgets
+        from the comfort of the PHP. Even if your plugin have never been used with Agile Toolkit, integrating it will be
+        a super-easy. Next 2 examples contain zero JavaScript code.</p>
+        <h4>The Math Problem</h4>
+        <?Execute?>
+$f=$p->add('Form',null,null,array('form_empty'));
+$f->addField('line','a','')
+  ->set(2)->setProperty('size',4)
+  ->template->trySet('after_field','+');
+$f->addField('line','b','')
+  ->set(3)->setProperty('size',4)
+  ->add('Icon',null,'after_field')
+  ->set('arrows-right')->setStyle('margin-left','9px')
+  ->setAttr('title','Will calculate result on the server through AJAX request')
+      ->js('click',$f->js()->submit());
+$sum=$f->addField('line','sum','')
+  ->setProperty('size',6);
+if($f->isSubmitted()){
+
+  // If security check above fails, this
+  // code can't be reached no matter what
+
+  $sum->js()
+      ->val($f->get('a')+$f->get('b'))
+      ->execute();
+}
+<?/?>        
+<br/>
+        <?Execute?>
+        $this->add('Hangman');
+        <?/?>
+
+        
+
+
     </div>
 	<div class="g-6">
-        <h3>jQuery chains and libraries</h3>
-        <p>
-        Agile Toolkit provides integration of jQuery on object level. When method "js" is called on any view, right from PHP
-        you can define behaviours and make different PHP objects interact in the browser.
-        </p>
+        <h3>Everything just works!</h3>
+        <p>If you are developer with experience, you will find yourself often over-thinking the framework. Once you
+        understand core principles of Agile Toolkit, you will be able to read any code written for Agile Toolkit
+        with great ease.
         
-        <p>This is a handy approach, but it's limited. If you are comfortable with JavaScript you can add functions
-        into the "univ" class such as "demoFunction()" below. You can also write your own jQuery plugins or widgets for more
-        complex behaviour, Agile Toolkit will take care of dynamic loading and anything else.</p>
-    </div>
+        </p>
+        <?Execute?>
+        $page->js()
+          ->_load("highcharts/highcharts")
+          ->_load("ui.highcharts");
+
+  $page->add("View_HtmlElement")
+       ->js(true)
+       ->univ()
+       ->highchart(array(
+       'chart'=>array('width'=>480,'height'=>300),
+       'title'=>array('text'=>'Why Developers love Agile Toolkit?'),
+       'series'=>array(array('type'=>'pie',
+          'data'=>array(
+            array('Simplicity',40),
+            array('User Interface',30),
+            array('Business Logic',20)
+            )
+            ))));
+        <?/?>
+        
 </div>
-<?Example?>
+<!--
 $form=$page->add('Form');
 $form->addField('line','phone')->js(true)
     ->_load('jquery.maskedinput-1.3.min')
-    ->mask('(999) 999-9999');
-$form->addButton('Click Me')
-    ->js('click')->univ()
-    ->demoFunction();
-<?/?>
+    ->mask('(999) 999-9999')
+    ->univ()->disableEnter();
+    -->
