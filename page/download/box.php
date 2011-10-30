@@ -3,7 +3,7 @@ class page_download_box extends Page {
     function init(){
         parent::init();
 
-        $file='agiletoolkit-4.1.2.zip';
+        $file='agiletoolkit-4.1.3.zip';
 
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
