@@ -20,7 +20,7 @@ class Model_Book extends Model_Table {
     function addMultipleBooks($data){
         $this->unloadData();
         foreach($data as $row){
-            $this->insert($data);
+            $this->insert($row);
         }
     }
 }
