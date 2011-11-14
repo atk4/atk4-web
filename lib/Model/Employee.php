@@ -1,10 +1,7 @@
 <?php
 class Model_Employee extends Model_Person {
-	function defineFields(){
-		parent::defineFields();
-
-		$this->addField('name')
-			->mandatory(true);
+	function init(){
+		parent::init();
 
 		$this->addField('days_worked')
 			->system(true)

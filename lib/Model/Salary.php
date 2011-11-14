@@ -3,8 +3,8 @@ class Model_Salary extends Model_Table {
 	public $entity_code='salary';
 	public $table_alias='s';
 
-	function defineFields(){
-		parent::defineFields();
+	function init(){
+		parent::init();
 
 		$this->addField('employee_id')
             ->caption('Paid To')
