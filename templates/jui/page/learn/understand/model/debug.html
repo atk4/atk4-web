@@ -61,7 +61,7 @@ class Model_Book extends Model_Table {
         $this->api->db->commit();
     }
 <?/?>
-        <p>Catching an exception will allow you to manipulate it - ie, by calling addMoreException(). This method returns "$this" - the exception  you are throwing again and which will be handled by the default application error handler - but your additional information will be included.</p>
+        <p>Catching an exception will allow you to manipulate it - ie, by calling addMoreInfo(). This method returns "$this" - the exception  you are throwing again and which will be handled by the default application error handler - but your additional information will be included.</p>
 
         <h3>exception() method</h3>
         <p>Agile Toolkit defines the exception() method globally. Each model can define which exception class it uses, and the exception() function will return an instance of this class. This also allows for a more flexible syntax in the PHP code: throw $this->exception()->addMoreInfo(..)</p>
