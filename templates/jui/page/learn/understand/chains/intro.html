@@ -22,8 +22,8 @@ $grid->js(true)->hide();
 <?/?>
 
     <h2>Arguments</h2>
-    <p>When Chains are converted into native JavaScript, arguments are are recursively converted:</p>
-
+    <p>jQuery_Chain objects convert all method calls into respective jQuery code. The native PHP arguments are automatically converted into JavaScript. Native types such as integers and strings are properly quoted and converted into JavaScript.</p>
+    <p>If you specify array() then the chain will try to determine if it's an array or a hash. Hash is converted into {key:value,..} and PHP arrays are converted into ['a','b','c'] in JavaScript. If you use one chain as an argument to a method call on another chain, then that chain would be converted into JavaScript code first and then inserted appropratelly.</p>
 <?Code?>
 $x = 2+2;
 $js = $page->js(true)
@@ -33,6 +33,14 @@ $js = $page->js(true)
 // Produces: 
 // $('#AgileWeb_learn_understand_chains_intro_doc_example_view')
 //    .css({'width':4}).html('\x3cb\x3eO\x27Relly\x3c/b\x3e')
+
+<?/?>
+
+<?Code?>
+$field2 -> js(true)->val(  $field1->js()->val() );
+
+// Produces: 
+// $('#field2').val( $('#field1').val() );
 
 <?/?>
 
