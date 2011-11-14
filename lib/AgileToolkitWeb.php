@@ -195,6 +195,7 @@ class AgileToolkitWeb extends ApiFrontend {
     function dbConnectATK(){
         // Connect to administrative database
         parent::dbConnect($this->getConfig('atk_dsn'));
+        //$this->api->db=$this->add('DB',array('conf_pref'=>'atk_pdo'));
     }
     function getUser(){
         return $this->auth->getModel()->loadData($this->auth->get('id'));
