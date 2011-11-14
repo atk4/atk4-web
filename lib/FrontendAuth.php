@@ -12,6 +12,7 @@ class FrontendAuth extends AtkAuth {
                             )){
                     $this->loggedIn($_COOKIE[$this->name."_username"],$_COOKIE[$this->name."_password"]);
                     $this->memorize('info',$this->info);
+                    $this->owner->greet='Welcome back to Agile Toolkit.';
                 }
             }
         }

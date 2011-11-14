@@ -4,6 +4,7 @@
  */
 class AgileToolkitWeb extends ApiFrontend {
     public $locale=null;
+    public $greet;
     function __construct($locale=null){
         $this->locale=$locale;
         parent::__construct('AgileWeb','jui');
@@ -138,6 +139,7 @@ class AgileToolkitWeb extends ApiFrontend {
         }elseif(preg_match('/t\.co/',$info['host'])){
             $m='Welcome from Twitter! Please tweet about us if you like what you find.';
         }
+        if($this->greet)$m=$this->greet;    // just auth'ed
         if($m)$this->js(true)->univ()->successMessage($m)->execute();
 
         if($this->page_object){
