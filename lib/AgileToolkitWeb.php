@@ -130,6 +130,15 @@ class AgileToolkitWeb extends ApiFrontend {
                 $this->js()->_selectorThis()->attr('href'),array('customClass'=>'popup-contactus', 'width' => 700, 'resizable' => false, 'draggable' => false));
 
 
+        $info=parse_url($_SERVER['HTTP_REFERER']);$m=null;
+        if(preg_match('/stackoverflow/',$info['host'])){
+            $m='Welcome from StackOverflow.com! Please give us a "vote up" if you like what you find here.';
+        }elseif(preg_match('/facebook/',$info['host'])){
+            $m='Welcome from Facebook! Please "like us" if you like us.';
+        }elseif(preg_match('/t\.co/',$info['host'])){
+            $m='Welcome from Twitter! Please tweet about us if you like what you find.';
+        }
+        if($m)$this->js(true)->univ()->successMessage($m)->execute();
 
         if($this->page_object){
             if($this->page_object->template->is_set('seo_keywords')){
