@@ -44,7 +44,7 @@ class Model_Book extends Model_Table {
         <p>By default a field is defined as being of type "string", however you can set it to a different type. There will be a chapter further  listing all the available types, as well as documentation on how you can create your own types.</p>
 
         <h3>Sub-selects</h3>
-        <p>refModel() defines a master-child one-to-many relationship between the two models. In our case we are instructing the Book model that "author_id" is a reference to the "id" field of the "Author" model. You would then need to write an Author_Model class for the Author model, and a Model_Publisher, if you use this model as an example.</p>
+        <p>refModel() defines a master-child one-to-many relationship between the two models. In our case we are instructing the Book model that "author_id" is a reference to the "id" field of the "Author" model. You would then need to write an Model_Author class for the Author model, and a Model_Publisher, if you use this model as an example.</p>
 
         <p>Calling refModel with a field name ending in "_id" will actually create 2 field definitions. "publisher_id", for instance, will be defined as integer and will have type "reference", and a field "publisher" will also be added, with exactly same properties - but it will be a calculated field and will use sub-select to determine the value.</p>
 
