@@ -272,7 +272,7 @@ class AgileToolkitWeb extends ApiFrontend {
       exit;
       }*/
     function page_examples($p){
-        header('Location: http://demo.atk4.com/');
+        header('Location: http://codepad.agiletoolkit.org/');
         exit;
     }
     function page_amodules3($p){ $this->api->redirect('/'); }

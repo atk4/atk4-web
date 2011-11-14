@@ -35,7 +35,8 @@ class VideoPlayer extends View {
             case'f4v':
                 $this->template=$this->template->cloneRegion('flash');return parent::render();
             default: 
-                $this->add('View_Error')->set('Unknown extension: '.htmlspecialchars($e))->render();
+                $this->api->redirect($this->getModel()->get('src'));
+                //$this->add('View_Error')->set('Unknown extension: '.htmlspecialchars($e))->render();
         }
         //var_dump(pathinfo($s));
         $this->template->del('resources');

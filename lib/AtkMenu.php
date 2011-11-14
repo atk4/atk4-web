@@ -34,7 +34,8 @@ class AtkMenu extends Menu {
 				$menu->addMenuItem('Introduction','intro');
 				$menu->addMenuItem('Learning','learn');
 				$menu->addMenuItem('API Reference','doc/ref');
-				$menu->addMenuItem('Add-ons','a');
+				//$menu->addMenuItem('Add-ons','a');
+				$menu->addMenuItem('Examples','examples');
 
 				break;
 
