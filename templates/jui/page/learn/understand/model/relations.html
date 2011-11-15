@@ -45,7 +45,7 @@ class Model_Book_Borrowed extends Model_Book {
 
 <?Code?>
 $this->addRelatedEntity('bp','publisher','publisher_id');
-$this->addField('publisher_name')->relEntity('bb','name');
+$this->addField('publisher_name')->relEntity('bp','name');
 <?/?>
 
 <?MoreInfo?>Inserting records in a model with relations...
