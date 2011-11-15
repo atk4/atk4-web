@@ -1,0 +1,61 @@
+<?$Content?>
+
+<h1>Different ways to get your query data</h1>
+<p>DSQL object offers you a number of ways how you can fetch the data from the query.</p>
+
+<h3>Just get all or some of the data</h3>
+<p>These functions will always executes query, fetches data and returns to you. Calling getRow() multiple times will continue to give you first row of data.</p>
+
+<?Code?>
+$data = $q->get();        // same as getAll();
+$data = $q->getAll();     // returns all data as array of hashes, array() if query produced no results.
+$data = $q->getRow();     // returns only first row of data, null if query produced no results.
+$data = $q->getOne();     // returns only single value, null if query produced no results or result was NULL.
+<?/?>
+
+<h3>Sequentially fetching data</h3>
+<p>These functions will execute query only if it wasn't executed yet. Calling them subsequently will return more results or null if no more results are returned from the Database.</p>
+
+<?Code?>
+while($row = $q->fetch()){
+  // Will loop through results fetching one row at a time. You can access your data through $row['fieldname'];
+}
+
+while($row = $q->fetch()){
+  // Will loop through results fetching one row at a time. You can access your data through $row['fieldname'];
+}
+<?/?>
+
+<h4>Iterator support</h4>
+<p>DSQL object implements Iterator, which means you can use it inside foreach() block. It will return same thing as fetch() does, but the syntax is nicer.</p>
+
+<?Code?>
+foreach($q as $row){
+  // $row is associative array.
+}
+<?/?>
+
+<h4>Statement access</h4>
+<p>If you want to do querying directly, you can also use PDO statement. Refer to <a href="http://www.php.net/manual/en/class.pdostatement.php">PDO documentation</a>.</p>
+
+<?Code?>
+$q->execute();    // Prepares and Executes statement
+$stmt = $q->stmt;
+<?/?>
+
+<h2>Use with Lister</h2>
+<p>Starting from 4.2, Lister class and all derived classes (CompleteLister, Grid) accept Iterate-able classes through setSource() method. Therefore you can use this syntax:</p>
+
+<?Code?>
+
+$q=$this->api->db->dsql();
+$q->table('user')->field('name')->field('surname');
+
+$grid = $this->add('Grid');
+$grid->addColumn('text','name');
+$grid->addColumn('text','surname');
+
+$grid->setSource( $q );   // Associate Grid with data-source.
+<?/?>
+
+<?$Next?>

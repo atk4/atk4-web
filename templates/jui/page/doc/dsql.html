@@ -2,6 +2,73 @@
 
 <div class="g-row" id="doc-ref">
   <div class="g-6">
+
+    <h3>Dynamic SQL Object</h3>
+    <div class="g-row">
+      <div class="g-4">
+<?Code?>
+$name = $this->api->db->dsql()
+  ->table('user')
+  ->field('name')
+  ->where('id',$_GET['id'])
+  ->do_getOne();
+<?/?>
+      </div>
+      <div class="g-2">
+        <p>Object-oriented interface to SQL language. Many objects in Agile Toolkit rely on DSQL.</p>
+      </div>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Table of Contents:</b>
+      <?$toc?>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Other Resources, Blog posts:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/model<?/?>">Introduction to Models</a></div>
+        <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Creating Database Queries with DSQL</a></div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="g-6">
+    <p>When you use "Grid" object which loads data from SQL, how would you customize the query it's using? By accessing and manipulating $grid->dq property you can add additional fields, conditions, joins, options into the main query of a Grid. The same principle applies to other Views and Models</p>
+
+    <p>Models can produce DSQL object if you call $model->dsql(). This is a preferred way to perform multi-record operations inside your Model methods or using models in sub-queries.</p>
+
+    <h4>DB / DBlite Class Reference (PHPDoc)</h4>
+    <p>Versions up to 4.1.* use <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DBlite.html" target="_blank">DBlite</a> class for accessing database. This class is accessible through api->db property and is set when api->dbConnect() is called.</p>
+    <p>From Agile Toolkit 4.2 the PDO-compatible implementation (<a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DB.html" target="_blank">DB</a>) is used. It is backwards compatible with DBlite.</p>
+
+    <p>Your DB class produces instance of <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DB_dsql.html" target="_blank">DSQL (4.2)</a>, <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DBlite_dsql.html" target="_blank">DSQL (up to 4.1)</a>,  objects when you call api->db->dsql()</p>
+
+    </div>
+  </div>
+  <?$Next?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
     <p>Dynamic SQL is a object-oriented model for building your query. It allows you to interact with the object in a structured way by adding additioal criterias, fields, joins or parameters, then the object is used natively by View elements.</p>
 
     <p>By it's nature DSQL allows some logical transparency of the back-end database storage, although the only actively used implementation is for MySQL</p>

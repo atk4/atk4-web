@@ -1,0 +1,107 @@
+<?$Content?>
+
+<h1>Adding condition to your DSQL</h1>
+
+<p>Calling $q->where() method will narrow down the returned data-set by applying additional condition. Method, however, accepts many different formats of arguments.</p>
+
+<h3>Basic Usage: where(string, primitive)</h3>
+
+<p>The basic rule is that the first argument is a string. The second argument is a primitive type (string, number) and will be automatically converted into parameter.</p>
+
+<?Code?>
+$q->where('id',1);        // where id=:a    'a'=>1
+$q->where('id>',1);       // where id>:a    'a'=>1
+$q->where('id!=',1);      // where id!=:a   'a'=>1
+$q->where('id like',1);   // where id like :a   'a'=>1
+$q->where('id in',array(1,2));      // where id in(:a,:b)   'a'=>1, 'b'=>2
+<?/?>
+
+<p>If the second argument is "null" then operation "is null" is used automatically. Several ways to call it can be used.</p>
+
+<?Code?>
+$q->where('id',null);       // where id is NULL
+$q->where('id is',null);    // where id is NULL
+$q->where('id!=',null);     // where id is NOT NULL
+$q->where('id is not',null); // where id is NOT NULL
+<?/?>
+
+<h3>Using with Expressions: expr()</h3>
+
+<p>You may use $q->expr() if you are willing to insert expressions.</p>
+
+<?Code?>
+// Single argument mode
+$q->where($q->expr('a=b'));
+
+// Using operator with the first argument
+$q->where('date>',$q->expr('DATE_SUB(CURDATE(), INTERVAL 2 MONTH)');
+
+// Expression may contain parameters. Unlike where('id',1) this will not use equation operator
+$q->where('age',$q->expr('between :left and :right')->param(array('left'=>$l, 'right'=>$r)));
+
+// both arguments may be expressions
+$q->where($this->expr('length(password)'),$q->expr('between 3 and 10'));
+
+// Alternative way to specify parameter
+$q->where($this->expr('length(password)'),'>',5);
+<?/?>
+
+
+<h3>AND conditions: where(..)->where()</h3>
+<p>Calling where() multiple times will require all of the conditions to be met. Using "AND" operator.</p>
+
+
+<h3>OR conditions: where(array)</h3>
+<p>Callng where() with a single array argument will use OR to join those conditions. The same principles apply on the array as no the actual where() call. You can
+even specify arrays recursively</p>
+
+<?Code?>
+$q->where(array(
+  array('id',1),  // where (id=:a or id=:b)  array('a'=>1, 'b'=>2)
+  array('id',2)
+  ));
+
+$q->where(array(
+  array($q->expr('len(name)'),'>',5),
+  array($q->expr('a=b'))    // where (len(name)>:a or a=b)  array('a'=>5)
+  ));
+
+<?/?>
+
+<p>There is alternative way to use OR conditions. Use whichever you like more. on() method relies on expr() to produce a new query.</p>
+
+<?Code?>
+$q->where( $q->or()->where('a',1)->where('b>',5) );
+<?/?>
+
+
+<h3>Subqueries</h3>
+<p>You may use $q->dsql() as a quick way to produce sub-queries. Calling this method will create a new DSQL object, which you can use similarly as expression.</p>
+
+<?Code?>
+$q
+ ->table('author')
+ ->field('name')
+ ->where('book_id', $q->dsql()->table('book')->where('is_rented','Y') );   // by default "id" field is is used.
+  // produces  select name from author where book_id in (select id from book where is_rented=:a)    array('a'=>'Y')
+  // Note: This is quite ineffective way for listing all authors who's books are rented
+
+$q
+  ->table('author')
+  ->field('name')
+  ->where(
+    $q->dsql()
+      ->table('book')
+      ->where('author_id', $q->getField('id'))
+      ->field('count(*)'),
+    '>',5);    
+  // produces:  select name from author where (select count(*) from book where author_id=author.id)>5
+  // Displays names of authors who have more than 5 books.
+
+<?/?>
+
+<h4>How DSQL produces queries?</h4>
+<p>Actually quite similarly to how pages are being rendered. When query needs to be executed, it looks at the "template" which consists of different parts. Those parts are then rendered through method calls which may subsequently render sub-queries. Every time DSQL ensures that parameters are properly assigned.</p>
+
+<p>You can learn more in the section explaining how DSQL can be extended.</p>
+<?$Next?>

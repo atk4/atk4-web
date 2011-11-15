@@ -2,13 +2,47 @@
 
 <div class="g-row" id="doc-ref">
   <div class="g-6">
-    <p>Application class is what binds and holds your web application together. During the execution of your web applcation, a single Application class is created
-    and carries all the necessary tasks. Appplication class relies on many other classes such as <a href="<?page?>doc/api/controller<?/?>">Application Controllers</a> or <a href="<?page?>doc/page<?/?>">Pages</a> to do routing, URL generation, rendering, database operations and more.</p>
 
-    <p>In your application you will define your own Application class. Of course you would excend it from one of the pre-defined Api classes, whichever suits yor nedes:</p>
+    <div class="g-row">
+      <div class="g-2">
+        <img src="<?template?>images/schemas/api_doc.png<?/?>"/>
+      </div>
+      <div class="g-4">
+        <h3>Application (api) Class</h3>
+        <p>Application class delegates all of the functionality of your applicaiton to Pages, Views, Controllers and Models.
+        </p>
+      </div>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Table of Contents:</b>
+      <?$toc?>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Other Resources, Blog posts:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/api<?/?>">Introduction to Application Classes</a></div>
+        <div><a href="http://agiletoolkit.org/blog/integrating-agile-toolkit-with-wordpress/">Integrating Agile Toolkit with WordPress</a></div>
+        <div><a href="http://agiletoolkit.org/blog/wp-admin/post.php?post=772&action=edit">Agile Toolkit for CodeIgniter developer</a></div>
+        <div><a href="http://agiletoolkit.org/blog/bundling-agile-toolkit-libraries-into-a-single-php-file/">Bundling Agile Toolkit Libraries into a single PHP file</a></div>
+      </div>
+    </div>
 
 
-    <h4>Api Classes</h4>
+
+  </div>
+  <div class="g-6">
+    <p>When you are developing your own application you typically would inherit one of Application Classes to make up your own Application object. By default it's located in lib/Frontend.php. This class is instantiated inside your top-most "index.php" file.</p>
+
+    <p>In your Application Class you may define more functions which you think should be available from anywhere (such as getCurrentUser()) and perform actions, which you think should always be performed (Such as connecting to DataBase)</p>
+
+    <?MoreInfo?>* Why API classes extend AbstractView?
+    <p>You may wonder, why Application class designed for command-line use extends the View. Why application is based on view in the first place?</p>
+    <p>The reason is because in descendants such as ApiFrontend it's essential that application would have it's own template and be capable of rendering itself. This could have been done through a separate object, but we decided to keep it simple and make it this way.</p>
+    <?/?>
+
+    <h4>Core Class Reference (PHPDoc)</h4>
 
     <div class="box blue-noised p-10px">
       <div class="white">
@@ -16,66 +50,29 @@
           <thead>
             <tr>
               <th>Class</th>
-              <th>Extends</th>
               <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><a href="<?page?>ref/ApiCLI<?/?>" class="dynamic">ApiCLI</a></td>
-              <td>AbstractView*</td>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiCLI.html" class="dynamic">ApiCLI</a></td>
               <td>Minimum API Implementation for Command-Line</td>
             </tr>
             <tr>
-              <td><a href="<?page?>ref/ApiWeb<?/?>" class="dynamic">ApiWeb</a></td>
-              <td>ApiCLI</td>
-              <td>Minimum Web Application</td>
-            </tr>
-            <tr>
-              <td><a href="<?page?>ref/ApiFrontend<?/?>" class="dynamic">ApiFrontend</a></td>
-              <td>ApiWeb</td>
-              <td>Includes Routing, Layouts adn Pages</td>
-            </tr>
-            <tr>
-              <td colspan=3>addons</td>
-            </tr>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiCLI.html" class="dynamic">ApiWeb</a></td>
+              <td>Minimum Web Application. Great for <a href="http://agiletoolkit.org/blog/integrating-agile-toolkit-with-wordpress/"
+                  >integrating into other frameworks.</td>
+              </tr>
+              <tr>
+                <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiFrontend.html" class="dynamic">ApiFrontend</a></td>
+                <td>Extends Web App with Routing, Layouts and Page Classes</td>
+              </tr>
+            </tbody>
+          </table>
 
-
-            <tr>
-              <td><a href="#" class="dynamic">ApiCMS (planned)</a></td>
-              <td>ApiWeb</td>
-              <td>Shows content from database</td>
-            </tr>
-            <tr>
-              <td><a href="#" class="dynamic">ApiInstaller (planned)</a></td>
-              <td>ApiFrontend</td>
-              <td>Installs your app, addons, databases</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <?MoreInfo?>* Why API is also a View?
-        <p>You may wonder, why Application class designed for command-line use extends the View. Why application is based on view in the first place?</p>
-        <p>The reason is because in descendants such as ApiFrontend it's essential that application would have it's own template and be capable of rendering itself. This could have been done through a separate object, but we decided to keep it simple and make it this way.</p>
-        <?/?>
-
+        </div>
       </div>
-    </div>
 
-  </div>
-  <div class="g-6">
-    <div class="ref-item box blue-noised">
-      <b>Other Resources:</b>
-      <div class="details white">
-        <div><a href="<?page?>learn/understand/api<?/?>">Introduction to Application Classes</a></div>
-      </div>
-    </div>
-
-    <div class="ref-item box blue-noised">
-      <b>Form-related documentation</b>
-      <p>Select section:</p>
-      <?$toc?>
     </div>
   </div>
-</div>
-<?$Next?>
+  <?$Next?>

@@ -1,0 +1,79 @@
+<?$Content?>
+
+<h1>Specifying fields to DSQL</h1>
+<p>To specify fields you should call the field() method, although it does support several calling patterns.</p>
+
+<h3>Basic use. field(string)</h3>
+<p>You can specify one or several fields to be queried simply by listing field names in a string:</p>
+
+<?Code?>
+$q->field('name,surname');
+<?/?>
+
+<p>The second argument can be used to specify which table field is queried from. That's handy when you are joining tables.</p>
+
+<?Code?>
+$q
+  ->table('user')
+  ->table('address')
+  ->where($q->expr('address.user_id=user.id'))
+
+  ->field('name','user')
+  ->field('postcode','address');
+
+// Produces: select user.name, postcode.address from user,address where address.user_id=user.id
+<?/?>
+  
+<p>Obviously the table and field names will be properly quoted on all occasions.</p>
+
+<h3>Specifying field aliases. field(string,string,string) or field(array,string)</h3>
+<p>The third argument to field() will assign an alias for your field. The alias will be then used in the associative array which is used for data fetching.</p>
+
+<p>You can also specify list of fields in array, then you can use array keys as aliases.</p>
+
+<?Code?>
+$q
+  ->table('user')
+  ->table('address')
+  ->where($q->expr('address.user_id=user.id'))
+
+  ->field(array('address_alias'=>'alias','postcode'),'address')
+  ->field(array('name','surname'),'user')
+  ;
+
+// Produces: select alias.address  as alias, postcode.address, name.user, surname.user .....
+<?/?>
+
+<h3>Using expressions. field(object, alias)</h3>
+<p>Expressions can't use tables. Therefore if first argument is an object, second argument is treated as an alias instead. You still can use expressions inside arrays too.</p>
+
+<?Code?>
+$q->field($q->expr('length(name)'),'name_length');
+
+$q->field(array(
+  'name_length'=>$q->expr('length(name)'),
+  'surname_length'=>$q->expr('length(surname)')
+));
+<?/?>
+
+<h3>Subqueries</h3>
+<p>Similarly to expressions, you may use subqueries.</p>
+
+<?Code?>
+$q
+  ->table('author')
+  ->field('name')
+  ->field(
+    $q->dsql()
+    ->table('book')
+    ->where('author_id',$q->getField('id'))
+    ->field($q->expr('sum(pages)')),
+    'total_pages'
+  );
+
+// Produces: select name,(select sum(pages) from book where author_id=author.id) total_pages from author
+
+<?/?>
+
+<?$Next?>
+

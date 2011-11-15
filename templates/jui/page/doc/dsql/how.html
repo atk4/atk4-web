@@ -1,0 +1,53 @@
+<?$Content?>
+
+<h1>Basic Usage of Dynamic SQL Queries</h1>
+
+<p><font color="red">This is documentation for upcoming 4.2 release of Agile Toolkit and there might be minor in-compatibilities with 4.1.</font></p>
+
+<p>Unlike other objects which are added through "add" method in Agile Toolkit, to produce a new instance of DSQL you must call the "dsql" function.
+This function will return the DSQL object to you, which you can then manipulate and execute.</p>
+
+<p>There are several classes which implement the dsql() method:<ul>
+  <li>DB class. $this->api->db->dsql(); Associates the query with the database conneciton.</li>
+  <li>Model. $model->dsql(); Selects proper table and applies conditions automatically.</li>
+  <li>Another DSQL object. $query -> dsql(); Similar to $query->owner->dsql().</li>
+</ul>All queries are automatically added into the Database Object (api->db). </p>
+
+<h2>Querying data directly</h2>
+
+<p>There are number of methods which are using to "define" the query. You can call those methods several times and they always return the same $dsql object.</p>
+<?Code?>
+$db = $this->api->db->dsql();
+$db
+  ->table('user')
+  ->where('type','admin')
+  ->field('id');
+$data = $db
+  ->order('created_dts')
+  ->field('name,surname')
+  ->getAll();
+// Produces: array(
+//   array('id'=>1, 'name'=>'John', 'surname'=>'Smith'),
+//   array('id'=>2, 'name'=>'Joe', 'surname'=>'Blogs')
+// );
+//  
+<?/?>
+<p>This example demonstrates how you can create and manipulate DSQL object. It uses chaining if you want. getAll() method executes the query and returns data in array of hashes.</p>
+
+
+<p>Below is a different example, which uses a custom expression and fetches data on-demand. DSQL / Agile Toolkit does not support 
+
+<?Code?>
+foreach($this->api->db->dsql()->expr('show tables') as $row){
+  $table_name = pop($row);
+  $this->add('Text')->set('Table: '.$table_name);
+}
+<?/?>
+
+<p><b>WARNING:</b> ->expr() will return a clone of your current query. $q->expr('show tables'); $q->getAll(); would not work.</p>
+
+<?MoreInfo?>Other data fetching modes, Seeking and other features
+DSQL narrows functionality provided by PDO for simplicity. If you find that you require other fetching modes and other features, you can extend DSQL object or use $dsql->stmt.
+<?/?>
+
+<?$Next?>

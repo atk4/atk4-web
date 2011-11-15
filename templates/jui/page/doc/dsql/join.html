@@ -1,0 +1,121 @@
+<?$Content?>
+
+<h1>Querying Data From Multiple Tables. Joins</h1>
+<p>You can perform queries from multiple tables by calling table() several times and specifying conditions between tables, however you can also use join() method.</p>
+
+<h3>Basic table logic</h3>
+<p>
+When you call table() first time, it sets $dsql->main_table parameter to either name of that table or alias. It then can be used to produce expression containing the quoted field name.</p>
+
+<?Code?>
+$q->table('user');
+
+echo $q->getField('name');   // will output `user`.`name`
+<?/?>
+
+<p>You should note that getField returns object which can be cast to string, but it keeps the link with original query, therefore syntax like his is possible:
+
+<?Code?>
+$expr = $q->getField('name');
+
+$q->table('name');
+
+echo $expr;       // will output `user`.`name`
+
+<?/?>
+
+<p>If you call table() several times, it will set $dsql->main_table to "false" and getField won't be able to guess table name anymore. You would need to specify second argument to getField.</p>
+
+<?Code?>
+$q->table('user');
+$q->table('address');
+
+echo $q->getField('name','user');   // will output `user`.`name`
+<?/?>
+
+<p>If you are using join(), however, it will not reset main_table property, and you can still use getField like before.
+
+<?Code?>
+$q->table('user');
+$q->join('address');
+
+echo $q->getField('name');   // will output `user`.`name`
+echo $q->getField('name','address');   // will output `address`.`name`
+<?/?>
+
+<h3>Basic usage. join(table, [field])</h3>
+<p>The method join() has several ways to call it. The simplest is by specifying only one string argument.</p>
+<p>In this case the table is joined and the table_id from main_table will be used in the "ON" condition.
+
+<?Code?>
+$q->table('user')->join('address');
+
+ // will produce select user.id from user join address on address.id=user.address_id;
+<?/?>
+
+<p>By default the "id" of JOINED table is linked with the table_id in the main table. This can be changed, however. The "id" of JOINED table can be set
+to a different field if you specify that field with a dot when joining:</p>
+
+<?Code?>
+$q->table('user')->join('address.user_id');
+
+ // will produce select user.id from user join address on address.user_id=user.id
+<?/?>
+
+<p>As you noticed, the field from the main_table was changed to "id". If we want to specify that field manually, we can use second argument in the join() method:
+
+<?Code?>
+$q->table('user')->join('address.code','code');
+
+ // will produce select user.id from user join address on address.code=user.code
+<?/?>
+
+<p>Or we can also specify the table which should participate with the join if we use the dot in the 2nd argument also</p>
+
+<?Code?>
+$q->table('user')->join('manager');
+$q->join('address.code','manager.code');
+
+// will produce select user.id from user
+//   join manager on manager.id=user.manager_id
+//   join address.code=manager.code
+
+<?/?>
+
+<h3>Specifying join type</h3>
+<p>The third argument in the "join" method can be used to specify the type of join. You can use "left", "right" or "outer" or whatever join type is supported by your SQL. By default the join type is not specified.</p>
+
+<?Code?>
+$q->table('user')->join('manager',null,'left');
+$q->join('address.code','manager.code');
+
+// will produce select user.id from user
+//   left join manager on manager.id=user.manager_id
+//   join address.code=manager.code
+
+<?/?>
+
+<h3>Specifying table alias</h3>
+<p>Similarly to field() you can use array('alias'=>'table') as a first argument to the join()</p>
+
+<?Code?>
+$q->table('user')->join(array('m'=>'manager'));
+
+// will produce select user.id from user
+//   join manager m on m.id=user.manager_id
+
+<?/?>
+
+<p>You can also use multiple values for multiple joins like that.</p>
+
+<?Code?>
+$q->table('user')->join(array('m'=>'manager','a'=>'address'));
+
+// will produce select user.id from user
+//   join manager m on m.id=user.manager_id
+//   join address a on a.id=user.address_id
+
+<?/?>
+
+<?$Next?>
+

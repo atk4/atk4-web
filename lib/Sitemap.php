@@ -206,12 +206,14 @@ class Sitemap extends AbstractController{
                 */
             'dsql'=>array(
                 'Dynamic Queries',
-                'how'=>'How to Use',
-                'where'=>'Conditions',
-                'field'=>'Fields',
-                'join'=>'Joins',
-                '...',
-                'extend'=>'Extending',
+                'how'=>'Basic Usage, Debuging',
+                'fetching'=>'Different Way to Get Your Data',
+                'where'=>'Adding Conditions',
+                'field'=>'Specifying Fields',
+                'join'=>'Querying From Multiple Tables. Joins',
+                'expr'=>'Understanding Expresisons. Templates',
+                'subquery'=>'Creating sub-queries',
+                'extend'=>'Extending, Options',
                 ),
             /*
             'auth'=>array(
