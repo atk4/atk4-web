@@ -240,6 +240,12 @@ class AgileToolkitWeb extends ApiFrontend {
     function enclose_YouTube($content,$tag){
         $this->page_object->add('View',null,$tag,array('doc/view/doc_youtube'))->template->trySet('video_id',$content);
     }
+    function enclose_Pre($content,$tag){
+        $this->page_object->add('View',null,$tag,array('doc/view/doc_pre'))->set($content);
+    }
+    function enclose_42($content,$tag){
+        $this->page_object->add('View',null,$tag,array('doc/view/doc_42'))->set($content);
+    }
     function enclose_Execute($content,$tag){
         list($header,$content)=preg_split('/\n/',$content,2);
         $this->page_object->add('Doc_Execute',null,$tag)

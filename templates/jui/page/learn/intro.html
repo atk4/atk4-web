@@ -2,24 +2,21 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
-        <h1>Object Oriented Web Programming</h1>
+        <h1>Why Object Oriented Web Programming is more powerful than conventional MVC?</h1>
 
-        <p><b>OOP</b> is one of the major concepts in the world of Computing. For decades Object Oriented Programming has been used in all environments.</p>
+        <p><b>OOP</b> is one of the major concepts in the world of Computing. For decades Object Oriented Programming has been used in all environments - on computer desktop, on mobile devices. Some web frameworks have been using it.</p>
 
-        <p>Web Programming, however, was initially design-driven. Scripting was supposed only to fill the gaps in static HTML files.</p>
+        <p>You might say now - "I'm using MVC, so I am using OOP!". The truth is, even though most of the PHP Web Frameworks claim to be Object-Oriented, that does not imply that the developers using them are producing a well thought-out Object Oriented Code.</p>
 
-        <p>Agile Toolkit introduces the "Real" object-oriented web development. The principle of "abstraction" and "black boxes" is applied on all parts of web development - Models, Views, Controllers, Pages and Applications itself.</p>
+        <p>Agile Toolkit implements a solid Object-Oriented core framework, which you extend in your software. It might require you to learn some new ways, but it's a step into the right direction. If you have recently learned some of the frameworks such as Ruby on Rails, the Agile Toolkit will be a significant step forward. After all — Agile Toolkit takes web development to a whole new level with it's integrated User Interface.</p>
 
-        <h2>What are Web Objects?</h2>
-<div style="float: right">
-<?Execute?>
-$page->add('Button')->set('This is object');
+        <?MoreInfo?>What is Wrong With Existing MVC Frameworks?
+        <p>Similarly to the development of static web sites, most MVC frameworks are page-oriented. You've got one controller per page and most likely one model/template per page. They wouldn't attempt to abstract any of the technologies they rely on such as HTML, JavaScript, Templates, jQuery and they make no efforts to be flexible when it comes to add-ons or re-use of your own code across multiple projects.</p>
+
+        <p>Those limitations are the consequences of their decisions to use very simple Object-Oriented. For example, Views are often PHP files containing HTML or Logic-infused templates which can't be extended, Models could be technically extended, but there are no benefit in doing that.</p>
+
+        <p>Your product would most likely have one controller per page, one model per SQL table and a LOT of HTML code duplication in your views.</p>
 <?/?>
-</div>
-        <p>Observe the button on the right. To your browser it's a sequence of HTML code. However for a developer in Agile Toolkit, the button is the object. The developer may not want to know how the button presents itself, how it reacts to events or how it's communicating with the database. Like many other things around it, the button is just another object.</p>
-
-        <p>Without thinking too much about "<b>how?</b>" a developer can now focus on "<b>what?</b>".
-
 <?MoreInfo?>Need More info about Object-Oriented Programming?
 <p>Objects are part of our real life. Take a car, for example. A car is an object. It has properties, such as color, model, year. There are things you can do with a car: drive, wash, lock and unlock it.</p>
 
@@ -36,17 +33,70 @@ $page->add('Button')->set('This is object');
 
 <?/?>
 
-<h2>The Object-Oriented Universe of Agile Toolkit</h2>
-        <p>When Object Oriented Design is applied to Web Development, it abstracts the way you operate with Web Objects
-        such as forms, buttons, pages, links and others. Instead of writing HTML, CSS ad JavaScript code, you now interact with
-        a native object in PHP.</p>
+<h2>Agile Toolkit Core Concepts</h2>
 
-        <p>The button example demonstrates just one object in Agile Toolkit. With more complex objects we can
-        implement forms, signup wizards, payment forms, file managers, polls, comment feeds and so on. Regardless of which object
-        you are using, it's straightforward and simple.</p>
+        <h3>The "View" class</h3>
+<div style="float: right">
+<?Execute?>
+$page->add('Button')->set('This is a "Button" View');
+<?/?>
+</div>
 
-        <p>When developing with Agile Toolkit, you will design your own objects, too. Primarily you will need to deal with two types of objects: <b>Models</b> and <b>Pages</b>. However, there are five major object types in Agile Toolkit.
+<p>The first fundamental concept of Agile Toolkit are <b>the "View" classes</b>. If you have been developing on GUI libraries, you know what it is.</p>
 
+<p>The button you see on the right is instance of the class "Button". It takes just one line of code to add a button anywhere on your page. The Button object then takes care of rendering itself, handling events, using jQuery UI's widget. This ability of object to do what's necessary is called <b>"abstraction"</b>.
+
+<p>Agile Toolkit has LOTS of view classes for you to use, but if you need to have your own class, you can easily create it. You can override template for any view to specify your own HTML-template, so adding your custom pieces of HTML code is as easy as typing it's filename.</p>
+
+        <h3>The "Render Tree"</h3>
+<?Execute?>
+$frame = $page->add('HtmlElement')->addStyle('border','1px dashed red')->addStyle('padding','5px');
+$frame = $frame->add('HtmlElement')->addStyle('border','1px dashed green')->addStyle('padding','5px');
+$frame->add('Button')->set('Same Button Class');
+<?/?>
+
+<p>Inside your application you <b>add</b> objects into other objects. Above you see that the exactly same button is not added into the "HtmlElement" class with a custom border, which is placed inside yet another HtmlElement. The recursive rendering is done automatically by Agile Toolkit, so your job as developer is to put projects into the right places and configure them to use right styles and have proper labels.</p>
+
+<h3>The "Model" Class</h3>
+<?Code?>
+$page->add('FormAndSave')->setModel('Person')->load($person_id);
+<?/?>
+
+<p>The next fundamental concept is the Model Class. Model describes your data entity including fields, labels, validation rules, custom actions, hints and more. With an easy syntax you can associate "Model" object with the "View" object. This connections makes use of an appropriate "Controller" which job is to "configure" the view for the Model.</p>
+
+<p>You can mix and match. FormAndSave view is a descendant of a "Form" class which automatically adds an "Update" button and allows you to save data into the database.</p>
+
+<h3>The "Controller" Class</h3>
+<?Code?>
+$model->add('Controller_Encrypt')->useField('account_number')->useEncryption('rsa');
+<?/?>
+
+<?Code?>
+$api->add('Controller_PatternRouter')
+  ->addRule("profile/(.*)", "profile/details", array("profile_id"))	
+  ->addRule("blog/([0-9]*)-.*", "blog/item", array("id"))	
+  ->route();
+<?/?>
+
+<p>Controllers in Agile Toolkit are classes which "Enrich" the functionality of existing objects. The "Controller_Encrypt" adds ability into a "Model" to use strong encryption on some of the fields. The PatternRouter controller adds pattern matching and PHP-based rewrites.</p>
+
+<p>Controllers are used when you connect to database, associate view with model, use pagination on the form, add "strength" indicator into the password field or add anti-XSF tokens into the form class.</p>
+
+<h3>The "Application" Class</h3>
+<p>Application class is designed so that you can create Your Own Toolkit. In this new application you might pre-initialize the controllers you want and include the add-ons you would most probably use. Finally you will be able to throw your snippets away and turn them into on-demand classes.</p>
+
+<h3>The "Agile Store"</h3>
+<p>Given the powerful architecture of Agile Toolkit, many different extensions, templates, models and the whole UI pages. The "Agile Store" which is introduced in 4.2 of Agile Toolkit is the way of us saying - "Got a nice piece of code? Share and perhaps even make some money on it!". Or if you are looking for a good quality add-on, why purchase it from someone for the price of a "Frappuchino".</p>
+
+<p>Some examples of what you can find in the store are: "Comment Anywhere" - plug-in you can put on any page which enables users to comment on anything, "ModelAudit" - controller to make your models auditable (records editing operations into separate table) and also brings the views for you to look at the audit history. "Countries" - delivers model containing up-to-date list of countries. "Job Queue" - a system for implementing your own Cloud-Powered Job Processing queues based on SQL or SQS. Many others too.</p>
+
+
+<h3>Agile Toolkit based Projects</h3>
+<p>There are commercial and open-source projects which build end-user focused software on Agile Toolkit: Content Management Systems, CRMs, Ticket/Support systems, Task management systems, eCommerce solutions. Since they do share the same foundation you can use any of the plug-ins from the store on those products too.</p>
+
+<p>If you are building an Agile-Toolkit based project, be sure to list it on Agile Toolkit website.</p>
+
+<!--
         <h2>Fives types of objects in Agile Toolkit</h2>
 
         <p>I have only mentioned "Visual" objects, or views. There are actually 5 object types in Agile
@@ -127,7 +177,7 @@ $page->add('Button')->set('This is object');
         you can <a href="<?page?>learn/understand<?/?>">skip the installation part</a>.
         </p>
 
-
+        -->
 
     </div>
 </div>
