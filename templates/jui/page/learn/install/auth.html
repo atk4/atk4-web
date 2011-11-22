@@ -45,7 +45,7 @@ $this->auth->allowPage('privcay');
 $this->auth->allowPage(array('faq','contact','about'));
 $this->auth->setSource('user','login','password');
 $this->auth->useEncryption('sha1');
-if($this->auth->isPageAllowed($this->page)){
+if(!$this->auth->isPageAllowed($this->page)){
     $this->auth->check();
 }
 <?/Code?>
