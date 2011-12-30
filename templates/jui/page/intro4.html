@@ -1,0 +1,37 @@
+<h1>Building a Rich Web applications in PHP</h1>
+<p>PHP is an awesome and powerful language. We have used it already to abstract and hide complexity of SQL and HTML. You no longer need the knowledge of those two if you are writing a Web App. There is however one other technology web developers rely on more and more often - JavaScript.</p>
+
+<p>Possibly not only a JavaScript but a set of frameworks and technologies on top of it such as jQuery, jQuery UI, AJAX. My personal observation is that many of the budget Web Applications have a really badly written JavaScript in them, unless there is a dedicated Frontend developer at your disposal. Agile Toolkit is here to show the right way.</p>
+
+<h3>Abstracting jQuery</h3>
+<p>With all the plugins jQuery is the most commonly used JavaScript library today. It is also very simple to abstract from the PHP. If you happen to know the syntax of jQuery, you would know what the following code does:
+
+<div class="atk_doc example"><code>
+    $('#myobject').click(function(){ animate({'padding-right':'+=25px'}); });
+</code></div>
+
+<p>Agile Toolkit abstracts this and allows ANY view to create jQuery chain in a regular PHP language.</p>
+
+<?Code?>
+$page->add('Alex')->js('click')->animate(array('padding-right'=>'+=25px'));
+<?/?>
+<?Execute?>
+$page->add('Alex')->js('click')->animate(array('padding-right'=>'+=25px'));
+<?/?>
+<p>For a little line of code Agile Toolkit does many troublesome things for you. It ensures that the view have unique identifier, determines if view is rendered, transforms the PHP object call chain into PHP with type transformation and JS injection protection and sends all this to the browser.</p>
+
+<p>Through the power of JS chains Views can now provide ways to seamlessly communicate with the browser's JavaScript now. This is why Agile Toolkit is close-coupled: developers have an awesome set of goodies at their disposal.</p>
+
+<p>As a final example for now, let's build a random number generator in style:</p>
+
+<?Example?>
+$b=$page->add('Button')->set(rand(1,100));
+$b->js('click')
+  ->effect('shake',array('times'=>3),60, 
+      $b->js()->_enclose()->reload()
+  );
+<?/?>
+
+<p>One of great feats of Agile Toolkit is ability to re-load any view on the page dynamically. The jQuery collaborates with Agile Toolkit rendering mechanism to provide only the output of the object you need and seamlessly place it on the page and re-bind the necessary jQuery behaviours (such as click in our case).
+
+

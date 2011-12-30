@@ -1,0 +1,51 @@
+<?$Content?>
+
+<h1>User Interface</h1>
+<p>Now that we have established that Agile Toolkit boosts a powerful Core API let's talk about look and feel of your application. Unfortunately most of the PHP frameworks will leave you in the dark when it comes to talking with the browser. Agile Toolkit, as usual, provides a powerful mechanics under the hood and then abstracts it to a level where you can easily understand how to build most complex page structures.</p>
+
+<h4>SMLite - Agile's approach to Template Objects</h4>
+
+<div class="atk_doc example"><code>
+  Templates are <font color="red">&lt;?kind?&gt;</font><font color="blue">simple</font><font color="red">&lt;?/?&gt;</font>
+</code></div>
+
+<p>The above string is a valid template in Agile Toolkit. You can manipulate tag values by manipulating them.</p>
+
+<?Code?>
+echo $tpl->set('kind','powerful')->render();  // outputs "Templates are powerful"
+<?/?>
+
+<p>This is as simple as templates can get. After all, templates are only a tool in Agile Toolkit which serves at the mercy of Views.</p>
+
+<h2>View - your Window into HTML Widget</h2>
+<p>If you ever done some development using Graphics User Interface toolkits, you might be familiar with the "view" concept. It's a rectangular area on the screen containing a working object behind it which is used for drawing the area. The same approach is used in Agile Toolkit.
+
+<?Code?>
+$view = $page->add('Alex');
+<?/?>
+<?Execute?>
+$view = $page->add('Alex');
+<?/?>
+The code above is the fundamental building block of your application in Agile Toolkit. You don't work with HTML, you work with objects. Here I have just added a custom view which renders itself as a pink elephant. He might be pink from all the frustration because of all those things a typical web developer needs to know today.
+
+<h3>It's about time we simplified it!</h3>
+<p>Prepare to forget all those details about GET and POST and form encoding types. Agile Toolkit makes Forms just work for you. And in addition to the basic mechanics it provides a solution in a great style.</p>
+
+<?Example?>
+$form = $page->add('Form');
+$form->addField('line','name')->setNotNull();
+$form->addSubmit('Greet');
+
+if($form->isSubmitted()){
+    $form->js()->univ()
+        ->alert('Hello, '.$form->get('name'))
+        ->execute();
+}
+<?/?>
+
+<p>Again, you do very little and Agile Toolkit takes care of all sorts of injection protections, validation, data types, AJAX form submission, styling, widths, focus, keystroke handling. Form in Agile Toolkit probably would be the most powerful form implementation but at the same time possibly using the most effective approach too.</p>
+
+<h4>It's not only the form</h4>
+<p>Agile Toolkit is packed with Views: Menus, Grids, Lists, Boxes, Frames, Columns, Tabs are just the most commonly used. There are going to be many other views you can create yourself or install as a plugin.</p>
+
+<?$Next?>
