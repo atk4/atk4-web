@@ -24,6 +24,20 @@ $name = $this->api->db->dsql()
       <?$toc?>
     </div>
 
+
+
+
+  </div>
+  <div class="g-6">
+    <p>DSQL provides a way how you can modify the query of a certain class without the need to change the class itself. Sometimes multiple objects interract with DSQL object creating complex SQL query.</p>
+
+    <p>DSQL supports select, update, insert, delete and some other queries. It hanles sub-queries, expressions and is always using PDO with parameters.</p>
+
+    <p>You can also use DSQL object to query data, but the DSQL object will not hold the actual value for you. That's job for a "Model" class.</p>
+
+    <h4>Compatibility with 4.1</h4>
+    <p>In 4.2 a completely new DSQL / DB architecture was implemented. The older classes are still included for compatibility. The syntax remains almost identical, but the implementation is fundamentally different. Refer to compatibility guide for more information.</p>
+
     <div class="ref-item box blue-noised">
       <b>Other Resources, Blog posts:</b>
       <div class="details white">
@@ -31,20 +45,6 @@ $name = $this->api->db->dsql()
         <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Creating Database Queries with DSQL</a></div>
       </div>
     </div>
-
-
-
-  </div>
-  <div class="g-6">
-    <p>When you use "Grid" object which loads data from SQL, how would you customize the query it's using? By accessing and manipulating $grid->dq property you can add additional fields, conditions, joins, options into the main query of a Grid. The same principle applies to other Views and Models</p>
-
-    <p>Models can produce DSQL object if you call $model->dsql(). This is a preferred way to perform multi-record operations inside your Model methods or using models in sub-queries.</p>
-
-    <h4>DB / DBlite Class Reference (PHPDoc)</h4>
-    <p>Versions up to 4.1.* use <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DBlite.html" target="_blank">DBlite</a> class for accessing database. This class is accessible through api->db property and is set when api->dbConnect() is called.</p>
-    <p>From Agile Toolkit 4.2 the PDO-compatible implementation (<a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DB.html" target="_blank">DB</a>) is used. It is backwards compatible with DBlite.</p>
-
-    <p>Your DB class produces instance of <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DB_dsql.html" target="_blank">DSQL (4.2)</a>, <a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/DBlite_dsql.html" target="_blank">DSQL (up to 4.1)</a>,  objects when you call api->db->dsql()</p>
 
     </div>
   </div>

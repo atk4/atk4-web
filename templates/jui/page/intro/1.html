@@ -1,0 +1,71 @@
+<?$Content?>
+<h1>The Object Relational Mapper and Active Record</h1>
+
+
+<p>Agile Toolkit is a vertical web software development and deployment framework focused on simplicity and abstraction. Toolkit is notable for it's approach such as avoidance of unnecessary features, use of object-oriented design, HTML rendering phase, AJAX integration and User Interface.</p>
+
+<p>This and the following page of the Introduction section will explain to you primary benefits of Agile Toolkit and why it is a major advance in Web Development Industry.</p>
+
+
+<h3>The "Core Framework"</h3>
+<p>Many of the PHP frameworks such as CodeIgniter, Symfony, Yii focus primarily on the back-end of your application. Agile Toolkit has similarly powerful foundation, but it is hidden by a high-level development components. To understand the underpinnings of the toolkit better, here is a glimpse inside the internals of Agile Toolkit.</p>
+
+<h2>DSQL - Agile's approach to Object Relational Management</h2>
+
+<p>Dynamic SQL is the Object-Oriented API to your data-base. Because communication with the SQL databases is still using old SQL language and direct use of SQL is source to many injections, cross-compatibility problems and performance issues, DSQL was introduced in Agile Toolkit around 2004 then reimplemented in early 2012 (4.2). Here is a sample syntax:</p>
+
+<?Code?>
+// executes "select name from user where id=$id" query
+$name = $this->api->db->dsql()
+    ->table('user')
+    ->where('id',$id)
+    ->field('name')
+    ->getOne();
+
+// can do expression too. Works as iterator
+foreach($this->api->db->dsql()->expr('show tables') as $row){
+  echo pop($row)."\n";
+}
+
+// Sub-queries and much more
+$q=$this->api->db->dsql();
+$q->field(
+  $q->dsql()->table('book')->where('author_id', $q->getField('id'))->field('count(*)'),
+  'book_cnt'
+);
+<?/?>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on DSQL</a>
+
+<h2>Active Record Implementation</h2>
+<p>All that syntax is really powerful and is a serious competition to alternative ORM libraries, but Agile Toolkit does not stop here. Now that the SQL is abstracted and object-oriented, it can be easily used by a higher-level objects.
+
+<quote>
+Agile Toolkit simplifies things. For Developer. For Designer. For Administrator. For End User. Many underlying technologies are there when you need them. More often you will find that 90% of your needs can be addressed by staying on Model level.
+</quote>
+
+<h3>Creating your Business Logic</h3>
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/model_inheritance.png<?/?>"/>
+
+<p>In real world every day you have wide variety of "Actors" or Entities. Programs reflect our daily life and task and they need to map it into "Models" such as "Person", "Profile", "Payment", "Order", "Message" etc.</p>
+
+<p>In Agile Toolkit you need to describe your models. Properties of the Model define what data can model hold. Model may have certain "methods" which would perform business actions. There are other things you can define for the models such as Behaviours, Validations, Conditions, Relations and Calculated Fields.</p>
+
+<p>Models in Agile Toolkit are fully-featured objects. You will often extend one model to create another by adding fields, conditions or joins. As an example here are two models: User and Admin. They do have many things in common, but Model_Admin has an extra condition (is_admin=true). Model_Admin class extends Model_User. Both models use same database table. In scenario like this one Agile Toolkit simplifies the way how you interact with models and automatically applies condition to avoid accidental mistakes in your code:</p>
+
+<?Code?>
+$user=$this->add('Model_User');
+$user->set('name','John');
+$user->save();
+
+$admin=$this->add('Model_Admin');
+$admin->load( $user->id );   // will fail to load data
+<?/?>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/model<?/?>">Full Documentation on Models</a>
+
+<p>The syntax of using the models is very straightforward and simple. Something you would expect from a PHP Web Framework. Right?</p>
+
+<p>Agile Toolkit does not stop here. Agile Toolkit is <b>PHP UI Framework</b> and the core foundation is just a building block for the User Interface Views which are described in the next part of this introduction.</p>
+
+<a href="<?page?>intro/2<?/?>" style="float: right" class="button blue">Introduction to Graphics User Interface</a>
+<div class="clear"></div>
+

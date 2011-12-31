@@ -1,0 +1,87 @@
+<?$Content?>
+
+<h1>Intersection of Business and UI logic</h1>
+<?Execute?>
+$this->api->dbConnect();
+<?/?>
+
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/controller.png<?/?>"/>
+
+<p>You've just learned about the powerful tools to create Business Logic and User Interface. Both are quite awesome tools on their own, but to make things even simpler, Views can work with Models directly. This "Glue" functionality is implemented through Controllers.</p>
+
+<quote>Controller is an object in Agile Toolkit which is designed to manipulate or enhance the functionality of another object.</quote>
+
+<p>In many cases you wouldn't know that you are using a Controller. In Agile Toolkit many controllers are generic. The effects are vast starting from enabling Caching in Model down to implementation of whole Libraries of custom functions related to particular area of your application logic.</p>
+
+<p>In this introduction I wanted to demonstrate how Controller_MVCForm makes it possible to populate your form fields, labels, conditions, types, validations from the model and also add ability for a form to save data back through the model.</p>
+
+<?Example?>
+$form = $page->add('MVCForm');
+$form->setModel('User');
+<?/?>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on Controllers</a>
+
+<h2>Create, Read, Update, Delete = CRUD</h2>
+<p><a href="http://www.google.com/?q=crud+generator" target="_blank">Crud Generators</a> are evil. They provide no flexibility, duplicate awful amount of code and have no consistency with the rest of your User Interface. Considering all the great things in Agile Toolkit, it is in a much better position to build a better implementation for a CRUD.</p>
+
+<?Code?>
+$crud = $page->add('CRUD');
+$crud->setModel('User',null,array('name','gender','manager'));
+<?/?>
+<?Execute?>
+$crud = $page->add('CRUD');
+$crud->setModel('User',null,array('name','gender','manager'));
+<?/?>
+
+<p>CRUD implementation in Agile Toolkit relies on other widgets such as Form, Grid, Button, Frame. Implementation is done in a classy Object-Oriented style, where you can supply your own model, change Form and Grid class, override methods, add more elements such as buttons, place multiple CRUD objects on the page and do this all with zero generated lines of code. Reloading is performed through AJAX without disturbing other elements on the page.</p>
+
+<p>If you think about it - CRUD can be implemented in so many different ways and layouts and it all is very easy to achieve with the flexibility of Agile Toolkit just in a few lines of code.</p>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>a<?/?>">Bundled Add-ons Widgets and Controllers</a>
+
+<h2>The Application</h2>
+<p>The web developer's lingo is messier than ever. Someone mixed up templates with views and pages with controllers. We are on the way to clean up the mess. Here is our mini glossary so far:
+<ul>
+  <li>Model — Object representing real-life Entity or a person.</li>
+  <li>View — Object capable of displaying itself in HTML.</li>
+  <li>Controller — Object capable of controlling behaviour of other objects.</li>
+  <li>Page — Object associated with a certain URL and containing Views.</li>
+  <li>Application — The top-most object responsible for everything.</li>
+</ul>
+Two new type of objects are the Page and Application. They are exactly what they seem to be. Application is the top-most object responsible for everything — accepting the request, determining corresponding Page, initializing Views and Controllers, recursively rendering your Page, adding it into a "Shared" template and sending of HTML to the browser.</p>
+
+<p>Every time you start a new Web Application you create a new Application class by extending some standard ones. Inside your application class you can decide what authentication to use, how to route URLs, how to connect to database, how to render menu, below is a sample application class.</p>
+
+<?Code?>
+class MyApp extends ApiFrontend {
+    function init(){
+        parent::init();
+
+        $this->add('jUI');
+
+        $this->js()->_load('jquery.slider');
+
+        $this->add('FrontendAuth');
+
+        $this->dbConnect();
+    }
+    function initLayout(){
+        $m=$this->add('Menu',null,'Menu');
+        $m->addMenuItem('Home','index');
+        $m->addMenuItem('admin');
+    }
+}
+<?/?>
+
+<p>There are already several Application classes you can select from. ApiFrontend is for building your own fully-functional web applications. ApiWeb is a lightweight verison you can use from inside other frameworks. ApiCLI is an Application class for building your command-line utilities.</p>
+
+<p>You can design your own new applications such as Installer, Admin-interface or focus them on integrating with other frameworks and create ApiWordpress, ApiCodeIgniter which will be they key for a smooth integration between Agile Toolkit goodies and your legacy framework. Hopefully - not for long, until you decide to fully switch to Agile Toolkit.</p>
+
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/api<?/?>">Full Documentation on Application Classes</a>
+
+
+<a href="<?page?>intro/4<?/?>" style="float: right" class="button blue">Introduction to JavaScript and AJAX APIs</a>
+
+

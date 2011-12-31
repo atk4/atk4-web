@@ -178,6 +178,7 @@ class AgileToolkitWeb extends ApiFrontend {
 
             if($this->page_object->template->is_set('db'))$this->dbConnect();
             $this->page_object->template->eachTag('MoreInfo',array($this,'enclose_MoreInfo'));
+            $this->page_object->template->eachTag('List',array($this,'enclose_List'));
             $this->page_object->template->eachTag('Code',array($this,'enclose_Code'));
             $this->page_object->template->eachTag('Html',array($this,'enclose_Html'));
             $this->page_object->template->eachTag('Execute',array($this,'enclose_Execute'));
@@ -250,6 +251,13 @@ class AgileToolkitWeb extends ApiFrontend {
         list($header,$content)=preg_split('/\n/',$content,2);
         $this->page_object->add('Doc_Execute',null,$tag)
             ->setCode($content);
+    }
+    function enclose_List($content,$tag){
+        if($this->api->auth->isLoggedIn()){
+            $this->page_object->add('Doc_List',null,$tag,$tag);
+        }else{
+            $this->template->del($tag);
+        }
     }
     function locateTemplate($path){
         return $this->locateURL('template',$path);

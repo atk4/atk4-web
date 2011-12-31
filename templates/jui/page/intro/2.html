@@ -1,0 +1,68 @@
+<?$Content?>
+
+<h1>Web User Interface</h1>
+<p>Graphical User Interfaces have been around for decades. The idea is simple — implement a unified set of visual tools allowing application to communicate with User in expected way. Those visual tools are called "Views" in Agile Toolkit: Buttons, Frames, Menus, Tabs and others. Yet many other Web Frameworks failed to implement a consistent User Interface.</p>
+
+<p>Why?</p>
+
+<p>One reason is that some attempts to create Web User Interface but forget that they are making "Web" interface. Many desktop patterns do not apply. Windows and dragging is not always necessary. Simplicity and ability to customize is highly valued. Customization and unique look is required in almost every application. Another reason is PHP developer average skill-set. A typical PHP developer is coming from Design background and would know very little about programming. By the time they learn to program, they fail to find a decent framework written in PHP and they need to migrate to another language.</p>
+
+<quote>Agile Toolkit is for developers who LOVE their code. If you value performance, elegance and simplicity of your code, then you will feel at-home with Agile Toolkit. Your ability to recognize certain objects as "well made" and then using them to build higher-level layer of functionality is the great way to develop software and is very essential to your carrier. Agile Toolkit will teach you how.</quote>
+
+<h4>SMLite - Agile's approach to Template Objects</h4>
+<p>Template is a common practice to separate HTML markup from business logic. Unfortunately popular template engines such as Smarty have decided to implement a new programming language inside a template. Agile Toolkit Templates reverse this pattern and make templates incredibly simple. Consider the following example:</p>
+
+<div class="atk_doc example"><code>
+  Templates are <font color="red">&lt;?tag?&gt;</font><font color="blue">simple</font><font color="red">&lt;?/?&gt;</font>
+</code></div>
+
+<p>The above string is a valid template in Agile Toolkit. You can manipulate tag values by manipulating them.</p>
+
+<?Code?>
+echo $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
+<?/?>
+
+<p>This is as simple as templates can get. It is also all we need from the template engine — ability to get and set region values. This simplicity is significant to the way how templates are used by the User Interface.</p>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/smlite<?/?>">Full Documentation on SMLite</a>
+
+<h2>View - your Window into HTML Widget</h2>
+<?Execute?>
+$view = $page->add('Alex');
+<?/?>
+<p>The web page you see in front of you consists of Views. View are implemented as objects and each view display a rectangular block on the web page. Above there was a Menu object. Below are some Form objects but to the right of this paragraph you will see a custom-made View implemented as a class "Alex".</p>
+
+<p>Every object is capable of producing a chunk of HTML code which fits inside it's parent. Objects are rendered recursively by Agile Toolkit. Most of the objects rely on SMLite template to get the actual HTML code they need to output.</p>
+
+<?Code?>
+$view = $page->add('Alex');
+<?/?>
+
+<p>The code above is the fundamental building block of your application in Agile Toolkit. You don't work with HTML, you work with objects. Agile Toolkit is bundled with many cool objects and in every application you are building, you'll be adding more of your own Views. Often views rely on custom SMlite template and incorporate other objects into that template. Together you get a consistent, unified and simple User Interface.</p>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/view<?/?>">Full Documentation on Views</a>
+
+<h3>View + jQuery UI Widget = Love</h3>
+<p>Once you are focused on a small portion of your page, the ability to communicate between that PHP class and the web browser becomes very essential. Agile Toolkit provides the means to communicate between jQuery UI Widget for the "Form" view and the PHP Class absolutely transparently using AJAX.</p>
+
+<?Example?>
+$form = $page->add('Form');
+$form->addField('line','name')->setNotNull();
+$form->addSubmit('Greet');
+
+if($form->isSubmitted()){
+    $form->js()->univ()
+        ->alert('Hello, '.$form->get('name'))
+        ->execute();
+}
+<?/?>
+
+<quote>When all your blocks behave properly then adding more User Interface elements will not break overall consistency of your application. There are hundreds of problems if you try to do it manually, but Agile Toolkit makes it so simple and intuitive.</quote>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/form<?/?>">Full Documentation on Form</a>
+
+
+<a href="<?page?>intro/3<?/?>" style="float: right" class="button blue">Introduction to Controllers</a>
+
+
+<?$Next?>

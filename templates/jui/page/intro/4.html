@@ -1,0 +1,58 @@
+<?$Content?>
+<h1>Rich Web Application in PHP Language</h1>
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/js_communication.png<?/?>"/>
+<p>PHP is an awesome and powerful language. With the 5.3 it has became even more powerful and strengthened it's Object-Oriented performance.
+Wouldn't it be awesome if you could develop a Rich Web Application without leaving the comfort of your awesome PHP language? Agile Toolkit makes
+it possible.</p>
+
+<p>When you open Agile Toolkit web page, it automatically initializes jQuery and jQuery UI libraries on your page. As you place dynamic elements on
+your Page, more jQuery code is loaded dynamically.</p>
+
+<p>For instance, when Form is displayed it loads <a href="https://github.com/atk4/atk4/blob/master/templates/js/ui.atk4_form.js" target="_blank">ui.atk4_form.js</a>
+which enriches your form and enables new ways of communications with the PHP.</p>
+
+<p>Overall there are about 5 different request types used by the bare-bones Agile Toolkit, but you may establish new ways to interact. You may produce JSON, XML or RSS output from inside of your Views, Pages, Controllers or API.</p>
+
+<h3>Abstracting jQuery</h3>
+<p>Agile Toolkit has a way to convert sequences of PHP code into jQuery chains. It is also able to bind those chains to certain events on your objects. How about if we create a chain with single animation effect and bind it to "click" event on our object. This is how it's done in Agile Toolkit:
+
+<?Code?>
+$page->add('Alex')->js('click')->animate(array('padding-right'=>'+=25px'));
+<?/?>
+<?Execute?>
+$page->add('Alex')->js('click')->animate(array('padding-right'=>'+=25px'));
+<?/?>
+
+<p>The above code has placed the custom View to the right of this paragraph and automatically applied the JavaScript handler through a unique selector.</p>
+
+<p>Agile Toolkit takes consideration of many technical details to just make the above line work seamlessly for you regardless of where and how you put it. The PHP object produced by js() will convert any call into JavaScript so there are no limitations to what you do or call.</p>
+
+<p>One of great feats of Agile Toolkit is ability to re-load any view on the page dynamically. The jQuery collaborates with Agile Toolkit rendering mechanism to provide only the output of the object you need and seamlessly place it on the page and re-bind the necessary jQuery behaviours (such as click in the following example).</p>
+
+<?Example?>
+$b=$page->add('Button')->set(rand(1,100));
+$b->js('click')
+  ->effect('shake',array('times'=>3),60, 
+      $b->js()->_enclose()->reload()
+  );
+<?/?>
+
+<h2>Power of Graphic User Interface with elegance of Web Software</h2>
+
+<p>The three most significant benefits of GUI toolkits 
+<ul>
+  <li>rich component library with standard interfaces,</li>
+  <li>event binding and call-back functions,</li>
+  <li>ability to connecting components with data sources</li>
+</ul>
+are now implemented for you in the simple and powerful PHP language with the help of Agile Toolkit. The structure and the framework took over a decade of continuous refinement, improvement and clean-up to deliver you the high quality foundation for your up-coming open-source, personal or commercial project.</p>
+<p>If you are coming from Wordpress or Drupal background you might find many new concepts and will need to get comfortable with your PHP editor, but it's the right path for you to take if you are willing to become a fast, efficient and productive web developer.</p>
+
+<p>This introduction have covered most significant concepts and features of Agile Toolkit, but there are other things than just the Agile Toolkit itself.</p>
+
+
+<a href="<?page?>intro/5<?/?>" style="float: right" class="button blue">Addons, Software Projects and Resources</a>
+
+
+
+

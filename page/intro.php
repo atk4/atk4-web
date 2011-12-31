@@ -7,7 +7,7 @@ class page_intro extends Doc_Page {
     }
 	function initMainPage(){
 		//parent::init();
-		$this->api->redirect('./start');
+		$this->api->redirect('./1');
 	}
     function defaultIndexPage(){
         return 'Content';

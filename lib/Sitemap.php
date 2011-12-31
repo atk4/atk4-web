@@ -269,12 +269,12 @@ class Sitemap extends AbstractController{
                 'model'=>'Using with Models',
                 'sort'=>'Sorting Controls',
                 ),
-            /*
             'lister'=>array(
                 'Lister',
-                'lister/how'=>'How to Use',
+                'how'=>'How to Use',
+                'complete'=>'CompleteLister',
                 ),
-                'lister/complete'=>'CompleteLister',
+            /*
             'filter'=>array(
                 'Filter',
                 'filter/how'=>'How to Use',

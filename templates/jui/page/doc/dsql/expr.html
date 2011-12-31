@@ -7,3 +7,36 @@ Each DSQL object has a "template" property, which is looking like this:</p>
 <pre>
 select [options] [fields] [from] [table] [join] [where] [group] [having] [order] [limit]
 </pre>
+
+<p>When query is being rendered (simplest way to render a query is by converting it into a string), the arguments are filled-in by calling
+methods such as render_options, render_fields, render_from, etc. Those functions will convert the parameters which were previously
+supplied to the object into a string. If some of the parameters were supplied as objects, those will be recursively rendered.</p>
+
+<h2>Writing your own templates</h2>
+<p>Let's suppose you are willing to extend the query to make it support new query format:</p>
+<?Code?>
+class MyDSQL extends DB_dsql {
+    function myfunc($arg){
+        $this->args['myarg']=$arg;
+        $this->setTemplate('myfunc([myarg])');
+        return $this;
+    }
+    function render_myarg(){
+        return $this->escape($this->args['myarg']);
+    }
+}
+<?/?>
+<p>The resulting code above will add ability to call your own stored procedure and specify an argument through a simple interface:</p>
+<?Code?>
+$result = $q->myfunc('abc')->getOne();
+<?/?>
+
+<p>You may also use subqueries and expresisons easily. When you pass string into escape() function it becomes a paramemtric variable. If you pass 
+another query, it will be rendered and inserted as-is, therefore your code will automatically support:</p>
+
+<?Code?>
+$q=$this->api->db->dsql('MyDSQL');
+$result = $q->myfunc($q->expr('2+2'))->getOne();
+<?/?>
+
+<p>To properly create instance of your 
