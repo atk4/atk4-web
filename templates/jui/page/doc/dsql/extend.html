@@ -1,0 +1,67 @@
+<?$Content?>
+
+<h1>Extending DSQL</h1>
+
+<p>You might be wondering — how to add support for your un-supported database type or perhaps how to add syntax for some other commands.</p>
+
+<p>When connect() is called, it will calculate $db->type based on the supplied DSN. If you are using MySQL database then type will be "mysql". Also DB class will set $db-->dsql_class variable which is then used by dsql() class. If you want to extend it, you would need to be able to specify your own class there. This can be done either by supplying 'class'=>'myclass' in the DSN array or manually changing value of $db->dsql_class after connection.</p>
+
+<p>Below is a sample extension for MySQL which adds $q->showTables() command.</p>
+
+<?Code?>
+class DB_dsql_mysqlextra extends DB_dsql_mysql {
+    function showTables(){
+        $this->template='show tables';
+    }
+}
+
+
+// config.php
+
+$config['dsn']=array(
+    'mysql:host=localhost;dbname=project',
+    'root',
+    'root',
+    'class'='DB_dsql_mysqlextra'
+);
+
+// elsehere
+
+$q=$this->api->db->dsql()
+foreach($q->showTables() as $row){
+    $table=array_pop($row);
+    // ...
+}
+<?/?>
+
+<h3>Changing existing queries</h3>
+<p>If your database driver needs existing query changed, you can simply redefine function in your class:</p>
+
+<?Code?>
+class DB_dsql_pgsql extends DB_dsql {
+
+    /** PostgreSQL does not like backticks */
+    public $bt='';
+
+    /** Use extended PostgreSQL syntax for fetching ID */
+    function insert(){
+        parent::insert();
+        $this->template.=" returning id";
+        return $this;
+    }
+}
+<?/?>
+
+<h3>Adding sum() function</h3>
+<p>Whenever you need to calculate sum of the field, you must create expression. How about creating a function for doing this easier?</p>
+
+<?Code?>
+    function sum($expr,$alias){
+        return $this->field($this->expr('sum('.$expr.')'),$alias);
+    }
+<?/?>
+
+
+
+
+<?$Next?>

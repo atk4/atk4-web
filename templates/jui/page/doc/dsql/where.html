@@ -46,6 +46,8 @@ $q->where($this->expr('length(password)'),$q->expr('between 3 and 10'));
 $q->where($this->expr('length(password)'),'>',5);
 <?/?>
 
+<p>Please avoid use of param(), because it may result in the clash, sub-query uses same params as a master query.</p>
+
 
 <h3>AND conditions: where(..)->where()</h3>
 <p>Calling where() multiple times will require all of the conditions to be met. Using "AND" operator.</p>
@@ -100,8 +102,4 @@ $q
 
 <?/?>
 
-<h4>How DSQL produces queries?</h4>
-<p>Actually quite similarly to how pages are being rendered. When query needs to be executed, it looks at the "template" which consists of different parts. Those parts are then rendered through method calls which may subsequently render sub-queries. Every time DSQL ensures that parameters are properly assigned.</p>
-
-<p>You can learn more in the section explaining how DSQL can be extended.</p>
 <?$Next?>

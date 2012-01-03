@@ -1,0 +1,44 @@
+<h1>Use of Lister</h1>
+
+<p>Lister probably is one of the fundamental and simplest objects in Agile Toolkit. It lays foundation to a more sophisticated classes such as CompleteLister , Grid and therefore contributes towards CRUDs and other objects.</p>
+
+<?Code?>
+$page->add('Lister')
+  ->setSource(array('One','Two','Three'));
+<?/?>
+
+<p>You must strongly consider using setModel before using any other source type.</p>
+
+<h4>Use with Model</h4>
+<?Code?>
+$page->add('Lister')
+  ->setModel('User');
+<?/?>
+<p>Lister will automatically check what keys you've got in the template and will automatically configure your model to select those fields (actual fields) to speed up calculation.</p>
+
+<h4>Using with associative arrays</h4>
+<?Code?>
+$page->add('Lister')
+  ->setSource(array(
+    5=>'John',
+    7=>'Steve'
+  ));
+<?/?>
+<p>The key becomes the value for "id" field and value becomes "name"</p>
+
+<h4>Using with array of hashes</h4>
+<?Code?>
+$page->add('Lister')
+  ->setSource(array(
+    array('id'=>5,'name'=>'John'),
+    array('id'=>7,'name'=>'Steve'),
+  ));
+<?/?>
+<p>Natuarlly you are not limited only to those fields. You may specify any set of fields.</p>
+
+<h4>Using with Iterator</h4>
+<?Code?>
+$page->add('Lister')
+  ->setSource(new DirectoryIterator('.'));
+<?/?>
+<p>Any iterator may be used. If iterator returns array, it will be populated into the fields, otherwise  [TODO]

@@ -1,0 +1,60 @@
+<?$Content?>
+<h1>Sub-Queries, Expressions and Object Management</h1>
+
+<p>When you execute expr() it will create a new query with specified expression and return the reference to you. This is used in some cases such as "or" argument. Calling $q->orExpr() will return an empty query, with a special template which is then used to render sequence of OR-connected conditions.</p>
+
+<p>Sub-queries does not need to be produced from the same object. Let's assume that you have a method which returns query listing all bonuses of particular employee</p>
+
+<?Code?>
+function getBonus($employee_id){
+    $q = $this->dsql()->table('bonuses');
+    $q->field($q->expr('sum(bonus)'));
+    $q->where('id',$employee_id);
+    return $q;
+}
+<?/?>
+
+<p>An obvious usage of such a function would be:</p>
+
+<?Code?>
+echo getBonus(123)->getOne();
+<?/?>
+
+<p>It is however possible to use the function to generate a sub-query without any modifications:</p>
+
+<?Code?>
+$q = $this->dsql()->table('employee');
+$q->field('name,surname');
+$q->field(getBonus($q->getField('id')),'bonuses');
+
+foreach($q as $row){
+    echo $row['name'].': '.$row['bonuses']."\n";
+}
+<?/?>
+
+<p>When you are using this inside Models it becomes extremely powerful tool:</p>
+
+<?Code?>
+// inside Model_PaidBonus
+
+class Model_PaidBonuss extends Model_Bonus {
+    function init(){
+        parent::init();
+        $this->addCondition('is_paid',true);
+    }
+    function getBonus($employee_id){
+        $q=$this->dsql();
+        return $q
+            ->field($q->expr('sum(salary)'))
+            ->where('id',$employee_id)
+            ;
+    }
+}
+<?/?>
+
+<p>Not only the function becomes universal for individual requests or can be used as sub-query, it also relies on SQL produced by model which would include the right condition to filter by a boolean field is_paid.</p>
+
+<p>DSQL is irreplaceable when used as a glue between model selects and can be extensively used to increase your database query performance without loosing flexibility of your business level framework.</p>
+
+
+<?$Next?>

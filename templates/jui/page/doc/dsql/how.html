@@ -2,40 +2,55 @@
 
 <h1>Basic Usage of Dynamic SQL Queries</h1>
 
-<p><font color="red">This is documentation for upcoming 4.2 release of Agile Toolkit and there might be minor in-compatibilities with 4.1.</font></p>
+<h3>Connecting to Database</h3>
+<p>Agile Toolkit API has a function dbConnect() which will automatically read DB configuration from your configuration file and initialize connection. When connection is created, the connection object is accessible through through $api->db property. If you wish, you can create connections to other databases by calling:</p>
 
-<p>Unlike other objects which are added through "add" method in Agile Toolkit, to produce a new instance of DSQL you must call the "dsql()" function.
-This function will return the DSQL object to you, which you can then manipulate and execute.</p>
+<?Code?>
+$dsn=array('mysql:host=localhost;dbname=testdb', $username, $password, $options);
+$mydb=$this->add('DB')->connect($dsn);
+<?/?>
 
-<p>There are several classes which implement the dsql() method:<ul>
-  <li>DB class. $this->api->db->dsql(); Associates the query with the database conneciton.</li>
-  <li>Model. $model->dsql(); Selects proper table and applies conditions automatically.</li>
-  <li>Another DSQL object. $query -> dsql(); Similar to $query->owner->dsql().</li>
-</ul>All queries are automatically added into the Database Object (api->db). </p>
+<p>Alternatively you may pass PEAR::DB-compatible DSN in format "mysql://user:password@localhost/testdb" or a configuration variable path (dsn). Connections in Agile Toolkit are lazy — they may not be physically created unless you execute a query.</p>
 
-<h2>Querying data directly</h2>
 
-<p>There are number of methods which are using to "define" the query. You can call those methods several times and they always return the same $dsql object.</p>
+<h3>Creating Query Object</h3>
+<p>DSQL objects are created by calling dsql() function of either DB object or other DSQL object. This function always returns empty query.</p>
+<?Code?>
+// use default connection
+$q = $this->api->db->dsql();
+// or
+$q = $mydb->dsql();
+<?/?>
+
+<p>You may also call $model->dsql() which will return initialized Query Object with your particular Model settings.</p>
+
+<p>If you create DSQL query before connecting to database, then DSQL will not use which driver to use and generic DB_dsql will be used. Always try to execute connect() before creating query objects.</p>
+
+<h2>Configuring Query</h2>
+
+<p>There are number of methods which are using to "configure" the query. You can call those methods several times and in any order. You can even call them after
+you already executed query once. All those methods will return $this therefore you can safely chain them:</p>
 <?Code?>
 $db = $this->api->db->dsql();
 $db
   ->table('user')
   ->where('type','admin')
   ->field('id');
+  // configure more
 $data = $db
   ->order('created_dts')
   ->field('name,surname')
   ->getAll();
-// Produces: array(
+// Produces: $data=array(
 //   array('id'=>1, 'name'=>'John', 'surname'=>'Smith'),
 //   array('id'=>2, 'name'=>'Joe', 'surname'=>'Blogs')
 // );
 //  
 <?/?>
-<p>This example demonstrates how you can create and manipulate DSQL object. It uses chaining if you want. getAll() method executes the query and returns data in array of hashes.</p>
+<p>All the functions called will be explained in the further sections, although most of them must be simple to understand from just names.</p>
 
 
-<p>Below is a different example, which uses a custom expression and fetches data on-demand. DSQL / Agile Toolkit does not support 
+<p>Below is a different example, which uses a custom expression and fetches data on-demand. </p>
 
 <?Code?>
 foreach($this->api->db->dsql()->expr('show tables') as $row){
@@ -44,10 +59,7 @@ foreach($this->api->db->dsql()->expr('show tables') as $row){
 }
 <?/?>
 
-<p><b>WARNING:</b> ->expr() will return a clone of your current query. $q->expr('show tables'); $q->getAll(); would not work.</p>
 
-<?MoreInfo?>Other data fetching modes, Seeking and other features
-DSQL narrows functionality provided by PDO for simplicity. If you find that you require other fetching modes and other features, you can extend DSQL object or use $dsql->stmt.
-<?/?>
+<p>DSQL implements only some PDO fetching modes/features for simplicity, although you can access PDO object through $q->stmt.</p>
 
 <?$Next?>

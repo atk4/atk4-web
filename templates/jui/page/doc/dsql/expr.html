@@ -2,11 +2,12 @@
 
 <h1>Understanding Expressions. Templates</h1>
 <p>In previous sections of this documentation expr() was used few times as well as demonstrating how select queries are produced.
-Each DSQL object has a "template" property, which is looking like this:</p>
+Each DSQL object has a "template" property which helps query to convert accumulated attributes into a SQL string. This process is
+called Query Rendering. This is a typical query:</p>
 
-<pre>
+<div class="atk_doc example"><code>
 select [options] [fields] [from] [table] [join] [where] [group] [having] [order] [limit]
-</pre>
+</code></div>
 
 <p>When query is being rendered (simplest way to render a query is by converting it into a string), the arguments are filled-in by calling
 methods such as render_options, render_fields, render_from, etc. Those functions will convert the parameters which were previously
@@ -39,4 +40,12 @@ $q=$this->api->db->dsql('MyDSQL');
 $result = $q->myfunc($q->expr('2+2'))->getOne();
 <?/?>
 
-<p>To properly create instance of your 
+<p>You should understand that when myfunc() is called, the supplied argument is only stored as a reference.</p>
+
+<h2>Standard Templates. Modes.</h2>
+<p>DSQL implements some of the common queries already. Calling function insert() will automatically apply the "insert" template and will
+affect the result. Sometimes, however, you would want to know which of those common queries were used. That's why there is a property $mode, which
+is updated when you call insert(), update() or some other function which changes template.</p>
+
+<?$Next?>
+<p>The following modes are supported: select, insert, replace, update, delete, call.</p>

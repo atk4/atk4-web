@@ -3,7 +3,7 @@
 <div class="g-row" id="doc-ref">
   <div class="g-6">
 
-    <h3>Dynamic SQL Object</h3>
+    <h3>Dynamic SQL Object Documentation</h3>
     <div class="g-row">
       <div class="g-4">
 <?Code?>
@@ -19,6 +19,10 @@ $name = $this->api->db->dsql()
       </div>
     </div>
 
+    <p>In Agile Toolkit, DSQL is a built-in "Object Relationship Manager" which implements object-oriented API to interact with SQL database similar to. A typical developer for Agile Toolkit would probably experience no need to interact with DSQL at all. For expert developers DSQL provides an awesome way to extend basic functionality of Models and Views.</p>
+
+    <p>DSQL is extensively used by "Model_Table". When compared to alternative Object Relationship Manager implementations, DSQL exhibits several unique attributes and goals.</p>
+
     <div class="ref-item box blue-noised">
       <b>Table of Contents:</b>
       <?$toc?>
@@ -29,66 +33,71 @@ $name = $this->api->db->dsql()
 
   </div>
   <div class="g-6">
-    <p>DSQL provides a way how you can modify the query of a certain class without the need to change the class itself. Sometimes multiple objects interract with DSQL object creating complex SQL query.</p>
 
-    <p>DSQL supports select, update, insert, delete and some other queries. It hanles sub-queries, expressions and is always using PDO with parameters.</p>
+    <h4>Goals and Features of DSQL</h4>
 
-    <p>You can also use DSQL object to query data, but the DSQL object will not hold the actual value for you. That's job for a "Model" class.</p>
 
-    <h4>Compatibility with 4.1</h4>
-    <p>In 4.2 a completely new DSQL / DB architecture was implemented. The older classes are still included for compatibility. The syntax remains almost identical, but the implementation is fundamentally different. Refer to compatibility guide for more information.</p>
+<?MoreInfo?>Collects all information about the query into one object;
+<p>Once query object is created it will accumulate information about SQL conditions, joins, fields, tables. It even stores information
+about parametric variables and sub-queries.</p>
+<p>This is really important when you need to pass query information from one object to another, between models or even allow controller or add-on to interact with standard query. Multiple queries may exist and can even be executed simultaneously without affecting each-other</p>
+<?/?>
+<?MoreInfo?>Allow do modify existing query dynamically;
+<p>Most ORMs produce query in one go. You can't create query in one object then pass it on to another object to add additional queries or joins.</p>
+<p>DSQL allows you to add or remove fields, conditions, arguments or anything else at any time. Even after you perform one select, you can re-use the object.</p>
+<?/?>
+<?MoreInfo?>Permit use of customizations for different SQL vendors;
+<p>When you design queries yourself, you must be aware of differences between different SQL implementations and extensions.</p>
+<p>DSQL can be used with wide range of database vendors - MySQL, SQLite, PostrgreSQL, Oracle. Queries are optimized to match syntax of your database of choice.</p>
+<?/?>
+<?MoreInfo?>Implement effective protection against SQL injections;
+<p>Many ORMs give you a way to use parametric queries, but would not enforce their use. This may still cause SQL injection due to developer's mistake.</p>
+<p>DSQL obsoletes SQL language completely. You call functions instead and passing arguments, which become parametric values inside DSQL. It's virtually impossible to produce a unsafe query by accident.</p>
+<?/?>
+<?MoreInfo?>Support select, updates, insert and function calls;
+<p>Some ORM will allow you to perform selects, but will leave updates, deletes and other statements to ActiveRecord. Others will not let you use custom queries or function calls.</p>
+<p>Agile Toolkit's DSQL does not attempt to reduce SQL to a lowest denominator. Instead you can define and use any query type your RDBMS supports.</p>
+<?/?>
+<?MoreInfo?>Allow using other DSQL object as sub-query;
+<p>While most ORM will merely help you build a query, combining multiple queries together is virtually impossible. For example, how can you use one query as a sub-query inside another and maintain all parameters?</p>
+<p>Agile Toolkit makes it possible to specify other queries as fields, in conditions or anywhere else while it properly handles parametric parameters.</p>
+<?/?>
+<?MoreInfo?>Well suitable for automated use for models.
+<p>Typical ORM is built to be used by developers directly. As a result they offer very little benefit to just writing queries directly.</p>
+<p>DSQL is designed to be used by a layer of Models and Views in Agile Toolkit which completely hide presence of DSQL from developer. Developer can still manipulate the query by, for example, adding additional condition into a generic view or model.</p>
+<?/?>
 
+<h4>What DSQL is not?</h4>
+<p>In the spirit of Agile Toolkit — all of it's classes are strictly focused on a one simple task, without trying to do everything. Here are things which DSQL will not do and why:
+<?MoreInfo?>No generation of PHP code
+<p>Generated code is bad for many reasons and is against one of the core principles of Agile Toolkit. See also next point.</p>
+<?/?>
+<?MoreInfo?>No knowledge of your database
+<p>DSQL help you to cerate queries. It does not attempt to look into your database, will not create field caches, hold information about field types or joins. That's job of a "Model" in Agile Toolkit.</p>
+<?/?>
+<?MoreInfo?>No attempts to change database structure
+<p>Several ORMs will try to create, alter, modify or upgrade your database for you. There are several reasons why DSQL does not do that.</p>
+<p>Security — your application must not be capable of changing your database structure. That's job of your installer.</p>
+<p>Migration flexibility — Agile Toolkit has a method for upgrading database schema by executing SQL scripts directly. This makes it more flexible to not only change schema, but also to alter / fix data.</p>
+<p>Features — Several RDBMS have very powerful capabilities. DSQL will not attempt to restrict you from using them.</p>
+<?/?>
+<?MoreInfo?>DSQL is compact and fast
+<p>All of DSQL is implemented in under 1000 lines of PHP code making it very lightweight and fast.</p>
+<?/?>
+
+<h4>Other Resources</h4>
     <div class="ref-item box blue-noised">
       <b>Other Resources, Blog posts:</b>
       <div class="details white">
         <div><a href="<?page?>learn/understand/model<?/?>">Introduction to Models</a></div>
-        <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Creating Database Queries with DSQL</a></div>
+        <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Q: Creating Database Queries with DSQL</a></div>
       </div>
     </div>
 
-    </div>
-  </div>
+
+</div></div>
+
+
+
   <?$Next?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?$Content?>
-
-<div class="g-row" id="doc-ref">
-  <div class="g-6">
-    <p>Dynamic SQL is a object-oriented model for building your query. It allows you to interact with the object in a structured way by adding additioal criterias, fields, joins or parameters, then the object is used natively by View elements.</p>
-
-    <p>By it's nature DSQL allows some logical transparency of the back-end database storage, although the only actively used implementation is for MySQL</p>
-
-    <p>To create new dsql instance call $this->api->db->dsql(); Connection to database must be established through (api->dbConnect). You can re-use same criteria different queries such as select and then update on a same object. Dsql object can also be safely cloned.</p>
-
-  </div>
-  <div class="g-6">
-    <div class="ref-item box blue-noised">
-      <b>Other Resources:</b>
-      <div class="details white">
-        <div><a href="<?page?>learn/understand/api<?/?>">Introduction to Application Classes</a></div>
-      </div>
-    </div>
-
-    <div class="ref-item box blue-noised">
-      <b>Form-related documentation</b>
-      <p>Select section:</p>
-      <?$toc?>
-    </div>
-  </div>
-</div>
-<?$Next?>
