@@ -23,7 +23,7 @@ $form->setModel('User');
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on Controllers</a>
 
 <h2>Create, Read, Update, Delete = CRUD</h2>
-<p><a href="http://www.google.com/?q=crud+generator" target="_blank">Crud Generators</a> are evil. They provide no flexibility, duplicate awful amount of code and have no consistency with the rest of your User Interface. Considering all the great things in Agile Toolkit, it is in a much better position to build a better implementation for a CRUD.</p>
+<p><a href="http://www.google.com/?q=crud+generator" target="_blank">Crud Generators</a> are evil. They provide no flexibility, duplicate awful amount of code and have no consistency with the rest of your User Interface. Agile Toolkit is in a much better position to build an ideal CRUD.</p>
 
 <?Code?>
 $crud = $page->add('CRUD');
@@ -36,7 +36,7 @@ $crud->setModel('User',null,array('name','gender','manager'));
 
 <p>CRUD implementation in Agile Toolkit relies on other widgets such as Form, Grid, Button, Frame. Implementation is done in a classy Object-Oriented style, where you can supply your own model, change Form and Grid class, override methods, add more elements such as buttons, place multiple CRUD objects on the page and do this all with zero generated lines of code. Reloading is performed through AJAX without disturbing other elements on the page.</p>
 
-<p>If you think about it - CRUD can be implemented in so many different ways and layouts and it all is very easy to achieve with the flexibility of Agile Toolkit just in a few lines of code.</p>
+<p>If you think about it — CRUD can be implemented in so many different ways and layouts and it all is very easy to achieve with the flexibility of Agile Toolkit just in a few lines of code.</p>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>a<?/?>">Bundled Add-ons Widgets and Controllers</a>
 
@@ -49,21 +49,17 @@ $crud->setModel('User',null,array('name','gender','manager'));
   <li>Page — Object associated with a certain URL and containing Views.</li>
   <li>Application — The top-most object responsible for everything.</li>
 </ul>
-Two new type of objects are the Page and Application. They are exactly what they seem to be. Application is the top-most object responsible for everything — accepting the request, determining corresponding Page, initializing Views and Controllers, recursively rendering your Page, adding it into a "Shared" template and sending of HTML to the browser.</p>
+Page and Application haven't been discussed before. They are exactly what they seem to be. Application is responsible for delegating all functionality to other objects — accepting the request, determining corresponding Page, initializing Views and Controllers, recursively rendering your Page, adding header/footer, menu, and sending HTML to the browser.</p>
 
-<p>Every time you start a new Web Application you create a new Application class by extending some standard ones. Inside your application class you can decide what authentication to use, how to route URLs, how to connect to database, how to render menu, below is a sample application class.</p>
+<p>Every time you start a new Web Application you create a new Application class by extending one of standard classes. Inside your application class you can decide what authentication to use, how to route URLs, how to connect to database and how to render menu.</p>
 
 <?Code?>
 class MyApp extends ApiFrontend {
     function init(){
         parent::init();
-
         $this->add('jUI');
-
         $this->js()->_load('jquery.slider');
-
         $this->add('FrontendAuth');
-
         $this->dbConnect();
     }
     function initLayout(){
@@ -74,10 +70,9 @@ class MyApp extends ApiFrontend {
 }
 <?/?>
 
-<p>There are already several Application classes you can select from. ApiFrontend is for building your own fully-functional web applications. ApiWeb is a lightweight verison you can use from inside other frameworks. ApiCLI is an Application class for building your command-line utilities.</p>
+<p>There are several Application classes you can inherit from. ApiFrontend is for building your own fully-functional web applications. ApiWeb is a lightweight verison you can use from inside other frameworks. ApiCLI is an Application class for building your command-line utilities.</p>
 
-<p>You can design your own new applications such as Installer, Admin-interface or focus them on integrating with other frameworks and create ApiWordpress, ApiCodeIgniter which will be they key for a smooth integration between Agile Toolkit goodies and your legacy framework. Hopefully - not for long, until you decide to fully switch to Agile Toolkit.</p>
-
+<p>Your own Application class might become your own standard API class if you decide to share it and extend it across your web application.</p>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/api<?/?>">Full Documentation on Application Classes</a>
 

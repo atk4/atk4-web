@@ -1,26 +1,85 @@
 <?$Content?>
-<h1>The Object Relational Mapper and Active Record</h1>
 
 
-<p>Agile Toolkit is a vertical web software development and deployment framework focused on simplicity and abstraction. Toolkit is notable for it's approach such as avoidance of unnecessary features, use of object-oriented design, HTML rendering phase, AJAX integration and User Interface.</p>
+<h1>Agile Toolkit = UI + ORM + MVC + CSS + JS + Add-ons</h1>
 
-<p>This and the following page of the Introduction section will explain to you primary benefits of Agile Toolkit and why it is a major advance in Web Development Industry.</p>
+<p>Back in 1995 Web development was at it's simplest. Noone worried about SQL injections, CSS, complex interfaces or color schemes. Writing an application others could admire was an easy job. Today web development has became a nightmare with all the new technologies which are considered a standard.</p>
+
+<p>To developer, Agile Toolkit offers abstraction of web-specific implementation details using well-tested desktop GUI development principles (such as Java Swing) carefully adopted for PHP / HTML5.</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-4">
+    <?Code?>
+// Object-Oriented UI
+$page->add('Button')
+   ->setLabel('Hello');
+
+$form=$page->add('FormAndSave');
+$form->setModel('Book');
+    <?/?>
+  </div>
+  <div class="g-4">
+    <?Code?>
+// Update database record
+$m=$this->add('Model_Book');
+
+$m->load(123)
+  ->set('title',$t)
+  ->save();
+    <?/?>
+  </div>
+  <div class="g-4">
+    <?Code?>
+// Application-wide auth
+$auth=$api->add('SQLAuth');
+
+$auth->setModel('User');
+
+$auth->check();
+<?/?>
+  </div>
+</div>
+
+<h2>Goals of Agile Toolkit</h2>
+
+<quote>The Unix Rule: Each Object does one thing well. Objects may rely on other objects. Objects work together. Objects are easy to use.</quote>
+
+<quote>The Rule of "80%": Add features to suit 80% of use-cases. The rest of 20% will have to extend the classes an override methods.</quote>
+
+<quote>Highest Lowest Common Denominator: Each installation of Agile Toolkit comes with User Interface, Theme, Views and many other components. Rely on them in your software and add-ons.</quote>
+
+<h3>Why Another Framework?</h3>
+<p>Majority of Web Frameworks for PHP today focus on Object Relational Modeling and stay away from User Interface concepts. Often using framework is more complex than writing software without one.</p>
+
+<p>Agile Toolkit is simpler than No-Framework. It seamlessly enhances your Application with User Interface, Layouts, Grid system, jQuery UI Themes, Injection protection, Transparent AJAX and Rich Web Interface tools. Agile Toolkit stands behind clean code with maximum efficiency and a beautiful Object-Oriented approach.</p>
+
+<h3>How Agile Toolkit is Using Objects?</h3>
+<p>A common trend in PHP development is where classes are used as libraries. Developers include classes and call them passing in some information and receiving another information. While each class does a job, it's very difficult to create a universal architecture and high-level logic.</p>
+
+<p>Agile Toolkit has no static classes, global variables or constants. You work with objects — class instances. Objects carry information within them and you can have several instances of a same object. Objects interact with each-other and has no attachment to the class names — a great opportunity to craft your own objects and inject it into the system.</p>
+
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/atk4-structure.png<?/?>"/>
+
+<h3>Structure of Agile Toolkit</h3>
+<p>By no means Agile Toolkit is a "minimalistic" framework. It has more stuff than some mature and heavyweight frameworks. However with efficient code re-use and clever architecture, Agile Toolkit wins on performance, simplicity and agility.</p>
+
+<p>Agile Toolkit is inspired by Object-Oriented desktop environments first implemented in NeXTSTEP, later adopted in Cocoa and many other windowing environments on the desktop. Lots of attention was spent on making interface looking like many other web applications. Rendering produces a standard HTML5 and CSS.</p>
 
 
-<h3>The "Core Framework"</h3>
-<p>Many of the PHP frameworks such as CodeIgniter, Symfony, Yii focus primarily on the back-end of your application. Agile Toolkit has similarly powerful foundation, but it is hidden by a high-level development components. To understand the underpinnings of the toolkit better, here is a glimpse inside the internals of Agile Toolkit.</p>
+<h2>The Data Manipulation</h2>
+<p>A vital part for any self-respecting framework is a Data Manipulation framework. Agile Toolkit has three major classes dealing with data: DSQL (Objective interface to SQL Database), Model (Objective interface to Active Record) and Model_Table (SQL-powered Active Record). In 80% of use-cases the Model_Table is fully sufficient for your task, but since it's implemented on top of DSQL and Model, knowing the foundation will help you unleash true potential of Agile Toolkit Data Layer.
 
-<h2>DSQL - Agile's approach to Object Relational Management</h2>
+<h3>DSQL - Agile's approach to Object Relational Management (ORM)</h3>
 
-<p>Dynamic SQL is the Object-Oriented API to your data-base. Because communication with the SQL databases is still using old SQL language and direct use of SQL is source to many injections, cross-compatibility problems and performance issues, DSQL was introduced in Agile Toolkit around 2004 then reimplemented in early 2012 (4.2). Here is a sample syntax:</p>
+<p>Dynamic SQL is the Object-Oriented API to your RDBMS. Because communication with the SQL databases is still using old SQL language and direct use of SQL is source to many injections, cross-vendor compatibility problems and performance issues, DSQL was introduced in Agile Toolkit around 2004 then reimplemented in early 2012 (4.2) to unify interaction with the database. Here is a sample syntax:</p>
 
 <?Code?>
 // executes "select name from user where id=$id" query
 $name = $this->api->db->dsql()
-    ->table('user')
-    ->where('id',$id)
-    ->field('name')
-    ->getOne();
+  ->table('user')
+  ->where('id',$id)
+  ->field('name')
+  ->getOne();
 
 // can do expression too. Works as iterator
 foreach($this->api->db->dsql()->expr('show tables') as $row){
@@ -31,26 +90,21 @@ foreach($this->api->db->dsql()->expr('show tables') as $row){
 $q=$this->api->db->dsql();
 $q->field(
   $q->dsql()->table('book')->where('author_id', $q->getField('id'))->field('count(*)'),
-  'book_cnt'
+ 'book_cnt'
 );
 <?/?>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on DSQL</a>
 
 <h2>Active Record Implementation</h2>
-<p>All that syntax is really powerful and is a serious competition to alternative ORM libraries, but Agile Toolkit does not stop here. Now that the SQL is abstracted and object-oriented, it can be easily used by a higher-level objects.
+<p>Implementation of a "Model" class allows to define structured model objects with fields, field types and methods. Models then can be used either directly on inside Views defining the Data Source.</p>
 
-<quote>
-Agile Toolkit simplifies things. For Developer. For Designer. For Administrator. For End User. Many underlying technologies are there when you need them. More often you will find that 90% of your needs can be addressed by staying on Model level.
-</quote>
 
 <h3>Creating your Business Logic</h3>
 <img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/model_inheritance.png<?/?>"/>
 
 <p>In real world every day you have wide variety of "Actors" or Entities. Programs reflect our daily life and task and they need to map it into "Models" such as "Person", "Profile", "Payment", "Order", "Message" etc.</p>
 
-<p>In Agile Toolkit you need to describe your models. Properties of the Model define what data can model hold. Model may have certain "methods" which would perform business actions. There are other things you can define for the models such as Behaviours, Validations, Conditions, Relations and Calculated Fields.</p>
-
-<p>Models in Agile Toolkit are fully-featured objects. You will often extend one model to create another by adding fields, conditions or joins. As an example here are two models: User and Admin. They do have many things in common, but Model_Admin has an extra condition (is_admin=true). Model_Admin class extends Model_User. Both models use same database table. In scenario like this one Agile Toolkit simplifies the way how you interact with models and automatically applies condition to avoid accidental mistakes in your code:</p>
+<p>In Agile Toolkit you need to describe your models. Properties of the Model define what data can model hold. Model may have certain "methods" which would perform business actions. It's highly encouraged that you inherit your models and use a best practices of Object-Oriented development.</p>
 
 <?Code?>
 $user=$this->add('Model_User');
@@ -62,9 +116,12 @@ $admin->load( $user->id );   // will fail to load data
 <?/?>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/model<?/?>">Full Documentation on Models</a>
 
-<p>The syntax of using the models is very straightforward and simple. Something you would expect from a PHP Web Framework. Right?</p>
+<h2>Model_Table — Active Record+RDBMS</h2>
 
-<p>Agile Toolkit does not stop here. Agile Toolkit is <b>PHP UI Framework</b> and the core foundation is just a building block for the User Interface Views which are described in the next part of this introduction.</p>
+<p>The Model_Table class and dozen of supplementary classes introduce new features into a simple Model implementation such as — Joining tables, Sub-queries, Conditions and Expressions. Model_Table extensively uses DSQL architecture to build and adjust queries of the model.</p>
+
+<p>Model_Table is the best way to describe Business Logic of your application.</p>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/model/table<?/?>">Full Documentation on Model_Table</a>
 
 <a href="<?page?>intro/2<?/?>" style="float: right" class="button blue">Introduction to Graphics User Interface</a>
 <div class="clear"></div>

@@ -1,13 +1,17 @@
 <?$Content?>
 
 <h1>Web User Interface</h1>
-<p>Graphical User Interfaces have been around for decades. The idea is simple — implement a unified set of visual tools allowing application to communicate with User in expected way. Those visual tools are called "Views" in Agile Toolkit: Buttons, Frames, Menus, Tabs and others. Yet many other Web Frameworks failed to implement a consistent User Interface.</p>
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/form.png<?/?>"/>
 
-<p>Why?</p>
+<p>From all the toolkits who attempted to create User Interface you will find Agile Toolkit to be the slickest, the most flexible and the most full-featured. To find out why, let's look at how the Form is implemented in Agile Toolkit.</p>
 
-<p>One reason is that some attempts to create Web User Interface but forget that they are making "Web" interface. Many desktop patterns do not apply. Windows and dragging is not always necessary. Simplicity and ability to customize is highly valued. Customization and unique look is required in almost every application. Another reason is PHP developer average skill-set. A typical PHP developer is coming from Design background and would know very little about programming. By the time they learn to program, they fail to find a decent framework written in PHP and they need to migrate to another language.</p>
+<p>The standard PHP class Form relies on different assets outside of PHP to make your form look great. Agile Toolkit forms are enhanced with a built-in jQuery UI widget (ui.atk4_form.js) which adds AJAX form submission, field reloading, lovely validation error reporting and flexible handling of successful form submission. Form also relies on the CSS framework which allows developer to customize layout and look of the form. Arranging fields in two or three columns no longer requires you to fiddle with HTML code.</p>
 
-<quote>Agile Toolkit is for developers who LOVE their code. If you value performance, elegance and simplicity of your code, then you will feel at-home with Agile Toolkit. Your ability to recognize certain objects as "well made" and then using them to build higher-level layer of functionality is the great way to develop software and is very essential to your carrier. Agile Toolkit will teach you how.</quote>
+<p>Form relies on a template, which defines the actual HTML used by form and fields. Finally there are several Controllers you can apply to a form such as controller for CSF protection, password strength indicator. Using Form with a Model will spawn MVCForm controller which will bind Form with Model and automatically populate fields while converting field types.</p>
+
+<p>Form does not implement all the functionality on it's own. It relies on different Field classes and Button class to render itself. Form, as any other View can have events. onSubmit() is one form-specific event, but many others can be added through JavaScript interaction class jUI.</p>
+
+<p>It is not a goal of Agile Toolkit to eliminate access to HTML completely. If bundled form CSS styles are not suitable, you can build your own layout through a simple HTML template.</p>
 
 <h4>SMLite - Agile's approach to Template Objects</h4>
 <p>Template is a common practice to separate HTML markup from business logic. Unfortunately popular template engines such as Smarty have decided to implement a new programming language inside a template. Agile Toolkit Templates reverse this pattern and make templates incredibly simple. Consider the following example:</p>
@@ -57,7 +61,7 @@ if($form->isSubmitted()){
 }
 <?/?>
 
-<quote>When all your blocks behave properly then adding more User Interface elements will not break overall consistency of your application. There are hundreds of problems if you try to do it manually, but Agile Toolkit makes it so simple and intuitive.</quote>
+<quote>When all parts of your application simply do their job, building a higher-level code becomes a joy.</quote>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/form<?/?>">Full Documentation on Form</a>
 
