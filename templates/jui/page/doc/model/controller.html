@@ -1,0 +1,87 @@
+<?$Content?>
+
+<h1>Using Data Controllers</h1>
+
+<p>Model Data Controllers are designed for a simple data storages such as Arrays, BerkleyDB, Memcache, File. For "Model" such a data controller is required for loading and storing the record.</p>
+
+
+<div class="box blue-noised p-10px">
+  <div class="white">
+    <table>
+      <thead>
+        <tr>
+          <th>Data Controller</th>
+          <th>Table</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>Array</td>
+          <td>array( ('id'=>'key', 'field'=>'val', 'field'=>'val'), ... )</td>
+          <td>Handy for iterating through array of hashes. Supports traversing, Does not support load()</td>
+        </tr>
+
+        <tr>
+          <td>ArrayAssoc</td>
+          <td>array( 'key'=>array('field'=>'val', 'filed2'=>'val'), ... )</td>
+          <td>Similar to Array, but uses keys as "id" field. Supports traversing, load() and save()</td>
+        </tr>
+
+        <tr>
+          <td>MemCache</td>
+          <td>key prefix</td>
+          <td>Allows to store of field data inside memcache. Supports load(), save() and delete(). Does not support traversing. Adds incr() and decr().</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Using Data Controller</h2>
+<p>To associate model with data controller you should use setSource($data_ctl, $table=null, $id=null); This will initialize controller, and set $model->controller to point to controller object. calling load(), save() or delete() will be forwarded towards a current controller.</p>
+
+<p>Controller may implement additional methods through addMethod() mechanism, so setting some controllers to your model may make more methods available. Memcache controller adds incr($field), decr($field).</p>
+
+<h2>Sample Controller</h2>
+<p>Here is a sample implementation of a controller, which produces random records.</p>
+
+<?Code?>
+class Controller_Data_Random extends AbstractController {
+  function load($model,$id=null){
+    $res=array();
+    foreach($model->elements as $name=>$f)if($f instanceof Field){
+
+      if($f->system())continue; // do not mess with system fields
+
+      if($f->type() == 'int')$res[$name]=rand(0,100);
+      else $res[$name]='RandomString'.rand(0,100);
+    }
+    $model->set($data);
+    return $model;
+  }
+  function setSource(){
+  }
+}
+<?/?>
+
+<p>$m=$this->add('Model_User')->setSource('Random')->load(); will now auto-fill fields with random values.</p>
+
+<h2>Using with Model_Table</h2>
+<p>Model_Table redefines save(), load() and delete() to use SQL, however if wish to use it with a custom controller, you can call this:</p>
+<?Code?>
+
+$m=$this->add('Model_User');  // based on Model_Table
+$m->load(25);                 // Loads from SQL
+
+$c=$this->add('Controller_Data_Random');
+$c->load($m);   // does not affect ID
+
+
+$mc=$this->add('Controller_Data_MemCache');
+$mc->save($m, 'latest_user');  // saves model into MemCache under id='latest_user'
+<?/?>
+
+<?$Next?>

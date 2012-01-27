@@ -164,21 +164,6 @@ class Sitemap extends AbstractController{
                 'typography'=>'Headings and Paragraphs',
                 'add'=>'Adding Your Own',
                 ),
-            'model'=>array(
-                'Models and Controllers',
-                'add'=>'Creating Sample Models',
-                'naming'=>'Suggested Field Naming',
-                'extend'=>'Extending Models',
-                'conditions'=>'Conditions and Master Fields',
-                'calculated'=>'Defining Calculated Fields',
-                'relations'=>'Relative Fields',
-                'join'=>'Joining Tables',
-                'orm'=>'Loading and Saving Records (ORM)',
-                'queries'=>'Retrieving Multi-Row Data',
-                'dsql'=>'Generating Custom SQL',
-                'defaultactions'=>'Modifying The Default Actions',
-                'newactions'=>'Adding New Actions',
-                ),
             'controller'=>array(
                 'Controller Classes',
                 'why'=>'Purpose of Controllers',
@@ -214,6 +199,26 @@ class Sitemap extends AbstractController{
                 'expr'=>'Understanding Expresisons. Templates',
                 'subquery'=>'Creating sub-queries',
                 'extend'=>'Extending, Options',
+                ),
+            'model'=>array(
+                'Models and Controllers',
+                'add'=>'Creating Your Models',
+                'fields'=>'Field Meta-Information',
+                'controller'=>'Data Controllers',
+                'behaviour'=>'Behaviours',
+
+
+                /*
+                'conditions'=>'Conditions and Master Fields',
+                'calculated'=>'Defining Calculated Fields',
+                'relations'=>'Relative Fields',
+                'join'=>'Joining Tables',
+                'orm'=>'Loading and Saving Records (ORM)',
+                'queries'=>'Retrieving Multi-Row Data',
+                'dsql'=>'Generating Custom SQL',
+                'defaultactions'=>'Modifying The Default Actions',
+                'newactions'=>'Adding New Actions',
+                 */
                 ),
             /*
             'auth'=>array(

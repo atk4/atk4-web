@@ -1,0 +1,82 @@
+<?$Content?>
+
+<h1>Creating Your Model Structure</h1>
+
+<p>One of the first jobs you will do in your new web application is defining the models. Before you start, however, take a piece of paper and try to sketch your models in front of you. When I think about a simple DVD rental shop application, I have something like this in front of me:</p>
+
+<img style="float: left; padding-right: 2em" src="<?template?>images/ugly_images/model-inheritance.png<?/?>"/>
+
+<p>Arrows on my diagram represent inheritance. In fact, some models are more broad, while other models are more specialized. When you are presenting a data on a page and you need to show only PopularTitles, you simply need to specify the right model. It is then responsibility of the model to create necessary conditions for the Data Driver.</p>
+
+<h2>Defining Model</h2>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+class Model_User extends Model {
+  public $table='user';
+  function init(){
+    parent::init();
+    $this->addField('name')->caption('Full Name');
+    $this->addField('email');
+    $this->addField('is_admin')->type('boolean');
+    $this->addField('reminders_sent')->type('int');
+  }
+}
+<?/?>
+  </div>
+  <div class="g-6">
+    <p>When the model instance is created, model populates itself with information about each field. Fields are implemented also as objects of the class "Field". This class generally describes meta information about the field. addField() returns newly created Field object and further calls to caption(), type() and other modifier functions are saved inside properties of that field.</p>
+
+    <p>When you extend your Model you may add additional fields inside the init() function. Therefore Model_Admin would inherit Model_User fields and add few more.</p>
+  </div>
+</div>
+
+<p>After the fields are defined, you can also define some additional methods for your model. Those methods would contain the non-UI logic. Since we are building "User" model, you might want to add "sendPasswordReminder" method.</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+  function sendUsernameReminder(){
+    $t=$this->add('TMail');
+    $t->loadTemplate('reminder');
+    $t->set($this->get());
+    $t->send($this['email']);
+    return $this;
+  }
+<?/Code?>
+  </div>
+  <div class="g-6">
+    <p>You will notice few curious points about this function. First, it simply assumes that the record is loaded. If record is not loaded, then get() would produce exception and the email wouldn't be sent at all.</p>
+    <p>Next, the template of TMail is populated with all model fields. By naming tags in your email template with the same names as model fields, you can save yourself some time here.</p>
+  </div>
+</div>
+
+<h2>Using Model</h2>
+<p>Models are independent objects and there are certain actions you can perform with any model — load data, set fields, get fields, save data. You can also clone model or un-load data.</p>
+
+<p>In our newly created model it's also possible to send username reminders.</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+$m=$this->add('Model_User');
+
+$m->setSource('Array',$users_data);
+$m->load(25);
+
+$m->sendUsernameReminder();
+$m['reminders_sent']++;
+$m->save();
+<?/?>
+  </div>
+  <div class="g-6">
+    <p>setSource() function will load data from $users_data array using Controller_Data_Array. If key is not present load() will not throw exception, however get() will. To verify successful load you can use: if($m->loaded());</p>
+
+    <p>When fields of the models are changed, model is considered "dirty". if($model->dirty) can be used to check if there are any un-saved changes. Some drivers may only save fields which are dirty.</p>
+
+    <p>Iterating through the model will also load model data and IDs. Regardless of how keys are used inside controller, you can always get primary key through $m->id.</p>
+  </div>
+</div>
+
+<?$Next?>

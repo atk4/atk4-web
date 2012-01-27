@@ -1,0 +1,184 @@
+<?$Content?>
+
+<h1>Defining Field Meta-Information</h1>
+
+<p>Once addField() is called the field will be listed as one of the model's elements. You can access existing field or even destroy it through $model->getElement('field'); Sometimes when you extend model, you would want to change certain attributes of a field.</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+class Model_Admin extends Model_User {
+  function init(){
+    parent::init();
+
+    $this->getField('is_admin')
+      ->system(true)
+      ->defaultValue(true);    
+
+    $this->getField('email')
+      ->destroy();
+
+    $this->addField('privileges');
+  }
+}
+<?/?>
+  </div>
+  <div class="g-6">
+    <p>When you will be using Model_Admin now, field configuration will be different. Email field will be ignored, but a new field "privileges" will be used. Admin's model does not specify a different value for $table property, therefore same table is going to be used.</p>
+
+    <p>Hierarchic models are even more useful when used with Model_Table's conditions.</p>
+
+    <p>Calling destroy() on an object will remove it from it's owner's elements array. If model is not referenced in any other way, Garbage Collector will get rid of it.</p>
+    <p>If you want for a model to represent only one specific record, you can load it's data by default, such as by calling load() inside init(). It will, however, not prevent model object from un-loading that record and loading other record. Calling load() without arguments will load first possible record.</p>
+  </div>
+</div>
+
+<h2>List of meta-data</h2>
+<div class="box blue-noised p-10px">
+  <div class="white">
+    <table>
+      <thead>
+        <tr>
+          <th>setter / getter</th>
+          <th>default</th>
+          <th>Explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>type(), (obsolete: datatype())</td>
+          <td>"string"</td>
+          <td>Field type. In theory can be anything, but "int", "boolean" and "text" some special treatment.</td>
+        </tr>
+
+        <tr>
+          <td>caption()</td>
+          <td>ucwords(str_replace('_', ' ', $short_name));</td>
+          <td>Field type. In theory can be anything, but "int", "boolean" and "text" some special treatment.</td>
+        </tr>
+
+        <tr>
+          <td>group()</td>
+          <td>null</td>
+          <td>Defines which group field belongs to. Specifying string to setActualFields(), will display only field from that group.</td>
+        </tr>
+
+        <tr>
+          <td>readonly()</td>
+          <td>false</td>
+          <td>Readonly field will not be saved or show inside forms by default. If explicitly requested, it will show as disabled field.</td>
+        </tr>
+
+        <tr>
+          <td>mandatory()</td>
+          <td>false</td>
+          <td>Field must be set before saving. Forms will mark respective field with asterisk, if displayed.</td>
+        </tr>
+
+        <tr>
+          <td>editable()</td>
+          <td>false</td>
+          <td>Similar to readonly() but you can manually set() this field and it will be saved into database if changed. It still won't be editable on form.</td>
+        </tr>
+
+        <tr>
+          <td>allowHTML()</td>
+          <td>false</td>
+          <td>By default, all fields will be stripped from HTML tags as additional security measure when loaded from Form. allowHTML==true will not strip tags.</td>
+        </tr>
+
+
+        <tr>
+          <td>display()</td>
+          <td>null</td>
+          <td>Override how the filed is displayed inside views. By default Controller_MVCForm and Controller_MVCGrid will attempt to match column/form field type based on model field type (type()). Accepts either a string or array('form'=>'upload','grid'=>'text')</td>
+        </tr>
+
+        <tr>
+          <td>system()</td>
+          <td>false</td>
+          <td>System fields are always loaded even if grid/form does not require them. They are not shown by default on the views, but will display if specifically requested.</td>
+        </tr>
+
+        <tr>
+          <td>hidden()</td>
+          <td>not sure...</td>
+          <td>not sure...</td>
+        </tr>
+
+        <tr>
+          <td>length()</td>
+          <td>unlimited</td>
+          <td>Specifies maximum length of the field.</td>
+        </tr>
+
+        <tr>
+          <td>defaultValue()</td>
+          <td>null</td>
+          <td>If new record is created and field value is not set, defaultValue will be used. defaultValue will also be shown in the form if record is not loaded.</td>
+        </tr>
+
+        <tr>
+          <td>visible()</td>
+          <td>true</td>
+          <td>Should field be displayed in read-only views?</td>
+        </tr>
+
+        <tr>
+          <td>listData(), setValueList()</td>
+          <td>null</td>
+          <td>Defines possible values of the field. Argument is array('key'=>'visible description'); Forms and Grids will display "visible description", but "key" is stored as value.</td>
+        </tr>
+
+        <tr>
+          <td>enum()</td>
+          <td>null</td>
+          <td>Similar to listData() but will use non-associative array as both keys and values. enum(array('Y','N'));</td>
+        </tr>
+
+
+        <tr>
+          <td colspan=3><h5>Table_Model specific meta-data</h5></td>
+        </tr>
+
+
+        <tr>
+          <td>from(relation,[actual])</td>
+          <td>null</td>
+          <td>Specifies that the field is imported from joined table. Actual will specify the name of that field in joined table. addField('address_namo')->from('address','name')</td>
+        </tr>
+
+        <tr>
+          <td>searchable()</td>
+          <td>false</td>
+          <td>The field can be used for searching. Used by Filter.</td>
+        </tr>
+        <tr>
+          <td>sortable()</td>
+          <td>false</td>
+          <td>The field can be used for sorting. Used by Grid.</td>
+        </tr>
+
+
+        <tr>
+          <td colspan=3><h5>Obsolete functions</h5></td>
+        </tr>
+
+        <tr>
+          <td>calculated(string/callback)</td>
+          <td>null</td>
+          <td>Obsolete way to define exprerssions. Use $model->addExpression()</td>
+        </tr>
+        <tr>
+          <td>refModel('Model_User')</td>
+          <td>null</td>
+          <td>Obsolete way to define references. Use $model->hasOne('User')</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<?$Next?>
