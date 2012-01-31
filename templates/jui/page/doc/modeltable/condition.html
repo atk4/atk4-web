@@ -1,0 +1,73 @@
+<?$Content?>
+
+<h1>Conditions and Master Fields</h1>
+
+<p>The key difference between DSQL and Model is that Model has a strictly defined set of fields. Fields can be of a few types such as regular SQL fields, calculated fields or fields from joined table. All three cases will have different format when in a query. Developer who uses Model_Table, however, has a luxury of ignoring field type and placing a condition just by using field name.</p>
+
+<?Code?>
+class Model_Ojiisan extends Model_User {
+  // Ojiisan = Old Man
+  function init(){
+    parent::init();
+
+    $this->addField('gender')->enum(array('M','F'));
+    $this->addExpression('age','year(now())-year(birthdate)');  
+
+    $this->addCondition('gender','M');
+    $this->addCondition('age','>',65);
+    
+  }
+}
+<?/?>
+
+<p>Above code will approach queries for both fields differently, but the syntax is consistent. This allows for UI to ignore nature of the fields and generically add conditions as needed.</p>
+
+<p>Setting conditions will modify master query and it will have effect on selects, updates and deletes. It will not have any effect on insert() and therefore model will allow you to insert a record which you won't be able to load with the same model afterwards.</p>
+
+<h3>Master Fields</h3>
+<p>Master fields are similar to conditions, but model will also use a default value for when inserting records. masterField() does not support operation.</p>
+
+<?Code?>
+class Model_Ojiisan extends Model_User {
+  // Ojiisan = Old Man
+  function init(){
+    parent::init();
+
+    $this->addField('gender')->enum(array('M','F'));
+    $this->addExpression('age','year(now())-year(birthdate)');  
+
+    $this->setMasterField('gender','M');
+    $this->addCondition('age','>',65);
+  }
+}
+
+$model=$page->add('Model_Ojiisan');
+$model->set('age',20);
+$model->save();
+<?/?>
+
+<p>In the example above, model attempt to insert record with gender=M and age=20. save() method will attempt to load model after it is successfully saved, but the condition will prevent model from loading. This will cause exception and the transaction will be rolled back.</p>
+
+<p>setMasterField() will also mark field as system to avoid accidental change. Be aware that setMasterField() should happen before model is binded with view, otherwise system field flag will have no effect:</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+
+<?Code?>
+// WRONG
+$page->add('CRUD')
+  ->setModel('Book')
+  ->setMasterField('published','Y');
+<?/?>
+  </div>
+  <div class="g-6">
+<?Code?>
+// RIGHT
+$m=$page->add('Model_Book')
+  ->setMasterField('published','Y');
+$page->add('CRUD')->setModel($m);
+<?/?>
+  </div>
+</div>
+
+TBC

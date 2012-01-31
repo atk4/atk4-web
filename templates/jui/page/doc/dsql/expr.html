@@ -47,5 +47,46 @@ $result = $q->myfunc($q->expr('2+2'))->getOne();
 affect the result. Sometimes, however, you would want to know which of those common queries were used. That's why there is a property $mode, which
 is updated when you call insert(), update() or some other function which changes template.</p>
 
+<h2>Defining custom arguments</h2>
+<p>It might not always be convenient to redefine the DSQL object and add functions in there. There are two ways how you can add support for custom parameters in the template:</p>
+<?Code?>
+$q=$this->api->dsql();
+$q->addMethod('render_myargs',function($t){
+  return $t->escape($t->args['myargs']);
+});
+$q->addMethod('myfunc',function($t,$args){
+  $t->args['myarg']=$arg[0];
+  $t->setTemplate('myfunc([myarg])');
+  return $t;
+});
+
+$q->myfunc(123)->getOne();
+<?/?>
+<p>This method uses the standard technique of Agile Toolkit which defines a method on a model-basis. This technique is explained in more details under documentation for AbstractObject class.</p>
+
+<p>Alternatively, you can use setCustom() function which will record the value to put inside template when it's going to be rendered:</p>
+<?Code?>
+$q=$this->add->dsql();
+$q->useExpr('myfunc[myarg]')->setCustom('myarg',$q->escape(123));
+<?/?>
+
+
+<h2>Example: Building a UNION support</h2>
+<p>A frequently requested feature to DSQL is a support for "UNION" statement. This can be implemented really easy in DSQL now.</p>
+
+<p>First you would need to use a new template for union like this:</p>
+<?Code?>
+$q=$this->useExpr('[q1] UNION [q2]');
+<?/?>
+<p>Next you need to assign the arguments with setCustom():</p>
+<?Code?>
+$q->setCustom('q1',$q->dsql()->table('book'))
+$q->setCustom('q2',$q->dsql()->table('news'));
+<?/?>
+<p>Result:</p>
+
+<div class="atk_doc example"><code>
+select * from `book` UNION select * from `news`
+</code></div>
+
 <?$Next?>
-<p>The following modes are supported: select, insert, replace, update, delete, call.</p>

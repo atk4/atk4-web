@@ -1,0 +1,147 @@
+<?$Content?>
+
+<h1>Interaction with Dynamic SQL</h1>
+
+<p>When Model_Table object is created, it initializes a "master dsql query" object, which is then stored in $model->dsql property. This query is used for building all selects and therefore changing this query will also change the way how model interacts with the database.</p>
+
+<p>Function initQuery() is called to initialize master query from inside model::init(). Through the initialization of the model, master query will accumulate information about the table, table alias, conditions and joins. During the queries it will also re-populate field information.</p>
+
+<p>Function dsql() returns a clone off master dsql object and should be used when you wish to perform a manual operation on SQL level. This can be used for performing multi-column operations or when defining sub-queries by related models.</p>
+
+<p>Following code will clone master query, add condition and perform deletion of all records matching the where clause. It will not affect the model in any way.</p>
+<?Code?>
+$model->dsql()->where('gender','M')->do_delete();
+<?/?>
+
+<h2>Actual Fields</h2>
+<p>Model may define many fields and some of them may require SQL to do some calculation but quite often the UI does not require all the fields. When setting the model for the view with setModel() the second argument defines "actual fields". This limits which fields are going to make into the query. Actual fields also define which fields or columns are initialized in views. </p>
+
+<?Code?>
+$this->add('Grid')->setModel('Book',array('title','isbn'));
+<?/?>
+
+<p>The exception are the "system" fields. Those fields are always selected from the model even if they are not explicitly requested. "id" field is always defined as system.</p>
+
+<p>As of 4.2, a field may have "group" set and instead of defining list of fields inside UI, it may reference them as group. Example below creates 2 forms on separate tabs, but the model defines how the fields are distributed:</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+// Model definition
+$model->addField('name')
+  ->group('step1');
+$model->addField('age')
+  ->type('int')
+  ->group('step1');
+
+$model->addField('bio')
+  ->group('step2')
+  ->type('text');
+<?/?>
+  </div>
+  <div class="g-6">
+<?Code?>
+// Page definition
+$tabs = $page->add('Tabs');
+$tabs->addTab('Step 1')
+  ->add('FormAndSave')
+  ->setModel('User','step1')
+  ->loadData($_GET['id']);
+$tabs->addTab('Step 2')
+  ->add('FormAndSave')
+  ->setModel('User','step2')
+  ->loadData($_GET['id']);
+<?/?>
+  </div>
+</div>
+
+<p>There are two "dynamic" groups: "editable" and "visible". Those are used as default by views and they will rely on editable() / visible() flags on the fields to decide if the field should be displayed or not. $model->getActualFields() will convert name of the group or array with fields into array of field names matching the criteria. getActualFields will exclude hidden() or system() fields and therefore hey wouldn't appear as columns or fields even if specified as actual fields.</p>
+
+<p>If you want to display a system field no matter what, you can either import field manually or reset the system()/hidden() flag. Below examples will use these techniques to display "id" field as a column. Additionally they will use "Order" controller to position "id" field first.</p>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+<?Code?>
+// Add field manually
+$model = $page->add('Model_User');
+$grid = $page->add('Grid');
+
+$grid->setModel($model);
+$grid->controller->importField('id');
+
+$grid->addOrder()
+  ->move('id','first')
+  ->now();
+<?/?>
+  </div>
+  <div class="g-6">
+<?Code?>
+// Reset system flag from id()
+$model = $page->add('Model_User');
+$grid = $page->add('Grid');
+
+$model->getElement('id')->system(false);
+$grid->setModel($model);
+
+$grid->addOrder()
+  ->move('id','first')
+  ->now();
+<?/?>
+  </div>
+</div>
+
+<h2>Query Building</h2>
+
+<p>When model needs to create a query (either a select, update, insert or delete) it will iterate through defined fields and give them chance to modify the DSQL object. When data is being loaded into a model, method "selectQuery" is called. It will populate fields into the $model->dsql which are specified to this function. Normally this list of fields can be obtained by getActualFields function, but in most cases controller will perform this automatically.</p>
+
+<p>Some fields may do more things than just add fields. If you are adding custom type of fields the $field->updateSelectQuery($dsql); is used to populate fields.</p>
+
+<p>selectQuery() function iterates through field twice, first adding system fields and next adding all actual fields. Normally, before calling selectQuery, controller </p>
+
+<?Code?>
+$m=$page->add('Model_User');
+
+$this->add('Grid')->setModel($m,array('name'));
+
+$this->add('Grid')->setModel($m,array('age'));
+<?/?>
+
+<h3>Insert, Modify and Delete queries</h3>
+<p>Unlike select query, other queries do not affect the master query, but will instead clone it and modify the clone if necessary. ("Modify" executes SQL "update" but update() is obsoleted and renamed into save() to avoid confusion).</p>
+
+<p>All 3 operations define hooks (similarly to a basic Model object), which are executed before and after the operation. before* hooks will receive "dsql" object as an argument. The below code will make your model to automatically set updated_dts every time modification is requested.</p>
+
+<?Code?>
+$model->addHook('beforeModify',function($m,$dsql){
+  $dsql->set('updated_dts',$dsql->expr('now()'));
+});
+<?/?>
+
+<p>Model will also start SQL transaction before hooks and commit it after hooks are executed, so if code inside your hook fails, operation will fail completely.</p>
+
+<h3>save(), loaded() and unload()</h3>
+<p>Similarly to it's anchestor, Model_Table can load and unload data. Loading data is not using controller, but rather relies on master dsql. Attempt to load non-existing record will result in exception. Unloading data will call 'beforeUnload' and 'afterUnload' hooks.</p>
+
+
+<h3>Title column and ID column</h3>
+<p>Unlike basic "Model" class where "id" is defined entirely by the controller, Model_Table will assume that one field in a model is going to be identifier. Agile Toolkit does not support multi-column primary keys. By default a field called "id" is considered a primary key, however developer can change it by defining $model->id_field property.</p>
+
+<p>Similarly, if field "name" is defined, it is considered to be a "Title field". The title field will appear on by default when other models refer to this model or when the model contents are displayed in drop-down or if you simply convert model to string. It's possible to change title field by setting "title_field" property. ID field is defined my parent::init() but you still should define title field manually.</p>
+
+<?Code?>
+class Model_Book extends Model_Table {
+  public $id_field='book_id';
+  public $title_field='title';
+  function init(){
+    parent::init();
+    $this->addField('title');
+  }
+}
+<?/?>
+
+<p>Methods getTitleField() and titleQuery() are used to retrieve title field as defined in the property. Both methods will fall-back to "ID" field if title field is not defined.</p>
+
+<h2>Fetching Rows</h2>
+<p>Similarly to basic model, you can iterate through results of a model. Model will execute a query and will fetch results throughout the iterations. However you can also fetch all rows into array by calling getRows() funciton, which takes list of actual fields as an argument.</p>
+
+<?$Next?>

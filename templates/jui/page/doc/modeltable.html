@@ -1,0 +1,88 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+
+    <h3>Relational Model Documentation</h3>
+    <div class="g-row">
+      <div class="g-4">
+<?Code?>
+$followers = $this
+  ->add('Model_Book')
+  ->ref('Author')
+  ->ref('Followers')
+  ->dsql()->field('count(*)')
+  ->getOne();
+<?/?>
+      </div>
+      <div class="g-2">
+        <p>Extension to Model with support for Conditions, Expressions, Sub-Queries, References and Joins. Based on "Model" and "DSQL".</p>
+      </div>
+    </div>
+
+    <div class="ref-item box blue-noised">
+      <b>Documentation:</b>
+      <?$toc?>
+    </div>
+
+
+
+
+  </div>
+  <div class="g-6">
+
+    <h4>Goals and Features of Model</h4>
+    <?MoreInfo?>Eliminate the need to write any queries
+    <p>Models will manage your SQL Query for you, consistently and reliably.</p>
+    <?/?>
+
+    <?MoreInfo?>Automatic Conditions
+    <p>When traversing references, conditions are automatically set eliminating the possibility for developer's mistake.</p>
+    <?/?>
+
+    <?MoreInfo?>Complex Table Joins
+    <p>Sometimes your business entity consists of 2, 3 or even more tables joined together. Relational Models support automatic table joins when you are retrieving data or inserts into related table and linking ID fields if you are addin records.</p> 
+    <?/?>
+
+    <?MoreInfo?>Expressions
+    <p>Models do eliminate need for the SQL but they still give the power of specifying expressions.</p>
+    <?/?>
+
+    <?MoreInfo?>Based on Basic Models
+    <p>Because Model_Table inherits regular Model, you can still use it with any Data Controllers such as caches.</p>
+    <?/?>
+
+    <?MoreInfo?>Multi-row Acitons
+    <p>Whenever you need to create a custom SQL query, you can clone it off "base" query used by the model. That will automatically apply conditions and joins.</p>
+    <?/?>
+
+    <?MoreInfo?>Insert versus Modify
+    <p>Relational Models distinguish events for performing Insert and Modification. You can set hooks to intercept and modify query before it is executed.</p>
+    <?/?>
+
+    <?MoreInfo?>Relies on DSQL
+    <p>Through the power of DSQL Models support multiple database vendors and will automatically use proper SQL syntax.</p>
+    <?/?>
+
+    <h4>What DSQL is not?</h4>
+    <p>In the spirit of Agile Toolkit — all of it's classes are strictly focused on a one simple task, without trying to do everything. Here are things which Model will not do and why:
+    <?MoreInfo?>No attempting to manage structure
+    <p>That is job of your database migration scripts.</p>
+    <?/?>
+    <?MoreInfo?>Not Limiting
+    <p>Relational Model does not take the power of custom SQL queries.</p>
+    <?/?>
+
+    <h4>Other Resources</h4>
+    <div class="ref-item box blue-noised">
+      <b>Other Resources, Blog posts:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/model<?/?>">Introduction to Models</a></div>
+        <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Q: Creating Database Queries with DSQL</a></div>
+      </div>
+    </div>
+
+
+</div></div>
+
+<?$Next?>

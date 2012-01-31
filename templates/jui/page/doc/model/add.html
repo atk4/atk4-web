@@ -79,4 +79,24 @@ $m->save();
   </div>
 </div>
 
+<h2>Usage with Views</h2>
+<div class="g-row" id="doc-ref">
+  <div class="g-9">
+
+    <p>Meta-information contained inside model can be automatically converted into Form's fields or Grid's columns. Those views wouldn't know anything about models, however the "glue" between view and a model is a "Controller". Controller is a standard class.</p>
+
+<?Code?>
+$this->add('Form')->setModel('Book',array('title','isbn'))->loadData($id);
+<?/?>
+    <p>When setModel() is called, Form object will create Controller_MVCForm and execute it's method importFields(). Import will initialize specified fields or unspecified, will get list of "editable" fields. Form's method update() contains a hook which is set by Controller_MVCForm and will save field values through model.</p>
+
+
+  </div>
+  <div class="g-3">
+    <img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/model_schema.png<?/?>"/>
+  </div>
+</div>
+
+    <p>It must be noted, that from 4.2 it's possible to associate form with multiple models. Calling update() on the form will save all those models independently.</p> 
+
 <?$Next?>

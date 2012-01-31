@@ -201,24 +201,21 @@ class Sitemap extends AbstractController{
                 'extend'=>'Extending, Options',
                 ),
             'model'=>array(
-                'Models and Controllers',
+                'Non-Relational Models',
                 'add'=>'Creating Your Models',
                 'fields'=>'Field Meta-Information',
                 'controller'=>'Data Controllers',
                 'behaviour'=>'Behaviours',
-
-
-                /*
-                'conditions'=>'Conditions and Master Fields',
-                'calculated'=>'Defining Calculated Fields',
-                'relations'=>'Relative Fields',
+                ),
+            'modeltable'=>array(
+                'SQL/Relational Model_Table',
+                'add'=>'Defining Relational Models and Basic Use',
+                'dsql'=>'Interaction with Dynamic SQL',
+                'condition'=>'Conditions and Master Fields',
+                'expression'=>'Defining Calculated Fields',
+                'reference'=>'Relations Between Models',
                 'join'=>'Joining Tables',
-                'orm'=>'Loading and Saving Records (ORM)',
-                'queries'=>'Retrieving Multi-Row Data',
-                'dsql'=>'Generating Custom SQL',
-                'defaultactions'=>'Modifying The Default Actions',
-                'newactions'=>'Adding New Actions',
-                 */
+                'behaviour'=>'Modifying The Default Actions',
                 ),
             /*
             'auth'=>array(
