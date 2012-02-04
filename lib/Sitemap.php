@@ -212,7 +212,7 @@ class Sitemap extends AbstractController{
                 'add'=>'Defining Relational Models and Basic Use',
                 'dsql'=>'Interaction with Dynamic SQL',
                 'condition'=>'Conditions and Master Fields',
-                'expression'=>'Defining Calculated Fields',
+                'expression'=>'Defining Expressions',
                 'reference'=>'Relations Between Models',
                 'join'=>'Joining Tables',
                 'behaviour'=>'Modifying The Default Actions',

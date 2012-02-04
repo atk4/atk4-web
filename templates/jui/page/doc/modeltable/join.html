@@ -1,0 +1,63 @@
+<?$Content?>
+
+<h1>Joining model tables</h1>
+
+<p>One of the greatest benefits of Models in Agile Toolkit is the ability to work with multiple tables. Let's suppose that objects in your database have respective link in the "permission" table:</p>
+
+<p>user.permission_id = permission.id;</p>
+
+<p>Every time you add new user, the record should be added in the permission table. Also fields from the permission table must become fields of the "User" model. "join()" is answer to those requirements.</p>
+
+<?Code?>
+class Model_User extends Model_Table {
+    public $table='user';
+    function init(){
+        parent::init();
+
+        $this->addField('name');
+
+        $perm = $this->join('permission');
+        $perm->addField('is_admin')->type('boolean');
+        $perm->addField('is_writer')->type('boolean');
+        $perm->addField('is_poster')->type('boolean');
+
+    }
+}
+<?/?>
+
+<p>Notice that addField() is called using the $perm instead of $this which instructs the model that fields are actually originate in a different table. Apart form using addField you can also use hasOne() / hasMany() to define relations based on the joined table.</p>
+
+<h3>Different ways to join</h3>
+
+<p>The syntax of join() is very similar to dsql()->join() and can be used to create all sorts of joins. The above example demonstrates a most common join: user.permission_id = permission.id. If you are willing to to build a reverse join you can use second argument:</p>
+
+<?Code?>
+$this->join('permission','user_id');
+// user.id=permission.user_id
+
+$this->join('permission.code','code');
+// user.code=permission.code
+
+$this->join('permission.id','id');
+// user.id=permission.id
+<?/?>
+
+<h3>Chained joins</h3>
+<p>Sometimes you want to join table through the table which is already joined. The syntax is very intuitive:</p>
+
+<?Code?>
+$perm = $this->join('permission');
+$res = $perm->join('resource');
+<?/?>
+
+<p>With this you can now even define a field in "resource" and then use that field inside a condition. This allows you to fully use flexibility of SQL without overheads ORM systems usually introduce.</p>
+
+<h3>Insert, Load, Modify</h3>
+
+<p>Another significant part of models with joins is that records are inserted in both tables when you create new model entry. If you use the user..permission..resource model described above and create a new record, then record is first added into "resource" table, then "permission" table record is added with a proper reference to "resource". Finally record in "user" table is created pointing to the "permission" table through permission_id field.</p>
+
+<p>If a reverse relation is used (by supplying 2nd argument to join) then insertion happens in reverse order — first adding a user and then adding into permission table.</p>
+
+<p>Model also properly handles loading and updates of the model.</p>
+
+<?$Next?>

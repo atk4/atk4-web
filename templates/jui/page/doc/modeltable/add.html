@@ -26,11 +26,12 @@ class Model_Author extends Model_Table {
 <?Code?>
 $author = $this->add('Model_Author');
 $author->load($id);
-$c_code = $author->ref('Country')->get('Code');
+$c_code = $author->ref('country_id')->get('Code');
 
 $this->add('Grid')->setModel($author->ref('Book'));
 <?/?>
-<p>When traversing relations defined as "hasOne" the record of related model is automatically loaded. That's why we were able to access field "Code" for country code. When traversing relations defined as hasMany() the returned model will not be preloaded with any records. It will however have a condition added to make sure any new records you are going to add with that model will belong to author identified by $id.</p>
+<p>When traversing relations defined as "hasOne" the record of related model is automatically loaded. You should use the name of the field as an argument to ref() function. </p>
+<p>When traversing relations defined as hasMany() the returned model will not be preloaded with any records. It will however have a condition added to make sure any new records you are going to add with that model will belong to author identified by $id.</p>
 
 <h2>Building model from multiple tables</h2>
 <p>Let's assume that to store additional information about the author a new table "author_details" is created. This table contains "author_id". While in theory one author may have multiple records in author_details our logic dictates that it's one-on-one relationship. "author_id" is also defined as a primary field.</p>
@@ -49,5 +50,53 @@ $this->add('Grid')->setModel($author->ref('Book'));
 <p>Agile Toolkit uses some assumptions about the relations between fields. Table 'author' will have 'country_id' which is constructed by looking into 'Country' model's $table property and appending '_id'. That field is then loaded based on the "id" field of Author. If your id field is called differently, you can change id through a property "$id_field".</p>
 
 <p>Sometimes you need to use a different field name when referencing. Then you need to use 2nd argument to "hasOne('Country','birth_country_id')".</p>
+
+<h2>Using non-ID fields for loading</h2>
+<p>There are different ways how you can load model. For example calling load() without arguments will load the first possible match from the available data.</p>
+
+<h3>loadBy($field,[$cond],$value)</h3>
+<p>This function will load model through a non-ID field. The second argument is optional and if defined it can specify the relationship, such as:</p>
+<?Code?>
+$model->loadBy('age','>','25');
+<?/?>
+<p>You may also use a DSQL expression as a first argument and omit condition and values alltogether.</p>
+<?Code?>
+$model->loadBy($model->dsql->expr('expire_dts>now()'));
+<?/?>
+
+<h3>getBy($field,[$cond],$value)</h3>
+<p>This similar syntax will return array of hashes produced the model's select.</p>
+
+<?Code?>
+$data = $model->getBy($model->dsql->expr('expire_dts>now()'));
+echo json_encode($data);
+<?/?>
+
+<p>calling getBy() will not affect the currently loaded record.</p>
+
+<h3>getRows(array)</h3>
+<p>This is similar to getBy but it allows to define which fields you are willing to retrieve:</p>
+
+<?Code?>
+$data = $model->getRows(array('id','name'))
+echo json_encode($data);
+<?/?>
+
+<h2>Iterating Through Entities</h2>
+<p>Model supports agregation, which means you can use it like this:</p>
+
+ 
+<?Code?>
+foreach($this->add('Model_Book') as $book){
+    $book['sale']++;
+    $book->save();
+}
+<?/?>
+
+<p>When iterating, the $book will always refer to the same model, but it will have appropriate record loaded.</p>
+
+<h2>Deleting Entities</h2>
+<p>Model attempts to prevent accidental data loss and therefore $model->delete() will only remove data from the database if you either specify "id" or have a record loaded.</p>
+
 
 <?$Next?>

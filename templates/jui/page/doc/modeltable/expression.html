@@ -1,0 +1,54 @@
+<?$Content?>
+
+<h1>Defining Expressions</h1>
+
+<p>Worderful SQL language permins the use of expressions in SELECT queries and Agile Toolkit has a way to use expressions as a regular fields. Those fields can be referred to as "calculated" fields.</p>
+
+<p>Expressions are implemented as a class extended from a "Field" class, however they modify master DSQL in a different way.</p>
+
+<?Code?>
+$model->addExpression('age')->set('year(now())-year(birth_date)');
+<?/?>
+
+<p>Expressions can also be defined as a callback. The callback will be executed when the query is being built, only once.</p>
+
+<?Code?>
+$author->addExpression('books_written')->set(function($select){
+  return $select->dsql()
+    ->table('book')
+    ->field($select->expr('count(*)'))
+    ->where('author_id',$select->getField('id'));
+}
+});
+<?/?>
+<p>function set receives a callable argument. This callable will be called with a select DSQL query as an argument. We are using it to build a sub-query which performs select from table 'book'. The sub-select is supposed to execute count() expression but it's also important to have author_id linked with the "id" of the select query.</p>
+
+<p>A handy short-cut is to use the fact that second argument to where() can be either a number or a field and storing referencing information in a separate function.</p>
+
+
+<?Code?>
+class Model_Author extends Model_Table {
+  function init(){
+    parent::init();
+
+    $self=$this;
+    $this->addExpression('books_written')->set(function($select)use($self){
+      return $self->refBooks($select->getField('id'))
+        ->dsql->field($select->expr('count(*)'));
+    });
+  }
+  function refBooks($id=null){
+    return $this->add('Model_Book')
+      ->addCondition('author_id',$id?:$this->id);
+  }
+}
+<?/?>
+
+<p>In this example, we define a function which returns a model for listing all books of a currently loaded author. If numeric argument is specified, then books of that particular author will be returned inside the model. The expression, however, takes advantage of that model. Because expression is used in SELECT query it need to use field instead of a predefined numeric ID value.</p>
+
+<p>By passing getField() as an $id argument it will properly insert a reference to a table and field of a master select. Model returned by a function is then only used to retrieve DSQL object and configure it to select only a statement.</p>
+
+<p>As already mentioned, it's irrelevant at this point if "Book" is defined by a single table or multiple or if it has some additional conditions — those will be applied automatically. Models even handle situations where Book is joined with the same table as Author.</p>
+
+
+<?$Next?>

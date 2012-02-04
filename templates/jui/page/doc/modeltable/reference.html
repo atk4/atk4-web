@@ -1,0 +1,122 @@
+<?$Content?>
+
+<h1>Model References</h1>
+
+<p>One model may reference another model. Typically you would have two ways how relation can do one-to-many and many-to-one. There is also one-to-one which is a special case of two-sided many-to-one reference. Many-to-many relations are implemented through intermediate table which is referenced through one-to-many.</p>
+
+<p>References are always defined between models. To avoid loops, reference should use name of the model class and not object itself.</p>
+
+<h2>hasOne() reference</h2>
+
+<?Code?>
+class Model_Book extends Model_Table {
+  function init(){
+    parent::init();
+    $this->hasOne('Author');
+  }
+}
+// select id,author_id,(select name from author where author.id=book.author_id) as author from book
+<?/?>
+
+<p>The "hasOne" reference in example above specifies that each book has a field pointing to a record in Author model. Multiple book records can belong to same author. hasOne() method will create a new field of type Field_Reference and initialize it. That field will also create a expression field for showing read-only column in grid.</p>
+
+<p>In the code above, model 'Author' will be examined for it's "table" property. That property is then used in the assumption about the referencing field. If Model_Author->table = 'author' then hasOne() function will use "author_id" field by default. If a different field is used, you can specify it as a second argument to hasOne().</p>
+
+<p>By default one more field will be created. This field is called "dereferenced field" and it is defined as a sub-select expression selecting "name" field from related entity. If "name" field is not set in the related model, then the field will show "Record #n" instead. You can specify a different field to expression by using 3th argument of hasOne();</p>
+
+<p>The field in your current model is "id" or your customized identifier field specified through $model->id_field;</p>
+
+
+<?Code?>
+class Model_Book extends Model_Table {
+  function init(){
+    parent::init();
+    $this->hasOne('Author','written_by','full_title');
+  }
+}
+// select id,written_by,(select full_name from author where author.id=book.written_by) as written_by_2 from book
+<?/?>
+
+<p>The reason why title_2 is used, is because "dereferenced" field will be using unique identifier to avoid conflict with original field. This might not be what you want, so you can create a reference manually for greater control</p>§
+
+<?Code?>
+class Model_Book extends Model_Table {
+  function init(){
+    parent::init();
+    $ref=$this->add('Field_Reference','written_by');
+    $ref->dereferenced_field='written_str';
+
+    $m=$this->add('Model_Author');
+    $m->addField('extra_name');
+
+    $ref->setModel($m,'extra_name');
+  }
+}
+// select id,written_by,(select extra_name from author where author.id=book.written_by) as written_str from book
+<?/?>
+
+<h3>Traversing references</h3>
+<p>Once your primary model is loaded, you can traverse through relationships using "ref" method. This method will initialise referenced model and load appropriate record too.</p>
+
+<?Code?>
+$model = $this->add('Model_Book')->load($book_id);
+$author = $model->ref('author_id');
+$author['sales']++;
+$author->save();
+<?/?>
+
+<p>You can obviously traverse through multiple models like that too.</p>
+
+<?Code?>
+$book->ref('author_id')->ref('address_id');
+<?/?>
+
+<p>If you call ref() multiple times, it will return new model object to you every time.</p>
+
+<p>If reference is destroyed it will also destroy dereferenced field.</p>
+<?Code?>
+$book->hasOne('Publisher')->load($book_id);
+
+$publisher=$book->get('publisher');   // contains publisher.name
+
+$book->unload();
+$book->getElement('publisher_id')->destroy();
+$book->load($book_id);
+
+$publisher=$book->get('publisher');   // produces exception
+<?/?>
+
+<h3>Extending References</h3>
+<p>To further enhance reference objects, you can extend it with your own and re-define its methods. Extend Field_Reference class.</p>
+
+<h2>hasMany() reference</h2>
+<p>Unlike hasOne() this function will not add any fields to your model. It's typical to have two-sided link like this:</p>
+
+<?Code?>
+$book->hasOne('Author');
+$author->hasMany('Book');
+<?/?>
+
+<p>You would probably define those references inside respective init() methods of your models.</p>
+
+<p>hasMany reference does not modify any aspect of your model in any way, however it SQL_Many object with the name matching name of the model. When traversing through one-to-many relation, you should use the model rather than the field:</p>
+
+<?Code?>
+$book = $author->ref('Book');
+<?/?>
+
+<p>The returned model will have extra condition set which will restrict models to only books of that particular author.</p>
+
+<?Code?>
+$book = $author->ref('Book');
+$book->dsql->do_delete();    // deletes all books of particular author
+<?/?>
+
+<h3>Defining related fields</h3>
+<?Code?>
+$author->hasMany('Book','written_by');
+<?/?>
+
+<p>Second argument to hasMany() specifies the field in the related model to used in condition. Third argument allows you to override "author"'s field, which by default is "id" (id_field).</p>
+
+<?$Next?>

@@ -1,0 +1,40 @@
+<?$Content?>
+
+<h1>Modifying Default Actions</h1>
+
+<p>Model_Table implements 5 primary actions by default: Insert, Load, Modify, Delete, Unload. There is also action "Save" which is a wrapper around Load and Insert. Let's review the following code and track the sequence of methods and hooks as they are being called</p>
+
+<?Code?>
+$book->load(5)->set('name','MyBook')->save();;
+<?/?>
+
+<p>The sequence of calls is like this:</p>
+<ul>
+  <li>load starts</li>
+  <li>hook: beforeLoad</li>
+  <li>dsql/select()</li>
+  <li>hook: afterLoad</li>
+  <li>load exits</li>
+</ul>
+
+<ul>
+  <li>save starts</li>
+  <li>SQL transaction starts</li>
+  <li>hook: beforeSave
+  <ul>
+    <li>modify starts</li>
+    <li>hook: beforeModify</li>
+    <li>dsql/update()</li>
+    <li>hook: aftetrModify</li>
+    <li>modify exits</li>
+  </ul></li>
+  <li>hook: afterSave</li>
+  <li>SQL transactions commits</li>
+  <li>save exists</li>
+</ul>
+
+<p>By defining hooks or overriding methods you can change the way how these actions are performed</p>
+
+TODO: table with hook arguments
+
+<?$Next?>

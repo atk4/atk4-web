@@ -70,4 +70,58 @@ $page->add('CRUD')->setModel($m);
   </div>
 </div>
 
-TBC
+<h2>Conditions on Calculated Fields</h2>
+<p>Let's assume that we have a model called "Model_Member" and we are looking to extend it into "Model_Member_Active". Active members are those whoose "expiry_date" is in the future.</p>
+
+<p>Let's look at two ways how to achieve this.</p>
+
+<h3>Adding Conditions on Expression</h3>
+<p>Expressions are treated like a normal fields by a model. You can define an expression, then add condition on it.</p>
+
+<?Code?>
+class Model_Member_Active extends Model_Member {
+  function init(){
+    parent::init();
+    $this->addExpression('is_member')->set('if(expiry_date>now(),"Y","N")');
+    $this->addCondition('is_member','Y');
+  }
+}
+<?/?>
+
+<h3>Modifying master DSQL</h3>
+<p>The other option is to simply modify master DSQL and have the condition embedded into it.</p>
+<?Code?>
+class Model_Member_Active extends Model_Member {
+  function init(){
+    parent::init();
+    $this->dsql->where($this->dsql->expr('if(expiry_date>now())'));
+  }
+}
+<?/?>
+
+<h2>Conditions on relative fields or joined models</h2>
+<p>Suppose you want to list all books by female authors. You would already have a book model, but it does not contain field for author. The following code accomplishes the task:</p>
+<?Code?>
+$book_by_f=$this->add('Model_Book');
+$book_by_f->join('author')->addField('gender')->enum(array('M','F'));
+$book_by_f->addCondition('gender','F');
+<?/?>
+<p>If you wish to have a standalone model, then you need to copy this code inside a model's init:</p>
+<?Code?>
+class Model_Book_ByF extends Model_Book {
+  function init(){
+    parent::init();
+    $book_by_f=$this;
+    $book_by_f->join('author')->addField('gender')->enum(array('M','F'));
+    $book_by_f->addCondition('gender','F');
+  }
+}
+<?/?>
+<p>Note that adding to this model would also create a related author record. To prevent accidental adding and avoid accidental change of the gender in a form, you can do this:</p>
+
+<?Code?>
+$book_by_f->getField('gender');
+$book_by_f->addHook('beforeInsert',function($t){throw $t->exception('Do not add records!');});
+<?/?>
+
+<?$Next?>
