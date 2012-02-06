@@ -1,0 +1,25 @@
+var class_database_storage =
+[
+    [ "_real_filename", "class_database_storage.html#a93d4784cb079975b14d813996d636b18", null ],
+    [ "afterSave", "class_database_storage.html#ab51e83949ed7724fe69066508e9ac2c7", null ],
+    [ "beforeSave", "class_database_storage.html#a9673645d258612efa73fe7babb43ad3d", null ],
+    [ "deleteFile", "class_database_storage.html#ac516e24c5c9beab7d532dcb4a31fd607", null ],
+    [ "downloadFile", "class_database_storage.html#a4aee7a3c5c5163fc07b1d6a162c8b49d", null ],
+    [ "getFileList", "class_database_storage.html#a513bb4a8130bbf39608396749101d595", null ],
+    [ "getFilename", "class_database_storage.html#a4f896bab1446b163ddaf8361cbe70aa2", null ],
+    [ "getFilenum", "class_database_storage.html#ae7224e574e28447c36d1c3d73d8f2653", null ],
+    [ "getFiles", "class_database_storage.html#a7010e197d8dce475dfdd443c11dd7ee9", null ],
+    [ "getFilesize", "class_database_storage.html#ab05b028f8d3c53be8c46eaeef0f414a7", null ],
+    [ "getFilespaceId", "class_database_storage.html#aba0c7314202bbee11fb56724a42ee656", null ],
+    [ "getFilespacePath", "class_database_storage.html#a04a6407532e529d80438f732a994229f", null ],
+    [ "getFilespaces", "class_database_storage.html#aab3d76baf740e02caff1701d1df434d1", null ],
+    [ "getFileTypeId", "class_database_storage.html#a44d1a40875158a0315262fcfe4201f42", null ],
+    [ "init", "class_database_storage.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
+    [ "realFilePath", "class_database_storage.html#a477702aedbe40d678a7d351b90a21b45", null ],
+    [ "saveFile", "class_database_storage.html#a5fea276b68307ea57fa23fd98e830304", null ],
+    [ "uploadFile", "class_database_storage.html#a75993880b855f0bdf0df16e7a516b7e8", null ],
+    [ "$deleted_files", "class_database_storage.html#a108e805cc226f1bd539406dd422c2d04", null ],
+    [ "$files", "class_database_storage.html#a9590b15215a21e9b42eb546aeef79704", null ],
+    [ "$filespaces", "class_database_storage.html#afe8799a318a2774cbef5dd7f382adad5", null ],
+    [ "$filetypes", "class_database_storage.html#acbd0488e5d5311d04e1297a6dda1f6cc", null ]
+];
