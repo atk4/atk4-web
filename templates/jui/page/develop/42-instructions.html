@@ -1,0 +1,59 @@
+<h1>How to start using Agile Toolkit 4.2</h1>
+
+<h2>Preparing the environment</h2>
+<p>Agile Toolkit 4.2 requires PHP5.3+. You might need to upgrade. Other than that, the <a href="<?page?>learn/install<?/?>">regular installation guide</a> applies.</p>
+
+<p>You may use Windows, Linux or MacOSX but you will need to make sure "git" is installed. I will be providing you with the shell "git" commands but you are welcome to use any GUI.</p>
+
+<?MoreInfo?>MacOSX GitHub official client notes
+<p>Official client for GitHub is a great software, but it has very weak support for submodules. As a result you might need to delete "atk4" and "atk4-addons" folders and then clone them as individual projects. You can't clone same repository several times, therefore you'll need to use symlinks if you are running multiple instances of "atk4"</p>
+<?/?>
+
+<?MoreInfo?>Why not just provide a ZIP? What if I don't have git?
+<p>There are daily updates to 4.2 and you should be always running most recent version if you are reporting any issues or trying to fix anything. Git is much easier to update then messing with ZIP files. If you do want to use ZIP, then GitHub will provide you with the "Download" button.</p>
+<?/?>
+
+
+<h3>Test-driven development</h3>
+<p>One of the core Agile principles is a test-driven development. Agile Toolkit now have a separate project, which implements many unit-tests.</p>
+
+<p>The UI of Agile Toolkit is not being automatically tested but if you want to test your UI, you should use Selenium.</p>
+
+<p>Testing interface is available for you in your own projects. Be sure to use testing to a full extent.</p>
+
+
+<h2>Setting up testing environment</h2>
+<p>Before actually using Agile Toolkit, we need to make sure that it works in a test environment.</p>
+
+<p>Create directory Sites/atk42 where all the code will reside. I will assume that it can be reached on http://localhost/atk42. Go into that directory and check out <a href="https://github.com/atk4/atk4/tree/4.2">the 4.2 branch of Agile Toolkit</a> (it's 8 megabyte repository, be patient)</p>
+
+<?Code?>
+$ git clone git://github.com/atk4/atk4.git
+$ cd atk4
+$ git checkout 4.2
+$ cd ..
+<?/?>
+
+<p>atk4-addons are no longer mandatory to use Agile Toolkit, but I will return to them in the addon developer guide. Next, you will need to "fork" the test-suite. This is to make sure that you can easily commit back your own test-cases. <a href="https://github.com/atk4/atk4-testsuite" target="_blank">Open this link</a>, then click "fork". It will create repository under your account. I'll assume that your account is "joe" and that you are now on https://github.com/joe/atk4-testsuite/. Proceed to check out your own version of test-suite.</p>
+
+<?Code?>
+$ git https://joe@github.com/atk4/atk4-testsuite.git
+<?/?>
+
+<p>If you have "atk4" and "atk4-addons" inside atk4-testsuite, delete them. If your database needs changing, create atk42/atk4-testsuite/config.php and copy relevant lines from config-default.php adjusting them with the right values.</p>
+
+<p>You are now ready to open http://localhost/atk42/atk4-testsuite/ and you should see list of tests. Click on test called "db" and make sure that your database conneciton works OK. You do not need to cerate any tables. Test-suite creates temporary tables for you.</p>
+
+<p>Open file atk42/atk4-testsuite/page/db.php in your editor. Try to add tests or change them. You will notice that at the start of the file the property $proper_responses is initialized. Once your tests are outputing right value, you can copy value of this variable from the text-area on the test-page into your source file. That's all, no more "assert()" and "verify()".</p>
+
+<p>Be aware that there are a class called "Page_Tester" (see page/dbparam.php on how to use it) which provides a general-purpose testing and then there is DB-test which extends tester into some SQL-related testing (see page/db2.php for a good example).</p>
+
+<p>Of course you can also add a regular pages with regular code snippets which you will find on your <a href="<?page?>doc<?/?>">on-line documentation</a></p>
+
+<h2>Things to test</h2>
+
+<p>As you go through documentation, please try examples. They should work properly. If not, please <a href="https://github.com/atk4/atk4/issues">report an issue</a>. If you are unsure how to use any feature, please ask in the list.</p>
+
+<p>Once you have tried some basic things with the test-suite, you can then try to use atk4 in your application. This will probably require you to do a lot of changes. Our goal is to introduce as much compatibility between 4.1.4 and 4.2 as possible, but things will need to be changed anyway. Please share what changes you needed to perform.</p>
+
+
