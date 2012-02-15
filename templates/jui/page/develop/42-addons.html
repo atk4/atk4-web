@@ -1,0 +1,72 @@
+<h1>Developing add-ons for Agile Toolkit 4.2</h1>
+
+<p>As of 5.3, PHP have introduced the concept of "namespaces". It allows us to create parallel realms of classes import namespaces and more. Unfortunately PHP have forgot about it's nature of a dynamic language and it's not even obvious how to get the namespace of the object.</p>
+
+<p>Agile Toolkit uses namespaces as a add-on containers. In the following example, we will try to implement a simple "Hello World" add-on. The default directory for add-ons is "atk4-addons" located inside your project directory. Obviously you can place it elsewhere because locating addons is done through a PathFinder.</p>
+
+<p>Create folder atk4-addons inside atk42/atk4-testsuite. Inside that folder create "helloworld" and inside there create "lib" folder. This is default location where objects of the namespace "helloworld\" will be loaded from. Add the following code on a page:</p>
+
+<?Code?>
+$page->add('helloworld/Core');
+<?/?>
+
+<p>then create file atk42/atk4-testsuite/helloworld/lib/Core.php:</p>
+
+<?Code?>
+namespace helloworld;
+class Core extends \View {
+    function init(){
+        parent::init();
+        $this->set('Sending hello from add-on');
+    }
+}
+<?/?>
+
+<h2>Writing installation instrucitons</h2>
+<p>Create file readme.txt containing the steps developers must undertake to use your add-on in their application. In our case we simply need to explain that they should call add('helloworld/Core'); from the page code. Your addon may offer different type of class.</p>
+
+<h3>Models</h3>
+<p>Add lib/Model/MyModel.php and instruct user to use $view->setModel('helloworld/MyModel'); or $m=$this->add('helloworld/Model_MyModel');</p>
+
+<h3>Controllers</h3>
+<p>Similarly to models, add them to lib/Controller/MyCtl.php and instruct user to use setController('helloworld/MyCtl'); or $c=$this->add('helloworld/Controller_MyCtl');</p>
+
+<h3>Model Fields</h3>
+<p>When Model fields are being defined, it relies on the "Field" class. If you use hasOne, hasMany etc then different types of objects are added into a model. You may create your own model field types which enhance query building, model behaviour and more. Refer to <a href="https://github.com/atk4/atk4-addons/tree/4.2/filestore/lib/Field/Image.php" target="_blank">atk4-addons/filestore/lib/Field/Image.php</a> for a good example. To add this field in your model your user would need to write:</p>
+<?Code?>
+$model->add('filestore/Field_Image','picture_id');
+<?/?>
+
+<h2>Tips and Tricks</h2>
+<h3>Including additional resources inside your add-on</h3>
+<p>You may ask user to place the code which includes a core controller of your add-on into initialization of their API. You should explain clearly what those controllers do and why they are needed. Inside your class you need to locate your add-on first and then add locations of other resources you might have bundled.</p>
+
+<p>If you have helloworld/templates/view/hello.html which is required by your view, then simply use the following code:</p>
+<?Code?>
+$l=$this->api->locate('addons','gridorder','location');
+$this->api->pathfinder->addLocation($this->api->locate('addons','helloworld'),array(
+    'template'=>'templates'
+))->setParent($l);
+<?/?>
+<p>You must be aware, that defaultTemplate() method is called before init() and if your view would want to use a bundled template, you should move the above code inside defaultTemplate() method.</p>
+
+<h3>Avoiding repetition of your add-on name</h3>
+<p>As we do not want to continiously repeat "helloworld" throughout your add-on code, you should define a constant within the namespace, then use it, as there are no __NAMESPACE__ magic. If you are using the following syntax:</p>
+
+<h3>Extending classes defined in add-ons</h3>
+<p>You may extend classes from your add-on through the followin syntax:</p>
+<?Code?>
+class Model_MyImage extends filestore/Image {
+    // ...
+}
+<?/?>
+
+<h3>Maintaining Version Requirement</h3>
+<p>Your add-ons should be targeted at version 4.2 or later. It's a good practice to have a version requirement define inside your add-on. Use the following method to define minimum verison:</p>
+<?Code?>
+$this->api->versionRequirement('4.2');
+<?/?>
+
+<h3>Further Changes and Requirements</h3>
+<p>Once the 4.2 is prepared for stable release, it will contain add-on installer. This installer will be able to download and install add-ons seamlessly from agiletoolkit.org. There might be additional requirements on how add-ons should handle database upgrades, dependencies and version requirements.</p>
+
