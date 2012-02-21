@@ -40,66 +40,80 @@ $auth->check();
   </div>
 </div>
 
+<p>Many developers are captivated by the <u>syntax</u> of Agile Toolkit. It makes code readable, shorter and hides implementation details behind the layers of abstraction. Experienced developers in Agile Toolkit would have their own add-ons which are design-agnostic and are easy to port.</p>
+
+<p>Agile Toolkit has a beautiful <u>Object-Oriented design</u> which is very rare occurrence in PHP. Comparable to Wt++, Swing, ExtJS in its flexibility it fully relies on HTML5 layouts and keeps UI logic extremely simple.</p>
+
+
 <h2>Goals of Agile Toolkit</h2>
 
-<quote>The Unix Rule: Each Object does one thing well. Objects may rely on other objects. Objects work together. Objects are easy to use.</quote>
+<quote>The Unix Rule: Each Object does one thing well. Objects may rely on other objects. Objects work together. Objects are easy to use. Objects are easy to extend. Source code of each object is clear and readable.</quote>
 
-<quote>The Rule of "80%": Add features to suit 80% of use-cases. The rest of 20% will have to extend the classes an override methods.</quote>
+<quote>The Rule of "80%": Add features to suit 80% of use-cases. The rest of 20% will have to extend the classes an override methods or use controllers.</quote>
 
 <quote>Highest Lowest Common Denominator: Each installation of Agile Toolkit comes with User Interface, Theme, Views and many other components. Rely on them in your software and add-ons.</quote>
 
 <h3>Why Another Framework?</h3>
-<p>Majority of Web Frameworks for PHP today focus on Object Relational Modeling and stay away from User Interface concepts. Often using framework is more complex than writing software without one.</p>
+<p>Majority of Web Frameworks for PHP today focus on Object Relational Modeling and stay away from User Interface concepts. Often using framework is more complex than writing software without one. Frameworks are also difficult to use for beginners and they gradually become more and more complex.</p>
 
 <p>Agile Toolkit is simpler than No-Framework. It seamlessly enhances your Application with User Interface, Layouts, Grid system, jQuery UI Themes, Injection protection, Transparent AJAX and Rich Web Interface tools. Agile Toolkit stands behind clean code with maximum efficiency and a beautiful Object-Oriented approach.</p>
 
 <h3>How Agile Toolkit is Using Objects?</h3>
-<p>A common trend in PHP development is where classes are used as libraries. Developers include classes and call them passing in some information and receiving another information. While each class does a job, it's very difficult to create a universal architecture and high-level logic.</p>
+<p>A common trend in PHP development is where classes are used as libraries. Developers include classes and call them passing in some information and receiving another information. Developers rarely extend or look into the source of the implementation. Classes are also incompatible and inefficient as they duplicate a lot of code.</p>
 
 <p>Agile Toolkit has no static classes, global variables or constants. You work with objects — class instances. Objects carry information within them and you can have several instances of a same object. Objects interact with each-other and has no attachment to the class names — a great opportunity to craft your own objects and inject it into the system.</p>
 
 <img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/atk4-structure.png<?/?>"/>
 
 <h3>Structure of Agile Toolkit</h3>
-<p>By no means Agile Toolkit is a "minimalistic" framework. It has more stuff than some mature and heavyweight frameworks. However with efficient code re-use and clever architecture, Agile Toolkit wins on performance, simplicity and agility.</p>
+<p>By no means Agile Toolkit is a "minimalistic" framework. It has more stuff than some mature and heavyweight frameworks. However with efficient code re-use and clever architecture, Agile Toolkit wins on performance, simplicity and agility. Agile Toolkit stays away from some specific features such as "queuing mechanisms" or "caching".
+Those can be added as add-ons or by using other framework such as Zend.</p>
 
-<p>Agile Toolkit is inspired by Object-Oriented desktop environments first implemented in NeXTSTEP, later adopted in Cocoa and many other windowing environments on the desktop. Lots of attention was spent on making interface looking like many other web applications. Rendering produces a standard HTML5 and CSS.</p>
+<p>Agile Toolkit is inspired by Object-Oriented desktop environments first implemented in NeXTSTEP, later adopted in Cocoa and many other windowing environments on the desktop. With a simple UI adjustments your application UI can be customized. Output is based on standard HTML5 and CSS3 and is compatible through wide range of web browsers.</p>
 
 
 <h2>The Data Manipulation</h2>
-<p>A vital part for any self-respecting framework is a Data Manipulation framework. Agile Toolkit has three major classes dealing with data: DSQL (Objective interface to SQL Database), Model (Objective interface to Active Record) and Model_Table (SQL-powered Active Record). In 80% of use-cases the Model_Table is fully sufficient for your task, but since it's implemented on top of DSQL and Model, knowing the foundation will help you unleash true potential of Agile Toolkit Data Layer.
+<p>A vital part for any self-respecting framework is a Data Manipulation framework. Agile Toolkit has three major classes dealing with data: DSQL (Objective interface to SQL Database), Model (Objective interface to Active Record) and Model_Table (SQL-powered Active Record). In 80% of use-cases the Model_Table is fully sufficient for your task, but since it's implemented on top of DSQL and Model, knowing the foundation will help you unleash true potential of Agile Toolkit Data Layer.</p>
+
+<p>The User Interface of Agile Toolkit does not specifically relies on the data classes. If you are using your own ORM, you can integrate it with Agile Toolkit through a clever use of controllers.</p>
 
 <h3>DSQL - Agile's approach to Object Relational Management (ORM)</h3>
 
-<p>Dynamic SQL is the Object-Oriented API to your RDBMS. Because communication with the SQL databases is still using old SQL language and direct use of SQL is source to many injections, cross-vendor compatibility problems and performance issues, DSQL was introduced in Agile Toolkit around 2004 then reimplemented in early 2012 (4.2) to unify interaction with the database. Here is a sample syntax:</p>
+<p>Dynamic SQL is the Object-Oriented API to your RDBMS. Because communication with the SQL databases is still using old SQL language and direct use of SQL is source to many injections, cross-vendor compatibility problems and performance issues, DSQL was introduced in Agile Toolkit around 2004 then reimplemented in early 2012 (4.2) to add support for multiple database vendors. </p>
 
+<p>Unlike other ORM, DSQL class is lightweight, dynamic, does not use code generation or caching, does not contain knowledge of your database and allows to build ANY imaginable query even if it's your DB-vendor specific. In addition to basic features it supports sub-selects, joins, expressions, iterators and multi-row operations.</p>
+
+<h4>Example</h4>
 <?Code?>
 // executes "select name from user where id=$id" query
 $name = $this->api->db->dsql()
   ->table('user')
-  ->where('id',$id)
+  ->where('id',$_GET['id'])   // don't worry about injection
   ->field('name')
-  ->getOne();
+  ->getOne();                 // prepares and executes query
 
-// can do expression too. Works as iterator
+// can do custom expression too. Works as iterator
 foreach($this->api->db->dsql()->expr('show tables') as $row){
   echo pop($row)."\n";
 }
 
-// Sub-queries and much more
+// One DSQL object can be part of another DSQL object. PDO parameters are used.
 $q=$this->api->db->dsql();
 $q->field(
   $q->dsql()->table('book')->where('author_id', $q->getField('id'))->field('count(*)'),
  'book_cnt'
 );
 <?/?>
+
+<h4>Why?</h4>
+<p>DSQL was built to be a lightweight abstraction of SQL classes. Often it's all you want and need. It also has the necessary object-oriented flexibility
+and is used throughout Agile Toolkit. That's right! Agile Toolkit or software built with it <b>never</b> has a need to use uses direct queries.</p>
+
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on DSQL</a>
 
-<h2>Active Record Implementation</h2>
-<p>Implementation of a "Model" class allows to define structured model objects with fields, field types and methods. Models then can be used either directly on inside Views defining the Data Source.</p>
+<h3>Active Record Implementation</h3>
+<p>Implementation of a "Model" class allows to define structured model objects with fields, field types and methods. Models then can be used either directly on inside Views defining the Data Source. The "Model" class has restrictions on how it's loaded or stored. It simply used to define fields and field types.</p>
 
-
-<h3>Creating your Business Logic</h3>
 <img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/model_inheritance.png<?/?>"/>
 
 <p>In real world every day you have wide variety of "Actors" or Entities. Programs reflect our daily life and task and they need to map it into "Models" such as "Person", "Profile", "Payment", "Order", "Message" etc.</p>
@@ -114,15 +128,52 @@ $user->save();
 $admin=$this->add('Model_Admin');
 $admin->load( $user->id );   // will fail to load data
 <?/?>
+
+<h4>Why?</h4>
+<p>There are a LOT of applications for a simple model class such as storing it in all those noSQL databases. User Interface Views integrate with models and can populate fields or columns from your model definition.</p>
+
+<p>Other ORM engines implement model definition through YAML. We believe that it's limiting to what you can do and requires more learning and typing. While Agile Toolkit does not endorse code generation, there are add-ons which will create Models for you based on your database or even allow you to visually design your models.</p>
+
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/model<?/?>">Full Documentation on Models</a>
 
-<h2>Model_Table — Active Record+RDBMS</h2>
+<h3>Relational Models</h3>
 
-<p>The Model_Table class and dozen of supplementary classes introduce new features into a simple Model implementation such as — Joining tables, Sub-queries, Conditions and Expressions. Model_Table extensively uses DSQL architecture to build and adjust queries of the model.</p>
+<p>In the intersection of a flexible DSQL and Models you can now create models which span across multiple tables, use expressions or sub-selects and also have a mandatory conditions. Relational Models in Agile Toolkit are similar to "VIEW" concept in some relational databases. However with Agile Toolkit have the ability to define methods of a model.</p>
 
-<p>Model_Table is the best way to describe Business Logic of your application.</p>
-<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/model/table<?/?>">Full Documentation on Model_Table</a>
+<p>Relational Models are implemented in Model_Table class. Model_Table extensively uses DSQL architecture to build and adjust queries of the model. Regardless of the use, the actual queries produced by the back-end architecture are always clear and no unnecessary queries are made.</p>
 
-<a href="<?page?>intro/2<?/?>" style="float: right" class="button blue">Introduction to Graphics User Interface</a>
+<p>Relational Models should be used in any Agile Toolkit application which uses relational database and is ideal for separating Business Logic from Presentation.</p>
+
+<h4>Working with multiple tables</h4>
+<?Code?>
+$page->api->stickyGET('contest_id');    // makes sure our UI will not loose this GET argument
+
+$profile=$this->add('Model_Profile');
+$profile->join('participant.profile_id')->addField('contest_id'); // SQL join
+$profile->addCondition('contest_id',$_GET['contest_id']);         // condition
+
+// Use our new model inside an existing View.
+$page->add('CRUD')->setModel($profile,array('name','surname'));
+
+<?/?>
+
+<h4>Traversal</h4>
+<?Code?>
+// executes select count(*) query
+$book_count = count($author->ref('Books'));
+
+// loads related model, updates and saves it.
+$address=$author->ref('address_id')
+$address['street']='Abbey Street';
+$address->save();
+<?/?>
+
+<h4>Why?</h4>
+<p>In Agile Development environment database logic is always evolving. New fields are added, relations change. User Interface logic must as distant as possible for all the changes and Relational Models is the great way of controlling your database.</p>
+
+<p>There are currently no other ORMs implementation which provide this level of flexibility in models especially when working with multiple tables.</p>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/modeltable<?/?>">Full Documentation on Model_Table</a>
+
+<a href="<?page?>intro/2<?/?>" style="float: right" class="button blue">Next: Graphics User Interface</a>
 <div class="clear"></div>
 

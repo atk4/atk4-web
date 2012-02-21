@@ -1,0 +1,75 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+
+    <h3>Core Object Features</h3>
+    <p>AbstractObject is a top-most object in Agile Toolkit hierarchy. It features number of features which is inherited by other objects.</p>
+    </p>
+
+    <div class="ref-item box blue-noised">
+      <b>Table of Contents:</b>
+      <?$toc?>
+    </div>
+
+    <?List?>
+    <div class="ref-item box blue-noised">
+      <b>Other Resources, Blog posts:</b>
+      <div class="details white">
+        <div><a href="<?page?>learn/understand/base/adding<?/?>">Introduction to Objects</a></div>
+        <div><a href="http://www.youtube.com/watch?v=bUNEHqYVOYs">Screencast introduction to core objects</a></div>
+        <?rows?>
+        <?row?><div><a href="<?url?><?/?>"><?name?>Introduction to Application Classes<?/?></a></div><?/?>
+        <?/rows?>
+        <?Model?>MoreInfo<?/?>
+      </div>
+
+    </div>
+
+    <?add?>Suggest a Resource<?/?>
+
+    <?/?>
+
+
+  </div>
+  <div class="g-6">
+      <img style="float: right; padding-left: 2em" src="<?template?>images/ugly_images/abstract.png<?/?>"/>
+      <p>Unlike other PHP frameworks which promote "decoupled" approach, all objects in Agile Toolkit including add-ons must inherit from the "Core" classes of Agile Toolkit. There are total of 4 classes organized as displayed on the diagram.</p>
+
+    <h4>Core Class Reference (PHPDoc)</h4>
+
+    <div class="box blue-noised p-10px">
+      <div class="white">
+        <table>
+          <thead>
+            <tr>
+              <th>Class</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiCLI.html" class="dynamic">AbstractObject</a></td>
+              <td>Implements many basic features as explained in sub-chapters. Do not extend from this class directly, but use the next 3 classes instead.</td>
+            </tr>
+            <tr>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiCLI.html" class="dynamic">AbstractView</a></td>
+              <td>Implements a "visible" object base class. AbstractObject has a capacity to render themselves and take advantage of Template Parser.</td>
+            </tr>
+            <tr>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiFrontend.html" class="dynamic">AbstractModel</a></td>
+              <td>Base class for classes which represent entities which makes business sense. Normally you should be able to manipulate multiple models and models would have some properties on it's own.</td>
+            </tr>
+            <tr>
+              <td><a href="http://agiletoolkit.org/PhpDocumentor/docs-atk4/default/ApiFrontend.html" class="dynamic">AbstractController</a></td>
+              <td>Controllers are similar to Libraries and their task is to enhance features of other objects.</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<?$Next?>

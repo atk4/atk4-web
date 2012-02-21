@@ -1,32 +1,83 @@
 <?$Content?>
 
+<div class="g-row">
+  <div class="g-8">
 <h1>Web User Interface</h1>
-<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/form.png<?/?>"/>
 
-<p>From all the toolkits who attempted to create User Interface you will find Agile Toolkit to be the slickest, the most flexible and the most full-featured. To find out why, let's look at how the Form is implemented in Agile Toolkit.</p>
+<p>From all the PHP frameworks and toolkits who tried to create User Interface you will find Agile Toolkit to contain the perfect mix between "template customizability" and "content awareness". In Agile Toolkit you have a full control over every line of HTML produced. At the same time Agile Toolkit offer AJAX and JavaScript integration on object-level allowing you to reload objects on the page, assign JavaScript and AJAX events.</p>
 
-<p>The standard PHP class Form relies on different assets outside of PHP to make your form look great. Agile Toolkit forms are enhanced with a built-in jQuery UI widget (ui.atk4_form.js) which adds AJAX form submission, field reloading, lovely validation error reporting and flexible handling of successful form submission. Form also relies on the CSS framework which allows developer to customize layout and look of the form. Arranging fields in two or three columns no longer requires you to fiddle with HTML code.</p>
+<p>To make things simpler, Agile Toolkit already comes with a full-featured theme for you.</p>
 
-<p>Form relies on a template, which defines the actual HTML used by form and fields. Finally there are several Controllers you can apply to a form such as controller for CSF protection, password strength indicator. Using Form with a Model will spawn MVCForm controller which will bind Form with Model and automatically populate fields while converting field types.</p>
+<h2>Agile Toolkit CSS Framework</h2>
+<p>In it's aim for maximum flexibility, Agile Toolkit CSS framework is built on top of jQuery UI CSS Framework. That means not only it looks awesome, but your UI will be compatible with thousands of jQuery plugins relying on the same set of CSS classes.<ul>
+  <li>Compatible with jQuery UI Themeroller. Generate a theme and drop into your templates folder.</li>
+  <li>All the CSS is built on LESS. You can tweak the theme by adjusting some variables.</li>
+  <li>Comes with 12-grid system (static or full-screen), Typography, Percent-based columns and CSS Reset.</li>
+  <li>Form styles – vertical, horizontal, multi-column or mixed.</li>
+  <li>Fully integrated in your PHP code.</li>
+  <li>Works out of the box. You don't need to be a nerd to use it.</li>
+</ul></p>
 
-<p>Form does not implement all the functionality on it's own. It relies on different Field classes and Button class to render itself. Form, as any other View can have events. onSubmit() is one form-specific event, but many others can be added through JavaScript interaction class jUI.</p>
+  </div><div class="g-4">
+    <img src="<?template?>images/screenshots/message_to_romans.png<?/?>"/>
+  </div>
+</div>
 
-<p>It is not a goal of Agile Toolkit to eliminate access to HTML completely. If bundled form CSS styles are not suitable, you can build your own layout through a simple HTML template.</p>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/css<?/?>">Full Documentation on Agile CSS Framework</a>
 
-<h4>SMLite - Agile's approach to Template Objects</h4>
-<p>Template is a common practice to separate HTML markup from business logic. Unfortunately popular template engines such as Smarty have decided to implement a new programming language inside a template. Agile Toolkit Templates reverse this pattern and make templates incredibly simple. Consider the following example:</p>
+<h2>View Objects</h2>
+<p>Agile Toolkit takes everything there is to make a fully-featured form and hides it behind a simple "Form" class. This class relies on CSS stylesheets, jQuery UI widget, other views such as buttons and fields, jQuery Chains, Form templates. However to use form, you need to know very little of that:</p>
+
+<div class="g-row">
+  <div class="g-8">
+
+<?Code?>
+$form=$page->add('Form');
+$form->addClass('stacked'); // labels over fields
+$form->addField('line','Subject');
+$form->addField('text','Body');
+$form->addSubmit('Send');
+$form->addButton('Cancel');
+<?/?>
+  </div><div class="g-4">
+    <img src="<?template?>images/ugly_images/form.png<?/?>"/>
+  </div>
+</div>
+
+<p>Any component of the form can be adjusted or replaced completely. You may even design your own form class which is displayed in the way you like.</p>
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/form<?/?>">Full Documentation on Forms</a>
+
+<h2>SMLite - Agile Template Engine</h2>
+<p>Template is a common practice to separate HTML markup from business logic. Unfortunately many template engines and frameworks have been walking all over the principle saying "do not mix business logic with HTML".</p>
+
+<p>SMLite remains true to it's goals and has no way to complicate HTML logic. More importantly it's syntax allows to leave HTML code un-altered as you populate tags throughout the template. When developers work side-by-side with designers, it's very important that the two have a really clear line on their involvement with the templates and SMLite does just that.</p>
+
+<h3>Example</h3>
+<p>If your designer have sent you the following file:</p>
 
 <div class="atk_doc example"><code>
-  Templates are <font color="red">&lt;?tag?&gt;</font><font color="blue">simple</font><font color="red">&lt;?/?&gt;</font>
+    &lt;div class="greeting"&gt;Templates are simple&lt;/div&gt;
 </code></div>
 
-<p>The above string is a valid template in Agile Toolkit. You can manipulate tag values by manipulating them.</p>
+<p>You can add the template tag inside without changing the code:</p>
+
+<div class="atk_doc example"><code>
+  &lt;div class="greeting"&gt;Templates are <font color="red">&lt;?tag?&gt;</font><font color="blue">simple</font><font color="red">&lt;?/?&gt;</font>&lt;/div&gt;
+
+</code></div>
+
+<p>Designer, browsers and even applications such as Dreamweaver can easily ignore inserted tags. Yet now you have control over the template and can substitute contents of a tag inside your PHP code:</p>
 
 <?Code?>
 echo $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
 <?/?>
 
-<p>This is as simple as templates can get. It is also all we need from the template engine — ability to get and set region values. This simplicity is significant to the way how templates are used by the User Interface.</p>
+<p>This is as simple as templates engine can be. It is also all we need from the template engine — ability to get and set region values. This simplicity is significant to the way how templates are used by the User Interface.</p>
+
+<h4>Why?</h4>
+<p>The reason why Agile Toolkit implements it's own template engine are several. First it's the speed. Agile Toolkit can produce huge amount of views and can use thousands of <a href="<?page?>intro/speed<?/?>">template instances just on a single page</a>. Template engine must be very fast. Tags must be indexed.</p>
+
+<p>The other reason is that Views are fully integrated with the template. Apart from setting value of the template yourself, views can do it for you automatically. In majority of your software you would not be creating and rendering templates manually.</p>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/smlite<?/?>">Full Documentation on SMLite</a>
 
@@ -34,20 +85,19 @@ echo $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
 <?Execute?>
 $view = $page->add('Alex');
 <?/?>
-<p>The web page you see in front of you consists of Views. View are implemented as objects and each view display a rectangular block on the web page. Above there was a Menu object. Below are some Form objects but to the right of this paragraph you will see a custom-made View implemented as a class "Alex".</p>
+<p>The web page you are reading right now is built on Agile Toolkit. Every character of produced HTML is coming from a template of some Object. Objects which participate in HTML generation are called "Views". Quite often Views will contain other Views. Above there was a Menu object. Below are some Form objects but to the right of this paragraph you will see a custom-made View implemented as a class "Alex".</p>
 
-<p>Every object is capable of producing a chunk of HTML code which fits inside it's parent. Objects are rendered recursively by Agile Toolkit. Most of the objects rely on SMLite template to get the actual HTML code they need to output.</p>
+<p>Objects are rendered automatically and recursively by Agile Toolkit. Objects rely on SMlite which can be accessible through $object->template which is ideal if you need to tweak something very minor in the object without redefining it. You can also specify a different template for an object and have same UI logic applied on different chunk of HTML.</p>
 
 <?Code?>
 $view = $page->add('Alex');
 <?/?>
 
-<p>The code above is the fundamental building block of your application in Agile Toolkit. You don't work with HTML, you work with objects. Agile Toolkit is bundled with many cool objects and in every application you are building, you'll be adding more of your own Views. Often views rely on custom SMlite template and incorporate other objects into that template. Together you get a consistent, unified and simple User Interface.</p>
-
+<p>The code above is the fundamental building block of your application in Agile Toolkit. You don't start your application from HTML. You start it by adding views to your pages. Design and templates can always be tweaked after in a unified system-wide way. That's the secret to unified Web Application Interface</p>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/view<?/?>">Full Documentation on Views</a>
 
-<h3>View + jQuery UI Widget = Love</h3>
-<p>Once you are focused on a small portion of your page, the ability to communicate between that PHP class and the web browser becomes very essential. Agile Toolkit provides the means to communicate between jQuery UI Widget for the "Form" view and the PHP Class absolutely transparently using AJAX.</p>
+<h2>View + jQuery UI Widget = Love</h2>
+<p>Once your PHP code is focused on a View, the ability to fine-tune it open immense capabilities. The Views are similar to dashboard widgets or gadgets. Agile Toolkit  makes sure you can have multiple views on your pages working properly without conflicts. Each view can also have it's own JavaScript bindings. Those bindings will be kept even if you reload your page through AJAX or use your View in different conditions.</p>
 
 <?Example?>
 $form = $page->add('Form');
@@ -61,12 +111,18 @@ if($form->isSubmitted()){
 }
 <?/?>
 
-<quote>When all parts of your application simply do their job, building a higher-level code becomes a joy.</quote>
+<h2>The Revelation</h2>
 
-<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/form<?/?>">Full Documentation on Form</a>
+<p><b>When all parts of your application simply do their job, building a higher-level code becomes a joy.</b></p>
+
+<p>You are now familiar to how the core part of Agile Toolkit works. Given the flexibility and Object-Oriented design of the foundation, it is not
+difficult at all to imagine what kind of views you might be developing next. But before then, let's connect the "Views" with "Data Layer". This is 
+the intersection between the UI logic and Business logic and the honour to integrate them goes to "Controllers"</p>
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/jquery<?/?>">Full Documentation on jQuery Chains</a>
 
 
-<a href="<?page?>intro/3<?/?>" style="float: right" class="button blue">Introduction to Controllers</a>
+<a href="<?page?>intro/3<?/?>" style="float: right" class="button blue">Next: Controllers</a>
 
 
 <?$Next?>

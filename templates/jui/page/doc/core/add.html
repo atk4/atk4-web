@@ -1,0 +1,166 @@
+<?$Content?>
+
+<h1>Creating Objects and Runtime Tree</h1>
+
+    <p>All objects in Agile Toolkit applications are arranged into a tree. Any object is capable of having child objects and the top-most (root) node is the Application object.</p>
+
+
+<div class="g-row" id="doc-ref">
+  <div class="g-8">
+
+
+    <div class="box blue-noised p-10px">
+      <div class="white">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>short_name</td>
+              <td>System object name which identifies objects through it's parent's "element" array. If you have to change the name, use rename().</td>
+            </tr>
+            <tr>
+              <td>name</td>
+              <td>Unique object name. No two objects in the system will have the same name.</td>
+            </tr>
+            <tr>
+              <td>elements</td>
+              <td>Array containing references to all child objects. Since 4.2, some objects may be "detached" in which case instead of a reference, the elements array will contain "true" value. This helps conserve memory.</td>
+            </tr>
+            <tr>
+              <td>owner</td>
+              <td>Always pointing to object which created this object through the call to add()</td>
+            </tr>
+            <tr>
+              <td>api</td>
+              <td>Always points to application object, the top-most object (root)</td>
+            </tr>
+            <tr>
+              <td>model</td>
+              <td>Points to "model" object, set with setModel()</td>
+            </tr>
+            <tr>
+              <td>controller</td>
+              <td>Points to "controller" object, set with setController()</td>
+            </tr>
+            <tr>
+              <td>auto_track_element</td>
+              <td>Regulates if adding this object will automatically include link in owner's elements[] array. If set to false, object will be "detached"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="g-4">
+    <img style="float: right" src="<?template?>images/ugly_images/adding.png<?/?>"/>
+  </div>
+</div>
+
+
+<h2>Detached Objects</h2>
+<p>Since 4.2 the concept of "Detached Objects" has been introduced. Pretty often you would have a code like this in your application.</p>
+<?Code?>
+$m=$this->add('Model_User');
+$m->load(4)->set('name','John')->save();
+<?/?>
+
+<p>When this code ends the execution and scope of $m is no longer available, then $m should be disposed off. PHP does that automatically through garbage collection, if $m has no more references. Prior to 4.1 add() would also create reference to the $m through $this->owner->elements['Model_User'] and even if $m is no longer available, the model object would still reside in memory</p>
+
+<p>Creating a loop which initialized series of objects and then disposing needs to properly dispose of objects.</p>
+
+<p>Detached Objects is the solution to this problem. Models and Controllers are "detached" by default, which means they will create a record in $owner->elements[] but it will not point back to the object.</p>
+
+<p>Method add() will check "auto_track_element" property and will only create reference in $elements only if "auto_track_element=true".</p>
+
+<h3>Typical objects which are NOT Detached</h3>
+<p>Objects which will keep link to themselves are:<ul>
+  <li>All the Views</li>
+  <li>Model Fields</li>
+  <li>Model Joins and hasMany relations</li>
+</ul></p>
+
+<h2>Preconfiguring objects</h2>
+<p>The typical flow of Agile Toolkit objects would create them and then configure them through a follow-up calls. The rule here is that the init() method must perform absolute minimum initialization and the rest of the work should either done by other methods such as setModel() or render().</p>
+
+<p>In certain cases, Agile Toolkit would initialize all the page objects, but would render only some objects, therefore to keep performance of your application, attempt to do all the hard work in render().</p>
+
+<p>There is however a way to pass in data into the init() method. If you have worked with frameworks such as Yii or Sencha there is a way to pass. If you need to pass configuration and the name at the same time, use 'name' key.</p>
+
+<?Code?>
+class MyObject extends AbstractModel {
+    function init(){
+        parent::init();
+
+        echo $this->di_config['foo'];
+    }
+}
+
+$this->add('MyObject',array('foo'=>'bar'));   // outputs "bar";
+<?/?>
+
+<quote>Even through there is a way to pass data into init(), try avoid using this approach.</quote>
+
+<h2>Object Manipulation</h2>
+<h4>Generated Object Name</h4>
+<p>When you call add(), the second argument defines the "short_name" of the object. If it's omitted or "null", then the class of the object is used. If there is already object with such a short-name, then call to _unique() alters the short_name to make it unique.</p>
+
+<?Code?>
+$b1=$this->add('Button');
+$b2=$this->add('Button');
+
+echo $this->name."<br/>";   // outputs realm_page_name
+echo $b1->name."<br/>";     // outputs realm_page_name_Button
+echo $b2->name."<br/>";     // outputs realm_page_name_Button_2
+<?/?>
+
+<h4>Retrieving Objects</h4>
+<p>getElement() will return of a sub-element by it's short-name. Even through "elements" is public, use getElement() instead. If element is not defined, this will throw exception.</p>
+
+<p>hasElement($name) works same as getElement() but will return "false", "true" or the objects itself and will not produce exception. It's safe to use hasElement as a if() condition.</p>
+
+<p>Once object is added, you can rename it by callign $object->rename(); Please try to avoid using rename() as the object may have already have some dependencies using the short_name and it might break some functionality.</p>
+
+
+<h4>Re-adding objects</h4>
+<p>Once object is added, you can add it into a different parent by calling $newparent->add($object);</p>
+
+<h4>Destroying Objects</h4>
+<p>If you have added object and then you need to remove it, call $object->destroy(); A typical scenario if you need to remove field in a model from the model it extends.</p>
+<?Code?>
+class Model_Admin extends Model_User {
+    function init(){
+        parent::init();
+
+        $this->getElement('email')->destroy();
+    }
+}
+<?/?>
+<p>You can also use removeElement('name'), which is safe way to deal with detached objects</p>
+
+<h4>Namespaces</h4>
+<p>Agile Toolkit uses namespaces for Add-on management. Here is how you define a class inside a add-on and call it:</p>
+<?Code?>
+// inside atk4-addons/myaddon/Test.php
+namespace myaddon;
+class Test extends \View {    // backslash is not typo. It refers to a top-level namespace
+    function init(){
+        parent::init();
+        $this->set('Hello from Add-on');
+    }
+}
+
+
+// Using class from add-on
+$this->add('myaddon/Test');
+<?/?>
+
+<p>To learn more about developing add-ons, please read <a href="<?page?>develop/42-addons<?/?>">Add-on developer guide</a>.</p>
+
+
+<?$Next?>

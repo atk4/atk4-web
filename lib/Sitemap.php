@@ -142,8 +142,17 @@ class Sitemap extends AbstractController{
                 'multi'=>'Multiple Application Instances',
                 'extend'=>'Register Methods in API',
                 'own'=>'Building Re-Usable Application Class',
-                ),
-            /*
+            ),
+            'core'=>array(
+                'Core Object Features',
+                'add'=>'Creating Objects and Runtime Tree',
+                'model'=>'Model and Controller handling',
+                'session'=>'Session Management',
+                'exception'=>'Exception Handling',
+                'hooks'=>'Using call-backs (Hooks)',
+                'method'=>'Dynamic Methods',
+                'misc'=>'Miscelanious',
+            ),
             'page'=>array(
                 'Page Classes',
                 'adding'=>'Different Ways of Adding Pages',
@@ -154,6 +163,7 @@ class Sitemap extends AbstractController{
                 'static'=>'Static Pages',
                 '404'=>'PageNotFound Handler (404)',
                 ),
+            /*
             'view'=>array(
                 'View Classes',
                 'abstract'=>'View and AbstractView',

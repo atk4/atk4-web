@@ -59,7 +59,17 @@ foreach($this->api->db->dsql()->expr('show tables') as $row){
 }
 <?/?>
 
-
 <p>DSQL implements only some PDO fetching modes/features for simplicity, although you can access PDO object through $q->stmt.</p>
+
+<h2>Debugging</h2>
+<p>dsql has a method debug() which will "echo" queries as they are being produced.</p>
+<?Code?>
+$q=$this->api->db->dsql();
+$q->table('user');
+$q->debug();
+$q->field('name');
+$data = $q->get();    // will output debugging information
+<?/?>
+
 
 <?$Next?>
