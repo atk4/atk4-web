@@ -13,7 +13,7 @@ $m=$form->model; // points to object of a class Model_Book
 <p>Argument supplied to setModel() can be either an object or a string. If 'Model_' prefix is not present, it will be automatically added. The core AbstractObject will only initialize the model and assign it to a property, but descending objects may (and should) introduce more logic more specific for that particular object.</p>
 
 <h3>AbstractView model initialization</h3>
-<p>The setModel() for view objects is redefined to support second argument. This argument specifies list of fields which should be automatically initialized inside that view. Form and Grid are good examples. If you specify second argument "false" then no fields will be initialized automatically.</p>
+<p>The <a href="/dox/html/class_abstract_object.html#a1c15df021d82870005f4f4925a4f613e">setModel()</a> for view objects is redefined to support second argument. This argument specifies list of fields which should be automatically initialized inside that view. Form and Grid are good examples. If you specify second argument "false" then no fields will be initialized automatically.</p>
 
 <?Code?>
 $form->setModel('Mook',array('name','isdn'));
@@ -28,7 +28,7 @@ $f=$form->getElement('isdn');  // points to initialized field object, if it was 
 
 <p>View uses setController to initialize default controller primarily due to developer convienence</p>
 
-<h3>setController</h3>
+<h3><a href="/dox/html/class_abstract_object.html#aa4f9c9e545ef3a90856d30de93fe5e09">setController</a></h3>
 <p>This method is designed to initialize controllers with any objects in your system. While Model primarily contains only field and business logic and would not contain any display-related logic, controllers are permitted to be much more diverse in what they are doing. Below are just some application types for the controllers:</p>
 
 <h4>Adding Fields</h4>
@@ -50,4 +50,11 @@ class Controller_ModelAudit extends AbstractController {
 <?/?>
 
 <h4>Altering object behaviour</h4>
-<p>Objecst do not have control on how exactly fields are being added into it. To re-order child objects, use "Controller_Ordering". 
+<p>Objecst do not have control on how exactly fields are being added into it. To re-order child objects, use "Controller_Ordering". There are many other controllers to look out for.</p>
+
+<h4>See also</h4>
+<ul>
+  <li><a href="/dox/html/class_controller___m_v_c_form.html">Controller_MVCForm</a></li>
+  <li><a href="/dox/html/class_controller___m_v_c_grid.html">Controller_MVCGrid</a></li>
+
+<?$Next?>

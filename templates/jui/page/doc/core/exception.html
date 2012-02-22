@@ -1,0 +1,41 @@
+<?$Content?>
+
+<h1>Using Exceptions in Agile Toolkit</h1>
+<p>Agile Toolkit provides a wrapper for creating exceptions. The normal syntax:</p>
+<?Code?>
+throw new exception('bleh');
+<?/?>
+<p>is NOT used in Agile Toolkit, instead the following synax is used:</p>
+<?Code?>
+throw $this->exception('bleh');
+<?/?>
+
+<p>There are several advantages why this syntax is used and they are possible due to dynamic nature of PHP language.</p>
+
+<h3>Linking exception with a class</h3>
+<p>using "new" creates a class, but it's not associated in any way with a current object. When exception is captured it will be impossible to figure out where it originated. Calling <a href="/dox/html/class_abstract_object.html#ad7610133e2fdaa0f815836566e5b39ef">exception()</a> will automatically associate exception object with "$this" class.</p>
+
+<h3>Object-specific Exception class selection</h3>
+<p>Exception raised in model is different to exception raised in PathFinder or DSQL. Each object of Agile Toolkit can define <a href="/dox/html/class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">default exception</a> class which will be initialized by exception() method. When throwing exception, developer should not worry about which class should be used.</p>
+
+<h3>Chaining methods before throwing</h3>
+<p>PHP does not allow to chain object which was created with "new". Standard syntax will require a temporary variable and multiple statements. The Agile Toolkit syntax is a single statement and requires no variables:</p>
+
+<?Code?>
+if($temperature>70)
+  throw $this->exception('Temperature too high')
+    ->addMoreInfo('temperature',%temperature);
+<?/?>
+
+<h3>Localization of error messages</h3>
+<p>The error message specified to exception() must not contain any variables. This message will be routed through <a href="/dox/html/class_api_c_l_i.html#a7c4e35e703ca26063001e0dfad6092bd">$api->_()</a> method for localization.</p>
+
+<h3>Verbosity control</h3>
+<p>Sometimes you may want to display error message to the user. Certainly you would want to hide any additional information as it may have some sensetive data. </p>
+
+
+<h3>Object to add more info automatically</h3>
+<p>Your class may extend exception() method to automatically add more information from the object properties before throwing such as <a href="/dox/html/class_model___table.html#a3e54345f926a6326080fa8bf1683bab1">Model_Table::exception()</a>.</p>
+
+
+<?$Next?>

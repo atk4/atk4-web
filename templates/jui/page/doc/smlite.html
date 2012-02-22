@@ -1,3 +1,39 @@
-Coming soon..
+<?$Content?>
 
-<p><a href="/intro">See Interactive Introduction</a></p>
+<h1>SMLite - Agile Template Manager</h1>
+
+<p>This page covers some of the advanced topics of SMLite. For usage and introduction, follow to 
+<a href="<?page?>learn/template/how<?/?>">introduction to templates</a></p>
+
+
+<h2>Parsing</h2>
+<p>When template is loaded, it's represented in the memory as an array. Example Template:</p>
+
+<pre>
+  Hello &lt;?subject?&gt;world&lt;?/?&gt;!!
+</pre>
+
+<p>SMLite converts the template into the following structure available under $smlite->template.</p>
+
+<p>Content of tags are parsed recursively and will contain further arrays. In addition to the template tree, tags are indexed and stored inside "tags" property.</p>
+
+<?Code?>
+// template property:
+array ( 
+  0 => 'Hello ', 
+  'subject#1' => array ( 
+    0 => 'world', 
+  ), 
+  1 => '!!', 
+)
+
+// tags property
+array (
+  'subject'=> array( &array ),
+  'subject#1'=> array( &array )
+)
+<?/?>
+
+<p>As a result each tag will actually add two tags. If tag with same name is added, reference to a region is added inside respective tag sub-array. This allow $smlite->get() to quickly retrieve contents of appropriate tag and it will also allow render() to reconstruct the output.</p>
+
+<?$Next?>

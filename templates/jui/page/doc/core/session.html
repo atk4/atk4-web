@@ -1,0 +1,28 @@
+<?$Content?>
+
+<h1>Session Management</h1>
+
+<p>Agile Toolkit relies on standard PHP sessions, however it adds a object-oriented interface allowing objects to have local variables.</p>
+
+<?Code?>
+$o1 = $this->add('Button');
+$o2 = $this->add('Button');
+
+$o1->memorize('test',123);
+$o2->memorize('test',555);
+
+echo $o1->recall('test');  // outputs 123
+<?/?>
+
+<p>Non-conflicting unique session storage is essential when you are building state-full objects. A good example is the "hangman" game demonstrated
+on <a href="<?page?>/<?/?>">the index page of agiletoolkit.org</a>. Since the game is implemented as a view, it stores "guesess" locally and will not conflict with any other instances of the same class.</p>
+
+<h3>Methods</h3>
+<ul>
+  <li><a href="/dox/html/class_abstract_object.html#a2be330661f07266a556ada3c30c3abb7">memorize()</a></li>
+  <li><a href="/dox/html/class_abstract_object.html#a0706cc3b26932d2ad0a7dae981ed59e5">learn()</a></li>
+  <li><a href="/dox/html/class_abstract_object.html#a565c4fd426749bb0001f0f5d548bc203">recall()</a></li>
+  <li><a href="/dox/html/class_abstract_object.html#a133523cb54b63bbc86e971c3aa4df128">forget()</a></li>
+</ul>
+<?$Next?>
+

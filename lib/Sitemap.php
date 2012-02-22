@@ -135,14 +135,6 @@ class Sitemap extends AbstractController{
 /*}}}*/
 //{{{ core - Agile Toolkit Core Concepts
         $doc['doc']=array('Agile Toolkit API Reference',
-            'api'=>array(
-                'API Classes',
-                'cli'=>'Minimalistic Use With ApiCLI',
-                'layouts'=>'Using Layouts',
-                'multi'=>'Multiple Application Instances',
-                'extend'=>'Register Methods in API',
-                'own'=>'Building Re-Usable Application Class',
-            ),
             'core'=>array(
                 'Core Object Features',
                 'add'=>'Creating Objects and Runtime Tree',
@@ -153,52 +145,6 @@ class Sitemap extends AbstractController{
                 'method'=>'Dynamic Methods',
                 'misc'=>'Miscelanious',
             ),
-            'page'=>array(
-                'Page Classes',
-                'adding'=>'Different Ways of Adding Pages',
-                'relative'=>'Relative Page URL Generation',
-                'sub'=>'Sub-Pages',
-                'wizard'=>'Wizards',
-                'tabs'=>'Pages with Tabs',
-                'static'=>'Static Pages',
-                '404'=>'PageNotFound Handler (404)',
-                ),
-            /*
-            'view'=>array(
-                'View Classes',
-                'abstract'=>'View and AbstractView',
-                'helloworld'=>'HelloWorld',
-                'loremipsum'=>'LoremIpsum',
-                'htmlelement'=>'HTMLElement',
-                'button'=>'Buttons',
-                'typography'=>'Headings and Paragraphs',
-                'add'=>'Adding Your Own',
-                ),
-            'controller'=>array(
-                'Controller Classes',
-                'why'=>'Purpose of Controllers',
-                'multimodel'=>'Multi-Model Controller',
-                'view'=>array(
-                    'View Controllers',
-                    'view'=>'View',
-                    'grid'=>'Grid',
-                    'form'=>'Form',
-                    'tree'=>'Tree',
-                    'add'=>'Adding View Controllers',
-                    ),
-                'api'=>array(
-                    'API Controllers (4.2)',
-                    'config'=>'Config',
-                    'logger'=>'Logger',
-                    'add'=>'Adding API Controllers',
-                    ),
-                'model'=>array(
-                    'Model Controllers',
-                    'sql'=>'SQL (4.2)',
-                    'mongo'=>'Mongo (4.2)',
-                    ),
-                ),
-                */
             'dsql'=>array(
                 'Dynamic Queries',
                 'how'=>'Basic Usage, Debuging',
@@ -227,6 +173,61 @@ class Sitemap extends AbstractController{
                 'join'=>'Joining Tables',
                 'behaviour'=>'Modifying The Default Actions',
                 ),
+            'api'=>array(
+                'API Classes',
+                'cli'=>'Minimalistic Use With ApiCLI',
+                'layouts'=>'Using Layouts',
+                'multi'=>'Multiple Application Instances',
+                'extend'=>'Register Methods in API',
+                'own'=>'Building Re-Usable Application Class',
+            ),
+            'view'=>array(
+                'View Classes',
+                'abstract'=>'View and AbstractView',
+                'helloworld'=>'HelloWorld',
+                'loremipsum'=>'LoremIpsum',
+                'htmlelement'=>'HTMLElement',
+                'button'=>'Buttons',
+                'typography'=>'Headings and Paragraphs',
+                'add'=>'Adding Your Own',
+                ),
+            'page'=>array(
+                'Page Classes',
+                'adding'=>'Different Ways of Adding Pages',
+                'relative'=>'Relative Page URL Generation',
+                'sub'=>'Sub-Pages',
+                'wizard'=>'Wizards',
+                'tabs'=>'Pages with Tabs',
+                'static'=>'Static Pages',
+                '404'=>'PageNotFound Handler (404)',
+                ),
+            'smlite'=>'Agile Template Manager',
+            /*
+            'controller'=>array(
+                'Controller Classes',
+                'why'=>'Purpose of Controllers',
+                'multimodel'=>'Multi-Model Controller',
+                'view'=>array(
+                    'View Controllers',
+                    'view'=>'View',
+                    'grid'=>'Grid',
+                    'form'=>'Form',
+                    'tree'=>'Tree',
+                    'add'=>'Adding View Controllers',
+                    ),
+                'api'=>array(
+                    'API Controllers (4.2)',
+                    'config'=>'Config',
+                    'logger'=>'Logger',
+                    'add'=>'Adding API Controllers',
+                    ),
+                'model'=>array(
+                    'Model Controllers',
+                    'sql'=>'SQL (4.2)',
+                    'mongo'=>'Mongo (4.2)',
+                    ),
+                ),
+                */
             /*
             'auth'=>array(
                 'Authentication',

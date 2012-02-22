@@ -1,0 +1,69 @@
+<?$Content?>
+
+<h1>Using Hooks</h1>
+
+<p>Hooks are used in many applications and frameworks. The special approach of Agile Toolkit is that hooks are defined "per-object". As an example, form will bind <a href="/dox/html/class_form___basic.html#a16e1acb9d95517b7bb0b668277f2c410">loadData()</a> and <a href="/dox/html/class_form___basic.html#a335cdb2aa63a2c49551a24d62dd28742">submit()</a> on API's hooks. This allows Form objects to execute code between initialization and rendering.</p>
+
+<p>Hooks are typically used by controllers, add-ons. More hooks can be gradually added through <a href="/dox/html/class_abstract_object.html#a4d036962b05d7009036e5bc13c1b3c11">hook()</a> to standard classes. Here is example of a hook:</p>
+
+<?Code?>
+$obj->hook('myhook');
+<?/?>
+
+<p>Calling this will actually execute all the code which was assigned here by <a href="/dox/html/class_abstract_object.html#a67c42ab2ba6196595fed436bee0daaaf">addHook()</a></p>
+
+<h2>Using different callable types</h2>
+<p>There are several ways to specify a callable to an addHook():</p>
+
+<?Code?>
+$obj->addHook('myhook',function($o){ echo 'closure'; });
+
+$obj->addHook('myhook',array($this, 'method')); // executes $this->method($obj);
+
+$obj->addHook('myhook',array($this)); // shortcut for $this->myhook($obj);
+<?/?>
+
+<h3>Arguments to hooks</h3>
+
+<p>It's possible to pass arguments to a hooked functions:</p>
+
+<?Code?>
+$obj->addHook('myhook',function($o,$subj){ echo $subj; });
+
+$obj->hook('myhook',array('hello world'));
+<?/?>
+
+<h3>Priority</h3>
+<p>By default all the hooks are added with priority=5. If you specify a lesser number to addHook() your hook will be executed before other hooks. Specifying value greater than 5 will leave your function to be executed after.</p>
+
+<p>Hooks with same priority will be executed in the same order they have been added. To reverse this order use negative priority.</p>
+
+<?Code?>
+$this->addHook('myhook',function($o){ echo 'world'; },-1);
+$this->addHook('myhook',function($o){ echo 'hello'; },-1);
+
+$this->hook('myhook');
+<?/?>
+
+<h3>Returning values from hooks</h3>
+<p>Because there might be multiple handlers on a single hook, returning values will be stored in array:</p>
+<?Code?>
+$this->addHook('myhook',function($o){ return 'foo'; });
+$this->addHook('myhook',function($o){ return 'bar'; });
+
+var_dump ($this->hook('myhook')); // will show array('foo','bar');
+<?/?>
+
+<p>If hooks are not defined, empty array will be returned. It's a quite popular construct, which uses a fall-back code in case hooks were not defined:</p>
+<?Code?>
+if(!$this->hook('myhook')){
+  // default handler
+}
+<?/?>
+
+<h3>Breaking hook</h3>
+<p>In some cases you would want to stop any other hooks from being called. To do so, call <a href="/dox/html/class_abstract_object.html#a446b3f8327b3272c838ae46f40a9da06">$this->breakHook($return_value);</a>. This method will raise exception which hook() will the intercept and retrieve return value</p>
+
+<p>If hook is intercepted then return of hook() method is set to the first argument of breakHook();</p>
+
+<?$Next?>

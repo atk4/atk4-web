@@ -9,6 +9,7 @@
   <li>You must specify $table property for each model, which is primary table</li>
 </ul>
 In addition, you have more methods to use and define fields.</p>
+
 <h2>Defining and Traversing References between Models</h2>
 <?Code?>
 class Model_Author extends Model_Table {
@@ -51,6 +52,96 @@ $this->add('Grid')->setModel($author->ref('Book'));
 
 <p>Sometimes you need to use a different field name when referencing. Then you need to use 2nd argument to "hasOne('Country','birth_country_id')".</p>
 
+<h2>Loading and Saving data</h2>
+<p><b>$model->load($id);</b><br/>
+Will cause exception if record is not found or null is specified. Much safer especially if you load from $_GET[‘id’];</p>
+
+<p>Also supports expressions in a limited way: $model->load( $model->dsql->expr(‘getMyID()’));</p>
+
+<p>
+<b>$model->tryLoad($id)</b><br/>
+Will NOT cause exception if record of particular $id is missing. Similar to loadData(). It is however WILL cause exception if $id is null. (loadData wouldn’t)
+</p>
+
+<p><b>$model->loadAny()</b><br/>
+This will attempt to load the first record. This is great function if you are sure that only one record exists, such as
+</p>
+<?Code?>
+$user->ref(‘ContactInfo’)->loadAny();
+<?/?>
+<p>It will throw exception if no record exist.</p>
+
+<p><b>$model->tryLoadAny()</b><br/>
+Combines both qualities. Attempts to load first possible record, but if not found will do nothing.
+</p>
+
+<p><b>$model->loadBy($field,$condition,$value);</b><br/>
+This have received a significant flexibility in the arguments. Actually it relies on addCondition(), but it’s still powerful. 
+<?Code?>
+ loadBy($model->dsql->expr(‘rand() > 0.2’) );
+ loadBy($model->dsql->expr(‘rand()’), ‘>‘, $_GET[‘id’] ); // safe against injeciotn
+ loadBy(‘calc_field’, 200); // using calculated field automatically switches to “having” clause.
+<?/?>
+
+<p>most importantly, the condition specified in the arguments will NOT be applied on the model, so you can perform multiple attempts to load data.</p>
+
+<p><b>$model->tryLoadBy($field,$condition,$value);</b><br/>
+Identical to loadBy but will not complain about missing data.
+</p>
+
+<h3>Saving data</h3>
+
+<p><b>$model->save(); </b><br/>
+
+method which will cause exception if it couldn't subsequently load the record. For example:</p>
+
+<?Code?>
+$model->addCondition(‘gender’,’M’);
+$model->loadAny();
+$model->set(‘gender’,’F’);
+$model->save();			// causes exception, because newly saved record can’t be loaded.
+// If database supports roll-backs it will also roll-back.
+<?/?>
+
+<p><b>$model->saveAs($model);</b></br>
+
+Allows to cast one model into another.
+</p>
+
+<?Code?>
+$boy=$this->add(‘Model_Person’)->addCondition(‘gender’,’M’);
+$girl=$this->add(‘Model_Person’)->addCondition(‘gender’,’F’);
+
+$boy->loadAny();
+$boy->saveAs($girl);
+<?/?>
+
+<p>
+// As a result of this, $boy->loaded() will now be false. $girl->loaded() however will point to a new record. 
+</p>
+
+<p><b>$model->saveAndUnload();</b></br>
+This will save model into the database but will not load data back. The model loaded() will return false. Slightly better if you need performance.
+</p>
+
+<p><b>$model->saveLater();</b>
+
+Will not save right away, but will save when model is being destroyed by Garbage Collector;
+</p>
+
+<?Code?>
+function test(){
+  $boy=$this->add(‘Model_Boy’);
+  $boy->loadAny()->saveLater();
+  $boy->set(’gender’,’F’);
+}
+<?/?>
+
+<p>When the function exist, the reference to $boy is lost and model is destroyed. At this point it will be saved back into the database. No further loading is done.</p>
+
+
+
+
 <h2>Using non-ID fields for loading</h2>
 <p>There are different ways how you can load model. For example calling load() without arguments will load the first possible match from the available data.</p>
 
@@ -63,6 +154,10 @@ $model->loadBy('age','>','25');
 <?Code?>
 $model->loadBy($model->dsql->expr('expire_dts>now()'));
 <?/?>
+
+<p>If record is not found, exception is raised. To avoid exception use <b>tryLoadBy</b></p>
+
+<p>NOTE: It's always better to use try* methods than catching exception. When exception is raised it records backtrack which is quite time consuming.</p>
 
 <h3>getBy($field,[$cond],$value)</h3>
 <p>This similar syntax will return array of hashes produced the model's select.</p>
@@ -94,7 +189,7 @@ foreach($this->add('Model_Book') as $book){
 <?/?>
 
 <h2>Debugging</h2>
-<p>Model has a method debug() which will turn on debugging mode on the queries it produces and executes. This relies on <a href="<page?>doc/dsql/how<?/?>">DSQL debug()</a>.
+<p>Model has a method debug() which will turn on debugging mode on the queries it produces and executes. This relies on <a href="<?page?>doc/dsql/how<?/?>">DSQL debug()</a>.</p>
 
 <p>When iterating, the $book will always refer to the same model, but it will have appropriate record loaded.</p>
 
