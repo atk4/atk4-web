@@ -33,6 +33,7 @@ var class_field =
     [ "updateSelectQuery", "class_field.html#ac161e2288bb97e432934c5ada9f23a3a", null ],
     [ "visible", "class_field.html#a6fd2421fa8203997c2de9d819169fab2", null ],
     [ "$actual_field", "class_field.html#a557ac7f58efea6027bcda58fbcb55050", null ],
+    [ "$allowHTML", "class_field.html#a04c6db1c8823c11b39c007fa9659cd80", null ],
     [ "$auto_track_element", "class_field.html#a1518f6633c881d3d43b9e4cdc4eaeb4c", null ],
     [ "$caption", "class_field.html#a4f9340ccb02c5d876a448a1d860f3812", null ],
     [ "$defaultValue", "class_field.html#a9e79048552cf2b8a076d5db16810166b", null ],

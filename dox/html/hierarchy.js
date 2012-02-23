@@ -87,9 +87,7 @@ var hierarchy =
           [ "Form_Field_Date", "class_form___field___date.html", null ],
           [ "Form_Field_DateSelector", "class_form___field___date_selector.html", null ],
           [ "Form_Field_Grouped", "class_form___field___grouped.html", null ],
-          [ "Form_Field_Hidden", "class_form___field___hidden.html", [
-            [ "Form_Field_FileSize", "class_form___field___file_size.html", null ]
-          ] ],
+          [ "Form_Field_Hidden", "class_form___field___hidden.html", null ],
           [ "Form_Field_Line", "class_form___field___line.html", [
             [ "Form_Field_DatePicker", "class_form___field___date_picker.html", null ],
             [ "Form_Field_Money", "class_form___field___money.html", null ],
@@ -109,8 +107,8 @@ var hierarchy =
             [ "Form_Field_Radio", "class_form___field___radio.html", null ]
           ] ]
         ] ],
-        [ "Frame", "class_frame.html", null ],
         [ "HelloWorld", "class_hello_world.html", null ],
+        [ "Html", "class_html.html", null ],
         [ "LoremIpsum", "class_lorem_ipsum.html", null ],
         [ "Menu_Basic", "class_menu___basic.html", [
           [ "Menu", "class_menu.html", null ]
@@ -129,6 +127,7 @@ var hierarchy =
         [ "Paginator", "class_paginator.html", null ],
         [ "Text", "class_text.html", null ],
         [ "View", "class_view.html", [
+          [ "Frame", "class_frame.html", null ],
           [ "Lister", "class_lister.html", [
             [ "CompleteLister", "class_complete_lister.html", [
               [ "Grid_Basic", "class_grid___basic.html", [
@@ -225,7 +224,6 @@ var hierarchy =
     [ "DBlite_dsql", "class_d_blite__dsql.html", null ],
     [ "DBlite_mysql", "class_d_blite__mysql.html", null ],
     [ "FileNotFoundException", "class_file_not_found_exception.html", null ],
-    [ "Form_Field_File", "class_form___field___file.html", null ],
     [ "Form_Field_multiSelect", "class_form___field__multi_select.html", null ],
     [ "System_ProcessIO_Tester", "class_system___process_i_o___tester.html", null ],
     [ "TMail_Template", "class_t_mail___template.html", null ]

@@ -126,7 +126,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#aa660a3177eb257a767c0323f967d877f">$expr</a> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implementation of a Expression fields in <a class="el" href="class_model___table.html">Model_Table</a> <a class="el" href="">Field_Expression implements ability to specify expressions inside your Model_Table and have them appear as a read-only fields.  Use: $model-&gt;addExpression('age','year(now())-year(birthdate)'); // Below example achieves the same, but it prefixes age with proper table name $model-&gt;addExpression('age','year(now())-year('.$model-&gt;getElement('adatege')-&gt;getField().')');  $model-&gt;addExpression('row_counter',$this-&gt;api-&gt;db-&gt;dsql()-&gt;useExpr(' := +1');  $myctl=$this-&gt;add('Controller_MiscMySQL'); // using custom controller to format field $model-&gt;addExpression('date_formatted',array($myctl,'dateExpr1'));  or $myctl=$this-&gt;add('Controller_MiscMySQL'); // or by using closure and extra argument $model-&gt;addExpression('date_formatted',function($query) uses $myctl { return $myctl-&gt;dateExpr2($query,'date_raw'); });  NOTE: MiscMySQL is fictional controller.   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
+<div class="textblock"><p>Implementation of a Expression fields in <a class="el" href="class_model___table.html">Model_Table</a> <a class="el" href="">Field_Expression implements ability to specify expressions inside your Model_Table and have them appear as a read-only fields.  Use: $model-&gt;addExpression('age','year(now())-year(birthdate)'); // Below example achieves the same, but it prefixes age with proper table name $model-&gt;addExpression('age','year(now())-year('.$model-&gt;getElement('adatege')-&gt;getField().')');  $model-&gt;addExpression('row_counter',$this-&gt;api-&gt;db-&gt;dsql()-&gt;useExpr(' := +1');  $myctl=$this-&gt;add('Controller_MiscMySQL'); // using custom controller to format field $model-&gt;addExpression('date_formatted',array($myctl,'dateExpr1'));  or $myctl=$this-&gt;add('Controller_MiscMySQL'); // or by using closure and extra argument $model-&gt;addExpression('date_formatted',function($model,$query) uses $myctl { return $myctl-&gt;dateExpr2($query,'date_raw'); });  NOTE: MiscMySQL is fictional controller.   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a307e6d324703bc4750a3c26c887316c5"></a><!-- doxytag: member="Field_Expression::editable" ref="a307e6d324703bc4750a3c26c887316c5" args="()" -->
 <div class="memitem">
@@ -199,7 +199,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk4-testsuite/atk4/lib/Field/<a class="el" href="_expression_8php.html">Expression.php</a></li>
+<li>/Users/rw/Sites/elexu/atk4/lib/Field/<a class="el" href="_expression_8php.html">Expression.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -221,7 +221,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___expression.html">Field_Expression</a>      </li>
 
-    <li class="footer">Generated on Mon Feb 6 2012 23:26:21 for Agile Toolkit by
+    <li class="footer">Generated on Thu Feb 23 2012 02:18:09 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

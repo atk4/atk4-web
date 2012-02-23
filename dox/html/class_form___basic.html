@@ -133,15 +133,13 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a545341e59cc9a0dafc4e265d60d4b5d6">disable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> ($model, $fields=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a5d96d554c37ec83acb199959d54f5495">addComment</a> ($comment)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a7e666e35ff2ee1cf7b60ad394a248020">addSeparator</a> ($separator_text='')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#ae33a9242fba8e092d16dae9bf00f08f8">get</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#aeff6433c4ccf813ff4fc142b282b8765">clearData</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#ac691542612ef44f51811b9eb0fc2b81a">addSeparator</a> ($fieldset_class='')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a1a1834e5e126d184909785c0a0fdda69">get</a> ($field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a8a0884d553a46d6f7ec1d0388c932345">setSource</a> ($table, $db_fields=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#af3caa771c1439d93ec0d8cea453637e4">set</a> ($field_or_array, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a9f1ba020441d903ad04658e424f3b7a5">getAllData</a> ($include_nosave=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a9fc25f3ca3971583e9a1977dbdd52df2">getAllFields</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a1745c687e43feaf4e1b1e368f732725d">addSubmit</a> ($label='Save', $name=null, $color=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#aee895fe5e76d0b04426daef3ddc1fdfc">addButton</a> ($label, $name=null, $class=null, $style=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a3c0fd7e5ac0498a400cccf1405d59306">setCondition</a> ($field, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a16e75a4f48d4675e0ff5be8647825391">addButton</a> ($label)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a595eee4c4e13bff79862f06b72917446">setConditionFromGET</a> ($field='id', $get_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a6e6c590308704225000dd718548145a6">addConditionFromGET</a> ($field='id', $get_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#aa42cd9642bd76465ca5c3f7209ff5aa8">addCondition</a> ($field, $value=null)</td></tr>
@@ -162,6 +160,7 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#ab24faf4aa647cdcee494fc48524ad4ff">$errors</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a5222d847f662a34741ed2aeea9adc3ca">$template_chunks</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a6e46ac68758c867bb02cda5e454f78e3">$bail_out</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#ad194a5cc11a4fa00a9688e4589e88348">$onsubmit</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#ad2fb5ab5a935a02be27481675cce13ff">$onload</a> = null</td></tr>
@@ -177,7 +176,6 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a8249bd5e5516880034296e5ff115cba7">$form_template</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a970b73765374aab5b5884b5e595103bb">$form_tag</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a8d3bcb17672529578bca0ba272735199">$loaded_from_db</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a8f1db44ee7de80a9eadd4302001f65ed">$ajax_submits</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___basic.html#a137c96f7631807f30128bde390cb2b03">$get_field</a> = null</td></tr>
@@ -189,38 +187,16 @@ Protected Attributes</h2></td></tr>
 <dl class="copyright"><dt><b>Copyright:</b></dt><dd>See file COPYING </dd></dl>
 <dl class="version"><dt><b>Version:</b></dt><dd>$Id$ </dd></dl>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aee895fe5e76d0b04426daef3ddc1fdfc"></a><!-- doxytag: member="Form_Basic::addButton" ref="aee895fe5e76d0b04426daef3ddc1fdfc" args="($label, $name=null, $class=null, $style=null)" -->
+<a class="anchor" id="a16e75a4f48d4675e0ff5be8647825391"></a><!-- doxytag: member="Form_Basic::addButton" ref="a16e75a4f48d4675e0ff5be8647825391" args="($label)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#aee895fe5e76d0b04426daef3ddc1fdfc">addButton</a> </td>
+          <td class="memname"><a class="el" href="class_form___basic.html#a16e75a4f48d4675e0ff5be8647825391">addButton</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>label</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>label</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>class</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>style</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -338,15 +314,15 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7e666e35ff2ee1cf7b60ad394a248020"></a><!-- doxytag: member="Form_Basic::addSeparator" ref="a7e666e35ff2ee1cf7b60ad394a248020" args="($separator_text='')" -->
+<a class="anchor" id="ac691542612ef44f51811b9eb0fc2b81a"></a><!-- doxytag: member="Form_Basic::addSeparator" ref="ac691542612ef44f51811b9eb0fc2b81a" args="($fieldset_class='')" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#a7e666e35ff2ee1cf7b60ad394a248020">addSeparator</a> </td>
+          <td class="memname"><a class="el" href="class_form___basic.html#ac691542612ef44f51811b9eb0fc2b81a">addSeparator</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>separator_text</em> = <code>''</code></td><td>)</td>
+          <td class="paramname"><em>fieldset_class</em> = <code>''</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -381,22 +357,6 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aeff6433c4ccf813ff4fc142b282b8765"></a><!-- doxytag: member="Form_Basic::clearData" ref="aeff6433c4ccf813ff4fc142b282b8765" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#aeff6433c4ccf813ff4fc142b282b8765">clearData</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div>
@@ -474,15 +434,15 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae33a9242fba8e092d16dae9bf00f08f8"></a><!-- doxytag: member="Form_Basic::get" ref="ae33a9242fba8e092d16dae9bf00f08f8" args="($field)" -->
+<a class="anchor" id="a1a1834e5e126d184909785c0a0fdda69"></a><!-- doxytag: member="Form_Basic::get" ref="a1a1834e5e126d184909785c0a0fdda69" args="($field=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#ae33a9242fba8e092d16dae9bf00f08f8">get</a> </td>
+          <td class="memname"><a class="el" href="class_form___basic.html#a1a1834e5e126d184909785c0a0fdda69">get</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
+          <td class="paramname"><em>field</em> = <code>null</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -491,15 +451,14 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9f1ba020441d903ad04658e424f3b7a5"></a><!-- doxytag: member="Form_Basic::getAllData" ref="a9f1ba020441d903ad04658e424f3b7a5" args="($include_nosave=false)" -->
+<a class="anchor" id="a9fc25f3ca3971583e9a1977dbdd52df2"></a><!-- doxytag: member="Form_Basic::getAllFields" ref="a9fc25f3ca3971583e9a1977dbdd52df2" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#a9f1ba020441d903ad04658e424f3b7a5">getAllData</a> </td>
+          <td class="memname"><a class="el" href="class_form___basic.html#a9fc25f3ca3971583e9a1977dbdd52df2">getAllFields</a> </td>
           <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>include_nosave</em> = <code>false</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -784,33 +743,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3c0fd7e5ac0498a400cccf1405d59306"></a><!-- doxytag: member="Form_Basic::setCondition" ref="a3c0fd7e5ac0498a400cccf1405d59306" args="($field, $value=null)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___basic.html#a3c0fd7e5ac0498a400cccf1405d59306">setCondition</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code>null</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a595eee4c4e13bff79862f06b72917446"></a><!-- doxytag: member="Form_Basic::setConditionFromGET" ref="a595eee4c4e13bff79862f06b72917446" args="($field='id', $get_field=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1041,7 +973,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$data = array()<code> [protected]</code></td>
+          <td class="memname">$data = array()</td>
         </tr>
       </table>
 </div>
@@ -1227,7 +1159,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk4-testsuite/atk4/lib/Form/<a class="el" href="_form_2_basic_8php.html">Basic.php</a></li>
+<li>/Users/rw/Sites/elexu/atk4/lib/Form/<a class="el" href="_form_2_basic_8php.html">Basic.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1249,7 +1181,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___basic.html">Form_Basic</a>      </li>
 
-    <li class="footer">Generated on Mon Feb 6 2012 23:26:21 for Agile Toolkit by
+    <li class="footer">Generated on Thu Feb 23 2012 02:18:09 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

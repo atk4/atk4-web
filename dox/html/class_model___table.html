@@ -99,7 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Model_Table Class Reference</div>  </div>
 </div><!--header-->
@@ -130,11 +131,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ad9c2270a49f09a06a10a0707b9f71fc7">addExpression</a> ($name, $expression=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ae15a8669d523e468815ffa4380183baa">join</a> ($foreign_table, $master_field=null, $join_kind=null, $_foreign_alias=null, $relation=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#adb088bd5a0df33ba5fa7185643f6a6b5">addReference</a> ($name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ac474bc24dde8c5c61707206f16a2a2f4">addTitle</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a8adae4270f996c21a6429f849cbe7067">_removeme_addTitle</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a5b2c621609073dc27ae66381d9ea6cf5">hasOne</a> ($model, $our_field=null, $display_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a379abc6162aae2f9889571969c3c6f07">hasMany</a> ($model, $their_field=null, $our_field=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a2f8441a41f69806f76c82a2ab03f326b">ref</a> ($name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a656a11a41ced73bb592165d46a16122d">getRef</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a469b6ef6051a02061bc4542c38103a18">ref</a> ($name, $<a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a>=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a22bf56d55d1fbb0bcf1af5818502be1f">getRef</a> ($name, $<a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a>=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a3ee6184c233563345680e50a0ec4d257">addCondition</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ad6d2de948cd89111c0e29a98465d6556">setOrder</a> ($field, $desc=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ad1f892974115622e280aa8c0866bae3e">setMasterField</a> ($field, $value)</td></tr>
@@ -145,16 +146,24 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#abb9f0d6adf1eb9b3b55712056861a247">valid</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a4655a09eb9e6ea8c2acf6fbb1053f442">getRows</a> ($fields=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ab5eac775099b7618a4cd0c4f3811397f">isInstanceLoaded</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a90f83714d8df3e6f07b28fb5d25e7116">load</a> ($id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#acf506a1606a7b9eb4f281aa506b0a147">loadAny</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a81e44cd287862f0dd78a351639ecd043">tryLoadAny</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a176b4bd223ee151fadab176ce432dcd7">tryLoad</a> ($id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a> ($id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#afafe80b1d812f4d904507a88478dd79f">loadBy</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a7c947120b95e1847f0142616c39547b6">tryLoadBy</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ae3779334f700da39c3dda21182e47239">getBy</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a7b2a44f6ec87a111c1bc3cc911cd15f5">reload</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ac92f0f361046c2c3e787c2315839e756">loadData</a> ($id=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#aa13d0535d22492ba710e3419a7b92ac1">unload</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#af8aec32cdfa7bac7a941b158dd8d1399">saveAndUnload</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a01c8c24f38ea57d6e3ae675661479a31">saveLater</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ae1d151564df5d03502eeb40979fb139e">saveAs</a> ($model)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#afc8a3c62679cf00ade9f15fb2a6d6132">save</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a473241246338cfccc4709ba896749019">insert</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a021577391b5dbf3fc9594af050bd7b76">modify</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a516b51d6cdc9a8f212b903c984ca6e77">update</a> ($data=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#aa13d0535d22492ba710e3419a7b92ac1">unload</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a0fa3387249f930dea59b44e92b7235eb">delete</a> ($id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#ac2240ef160b9a6b52f12cb5c4ab8ea03">deleteAll</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#aea47818e6854c9804638dfedd265d9e9">$dsql</a></td></tr>
@@ -163,10 +172,78 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a5b3b9292bc2d41334cda2f099c304cf0">$table_alias</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a0d9ef622ef20c6e3598929409d3c3080">$entity_code</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a5787b67dccb801e89f4ff779d42edece">$relations</a> = array()</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a5ba73ef5eed604fe9bcdf2c325b79900">_load</a> ($id, $ignore_missing=false)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of a Relational SQL-backed <a class="el" href="class_model.html">Model</a> <a class="el" href="">Model_Table allows you to take advantage of relational SQL database without neglecting powerful functionality of your RDBMS. On top of basic load/save/delete operations, you can pefrorm multi-row operations, traverse relations, or use SQL expressions  The $table property of Model_Table always contains the primary table. The $this-&gt;id will always correspond with ID field of that table and when inserting record will always be placed inside primary table first.  Use: class Model_User extends Model_Table { public $table='user'; function init(){ parent::init(); $this-&gt;addField('name'); $this-&gt;addField('email'); } }  // Creates new user, but looks for email duplicates before inserting $user=$this-&gt;add('Model_User'); $user-&gt;loadBy('email',$email);  if(!$user-&gt;loaded()){ $user-&gt;unload(); return $user-&gt;set('email',$email)-&gt;save(); }else throw $user-&gt;exception('User with such email already exists');   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a><!-- doxytag: member="Model_Table::__destruct" ref="a421831a265621325e1fdd19aace0c758" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a421831a265621325e1fdd19aace0c758">__destruct</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Always call parent if you redefine this </p>
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#a421831a265621325e1fdd19aace0c758">AbstractObject</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a5ba73ef5eed604fe9bcdf2c325b79900"></a><!-- doxytag: member="Model_Table::_load" ref="a5ba73ef5eed604fe9bcdf2c325b79900" args="($id, $ignore_missing=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a5ba73ef5eed604fe9bcdf2c325b79900">_load</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ignore_missing</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Internal loading funciton. Do not use. OK to override. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8adae4270f996c21a6429f849cbe7067"></a><!-- doxytag: member="Model_Table::_removeme_addTitle" ref="a8adae4270f996c21a6429f849cbe7067" args="($name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a8adae4270f996c21a6429f849cbe7067">_removeme_addTitle</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3ee6184c233563345680e50a0ec4d257"></a><!-- doxytag: member="Model_Table::addCondition" ref="a3ee6184c233563345680e50a0ec4d257" args="($field, $cond=undefined, $value=undefined)" -->
 <div class="memitem">
 <div class="memproto">
@@ -247,23 +324,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac474bc24dde8c5c61707206f16a2a2f4"></a><!-- doxytag: member="Model_Table::addTitle" ref="ac474bc24dde8c5c61707206f16a2a2f4" args="($name)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#ac474bc24dde8c5c61707206f16a2a2f4">addTitle</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="af343507d1926e6ecf964625d41db528c"></a><!-- doxytag: member="Model_Table::current" ref="af343507d1926e6ecf964625d41db528c" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -313,9 +373,26 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes record associated with specified $id. If not specified, currently loaded record is deleted (and unloaded) </p>
+<p>Deletes record matching the ID </p>
 
 <p>Reimplemented from <a class="el" href="class_model.html#a0fa3387249f930dea59b44e92b7235eb">Model</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2240ef160b9a6b52f12cb5c4ab8ea03"></a><!-- doxytag: member="Model_Table::deleteAll" ref="ac2240ef160b9a6b52f12cb5c4ab8ea03" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#ac2240ef160b9a6b52f12cb5c4ab8ea03">deleteAll</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deletes all records matching this model. Use with caution. </p>
 
 </div>
 </div>
@@ -402,23 +479,35 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Loads data record and return array of that data. Will not affect currently loaded record. </p>
 
 </div>
 </div>
-<a class="anchor" id="a656a11a41ced73bb592165d46a16122d"></a><!-- doxytag: member="Model_Table::getRef" ref="a656a11a41ced73bb592165d46a16122d" args="($name)" -->
+<a class="anchor" id="a22bf56d55d1fbb0bcf1af5818502be1f"></a><!-- doxytag: member="Model_Table::getRef" ref="a22bf56d55d1fbb0bcf1af5818502be1f" args="($name, $load=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#a656a11a41ced73bb592165d46a16122d">getRef</a> </td>
+          <td class="memname"><a class="el" href="class_model___table.html#a22bf56d55d1fbb0bcf1af5818502be1f">getRef</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>load</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>- return model referenced by a field. Use model name for one-to-many relations </p>
 
 </div>
 </div>
@@ -436,6 +525,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Loads all matching data into array of hashes </p>
 
 </div>
 </div>
@@ -556,23 +646,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes base query for this model. Query is then &lt;D-O&gt; </p>
-
-</div>
-</div>
-<a class="anchor" id="a473241246338cfccc4709ba896749019"></a><!-- doxytag: member="Model_Table::insert" ref="a473241246338cfccc4709ba896749019" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#a473241246338cfccc4709ba896749019">insert</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Initializes base query for this model. <a class="el" href="">http://agiletoolkit.org/doc/modeltable/dsql</a></p>
 
 </div>
 </div>
@@ -589,6 +663,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>same as <a class="el" href="class_model.html#a3f07a4aa73e71d525744db933bc2aff4">loaded()</a> - returns if any record is currently loaded. </p>
 
 </div>
 </div>
@@ -656,15 +731,15 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a90f83714d8df3e6f07b28fb5d25e7116"></a><!-- doxytag: member="Model_Table::load" ref="a90f83714d8df3e6f07b28fb5d25e7116" args="($id=null)" -->
+<a class="anchor" id="a6b969091e6dd3697e8a5be100f66115a"></a><!-- doxytag: member="Model_Table::load" ref="a6b969091e6dd3697e8a5be100f66115a" args="($id)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#a90f83714d8df3e6f07b28fb5d25e7116">load</a> </td>
+          <td class="memname"><a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>id</em> = <code>null</code></td><td>)</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -673,6 +748,23 @@ Data Fields</h2></td></tr>
 <p>Loads record specified by ID. If omitted will load first matching record </p>
 
 <p>Reimplemented from <a class="el" href="class_model.html#a90f83714d8df3e6f07b28fb5d25e7116">Model</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf506a1606a7b9eb4f281aa506b0a147"></a><!-- doxytag: member="Model_Table::loadAny" ref="acf506a1606a7b9eb4f281aa506b0a147" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#acf506a1606a7b9eb4f281aa506b0a147">loadAny</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Loads the first matching record from the model </p>
 
 </div>
 </div>
@@ -706,6 +798,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Similar to <a class="el" href="class_model___table.html#acf506a1606a7b9eb4f281aa506b0a147">loadAny()</a> but will apply condition before loading. Condition is temporary. Fails if record is not loaded. </p>
 
 </div>
 </div>
@@ -723,22 +816,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a021577391b5dbf3fc9594af050bd7b76"></a><!-- doxytag: member="Model_Table::modify" ref="a021577391b5dbf3fc9594af050bd7b76" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#a021577391b5dbf3fc9594af050bd7b76">modify</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Backward-compatible. Will attempt to load but will not fail </p>
 
 </div>
 </div>
@@ -760,21 +838,48 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2f8441a41f69806f76c82a2ab03f326b"></a><!-- doxytag: member="Model_Table::ref" ref="a2f8441a41f69806f76c82a2ab03f326b" args="($name)" -->
+<a class="anchor" id="a469b6ef6051a02061bc4542c38103a18"></a><!-- doxytag: member="Model_Table::ref" ref="a469b6ef6051a02061bc4542c38103a18" args="($name, $load=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#a2f8441a41f69806f76c82a2ab03f326b">ref</a> </td>
+          <td class="memname"><a class="el" href="class_model___table.html#a469b6ef6051a02061bc4542c38103a18">ref</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>load</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Traverses references. Use field name for <a class="el" href="class_model___table.html#a5b2c621609073dc27ae66381d9ea6cf5">hasOne()</a> relations. Use model name for <a class="el" href="class_model___table.html#a379abc6162aae2f9889571969c3c6f07">hasMany()</a> </p>
+
+</div>
+</div>
+<a class="anchor" id="a7b2a44f6ec87a111c1bc3cc911cd15f5"></a><!-- doxytag: member="Model_Table::reload" ref="a7b2a44f6ec87a111c1bc3cc911cd15f5" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a7b2a44f6ec87a111c1bc3cc911cd15f5">reload</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Traverses references </p>
+<p>Unloads then loads current record back. Use this if you have added new fields </p>
 
 </div>
 </div>
@@ -809,6 +914,58 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Save model into database and load it back. If for some reason it won't load, whole operation is undone </p>
+
+</div>
+</div>
+<a class="anchor" id="af8aec32cdfa7bac7a941b158dd8d1399"></a><!-- doxytag: member="Model_Table::saveAndUnload" ref="af8aec32cdfa7bac7a941b158dd8d1399" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#af8aec32cdfa7bac7a941b158dd8d1399">saveAndUnload</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Save model into database and try to load it back as a new model of specified class. Instance of new class is returned </p>
+
+</div>
+</div>
+<a class="anchor" id="ae1d151564df5d03502eeb40979fb139e"></a><!-- doxytag: member="Model_Table::saveAs" ref="ae1d151564df5d03502eeb40979fb139e" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#ae1d151564df5d03502eeb40979fb139e">saveAs</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a01c8c24f38ea57d6e3ae675661479a31"></a><!-- doxytag: member="Model_Table::saveLater" ref="a01c8c24f38ea57d6e3ae675661479a31" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a01c8c24f38ea57d6e3ae675661479a31">saveLater</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Will save model later, when it's being destructed by Garbage Collector </p>
 
 </div>
 </div>
@@ -882,6 +1039,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Sets an order on the field. <a class="el" href="class_field.html">Field</a> must be properly defined </p>
 
 </div>
 </div>
@@ -902,6 +1060,75 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a176b4bd223ee151fadab176ce432dcd7"></a><!-- doxytag: member="Model_Table::tryLoad" ref="a176b4bd223ee151fadab176ce432dcd7" args="($id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a176b4bd223ee151fadab176ce432dcd7">tryLoad</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Try to load a record by specified ID. Will not raise exception if record is not fourd </p>
+
+</div>
+</div>
+<a class="anchor" id="a81e44cd287862f0dd78a351639ecd043"></a><!-- doxytag: member="Model_Table::tryLoadAny" ref="a81e44cd287862f0dd78a351639ecd043" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a81e44cd287862f0dd78a351639ecd043">tryLoadAny</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Try to load a matching record for the model. Will not raise exception if no records are found </p>
+
+</div>
+</div>
+<a class="anchor" id="a7c947120b95e1847f0142616c39547b6"></a><!-- doxytag: member="Model_Table::tryLoadBy" ref="a7c947120b95e1847f0142616c39547b6" args="($field, $cond=undefined, $value=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a7c947120b95e1847f0142616c39547b6">tryLoadBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Attempt to load using a specified condition, but will not fail if such record is not found </p>
+
+</div>
+</div>
 <a class="anchor" id="aa13d0535d22492ba710e3419a7b92ac1"></a><!-- doxytag: member="Model_Table::unload" ref="aa13d0535d22492ba710e3419a7b92ac1" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -915,7 +1142,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Forget loaded data </p>
+<p>forget currently loaded record and it's ID. Will not affect database </p>
 
 <p>Reimplemented from <a class="el" href="class_model.html#aa13d0535d22492ba710e3419a7b92ac1">Model</a>.</p>
 
@@ -935,6 +1162,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>. Use <a class="el" href="class_model.html#a0471333566fd85931488081ca90a6ede">set()</a> then <a class="el" href="class_model___table.html#afc8a3c62679cf00ade9f15fb2a6d6132">save()</a>. </p>
 
 </div>
 </div>
@@ -1039,7 +1267,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk4-testsuite/atk4/lib/Model/<a class="el" href="_table_8php.html">Table.php</a></li>
+<li>/Users/rw/Sites/elexu/atk4/lib/Model/<a class="el" href="_table_8php.html">Table.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1061,7 +1289,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_model___table.html">Model_Table</a>      </li>
 
-    <li class="footer">Generated on Mon Feb 6 2012 23:26:22 for Agile Toolkit by
+    <li class="footer">Generated on Thu Feb 23 2012 02:18:10 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

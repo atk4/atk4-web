@@ -8,6 +8,7 @@ var class_s_q_l___relation =
     [ "beforeLoad", "class_s_q_l___relation.html#a78889ee7e6c0b58e513291b2c6ee73b8", null ],
     [ "beforeModify", "class_s_q_l___relation.html#a3ad587772d12f99af11a3db64d879210", null ],
     [ "beforeSave", "class_s_q_l___relation.html#ab9e4fb36c177d9633b81fc184f7bd933", null ],
+    [ "fieldExpr", "class_s_q_l___relation.html#abc019c54a8c8d2e1d82766cca07b83bc", null ],
     [ "hasOne", "class_s_q_l___relation.html#a5b2c621609073dc27ae66381d9ea6cf5", null ],
     [ "init", "class_s_q_l___relation.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "join", "class_s_q_l___relation.html#a0b2af216ca7dad64faa8d9ec06e69a06", null ],

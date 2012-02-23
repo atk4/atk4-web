@@ -1,5 +1,6 @@
 var class_abstract_object =
 [
+    [ "__destruct", "class_abstract_object.html#a421831a265621325e1fdd19aace0c758", null ],
     [ "__call", "class_abstract_object.html#acfa40ec504c3c792c3b84cf2f1af511d", null ],
     [ "__clone", "class_abstract_object.html#ad0cb87b388bc74d63dc884accdca8713", null ],
     [ "__sleep", "class_abstract_object.html#aaf11785905da71774e052912d784e3b4", null ],
@@ -12,7 +13,6 @@ var class_abstract_object =
     [ "breakHook", "class_abstract_object.html#a446b3f8327b3272c838ae46f40a9da06", null ],
     [ "debug", "class_abstract_object.html#a8d39fa0575737998fc63aae69f718519", null ],
     [ "destroy", "class_abstract_object.html#aa118461de946085fe42989193337044a", null ],
-    [ "downCall", "class_abstract_object.html#a379931865e2dac47e6aab229a9614186", null ],
     [ "exception", "class_abstract_object.html#ad7610133e2fdaa0f815836566e5b39ef", null ],
     [ "fatal", "class_abstract_object.html#afc4c1081f771a2a41fd2eebdd7e1322e", null ],
     [ "forget", "class_abstract_object.html#a133523cb54b63bbc86e971c3aa4df128", null ],

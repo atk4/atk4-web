@@ -8,6 +8,7 @@ var searchData=
   ['helloworld',['HelloWorld',['../class_hello_world.html',1,'']]],
   ['hint',['Hint',['../class_hint.html',1,'']]],
   ['hr',['HR',['../class_h_r.html',1,'']]],
+  ['html',['Html',['../class_html.html',1,'']]],
   ['htmlelement',['HtmlElement',['../class_html_element.html',1,'']]],
   ['hx',['HX',['../class_h_x.html',1,'']]]
 ];

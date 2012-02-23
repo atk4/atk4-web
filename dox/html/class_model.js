@@ -6,6 +6,7 @@ var class_model =
     [ "get", "class_model.html#a917ea926baa0548ceef7d4c77e97975f", null ],
     [ "getEntityCode", "class_model.html#a7e82f244f1fd6b5b49fdbd94eac89e18", null ],
     [ "getField", "class_model.html#a930579c797a4d5fc83e1824cde702e59", null ],
+    [ "hasField", "class_model.html#a745df067a3c60381abd68e82d5784b26", null ],
     [ "init", "class_model.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "key", "class_model.html#a729e946b4ef600e71740113c6d4332c0", null ],
     [ "load", "class_model.html#a90f83714d8df3e6f07b28fb5d25e7116", null ],

@@ -88,6 +88,7 @@ var class_d_b__dsql =
     [ "$data", "class_d_b__dsql.html#a6efc15b5a2314dd4b5aaa556a375c6d6", null ],
     [ "$debug", "class_d_b__dsql.html#a85ae3e64cd40e9564adceb010085e9dd", null ],
     [ "$default_exception", "class_d_b__dsql.html#ade8f8bc9c31f13c39edfe43aaea3a4e8", null ],
+    [ "$default_field", "class_d_b__dsql.html#a0cbd93284d94e456702c9dc09539d96e", null ],
     [ "$extra_params", "class_d_b__dsql.html#a5a9a2baddf56ecd282bd4444816a728f", null ],
     [ "$main_table", "class_d_b__dsql.html#a0f5965a14f82030869799a6391504245", null ],
     [ "$mode", "class_d_b__dsql.html#a3aaf40baac36e278c7d7c9139df1750c", null ],

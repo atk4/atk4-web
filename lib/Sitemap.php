@@ -143,7 +143,7 @@ class Sitemap extends AbstractController{
                 'exception'=>'Exception Handling',
                 'hooks'=>'Using call-backs (Hooks)',
                 'method'=>'Dynamic Methods',
-                'misc'=>'Miscelanious',
+                'misc'=>'Miscellanious',
             ),
             'dsql'=>array(
                 'Dynamic Queries',

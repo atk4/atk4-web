@@ -119,10 +119,10 @@ Inheritance diagram for Field_Reference:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a5988ff0c4d90fa83f7b68883c72c39fa">setModel</a> ($model, $display_field=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a895fd31ef3cb5add22a875fc9e5bee19">ref</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a3af4a8dc54929f5fd52c156f37b1a908">ref</a> ($load=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#ae2936ef23e0f226f965e10fa805f0553">getDereferenced</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#aa118461de946085fe42989193337044a">destroy</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a27554178af8b811e4ecc117a9e204762">calculateSubQuery</a> ($select)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a5b903297be0fd1613a40d6186c5b7efd">calculateSubQuery</a> ($model, $select)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a08fdd91bde255dbe3e2d15a22d9663e8">$model</a></td></tr>
@@ -130,16 +130,26 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a6f7db0517ce1083088c528ab82b513c2">$dereferenced_field</a> = null</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a27554178af8b811e4ecc117a9e204762"></a><!-- doxytag: member="Field_Reference::calculateSubQuery" ref="a27554178af8b811e4ecc117a9e204762" args="($select)" -->
+<a class="anchor" id="a5b903297be0fd1613a40d6186c5b7efd"></a><!-- doxytag: member="Field_Reference::calculateSubQuery" ref="a5b903297be0fd1613a40d6186c5b7efd" args="($model, $select)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_field___reference.html#a27554178af8b811e4ecc117a9e204762">calculateSubQuery</a> </td>
+          <td class="memname"><a class="el" href="class_field___reference.html#a5b903297be0fd1613a40d6186c5b7efd">calculateSubQuery</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>select</em></td><td>)</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>select</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -182,14 +192,15 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a895fd31ef3cb5add22a875fc9e5bee19"></a><!-- doxytag: member="Field_Reference::ref" ref="a895fd31ef3cb5add22a875fc9e5bee19" args="()" -->
+<a class="anchor" id="a3af4a8dc54929f5fd52c156f37b1a908"></a><!-- doxytag: member="Field_Reference::ref" ref="a3af4a8dc54929f5fd52c156f37b1a908" args="($load=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_field___reference.html#a895fd31ef3cb5add22a875fc9e5bee19">ref</a> </td>
+          <td class="memname"><a class="el" href="class_field___reference.html#a3af4a8dc54929f5fd52c156f37b1a908">ref</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>load</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -269,7 +280,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk4-testsuite/atk4/lib/Field/<a class="el" href="_reference_8php.html">Reference.php</a></li>
+<li>/Users/rw/Sites/elexu/atk4/lib/Field/<a class="el" href="_reference_8php.html">Reference.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -291,7 +302,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___reference.html">Field_Reference</a>      </li>
 
-    <li class="footer">Generated on Mon Feb 6 2012 23:26:21 for Agile Toolkit by
+    <li class="footer">Generated on Thu Feb 23 2012 02:18:09 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

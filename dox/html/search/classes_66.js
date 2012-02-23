@@ -15,8 +15,6 @@ var searchData=
   ['form_5ffield_5fdatepicker',['Form_Field_DatePicker',['../class_form___field___date_picker.html',1,'']]],
   ['form_5ffield_5fdateselector',['Form_Field_DateSelector',['../class_form___field___date_selector.html',1,'']]],
   ['form_5ffield_5fdropdown',['Form_Field_Dropdown',['../class_form___field___dropdown.html',1,'']]],
-  ['form_5ffield_5ffile',['Form_Field_File',['../class_form___field___file.html',1,'']]],
-  ['form_5ffield_5ffilesize',['Form_Field_FileSize',['../class_form___field___file_size.html',1,'']]],
   ['form_5ffield_5fgrouped',['Form_Field_Grouped',['../class_form___field___grouped.html',1,'']]],
   ['form_5ffield_5fhidden',['Form_Field_Hidden',['../class_form___field___hidden.html',1,'']]],
   ['form_5ffield_5fline',['Form_Field_Line',['../class_form___field___line.html',1,'']]],
