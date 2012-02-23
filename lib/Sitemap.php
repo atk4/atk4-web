@@ -185,10 +185,7 @@ class Sitemap extends AbstractController{
                 'View Classes',
                 'abstract'=>'View and AbstractView',
                 'helloworld'=>'HelloWorld',
-                'loremipsum'=>'LoremIpsum',
-                'htmlelement'=>'HTMLElement',
                 'button'=>'Buttons',
-                'typography'=>'Headings and Paragraphs',
                 'add'=>'Adding Your Own',
                 ),
             'page'=>array(

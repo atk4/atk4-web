@@ -1,3 +1,65 @@
-Coming soon..
+<?$Content?>
 
-<p><a href="/intro">See Interactive Introduction</a></p>
+<div class="g-row" id="doc-ref">
+  <div class="g-6">
+
+    <h3>View Objects</h3>
+    <div class="g-row">
+      <div class="g-4">
+<?Code?>
+$page->add('H1')
+  ->set('View Demo');
+
+$page->add('Frame')
+  ->setTitle('Sample Frame');
+  ->add('LoremIpsum');
+<?/?>
+      </div>
+      <div class="g-2">
+        <p>Views are Objects capable of producing HTML output.</p><p>There are many standard view classes.</p>
+      </div>
+    </div>
+
+    <p>View is a fundamental building blog representing the area on the HTML page. View classes inherit from either <a href="/dox/html/class_abstract_view.html">AbstractView</a> or "<a href="/dox/html/class_view.html">View</a>" class.</p>
+
+    <p>Any view has a <a href="/dox/html/class_abstract_view.html#aa3e9534005fd516d941f6a5569896e01">template</a> property containing a <a href="/dox/html/class_s_mlite.html">SMlite</a> instance. Normally the <a href="/dox/html/class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> method will <a href="/dox/html/class_s_mlite.html#ab5db58d0936f97c6032ac8297e23acec">append</a> content into <a href="/dox/html/class_abstract_object.html#a9aabf46bdb166877480b2094d7ca01a7">owner</a>'s template. <a href="/dox/html/class_abstract_view.html#a8aec8c2ad6a5ef660682de25e792377c">Property "spot"</a> determines where <a href="/dox/html/class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output</a> appears exactly.
+
+    <div class="ref-item box blue-noised">
+      <b>Table of Contents:</b>
+      <?$toc?>
+    </div>
+
+
+
+
+  </div>
+  <div class="g-6">
+
+    <h4>Goals and Features of View</h4>
+
+
+    <ol>
+      <li>Represent self-sufficient object which can be re-used on different application pages</li>
+      <li>Separate UI logic (view) from template. Allow to use same logic with template of choice</li>
+      <li>Move heavy processing logic into render() while keeping init() lightweight</li>
+      <li>Permit Controllers and sub-objects also add output into view's template</li>
+      <li>Support chaining which is used to define view's configuration</li>
+      <li>Implement js() method for easy event binding</li>
+      <li>Populate some tangs automatically</li>
+    </ol>
+
+<h4>Other Resources</h4>
+    <div class="ref-item box blue-noised">
+      <b>Other Resources, Blog posts:</b>
+      <div class="details white">
+        <div><a href="http://stackoverflow.com/questions/7497388/creating-a-database-query-using-dsql">Q: Creating Database Queries with DSQL</a></div>
+      </div>
+    </div>
+
+
+</div></div>
+
+
+
+  <?$Next?>
+

@@ -1,0 +1,24 @@
+<?$Content?>
+
+<h1>Button class</h1>
+
+<p>Pushable buttons is essential component of any web application. It may be implemented with several different markups. "Button" class is using HTML element &lt;button&gt; by default in conjunction with jQuery UI's button() widget.</p>
+
+<p>Button class is based on "View" but adds support for some other features such as Icon, jsWidget and "onClick" method.</p>
+
+<h2>Changing button system-wide</h2>
+
+<p>Button class extends View_Button but does not change any properties or methods:</p>
+<?Code?>
+class Button extends View_Button {}
+<?/?>
+
+<p>This is done so that you can create lib/Button.php with a class inherited from View_Button and implementing all the necessary changes for your application. As a result all the other views will now use your modified button.</p>
+
+<p>As an example, you can define your "Button" class which perform no js initialization by redefining jsButton() method.</p>
+
+<h2>Using button with Icons</h2>
+<p>jQuery Ui comes with a set of icons. You can use those icons if you pass them as an argument to the button() widget. Button class does this for you, if you specify icon through $button-&gt;setIcon('icon-name');</p>
+
+
+<?$Next?>

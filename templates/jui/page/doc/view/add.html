@@ -1,0 +1,72 @@
+<?$Content?>
+
+<h1>Adding your own views</h1>
+
+<p>There are usually several scenarios when there is a need to create your own view. Let's look into the situations and analyze them</p>
+
+<h2>Special page layout</h2>
+<p>Remember that "Page" class also based on AbstractView and therefore has a template. Suppose your designer wants to put something special on one of your application pages. Redefine defaultTemplate() of your page first:</p>
+
+<?Code?>
+class page_test extends Page {
+    function init(){
+        parent::init();
+        $this->add('LoremIpsum');
+    }
+    function defaultTemplate(){
+        return array('page/test');
+    }
+}
+<?/?>
+
+<p>Put the code designer asked you to use inside templates/default/page/test.html, but don't forget to add &lt;?$Content?&gt; tag. It's recommended that you also use the id="&lt;?$_name?&gt; for the top-most element of template. That's not mandatory but will enable event binding and reloading.</p>
+
+<h2>Re-usable HTML chunk of code</h2>
+<p>Perhaps you need to put a piece of HTML code on several of your pages. To do that, you might be able to get away with simply using "View" class:</p>
+
+<?Code?>
+$page->add('View',null,'corner',array('view/snippet'));
+<?/?>
+
+
+<h2>HTML snippet with enabled logic</h2>
+<p>What if your HTML code needs some additional logic? It's then better to create a separate class for your view:</p>
+
+<?Code?>
+class Alex extends View {
+    public $float='right';
+    function init(){
+        parent::init();
+        $this->setElement('img');
+        $this->setAttr('src',$this->api->url('template','images/PinkElephant.jpg'));
+    }
+    function render(){
+        $this ->addStyle('float',$this->float);
+        parent::render();
+    }
+    function align($side){
+        $this->float=$side;
+        return $this;
+    }
+}
+<?/?>
+
+<h3>Alternative implementation using AbstractView and Template</h3>
+
+<?Code?>
+class Alex extends AbstractView {
+    function align($side){
+        $this->template->set('side',$side);
+        return $this;
+    }
+    function defaultTemplate(){
+        return array('view/alex');
+    }
+}
+<?/?>
+<p>Template:</p>
+<pre>
+&lt;img id="&lt;?$_name?&gt;" src="&lt;?template?&gt;images/PinkElephant.jpg&lt;?/?&gt;" float="&lt;?side?&gt;right&lt;?/?&gt;"/&gt;
+</pre>
+
+<?$Next?>

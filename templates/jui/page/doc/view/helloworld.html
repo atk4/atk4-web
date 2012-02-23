@@ -1,0 +1,35 @@
+<?$Content?>
+
+<h1>HelloWorld and LoremIpsum classes</h1>
+
+<p>Often you would want to get some content on a page before actually start fine-tuning it. You might google "lorem ipsum" and work on your copy-pasting skills, but a much more desired way is to simply use a bundled "LoremIpsum" vew.</p>
+
+<p>This class actually generates few paragraphs of LoremIpsum randomly and outputs on the page.</p>
+
+<?Example?>
+$li = $page->add('LoremIpsum')
+  ->setLength(1,15);
+
+$page->add('Button')->set('Refresh')
+  ->js('click',$li->js()->reload());
+<?/?>
+
+<p>There is also a class "HelloWorld" in Agile Toolkit. If someone ever asks you, "how to write a hello-world in agile toolkit?" you can safely reply: "why? It's already implemented". Just one line to include object on a page.</p>
+
+<?Example?>
+$page->add('HelloWorld');
+<?/?>
+
+<h3><a href="/dox/html/class_text.html">Text</a> class</h3>
+<p>All of the Agile Toolkit objects are wrapped inside a element with a specific "id" pre-set. Sometimes, however, you want just to output text. Class "Text" does exactly that. Because of the lack of containing element, you won't be able to reload Text object like we did with LoremIpsum.</p>
+
+<?Example?>
+$page->add('Text')
+  ->set('sample text');
+<?/?>
+
+<p>To keep you safe from SQL injection, Text will automatically escape htmlentities. To avoid escaping use setHtml() method or you can use "Html" class instead.</p>
+
+<p>Both "Text" and "Html" override template initialization and replace render() function to simply output contents into owner's template. This is done with performance as a goal.<p>
+
+<?$Next?>

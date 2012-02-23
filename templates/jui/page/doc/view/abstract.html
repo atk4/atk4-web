@@ -1,0 +1,39 @@
+<?$Content?>
+
+<h1>View and AbstractView classes</h1>
+<p>One of the most vital part of PHP framework is quick performance. As an object-oriented programmer you must make proper choices when selecting parent of your newly added classes. When you are going to create your own Views you will always have a choice to inherit from either "View" or "AbstractView" class.</p>
+
+<h3>AbstractView</h3>
+<p>This class should be used when in doubt for maximum performance. AbstractView can be only used if it's extended. This class introduces basic rendering concepts and use of template, but it makes no assumptions about your template.</p>
+
+<p>AbstractView does not have a default template, so you must always define template for it by overriding defaultTemplate()</p>
+
+<h3>View</h3>
+<p>With View you does not necessarily have to extend it when using. View has a default template which will output a &lt;div&gt; element.</p>
+
+<p>View adds several useful methods which can easily change the output without providing a new template:<ul>
+  <li><a href="/dox/html/class_view.html#a2193ae9420d4227a233ac136d14c9407">setElement</a> - change which HTML element is used.</li>
+  <li><a href="/dox/html/class_view.html#af872a9c35cc9d5ef7956986455122a12">setAttr</a> - add attribute</li>
+  <li><a href="/dox/html/class_view.html#aecfb78e7665096735196b2504d4a9580">setStyle</a> and <a href="/dox/html/class_view.html#a2ab7f4f94ec115c4b13fb8d2d30b3c8b">addElement</a> - replace or append style to element</li>
+  <li><a href="/dox/html/class_view.html#af297b685c862e9957c775f11d30367a4">addClass</a> - append new class to element</li>
+  <li><a href="/dox/html/class_view.html#a4a8ff66c403a977763a802f94a7707bc">set</a> (or <a href="/dox/html/class_view.html#aed98453b92e9e7e961179dfff24c4a3a">setText</a> - insert static content and escapes HTML characters</li>
+  <li><a href="/dox/html/class_view.html#a08c0d72e86b5b52a0da9ac9f2165bd96">setHtml</a> - insert HTML inside the element</li>
+</ul></p>
+<p>(Prior to 4.2, View class was referred to as HtmlElement). </p>
+
+<h2>Standard classes based on View</h2>
+<p>Some classes are based on View and simply configure it in the proper way such as
+<a href="/dox/html/class_h1.html">H1</a>,
+<a href="/dox/html/class_h2.html">H2</a>,
+<a href="/dox/html/class_h3.html">H3</a>,
+<a href="/dox/html/class_h4.html">H4</a>,
+<a href="/dox/html/class_h5.html">H5</a>,
+<a href="/dox/html/class_p.html">P</a>,
+<a href="/dox/html/class_hr.html">HR</a>. If you want to have more classes as such, define them locally in the consistent way.</p>
+
+<p><b>IMPORTANT</b>: Excessive use (thousands of) of View object may affect your application performance.</p>
+
+<h2>Special template tags</h2>
+<p>View and AbstractView will replace tag &lt;?$_name?&gt; with the name of current object. They will also look for all occurrences of "template" tag and pass content of those tags through "<a href="/dox/html/class_api_c_l_i.html#a15722a2f6c1c42ae85c86227044f1f2a">locateURL</a>" method of <a href="/dox/html/class_path_finder.html">pathfinder</a>.</p>
+
+<?$Next?>
