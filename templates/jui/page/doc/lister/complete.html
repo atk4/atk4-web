@@ -1,0 +1,28 @@
+<?$Content?>
+
+<h1>CompleteLister</h1>
+
+<p>CompleteLister class extends the functionality of default lister by allowing it to have a more comprehensive template. If default Lister will repeat it's own template as many times as necessary, CompleteLister will look for tag "row" cache it and will render it into "rows" tag after emptying it's contents. Here is a sample template for CompleteLister:</p>
+
+
+<div class="atk_doc example"><code>
+&lt;?MyLister?&gt;</br>
+&lt;ul&gt;</br>
+&nbsp;&nbsp;&lt;?rows?&gt;</br>
+&nbsp;&nbsp;&lt;?row?&gt;</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;?name?&gt;John Smith&lt;?/?&gt;&lt;/li&gt;</br>
+&nbsp;&nbsp;&lt;?/?&gt;</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Peter Oink&lt;/li&gt;</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Steven Jobs&lt;/li&gt;</br>
+&nbsp;&nbsp;&lt;?/rows?&gt;</br>
+&lt;/ul&gt;</br>
+&lt;?/MyLister?&gt;
+</code></div>
+
+<p>With this template, it's possible to preserve the existing HTML too. CompleteLister will clone template inside "row" and then delete contents of "rows" region, therefore Peter and Steven entries will be simply deleted. John's entry will be re-used but the "name" tag will be populated from the model.</p>
+
+<p>In terms of data sources, CompleteLister can use all the same sources as Lister does.</p>
+
+<p>It might be a good idea for you to extend CompleteLister into your own classes such as "ClientLister" or "OrderLister" which will perform necessary formatting or other tweaks. CompleteLister is also a view therefore you can add tags around "rows" tags and set them explicitly.</p>
+
+

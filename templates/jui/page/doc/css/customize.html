@@ -1,0 +1,79 @@
+<?$Content?>
+
+<h1>Using LESS with Agile Toolkit</h1>
+
+<p>LESS is a macro-language for CSS. It can be either parsed by JavaScript inside the browser or can be compiled on the server and distributed as a standard CSS. To keep things simple, Agile Toolkit relies on the pre-compiled CSS. That means that even though LESS is used to generate CSS in Agile Toolkit, you or your users will not need it.</p>
+
+<p><a href="http://incident57.com/less/">LESS.app</a> is the great tool for Mac which will automatically convert .less file into .css. For Windows developers there are two alternatives: <a href="http://wearekiss.com/simpless">SimpLESS</a> and <a href="http://winless.org/">WinLESS</a>.
+
+<p>The rule of not changing anything inside atk4 folder also applies to CSS files, so you would need to create your local copy of the less / css file. Copy atk4/templates/shared/css/atk-main.less into templates/default/css/, then drag it into the LESS app so that it would start watching file for changes.</p>
+
+<p>You will find quite a few useful variables at the beginning of atk-main.less file.</p>
+<div class="atk_doc example"><code><pre>
+/* ==============================================
+	Settings
+    http://agiletoolkit.org/doc/css
+   ============================================== */
+@gridColumns:         12;		// Column count
+@gridColumnWidth:     6%;		// Column width
+@gridGutterWidth:     2.5%;		// Gutter width
+@margin:	      2em;		// Global margin
+@padding:	      2em;		// Global padding
+@label:		      7em;		// Label width for form/dl
+@labelMargin:	      2em;		// Label margin
+@footerSticky:	      true;		// Footer sticked to the bottom of the page
+@footerHeight:	      3em;		// Footer height needs to be specific if sticky footer is applied
+@dialogMargin:	      120px;		// Dialog top margin
+@link:		      #0053b3;	        // Link color
+@shadowColor:	      #000;		// Global shadow color (used in dialogs, dropmenus, etc.)
+@thborder:	      #002d5e;	        // Table header border color
+@border:	      #e5e5e5;	        // Global border color (used in tables, hr, forms, etc.)
+@even:		      #f0f5fa;	        // Color for even row
+@inputBorder:	      #ccc;		// Input Border
+@focused: 	      #00aaff;	        // Color on input focus
+@error:		      #e51717;	        // Error
+@white:		      #fff;		// White color
+@black:		      #000;		// Black color
+@lightGray:	      lighten(@black,60%);		// Used for comments
+@fontFamily:	      "Helvetica Neue", "Helvetica", sans-serif;	// Global font family
+@fontSize:	      12px;						// Global font size
+@fontColor:	      lighten(@black,10%);				// Global font color
+@lineHeight:	      1.6;						// Global line height
+
+/* Custom jQueryUI States  */
+.defaultBg(#ECF3F9,#C8D3DE);	        // Default State (.ui-state-default)
+.hoverBg(#F5F9FC,#D5E1ED);		// Hover State (.ui-state-hover)
+.activeBg(#ECF3F9,#FFFFFF);		// Active State (.ui-state-active)
+.headerBg(#00070F,#002D5E);		// Widget Header (.ui-widget-header)
+
+/* Additional Effects */
+.ui-dialog {.box-shadow(0 25px 50px fadeout(@shadowColor,50%));}
+.atk-notification {.box-shadow(0 10px 20px @white inset);}
+.atk-growl>.atk-notification {
+	@shadow: 0 5px 10px fadeout(@shadowColor,60%),0 10px 20px @white inset;
+	.box-shadow(@shadow);
+
+}
+.ui-state-default {text-shadow:0 1px 0 @white;.box-shadow(0 1px 0 @white inset);}
+.ui-state-default {.box-shadow(0 1px 1px fadeout(@black,90%))}
+.ui-state-default.ui-state-active {.box-shadow(0 0 0);}
+</pre></code></div>
+
+By changing configuration values here, they will have effect on all of your UI. However those settings are designed to compliment the jQuery UI Themeroller styles. The variables under "Custom jQueryUI States" have to be copied from your themeroller CSS.
+
+<h2>Creating custom ThemeRoller CSS</h2>
+<p>Themeroller is available at <a href="http://jqueryui.com/themeroller/">http://jqueryui.com/themeroller/</a> and is simple enough for anyone to configure settings of your jQuery UI theme. After you are done with the tweaking, you will be able to download a theme pack. Themeroller is integrated with jQuery, but all you need is the CSS file and icons. Download them and save them into: template/default/css/jquery-ui.css. Icons should be saved relative to this file inside template/default/css/images/</p>
+
+<p>Look under "Interaction States" for the "color" values of .ui-state-default, .ui-state-hover, .ui-state-active and .ui-widget-header. You will need to place them inside the atk-main.less file</p>
+
+<p>Your custom theme is complete. If you need to use more CSS files, be sure to specify them inside your customized templates/default/shared.html.</p>
+
+<h2>Page-based customization</h2>
+<p>Agile Toolkit automatically enables class for each page. If user opens page called "mypage" then class page-mypage is automatically added to that page content. This is defined in default page template, and if you are re-defining it, it may not have that class. To be consistent, use the following "div" to wrap your page contents:
+<div class="atk_doc example"><code>
+&lt;div id="&lt;?$_name?&gt;" class="page_&lt;?$_page?&gt;"&gt;<br/>
+&nbsp;&nbsp;.. page content ..<br/>
+&lt;/div&gt;
+</code></div>
+
+<?$Next?>

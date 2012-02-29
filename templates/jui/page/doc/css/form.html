@@ -1,0 +1,43 @@
+<?$Content?>
+
+<h1>Form classes</h1>
+
+<p>Agile Toolkit forms may have several classes applied on them to change the way how they look:</p>
+
+<h4>.stacked</h4>
+<p>This class will make labels appear on top of input elements.</p>
+
+<h4>.wider-labels</h4>
+<p>For non-stacked form, this will slightly increase width of the label field.</p>
+
+
+<h2>Field row</h2>
+<p>Each field of a form is wrapped inside a div with class atk-form-row. This is defined in template form.html. This class will align label and input element properly. Additionally the row div may have .has-error class. This will make label red and will also highlight the field.</p>
+
+<p>Placing &lt;ins&gt; element inside field's row will produce a gray "hint" next to the field. To add this field in the form, use the following code:</p>
+
+<?Code?>
+$form = $page->add('Form');
+$field = $form->addField('line','test');
+
+$field->setComment('Field Comment');
+<?/?>
+
+<p>Form field can have some additional HTML added above or below it. In HTML it's done by placing code either before or after input field or div.input-row. In PHP you can do this by calling $field->abovefield() and $field->belowField(); Those methods will insert and return an element which you can change the way you see fit:</p>
+
+<?Code?>
+$field->aboveField()->add('HelloWorld');
+
+$filed->belowField()->setElement('img')->attr('src',$this->api->locateURL('images/logo.png'));
+<?/?>
+
+<h3>Adding buttons</h3>
+<p>In several cases you would want to have a button linked with the field. In the HTML, this requires wrapping input field inside &lt;div class="input-row"&gt;. You can explore the actual markup on the "<a href="http://example.agiletoolkit.org/?page=playground">playground</a>" page. The PHP code for a similar operation looks relatively simple</p>
+
+<?Code?>
+$button = $field->addButton('Hello');
+<?/?>
+
+<p>Second argument to <a href="/dox/html/class_form___field.html#ab1da9f5c153f95719b832ce00dbe007b">addButton()</a> can be either "before" or "after" and is "after" by default. There are also functions afterField and beforeField() which work similarly to aboveField()/belowField()</p>
+
+<?$Next?>

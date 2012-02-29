@@ -1,3 +1,5 @@
+<?$Content?>
+
 <h1>Use of Lister</h1>
 
 <p>Lister probably is one of the fundamental and simplest objects in Agile Toolkit. It lays foundation to a more sophisticated classes such as CompleteLister , Grid and therefore contributes towards CRUDs and other objects.</p>
@@ -41,4 +43,6 @@ $page->add('Lister')
 $page->add('Lister')
   ->setSource(new DirectoryIterator('.'));
 <?/?>
-<p>Any iterator may be used. If iterator returns array, it will be populated into the fields, otherwise  [TODO]
+<p>Any iterator may be used. If iterator returns array, it will be populated into the fields. Otherwise you need to redefine <a href="/dox/html/class_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> function and read $this->current_row value which was returned from the iterator.</p>
+
+<?$Next?>

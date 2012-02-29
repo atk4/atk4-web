@@ -199,6 +199,17 @@ class Sitemap extends AbstractController{
                 '404'=>'PageNotFound Handler (404)',
                 ),
             'smlite'=>'Agile Template Manager',
+            'css'=>array(
+                'Agile CSS Framework',
+                'starting'=> 'Getting Started with Your HTML',
+                'customize'=> 'Using LESS and Themeroller to Customize Look',
+                'layout'=> 'Building Layout with Grid System',
+                'frames'=> 'Framing, Borders, Paddings',
+                'form'=> 'Form-related Classes',
+                'grid'=> 'Grid-related Classes',
+                'adding'=> 'Extending Stylesheets',
+                'icons'=>'Using Agile Toolkit Icon Set',
+            ),
             /*
             'controller'=>array(
                 'Controller Classes',
@@ -224,7 +235,7 @@ class Sitemap extends AbstractController{
                     'mongo'=>'Mongo (4.2)',
                     ),
                 ),
-                */
+             */
             /*
             'auth'=>array(
                 'Authentication',
@@ -246,44 +257,44 @@ class Sitemap extends AbstractController{
             'session'=>array(
                 'Session Properties',
                 ),
-            */
+             */
             'form'=>array('Basic Form',
-                'how'=>'How Does a Form Work?',
-                'fields'=>'Adding Fields',
-                'validation'=>'Validation',
-                'submit'=>'Handling Submit',
-                'database'=>'Database Integration',
-                'model'=>'Using with Models',
-                'styling'=>'Styling and Layout',
-                'enhancing'=>'Enhancing Forms',
-                'uploads'=>'File Uploads',
-                'extending'=>'Extending',
-                'ajax'=>array(
-                    'AJAX Support',
-                    'Reloading Fields',
-                    'Showing Error Messages',
-                    '...',
-                    ),
-                ),
-            'grid'=>array('Basic Grid',
-                'how'=>'How to Use',
-                'columns'=>'Standard Columns',
-                'interaction'=>'Interaction',
-                'helper'=>array(
-                    'Grid Helpers',
-                    'quicksearch'=>'Quick Search',
-                    'paginator'=>'Paginator',
-                    'export'=>'Export',
-                    'select'=>'Selectable Rows',
-                    ),
-                'model'=>'Using with Models',
-                'sort'=>'Sorting Controls',
-                ),
-            'lister'=>array(
-                'Lister',
-                'how'=>'How to Use',
-                'complete'=>'CompleteLister',
-                ),
+            'how'=>'How Does a Form Work?',
+            'fields'=>'Adding Fields',
+            'validation'=>'Validation',
+            'submit'=>'Handling Submit',
+            'database'=>'Database Integration',
+            'model'=>'Using with Models',
+            'styling'=>'Styling and Layout',
+            'enhancing'=>'Enhancing Forms',
+            'uploads'=>'File Uploads',
+            'extending'=>'Extending',
+            'ajax'=>array(
+                'AJAX Support',
+                'Reloading Fields',
+                'Showing Error Messages',
+                '...',
+            ),
+        ),
+        'grid'=>array('Basic Grid',
+        'how'=>'How to Use',
+        'columns'=>'Standard Columns',
+        'interaction'=>'Interaction',
+        'helper'=>array(
+            'Grid Helpers',
+            'quicksearch'=>'Quick Search',
+            'paginator'=>'Paginator',
+            'export'=>'Export',
+            'select'=>'Selectable Rows',
+        ),
+        'model'=>'Using with Models',
+        'sort'=>'Sorting Controls',
+    ),
+    'lister'=>array(
+        'Lister',
+        'how'=>'How to Use',
+        'complete'=>'CompleteLister',
+    ),
             /*
             'filter'=>array(
                 'Filter',
@@ -387,10 +398,10 @@ class Sitemap extends AbstractController{
                     'order'=>'Order',
                     ),
                 ),
-                */
-            );
-//}}}
-//{{{ a - Addons
+             */
+);
+        //}}}
+        //{{{ a - Addons
         $doc['a']=array('Add-ons',
             'crud'=>array(
                 'CRUD',
@@ -399,42 +410,42 @@ class Sitemap extends AbstractController{
                 'fields'=>'Controlling Which Fields Appear',
                 'restrict'=>'Restricting Actions',
                 'actions'=>'Adding More Actions',
-                ),
+            ),
             'filestore'=>array(
                 'Filestore',
                 'how'=>'How to Use',
                 'types'=>'File Type Restrictions',
                 'extend'=>'Custom File Model',
                 'image'=>'Image Upload and Manipulation',
-                ),
+            ),
             'schemagenerator'=>array(
                 'SQL Schema Generator',
                 'how'=>'How to Use',
                 'limitations'=>'Limitations and Notes',
-                ),
+            ),
             'payment'=>array(
                 'Payment Gateway Integration',
                 'cc'=>array(
                     'Credit Card',
                     'form'=>'Form',
-                    ),
+                ),
                 'paypal'=>'PayPal',
                 'transaction'=>'Transactions',
                 'recurring'=>'Recurring',
                 'subscription'=>'Subscriptions',
-                ),
+            ),
             'cm'=>array(
                 'Campaign Monitor',
                 'howto'=>'How to use',
                 'backend'=>'Backend Integration',
                 'api'=>'Using The API',
                 'ui'=>'UI',
-                ),
+            ),
             'googlemaps'=>array(
                 'Google Maps',
                 'how'=>'How to Use',
                 'advanced'=>'Advanced Examples',
-                ),
+            ),
             'oauth'=>array(
                 'OAuth Integration',
                 'howto'=>'How to Use',
@@ -444,53 +455,53 @@ class Sitemap extends AbstractController{
                     'twitter'=>'Twitter',
                     'facebook'=>'Facebook',
                     'linkedin'=>'LinkedIn',
-                    ),
                 ),
+            ),
             'doc'=>array(
                 'Documentation Engine',
                 'how'=>'How to Document Your Own Code',
                 '- [ ]',
                 '- [ ]',
-                ),
+            ),
             'test'=>array(
                 'Testing',
                 'unit'=>'Unit Testing',
                 'performance'=>'Performance Testing',
-                ),
-            );
-//}}}
-//{{{ new - New Additions
+            ),
+        );
+        //}}}
+        //{{{ new - New Additions
         $doc['changes']=array('New additions',
             '4.1'=>array('Whats New in 4.1',
-                '- [ ]',
-                ),
-            'obsolete'=>array('Unmaintained Code',
-                '4.0'=>array('Since 4.0 (Artefacts from 3.0)',
-                    'Cluster DB driver',
-                    'psql',
-                    'Storage',
-                    'ApiPortal',
-                    'RPC',
-                    'ApiStatic',
-                    'sw',
-                    'AuthHTTP',
-                    'ClassDoc', 'Entity', 'DForm', 'FreeForm', 'FileUploader', 'FloatingFrame', 'Ajax', 'JSON', 'JsonLister',
-                    'RSS', 'DBAuth', 'TipManager', 'VersionControl', 'Wizard', 'AP',
-                    'mTrace',
-                    'js'=>array(
-                        'atk4_tabs', 'atk4_todo', 'fat_checkbox',),
-                    'tools'=>array(
-                        'create-mvs', 'sampleproject', 'samplewebsite', '- [ ]',
-                        ),
-                    ), 
-                
-                '4.1'=>array('Since 4.1 (Artefacts from 4.0)',
-                    'Page_EntityManager',
-                    'atk4-web',
-                    ),
+            '- [ ]',
+        ),
+        'obsolete'=>array('Unmaintained Code',
+        '4.0'=>array('Since 4.0 (Artefacts from 3.0)',
+        'Cluster DB driver',
+        'psql',
+        'Storage',
+        'ApiPortal',
+        'RPC',
+        'ApiStatic',
+        'sw',
+        'AuthHTTP',
+        'ClassDoc', 'Entity', 'DForm', 'FreeForm', 'FileUploader', 'FloatingFrame', 'Ajax', 'JSON', 'JsonLister',
+        'RSS', 'DBAuth', 'TipManager', 'VersionControl', 'Wizard', 'AP',
+        'mTrace',
+        'js'=>array(
+            'atk4_tabs', 'atk4_todo', 'fat_checkbox',),
+        'tools'=>array(
+            'create-mvs', 'sampleproject', 'samplewebsite', '- [ ]',
+        ),
+    ), 
+
+    '4.1'=>array('Since 4.1 (Artefacts from 4.0)',
+    'Page_EntityManager',
+    'atk4-web',
+),
                 ),
             );
-//}}}
+        //}}}
         $this->api->sitemap=$doc;
     }
 }

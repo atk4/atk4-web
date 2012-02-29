@@ -1,0 +1,52 @@
+<?$Content?>
+
+<h1>Getting started with Agile CSS</h1>
+
+<p>Sometimes all the PHP goodness just needs to step away and give way to a skillful designer. Inside the copy of your Agile Toolkit create folder templates/default/page. Create file myplayground.html in there and put some text inside. Immediately this file should be accessible on http://localhost?page=myplayground. If you have installed under a different URL, add '?page=myplayground' at the end and you should see contents of your myplayground.html file.</p>
+
+<p>For your reference, you can open atk4/templates/shared/page/playground.html which contains the testing page for Agile Toolkit standard styles. Throughout this documentation you will learn how to write efficient and clean HTML relying on Agile CSS</p>
+
+<h2>Grid Layouts</h2>
+<p>Grid layouts is a modern way of splitting your page into equally sized columns. Sometimes you would want to have 2 equal columns with different content, sometimes more. The <a href="http://960.gs/">Grid System</a> explains and demonstrates what Grid System is. You don't need to download it, because Agile Toolkit has a built-in grid system support.</p>
+
+<p>Let's start by creating two columns:</p>
+<div class="atk_doc example"><code>
+&lt;div class="<b>atk-row</b>"&gt;<br/>
+&nbsp;&nbsp;&lt;div class="<b>span6</b>"&gt;Left Column&lt;/div&gt;<br/>
+&nbsp;&nbsp;&lt;div class="<b>span6</b>"&gt;Right Column&lt;/div&gt;<br/>
+&lt;/div&gt;
+</code></div>
+
+<p>By default the whole width of the page is separated into 12 equal widths. Code above creates two columns each equal to 6 widths. You can create any combinations and as long as you have 12 widths in total, the columns should stay on the same row. You can also use the fact that they will wrap to display large amount of blocks on your page (such as images).</p>
+
+<h2>Templates</h2>
+<p>By placing template tags into your template, you will allow developer to substitute tag contents with dynamic content. Let's create a page containing a sidebar:</p>
+<div class="atk_doc example"><code>
+&lt;div class="atk-row"&gt;<br/>
+&nbsp;&nbsp;&lt;div class="span3"&gt;<b>&lt;?Sidebar?&gt;</b>&lt;/div&gt;<br/>
+&nbsp;&nbsp;&lt;div class="span6"&gt;<b>&lt;?Content?&gt;</b>&lt;/div&gt;<br/>
+&lt;/div&gt;
+</code></div>
+<p>You can also use the tags such as &lt;?Sidebar&gt;  .... default sidebar HTML ....&lt;?/?&gt;. This way you don't need to clean pieces of your sample HTML code and the page will look consistent until dynamic content is implemented.</p>
+
+<h2>Objects</h2>
+<p>The goal of Agile Toolkit is to make User Interface manageable through PHP. Therefore columns can also be created and manipulated through PHP:</p>
+
+<?Code?>
+$c=$this->add('Columns');
+$left =$c->addColumn();
+$right=$c->addColumn();
+$left ->add('Text')->set('Left Column here');
+$right->add('Text')->set('Right Column here');
+<?/?>
+
+<p>The column object assumes that you are using 12-columns in total and will use 6/6 values. You can also specify percents to addColumn() in which case it will use "atk-flexy" class.</p>
+
+<div class="atk_doc example"><code>
+&lt;div class="<b>atk-flexy</b>"&gt;<br/>
+&nbsp;&nbsp;&lt;div<b> style="width: 20%"</b>&gt;&lt;?Sidebar?&gt;&lt;/div&gt;<br/>
+&nbsp;&nbsp;&lt;div<b> style="width: 80%"</b>&gt;&lt;?Content?&gt;&lt;/div&gt;<br/>
+&lt;/div&gt;
+</code></div>
+
+<?$Next?>
