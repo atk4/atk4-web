@@ -1,0 +1,133 @@
+<!-- <h1><?page_title?>What's new in Agile Toolkit 4.2?<?/?></h1> -->
+<?seo_descr?>What is coming up or was just introduced in Stable and Development version of Agile Toolkit<?/?>
+<?seo_keywords?>download, development version, stable version, changes, updates, changelog, recent changes<?/?>
+<div class="g-row">
+  <div class="g-8">
+<h2>Development Changes - 4.2 branch</h2>
+
+<p>Version 4.2 is our biggest update ever for Agile Toolkit. Large portion of classes in Agile Toolkit was re-factored and the rest of the code received cleanup.</p>
+
+<h4>Compatibility</h4>
+<p>Most of the functionality in 4.2 is syntactically compatible with 4.1, although some things will require changes. The 4.1.4 will attempt to provide a common syntax which will help switching between version easier. For larger projects with stable code it's advised to keep on 4.1 branch, although any new projects should use 4.2.</p>
+
+<h4>Database access</h4>
+<p>DSQL, Models, and Database access have been fully rewritten. DSQL is now PDO-compatible and will work with non-MySQL databases. DSQL have been fully re-written, however the new implementation methods are compatible. New implementation of DSQL is much cleaner and more flexible. It retains all the features of previous DSQL and adds the following additional features:<ul>
+  <li>Support for sub-selects</li>
+  <li>Proper suppor for "or"</li>
+  <li>Support for expressions</li>
+  <li>Vendor-specific syntax changes</li>
+  <li>Custom arguments and templates</li>
+  <li>Full iterator support</li>
+</ul></p>
+
+<?Code?>
+foreach($this->api->db->dsql()->table('user') as $row){
+  echo "User ".$row['name']." found\n";
+}
+<?/?>
+
+<h4>Models</h4>
+<p>The implementation of models in 4.1 have been considered an add-on due to poor quality of the code. In 4.2 model code has been completely rewritten and the new version is much more lightweight. Models have also been divided into two classes: Relational models and non-relational</p>
+
+<?Code?>
+$book = $this->add('Model_Book')
+  ->setSource('MemCached','book')
+  ->load($_GET['id']);
+$book['views']++;
+$book->save();
+<?/?>
+
+<p>Non-relational models represent most of the no-sql storage options. They maintain the "ID"=&gt; "hash of fields" relationship, can load, store, delete and add records through appropriate controller. They have nothing to do with SQL. Model represent a classic implementation of active record. Model class implements the following features:<ul>
+  <li>Separation of Model logic and Controller logic<li>
+  <li>Array-like access ($model['name']='John')</li>
+  <li>Full iterator support</li>
+  <li>Lightweight and fast implementation</li>
+  <li>Compatible with all View classes</li>
+  <li>Support for "id" and "table"</li>
+  <li>Much better support for custom fields</li>
+</ul></p>
+
+<p>The model field definition object have been rewritten also. It can now participate in query building and even add hooks into the model, so it's much easier now to add custom field types.</p>
+
+
+<h4>Relational Models</h4>
+<p>Model_Table class is more powerful than ever. It takes advantage of new field definition classes to implement relations and references. Relation are "joins" between multiple tables and references are "links" between models. This concept is separated very specifically in 4.2. The model implementation in 4.2 is also much more consistent in it's mechanics too.</p>
+
+<?Code?>
+class Model_Book extends Model_Table {
+  public $table='book';
+  function init(){
+    parent::init();
+    $this->hasOne('Author');
+    $this->hasMany('Chapter');
+    $this->addField('name');
+    $this->addField('gender')->enum(array('M','F'));
+    $this->addField('is_retired')->type('boolean');
+
+    $details = $this->join('book_details');
+    $details->addField('info');
+  }
+}
+<?/?>
+
+<p>While in the above definition Agile Toolkit makes even more assumptions (such as book.author_id exists and book.author needs to be defined as sub-select and show author.name, also that chapter.book_id is set and book.book_details_id exists and points to book_details.id. It also assumes that boolean is represented with 0=false 1=true) ALL of those assumptions can be corrected.</p>
+
+<?Code?>
+class Model_Book extends Model_Table {
+  public $table='book';
+  public $title_field='book_name';
+  public $id_field='isbn';
+  function init(){
+    parent::init();
+    $this->hasOne('Author','book_isbn','first_name');
+    $this->hasMany('Chapter','book_isbn');
+    $this->addField('book_name');
+    $this->addField('gender')->setValueList(array(1=>'M', 2=>'F'));
+    $this->addField('is_retired')->type('boolean')->enum(arary('Y','N'));
+
+    $details = $this->join('book_details.isbn','isbn');
+    $details -> addField('details')->rename('book_details');
+  }
+}
+<?/?>
+
+<p>The later declaration solves many problems uses of Agile Toolkit 4.1 had in the past. It defines a different ID field for the table and also defines a title field, which is used by other model with "hasOne" reference. Boolean value uses compatible Y/N format and when joining "book_details" table book_details.isbn=book.isbn is used (although 2nd argument could have been ommited). Below is the list of all other features:<ul>
+  <li>Improved model loading and saving consistency</li>
+  <li>Allows joining model with additional tables</li>
+  <li>Join return "relation" object which can be joined again or import fields from joined table</li>
+  <li>Joins extend inserting and deleting data by populating joined tables too</li>
+  <li>Model implements "countable". echo count($this->add('Model_Book')</li>
+  <li>Model creates shortcut for sum: echo $this->add('Model_Book')->sum('price')</li>
+</ul>
+</p>
+
+
+<h4>Core Changes</h4>
+<p>
+
+
+<h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0e46a0aaa0061c173ed716b5dc8c36c308c71bd">Add getColumn() to DBlite</a></h4>
+<?Code?>
+$array_of_values = $this->api->db->getColumn($query);
+
+
+$array_of_values = $dq->do_getColumn();
+<?/?>
+
+<h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
+<p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
+that. Previously developer would had to manually add include text into shared template, now you can simply call:
+<?Code?>
+$this->api->jui->addStaticInclude('myjsfile');
+<?/?>
+
+
+<div class="hr hr-small"></div>
+<!-- <a href="<?page?>./apr2011<?/?>">Earler Entries</a> -->
+<a href="<?page?>../jul2011<?/?>">Older Entries</a>
+
+  </div>
+  <div class="g-4">
+    <?$sidebar?>
+  </div>
+</div>
