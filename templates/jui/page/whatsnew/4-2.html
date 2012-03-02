@@ -91,7 +91,7 @@ class Model_Book extends Model_Table {
 }
 <?/?>
 
-<p>The later declaration solves many problems uses of Agile Toolkit 4.1 had in the past. It defines a different ID field for the table and also defines a title field, which is used by other model with "hasOne" reference. Boolean value uses compatible Y/N format and when joining "book_details" table book_details.isbn=book.isbn is used (although 2nd argument could have been ommited). Below is the list of all other features:<ul>
+<p>The later declaration solves many problems users of Agile Toolkit 4.1 had in the past. It defines a different ID field for the table and also defines a title field, which is used by other model with "hasOne" reference. Boolean value uses compatible Y/N format and when joining "book_details" table book_details.isbn=book.isbn is used (although 2nd argument could have been ommited). Below is the list of all other features:<ul>
   <li>Improved model loading and saving consistency</li>
   <li>Allows joining model with additional tables</li>
   <li>Join return "relation" object which can be joined again or import fields from joined table</li>
@@ -103,23 +103,55 @@ class Model_Book extends Model_Table {
 
 
 <h4>Core Changes</h4>
-<p>
+<p><ul>
+  <li>setModel and setController refactored</li>
+  <li>adding certain objects (such as models and controllers) will not have reference stored through elements array (for better garbage collecting)</li>
+  <li>added support for add('namespace/my_object'); for including classes from add-ons</li>
+  <li>introduced $object->rename()</li>
+  <li>new exception mechanics fully adopted. throw $this->exception()</li>
+  <li>recursive downCall removed. Forms now rely on hooks, which is faster anyway</li>
+  <li>SMlite's set() will now use htmlspecialchars. Much better protection against JS injection. setHTML method added.</li>
+</ul></p>
+
+<h4>API Changes</h4>
+<p><ul>
+  <li>api->getDestinationURL renamed to $api->url(). Previous functions is obsolete, but will work until 4.3</li>
+  <li>Magic Quotes are oficially cleaned up if they are enabled in PHP</li>
+  <li>Error reports are much more precise</li>
+  <li>If model raised error, it's possible to activate debug from UI exception/action</li>
+</ul></p>
+
+<h4>View changes</h4>
+<p><ul>
+  <li>HtmlElement merged into View.</li>
+  <li>Lister, CompleteLister fully refactored. Can now use setSource(any iterator)</li>
+  <li>Form can now import fileds from multiple models.</li>
+  <li>MVCForm and MVCGrid are obsolete. Regular form will make use of respective controller if you call $form->setModel()</li>
+  <li>Menu is now based on CompleteLister and is therefore simpler</li>
+  <li>Grid split into Basic and Advanced and Advanced will gradually be further split into objects.</li>
+  <li>Columns can now accept argument of 1..12, percents or it can be omited altogether</li>
+  <li>Order of addMenuItem arguments changed. It's now similar to addField() - first is page name, next label</li>
+  <li>Order of addTabURL arguments changed. It's now similar to addField() - first is page name, next label</li>
+  <li>View_Error and View_Info have a nice box now</li>
+  <li>univ()->errorMessage() can be used to show red notifications</li>
+</ul></p>
+
+<h4>CSS Changes</h4>
+<p><ul>
+  <li>All of Agile Toolkit CSS now is written with LESS</li>
+  <li>CSS styles completely redesigned. Now uses 12-column grid system by default</li>
+  <li>display: block is actively used</li>
+</ul></p>
+
+<h4>Misc</h4>
+<p><ul>
+  <li>Filestore moved into namespaced add-on</li>
+  <li>Filestore new field type for image and file</li>
+  <li>Item re-orderer moved into namespaced add-on</li>
+</ul>
+</p>
 
 
-<h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/a0e46a0aaa0061c173ed716b5dc8c36c308c71bd">Add getColumn() to DBlite</a></h4>
-<?Code?>
-$array_of_values = $this->api->db->getColumn($query);
-
-
-$array_of_values = $dq->do_getColumn();
-<?/?>
-
-<h4><span class="date">August 16<em>th</em></span><a href="https://github.com/atk4/atk4/commit/c75bf8f69bcbc50269bc1848200578e64007e157">$api->jui->addStaticInclude()</a></h4>
-<p>Calling jui->addInclude() or js()->_load() will attempt to load JavaScript file dynamically through AJAX. Some 3rd party JavaScript add-ons do not like
-that. Previously developer would had to manually add include text into shared template, now you can simply call:
-<?Code?>
-$this->api->jui->addStaticInclude('myjsfile');
-<?/?>
 
 
 <div class="hr hr-small"></div>
