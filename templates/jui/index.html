@@ -4,215 +4,213 @@
 <!-- This site source code can be downloaded from https://github.com/atk4/atk4-web      -->
 
 <html>
-	<head>
-		<title><?page_title?>Agile Toolkit - PHP Framework with jQuery<?/?></title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="google-site-verification" content="mzMSBiCKspnt6Vpc_c2U2Ps6zhW3qMxid48vuhOdKPc" />
-		<meta name="keywords" content="agile toolkit, php ui, php ui framework, php ui controls, agile php, amodules3, atk4, php framework, agile framework, atk, best php frameworks, best ui framework, php5, jquery, framework jquery, modern php, zend, yii, cakephp, symphony, javascript <?$seo_keywords?>">
-		<meta name="description" content="<?seo_descr?>Agile Toolkit is a high-performance PHP framework for UI development with jQuery. High levels of efficiency are achieved because your database and your UI are seamlessly and securely integrated. Achieve more with less code.<?/?>" />
-		<meta name="google-site-verification" content="6fVnMpGZlmOyV_uFrn1BYexyJDA4sJeSmTotrM40dWk" />
-		<link rel="shortcut icon" href="<?template?>images/favicon.ico<?/?>" type="image/x-icon"  />
-		<link rel="stylesheet" type="text/css" href="<?template?>css/agile.css<?/?>" />
-		<link rel="stylesheet" type="text/css" href="<?template?>css/themes/agile/jquery-ui.css<?/?>" />
-		<link rel="stylesheet" type="text/css" href="<?template?>css/general.css<?/?>" />
-		<link rel="stylesheet" type="text/css" href="<?template?>css/front.css<?/?>" />
-		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
-		<!-- <script type="text/javascript" src="js/general.js"></script> -->
-		<link rel="stylesheet" type="text/css" href="/templates/jui/css/<?os?>empty<?/?>.css" />
-		<link rel="alternate" type="application/rss+xml" title="Agile Toolkit news &raquo; Feed" href="http://agiletoolkit.org/blog/feed/" />
-		<?$js_include?>
-		<script type="text/javascript" src="<?template?>css/effects.js<?/?>"></script>
-		<script type="text/javascript">
-			$(function(){
-				<?$document_ready?>
-			});
-		</script>
-		<script type="text/javascript">
-  			var _gaq = _gaq || [];
-  			_gaq.push(['_setAccount', 'UA-17702108-2']);
-  			_gaq.push(['_trackPageview']);
+  <head>
+    <title><?page_title?>Agile Toolkit - PHP Framework with jQuery<?/?></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="google-site-verification" content="mzMSBiCKspnt6Vpc_c2U2Ps6zhW3qMxid48vuhOdKPc" />
+    <meta name="keywords" content="agile toolkit, php ui, php ui framework, php ui controls, agile php, amodules3, atk4, php framework, agile framework, atk, best php frameworks, best ui framework, php5, jquery, framework jquery, modern php, zend, yii, cakephp, symphony, javascript <?$seo_keywords?>">
+    <meta name="description" content="<?seo_descr?>Agile Toolkit is a high-performance PHP framework for UI development with jQuery. High levels of efficiency are achieved because your database and your UI are seamlessly and securely integrated. Achieve more with less code.<?/?>" />
+    <meta name="google-site-verification" content="6fVnMpGZlmOyV_uFrn1BYexyJDA4sJeSmTotrM40dWk" />
+    <link rel="shortcut icon" href="<?template?>images/favicon.ico<?/?>" type="image/x-icon"  />
+    <link rel="stylesheet" type="text/css" href="<?template?>css/agile.css<?/?>" />
+    <link rel="stylesheet" type="text/css" href="<?template?>css/themes/agile/jquery-ui.css<?/?>" />
+    <link rel="stylesheet" type="text/css" href="<?template?>css/general.css<?/?>" />
+    <link rel="stylesheet" type="text/css" href="<?template?>css/front.css<?/?>" />
+    <link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
+    <!-- <script type="text/javascript" src="js/general.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="/templates/jui/css/<?os?>empty<?/?>.css" />
+    <link rel="alternate" type="application/rss+xml" title="Agile Toolkit news &raquo; Feed" href="http://agiletoolkit.org/blog/feed/" />
+    <?$js_include?>
+    <script type="text/javascript" src="<?template?>css/effects.js<?/?>"></script>
+    <script type="text/javascript">
+      $(function(){
+        <?$document_ready?>
+      });
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17702108-2']);
+      _gaq.push(['_trackPageview']);
 
-  			(function() {
-    			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  			})();
-		</script>
-	</head>
-	<body id="page-<?$section?>" class="gs-12">
-		<div id="layout">
-			<div id="header">
-				<div class="gs-wrap clearafter">
-					<a href="/" id="logo"><img src="<?template?>images/logo.png<?/?>" alt="Agile Toolkit" /></a>
-					<ul id="navigation">
-						<li <?$menu_about?>><a href="<?page?>about<?/?>"><i class="purple-h"></i>About</a></li>
-						<li <?$menu_doc?>><a href="<?page?>doc<?/?>"><i class="blue-h"></i>Documentation</a></li>
-						<li <?$menu_develop?>><a href="<?page?>community/help<?/?>"><i class="green-h"></i>Community</a></li>
-						<li <?$menu_services?>><a href="<?page?>commercial<?/?>"><i class="yellow-h"></i>Commercial</a></li>
-						<li <?$menu_download?>><a href="<?page?>download<?/?>"><i class="orange-h"></i>Downloads</a></li>
-						<li <?$menu_blog?>><a href="/blog/"><i class="red-h"></i>Blog</a></li>
-					</ul>
-				</div>
-				<div id="hero">
-					<div class="gs-wrap clearafter">
-						<div id="hero-text">
-							<h1></h1>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body id="page-<?$section?>" class="gs-12">
+    <div id="layout">
+      <div id="header">
+        <div class="gs-wrap clearafter">
+          <a href="/" id="logo"><img src="<?template?>images/logo.png<?/?>" alt="Agile Toolkit" /></a>
+          <ul id="navigation">
+            <li <?$menu_about?>><a href="<?page?>about<?/?>"><i class="purple-h"></i>About</a></li>
+            <li <?$menu_doc?>><a href="<?page?>doc<?/?>"><i class="blue-h"></i>Documentation</a></li>
+            <li <?$menu_develop?>><a href="<?page?>community/help<?/?>"><i class="green-h"></i>Community</a></li>
+            <li <?$menu_services?>><a href="<?page?>commercial<?/?>"><i class="yellow-h"></i>Commercial</a></li>
+            <li <?$menu_download?>><a href="<?page?>download<?/?>"><i class="orange-h"></i>Downloads</a></li>
+            <li <?$menu_blog?>><a href="/blog/"><i class="red-h"></i>Blog</a></li>
+          </ul>
+        </div>
+        <div id="hero">
+          <div class="gs-wrap clearafter">
+            <div id="hero-text">
+              <h1></h1>
 
-                                                        <p><span class="highlight">Agile Toolkit</span> is a PHP framework for developing Web User Interfaces.
-                                                        Inspired by <span class="highlight">desktop GUI</span> it provides a full
-                                                        <span class="highlight">object-oriented foundation</span> for Business and Presentation logic
-                                                        of your web software. Compared to other frameworks, Agile
-                                                        Toolkit offers a <a href="<?page?>intro<?/?>">completely new experience</a>.
-                                                        </p>
+              <p><span class="highlight">Agile Toolkit</span> is a PHP framework for developing Web User Interfaces.
+              Inspired by <span class="highlight">desktop GUI</span> it provides a full
+              <span class="highlight">object-oriented foundation</span> for Business and Presentation logic
+              of your web software. Compared to other frameworks, Agile
+              Toolkit offers a <a href="<?page?>intro<?/?>">completely new experience</a>.
+              </p>
 
-							<!-- AddThis Button BEGIN -->
-							<div class="addthis_toolbox addthis_default_style " style="padding-top: 5px">
-							<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-							<a class="addthis_button_tweet"></a>
-							<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-							<a class="addthis_button_facebook_send"></a>
-							<a class="addthis_counter addthis_pill_style"></a>
-							</div>
-							<script type="text/javascript"
-							src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e7768ec21a422ec"></script>
-							<!-- AddThis Button END -->
-						</div>
-						<div id="hero-download">
-							<div id="version">
-								version 4.1.3
-							</div>
-							<a id="index-download-button" href="/download/" class="button black wide">Download</a>
-							<div id="size">.zip archive 1.4 MB (<a href="<?page?>whatsnew<?/?>">latest changes</a>)</div>
-						</div>
-						<div class="clear"></div>
-						<div id="news-box">
-							<div class="label">
-<!-- <i class="icon-tweet"></i>  -->
-<a href="/doc/sc">Agile Screencasts</a></div>
-							<div class="tweet">New series of Screencast! Session 1 and 2 are now available on YouTube. 
-							</div>
-							<div class="follow"><a href="http://www.youtube.com/romaninsh/#p/a/u/1/0_OROS53Fq8">Watch &raquo;</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="introduction">
-				<div id="carousel" class="hex">
-					<div class="gs-wrap">
-						<div class="tron-screen-holder">
-							<a class="tron-screen-button next" href="#"><i></i></a>
-							<div class="tron-screen">
-								<h1>Web Framework. Three Steps Ahead.</h1>
-								<div class="tron-icons">
-									<a class="neon tron-icon ui" href="<?page?>in/ui<?/?>"><span><b>User Interface</b></span></a>
-									<div class="neon stripe"></div>
-									<a class="neon tron-icon jquery" href="<?page?>in/jquery<?/?>"><span><b>jQuery Integration</b></span></a>
-									<div class="neon stripe"></div>
-									<a class="neon tron-icon mvc" href="<?page?>in/models<?/?>"><span><b>Business MVC</b></span></a>
-								</div>
-							</div>
-							<a class="tron-screen-button prev" href="#"><i></i></a>
-						</div>
-					</div>
-				</div>
-                <?Content?>
-                <!--
-				<div id="features" class="blue-noised">
-					<script>
-						$(function(){
-							$('#features .current').prepend('<i></i>');
+              <!-- AddThis Button BEGIN -->
+              <div class="addthis_toolbox addthis_default_style " style="padding-top: 5px">
+                <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                <a class="addthis_button_tweet"></a>
+                <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+                <a class="addthis_button_facebook_send"></a>
+                <a class="addthis_counter addthis_pill_style"></a>
+              </div>
+              <script type="text/javascript"
+                src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e7768ec21a422ec"></script>
+              <!-- AddThis Button END -->
+            </div>
+            <div id="hero-download">
+              <div id="version">
+                version 4.2b1
+              </div>
+              <a id="index-download-button" href="/download/" class="button black wide">Download</a>
+              <div id="size">.zip archive 1.4 MB (<a href="<?page?>whatsnew<?/?>">latest changes</a>)</div>
+            </div>
+            <div class="clear"></div>
+            <div id="news-box">
+              <div class="label">
+                <!-- <i class="icon-tweet"></i>  -->
+                <a href="<?page?>intro<?/?>">NEWS:</a></div>
+              <div class="tweet">Agile Toolkit 4.2 with major improments to ORM, Documentation and Add-ons</div>
+              <div class="follow" style="width: 80px"><a href="<?page?>intro<?/?>">New in 4.2 &raquo;</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="introduction">
+        <div id="carousel" class="hex">
+          <div class="gs-wrap">
+            <div class="tron-screen-holder">
+              <a class="tron-screen-button next" href="#"><i></i></a>
+              <div class="tron-screen">
+                <h1>Web Framework. Three Steps Ahead.</h1>
+                <div class="tron-icons">
+                  <a class="neon tron-icon ui" href="<?page?>in/ui<?/?>"><span><b>User Interface</b></span></a>
+                  <div class="neon stripe"></div>
+                  <a class="neon tron-icon jquery" href="<?page?>in/jquery<?/?>"><span><b>jQuery Integration</b></span></a>
+                  <div class="neon stripe"></div>
+                  <a class="neon tron-icon mvc" href="<?page?>in/models<?/?>"><span><b>Business MVC</b></span></a>
+                </div>
+              </div>
+              <a class="tron-screen-button prev" href="#"><i></i></a>
+            </div>
+          </div>
+        </div>
+        <?Content?>
+        <!--
+        <div id="features" class="blue-noised">
+          <script>
+            $(function(){
+            $('#features .current').prepend('<i></i>');
 
-							$('#features-nav').children('a').click(function(){
-								var r=$(this).attr('data-rel');
-								$('#features').find('.active').hide().removeClass('active');
-									$('#features').find('.'+r).show().addClass('active');
-								$('#features').find('.current').removeClass('current');
-								$(this).addClass('current');
-							});
-						});
-					</script>
-					<div class="gs-wrap">
-						<div id="features-nav">
+            $('#features-nav').children('a').click(function(){
+            var r=$(this).attr('data-rel');
+            $('#features').find('.active').hide().removeClass('active');
+            $('#features').find('.'+r).show().addClass('active');
+            $('#features').find('.current').removeClass('current');
+            $(this).addClass('current');
+            });
+            });
+          </script>
+          <div class="gs-wrap">
+            <div id="features-nav">
 
-							<a data-rel="re-use" class="big-icon motion icon-re-use"></a>
-							<a data-rel="tree" class="big-icon motion icon-tree"></a>
+              <a data-rel="re-use" class="big-icon motion icon-re-use"></a>
+              <a data-rel="tree" class="big-icon motion icon-tree"></a>
 
-							<a data-rel="core" class="big-icon motion icon-core"></a>
-							<a data-rel="molecule" class="big-icon motion icon-molecule"></a>
-							<a data-rel="book" class="big-icon motion icon-book"></a>
-							<a data-rel="wheel" class="big-icon motion icon-wheel current"></a>
-							<a data-rel="trophy" class="big-icon motion icon-trophy"></a>
-							<a data-rel="gpl" class="big-icon motion icon-gpl"></a>
-							<a data-rel="community" class="big-icon motion icon-community"></a>
-							<a data-rel="cubes" class="big-icon motion icon-cubes"></a>
+              <a data-rel="core" class="big-icon motion icon-core"></a>
+              <a data-rel="molecule" class="big-icon motion icon-molecule"></a>
+              <a data-rel="book" class="big-icon motion icon-book"></a>
+              <a data-rel="wheel" class="big-icon motion icon-wheel current"></a>
+              <a data-rel="trophy" class="big-icon motion icon-trophy"></a>
+              <a data-rel="gpl" class="big-icon motion icon-gpl"></a>
+              <a data-rel="community" class="big-icon motion icon-community"></a>
+              <a data-rel="cubes" class="big-icon motion icon-cubes"></a>
 
-							<a data-rel="lego" class="big-icon motion icon-developers"></a>
-						</div>
+              <a data-rel="lego" class="big-icon motion icon-developers"></a>
+            </div>
 
-						<div class="features-text wheel active">
-							<h3>You Decide</h3>
-							<p>Agile Toolkit is a powerful development environment which is equally targeted at
-                            <b>Developers</b> as well as <b>Business</b> needs. It's no longer compromise between "fast" or
-                            "pretty". You can finally achieve both goals.</p>
+            <div class="features-text wheel active">
+              <h3>You Decide</h3>
+              <p>Agile Toolkit is a powerful development environment which is equally targeted at
+              <b>Developers</b> as well as <b>Business</b> needs. It's no longer compromise between "fast" or
+              "pretty". You can finally achieve both goals.</p>
 
-                            <p>Find <b>developer-focused</b> features under icons to the left. For non-technical
-                            <b>business-related</b> benefits explore the icons on the right.</p>
-						</div>
-
-
-						<div class="features-text molecule" style="display: none">
-							<h3>Web Development – Reinvented</h3>
-							<p>We have reinvented web development, so that you wouldn't have to. Agile Toolkit development
-                            is more simple than conventional PHP development or developing using mainstream Frameworks.</p>
-
-                            <p>Knowing HTML is no longer a requirement. Knowing JavaScript wouldn't stop you from using
-                            comprehensive AJAX. And without CSS knowledge, you can still create kick-ass CSS layouts.</p>
-
-                            <p>If you happen to know HTML, CSS and JavaScript, you will find a well-designed abstraction
-                            system at your fingertips with no limitations.</p>
-
-						</div>
+              <p>Find <b>developer-focused</b> features under icons to the left. For non-technical
+              <b>business-related</b> benefits explore the icons on the right.</p>
+            </div>
 
 
-						<div class="features-text trophy" style="display: none">
-                            <h3>Think "Success"</h3>
-                            <p>The key elements to on-line business success are timing, flexibility and budget. With Agile
-                            Toolkit you can achieve all three and have a much better chance to make your idea successful.</p>
+            <div class="features-text molecule" style="display: none">
+              <h3>Web Development – Reinvented</h3>
+              <p>We have reinvented web development, so that you wouldn't have to. Agile Toolkit development
+              is more simple than conventional PHP development or developing using mainstream Frameworks.</p>
 
-                            <p>Your development team can focus on your unique business features and not technical details
-                            from day one. Your budget is safe and development is predictable when you can see your
-                            application evolve in front of you.</p>
+              <p>Knowing HTML is no longer a requirement. Knowing JavaScript wouldn't stop you from using
+              comprehensive AJAX. And without CSS knowledge, you can still create kick-ass CSS layouts.</p>
 
-                            <p>How about change requests? Agile Toolkit can handle them elegantly. At any stage you can
-                            introduce even such fundamental features as Audit, Design changes and URL restructuring.
-						</div>
-						<div class="features-text community" style="display: none">
-							<h3>Community</h3>
-							<p>
-                            You will find Agile Toolkit community consists of professionals focused on getting the job done.
-                            We make it easy for you to meet development teams, consultants and vendors for your
-                            project. You will be able to meet both open-source evangelists and seasoned commercial
-                            professionals.</p>
+              <p>If you happen to know HTML, CSS and JavaScript, you will find a well-designed abstraction
+              system at your fingertips with no limitations.</p>
 
-                            <p>Our community understands the concept of business and how it can benefit from open-source. We
-                            simply use the best approach to get the job done. To use free software or pay for commercial
-                            benefits.</p>
+            </div>
 
-						</div>
-						<div class="features-text cubes" style="display: none">
-							<h3>Ready-to-use components</h3>
-							<p>Most of web software use many similar elements such as comment forms or 
-                            payment forms. Two major problems prevented any generic solutions from emerging.</p>
 
-                            <p>The first problem is lack of a suitable platform. Mainstream frameworks don't address UI the
-                            way other developers want to use it.  Secondly — lack of motivation for a
-                            team to release a platform due to lack of monetary benefit or relaxed licensing.</p>
+            <div class="features-text trophy" style="display: none">
+              <h3>Think "Success"</h3>
+              <p>The key elements to on-line business success are timing, flexibility and budget. With Agile
+              Toolkit you can achieve all three and have a much better chance to make your idea successful.</p>
 
-                            <p>Agile Toolkit helps companies to build free or commercial add-ons which would be highly
-                            integrated into your application. That means a higher coding standards and finally an add-ons you
-                            can use.</p>
-						</div>
+              <p>Your development team can focus on your unique business features and not technical details
+              from day one. Your budget is safe and development is predictable when you can see your
+              application evolve in front of you.</p>
 
+              <p>How about change requests? Agile Toolkit can handle them elegantly. At any stage you can
+              introduce even such fundamental features as Audit, Design changes and URL restructuring.
+            </div>
+            <div class="features-text community" style="display: none">
+              <h3>Community</h3>
+              <p>
+              You will find Agile Toolkit community consists of professionals focused on getting the job done.
+              We make it easy for you to meet development teams, consultants and vendors for your
+              project. You will be able to meet both open-source evangelists and seasoned commercial
+              professionals.</p>
+
+              <p>Our community understands the concept of business and how it can benefit from open-source. We
+              simply use the best approach to get the job done. To use free software or pay for commercial
+              benefits.</p>
+
+            </div>
+            <div class="features-text cubes" style="display: none">
+              <h3>Ready-to-use components</h3>
+              <p>Most of web software use many similar elements such as comment forms or 
+              payment forms. Two major problems prevented any generic solutions from emerging.</p>
+
+              <p>The first problem is lack of a suitable platform. Mainstream frameworks don't address UI the
+              way other developers want to use it.  Secondly — lack of motivation for a
+              team to release a platform due to lack of monetary benefit or relaxed licensing.</p>
+
+              <p>Agile Toolkit helps companies to build free or commercial add-ons which would be highly
+              integrated into your application. That means a higher coding standards and finally an add-ons you
+              can use.</p>
+            </div>
 
 
 
@@ -221,158 +219,158 @@
 
 
 
-						<div class="features-text core" style="display: none">
-							<h3>Beautiful Inside</h3>
-							<p>How many times you have tried to slightly adjust CMS plugin just to find some awful code
-                            behind a shiny interface?</p>
 
-                            <p>Agile Toolkit is beautiful on the inside. It's truthly designed for developers with the best
-                            coding practices. Not only it gets the job done, but it's elegant inside.</p>
+            <div class="features-text core" style="display: none">
+              <h3>Beautiful Inside</h3>
+              <p>How many times you have tried to slightly adjust CMS plugin just to find some awful code
+              behind a shiny interface?</p>
 
-                            <p>There are many features we have moved from the core into add-ons to keep essential things in
-                            the core beautifully extended by a more advanced implementations.<p>
+              <p>Agile Toolkit is beautiful on the inside. It's truthly designed for developers with the best
+              coding practices. Not only it gets the job done, but it's elegant inside.</p>
 
-                            <p>The structure of Agile Toolkit makes it ideal choice for development of Platforms:
-                            white-labeling, customization, localization, add-ons are there when you need them.</p>
-						</div>
-						<div class="features-text gpl" style="display: none">
-							<h3>Take and Share Licensing</h3>
-							<p>We truly love Open-Source and you can download full-featured version of Agile Toolkit at no
-                            cost. We believe in Open-Source movement and are willing to promote it. If you have got Agile
-                            Toolkit for free, publish your software under free license.</p>
+              <p>There are many features we have moved from the core into add-ons to keep essential things in
+              the core beautifully extended by a more advanced implementations.<p>
 
-                            <p>If protecting your Intellectual Property and Source Code is important for you, we offer you a
-                            license for use of Agile Toolkit in commercial environment. This license if focused on your
-                            commercial needs and is designed for businesses.</p>
+              <p>The structure of Agile Toolkit makes it ideal choice for development of Platforms:
+              white-labeling, customization, localization, add-ons are there when you need them.</p>
+            </div>
+            <div class="features-text gpl" style="display: none">
+              <h3>Take and Share Licensing</h3>
+              <p>We truly love Open-Source and you can download full-featured version of Agile Toolkit at no
+              cost. We believe in Open-Source movement and are willing to promote it. If you have got Agile
+              Toolkit for free, publish your software under free license.</p>
 
-                            <p>If you work for non-profit, education or internet start-up, contact us for free licenses.
-                            Agile Toolkit is great for teaching in schools and is a smart choice if you are looking to learn
-                            programming.
-                            </p>
-						</div>
+              <p>If protecting your Intellectual Property and Source Code is important for you, we offer you a
+              license for use of Agile Toolkit in commercial environment. This license if focused on your
+              commercial needs and is designed for businesses.</p>
 
-
-
-
-
-						<div class="features-text tree" style="display: none">
-							<h3>Start small. Grow fast.</h3>
-							<p>Remember you had that great idea, but during the course of development you needed to focus on
-                            technical details? Happened to many of us.</p>
-
-                            <p>Agile Toolkit lets you develop efficiently. Build first prototype in days. Build second
-                            prototype in weeks. Complete your application in months. And the best part is — your code scales
-                            with your needs
-                            </p>
-						</div>
-						<div class="features-text re-use" style="display: none">
-							<h3>Platform Development</h3>
-							<p>Congratulations! Your first project is complete. Look through your classes, there are
-                            probably many of them which you could use in your next project. Copy them into a shared folder
-                            and re-use.</p>
-
-                            <p>Why not publish your classes, templates or resources for others to use? It's as simple as
-                            that.</p>
-
-						</div>
-
-						<div class="features-text lego" style="display: none">
-							<h3>Don't have a team? Pick our team!</h3>
-							<p>Why not select a seasoned team of professional to develop your project for you?</p>
-
-                            <p>Agile Toolkit has a coding convention which ensures that the code 3rd party deliver meets the
-                            best coding practice standards. If you plan to consolidate your development by moving in-house
-                            you will be pleased to see that the code-base is well-developed and is not taking away any of
-							your future flexibility.</p>
-
-							<p>Unlike other frameworks, maintaining Agile Toolkit is easier and more cost-efficient than
-							projects not using Agile Toolkit.</p>
-
-						</div>
-
-						<div class="features-text book" style="display: none">
-							<h3>Develop Smarter</h3>
-							<p>If you are new to Web Development, your friends might have pointed you towards a pile of
-                            documentation, resources and concepts to learn before you make your first form.</p>
-
-                            <p>Agile Toolkit lets you use what you want. It contains awesome MVC, ORM and powerful deployment
-                            features, but if you need just a simple contact page with no advanced stuff, you do not need to
-                            learn all the advanced staff just yet.  </p>
-
-                            <p>By focusing on "what" and not on "how", you can develop smarter and faster. If you need
-                            to learn quick and get the job done, with Agile Toolkit you can.</p>
-						</div>
+              <p>If you work for non-profit, education or internet start-up, contact us for free licenses.
+              Agile Toolkit is great for teaching in schools and is a smart choice if you are looking to learn
+              programming.
+              </p>
+            </div>
 
 
 
-					</div>		
-				</div>
-                                -->
-                <?/?>
-				<div id="engage" class="hex">
-					<div class="gs-wrap">
-						<div class="g-row">
-							<div class="g-5">
-								<a href="<?page?>learn<?/?>" class="bigarrow blue-w">
-									<b class="itc">Start Learning</b>
-									<span>Explore and learn how to develop with Agile Toolkit in the "Learning
-                                    Section"</span>
-								</a>
-							</div>
-							<div class="g-2"><span class="itc">Engage</span></div>
-							<div class="g-5">
-								<a href="<?page?>engage<?/?>" class="bigarrow red-e">
-									<b class="itc">Hire a Developer</b>
-									<span>Look for a company or freelancer to help you build your project in Agile Toolkit</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="footer-guard"></div>
-		</div>
-		<div id="footer">
-			<div class="gs-wrap">
-				<div id="credit">
-					Copyright © 2011 <a href="http://www.agiletech.ie">Agile Technologies</a>. All rights reserved.
-					<div><a id="newsletter-button" href="/newsletter">Subscribe to Newsletter</a><span
-					class="atk-sep">|</span><a id="contact-button" href="/about/contact">Contact Us</a></div>
-				</div>
-				<div class="socials">
-					<a href="http://www.twitter.com/atk4/" id="twitter"></a>
-					<a href="http://www.linkedin.com/company/agile-toolkit?trk=fc_badge" id="linkedin"></a>
-					<a href="http://github.com/atk4" target="_blank" id="github"></a>
-				</div>
-			</div>
-		</div>
-		
-		
-		
-		
-		<div id="atk-growl-holder" class="atk-growl-holder"></div>
-<script type="text/javascript">
-var clicky = { log: function(){ return; }, goal: function(){ return; }};
-var clicky_site_id = 66401179;
-(function() {
-  var s = document.createElement('script');
-  s.type = 'text/javascript';
-  s.async = true;
-  s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
-  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
-})();
-</script>
-<script type="text/javascript">
-(function() {
- var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-  po.src = 'https://apis.google.com/js/plusone.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
- })();
-</script>
 
-<a title="Real Time Web Analytics" href="http://getclicky.com/66401179"></a>
-<noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66401179ns.gif" /></p></noscript>
-		
-		
-	</body>
+
+            <div class="features-text tree" style="display: none">
+              <h3>Start small. Grow fast.</h3>
+              <p>Remember you had that great idea, but during the course of development you needed to focus on
+              technical details? Happened to many of us.</p>
+
+              <p>Agile Toolkit lets you develop efficiently. Build first prototype in days. Build second
+              prototype in weeks. Complete your application in months. And the best part is — your code scales
+              with your needs
+              </p>
+            </div>
+            <div class="features-text re-use" style="display: none">
+              <h3>Platform Development</h3>
+              <p>Congratulations! Your first project is complete. Look through your classes, there are
+              probably many of them which you could use in your next project. Copy them into a shared folder
+              and re-use.</p>
+
+              <p>Why not publish your classes, templates or resources for others to use? It's as simple as
+              that.</p>
+
+            </div>
+
+            <div class="features-text lego" style="display: none">
+              <h3>Don't have a team? Pick our team!</h3>
+              <p>Why not select a seasoned team of professional to develop your project for you?</p>
+
+              <p>Agile Toolkit has a coding convention which ensures that the code 3rd party deliver meets the
+              best coding practice standards. If you plan to consolidate your development by moving in-house
+              you will be pleased to see that the code-base is well-developed and is not taking away any of
+              your future flexibility.</p>
+
+              <p>Unlike other frameworks, maintaining Agile Toolkit is easier and more cost-efficient than
+              projects not using Agile Toolkit.</p>
+
+            </div>
+
+            <div class="features-text book" style="display: none">
+              <h3>Develop Smarter</h3>
+              <p>If you are new to Web Development, your friends might have pointed you towards a pile of
+              documentation, resources and concepts to learn before you make your first form.</p>
+
+              <p>Agile Toolkit lets you use what you want. It contains awesome MVC, ORM and powerful deployment
+              features, but if you need just a simple contact page with no advanced stuff, you do not need to
+              learn all the advanced staff just yet.  </p>
+
+              <p>By focusing on "what" and not on "how", you can develop smarter and faster. If you need
+              to learn quick and get the job done, with Agile Toolkit you can.</p>
+            </div>
+
+
+
+          </div>		
+        </div>
+        -->
+        <?/?>
+        <div id="engage" class="hex">
+          <div class="gs-wrap">
+            <div class="g-row">
+              <div class="g-5">
+                <a href="<?page?>learn<?/?>" class="bigarrow blue-w">
+                  <b class="itc">Start Learning</b>
+                  <span>Explore and learn how to develop with Agile Toolkit in the "Learning Section"</span>
+                </a>
+              </div>
+              <div class="g-2"><span class="itc">Engage</span></div>
+              <div class="g-5">
+                <a href="<?page?>commercial/services<?/?>" class="bigarrow red-e">
+                  <b class="itc">Enterprise Use</b>
+                  <span>Explore how to adopt Agile Toolkit in your corporate environment</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer-guard"></div>
+    </div>
+    <div id="footer">
+      <div class="gs-wrap">
+        <div id="credit">
+          Copyright © 2011 <a href="http://www.agiletech.ie">Agile Technologies</a>. All rights reserved.
+          <div><a id="newsletter-button" href="/newsletter">Subscribe to Newsletter</a><span
+              class="atk-sep">|</span><a id="contact-button" href="/about/contact">Contact Us</a></div>
+        </div>
+        <div class="socials">
+          <a href="http://www.twitter.com/atk4/" id="twitter"></a>
+          <a href="http://www.linkedin.com/company/agile-toolkit?trk=fc_badge" id="linkedin"></a>
+          <a href="http://github.com/atk4" target="_blank" id="github"></a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="atk-growl-holder" class="atk-growl-holder"></div>
+    <script type="text/javascript">
+      var clicky = { log: function(){ return; }, goal: function(){ return; }};
+      var clicky_site_id = 66401179;
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = ( document.location.protocol == 'https:' ? 'https://static.getclicky.com/js' : 'http://static.getclicky.com/js' );
+          ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+      })();
+    </script>
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
+
+    <a title="Real Time Web Analytics" href="http://getclicky.com/66401179"></a>
+    <noscript><p><img alt="Clicky" width="1" height="1" src="http://in.getclicky.com/66401179ns.gif" /></p></noscript>
+
+
+  </body>
 </html>

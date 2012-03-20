@@ -293,6 +293,7 @@ class Sitemap extends AbstractController{
     'lister'=>array(
         'Lister',
         'how'=>'How to Use',
+        'format'=>'Formatting',
         'complete'=>'CompleteLister',
     ),
             /*

@@ -3,7 +3,8 @@ class page_download_box extends Page {
     function init(){
         parent::init();
 
-        $file='agiletoolkit-4.1.3.zip';
+        $file41='agiletoolkit-4.1.4.zip';
+        $file=  'agiletoolkit-4.2.0.zip';
 
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
@@ -13,16 +14,13 @@ class page_download_box extends Page {
                 $this->api->getDestinationURL('about/license')
                 .'">promotes Open Source</a> by granting freedom to access open-source to you and users of your software.');
 
-        $l->add('Can')->set('Your software users must have access to software sources.');
-        $l->add('Can')->set('Any use (personal, commercial or educational) is permitted.');
-        $l->add('Can')->set('You <u>may</u> charge for or sell software based on Agile Toolkit.');
-        $l->add('Can')->set('Use with unlimited CPUs, Domains, Users and Developers.');
-        $l->add('Cant')->set('You may not Encrypt, Obfuscate or Hide your source code.');
-        $l->add('Cant')->set('You may not re-release Agile Toolkit under different license.');
-
-        $p=$l->add('P');
-        $p->add('Text')->set('Alternatively: ');
-        $p->add('HtmlElement')->set('explore closed-source licensing options.')->setElement('a')->setAttr('href',$this->api->getDestinationURL('commercial/store'));
+        $lp=$l->add('P');
+        $lp->add('Can')->set('Your software users must have access to software sources.');
+        $lp->add('Can')->set('Any use (personal, commercial or educational) is permitted.');
+        $lp->add('Can')->set('You <u>may</u> charge for or sell software based on Agile Toolkit.');
+        $lp->add('Can')->set('Use with unlimited CPUs, Domains, Users and Developers.');
+        $lp->add('Cant')->set('You may not Encrypt, Obfuscate or Hide your source code.');
+        $lp->add('Cant')->set('You may not re-release Agile Toolkit under different license.');
 
         $form=$l->add('Form');
         if($this->api->auth->isLoggedIn()){
@@ -43,10 +41,17 @@ class page_download_box extends Page {
 
             });
         }
-        $email->setFieldHint('for critical update notifications and log-in on agiletoolkit.org only');
+        $email->setFieldHint('You will receive confirmation email.');
         $form->setFormClass('vertical');
-        $form->add('P')->set('By downloading you agree with terms of AGPL license.');
-        $form->addSubmit('Download');
+        $form->addSubmit('Download Agile Toolkit 4.2');
+        $l->add('P')->add('HtmlElement')->setElement('a')->set('Download older branch: v4.1.4')
+            ->setAttr('href','https://github.com/atk4/atk4')
+            ->js('click')->load($this->api->getDestinationURL('download/success',
+                        array('file'=>$file41,'cut_page'=>1)));
+
+
+        $l->add('P')->add('HtmlElement')->setElement('a')->set('No email? Download from GitHub instead')
+            ->setAttr('href','https://github.com/atk4/atk4');
 
 
         if($form->isSubmitted()){
