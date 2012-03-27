@@ -46,11 +46,11 @@ class page_download_box extends Page {
         $form->addSubmit('Download Agile Toolkit 4.2');
         $l->add('P')->add('HtmlElement')->setElement('a')->set('Download older branch: v4.1.4')
             ->setAttr('href','https://github.com/atk4/atk4')
-            ->js('click')->load($this->api->getDestinationURL('download/success',
-                        array('file'=>$file41,'cut_page'=>1)));
+            ->js('click',$this->js()->load($this->api->getDestinationURL('download/success',
+                        array('file'=>$file41,'cut_page'=>1))));
 
 
-        $l->add('P')->add('HtmlElement')->setElement('a')->set('No email? Download from GitHub instead')
+        $l->add('P')->add('HtmlElement')->setElement('a')->set('No email? Fork us on GitHub instead')
             ->setAttr('href','https://github.com/atk4/atk4');
 
 
