@@ -20,6 +20,8 @@ class page_users extends Page {
         if($crud->grid){
             $crud->grid->addColumn('expander','more','More...');
             $crud->grid->addColumn('button','token');
+            $crud->grid->addPaginator();
+            $crud->grid->dq->order('id desc');
 			if($_GET['token']){
 				$m=$this->add('Model_ATK_User_Pending')->loadData($_GET['token']);
 				$m->sendToken();

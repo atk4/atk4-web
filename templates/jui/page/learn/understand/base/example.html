@@ -62,26 +62,26 @@ $page->add('View_SlotMachine');
 
 <?Example?>
 $col=$page->add('Columns');
-$col->addColumn()->add('View_SlotMachine');
-$col->addColumn()->add('View_SlotMachine');
+$col->addColumn(5)->add('View_SlotMachine');
+$col->addColumn(5)->add('View_SlotMachine');
 <?/?>
 
         <p><i>"Now make the left one react to the mouse. When I point to it with the mouse, I want the background to change."</i></p>
       
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
 $left->js('click')
     ->animate(array('background-color'=>'#F82'));
-$col->addColumn()->add('View_SlotMachine');
+$col->addColumn(5)->add('View_SlotMachine');
 <?/?>
 
         <p><i>"Hmm.. How about if it changes the color of the one on the right, instead of its own?"</i></p>
 
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
-$right=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
+$right=$col->addColumn(5)->add('View_SlotMachine');
 $left->js('click',$right->js()
     ->animate(array('background-color'=>'#F82')));
 <?/?>
@@ -90,8 +90,8 @@ $left->js('click',$right->js()
 
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
-$right=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
+$right=$col->addColumn(5)->add('View_SlotMachine');
 
 $page->add('Button')->setLabel('Pull')
     ->js('click',
@@ -102,8 +102,8 @@ $page->add('Button')->setLabel('Pull')
 
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
-$right=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
+$right=$col->addColumn(5)->add('View_SlotMachine');
 
 $page->add('Button')->setLabel('Pull')
     ->js('click', array(
@@ -116,8 +116,8 @@ $page->add('Button')->setLabel('Pull')
 
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
-$right=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
+$right=$col->addColumn(5)->add('View_SlotMachine');
 
 $page->add('Button')->setLabel('Pull')
     ->js('click', $col->js()->reload());
@@ -128,7 +128,7 @@ $page->add('Button')->setLabel('Pull')
 
 <?Example?>
 $col=$page->add('Columns');
-$left=$col->addColumn()->add('View_SlotMachine');
+$left=$col->addColumn(5)->add('View_SlotMachine');
 $right=$left->add('View_SlotMachine',null,'after_slots');
 
 $page->add('Button')->setLabel('Pull')

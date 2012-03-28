@@ -53,6 +53,7 @@ EOF;
         }
 
         $m->set('pref',$this->getMailURL('account/mail'));
+        $this->api->stickyForget('t');
 
         return $m;//->send($email);
     }
@@ -124,6 +125,7 @@ EOF;
     function beforeInsert($data){
         // even when children add more conditions, email shouldn't duplicate!
         $em=$data['email'];
+        if(!$em)$em=$this->get('email');
         $m=$this->add('Model_ATK_User')->getBy('email',$em);
         if($m)throw $this->exception('This email is already registered','ValidityCheck')->setField('email');
         return parent::beforeInsert($data);

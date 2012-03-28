@@ -28,6 +28,7 @@ class Model_ATK_User_Surveyable extends Model_ATK_User {
     function setSurvey($survey){
         if(is_object($survey))$survey=$survey->get('id');
 
+        $this->addCondition('created_dts<',date('Y-m-d',strtotime('20 days ago')));
         $this->survey_id=$survey;
         return $this;
     }

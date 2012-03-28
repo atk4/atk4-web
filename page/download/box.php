@@ -68,7 +68,7 @@ class page_download_box extends Page {
                         ))->update();
 
             $form->js()->closest('.atk4_loader')->load($this->api->getDestinationURL('download/success',
-                        array('file'=>$file,'cut_page'=>1)))->execute();
+                        array('t_register'=>false,'file'=>$file,'cut_page'=>1)))->execute();
         }
 
 
