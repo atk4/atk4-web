@@ -14,7 +14,7 @@
 <?Code?>
 $users = $this->api->db->dsql()
         ->table('user')
-        ->where('age>',30)
+        ->where('age','>',30)
         ->order('name')
         ->do_getAllHash();
 
@@ -26,7 +26,7 @@ $users = $this->api->db->dsql()
 <?Code?>
 $dsql = $users = $this->api->db->dsql();
 $dsql->table('user');
-$dsql->where('age>',30);
+$dsql->where('age','>',30);
 $dsql->order('name');
 $users = $dsql->do_getAllHash();
 <?/?>

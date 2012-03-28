@@ -85,6 +85,20 @@ $view->template->set($data);
 The region &lt;?BusinessInfo?&gt; inside the page's template will be replaced by a view. The template chunk, however, will be cloned by the view, so just adding it like this will have no effect on the resulting output. The second line, however, places the contents of an associative $data array into the template of the view.
 </p>
 
+<h2>The second argument</h2>
+<p>When we are adding objects, the second argument can be used to specify the short_name or properties of the object. When left as "null" object will produce unique short_name on it's own. Short name is used to link "owner" with it's object through "elements" array. You may want to specify a name in some very rare cases only, for example, when you are adding a custom field to the model</p>
+
+<?Code?>
+$model->add('Field_Delete','is_deleted'); // implements soft-delete field
+<?/?>
+
+<p>If you specify array as a second argument to add() it will be used as default set of properties for your object. You can access theese properties from init() method and it's a great way to pass arguments to it.</p>
+
+<?Code?>
+$model->add('MyObject',array('foo'=>'bar'));
+echo $model->foo;
+<?/?>
+
 <h2>Working with existing objects</h2>
 <p><b>$this->hasElement($short_name)</b> return child object if found, or false if not found.</p>
 <p><b>$this->getElement($short_name)</b> similar to hasElement() but will produce an exception if not found. Use this when chaining.</p>

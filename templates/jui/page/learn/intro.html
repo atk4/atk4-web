@@ -46,9 +46,9 @@ $page->add('Button')->set('This is a "Button" View');
 
 <p>The button you see on the right is instance of the class "Button". It takes just one line of code to add a button anywhere on your page. The Button object then takes care of rendering itself, handling events, using jQuery UI's widget. This ability of object to do what's necessary is called <b>"abstraction"</b>.
 
-<p>Agile Toolkit has LOTS of view classes for you to use, but if you need to have your own class, you can easily create it. You can override template for any view to specify your own HTML-template, so adding your custom pieces of HTML code is as easy as typing it's filename.</p>
+<p>Agile Toolkit has many fundamental view classes for you to use, but more importantly — you will be developing your own views or getting them through Agile Add-On Manager. You can override template of any view instance hence mixing standard logic with your own look. In other words, with a single "Button" class you may have 3 differently looking buttons on your page.</p>
 
-        <h3>The "Render Tree"</h3>
+<h3>The "Render Tree"</h3>
 <?Execute?>
 $frame = $page->add('HtmlElement')->addStyle('border','1px dashed red')->addStyle('padding','5px');
 $frame = $frame->add('HtmlElement')->addStyle('border','1px dashed green')->addStyle('padding','5px');

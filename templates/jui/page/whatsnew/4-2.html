@@ -38,7 +38,7 @@ $book->save();
 <?/?>
 
 <p>Non-relational models represent most of the no-sql storage options. They maintain the "ID"=&gt; "hash of fields" relationship, can load, store, delete and add records through appropriate controller. They have nothing to do with SQL. Model represent a classic implementation of active record. Model class implements the following features:<ul>
-  <li>Separation of Model logic and Controller logic<li>
+  <li>Separation of Model logic and Controller logic</li>
   <li>Array-like access ($model['name']='John')</li>
   <li>Full iterator support</li>
   <li>Lightweight and fast implementation</li>
@@ -142,6 +142,13 @@ class Model_Book extends Model_Table {
   <li>CSS styles completely redesigned. Now uses 12-column grid system by default</li>
   <li>display: block is actively used</li>
 </ul></p>
+
+<h4>Hooks</h4>
+<p><ul>
+  <li>All hooks will receive the first argument - object on which hook was placed</li>
+  <li>addHook <a href="/dox/html/class_abstract_object.html#a67c42ab2ba6196595fed436bee0daaaf">second argument</a> may be object. Method with the same name as a hook will be called</li>
+</ul>
+</p>
 
 <h4>Misc</h4>
 <p><ul>

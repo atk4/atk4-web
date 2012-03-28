@@ -8,10 +8,16 @@
         sites or interfaces, you can easily do this through a class in the Agile Toolkit called PathFinder. This class allows
         you to define new paths and directories that will be searched when your application is loading its libraries.</p>
 
-        <h3>Local files, atk4 and atk4-addons</h3>
+        <h3>Local files, atk4</h3>
         <p>If you have already looked inside the 'atk4' directory, you would have noticed that it has similar directories to your
         example application. When Agile Toolkit is looking for a certain file, it looks first in your "local" directory.
-        If the file is not found there, then it looks inside the atk4 directory. Finally it looks inside the atk4-addons directories.
+        If the file is not found there, then it looks inside the atk4 directory.</p> 
+
+        <h3>atk4-addons</h3>
+        <p>Agile Toolkit has many add-ons you can use. Addons are distributed through Agile Store in .ZIP files and are unpacked inside
+        atk4-addons folder. Your installation should have created atk4-addons/helloworld and atk4-addons/sample_views for you. While
+        some add-ons would only contain PHP classes, others may dynamically include additional resource types. To activate add-on,
+        referr to the documetation of that speciffic add-on. </p>
 
         <h3>Copy-On-Modify principle</h3>
         <p>Agile Toolkit requires minimally only one or two files. As you enhance or change the default 

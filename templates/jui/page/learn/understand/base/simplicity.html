@@ -17,14 +17,6 @@
         <p>Agile Toolkit provides many ways to simplify your project structure and reduce the amount of code you will
         need to write, therefore code generation is not needed.</p>
 
-        <h3>Focus on solution, not on theory</h3>
-        <p>Agile Toolkit was created to get the job done and to get developers paid. Certainly there are many things it can't
-        do, such as support every possible flavour of SQL, or add support for Sencha JS. We however believe that focusing
-        our limited resources on specific implementations, but giving you many more components to work with, is a much better
-        approach.</p>
-
-        <p><i>Note: Currently only MySQL is supported, but support for other database engines will be eventually added.</i></p>
-
         <h3>Singletons</h3>
         <p>Singletons are evil. Especially in PHP. They give no benefits, not even memory saving. They might have some use in
         Java, but are generally considered a bad design in PHP software.</p>
@@ -55,33 +47,15 @@
         <p>The exception is in field definitions for Models, which use functions primarily for chaining.</p>
 
         <h3>Long variable or class names</h3>
-        <p>Typing long variable names adds up. Methods, classes and properties in Agile Toolkit use compact names
-        to produce as little code as possible</p>
+        <p>Typing long variable names takes time. Methods, classes and properties in Agile Toolkit use compact names
+        to produce as little code as possible. However all methods must be meaningful.</p>
 
         <h3>Namespaces</h3>
-        <p>Starting with PHP5.3, namespaces were introduced to avoid name collision and shorten class names. Agile
-        Toolkit would not benefit from any of those two features. Class naming is already short and quite to-the-point.
-        </p>
-        <p>In Agile Toolkit you can implement class aliasing by extending a class with an empty class. For instance, the 
-        Form class extends Basic/Form. If you want to use a 3rd party Form class it would fit into the Agile naming scheme 
-        and you could alias it.</p>
-        <p>If you are using code which is not built specifically for Agile Toolkit, then namespaces can and should be
-        used.</p>
+        <p>Agile Toolkit uses namespaces for add-ons. It is to avoid class name collisions between different add-ons and base
+        classes. Read add-on development guide for more information.</p>
 
-        <p>Finally, namespace definition and dependencies consume quite an amount of space, and require users to
-        understand them. Agile Toolkit might add transparent support for Namespaces at some point in the future.</p>
 
         <h2>Features to be careful about</h2>
-        <h3>PHPDoc</h3>
-        <p>Adopted from JavaDoc, this is a standard way to document PHP code. Agile Toolkit uses PHPDoc for short comments.
-        While PHPDoc supports many @tags which often have lengthy comments, we believe that there are other means to write
-        documentation. PHPdocs in Agile Toolkit usually consist of a single-line string, containing useful info and 
-        not duplicating meaning already conveyed by the method name itself.</li>
-
-        <h3>XML and Yaml</h3>
-        <p>Those languages are used in Java and by some other frameworks to aid in configuration and code generation. Agile
-        Toolkit is strictly opposed to extra parsing of different formats. PHP developers usually find XML more complex to 
-        understand than native PHP code.</p>
 
         <h3>IDEs and code type hinting</h3>
         <p>Some of the constructions in Agile Toolkit make it impossible for type hinting to work correctly in IDEs. In some
@@ -102,18 +76,28 @@ $f->addFi.. /* completion works */
         <p>An Interface is a design feature in PHP, by which you can set the requirements for class implementation. While it might have some
         use when designing software architecture, it has little use in Agile Toolkit.</p>  
 
-        <h3>Over-testing</h3>
-        <p>Agile Toolkit lets you write less code. Testing is still important, but Agile Toolkit narrows it down to two types
-        of testing. Unit testing is essential to test your business logic. However this type of test is too simple when you need to analyse complex
-        interactions, like when testing user interfaces. In this case you need browser-side testing, which uses a different type of 
-        testing suite.</p>
+        <p>Said that, in a normal model design you will find it very useful to use type hinting</p>
+<?Code?>
+// class "User"
+function purchaseTicket(Model_Bus_Route $route){
+  //..
+}
+<?/?>
 
-        <p>Agile Toolkit recognizes the importance of tests, however you will be pleased to see that the advanced object
-        architecture in Agile Toolkit severely reduces potential problems in presentation logic, and all you need to implement 
-        is low-level testing.</p>
+        <h3>Validation</h3>
+        <p>Agile Toolkit implements certain model hooks such as beforeSave or beforeDelete. You may add tiny methods there which perform
+        a validation check and throw errors.</p>
+<?Code?>
+$model->addHook('beforeSave',function($m){
+  if($m['age']<18)throw $m->exception('Must be 18+')->addMoreInfo('age',$m['age']);
+});
+<?/?>
 
-        <p>Upgrading to a newer version of Agile Toolkit may slightly affect your UI, but as long as you are using it properly, there will be
-        no functional impact.</p>
+        <h3>Localization</h3>
+        <p>Agile Toolkit provides great means for you to supply localization. Override api->_() method which should translate output of
+        Agile Toolkit into your language. You can gettext, SQL or any other technique for providing string translations. Agile Toolkit will
+        route exceptions through this function.
+        </p>
 
 
     </div>
