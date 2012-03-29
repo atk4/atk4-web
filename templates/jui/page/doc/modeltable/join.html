@@ -32,7 +32,10 @@ class Model_User extends Model_Table {
 <p>The syntax of join() is very similar to dsql()->join() and can be used to create all sorts of joins. The above example demonstrates a most common join: user.permission_id = permission.id. If you are willing to to build a reverse join you can use second argument:</p>
 
 <?Code?>
-$this->join('permission','user_id');
+$this->join('permission','perm');
+// user.perm=permission.id
+
+$this->join('permission.user_id');
 // user.id=permission.user_id
 
 $this->join('permission.code','code');
