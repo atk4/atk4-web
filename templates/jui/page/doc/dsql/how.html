@@ -61,6 +61,9 @@ foreach($this->api->db->dsql()->expr('show tables') as $row){
 
 <p>DSQL implements only some PDO fetching modes/features for simplicity, although you can access PDO object through $q->stmt.</p>
 
+<h2>Specifying table</h2>
+<p>Calling table('tbl') is the only requirement before you execute your query. You may specify a second argument to table($table, $alias) which will place an alias for the table and all the fields.</p> 
+
 <h2>Debugging</h2>
 <p>dsql has a method debug() which will "echo" queries as they are being produced.</p>
 <?Code?>
@@ -71,5 +74,6 @@ $q->field('name');
 $data = $q->get();    // will output debugging information
 <?/?>
 
+<p>DSQl may not re-generate query once it's generated for purposes of performance.</p>
 
 <?$Next?>
