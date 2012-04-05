@@ -36,4 +36,11 @@
 <h2>Special template tags</h2>
 <p>View and AbstractView will replace tag &lt;?$_name?&gt; with the name of current object. They will also look for all occurrences of "template" tag and pass content of those tags through "<a href="/dox/html/class_api_c_l_i.html#a15722a2f6c1c42ae85c86227044f1f2a">locateURL</a>" method of <a href="/dox/html/class_path_finder.html">pathfinder</a>.</p>
 
+<h2>Choice of controllers</h2>
+<p>When you call $view->setModel($m) on a very basic view, then it will simply set $view->model accordingly. More complex views, however, will want to perform certain action with a model. To separate out binding functionality within standard models, agile toolkit is using Controllers.</p>
+
+<p>Class Grid_Basic defines $default_controller property to 'Controller_MVCGrid' which then is responsible for populating columns from the model.</p>
+
+<p>Models typically have no View-related logic. If you, however, associate some view logic with the controller, such as special hint next to one of the form fields or conditional display behaviour, you can define $model->default_controller which will be initialized by setModel().</p>
+
 <?$Next?>

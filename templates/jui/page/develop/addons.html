@@ -1,55 +1,95 @@
-<!-- originally should be under development section -->
-<h1><?page_title_?>Add-ons<?/?></h1>
-<?seo_descr?>Add-ons and extensions available for Agile Toolkit.<?/?>
-<?seo_keywords?>add-on, library, community, realex, statistics, audit, permissions, cms, referral, tree design, multi-currency, import csv files, parse csv files, GEOip localisation, photo widget, video widget, user module<?/?>
-<h2>Add-ons available</h2>
 
-<p>We have developed a library of add-ons that are common in many web projects. See of most popular add-ons below.</p>
+<h1>Developing add-ons for Agile Toolkit 4.2</h1>
 
-<p>If you have great add-on idea that you would like to see developed <a href="/contactus">Contact Us</a>. We would love to hear more about it and give it to the Agile Toolkit community to develop in the future.</p>
+<p>One of the best features of Agile Toolkit 4.2 is extensive support for add-ons. Using add-ons Agile Toolkit can be extended significantly.</p>
 
-<h2>Currently available add-ons</h2>
+<p>Before you develop an addon, you should look into some existing add-ons and how they are built. Majority of add-ons are very simple and can be easily understood</p>
 
-<h4>Realex payment add-on</h4>
-<p>If you wish to receive credit/debit card payments - this is all-in-one solution for it. Just add it to your software, enter your Realex Merchant ID and password. It will take care of charging your customers monthly and allow you to amend and refund payments</p>
+<p>Add-ons in Agile Toolkit play a passive role. First you need to download add-on and place inside atk4-addons folder. Then you need to explicitly use it.
 
-<h4>User statistics/audit add-on</h4>
-<p>This is the perfect add-on if you wish to see how your users have performed over period of time.</p>
+<?Code?>
+$page->add('helloworld/Core');
+<?/?>
 
-<h4>Permission add-on</h4>
-<p>Granting privileges to one user and denying them to other is always a hassle. This is basic permission module that can be implemented in your application for seamless permission control. </p>
+<p>You will find that <?addon?>helloworld<?/?> is already bundled with your copy of Agile Toolkit. There are also some other add-ons too. Read through their source-code and try using them.</p>
 
-<h4>Agile Toolkit CMS</h4>
-<p>Content Management Systems (CMS) are important for most of the websites. If you want simply to use and great CMS in your application, this is the solution.</p>
+<h2>Creating your own add-on</h2>
+<p>Go to http://agiletoolkit.org/ and log into your account. Click on "Create new Add-on" button and pick a name. It's important to pick a good name before you start developing. The name will have to match with "namespace" you are using. We are taking efforts to make sure the namespaces are distributed fairly, so once you register your add-on, others won't be able to use the same name.</p>
 
-<h4>Referral add-on</h4>
-<p>If you wish to award other websites / people who referred client to you, this software is for you</p>
+<p>When you have secured your name, you will get email confirmation. Create atk4-addons/myaddon and start developing it. Define a namespace. Take extra care to reference global namespace when you extend core objects.</p>
 
-<h4>Comments module</h4>
-<p>User interaction is what makes any website great. Comments module allows user to comment on different pages and for you to administrate them from the admin system.</p>
+<h3>Dependencies</h3>
+<p>Inside the main class of your add-on add the following lines:</p>
+<?Code?>
+  $this->api->requires('atk','4.2.1');
+  $this->api->requires('other_addon','2.1');
+<?/?>
+<p>You can specify version inside atk4-addons/myaddon/VERSION.</p>
 
-<h4>Tree design</h4>
-<p>While its not very common, a lot of data can become rather difficult without a tree display. This is a simple add-on that will allow you to move items in tree design, edit, add and delete them.</p>
 
-<h4>Parse / import csv files</h4>
-<p>Another data add-on that will help you take care of seamless import / export of comma separated files (csv) in your database.</p>
+<h3>Writing installation instrucitons</h3>
+<p>Create file atk4-addons/myaddon/README containing the steps developers must undertake to use your add-on in their application.</p>
 
-<h4>Multi-currency</h4>
-<p>If you are have more than one currency then managing it can sometimes become hard. Use this add-on to simplify it.</p>
+<h3>Live Demo</h3>
+<p>Create a sample applicaion using your add-on and deploy it to PHPFog. They host a simple applications free of charge without time restrictions, so you don't need to pay for your "demo" hosting.</p>
 
-<h4>Country selection</h4>
-<p>While there is a lot of country selection add-ons out there, it is hard to find one that fits neatly into your software. Download this simple add-on and amend it for your solution.</p>
+<h2>What can you create inside add-on</h2>
 
-<h4>Photo widget</h4>
-<p>Great solution for photo galleries displayed on your website</p>
+<h3>Models</h3>
+<p>Sometimes certain tables are re-usable. The good example of an add-on containing models would be "<?addon?>filestore<?/?>". This add-on will define filestore/Model_File, filestore/Model_Image which are tied to a physical files stored inside "uploads" directory and the metadata stored in SQL table.</p>
 
-<h4>Video widget</h4>
-<p>Allows you to display various youtube videos and a video gallery on your website</p>
+<p>You will find an example Model inside <?addon?>helloworld<?/?> called 'MyModel'. To use:</p>
 
-<h4>GEOIP localisation addon</h4>
-<p>If you need to pinpoint people, offices, cars, shops or more on a map, this is the best GeoIP out there.</p>
+<?Code?>
+  $view->setModel('helloworld/MyModel');
+<?/?>
 
-<h4>User module</h4>
-<p>This is a simple module allowing you to implement login, registration, user profile and administration right away.</p>
+<h3>Controllers</h3>
+<p>In most cases, add-ons would contain controllers. Addon <?addon?>gridorder<?/?> is a good example of add-on based conttroller.</p>
 
-<p><b>Interested?</b> <a href="/contactus">Contact Us</a> today and we will provide you with great deal.</b></p>
+<h3>Views</h3>
+<p>Addons may contain views. See <?addon?>formandsave<?/?> for a sample view based on Form.</p>
+
+<h3>Resources</h3>
+<p>Apart from PHP, add-ons may contain additional resources. To make those resources discoverable, use pathfinder.</p>
+<?Code?>
+$l=$this->api->locate('addons','gridorder','location');
+$this->api->pathfinder->addLocation($this->api->locate('addons','gridorder'),array(
+  'template'=>'templates'
+))->setParent($l);
+<?/?>
+
+<h3>Model Fields</h3>
+<p>When Model fields are being defined, it relies on the "Field" class. If you use hasOne, hasMany etc then different types of objects are added into a model. You may create your own model field types which enhance query building, model behaviour and more. Refer to <a href="https://github.com/atk4/atk4-addons/tree/4.2/filestore/lib/Field/Image.php" target="_blank">atk4-addons/filestore/lib/Field/Image.php</a> for a good example. To add this field in your model your user would need to write:</p>
+<?Code?>
+$model->add('filestore/Field_Image','picture_id');
+<?/?>
+
+<h3>Adding pages</h3>
+<p>TO BE CHANGED!</p>
+<p>You can use pathfinder to add "page" location. Please note that when including extra directories through pagefinder, they will no longer be concealed in your namespace. 
+
+<h2>Tips and Tricks</h2>
+<h3>Including additional resources inside your add-on</h3>
+<p>You may ask user to place the code which includes a core controller of your add-on into initialization of their API. You should explain clearly what those controllers do and why they are needed. Inside your class you need to locate your add-on first and then add locations of other resources you might have bundled.</p>
+
+<p>If you have helloworld/templates/view/hello.html which is required by your view, then simply use the following code:</p>
+<?Code?>
+$l=$this->api->locate('addons','gridorder','location');
+$this->api->pathfinder->addLocation($this->api->locate('addons','helloworld'),array(
+    'template'=>'templates'
+))->setParent($l);
+<?/?>
+<p>You must be aware, that defaultTemplate() method is called before init() and if your view would want to use a bundled template, you should move the above code inside defaultTemplate() method.</p>
+
+<h3>Avoiding repetition of your add-on name</h3>
+<p>As we do not want to continiously repeat "helloworld" throughout your add-on code, you should define a constant within the namespace, then use it, as there are no __NAMESPACE__ magic. If you are using the following syntax:</p>
+
+<h3>Extending classes defined in add-ons</h3>
+<p>You may extend classes from your add-on in the global namespace or inside other add-ons through the followin syntax:</p>
+<?Code?>
+class Model_MyImage extends filestore\Image {
+    // ...
+}
+<?/?>
+
