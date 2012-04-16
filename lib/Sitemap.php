@@ -296,6 +296,12 @@ class Sitemap extends AbstractController{
         'format'=>'Formatting',
         'complete'=>'CompleteLister',
     ),
+    'translate'=>array(
+        'Translation',
+        'atk'=>'Core Error Messages',
+        'templates'=>'Your Templates',
+        'docs'=>'Agile Toolkit Documentation',
+    ),
             /*
             'filter'=>array(
                 'Filter',

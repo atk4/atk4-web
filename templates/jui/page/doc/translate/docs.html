@@ -1,0 +1,12 @@
+<?$Content?>
+
+<h1>Translating www.agiletoolkit.org</h1>
+
+<p>Translations of documentation on agiletoolkit.org are user-contributed. We are willing to provide documentation in many new languages, but we need your help to translate them.</p>
+
+<p>To translate you need to fork <a href="https://github.com/atk4/atk4-web">Github repository of agiletoolkit.org</a> and populate "locale" directory with translated copy of templates. You can always install agiletoolkit.org website locally to preview your translation. Here is how translated page looks like: </p>
+<?Execute?>
+$this->add('HtmlElement')->setElement('A')->setAttr('href',$this->api->getDestinationURL('learn/install/lamp',array('lang'=>'pl')))->set('Polish translation of installation page');
+<?/?>
+
+<p>

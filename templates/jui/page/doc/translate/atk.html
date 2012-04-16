@@ -1,0 +1,9 @@
+<?$Content?>
+
+<h1>Translating Core Error Messages</h1>
+
+<p>Agile Toolkit channels all the core exceptions through $obj->exception() function. This function passes it's argument to $api->_() method which is designed to provide translation for messages. By default all the text is returned as-is, however you can either use add-ons or define your own translation rules.</p>
+
+<p>Here is example addon translating Agile Toolkit into <?addon?>russian<?/?>: <a href="https://github.com/atk4/atk4-addons/blob/4.2/russian/lib/Controller/Translation.php">https://github.com/atk4/atk4-addons/blob/4.2/russian/lib/Controller/Translation.php</a></p>
+
+<?$Next?>

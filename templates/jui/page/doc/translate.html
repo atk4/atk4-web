@@ -1,0 +1,25 @@
+<?$Content?>
+
+<div class="g-row" id="doc-ref">
+	<div class="g-6">
+          <p>Agile Toolkit can be translated into your language. This mainly applies to internal error messages.
+          Agile Toolkit also provides you with a way to translate interface of your application</p>
+
+<?Code?>
+$this->add('russian/Controller_Translation');
+$this->add('Text')->set(
+  $this->api->_('Hello World')  // translates
+);
+<?/?>
+ 
+                
+    </div>
+	<div class="g-6">
+		<div class="ref-item box blue-noised">
+			<b>Form-related documentation</b>
+			<p>Select section:</p>
+            <?$toc?>
+        </div>
+    </div>
+</div>
+

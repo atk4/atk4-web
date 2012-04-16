@@ -1,0 +1,21 @@
+<?$Content?>
+
+<h1>Creating multi-lingual templates</h1>
+
+<p>Agile Toolkit can be instructed to look into multiple folders for your templates. Add the following function into your API class:</p>
+
+<?Code?>
+function addDefaultLocations($base_directory){
+    if($this->locale){
+        $this->addLocation('locale/'.$this->locale,array(
+            'php'=>'lib',
+            'page'=>'page',
+            'template'=>'templates',
+            ))->setBasePath($base_directory.'/locale/'.$this->locale);
+    }
+}
+<?/?>
+
+<p>Next you will need to set property $locale='ru' and create folder locale/ru/templates/... This will now be used to locate templates first and when not found, default locations will be checked.</p>
+
+<?$Next?>

@@ -6,7 +6,10 @@ class AgileToolkitWeb extends ApiFrontend {
     public $locale=null;
     public $greet;
     function __construct($locale=null){
-        $this->locale=$locale;
+        if(isset($_GET['lang'])){
+            $this->locale=$_GET['lang'];
+            $this->stickyGET('lang');
+        }
         parent::__construct('AgileWeb','jui');
     }
     function addDefaultLocations($base_directory){

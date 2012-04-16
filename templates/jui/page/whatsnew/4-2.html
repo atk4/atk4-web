@@ -10,6 +10,10 @@
 <h4>Compatibility</h4>
 <p>Most of the functionality in 4.2 is syntactically compatible with 4.1, although some things will require changes. The 4.1.4 will attempt to provide a common syntax which will help switching between version easier. For larger projects with stable code it's advised to keep on 4.1 branch, although any new projects should use 4.2.</p>
 
+<p><font color="red">If you are upgrading, read this document carefully. Features labeled "IMPORTANT" must be changed in your code</font></p>
+
+<p>For commercial license holders 4.2 will continue to be supported for at least 5 years.</p>
+
 <h4>Database access</h4>
 <p>DSQL, Models, and Database access have been fully rewritten. DSQL is now PDO-compatible and will work with non-MySQL databases. DSQL have been fully re-written, however the new implementation methods are compatible. New implementation of DSQL is much cleaner and more flexible. It retains all the features of previous DSQL and adds the following additional features:<ul>
   <li>Support for sub-selects</li>
@@ -104,13 +108,14 @@ class Model_Book extends Model_Table {
 
 <h4>Core Changes</h4>
 <p><ul>
-  <li>setModel and setController refactored</li>
+  <li><b>IMPORTANT</b>: All hook functions will now receive first argument a reference to a calling object. (before: myHook($foo,$bar),  now: myHook($caller,$foo,$bar) )</li>
   <li>adding certain objects (such as models and controllers) will not have reference stored through elements array (for better garbage collecting)</li>
   <li>added support for add('namespace/my_object'); for including classes from add-ons</li>
   <li>introduced $object->rename()</li>
   <li>new exception mechanics fully adopted. throw $this->exception()</li>
   <li>recursive downCall removed. Forms now rely on hooks, which is faster anyway</li>
   <li>SMlite's set() will now use htmlspecialchars. Much better protection against JS injection. setHTML method added.</li>
+  <li>setModel and setController refactored.</li>
 </ul></p>
 
 <h4>API Changes</h4>
