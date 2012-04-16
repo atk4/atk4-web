@@ -2,6 +2,7 @@
 class page_doc_dblite extends Doc_Page {
 	function init(){
 		parent::init();
+        $this->api->redirect('doc/dsql');
 		$dbl=$this->add('Doc_Class_DBlite')
 			->setName('DBLite')
 			->set('type','controller')

@@ -13,22 +13,19 @@
 $this->requires('atk','4.1.4');
 <?/?>
 
+<p>With this you will be able to switch between 4.1 and 4.2 easily.</p>
 
 <h4>Upgrading</h4>
-<p>We recommend you to branch your code before upgrading to 4.2. Some changes require you to 
+<p>Most of the functionality in 4.2 is syntactically compatible with 4.1, although some things will require changes. The 4.1.4 will attempt to provide a common syntax which will help switching between version easier.</p>
 
-<p>Most of the functionality in 4.2 is syntactically compatible with 4.1, although some things will require changes. The 4.1.4 will attempt to provide a common syntax which will help switching between version easier. For larger projects with stable code it's advised to keep on 4.1 branch, although any new projects should use 4.2.</p>
-
-<p><font color="red">If you are upgrading, read this document carefully. Features labeled "IMPORTANT" must be changed in your code</font></p>
-
-<p>For commercial license holders 4.2 will continue to be supported for at least 5 years.</p>
+<p><font color="red">If you are upgrading, read this document carefully. Features labeled "IMPORTANT" require change of your code.</font></p>
 
 <h4>Database access</h4>
-<p>DSQL, Models, and Database access have been fully rewritten. DSQL is now PDO-compatible and will work with non-MySQL databases. DSQL have been fully re-written, however the new implementation methods are compatible. New implementation of DSQL is much cleaner and more flexible. It retains all the features of previous DSQL and adds the following additional features:<ul>
+<p>DSQL, Models, and Database access classes have been fully rewritten. DSQL is now PDO-compatible and will work with non-MySQL databases. It has been tested with Sqlite and PostreSQL. The new implementation is compatible, but also more powerful, cleaner and flexible. New features:<ul>
   <li>Support for sub-selects</li>
   <li>Proper suppor for "or"</li>
   <li>Support for expressions</li>
-  <li>Vendor-specific syntax changes</li>
+  <li>Vendor-specific syntax changes (such as $dsql->limit($a,$b))</li>
   <li>Custom arguments and templates</li>
   <li>Full iterator support</li>
 </ul></p>
@@ -39,8 +36,13 @@ foreach($this->api->db->dsql()->table('user') as $row){
 }
 <?/?>
 
+See <a href="<?page?>doc/dsql<?/?>">Full documentation of DB and DSQL</a>, 
+<a href="/dox/html/class_d_b.html">DB class reference</a>, 
+<a href="/dox/html/class_d_b__dsql.html">DSQL class reference</a>.
+
+
 <h4>Models</h4>
-<p>The implementation of models in 4.1 have been considered an add-on due to poor quality of the code. In 4.2 model code has been completely rewritten and the new version is much more lightweight. Models have also been divided into two classes: Relational models and non-relational</p>
+<p>The implementation of models in 4.1 have been considered an add-on due to poor quality of the code. In 4.2 model code has been completely rewritten and the new version is much more powerful and much better integrated. Models have also been divided into two classes: Relational models and non-relational. You can extend non-relational models to use with no-SQL databases by adding Data Controllers. (note: MemCached data controller is not included with Agile Toolkit)</p>
 
 <?Code?>
 $book = $this->add('Model_Book')
@@ -62,6 +64,8 @@ $book->save();
 
 <p>The model field definition object have been rewritten also. It can now participate in query building and even add hooks into the model, so it's much easier now to add custom field types.</p>
 
+See <a href="<?page?>doc/model<?/?>">Full documentation of Model</a>, 
+<a href="/dox/html/class_model.html">Model class reference</a>.
 
 <h4>Relational Models</h4>
 <p>Model_Table class is more powerful than ever. It takes advantage of new field definition classes to implement relations and references. Relation are "joins" between multiple tables and references are "links" between models. This concept is separated very specifically in 4.2. The model implementation in 4.2 is also much more consistent in it's mechanics too.</p>
@@ -114,6 +118,10 @@ class Model_Book extends Model_Table {
 </ul>
 </p>
 
+<p>
+See <a href="<?page?>doc/modeltable<?/?>">Full documentation of Relational Model</a>, 
+<a href="/dox/html/class_model___table.html">Model_Table class reference</a>.
+</p>
 
 <h4>Core Changes</h4>
 <p><ul>
@@ -127,6 +135,11 @@ class Model_Book extends Model_Table {
   <li>setModel and setController refactored.</li>
 </ul></p>
 
+<p>
+See <a href="<?page?>doc/core<?/?>">Full documentation of Core Objects</a>, 
+<a href="/dox/html/class_abstract_object.html">AbstractObject class reference</a>.
+</p>
+
 <h4>API Changes</h4>
 <p><ul>
   <li>api->getDestinationURL renamed to $api->url(). Previous functions is obsolete, but will work until 4.3</li>
@@ -134,6 +147,11 @@ class Model_Book extends Model_Table {
   <li>Error reports are much more precise</li>
   <li>If model raised error, it's possible to activate debug from UI exception/action</li>
 </ul></p>
+
+<p>
+See <a href="<?page?>doc/api<?/?>">Full documentation of Application Classes</a>, 
+<a href="/dox/html/class_api_c_l_i.html">API class reference</a>.
+</p>
 
 <h4>View changes</h4>
 <p><ul>
@@ -150,19 +168,17 @@ class Model_Book extends Model_Table {
   <li>univ()->errorMessage() can be used to show red notifications</li>
 </ul></p>
 
+<p>
+See <a href="<?page?>doc/view<?/?>">Full documentation of View Class</a>, 
+<a href="/dox/html/class_view.html">API class reference</a>.
+</p>
+
 <h4>CSS Changes</h4>
 <p><ul>
   <li>All of Agile Toolkit CSS now is written with LESS</li>
   <li>CSS styles completely redesigned. Now uses 12-column grid system by default</li>
   <li>display: block is actively used</li>
 </ul></p>
-
-<h4>Hooks</h4>
-<p><ul>
-  <li>All hooks will receive the first argument - object on which hook was placed</li>
-  <li>addHook <a href="/dox/html/class_abstract_object.html#a67c42ab2ba6196595fed436bee0daaaf">second argument</a> may be object. Method with the same name as a hook will be called</li>
-</ul>
-</p>
 
 <h4>Misc</h4>
 <p><ul>
