@@ -1,58 +1,13 @@
 
-<h2><?subject?>Welcome to Agile Toolkit Community<?/?></h2>
+<h2><?subject?>Welcome to AgileToolkit.org<?/?></h2>
 
-<p>As a conceptual author and active maintainer of Agile Toolkit I 
-appreciate your interest in something I've been working on in my spare time
-for the past 10 years.</p>
-
-<p>I am a professional web developer, working since 1993. I have participated 
-in hundred different web projects: SaaS, on-line sites, portals, information
-systems and other web applications. Agile Toolkit was born out of my frustration
-that open-source libraries are polluted with unnecessary features, lacking any
-elegance and extensible architecture. In early 2010 I published AgileToolkit.org
-and it's popularity is growing exponentially.
-</p>
-
-<h4>Your Voice is Important!</h4>
-
-<p>Since I first published Agile Toolkit I work hard to answer every single user
-request. People all over the world send me questions, feedback, testimonials and
-suggestions. I really love your feedback. </p>
-
-<p><b>I want to know more about you and how Agile Toolkit can help</b>. Write back
-about What kind of project you thought of building? Are you willing to open-source
-it? Would you want others to help you out? What addons you are interseted in? What
-you love an hate about Toolkit? What is lacking?</p>
-
-<p>Meanwhile I am working on some really exciting things
-such as noSQL support, Agile CMS, Agile Cart,
-and Agile On-line Plugin Store. I will be announcing them soon. To keep up with
-updates and interact with other users through AgileToolkit.org, click below:</p>
+<p>To complete your sign-up process and be able to access additional resources, upload
+your own add-ons and contribute information on agiletoolkit.org, you should click the 
+link below.</p>
 
 <a href="<?$url?>"><?$url?></a>
 
+<p>You will be able to find "Learning Guide" on the website, which will guide you to
+your first web application with Agile Toolkit. </p>
 
-<h3>Why world needs Agile Toolkit?</h3>
-<p>Agile Toolkit will help you learn how to develop as a professional, not
-some script junkie who copy-pastes snippets or kills website performance with dozens
-of plug-ins. With Agile Toolkit development is FUN and it's done in best traditions.
-Agile Toolkit combines the "right" with "simple". You will improve your general
-programming abilities as you learn Agile Toolkit.</p>
-
-<p>The nature of Agile Toolkit makes it an ideal platform for developing
-any type of web software ranging from a simple CMS-site down to a complex
-financial SaaS.  Agile Toolkit is about collecting our collaborative experience and making
-it easy-to-use for a new developers. It is about making many things work
-intuitively.</p>
-
-<p><b>Agile Toolkit hides complexity by abstracting it, not avoiding it</b></p>
-
-<p>I am curious about your progress, but for now you must have some interesting ideas to work on.
-Try them. If you ever get stuck you can ask me by replying to this email or by asking
-community to help. We don't have forum, since we are busy working, but there are other ways
-to engage: <a href="http://agiletoolkit.org/community/help">http://agiletoolkit.org/community/help</a>.
-
-
-<p><i>Happy Coding<br/>
-Romans Malinovskis<br/>
-The Architect of Agile Toolkit</i></p>
+<p><i>Happy Coding!!</i></p>
