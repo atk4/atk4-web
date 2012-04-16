@@ -5,9 +5,18 @@
   <div class="g-8">
 <h2>Development Changes - 4.2 branch</h2>
 
-<p>Version 4.2 is our biggest update ever for Agile Toolkit. Large portion of classes in Agile Toolkit was re-factored and the rest of the code received cleanup.</p>
+<p>Version 4.2 release is aimed at making Agile Toolkit cleaner, more documented, more flexible and scalable. Your web software developed with 4.1 can be easily adopted to use with 4.2. This version is highly recommended for new software. You should upgrade to 4.2 if your software is still in it's development phase. For software already deployed with 4.1 we have released the <a href="<?page?>../4-1-4<?/?>">4.1.4</a> version.</p>
 
-<h4>Compatibility</h4>
+<h2>Compatibility Mode</h2>
+<p>To get into 4.2 quickly with minimum amount of changes, we've created a "Compatibility" layer. To activate it, you need to add the following line to your Application's init() code (preferably right after parent::init())</p>
+<?Code?>
+$this->requires('atk','4.1.4');
+<?/?>
+
+
+<h4>Upgrading</h4>
+<p>We recommend you to branch your code before upgrading to 4.2. Some changes require you to 
+
 <p>Most of the functionality in 4.2 is syntactically compatible with 4.1, although some things will require changes. The 4.1.4 will attempt to provide a common syntax which will help switching between version easier. For larger projects with stable code it's advised to keep on 4.1 branch, although any new projects should use 4.2.</p>
 
 <p><font color="red">If you are upgrading, read this document carefully. Features labeled "IMPORTANT" must be changed in your code</font></p>
