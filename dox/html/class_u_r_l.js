@@ -2,6 +2,7 @@ var class_u_r_l =
 [
     [ "__toString", "class_u_r_l.html#a7516ca30af0db3cdbf9a7739b48ce91d", null ],
     [ "addStickyArguments", "class_u_r_l.html#afb25a87b9aa0cfbfd84f4235dc91d38f", null ],
+    [ "get", "class_u_r_l.html#a487d0fa2401e31e7c7f2516ce3df1649", null ],
     [ "getArguments", "class_u_r_l.html#adaf33277e2cfd1a02590e9e98011dbb9", null ],
     [ "getBaseURL", "class_u_r_l.html#ae55da8dc3cff0839c2f0bab9082a33c3", null ],
     [ "getExtension", "class_u_r_l.html#ae6914d3a98b1490a7da85ffb5e4cb8ab", null ],

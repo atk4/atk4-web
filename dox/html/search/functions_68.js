@@ -4,6 +4,7 @@ var searchData=
   ['haselement',['hasElement',['../class_abstract_object.html#a3509ee689838a4d7e6a487c50e113655',1,'AbstractObject']]],
   ['hasfield',['hasField',['../class_form___basic.html#a745df067a3c60381abd68e82d5784b26',1,'Form_Basic\hasField()'],['../class_model.html#a745df067a3c60381abd68e82d5784b26',1,'Model\hasField()']]],
   ['hasglobalmethod',['hasGlobalMethod',['../class_api_c_l_i.html#a41891ce66520bbc96bb11a9e9d8323a7',1,'ApiCLI']]],
+  ['hasinsertoption',['hasInsertOption',['../class_d_b__dsql.html#aead37bdd57fe56e0ad4a70867563cd0b',1,'DB_dsql']]],
   ['hasmany',['hasMany',['../class_model___table.html#a379abc6162aae2f9889571969c3c6f07',1,'Model_Table']]],
   ['hasmethod',['hasMethod',['../class_abstract_object.html#a6d24132dc92242f7f71aa98e7ae86442',1,'AbstractObject']]],
   ['hasone',['hasOne',['../class_model___table.html#a5b2c621609073dc27ae66381d9ea6cf5',1,'Model_Table\hasOne()'],['../class_s_q_l___relation.html#a5b2c621609073dc27ae66381d9ea6cf5',1,'SQL_Relation\hasOne()']]],

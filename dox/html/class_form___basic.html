@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -106,18 +104,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Form_Basic Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Form_Basic" --><!-- doxytag: inherits="AbstractView" --><div class="dynheader">
+<!-- doxytag: class="Form_Basic" --><!-- doxytag: inherits="View" --><div class="dynheader">
 Inheritance diagram for Form_Basic:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_form___basic.png" usemap="#Form_Basic_map" alt=""/>
   <map id="Form_Basic_map" name="Form_Basic_map">
+<area href="class_view.html" alt="View" shape="rect" coords="53,112,149,136"/>
 <area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
 <area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
-<area href="class_form.html" alt="Form" shape="rect" coords="53,168,149,192"/>
-<area href="class_filter.html" alt="Filter" shape="rect" coords="0,224,96,248"/>
-<area href="class_m_v_c_form.html" alt="MVCForm" shape="rect" coords="106,224,202,248"/>
-<area href="class_quick_search.html" alt="QuickSearch" shape="rect" coords="0,280,96,304"/>
+<area href="class_form.html" alt="Form" shape="rect" coords="53,224,149,248"/>
+<area href="class_filter.html" alt="Filter" shape="rect" coords="0,280,96,304"/>
+<area href="class_m_v_c_form.html" alt="MVCForm" shape="rect" coords="106,280,202,304"/>
+<area href="class_quick_search.html" alt="QuickSearch" shape="rect" coords="0,336,96,360"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -575,13 +574,13 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_form___basic.html#ac827534404de4c1135a1556898cb1e9a">initializeTemplate</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>template_spot</em>, </td>
+          <td class="paramname"><em>tag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>template_branch</em>&#160;</td>
+          <td class="paramname"><em>template</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -591,7 +590,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>[private] Called automatically during init </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#a8564194c0808f6856ad194d7f84bbcd4">AbstractView</a>.</p>
 
@@ -709,7 +707,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Redefine if your object needs to dynamically generate data through heavy computation </p>
+<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
 <p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
@@ -908,7 +906,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Default down-call submitted will automatically call this method if form was submitted</p>
 
-<p>Reimplemented in <a class="el" href="class_quick_search.html#a335cdb2aa63a2c49551a24d62dd28742">QuickSearch</a>, and <a class="el" href="class_filter.html#a335cdb2aa63a2c49551a24d62dd28742">Filter</a>.</p>
+<p>Reimplemented in <a class="el" href="class_filter.html#a335cdb2aa63a2c49551a24d62dd28742">Filter</a>.</p>
 
 </div>
 </div>
@@ -991,7 +989,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default controller to initialize when calling <a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel()</a> </p>
+<p>When using <a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#ab949cccd963058f0937d04bc26ee24a7">AbstractView</a>.</p>
 
@@ -1181,7 +1179,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___basic.html">Form_Basic</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:09 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:50 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

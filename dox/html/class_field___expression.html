@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -118,9 +116,12 @@ Inheritance diagram for Field_Expression:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a307e6d324703bc4750a3c26c887316c5">editable</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763">editable</a> ($x=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed">calculated</a> ($x=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a8205b80d63c2d9eafc2cdfc480d301d3">set</a> ($expr=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#ac161e2288bb97e432934c5ada9f23a3a">updateSelectQuery</a> ($select)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#af6102b88560c575ef211db85a78ad69c">updateInsertQuery</a> ($insert)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a282897212d91bea1bc670ec61f6ac1d0">updateModifyQuery</a> ($insert)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#aa660a3177eb257a767c0323f967d877f">$expr</a> = null</td></tr>
@@ -128,19 +129,41 @@ Data Fields</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of a Expression fields in <a class="el" href="class_model___table.html">Model_Table</a> <a class="el" href="">Field_Expression implements ability to specify expressions inside your Model_Table and have them appear as a read-only fields.  Use: $model-&gt;addExpression('age','year(now())-year(birthdate)'); // Below example achieves the same, but it prefixes age with proper table name $model-&gt;addExpression('age','year(now())-year('.$model-&gt;getElement('adatege')-&gt;getField().')');  $model-&gt;addExpression('row_counter',$this-&gt;api-&gt;db-&gt;dsql()-&gt;useExpr(' := +1');  $myctl=$this-&gt;add('Controller_MiscMySQL'); // using custom controller to format field $model-&gt;addExpression('date_formatted',array($myctl,'dateExpr1'));  or $myctl=$this-&gt;add('Controller_MiscMySQL'); // or by using closure and extra argument $model-&gt;addExpression('date_formatted',function($model,$query) uses $myctl { return $myctl-&gt;dateExpr2($query,'date_raw'); });  NOTE: MiscMySQL is fictional controller.   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a307e6d324703bc4750a3c26c887316c5"></a><!-- doxytag: member="Field_Expression::editable" ref="a307e6d324703bc4750a3c26c887316c5" args="()" -->
+<a class="anchor" id="a685b7d681e1a76bb1482780de60b2bed"></a><!-- doxytag: member="Field_Expression::calculated" ref="a685b7d681e1a76bb1482780de60b2bed" args="($x=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_field___expression.html#a307e6d324703bc4750a3c26c887316c5">editable</a> </td>
+          <td class="memname"><a class="el" href="class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed">calculated</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_field.html#acf968bc1978355bb1b08b5fdeb17fd4c">Field</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e6c086ab47b22b4249d8ded7ea48763"></a><!-- doxytag: member="Field_Expression::editable" ref="a6e6c086ab47b22b4249d8ded7ea48763" args="($x=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763">editable</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_field.html#a484654b3a14cef0783bcbbab6bf51690">Field</a>.</p>
 
 </div>
 </div>
@@ -161,6 +184,46 @@ Data Fields</h2></td></tr>
 <p>specify DSQL, String or funciton($master_dsql,$this) </p>
 
 <p>Reimplemented from <a class="el" href="class_field.html#a1512958a99766a1187518e2289d7d3a5">Field</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af6102b88560c575ef211db85a78ad69c"></a><!-- doxytag: member="Field_Expression::updateInsertQuery" ref="af6102b88560c575ef211db85a78ad69c" args="($insert)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_field___expression.html#af6102b88560c575ef211db85a78ad69c">updateInsertQuery</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>insert</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Modify insert query to set value of this field </p>
+
+<p>Reimplemented from <a class="el" href="class_field.html#af6102b88560c575ef211db85a78ad69c">Field</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a282897212d91bea1bc670ec61f6ac1d0"></a><!-- doxytag: member="Field_Expression::updateModifyQuery" ref="a282897212d91bea1bc670ec61f6ac1d0" args="($insert)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_field___expression.html#a282897212d91bea1bc670ec61f6ac1d0">updateModifyQuery</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>modify</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Modify insert query to set value of this field </p>
+
+<p>Reimplemented from <a class="el" href="class_field.html#a30a38db825c046780e876b5b7182ec3f">Field</a>.</p>
 
 </div>
 </div>
@@ -221,7 +284,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___expression.html">Field_Expression</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:09 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

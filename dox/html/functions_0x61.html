@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -151,7 +149,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>addButton()
 : <a class="el" href="class_view___button_set.html#a16e75a4f48d4675e0ff5be8647825391">View_ButtonSet</a>
 , <a class="el" href="class_form___basic.html#a16e75a4f48d4675e0ff5be8647825391">Form_Basic</a>
-, <a class="el" href="class_form___field.html#ab1da9f5c153f95719b832ce00dbe007b">Form_Field</a>
+, <a class="el" href="class_form___field.html#a50d21f05315e39bef3914479273987f3">Form_Field</a>
 , <a class="el" href="class_grid___advanced.html#a15d788fafd3e40df19a34e902953f605">Grid_Advanced</a>
 </li>
 <li>addClass()
@@ -181,14 +179,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>addDefaultLocations()
 : <a class="el" href="class_path_finder.html#aae65669ca0081d5fc98438b4c91e1011">PathFinder</a>
 </li>
+<li>addEncryptionHook()
+: <a class="el" href="class_auth___basic.html#a536c01fd8bff8131fcda35ffdb3d507d">Auth_Basic</a>
+</li>
 <li>addExpression()
 : <a class="el" href="class_model___table.html#ad9c2270a49f09a06a10a0707b9f71fc7">Model_Table</a>
 </li>
 <li>addField()
 : <a class="el" href="class_form___basic.html#aad2ccd75b31d322f9082ac72dfb39d2c">Form_Basic</a>
 , <a class="el" href="class_form___field.html#a60ae6d77edc64229993db6cb0ab5d3e9">Form_Field</a>
+, <a class="el" href="class_model___table.html#aeb33362b878cd956ea9edc762795a310">Model_Table</a>
 , <a class="el" href="class_model.html#aeb33362b878cd956ea9edc762795a310">Model</a>
-, <a class="el" href="class_s_q_l___relation.html#ae1e511c3463598669c1631bb54ad7b56">SQL_Relation</a>
+, <a class="el" href="class_s_q_l___relation.html#ae222065904ef2aac46aadf5e82f6a576">SQL_Relation</a>
 </li>
 <li>addFormatter()
 : <a class="el" href="class_grid___advanced.html#a6fb64e1befc55edcd6612434e7493515">Grid_Advanced</a>
@@ -203,12 +205,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_view___box.html#a7186b7459d9f6a60ef2c96fe68be6383">View_Box</a>
 </li>
 <li>addInclude()
-: <a class="el" href="classj_query.html#a248168e7775384172e69b62ca4475bc7">jQuery</a>
-, <a class="el" href="classj_u_i.html#a248168e7775384172e69b62ca4475bc7">jUI</a>
+: <a class="el" href="classj_u_i.html#a248168e7775384172e69b62ca4475bc7">jUI</a>
+, <a class="el" href="classj_query.html#a248168e7775384172e69b62ca4475bc7">jQuery</a>
 </li>
 <li>addInfo()
-: <a class="el" href="class_s_q_l_auth.html#a2209a0db6291ff270f1eca270a33edb3">SQLAuth</a>
-, <a class="el" href="class_basic_auth.html#a2209a0db6291ff270f1eca270a33edb3">BasicAuth</a>
+: <a class="el" href="class_auth___basic.html#a2209a0db6291ff270f1eca270a33edb3">Auth_Basic</a>
+, <a class="el" href="class_s_q_l_auth.html#a2209a0db6291ff270f1eca270a33edb3">SQLAuth</a>
 </li>
 <li>addInput()
 : <a class="el" href="class_form___plain.html#a9155cb6ad9250fc874a3dd83afdd4c26">Form_Plain</a>
@@ -221,13 +223,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_path_finder.html#a8f3f048a34ab5faa13437e92be6bf331">PathFinder</a>
 </li>
 <li>addMenuItem()
-: <a class="el" href="class_menu___basic.html#a499a08e7f1ff2b26fce99182d1043b49">Menu_Basic</a>
+: <a class="el" href="class_menu___basic.html#ac8016f132e643a4556af06643ce6de19">Menu_Basic</a>
+, <a class="el" href="class_menu___compat.html#a499a08e7f1ff2b26fce99182d1043b49">Menu_Compat</a>
 </li>
 <li>addMethod()
 : <a class="el" href="class_abstract_object.html#aa5ee682b6b7455b050ebf43c543cf522">AbstractObject</a>
-</li>
-<li>addModelSave()
-: <a class="el" href="class_controller___compat.html#a447957350a1348f4a71902b80e273d69">Controller_Compat</a>
 </li>
 <li>addMoreInfo()
 : <a class="el" href="class_base_exception.html#a1b80cac9e20dea78f78788ee334fcbde">BaseException</a>
@@ -240,7 +240,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_grid___advanced.html#a3ee5031f29f0a213e6e9aaeb6b1cbaf6">Grid_Advanced</a>
 </li>
 <li>addPaginator()
-: <a class="el" href="class_grid___advanced.html#acceca0a5aa8112c634732c9ea25d1070">Grid_Advanced</a>
+: <a class="el" href="class_grid___advanced.html#aec465f1f11eb671f1d517de90bb6a610">Grid_Advanced</a>
 </li>
 <li>addPart()
 : <a class="el" href="class_t_mail___basic.html#a1f8d090266893d2e318f94669bad473e">TMail_Basic</a>
@@ -262,7 +262,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>addSeparator()
 : <a class="el" href="class_form___basic.html#ac691542612ef44f51811b9eb0fc2b81a">Form_Basic</a>
-, <a class="el" href="class_menu___basic.html#a1ee8d0796f48a84eba1f0692fb604654">Menu_Basic</a>
+, <a class="el" href="class_menu___compat.html#a1ee8d0796f48a84eba1f0692fb604654">Menu_Compat</a>
 </li>
 <li>addStaticInclude()
 : <a class="el" href="classj_query.html#a438ce5e75280d99626c613699c7f881a">jQuery</a>
@@ -304,6 +304,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>affectedRows()
 : <a class="el" href="class_d_blite__mysql.html#a1289c8742f764b73b60011ce8339157d">DBlite_mysql</a>
 </li>
+<li>afterDelete()
+: <a class="el" href="class_s_q_l___relation.html#a7aaabfe28601066d35bebcd292cc8202">SQL_Relation</a>
+</li>
 <li>afterField()
 : <a class="el" href="class_form___field.html#af1c1c5d93278f28a90fb84e0c10cb347">Form_Field</a>
 </li>
@@ -313,17 +316,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>afterLoad()
 : <a class="el" href="class_s_q_l___relation.html#a5d0c6caa03c2c66fb14c46960db16b43">SQL_Relation</a>
 </li>
-<li>afterSave()
-: <a class="el" href="class_database_storage.html#ab51e83949ed7724fe69066508e9ac2c7">DatabaseStorage</a>
-</li>
 <li>afterUnload()
 : <a class="el" href="class_s_q_l___relation.html#aa404bc1e1011285c87f073218a8c3477">SQL_Relation</a>
 </li>
-<li>ajax()
-: <a class="el" href="class_controller___compat.html#a0f46d1c45eba81d109eab6e1e9b2f79f">Controller_Compat</a>
-</li>
 <li>allow()
-: <a class="el" href="class_basic_auth.html#a43523bf653c84bf98c9eaef6838f593b">BasicAuth</a>
+: <a class="el" href="class_auth___basic.html#a2d3b607dfb795a86d13a1186bd5e7bd9">Auth_Basic</a>
 </li>
 <li>allowHTML()
 : <a class="el" href="class_field.html#a14fce47e2e6b13dbfa5be169c6d5ed8e">Field</a>
@@ -332,23 +329,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_form___field___upload.html#a46a20dfc2ba14759034edf50301c6fc5">Form_Field_Upload</a>
 </li>
 <li>allowPage()
-: <a class="el" href="class_basic_auth.html#a582f7fd951b87c1312eec1a0377fb98b">BasicAuth</a>
+: <a class="el" href="class_auth___basic.html#a582f7fd951b87c1312eec1a0377fb98b">Auth_Basic</a>
 </li>
 <li>append()
-: <a class="el" href="class_gi_template.html#af423f237d5ceebdcb7df4689dd8793f3">GiTemplate</a>
-, <a class="el" href="class_s_mlite.html#ab5db58d0936f97c6032ac8297e23acec">SMlite</a>
+: <a class="el" href="class_s_mlite.html#a54c0f479d3559597855b62ee0cee387a">SMlite</a>
+, <a class="el" href="class_gi_template.html#af423f237d5ceebdcb7df4689dd8793f3">GiTemplate</a>
+</li>
+<li>appendHTML()
+: <a class="el" href="class_s_mlite.html#a3aab7be1ba87394417dc4ff420a84e22">SMlite</a>
 </li>
 <li>applyData()
-: <a class="el" href="class_paginator.html#aa92c90853a696a27b007b5ae3c809cf4">Paginator</a>
+: <a class="el" href="class_paginator___compat.html#aa92c90853a696a27b007b5ae3c809cf4">Paginator_Compat</a>
 </li>
 <li>applyDQ()
-: <a class="el" href="class_filter.html#ade55e7b0b9c5549c549f8ea7ae269469">Filter</a>
-, <a class="el" href="class_paginator.html#ade55e7b0b9c5549c549f8ea7ae269469">Paginator</a>
-, <a class="el" href="class_quick_search.html#ade55e7b0b9c5549c549f8ea7ae269469">QuickSearch</a>
+: <a class="el" href="class_paginator___compat.html#ade55e7b0b9c5549c549f8ea7ae269469">Paginator_Compat</a>
 </li>
 <li>applyHook()
-: <a class="el" href="class_filter.html#a145d787e8654bd4ae5ac3a22c58aa850">Filter</a>
-, <a class="el" href="class_paginator.html#a145d787e8654bd4ae5ac3a22c58aa850">Paginator</a>
+: <a class="el" href="class_paginator___compat.html#a145d787e8654bd4ae5ac3a22c58aa850">Paginator_Compat</a>
+, <a class="el" href="class_paginator___basic.html#a145d787e8654bd4ae5ac3a22c58aa850">Paginator_Basic</a>
 </li>
 <li>applyTDParams()
 : <a class="el" href="class_grid___advanced.html#a3b2fdca402f000d0fc1853ea85bafbfa">Grid_Advanced</a>
@@ -385,7 +383,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:11 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:51 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

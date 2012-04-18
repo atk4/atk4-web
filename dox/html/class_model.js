@@ -1,5 +1,6 @@
 var class_model =
 [
+    [ "__clone", "class_model.html#ad0cb87b388bc74d63dc884accdca8713", null ],
     [ "addField", "class_model.html#aeb33362b878cd956ea9edc762795a310", null ],
     [ "current", "class_model.html#af343507d1926e6ecf964625d41db528c", null ],
     [ "delete", "class_model.html#a0fa3387249f930dea59b44e92b7235eb", null ],

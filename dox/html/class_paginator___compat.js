@@ -1,0 +1,28 @@
+var class_paginator___compat =
+[
+    [ "applyData", "class_paginator___compat.html#aa92c90853a696a27b007b5ae3c809cf4", null ],
+    [ "applyDQ", "class_paginator___compat.html#ade55e7b0b9c5549c549f8ea7ae269469", null ],
+    [ "applyHook", "class_paginator___compat.html#a145d787e8654bd4ae5ac3a22c58aa850", null ],
+    [ "cutObject", "class_paginator___compat.html#a167487dac0a8bd9de8cdcc7b54764cde", null ],
+    [ "defaultTemplate", "class_paginator___compat.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
+    [ "grabTemplateChunk", "class_paginator___compat.html#a4fc734ddcccc379fc6bfbf39036435a3", null ],
+    [ "init", "class_paginator___compat.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
+    [ "ipp", "class_paginator___compat.html#af9932375eba7ad6a25892a767e812f31", null ],
+    [ "link", "class_paginator___compat.html#a2f5ef893f19f335df40fce6744310233", null ],
+    [ "linkNoTemplate", "class_paginator___compat.html#a4df93b1be4cb8e31c0f896f42ee38c98", null ],
+    [ "linkUrl", "class_paginator___compat.html#a9433c73cc8903be98c62384f0de0bcf9", null ],
+    [ "outputNum", "class_paginator___compat.html#ac1ad9148a7f7865e0bfeb08a6fbdbeee", null ],
+    [ "pageRange", "class_paginator___compat.html#a2a55396020422887c098facda72c8f35", null ],
+    [ "region", "class_paginator___compat.html#aeda3299e8fe744dc856ba8f88a6cf260", null ],
+    [ "render", "class_paginator___compat.html#afde88292c44dc59faf017738dae6dffb", null ],
+    [ "useDQ", "class_paginator___compat.html#af9316bad15af1ed33e9781657da2f0b5", null ],
+    [ "$found_rows", "class_paginator___compat.html#ac71d94f1a5fbea93c2edfa172e3ddb6e", null ],
+    [ "$ipp", "class_paginator___compat.html#abeec997137030c782d94b8fb39c7e0f8", null ],
+    [ "$limiters", "class_paginator___compat.html#a8488e95636dd7a4358c1326325b6bfa4", null ],
+    [ "$object", "class_paginator___compat.html#a52123b83a1952a68c5513e47d59ec4a6", null ],
+    [ "$range", "class_paginator___compat.html#ac2e4b5fa63099d7c943a803ae122dd2b", null ],
+    [ "$region", "class_paginator___compat.html#a8e0b4669db3780ee9a03b34083febc7a", null ],
+    [ "$skip", "class_paginator___compat.html#a79588b27bc2edf4aa7b92f247b01012d", null ],
+    [ "$template_chunks", "class_paginator___compat.html#a5222d847f662a34741ed2aeea9adc3ca", null ],
+    [ "$total_pages", "class_paginator___compat.html#a75dd972125f47d333492e70523d1aa6a", null ]
+];

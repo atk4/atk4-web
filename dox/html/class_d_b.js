@@ -11,7 +11,6 @@ var class_d_b =
     [ "rollBack", "class_d_b.html#a6c8e90da29100c80c1abe381cfb37593", null ],
     [ "$dbh", "class_d_b.html#acc1e62674bb7200ea73767c19dc1344d", null ],
     [ "$dsql_class", "class_d_b.html#a04ab0f27959cb92fa5691286bcd8b55b", null ],
-    [ "$query_cache", "class_d_b.html#a204a6a5174b8257a21f65071b328ec8b", null ],
     [ "$transaction_depth", "class_d_b.html#a7da74af76d647c306ce5acf42fe799df", null ],
     [ "$type", "class_d_b.html#a9a4a6fba2208984cabb3afacadf33919", null ]
 ];

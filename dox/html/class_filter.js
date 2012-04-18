@@ -1,11 +1,11 @@
 var class_filter =
 [
-    [ "applyDQ", "class_filter.html#ade55e7b0b9c5549c549f8ea7ae269469", null ],
-    [ "applyHook", "class_filter.html#a145d787e8654bd4ae5ac3a22c58aa850", null ],
     [ "init", "class_filter.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "memorizeAll", "class_filter.html#a59add346b7c95577fbb3645fc3bce730", null ],
-    [ "recallAll", "class_filter.html#a8b16f1efb90e39d6ff11ce87a5e67463", null ],
+    [ "postInit", "class_filter.html#a834c2c6af9dbb9bbe622610788c1804e", null ],
     [ "submitted", "class_filter.html#a335cdb2aa63a2c49551a24d62dd28742", null ],
-    [ "useDQ", "class_filter.html#af9316bad15af1ed33e9781657da2f0b5", null ],
-    [ "$limiters", "class_filter.html#a8488e95636dd7a4358c1326325b6bfa4", null ]
+    [ "useWith", "class_filter.html#a55e207b9bc52b815dcbe7dce5423bae2", null ],
+    [ "$limiters", "class_filter.html#a8488e95636dd7a4358c1326325b6bfa4", null ],
+    [ "$memorize", "class_filter.html#ad21c4eb3eeaa7dc86c51fc723e937f22", null ],
+    [ "$view", "class_filter.html#acccf2eac8663e0cebe8101e90fbab089", null ]
 ];

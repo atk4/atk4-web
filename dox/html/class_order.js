@@ -1,6 +1,7 @@
 var class_order =
 [
     [ "init", "class_order.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
+    [ "later", "class_order.html#a0c71c8f0493485a4fa33a125086ba5d9", null ],
     [ "move", "class_order.html#a89e6b53c64c33fbaea7f5a2bb4e447f7", null ],
     [ "now", "class_order.html#a80593ccdc0339775ddd5d82c37ca4f6b", null ],
     [ "onHook", "class_order.html#a39630e5d9c0343fa82c66ac5dc1e0b7f", null ],

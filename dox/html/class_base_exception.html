@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -116,12 +114,12 @@ Inheritance diagram for BaseException:</div>
 <area href="class_exception___hook.html" alt="Exception_Hook" shape="rect" coords="190,224,370,248"/>
 <area href="class_exception___init_error.html" alt="Exception_InitError" shape="rect" coords="190,280,370,304"/>
 <area href="class_exception___logic.html" alt="Exception_Logic" shape="rect" coords="190,336,370,360"/>
-<area href="class_exception___not_implemented.html" alt="Exception_NotImplemented" shape="rect" coords="190,392,370,416"/>
-<area href="class_exception___stop.html" alt="Exception_Stop" shape="rect" coords="190,448,370,472"/>
-<area href="class_exception___stop_init.html" alt="Exception_StopInit" shape="rect" coords="190,504,370,528"/>
-<area href="class_exception___stop_render.html" alt="Exception_StopRender" shape="rect" coords="190,560,370,584"/>
-<area href="class_exception___template.html" alt="Exception_Template" shape="rect" coords="190,616,370,640"/>
-<area href="class_exception_not_configured.html" alt="ExceptionNotConfigured" shape="rect" coords="190,672,370,696"/>
+<area href="class_exception___not_configured.html" alt="Exception_NotConfigured" shape="rect" coords="190,392,370,416"/>
+<area href="class_exception___not_implemented.html" alt="Exception_NotImplemented" shape="rect" coords="190,448,370,472"/>
+<area href="class_exception___stop.html" alt="Exception_Stop" shape="rect" coords="190,504,370,528"/>
+<area href="class_exception___stop_init.html" alt="Exception_StopInit" shape="rect" coords="190,560,370,584"/>
+<area href="class_exception___stop_render.html" alt="Exception_StopRender" shape="rect" coords="190,616,370,640"/>
+<area href="class_exception___template.html" alt="Exception_Template" shape="rect" coords="190,672,370,696"/>
 <area href="class_i_o_exception.html" alt="IOException" shape="rect" coords="190,728,370,752"/>
 <area href="class_mail_exception.html" alt="MailException" shape="rect" coords="190,784,370,808"/>
 <area href="class_obsolete_exception.html" alt="ObsoleteException" shape="rect" coords="190,840,370,864"/>
@@ -154,7 +152,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#ab2fc40d43824ea3e1ce5d86dee0d763b">$name</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a9aabf46bdb166877480b2094d7ca01a7">$owner</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#afce321e6f53c241037f871b50680cf1c">$api</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a132cc7ce850425829a999cb316404d19">$more_info</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a132cc7ce850425829a999cb316404d19">$more_info</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a6cafc5f8d4f5d73acc0b5c6daaa766c1">$actions</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -228,6 +226,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Actions will be displayed as links on the exception page allowing viewer to perform additional debug functions. addAction('show info',array('info'=&gt;true)) will result in link to &amp;info=1 </p>
 
 </div>
 </div>
@@ -255,6 +254,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Call this to add additional information to the exception you are about to throw </p>
 
 </div>
 </div>
@@ -272,6 +272,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Add reference to the object. Do not call this directly, exception() method takes care of that </p>
 
 </div>
 </div>
@@ -337,6 +338,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Redefine this function to add additional HTML output </p>
 
 <p>Reimplemented in <a class="el" href="class_d_blite__exception.html#a4372183a68cb46562238e23cefd06b06">DBlite_exception</a>.</p>
 
@@ -356,6 +358,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns HTML representation of the exceptoin </p>
 
 <p>Reimplemented in <a class="el" href="class_s_q_l_exception.html#ab0205030c5a0ac10564db26c2b776746">SQLException</a>.</p>
 
@@ -422,6 +425,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns Textual representaiton of the exception </p>
 
 </div>
 </div>
@@ -475,7 +479,7 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$more_info</td>
+          <td class="memname">$more_info = array()</td>
         </tr>
       </table>
 </div>
@@ -558,7 +562,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_base_exception.html">BaseException</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

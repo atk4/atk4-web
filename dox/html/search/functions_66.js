@@ -48,6 +48,6 @@ var searchData=
   ['formsubmit',['formSubmit',['../class_view___c_r_u_d.html#a6f8f178aea9c07b0febd5f9b83bf88d2',1,'View_CRUD']]],
   ['formsubmitsuccess',['formSubmitSuccess',['../class_view___c_r_u_d.html#a77b8953186b2d9acf5f70eed9d4dc924',1,'View_CRUD']]],
   ['foundrows',['foundRows',['../class_d_b__dsql.html#a78250827a715cdf14ebf6d3b6029118f',1,'DB_dsql\foundRows()'],['../class_d_blite__dsql.html#a78250827a715cdf14ebf6d3b6029118f',1,'DBlite_dsql\foundRows()']]],
-  ['frame',['frame',['../class_controller___compat.html#a1e8c015668286a76bc9e7a073ff5c53b',1,'Controller_Compat']]],
-  ['from',['from',['../class_field.html#a28108070aaa895cd4460e609639b0ac6',1,'Field']]]
+  ['from',['from',['../class_field.html#a28108070aaa895cd4460e609639b0ac6',1,'Field']]],
+  ['fx',['fx',['../class_d_b__dsql.html#aee4643477e594a7998c1b18f909cd1be',1,'DB_dsql']]]
 ];

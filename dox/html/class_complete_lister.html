@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -111,15 +109,19 @@ Inheritance diagram for CompleteLister:</div>
  <div class="center">
   <img src="class_complete_lister.png" usemap="#CompleteLister_map" alt=""/>
   <map id="CompleteLister_map" name="CompleteLister_map">
-<area href="class_lister.html" alt="Lister" shape="rect" coords="55,168,156,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="55,112,156,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="55,56,156,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="55,0,156,24"/>
-<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="55,280,156,304"/>
-<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="55,336,156,360"/>
-<area href="class_grid.html" alt="Grid" shape="rect" coords="55,392,156,416"/>
-<area href="class_info_window.html" alt="InfoWindow" shape="rect" coords="0,448,101,472"/>
-<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="111,448,212,472"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="171,168,275,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="171,112,275,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="171,56,275,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="171,0,275,24"/>
+<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="57,280,161,304"/>
+<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="171,280,275,304"/>
+<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="285,280,389,304"/>
+<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="57,336,161,360"/>
+<area href="class_menu.html" alt="Menu" shape="rect" coords="171,336,275,360"/>
+<area href="class_paginator.html" alt="Paginator" shape="rect" coords="285,336,389,360"/>
+<area href="class_grid.html" alt="Grid" shape="rect" coords="57,392,161,416"/>
+<area href="class_info_window.html" alt="InfoWindow" shape="rect" coords="0,448,104,472"/>
+<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="114,448,218,472"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -139,6 +141,8 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a006a1ee45474664193b59e380003a49a">$totals_t</a> = false</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd">$item_tag</a> = 'row'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab56179d3da9f7be09d655d0698f5e880">$container_tag</a> = 'rows'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e">$row_t</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a80d56bbd4c03d0ee9b9fe450da93913f">$odd_even</a> = null</td></tr>
 </table>
@@ -182,11 +186,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 3rd argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, and <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, and <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
 
 </div>
 </div>
@@ -248,7 +252,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_info_window.html#a4be4055f3361d4800e16bc2e2e38cda6">InfoWindow</a>, and <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, <a class="el" href="class_info_window.html#a4be4055f3361d4800e16bc2e2e38cda6">InfoWindow</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, and <a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Paginator_Basic</a>.</p>
 
 </div>
 </div>
@@ -265,12 +269,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Redefine if your object needs to dynamically generate data through heavy computation </p>
+<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
 <p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, and <a class="el" href="class_info_window.html#afde88292c44dc59faf017738dae6dffb">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, and <a class="el" href="class_info_window.html#afde88292c44dc59faf017738dae6dffb">InfoWindow</a>.</p>
 
 </div>
 </div>
@@ -312,6 +316,36 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ab56179d3da9f7be09d655d0698f5e880"></a><!-- doxytag: member="CompleteLister::$container_tag" ref="ab56179d3da9f7be09d655d0698f5e880" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$container_tag = 'rows'<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_menu___basic.html#ab56179d3da9f7be09d655d0698f5e880">Menu_Basic</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1c5ab74e36790de226cbf169bbbe1edd"></a><!-- doxytag: member="CompleteLister::$item_tag" ref="a1c5ab74e36790de226cbf169bbbe1edd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$item_tag = 'row'<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_menu___basic.html#a1c5ab74e36790de226cbf169bbbe1edd">Menu_Basic</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a80d56bbd4c03d0ee9b9fe450da93913f"></a><!-- doxytag: member="CompleteLister::$odd_even" ref="a80d56bbd4c03d0ee9b9fe450da93913f" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -391,7 +425,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_complete_lister.html">CompleteLister</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

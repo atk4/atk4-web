@@ -6,7 +6,8 @@ var searchData=
   ['mandatory',['mandatory',['../class_field.html#a98f52cdf0f85d7b998e950424f20fba0',1,'Field']]],
   ['memorize',['memorize',['../class_abstract_object.html#a2be330661f07266a556ada3c30c3abb7',1,'AbstractObject']]],
   ['memorizeall',['memorizeAll',['../class_filter.html#a59add346b7c95577fbb3645fc3bce730',1,'Filter']]],
-  ['memorizeoriginalurl',['memorizeOriginalURL',['../class_basic_auth.html#a421b20cb221b8f415ea1e9d839b6ea09',1,'BasicAuth']]],
+  ['memorizemodel',['memorizeModel',['../class_auth___basic.html#a684589c3162a3db376d71e257e15e48d',1,'Auth_Basic']]],
+  ['memorizeurl',['memorizeURL',['../class_auth___basic.html#a321b77544ca18becf802329e951d2414',1,'Auth_Basic']]],
   ['move',['move',['../class_order.html#a89e6b53c64c33fbaea7f5a2bb4e447f7',1,'Order']]],
   ['movejstoparent',['moveJStoParent',['../class_abstract_view.html#a6a1c14042eb7e0b0bce48009a6a96bdf',1,'AbstractView']]],
   ['mystrtok',['myStrTok',['../class_s_mlite.html#aa8b7f60d528ad005ad2c13137264e9d3',1,'SMlite']]]

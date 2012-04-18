@@ -2,8 +2,11 @@ var hierarchy =
 [
     [ "AbstractObject", "class_abstract_object.html", [
       [ "AbstractController", "class_abstract_controller.html", [
-        [ "BasicAuth", "class_basic_auth.html", [
-          [ "SQLAuth", "class_s_q_l_auth.html", null ]
+        [ "Auth_Basic", "class_auth___basic.html", [
+          [ "Auth", "class_auth.html", null ],
+          [ "BasicAuth", "class_basic_auth.html", [
+            [ "SQLAuth", "class_s_q_l_auth.html", null ]
+          ] ]
         ] ],
         [ "Controller", "class_controller.html", null ],
         [ "Controller_Compat", "class_controller___compat.html", null ],
@@ -23,9 +26,7 @@ var hierarchy =
         [ "PageManager", "class_page_manager.html", null ],
         [ "PathFinder", "class_path_finder.html", null ],
         [ "System_HTMLSanitizer", "class_system___h_t_m_l_sanitizer.html", null ],
-        [ "TMail_Compat", "class_t_mail___compat.html", [
-          [ "TMail", "class_t_mail.html", null ]
-        ] ],
+        [ "TMail_Compat", "class_t_mail___compat.html", null ],
         [ "TMail_Transport", "class_t_mail___transport.html", [
           [ "TMail_Transport_DBStore", "class_t_mail___transport___d_b_store.html", null ],
           [ "TMail_Transport_Discard", "class_t_mail___transport___discard.html", null ],
@@ -42,6 +43,7 @@ var hierarchy =
           [ "DB_dsql_sqlite", "class_d_b__dsql__sqlite.html", null ]
         ] ],
         [ "Field", "class_field.html", [
+          [ "Field_Deleted", "class_field___deleted.html", null ],
           [ "Field_Expression", "class_field___expression.html", null ],
           [ "Field_Reference", "class_field___reference.html", null ]
         ] ],
@@ -70,16 +72,7 @@ var hierarchy =
       [ "AbstractView", "class_abstract_view.html", [
         [ "ApiCLI", "class_api_c_l_i.html", [
           [ "ApiWeb", "class_api_web.html", [
-            [ "ApiAdmin", "class_api_admin.html", null ],
             [ "ApiFrontend", "class_api_frontend.html", null ]
-          ] ]
-        ] ],
-        [ "Form_Basic", "class_form___basic.html", [
-          [ "Form", "class_form.html", [
-            [ "Filter", "class_filter.html", [
-              [ "QuickSearch", "class_quick_search.html", null ]
-            ] ],
-            [ "MVCForm", "class_m_v_c_form.html", null ]
           ] ]
         ] ],
         [ "Form_Field", "class_form___field.html", [
@@ -110,9 +103,7 @@ var hierarchy =
         [ "HelloWorld", "class_hello_world.html", null ],
         [ "Html", "class_html.html", null ],
         [ "LoremIpsum", "class_lorem_ipsum.html", null ],
-        [ "Menu_Basic", "class_menu___basic.html", [
-          [ "Menu", "class_menu.html", null ]
-        ] ],
+        [ "Menu_Compat", "class_menu___compat.html", null ],
         [ "Menu_Light", "class_menu___light.html", null ],
         [ "MenuItem", "class_menu_item.html", null ],
         [ "MenuSeparator", "class_menu_separator.html", null ],
@@ -124,9 +115,17 @@ var hierarchy =
           [ "page_Error", "classpage___error.html", null ],
           [ "Page_Tester", "class_page___tester.html", null ]
         ] ],
-        [ "Paginator", "class_paginator.html", null ],
+        [ "Paginator_Compat", "class_paginator___compat.html", null ],
         [ "Text", "class_text.html", null ],
         [ "View", "class_view.html", [
+          [ "Form_Basic", "class_form___basic.html", [
+            [ "Form", "class_form.html", [
+              [ "Filter", "class_filter.html", [
+                [ "QuickSearch", "class_quick_search.html", null ]
+              ] ],
+              [ "MVCForm", "class_m_v_c_form.html", null ]
+            ] ]
+          ] ],
           [ "Frame", "class_frame.html", null ],
           [ "Lister", "class_lister.html", [
             [ "CompleteLister", "class_complete_lister.html", [
@@ -137,6 +136,12 @@ var hierarchy =
                     [ "MVCGrid", "class_m_v_c_grid.html", null ]
                   ] ]
                 ] ]
+              ] ],
+              [ "Menu_Basic", "class_menu___basic.html", [
+                [ "Menu", "class_menu.html", null ]
+              ] ],
+              [ "Paginator_Basic", "class_paginator___basic.html", [
+                [ "Paginator", "class_paginator.html", null ]
               ] ]
             ] ]
           ] ],
@@ -206,12 +211,12 @@ var hierarchy =
         [ "Exception_Obsolete", "class_exception___obsolete.html", null ]
       ] ],
       [ "Exception_Logic", "class_exception___logic.html", null ],
+      [ "Exception_NotConfigured", "class_exception___not_configured.html", null ],
       [ "Exception_NotImplemented", "class_exception___not_implemented.html", null ],
       [ "Exception_Stop", "class_exception___stop.html", null ],
       [ "Exception_StopInit", "class_exception___stop_init.html", null ],
       [ "Exception_StopRender", "class_exception___stop_render.html", null ],
       [ "Exception_Template", "class_exception___template.html", null ],
-      [ "ExceptionNotConfigured", "class_exception_not_configured.html", null ],
       [ "IOException", "class_i_o_exception.html", null ],
       [ "MailException", "class_mail_exception.html", null ],
       [ "ObsoleteException", "class_obsolete_exception.html", null ],
@@ -220,10 +225,9 @@ var hierarchy =
       [ "SQLException", "class_s_q_l_exception.html", null ],
       [ "System_ProcessIO_Exception", "class_system___process_i_o___exception.html", null ]
     ] ],
-    [ "DatabaseStorage", "class_database_storage.html", null ],
     [ "DBlite_dsql", "class_d_blite__dsql.html", null ],
     [ "DBlite_mysql", "class_d_blite__mysql.html", null ],
-    [ "FileNotFoundException", "class_file_not_found_exception.html", null ],
+    [ "Dummy", "class_dummy.html", null ],
     [ "Form_Field_multiSelect", "class_form___field__multi_select.html", null ],
     [ "System_ProcessIO_Tester", "class_system___process_i_o___tester.html", null ],
     [ "TMail_Template", "class_t_mail___template.html", null ]

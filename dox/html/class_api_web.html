@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -99,8 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">ApiWeb Class Reference</div>  </div>
 </div><!--header-->
@@ -111,11 +108,10 @@ Inheritance diagram for ApiWeb:</div>
  <div class="center">
   <img src="class_api_web.png" usemap="#ApiWeb_map" alt=""/>
   <map id="ApiWeb_map" name="ApiWeb_map">
-<area href="class_api_c_l_i.html" alt="ApiCLI" shape="rect" coords="53,112,149,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
-<area href="class_api_admin.html" alt="ApiAdmin" shape="rect" coords="0,224,96,248"/>
-<area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="106,224,202,248"/>
+<area href="class_api_c_l_i.html" alt="ApiCLI" shape="rect" coords="0,112,96,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="0,224,96,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -123,6 +119,7 @@ Inheritance diagram for ApiWeb:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a3b0a0d06fee8b3a6f3c4712d01ca88a5">__construct</a> ($realm=null, $skin='default')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a77ffb6f1dc198bf8cbd0d81667e1249d">cleanMagicQuotes</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#abab55ed2b1496fd1d0f631fc99d71ed4">sendHeaders</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ae5683284d126e7da841b1e563a37bda1">showExecutionTime</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a68c10124302012b9a0c5eaeba614a8e5">_showExecutionTime</a> ()</td></tr>
@@ -142,8 +139,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a62eae5ca4fe4403928092ef8eb0e9d1d">redirect</a> ($page=null, $args=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#aa265a4f5509ac06e3c0bc7517e591663">setTags</a> ($t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9759ffd43dac374e766b19cc3e97e38a">isAjaxOutput</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#acb51abb67937cb8ed3ec0f1a6609612a">setIndexPage</a> ($page)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a388755c6312ae1aac830d654ceb07c89">getIndexPage</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a6b1f9e6d6be3aaff35eb9a25354b589f">renderOnly</a> ($object)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a7196ccc788edd95f5cca8c764a79c135">initLayout</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad15ae833701872ee84f1c3b98c2fc9f4">addLayout</a> ($name)</td></tr>
@@ -155,9 +150,6 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9ae12c1c80d64c0ab9802729a3d4b824">$index_page</a> = 'index'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a73a034a7a0fbdd2c93f23fb6c9946ee9">$start_time</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a05d7fd9138206b3a29fda8723e9b3a4d">$_is_session_initialized</a> = false</td></tr>
-<tr><td colspan="2"><h2><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a022f37e2c08b2da8ff09860ebb4d3f35">$page_base</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad86d216245070fbc0c0ae7d2b4be955b">$sticky_get_arguments</a> = array()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -261,6 +253,23 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a77ffb6f1dc198bf8cbd0d81667e1249d"></a><!-- doxytag: member="ApiWeb::cleanMagicQuotes" ref="a77ffb6f1dc198bf8cbd0d81667e1249d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a77ffb6f1dc198bf8cbd0d81667e1249d">cleanMagicQuotes</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Magic Quotes were a design error. Let's strip them if they are enabled </p>
+
+</div>
+</div>
 <a class="anchor" id="add8c5a33f231d9979e5f8bbded576d9e"></a><!-- doxytag: member="ApiWeb::defaultTemplate" ref="add8c5a33f231d9979e5f8bbded576d9e" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -299,22 +308,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a388755c6312ae1aac830d654ceb07c89"></a><!-- doxytag: member="ApiWeb::getIndexPage" ref="a388755c6312ae1aac830d654ceb07c89" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_web.html#a388755c6312ae1aac830d654ceb07c89">getIndexPage</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a1a5b9b7bc783823accde6b0b9ce16f86"></a><!-- doxytag: member="ApiWeb::getStickyArguments" ref="a1a5b9b7bc783823accde6b0b9ce16f86" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -348,9 +341,7 @@ Protected Attributes</h2></td></tr>
 <p>Redifine this function instead of default constructor </p>
 <p>In addition to default initialization, set up logger and template </p>
 
-<p>Reimplemented from <a class="el" href="class_api_c_l_i.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiCLI</a>.</p>
-
-<p>Reimplemented in <a class="el" href="class_api_admin.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiAdmin</a>.</p>
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
 </div>
 </div>
@@ -386,7 +377,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Implements Layouts. Layout is region in shared template which may be replaced by object </p>
 
-<p>Reimplemented in <a class="el" href="class_api_admin.html#a7196ccc788edd95f5cca8c764a79c135">ApiAdmin</a>, and <a class="el" href="class_api_frontend.html#a7196ccc788edd95f5cca8c764a79c135">ApiFrontend</a>.</p>
+<p>Reimplemented in <a class="el" href="class_api_frontend.html#a7196ccc788edd95f5cca8c764a79c135">ApiFrontend</a>.</p>
 
 </div>
 </div>
@@ -576,8 +567,6 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_api_admin.html#afde88292c44dc59faf017738dae6dffb">ApiAdmin</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6b1f9e6d6be3aaff35eb9a25354b589f"></a><!-- doxytag: member="ApiWeb::renderOnly" ref="a6b1f9e6d6be3aaff35eb9a25354b589f" args="($object)" -->
@@ -612,24 +601,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Sends default headers. Re-define to send your own headers </p>
-
-</div>
-</div>
-<a class="anchor" id="acb51abb67937cb8ed3ec0f1a6609612a"></a><!-- doxytag: member="ApiWeb::setIndexPage" ref="acb51abb67937cb8ed3ec0f1a6609612a" args="($page)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_web.html#acb51abb67937cb8ed3ec0f1a6609612a">setIndexPage</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>page</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Change index page, typically used after login </p>
 
 </div>
 </div>
@@ -763,20 +734,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a022f37e2c08b2da8ff09860ebb4d3f35"></a><!-- doxytag: member="ApiWeb::$page_base" ref="a022f37e2c08b2da8ff09860ebb4d3f35" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$page_base = null<code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>?? </p>
-
-</div>
-</div>
 <a class="anchor" id="a73a034a7a0fbdd2c93f23fb6c9946ee9"></a><!-- doxytag: member="ApiWeb::$start_time" ref="a73a034a7a0fbdd2c93f23fb6c9946ee9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -796,7 +753,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$sticky_get_arguments = array()<code> [protected]</code></td>
+          <td class="memname">$sticky_get_arguments = array()</td>
         </tr>
       </table>
 </div>
@@ -827,7 +784,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_web.html">ApiWeb</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

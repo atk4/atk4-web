@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -123,6 +121,7 @@ Inheritance diagram for DB_dsql:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a20c1a04194fec3717ca151e1165f6743">_unique</a> (&amp;$array, $desired=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ad0cb87b388bc74d63dc884accdca8713">__clone</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a2e98fa0bf8a8263c1f551bdb3a4b65d5">template</a> ($<a class="el" href="class_d_b__dsql.html#a2e98fa0bf8a8263c1f551bdb3a4b65d5">template</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ae7ab94489c6b0ee87cbe0f203ef27c8a">paramBase</a> ($param_base)</td></tr>
@@ -161,6 +160,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a0ecfa501677ec5b8b6c7b4ea50746352">render_args</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a0b2aba19fa73e271c1e899335afadcb7">ignore</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a11ad07d9420b0b9db29da1e39a596e98">hasOption</a> ($<a class="el" href="class_d_b__dsql.html#a654bdae7f73e012de801d33c542a7ae3">option</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aead37bdd57fe56e0ad4a70867563cd0b">hasInsertOption</a> ($<a class="el" href="class_d_b__dsql.html#a654bdae7f73e012de801d33c542a7ae3">option</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a2f26ab9edd3371c941d0c22205d40f33">limit</a> ($cnt, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a1b9a4d16baf0e97418c29298fc51ede0">render_limit</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ac7647ea03cbb7e8d8419f01c5f83b111">set</a> ($<a class="el" href="class_d_b__dsql.html#a875ebca628ed88fff6c5f882210f1ab8">field</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
@@ -169,20 +169,24 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ab4f9a171f11b1d215a4cbd5b27e3eb5b">render_set_values</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aa374d1bfaabf3f546fe8862d09f4a096">bt</a> ($s)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aa084707b2772d2028955f3b442199fc9">_setArray</a> ($values, $name, $parse_commas=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aafe6b4c8e08d1fce2b69f3b9959b2d33">SQLTemplate</a> ($mode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a6731fe1c6830fb506fb642f2d44064e6">call</a> ($<a class="el" href="class_d_b__dsql.html#aee4643477e594a7998c1b18f909cd1be">fx</a>, $<a class="el" href="class_d_b__dsql.html#a065dd3167e68f7110493238c8da7218a">args</a>=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aee4643477e594a7998c1b18f909cd1be">fx</a> ($<a class="el" href="class_d_b__dsql.html#aee4643477e594a7998c1b18f909cd1be">fx</a>, $<a class="el" href="class_d_b__dsql.html#a065dd3167e68f7110493238c8da7218a">args</a>=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aee8404a2c5fd9c391b6cd4ebd833cf44">render_fx</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a319b90386dc2dce53ee6b0de2bc21370">sum</a> ($arg=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a724784305daee706621c3459c0284708">count</a> ($arg=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a1909f4b7f8129c7790cb75de2ffbe1e4">execute</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a701f78ac6d7ece9e18883fe7ee612e9f">select</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a473241246338cfccc4709ba896749019">insert</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a3c55ebd02c35b195034c3a5c8caa8fa3">replace</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ad9477b27ed5cb5ab0d33881cf90bb539">insertAll</a> ($array)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a842e4774e3b3601a005b995c02f7e883">update</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a3c55ebd02c35b195034c3a5c8caa8fa3">replace</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a13bdffdd926f26b825ea57066334ff01">delete</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a6731fe1c6830fb506fb642f2d44064e6">call</a> ($fx, $<a class="el" href="class_d_b__dsql.html#a065dd3167e68f7110493238c8da7218a">args</a>=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a319b90386dc2dce53ee6b0de2bc21370">sum</a> ($arg=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aee8404a2c5fd9c391b6cd4ebd833cf44">render_fx</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aded92815b0f4cd9a64f76a6019162198">truncate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#abc5dee7a1bfdcfe56e49e4265feb5b9c">do_select</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ab3aea362579fa1436c4f09c54832763f">do_insert</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a43ab835782c53b0252bfb98cf64e4194">do_update</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a533a86de08868e30fba45014ec22833d">do_replace</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#abd34a3cbe1270b6aed088a4dd1af7ab0">do_delete</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a1909f4b7f8129c7790cb75de2ffbe1e4">execute</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ac33ee765f5ad9f134540bac393721cfe">get</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#acdee9d2d2dd63b3399c1c561e9908796">getOne</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a632382a60ab0034764c10ee608fb39da">getRow</a> ()</td></tr>
@@ -218,12 +222,32 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">$default_exception</a> = '<a class="el" href="class_exception___d_b.html">Exception_DB</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a85ae3e64cd40e9564adceb010085e9dd">$debug</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a354ccb93d5a00b90fc28fec508b15332">$param_base</a> = 'a'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#af5a2f72cb3ef850336d2718a59f4ffad">$sql_templates</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a0ade8c219b8908393de79f366bb4dc4b">$bt</a> = '`'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a8e2b125932eca239e5221c9cdcb0e78e">$_iterating</a> = false</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of PDO-compatible dynamic queries <a class="el" href="">Use: $this-&gt;api-&gt;dbConnect(); $query = $this-&gt;api-&gt;db-&gt;dsql();   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad0cb87b388bc74d63dc884accdca8713"></a><!-- doxytag: member="DB_dsql::__clone" ref="ad0cb87b388bc74d63dc884accdca8713" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#ad0cb87b388bc74d63dc884accdca8713">__clone</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#ad0cb87b388bc74d63dc884accdca8713">AbstractObject</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a7516ca30af0db3cdbf9a7739b48ce91d"></a><!-- doxytag: member="DB_dsql::__toString" ref="a7516ca30af0db3cdbf9a7739b48ce91d" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -448,6 +472,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a724784305daee706621c3459c0284708"></a><!-- doxytag: member="DB_dsql::count" ref="a724784305daee706621c3459c0284708" args="($arg=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#a724784305daee706621c3459c0284708">count</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>arg</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="af343507d1926e6ecf964625d41db528c"></a><!-- doxytag: member="DB_dsql::current" ref="af343507d1926e6ecf964625d41db528c" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -505,23 +546,6 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_d_b__dsql.html#a13bdffdd926f26b825ea57066334ff01">delete</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Switches to delete mode. </p>
-
-</div>
-</div>
-<a class="anchor" id="abd34a3cbe1270b6aed088a4dd1af7ab0"></a><!-- doxytag: member="DB_dsql::do_delete" ref="abd34a3cbe1270b6aed088a4dd1af7ab0" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_d_b__dsql.html#abd34a3cbe1270b6aed088a4dd1af7ab0">do_delete</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -630,7 +654,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes insert query. Returns ID of new record. </p>
+<p>, use <a class="el" href="class_d_b__dsql.html#a473241246338cfccc4709ba896749019">insert()</a> </p>
 
 </div>
 </div>
@@ -647,7 +671,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes replace query </p>
+<p>, use <a class="el" href="class_d_b__dsql.html#a3c55ebd02c35b195034c3a5c8caa8fa3">replace()</a> </p>
 
 </div>
 </div>
@@ -664,7 +688,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes select query. </p>
+<p>, use <a class="el" href="class_d_b__dsql.html#a701f78ac6d7ece9e18883fe7ee612e9f">select()</a> </p>
 
 </div>
 </div>
@@ -681,7 +705,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes update query </p>
+<p>, use <a class="el" href="class_d_b__dsql.html#a842e4774e3b3601a005b995c02f7e883">update()</a> </p>
 
 </div>
 </div>
@@ -733,7 +757,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes user-defined query </p>
+<p>Executes any query query </p>
 
 </div>
 </div>
@@ -848,6 +872,33 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>After fetching data, call this to find out how many rows there were in total. Call <a class="el" href="class_d_b__dsql.html#a48101134c570bf8cbcb59cf290815194">calc_found_rows()</a> for better performance </p>
+
+</div>
+</div>
+<a class="anchor" id="aee4643477e594a7998c1b18f909cd1be"></a><!-- doxytag: member="DB_dsql::fx" ref="aee4643477e594a7998c1b18f909cd1be" args="($fx, $args=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#aee4643477e594a7998c1b18f909cd1be">fx</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>args</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -971,6 +1022,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aead37bdd57fe56e0ad4a70867563cd0b"></a><!-- doxytag: member="DB_dsql::hasInsertOption" ref="aead37bdd57fe56e0ad4a70867563cd0b" args="($option)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#aead37bdd57fe56e0ad4a70867563cd0b">hasInsertOption</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>option</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a11ad07d9420b0b9db29da1e39a596e98"></a><!-- doxytag: member="DB_dsql::hasOption" ref="a11ad07d9420b0b9db29da1e39a596e98" args="($option)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1051,9 +1119,25 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Switches to insert mode. Use with <a class="el" href="class_d_b__dsql.html#ac7647ea03cbb7e8d8419f01c5f83b111">set()</a> </p>
+<p>Executes insert query. Returns ID of new record. </p>
 
-<p>Reimplemented in <a class="el" href="class_d_b__dsql__pgsql.html#a473241246338cfccc4709ba896749019">DB_dsql_pgsql</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ad9477b27ed5cb5ab0d33881cf90bb539"></a><!-- doxytag: member="DB_dsql::insertAll" ref="ad9477b27ed5cb5ab0d33881cf90bb539" args="($array)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#ad9477b27ed5cb5ab0d33881cf90bb539">insertAll</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Inserts multiple rows of data. Uses ignore option. </p>
 
 </div>
 </div>
@@ -1579,7 +1663,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Replace is similar to insert, but will overwrite existing records with same unique key </p>
+<p>Executes replace query </p>
 
 </div>
 </div>
@@ -1629,7 +1713,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Switches to select mode (which is default) for this query </p>
+<p>Executes select query. </p>
 
 </div>
 </div>
@@ -1685,6 +1769,26 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Defines a custom template variable. </p>
+
+</div>
+</div>
+<a class="anchor" id="aafe6b4c8e08d1fce2b69f3b9959b2d33"></a><!-- doxytag: member="DB_dsql::SQLTemplate" ref="aafe6b4c8e08d1fce2b69f3b9959b2d33" args="($mode)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#aafe6b4c8e08d1fce2b69f3b9959b2d33">SQLTemplate</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Switches to select mode (which is default) for this query </p>
+
+<p>Reimplemented in <a class="el" href="class_d_b__dsql__pgsql.html#aafe6b4c8e08d1fce2b69f3b9959b2d33">DB_dsql_pgsql</a>.</p>
 
 </div>
 </div>
@@ -1754,6 +1858,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aded92815b0f4cd9a64f76a6019162198"></a><!-- doxytag: member="DB_dsql::truncate" ref="aded92815b0f4cd9a64f76a6019162198" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#aded92815b0f4cd9a64f76a6019162198">truncate</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Executes truncate </p>
+
+</div>
+</div>
 <a class="anchor" id="a842e4774e3b3601a005b995c02f7e883"></a><!-- doxytag: member="DB_dsql::update" ref="a842e4774e3b3601a005b995c02f7e883" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1767,7 +1888,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Switch to update mode. Use with <a class="el" href="class_d_b__dsql.html#ac7647ea03cbb7e8d8419f01c5f83b111">set()</a> </p>
+<p>Executes update query </p>
 
 </div>
 </div>
@@ -1828,6 +1949,19 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a8e2b125932eca239e5221c9cdcb0e78e"></a><!-- doxytag: member="DB_dsql::$_iterating" ref="a8e2b125932eca239e5221c9cdcb0e78e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_iterating = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a67e94494731d99ed23b123e95175bc10"></a><!-- doxytag: member="DB_dsql::$args" ref="a67e94494731d99ed23b123e95175bc10" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1985,6 +2119,27 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af5a2f72cb3ef850336d2718a59f4ffad"></a><!-- doxytag: member="DB_dsql::$sql_templates" ref="af5a2f72cb3ef850336d2718a59f4ffad" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sql_templates</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Initial value:</b><div class="fragment"><pre class="fragment">array(
+        <span class="stringliteral">&#39;select&#39;</span>=&gt;<span class="stringliteral">&quot;select [options] [field] [from] [table] [join] [where] [group] [having] [order] [limit]&quot;</span>,
+        <span class="stringliteral">&#39;insert&#39;</span>=&gt;<span class="stringliteral">&quot;insert [options_insert] into [table_noalias] ([set_fields]) values ([set_values])&quot;</span>,
+        <span class="stringliteral">&#39;replace&#39;</span>=&gt;<span class="stringliteral">&quot;replace [options_replace] into [table_noalias] ([set_fields]) values ([set_value])&quot;</span>,
+        <span class="stringliteral">&#39;update&#39;</span>=&gt;<span class="stringliteral">&quot;update [table_noalias] set [set] [where]&quot;</span>,
+        <span class="stringliteral">&#39;delete&#39;</span>=&gt;<span class="stringliteral">&quot;delete from  [table_noalias] [where]&quot;</span>,
+        <span class="stringliteral">&#39;truncate&#39;</span>=&gt;<span class="stringliteral">&#39;truncate table [table_noalias]&#39;</span>
+    )
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="af27a9140d5f2658693e7fd107f716449"></a><!-- doxytag: member="DB_dsql::$stmt" ref="af27a9140d5f2658693e7fd107f716449" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -2036,7 +2191,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b__dsql.html">DB_dsql</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

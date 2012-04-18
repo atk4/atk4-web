@@ -9,6 +9,8 @@ var searchData=
   ['page_5ftester',['Page_Tester',['../class_page___tester.html',1,'']]],
   ['pagemanager',['PageManager',['../class_page_manager.html',1,'']]],
   ['paginator',['Paginator',['../class_paginator.html',1,'']]],
+  ['paginator_5fbasic',['Paginator_Basic',['../class_paginator___basic.html',1,'']]],
+  ['paginator_5fcompat',['Paginator_Compat',['../class_paginator___compat.html',1,'']]],
   ['pathfinder',['PathFinder',['../class_path_finder.html',1,'']]],
   ['pathfinder_5fexception',['PathFinder_Exception',['../class_path_finder___exception.html',1,'']]],
   ['pathfinder_5flocation',['PathFinder_Location',['../class_path_finder___location.html',1,'']]]

@@ -8,6 +8,8 @@ var class_complete_lister =
     [ "render", "class_complete_lister.html#afde88292c44dc59faf017738dae6dffb", null ],
     [ "renderRows", "class_complete_lister.html#a8cffb519cef8d77078eda50bec9f1496", null ],
     [ "updateTotals", "class_complete_lister.html#a61454d750109349ca19666b2b07fb44d", null ],
+    [ "$container_tag", "class_complete_lister.html#ab56179d3da9f7be09d655d0698f5e880", null ],
+    [ "$item_tag", "class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd", null ],
     [ "$odd_even", "class_complete_lister.html#a80d56bbd4c03d0ee9b9fe450da93913f", null ],
     [ "$row_t", "class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e", null ],
     [ "$totals", "class_complete_lister.html#ab3c7a9eeb638bd5906689f9d5cba65bc", null ],

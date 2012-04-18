@@ -3,6 +3,7 @@ var searchData=
   ['mailexception',['MailException',['../class_mail_exception.html',1,'']]],
   ['menu',['Menu',['../class_menu.html',1,'']]],
   ['menu_5fbasic',['Menu_Basic',['../class_menu___basic.html',1,'']]],
+  ['menu_5fcompat',['Menu_Compat',['../class_menu___compat.html',1,'']]],
   ['menu_5flight',['Menu_Light',['../class_menu___light.html',1,'']]],
   ['menuitem',['MenuItem',['../class_menu_item.html',1,'']]],
   ['menuseparator',['MenuSeparator',['../class_menu_separator.html',1,'']]],

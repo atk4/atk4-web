@@ -5,9 +5,9 @@ var class_api_web =
     [ "_showExecutionTimeJS", "class_api_web.html#a6109d8503dafbb69be848c0c3b395d88", null ],
     [ "addLayout", "class_api_web.html#ad15ae833701872ee84f1c3b98c2fc9f4", null ],
     [ "caughtException", "class_api_web.html#ad6fbac308cf2c1d219e4c1d6d36ee4e0", null ],
+    [ "cleanMagicQuotes", "class_api_web.html#a77ffb6f1dc198bf8cbd0d81667e1249d", null ],
     [ "defaultTemplate", "class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
     [ "execute", "class_api_web.html#a1909f4b7f8129c7790cb75de2ffbe1e4", null ],
-    [ "getIndexPage", "class_api_web.html#a388755c6312ae1aac830d654ceb07c89", null ],
     [ "getStickyArguments", "class_api_web.html#a1a5b9b7bc783823accde6b0b9ce16f86", null ],
     [ "init", "class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "initializeSession", "class_api_web.html#a742b13f9349e224a24301a0d22324046", null ],
@@ -22,7 +22,6 @@ var class_api_web =
     [ "render", "class_api_web.html#afde88292c44dc59faf017738dae6dffb", null ],
     [ "renderOnly", "class_api_web.html#a6b1f9e6d6be3aaff35eb9a25354b589f", null ],
     [ "sendHeaders", "class_api_web.html#abab55ed2b1496fd1d0f631fc99d71ed4", null ],
-    [ "setIndexPage", "class_api_web.html#acb51abb67937cb8ed3ec0f1a6609612a", null ],
     [ "setTags", "class_api_web.html#aa265a4f5509ac06e3c0bc7517e591663", null ],
     [ "showExecutionTime", "class_api_web.html#ae5683284d126e7da841b1e563a37bda1", null ],
     [ "stickyForget", "class_api_web.html#a8d3febf4b27bf7960c3ff09b436eacad", null ],
@@ -31,7 +30,6 @@ var class_api_web =
     [ "$_is_session_initialized", "class_api_web.html#a05d7fd9138206b3a29fda8723e9b3a4d", null ],
     [ "$index_page", "class_api_web.html#a9ae12c1c80d64c0ab9802729a3d4b824", null ],
     [ "$page", "class_api_web.html#a0a44e6760141442bb439b1ab1395d8ff", null ],
-    [ "$page_base", "class_api_web.html#a022f37e2c08b2da8ff09860ebb4d3f35", null ],
     [ "$start_time", "class_api_web.html#a73a034a7a0fbdd2c93f23fb6c9946ee9", null ],
     [ "$sticky_get_arguments", "class_api_web.html#ad86d216245070fbc0c0ae7d2b4be955b", null ]
 ];

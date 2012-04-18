@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -120,15 +118,17 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a0581d29baa00e04d9c73a55ad7a70247">getTagVal</a> ($tag)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a85f0210ef14dfbc9bd929a2409f58432">getDefaultSettings</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a534e1a086d21e8b85f356dc812e16c09">SMlite</a> ($template=array(), $settings=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#ad0cb87b388bc74d63dc884accdca8713">__clone</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a7c89591930e7b02d190706d7e4f5e4d7">cloneRegion</a> ($tag)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#affc3723870a0cb41997ea0988632604a">dumpTags</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a618b9aff987c3158ce9cd4c13fa64a67">get</a> ($tag)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#ab5db58d0936f97c6032ac8297e23acec">append</a> ($tag, $value, $delim=&quot;&quot;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a2e2476ce5210d81d8bf3f81004fff931">set</a> ($tag, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a3aab7be1ba87394417dc4ff420a84e22">appendHTML</a> ($tag, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a54c0f479d3559597855b62ee0cee387a">append</a> ($tag, $value, $encode=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a2afddbc651ee880341615e62570e0975">setHTML</a> ($tag, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a8b767b2200068cfd390257b7a429a9f5">set</a> ($tag, $value=null, $encode=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a0e6cde773a7f5d16ef2441071130f2c8">is_set</a> ($tag)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#aa03cdcffcf0bf04f25a4ab64ea142c0e">trySet</a> ($tag, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a2094313019c1f080a57a6f1082446cb1">trySetHTML</a> ($tag, $value=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a55bc40ede8ab92c14abfa82a3e453212">trySet</a> ($tag, $value=null, $encode=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a66f6d38f233798481fb0d0aa2559c8db">del</a> ($tag)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a02bde04f59691035e803c1cc87c06430">tryDel</a> ($tag)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a2eeb46dc55800833fad156b0029cf9c7">eachTag</a> ($tag, $callable)</td></tr>
@@ -201,12 +201,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab5db58d0936f97c6032ac8297e23acec"></a><!-- doxytag: member="SMlite::append" ref="ab5db58d0936f97c6032ac8297e23acec" args="($tag, $value, $delim=&quot;&quot;)" -->
+<a class="anchor" id="a54c0f479d3559597855b62ee0cee387a"></a><!-- doxytag: member="SMlite::append" ref="a54c0f479d3559597855b62ee0cee387a" args="($tag, $value, $encode=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_mlite.html#ab5db58d0936f97c6032ac8297e23acec">append</a> </td>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a54c0f479d3559597855b62ee0cee387a">append</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -221,7 +221,34 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>delim</em> = <code>&quot;&quot;</code>&#160;</td>
+          <td class="paramname"><em>encode</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3aab7be1ba87394417dc4ff420a84e22"></a><!-- doxytag: member="SMlite::appendHTML" ref="a3aab7be1ba87394417dc4ff420a84e22" args="($tag, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a3aab7be1ba87394417dc4ff420a84e22">appendHTML</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -635,12 +662,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2e2476ce5210d81d8bf3f81004fff931"></a><!-- doxytag: member="SMlite::set" ref="a2e2476ce5210d81d8bf3f81004fff931" args="($tag, $value=null)" -->
+<a class="anchor" id="a8b767b2200068cfd390257b7a429a9f5"></a><!-- doxytag: member="SMlite::set" ref="a8b767b2200068cfd390257b7a429a9f5" args="($tag, $value=null, $encode=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_mlite.html#a2e2476ce5210d81d8bf3f81004fff931">set</a> </td>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a8b767b2200068cfd390257b7a429a9f5">set</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -649,7 +676,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>encode</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -662,21 +695,21 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a534e1a086d21e8b85f356dc812e16c09"></a><!-- doxytag: member="SMlite::SMlite" ref="a534e1a086d21e8b85f356dc812e16c09" args="($template=array(), $settings=array())" -->
+<a class="anchor" id="a2afddbc651ee880341615e62570e0975"></a><!-- doxytag: member="SMlite::setHTML" ref="a2afddbc651ee880341615e62570e0975" args="($tag, $value=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_mlite.html">SMlite</a> </td>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a2afddbc651ee880341615e62570e0975">setHTML</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>template</em> = <code>array()</code>, </td>
+          <td class="paramname"><em>tag</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>settings</em> = <code>array()</code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -706,12 +739,45 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa03cdcffcf0bf04f25a4ab64ea142c0e"></a><!-- doxytag: member="SMlite::trySet" ref="aa03cdcffcf0bf04f25a4ab64ea142c0e" args="($tag, $value=null)" -->
+<a class="anchor" id="a55bc40ede8ab92c14abfa82a3e453212"></a><!-- doxytag: member="SMlite::trySet" ref="a55bc40ede8ab92c14abfa82a3e453212" args="($tag, $value=null, $encode=true)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_mlite.html#aa03cdcffcf0bf04f25a4ab64ea142c0e">trySet</a> </td>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a55bc40ede8ab92c14abfa82a3e453212">trySet</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>tag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>encode</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2094313019c1f080a57a6f1082446cb1"></a><!-- doxytag: member="SMlite::trySetHTML" ref="a2094313019c1f080a57a6f1082446cb1" args="($tag, $value=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a2094313019c1f080a57a6f1082446cb1">trySetHTML</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -839,7 +905,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_mlite.html">SMlite</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:10 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:51 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

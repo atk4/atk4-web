@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -111,18 +109,16 @@ Inheritance diagram for ApiCLI:</div>
  <div class="center">
   <img src="class_api_c_l_i.png" usemap="#ApiCLI_map" alt=""/>
   <map id="ApiCLI_map" name="ApiCLI_map">
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
-<area href="class_api_web.html" alt="ApiWeb" shape="rect" coords="53,168,149,192"/>
-<area href="class_api_admin.html" alt="ApiAdmin" shape="rect" coords="0,224,96,248"/>
-<area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="106,224,202,248"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_api_web.html" alt="ApiWeb" shape="rect" coords="0,168,96,192"/>
+<area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="0,224,96,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aee3db7bdae36468c8d21102728f28205">__construct</a> ($realm=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ab6f0660208d8ba2991cbd130afe93169">addGlobalMethod</a> ($name, $callable)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a41891ce66520bbc96bb11a9e9d8323a7">hasGlobalMethod</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a9226117e38cd8cec317ffee960b64f2c">removeGlobalMethod</a> ($name)</td></tr>
@@ -144,8 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ac7f3fa06553515f0b9aef2a2b87bfde8">configExceptionOrDefault</a> ($default, $exceptiontext)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#abd9a3259a940f29bade0d0f495593787">readConfig</a> ($file='config.php')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ab4d327ecd33baee7cd893aff5298fbb6">setConfig</a> ($config=array())</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a9cb2869c68015820db4ed3d5382b7466">getConfig</a> ($path, $default_value= '**undefined_value **')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig</a> ($path, $default_value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4ca5d4b096fb575950c7697e6737e677">getVersion</a> ($of='atk')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a708c51fc3e1bb2399b8bd83aa0b6eb60">requires</a> ($addon='atk', $v, $return_only=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4c5f6bfd3128096d61e207379a03e28c">versionRequirement</a> ($v, $return_only=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#af0f24576af293cb29436a19284fa0a06">dbConnect</a> ($dsn=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ae4d9cdd841aa6f531a64a3533a2b6537">tryConnect</a> ($dsn)</td></tr>
@@ -153,14 +150,17 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a1fa3127fc82f96b1436d871ef02be319">$db</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aebfec76216371ef236acc5910e90933d">$logger</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aa4f3292cb660a22ce111d47635b225c9">$pathfinder</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4011bd1646505f48bf081f40e56552d5">$skin</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a7b15e8bcbcabe0d69d54a5533cf4c3eb">$atk_version</a> = 4.2</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aac4284f23d285f90b5f5d98f742ee29d">$pr</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a8c827eb5ea72ee1b6d59078227d8db5b">$pathfinder_class</a> = '<a class="el" href="class_path_finder.html">PathFinder</a>'</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base class for Command-Line Applications</p>
+<div class="textblock"><p>Base class for Command-Line Applications. If you need to share code between multiple APIs, create a controller.</p>
 <p>More Info <a class="el" href=""><a href="http://agiletoolkit.org/doc/apicli">http://agiletoolkit.org/doc/apicli</a> </a></p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aee3db7bdae36468c8d21102728f28205"></a><!-- doxytag: member="ApiCLI::__construct" ref="aee3db7bdae36468c8d21102728f28205" args="($realm=null)" -->
@@ -177,7 +177,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize application. Redefine in your application but always call parent </p>
+<p>Initializes properties of the application. Redefine <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> instead of this </p>
 
 </div>
 </div>
@@ -196,7 +196,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine this function to introduce your localization. Agile Toolkit will call it with some system strings </p>
+<p>Redefine this function to introduce your localization. Agile Toolkit will pass all system strings through this method. If some methods are not properly passed through, please fork Agile Toolkit in <a href="http://github.com/atk4/atk4/">http://github.com/atk4/atk4/</a> , modify, commit, push your fix and notify authors of Agile Toolkit using contact form on <a href="http://agiletoolkit.org/contact">http://agiletoolkit.org/contact</a></p>
+<p>See file CONTRIBUTING </p>
 
 </div>
 </div>
@@ -224,7 +225,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Register method with all objects in Agile Toolkit. Use only in controllers. </p>
+<p>Register method with all objects in Agile Toolkit. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_abstract_object.html#a6d24132dc92242f7f71aa98e7ae86442">AbstractObject::hasMethod()</a> </dd>
+<dd>
+<a class="el" href="class_abstract_object.html#acfa40ec504c3c792c3b84cf2f1af511d">AbstractObject::__call()</a> </dd></dl>
 
 </div>
 </div>
@@ -335,16 +339,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns base <a class="el" href="class_u_r_l.html">URL</a> of this Web application installation </p>
+<p>Returns base <a class="el" href="class_u_r_l.html">URL</a> of this Web application installation. If you require link to a page, you can use <a class="el" href="class_u_r_l.html#aebc4c8366ed6f9cdbff7e625650723eb">URL::useAbsoluteURL()</a>;</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_u_r_l.html#aebc4c8366ed6f9cdbff7e625650723eb">URL::useAbsoluteURL()</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9cb2869c68015820db4ed3d5382b7466"></a><!-- doxytag: member="ApiCLI::getConfig" ref="a9cb2869c68015820db4ed3d5382b7466" args="($path, $default_value= '**undefined_value **')" -->
+<a class="anchor" id="a57ebc8874f57c076e0f43fbdb526a39b"></a><!-- doxytag: member="ApiCLI::getConfig" ref="a57ebc8874f57c076e0f43fbdb526a39b" args="($path, $default_value=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#a9cb2869c68015820db4ed3d5382b7466">getConfig</a> </td>
+          <td class="memname"><a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -353,7 +358,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>default_value</em> = <code>'**undefined_value**'</code>&#160;</td>
+          <td class="paramname"><em>default_value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -364,9 +369,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Load config if necessary and look up corresponding setting </p>
-<p>For given path such as 'dsn' or 'logger/log_dir' returns corresponding config value. Throws <a class="el" href="class_exception_not_configured.html">ExceptionNotConfigured</a> if not set.</p>
+<p>For given path such as 'dsn' or 'logger/log_dir' returns corresponding config value. Throws ExceptionNotConfigured if not set.</p>
 <p>To find out if config is set, do this:</p>
-<p>$var_is_set=true; try { $api-&gt;getConfig($path); } catch <a class="el" href="class_exception_not_configured.html">ExceptionNotConfigured</a>($e) { $var_is_set=false; };</p>
+<p>$var_is_set=true; try { $api-&gt;getConfig($path); } catch ExceptionNotConfigured($e) { $var_is_set=false; };</p>
 
 </div>
 </div>
@@ -394,7 +399,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>See <a class="el" href="class_api_c_l_i.html#a37b5260768d793d1011544d7d2f670b3">url()</a> </p>
+<p>use <a class="el" href="class_api_c_l_i.html#a37b5260768d793d1011544d7d2f670b3">url()</a> </p>
 
 </div>
 </div>
@@ -447,29 +452,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Use only in Controllers </p>
-
-</div>
-</div>
-<a class="anchor" id="a4be4055f3361d4800e16bc2e2e38cda6"></a><!-- doxytag: member="ApiCLI::init" ref="a4be4055f3361d4800e16bc2e2e38cda6" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Initialize object. Always call parent </p>
-<p>This method is called for initialization</p>
-
-<p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
-
-<p>Reimplemented in <a class="el" href="class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiWeb</a>, and <a class="el" href="class_api_admin.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiAdmin</a>.</p>
+<p>Returns if a global method with such name was defined </p>
 
 </div>
 </div>
@@ -617,8 +600,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_api_admin.html#a220445fc67120afa44837f08dc491f4d">ApiAdmin</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aa7312b50ddc17745e01a698ef26ba724"></a><!-- doxytag: member="ApiCLI::outputInfo" ref="aa7312b50ddc17745e01a698ef26ba724" args="($msg, $shift=0)" -->
@@ -693,7 +674,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Read config file and store it in memory </p>
+<p>Read config file and store it in $this-&gt;config. Use <a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig()</a> to access </p>
 
 </div>
 </div>
@@ -711,7 +692,41 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Use only in Controllers </p>
+<p>Removes global method </p>
+
+</div>
+</div>
+<a class="anchor" id="a708c51fc3e1bb2399b8bd83aa0b6eb60"></a><!-- doxytag: member="ApiCLI::requires" ref="a708c51fc3e1bb2399b8bd83aa0b6eb60" args="($addon='atk', $v, $return_only=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_c_l_i.html#a708c51fc3e1bb2399b8bd83aa0b6eb60">requires</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>addon</em> = <code>'atk'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>return_only</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Verifies version. Should be used by addons. For speed improvement, redefine this into empty function </p>
 
 </div>
 </div>
@@ -747,7 +762,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Attempts to connect, but does not raise exception on failure </p>
+<p>Attempts to connect, but does not raise exception on failure. </p>
 
 </div>
 </div>
@@ -834,11 +849,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Verifies version. Should be used by addons </p>
+<p>use  </p>
 
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a7b15e8bcbcabe0d69d54a5533cf4c3eb"></a><!-- doxytag: member="ApiCLI::$atk_version" ref="a7b15e8bcbcabe0d69d54a5533cf4c3eb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$atk_version = 4.2</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>For fast compatibility checks. To be more specific use $api-&gt;<a class="el" href="class_api_c_l_i.html#a708c51fc3e1bb2399b8bd83aa0b6eb60">requires()</a> </p>
+
+</div>
+</div>
 <a class="anchor" id="a49c7011be9c979d9174c52a8b83e5d8e"></a><!-- doxytag: member="ApiCLI::$config" ref="a49c7011be9c979d9174c52a8b83e5d8e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -849,7 +878,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Configuration loaded from config.php and config-defaults.php files. Use <a class="el" href="class_api_c_l_i.html#a9cb2869c68015820db4ed3d5382b7466">getConfig()</a> to access </p>
+<p>Configuration loaded from config.php and config-defaults.php files. Use <a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig()</a> to access </p>
 
 </div>
 </div>
@@ -863,7 +892,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default database connection </p>
+<p>Default database connection. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_api_c_l_i.html#af0f24576af293cb29436a19284fa0a06">dbConnect()</a> </dd></dl>
 
 </div>
 </div>
@@ -881,6 +911,20 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa4f3292cb660a22ce111d47635b225c9"></a><!-- doxytag: member="ApiCLI::$pathfinder" ref="aa4f3292cb660a22ce111d47635b225c9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$pathfinder = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Points to the instance of <a class="el" href="class_path_finder.html">PathFinder</a> class, which is used to locate resource files. <a class="el" href="class_path_finder.html">PathFinder</a> is the first class to be initialized after API. </p>
+
+</div>
+</div>
 <a class="anchor" id="a8c827eb5ea72ee1b6d59078227d8db5b"></a><!-- doxytag: member="ApiCLI::$pathfinder_class" ref="a8c827eb5ea72ee1b6d59078227d8db5b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -891,7 +935,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Points to the instance of <a class="el" href="class_path_finder.html">PathFinder</a> class, which is used to locate resource files </p>
+
+</div>
+</div>
+<a class="anchor" id="aac4284f23d285f90b5f5d98f742ee29d"></a><!-- doxytag: member="ApiCLI::$pr" ref="aac4284f23d285f90b5f5d98f742ee29d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$pr</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>$pr points to profiler. All lines referencing $pr myst be prefixed with the 4-symbol sequence "/ ** /" (no spaces). When deploying to production, you can remove all lines from all files starting with the sequence without affecting how your application works, but slightly improving performance </p>
 
 </div>
 </div>
@@ -932,7 +989,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_c_l_i.html">ApiCLI</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

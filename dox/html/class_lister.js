@@ -7,7 +7,10 @@ var class_lister =
     [ "rowRender", "class_lister.html#a53dfd3d124ec6340c67066ff431a8662", null ],
     [ "setSource", "class_lister.html#af2ec5a16f864c0e467239ec41a94a508", null ],
     [ "setStaticSource", "class_lister.html#a614605ea9b63d641a0f5f32e4479cc05", null ],
+    [ "$current_id", "class_lister.html#ad97957dc8f96da580b344ae7a203805d", null ],
     [ "$current_row", "class_lister.html#a2ec3a266ee95cda75cdbb71bc9ee1b53", null ],
+    [ "$current_row_html", "class_lister.html#af7c9c05bbefcfe02242d897a5a8f3916", null ],
     [ "$dq", "class_lister.html#aebca8a669fb218b783f96a1bf801264e", null ],
-    [ "$iter", "class_lister.html#a24e6fb63018a7bf30419158cfedcdc22", null ]
+    [ "$iter", "class_lister.html#a24e6fb63018a7bf30419158cfedcdc22", null ],
+    [ "$iterator", "class_lister.html#a3a999852dfee63e69aacacefb7e33564", null ]
 ];

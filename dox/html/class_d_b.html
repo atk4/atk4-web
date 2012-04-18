@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -130,15 +128,13 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#acc1e62674bb7200ea73767c19dc1344d">$dbh</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a204a6a5174b8257a21f65071b328ec8b">$query_cache</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a9a4a6fba2208984cabb3afacadf33919">$type</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a04ab0f27959cb92fa5691286bcd8b55b">$dsql_class</a> = '<a class="el" href="class_d_b__dsql.html">DB_dsql</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a7da74af76d647c306ce5acf42fe799df">$transaction_depth</a> = 0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of PDO support in Agile Toolkit</p>
-<p>Use: $this-&gt;api-&gt;dbConnect(); $query = $this-&gt;api-&gt;db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a>;</p>
-<p>See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </p>
+<p>Use: $this-&gt;api-&gt;dbConnect(); $query = $this-&gt;api-&gt;db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a>; </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="af3380f3b13931d581fa973a382946b32"></a><!-- doxytag: member="DB::beginTransaction" ref="af3380f3b13931d581fa973a382946b32" args="()" -->
 <div class="memitem">
@@ -355,20 +351,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a204a6a5174b8257a21f65071b328ec8b"></a><!-- doxytag: member="DB::$query_cache" ref="a204a6a5174b8257a21f65071b328ec8b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$query_cache = array()</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>when queries are executed, their statements are cached for later re-use </p>
-
-</div>
-</div>
 <a class="anchor" id="a7da74af76d647c306ce5acf42fe799df"></a><!-- doxytag: member="DB::$transaction_depth" ref="a7da74af76d647c306ce5acf42fe799df" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -419,7 +401,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b.html">DB</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:08 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

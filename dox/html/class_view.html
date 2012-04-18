@@ -30,8 +30,6 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="atk4-logo_med.png"/></td>
-  
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">Agile Toolkit
@@ -109,27 +107,16 @@ Inheritance diagram for View:</div>
  <div class="center">
   <img src="class_view.png" usemap="#View_map" alt=""/>
   <map id="View_map" name="View_map">
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="512,56,630,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="512,0,630,24"/>
-<area href="class_frame.html" alt="Frame" shape="rect" coords="0,168,118,192"/>
-<area href="class_lister.html" alt="Lister" shape="rect" coords="128,168,246,192"/>
-<area href="class_view___box.html" alt="View_Box" shape="rect" coords="256,168,374,192"/>
-<area href="class_view___columns.html" alt="View_Columns" shape="rect" coords="512,168,630,192"/>
-<area href="class_view___c_r_u_d.html" alt="View_CRUD" shape="rect" coords="640,168,758,192"/>
-<area href="class_view___html_element.html" alt="View_HtmlElement" shape="rect" coords="768,168,886,192"/>
-<area href="class_view___tabs.html" alt="View_Tabs" shape="rect" coords="1024,168,1142,192"/>
-<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="128,224,246,248"/>
-<area href="class_view___error.html" alt="View_Error" shape="rect" coords="384,224,502,248"/>
-<area href="class_view___hint.html" alt="View_Hint" shape="rect" coords="384,280,502,304"/>
-<area href="class_view___info.html" alt="View_Info" shape="rect" coords="384,336,502,360"/>
-<area href="class_view___warning.html" alt="View_Warning" shape="rect" coords="384,392,502,416"/>
-<area href="class_columns.html" alt="Columns" shape="rect" coords="512,224,630,248"/>
-<area href="class_c_r_u_d.html" alt="CRUD" shape="rect" coords="640,224,758,248"/>
-<area href="class_form___hint.html" alt="Form_Hint" shape="rect" coords="896,224,1014,248"/>
-<area href="class_html_element.html" alt="HtmlElement" shape="rect" coords="896,280,1014,304"/>
-<area href="class_view___button.html" alt="View_Button" shape="rect" coords="896,336,1014,360"/>
-<area href="class_view___icon.html" alt="View_Icon" shape="rect" coords="896,392,1014,416"/>
-<area href="class_view___tabs__j_u_itabs.html" alt="View_Tabs_jUItabs" shape="rect" coords="1024,224,1142,248"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,115,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,115,24"/>
+<area href="class_form___basic.html" alt="Form_Basic" shape="rect" coords="125,168,240,192"/>
+<area href="class_frame.html" alt="Frame" shape="rect" coords="125,224,240,248"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="125,280,240,304"/>
+<area href="class_view___box.html" alt="View_Box" shape="rect" coords="125,336,240,360"/>
+<area href="class_view___columns.html" alt="View_Columns" shape="rect" coords="125,392,240,416"/>
+<area href="class_view___c_r_u_d.html" alt="View_CRUD" shape="rect" coords="125,448,240,472"/>
+<area href="class_view___html_element.html" alt="View_HtmlElement" shape="rect" coords="125,504,240,528"/>
+<area href="class_view___tabs.html" alt="View_Tabs" shape="rect" coords="125,560,240,584"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -138,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a2193ae9420d4227a233ac136d14c9407">setElement</a> ($element)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#af872a9c35cc9d5ef7956986455122a12">setAttr</a> ($attribute, $value=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#af297b685c862e9957c775f11d30367a4">addClass</a> ($class)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a8d2c9f07514863c12756f00354c96f67">setClass</a> ($class)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aecfb78e7665096735196b2504d4a9580">setStyle</a> ($property, $style=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a2ab7f4f94ec115c4b13fb8d2d30b3c8b">addStyle</a> ($property, $style=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aed98453b92e9e7e961179dfff24c4a3a">setText</a> ($text)</td></tr>
@@ -207,11 +195,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 3rd argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#add8c5a33f231d9979e5f8bbded576d9e">AbstractView</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>, <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>.</p>
+<p>Reimplemented in <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>, <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>.</p>
 
 </div>
 </div>
@@ -260,6 +248,25 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Add attribute to element. Also supports hash for multiple attributes </p>
+
+</div>
+</div>
+<a class="anchor" id="a8d2c9f07514863c12756f00354c96f67"></a><!-- doxytag: member="View::setClass" ref="a8d2c9f07514863c12756f00354c96f67" args="($class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view.html#a8d2c9f07514863c12756f00354c96f67">setClass</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>class</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_view___button.html#a8d2c9f07514863c12756f00354c96f67">View_Button</a>.</p>
 
 </div>
 </div>
@@ -370,7 +377,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_view.html">View</a>      </li>
 
-    <li class="footer">Generated on Thu Feb 23 2012 02:18:10 for Agile Toolkit by
+    <li class="footer">Generated on Wed Apr 18 2012 12:50:51 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

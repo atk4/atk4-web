@@ -21,8 +21,8 @@ var searchData=
   ['orexpr',['orExpr',['../class_d_b__dsql.html#a01d185dab1dda265506a243dfc8f5333',1,'DB_dsql']]],
   ['output',['output',['../class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40',1,'AbstractView']]],
   ['outputdebug',['outputDebug',['../class_api_c_l_i.html#a41a61ce77bee992bb93b41015d617c81',1,'ApiCLI\outputDebug()'],['../class_api_web.html#a41a61ce77bee992bb93b41015d617c81',1,'ApiWeb\outputDebug()'],['../class_logger.html#affe82524d53cc5d18a761d1ca183284b',1,'Logger\outputDebug()']]],
-  ['outputfatal',['outputFatal',['../class_api_admin.html#a220445fc67120afa44837f08dc491f4d',1,'ApiAdmin\outputFatal()'],['../class_api_c_l_i.html#a70dfafefd567c8115a65126fa340d882',1,'ApiCLI\outputFatal()'],['../class_logger.html#aad74cd3ba40ea5d3a436a6fa7104c42f',1,'Logger\outputFatal()']]],
-  ['outputinfo',['outputInfo',['../class_api_admin.html#a580957852c87152f6a2b3116ab996c60',1,'ApiAdmin\outputInfo()'],['../class_api_c_l_i.html#aa7312b50ddc17745e01a698ef26ba724',1,'ApiCLI\outputInfo()'],['../class_api_web.html#aa7312b50ddc17745e01a698ef26ba724',1,'ApiWeb\outputInfo()'],['../class_logger.html#a569c06f2a12d0c0887927137acf60110',1,'Logger\outputInfo()']]],
-  ['outputnum',['outputNum',['../class_paginator.html#ac1ad9148a7f7865e0bfeb08a6fbdbeee',1,'Paginator']]],
+  ['outputfatal',['outputFatal',['../class_api_c_l_i.html#a70dfafefd567c8115a65126fa340d882',1,'ApiCLI\outputFatal()'],['../class_logger.html#aad74cd3ba40ea5d3a436a6fa7104c42f',1,'Logger\outputFatal()']]],
+  ['outputinfo',['outputInfo',['../class_api_c_l_i.html#aa7312b50ddc17745e01a698ef26ba724',1,'ApiCLI\outputInfo()'],['../class_api_web.html#aa7312b50ddc17745e01a698ef26ba724',1,'ApiWeb\outputInfo()'],['../class_logger.html#a569c06f2a12d0c0887927137acf60110',1,'Logger\outputInfo()']]],
+  ['outputnum',['outputNum',['../class_paginator___compat.html#ac1ad9148a7f7865e0bfeb08a6fbdbeee',1,'Paginator_Compat']]],
   ['outputwarning',['outputWarning',['../class_api_c_l_i.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1',1,'ApiCLI\outputWarning()'],['../class_api_web.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1',1,'ApiWeb\outputWarning()'],['../class_logger.html#a7fb5bbd39ccc833e45f38d08610c4093',1,'Logger\outputWarning()']]]
 ];
