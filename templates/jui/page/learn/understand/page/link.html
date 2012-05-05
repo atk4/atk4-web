@@ -8,14 +8,14 @@
         one of the following methods:
 <?Example?>
 $url=$page->api
-    ->getDestinationURL('preferences/user');
+    ->url('preferences/user');
 
 $page->add('P')->set('URL is '.$url);
 $page->add('P')->set('Absolute URL is '.
     $url->useAbsoluteURL());
 <?/?>
+<p>The output of url() is actually an object, which produces proper URL when converted into string</p>
 
-        <p>You might have noticed that $url is actually an object, which can also be used as a string.</p>
 
         <p>To pass information between pages, a convenient way is to use arguments in the URL, as in a GET form request. 
         If you wish to complicate things by creating URLs such as /book/39/delete you are free to spend some time building
@@ -24,8 +24,7 @@ $page->add('P')->set('Absolute URL is '.
 
 <?Example?>
 $url=$page->api
-    ->getDestinationURL('search',
-            array('q'=>'my book'));
+    ->url('search', array('q'=>'my book'));
 
 $page->add('P')->set('URL is '.$url);
 $page->add('P')->set('Absolute URL is '.
@@ -36,18 +35,18 @@ $page->add('P')->set('Absolute URL is '.
         from the list of arguments.</p>
 
         <h3>Sticky GET Arguments</h3>
-        <p>Sometimes our page will receive an argument which it shouldn't forget. Agile Toolkit allows you to mark some
-        GET arguments as "sticky", which means they will be passed on to all generated URLs automatically.</p>
+        <p>Some views (such as Paginator or Form) produce links. They can't know, however, if you want any certain arguments
+        included in theese links. Typically you would want some arguments to be preserved, such as ID of the record which is being
+        currently edited.</p>
 
-        <p>In the following example, if a "user" GET argument is passed to the page, this argument will be included in all
-        subsequently generated URLs. Positioning of the stickyGET() call is important. The effect of stickyGET can be undone by
-        calling stickyForget, although normally you wouldn't need to do it.</p>
+        <p>Agile Toolkit introduces a mechanism called Sticky GET arguments. Once argument is marked as "sticky" it will appear on
+        all generated URLs.</p>
 
 <?Example?>
 $page->api->stickyGET('user');
 
 $url=$page->api
-    ->getDestinationURL('search',
+    ->url('search',
             array('q'=>'my book'));
 
 $para=$page->add('P')->set('URL is '.$url.
@@ -84,7 +83,7 @@ $page->add('Button')->setLabel('Refresh paragraph')
 			<tr>
 				<td>.</td>
 				<td><?page?>.<?/?></td>
-				<td>Single dot refers to the current page. You can also pass "null" as 1st argument to getDestinationURL to
+				<td>Single dot refers to the current page. You can also pass "null" as 1st argument to url() to
                 assume current page</td>
 			</tr>
 			<tr>
@@ -122,7 +121,7 @@ $in->js('change',$form->js()->submit());
 
 $form->onSubmit(function($form) use($out){
     return $out->js()->val(
-        $form->api->getDestinationURL(
+        $form->api->url(
             $form->get('page')));
 });
 

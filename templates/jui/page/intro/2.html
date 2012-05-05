@@ -9,7 +9,8 @@
 <p>To make things simpler, Agile Toolkit already comes with a full-featured theme for you.</p>
 
 <h2>Agile Toolkit CSS Framework</h2>
-<p>In it's aim for maximum flexibility, Agile Toolkit CSS framework is built on top of jQuery UI CSS Framework. That means not only it looks awesome, but your UI will be compatible with thousands of jQuery plugins relying on the same set of CSS classes.<ul>
+<p>In it's aim for maximum flexibility, Agile Toolkit CSS framework is built on top of jQuery UI CSS Framework. That means not only it looks awesome, but your UI will be compatible with thousands of jQuery plugins relying on the same set of CSS classes. You will find CSS framework similar and somewhat compatible with Bootstrap.<ul>
+
   <li>Compatible with jQuery UI Themeroller. Generate a theme and drop into your templates folder.</li>
   <li>All the CSS is built on LESS. You can tweak the theme by adjusting some variables.</li>
   <li>Comes with 12-grid system (static or full-screen), Typography, Percent-based columns and CSS Reset.</li>
@@ -23,6 +24,7 @@
   </div>
 </div>
 
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="http://example.agiletoolkit.org?page=playground" target="_blank">Demo of CSS framework elements</a><br/>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/css<?/?>">Full Documentation on Agile CSS Framework</a>
 
 <h2>View Objects</h2>
@@ -50,7 +52,7 @@ $form->addButton('Cancel');
 <h2>SMLite - Agile Template Engine</h2>
 <p>Template is a common practice to separate HTML markup from business logic. Unfortunately many template engines and frameworks have been walking all over the principle saying "do not mix business logic with HTML".</p>
 
-<p>SMLite remains true to it's goals and has no way to complicate HTML logic. More importantly it's syntax allows to leave HTML code un-altered as you populate tags throughout the template. When developers work side-by-side with designers, it's very important that the two have a really clear line on their involvement with the templates and SMLite does just that.</p>
+<p>SMLite remains true to it's goals and has no way to complicate HTML logic. More importantly it's syntax allows to leave HTML code un-altered as you populate tags throughout the template. When developers work side-by-side with designers, it's very important that the two have a really clear line on their involvement with the templates and SMLite draws a clear line.</p>
 
 <h3>Example</h3>
 <p>If your designer have sent you the following file:</p>
@@ -66,18 +68,18 @@ $form->addButton('Cancel');
 
 </code></div>
 
-<p>Designer, browsers and even applications such as Dreamweaver can easily ignore inserted tags. Yet now you have control over the template and can substitute contents of a tag inside your PHP code:</p>
+<p>Designer, browsers and even applications such as Dreamweaver will ignore inserted tags without removing them. Yet now you have control over the template and can substitute contents of a tag inside your PHP code:</p>
 
 <?Code?>
-echo $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
+$html = $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
 <?/?>
 
 <p>This is as simple as templates engine can be. It is also all we need from the template engine — ability to get and set region values. This simplicity is significant to the way how templates are used by the User Interface.</p>
 
 <h4>Why?</h4>
-<p>The reason why Agile Toolkit implements it's own template engine are several. First it's the speed. Agile Toolkit can produce huge amount of views and can use thousands of <a href="<?page?>intro/speed<?/?>">template instances just on a single page</a>. Template engine must be very fast. Tags must be indexed.</p>
+<p>There are several reasons why we decided to build our own template engine. First reason is the speed. Agile Toolkit can produce huge amount of views and can render <a href="<?page?>intro/speed<?/?>">thousands of template instances just on a single page</a> in a split second. With a built-in template engine we have control over the simplicity of the template and it's performance.</p>
 
-<p>The other reason is that Views are fully integrated with the template. Apart from setting value of the template yourself, views can do it for you automatically. In majority of your software you would not be creating and rendering templates manually.</p>
+<p>The other reason is the way how Views are using templates. All views rely on templates. When you add view, you can instruct it to use either a whole file as a template or a region from a file. View can also use region in it's owner's view as the template. Views can have default templates, such as Grid and Form but you can always re-define template for any object instance or substitute template globally.</p>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/smlite<?/?>">Full Documentation on SMLite</a>
 
@@ -85,15 +87,17 @@ echo $tpl->set('tag','powerful')->render();  // outputs "Templates are powerful"
 <?Execute?>
 $view = $page->add('Alex');
 <?/?>
-<p>The web page you are reading right now is built on Agile Toolkit. Every character of produced HTML is coming from a template of some Object. Objects which participate in HTML generation are called "Views". Quite often Views will contain other Views. Above there was a Menu object. Below are some Form objects but to the right of this paragraph you will see a custom-made View implemented as a class "Alex".</p>
+<p>The web page you are reading right now is built on Agile Toolkit. Every character of produced HTML is coming from a template of some Object. Objects which participate in HTML generation are called "Views". Quite often Views will contain other Views. Scroll up to see a "Menu" object. Below is a Form objects but to the right of this paragraph you will see a custom-made View implemented as a class "Alex".</p>
 
-<p>Objects are rendered automatically and recursively by Agile Toolkit. Objects rely on SMlite which can be accessible through $object->template which is ideal if you need to tweak something very minor in the object without redefining it. You can also specify a different template for an object and have same UI logic applied on different chunk of HTML.</p>
+<p>Objects are rendered automatically and recursively by Agile Toolkit. Objects rely on SMLite which can be accessible through $object->template which is ideal if you need to tweak something very minor in the object without redefining it. You can also specify a different template for an object and have same UI logic applied on different chunk of HTML.</p>
+
+<p>The two-pass rendering allows application to determine which objects are visible on the first pass and then render required objects into HTML.</p>
 
 <?Code?>
 $view = $page->add('Alex');
 <?/?>
 
-<p>The code above is the fundamental building block of your application in Agile Toolkit. You don't start your application from HTML. You start it by adding views to your pages. Design and templates can always be tweaked after in a unified system-wide way. That's the secret to unified Web Application Interface</p>
+<p>The code above is the fundamental building block of your application in Agile Toolkit. You don't fit your application into HTML. You build your application by adding one object into another. That's the secret to unified Web Application Interface.</p>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/view<?/?>">Full Documentation on Views</a>
 
 <h2>View + jQuery UI Widget = Love</h2>
@@ -117,7 +121,7 @@ if($form->isSubmitted()){
 
 <p>You are now familiar to how the core part of Agile Toolkit works. Given the flexibility and Object-Oriented design of the foundation, it is not
 difficult at all to imagine what kind of views you might be developing next. But before then, let's connect the "Views" with "Data Layer". This is 
-the intersection between the UI logic and Business logic and the honour to integrate them goes to "Controllers"</p>
+the intersection between the UI logic and Business logic and the honour to integrate them goes to "Controllers".</p>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/jquery<?/?>">Full Documentation on jQuery Chains</a>
 

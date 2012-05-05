@@ -1,82 +1,78 @@
 
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
-        <h1>How Agile Toolkit keeps PHP Simple?</h1>
-        <p>The PHP language packs an insane amount of features. When all of them are mashed together, your code starts to look complex, creepy and very Java-like. Agile Toolkit specifically tries to avoid some of the features, and tones down some other features.</p>
+<h1>How Agile Toolkit keeps PHP Simple?</h1>
+<p>The PHP language packs an insane amount of features. When all of them are mashed together, your code starts to look complex, creepy and very Java-like. Agile Toolkit specifically tries to avoid some of the features, and tones down some other features.</p>
 
-        <h2>PHP5 Features Agile Toolkit avoids using</h2>
-        <p>Below are the list of features and concepts which Agile Toolkit avoids, as well as the reasoning behind the decision:</p>
+<h2>PHP5 Features Agile Toolkit avoids using</h2>
+<p>Below are the list of features and concepts which Agile Toolkit avoids, as well as the reasoning behind the decision:</p>
 
-        <h3>Command-line code generation</h3>
-        <p>There is no magic command-line utility to generate a bunch of code on your behalf. Generation of repeated code is a violation
-        of the DRY (Don't Repeat Yourself) principle. It also often adds stuff to your project that you are not aware of, but
-        which you will need to continue to maintain.</p>
+<h3>Command-line code generation</h3>
+<p>There is no magic command-line utility to generate a bunch of code on your behalf. Generation of repeated code is a violation
+of the DRY (Don't Repeat Yourself) principle. It also often adds stuff to your project that you are not aware of, but
+which you will need to continue to maintain.</p>
 
-        <p>Agile Toolkit provides many ways to simplify your project structure and reduce the amount of code you will
-        need to write, therefore code generation is not needed.</p>
+<p>Agile Toolkit provides many ways to simplify your project structure and reduce the amount of code you will
+need to write, therefore code generation is not needed.</p>
 
-        <h3>Singletons</h3>
-        <p>Singletons are evil. Especially in PHP. They give no benefits, not even memory saving. They might have some use in
-        Java, but are generally considered a bad design in PHP software.</p>
+<h3>Singletons</h3>
+<p>Singletons are evil. Especially in PHP. They give no benefits, not even memory saving. They might have some use in
+Java, but are generally considered a bad design in PHP software.</p>
 
-        <p>Agile Toolkit never relies on singletons. As a result, you may create two or more instances of API, completely
-        independently. "Controllers" can only be added once into the parent, but having them in each copy of the API makes sense.
-        Consider the example, where clicking a link in the Admin system logs you into the Frontend as a specific user. The most 
-        correct way to implement this is to initialize a Frontend API along with its Auth, and log the user there directly.</p>
+<p>Agile Toolkit never relies on singletons. As a result, you may create two or more instances of API, completely
+independently. "Controllers" can only be added once into the parent, but having them in each copy of the API makes sense.
+Consider the example, where clicking a link in the Admin system logs you into the Frontend as a specific user. The most 
+correct way to implement this is to initialize a Frontend API along with its Auth, and log the user there directly.</p>
 
-        <h3>Protected and Private properties</h3>
-        <p>Access restriction is a way to tell users "keep away from the core". Unfortunately PHP does not implement any
-        support which would allow specific classes (friendly as in C++ or package as in Java) access to those
-        properties.</p>
+<h3>Protected and Private properties</h3>
+<p>Access restriction is a way to tell users "keep away from the core". Unfortunately PHP does not implement any
+support which would allow specific classes (friendly as in C++ or package as in Java) access to those
+properties.</p>
 
-        <p>Agile Toolkit keeps properties and functions public. Even though you might not need to call them, some Controller
-        may use them directly to enhance functionality of an object in a certain context.</p>
+<p>Agile Toolkit keeps properties and functions public. Even though you might not need to call them, some Controller
+may use them directly to enhance functionality of an object in a certain context.</p>
 
-        <h3>Setters and Getters</h3>
-        <p>There is a school of thought that all properties should be declared as 'private', and should only be accessible through
-        accessor functions such as getMyProperty / setMyProperty. This principle seems to work fine in the C language, which can optimize
-        the use of those functions to the same level as accessing the properties directly. In PHP, using this approach slows
-        down both the development and execution slightly.</p>
+<h3>Setters and Getters</h3>
+<p>There is a school of thought that all properties should be declared as 'private', and should only be accessible through
+accessor functions such as getMyProperty / setMyProperty. This principle seems to work fine in the C language, which can optimize
+the use of those functions to the same level as accessing the properties directly. In PHP, using this approach slows
+down both the development and execution slightly.</p>
 
-        <p>In Agile Toolkit you will often see the use of $obj->set() and $obj->get() methods, which functionally vary
-        depending on the object type. Usually those methods deal with complex logic, such as setting tag values in templates. Do not be
-        afraid to access properties directly.</p>
+<p>In Agile Toolkit you will often see the use of $obj->set() and $obj->get() methods, which functionally vary
+depending on the object type. Usually those methods deal with complex logic, such as setting tag values in templates. Do not be
+afraid to access properties directly.</p>
 
-        <p>The exception is in field definitions for Models, which use functions primarily for chaining.</p>
+<p>The exception is in field definitions for Models, which use functions primarily for chaining.</p>
 
-        <h3>Long variable or class names</h3>
-        <p>Typing long variable names takes time. Methods, classes and properties in Agile Toolkit use compact names
-        to produce as little code as possible. However all methods must be meaningful.</p>
+<h3>Long variable or class names</h3>
+<p>Typing long variable names takes time. Methods, classes and properties in Agile Toolkit use compact names
+to produce as little code as possible. However all methods must be meaningful.</p>
 
-        <h3>Namespaces</h3>
-        <p>Agile Toolkit uses namespaces for add-ons. It is to avoid class name collisions between different add-ons and base
-        classes. Read add-on development guide for more information.</p>
+<h3>Namespaces</h3>
+<p>Agile Toolkit uses namespaces for add-ons. It is to avoid class name collisions between different add-ons and base
+classes. Read add-on development guide for more information. Namespaces are not used within Core or Your code.</p>
 
 
-        <h2>Features to be careful about</h2>
+<h2>Features to be careful about</h2>
 
-        <h3>IDEs and code type hinting</h3>
-        <p>Some of the constructions in Agile Toolkit make it impossible for type hinting to work correctly in IDEs. In some
-        instances, a comment suggesting a variable type may be used, for example, with the add() function, which may help
-        code hinting to work in the IDE:
+<h3>IDEs and code type hinting</h3>
+<p>Some of the constructions in Agile Toolkit make it impossible for type hinting to work correctly in IDEs. This is because
+IDE's are having difficulties with type-less code parsing. The following code is picked up by IDE:</p>
+<?Code?>
+$form = new Form();
+<?/?>
+<p>But when add() is called, IDEs are getting confused. You can use the following syntax to force type hinting:</p>
 <?Code?>
 /* @var $form Form */
 $form=$page->add('Form');
-$f->addFi.. /* completion works */
-
+/* completion works now on $form */
 <?/?>
 
-        <p>PHP is a loosely typed language, and Agile Toolkit takes advantage of that. IDEs were initially designed for
-        languages such as C++ or Java and struggle to properly understand PHP. Rely on your common sense and Reference documentation. 
-        If you can't give up code completion, you should perhaps look into other programming languages.</p>
+<h3>Interfaces</h3>
+<p>An Interface is a design feature in PHP, by which you can set the requirements for class implementation. While it might have some
+use when designing software architecture, it has little use in Agile Toolkit.</p>  
 
-        <h3>Interfaces</h3>
-        <p>An Interface is a design feature in PHP, by which you can set the requirements for class implementation. While it might have some
-        use when designing software architecture, it has little use in Agile Toolkit.</p>  
-
-        <p>Said that, in a normal model design you will find it very useful to use type hinting</p>
+<p>Said that, in a normal model design you will find it very useful to use type hinting</p>
 <?Code?>
 // class "User"
 function purchaseTicket(Model_Bus_Route $route){
@@ -84,22 +80,21 @@ function purchaseTicket(Model_Bus_Route $route){
 }
 <?/?>
 
-        <h3>Validation</h3>
-        <p>Agile Toolkit implements certain model hooks such as beforeSave or beforeDelete. You may add tiny methods there which perform
-        a validation check and throw errors.</p>
+<h3>Traits</h3>
+<p>PHP 5.4 introduced "traits". It's a very powerful feature of PHP, but Agile Toolkit already have "Controllers" which perform
+a very similar job.</p>
+
+<h3>Validation</h3>
+<p>Agile Toolkit implements certain model hooks such as beforeSave or beforeDelete. You may add tiny methods there which perform
+a validation check and throw errors.</p>
 <?Code?>
 $model->addHook('beforeSave',function($m){
-  if($m['age']<18)throw $m->exception('Must be 18+')->addMoreInfo('age',$m['age']);
+    if($m['age']<18)throw $m->exception('Must be 18+')->addMoreInfo('age',$m['age']);
 });
 <?/?>
 
-        <h3>Localization</h3>
-        <p>Agile Toolkit provides great means for you to supply localization. Override api->_() method which should translate output of
-        Agile Toolkit into your language. You can gettext, SQL or any other technique for providing string translations. Agile Toolkit will
-        route exceptions through this function.
-        </p>
-
-
-    </div>
-</div>
-        <?$Next?>
+<h3>Localization</h3>
+<p>Agile Toolkit channels it's system messages through $api->_() method. By default this method is not doing anything, but you can
+extend it to call "gettext" or look up translation in any other way. Controllers can also add localization through a hook which is
+placed in this function.</p>
+<?$Next?>

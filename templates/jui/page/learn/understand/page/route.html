@@ -1,93 +1,78 @@
 
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
 
-        <h1>How Agile Toolkit translates the URL into a Page</h1>
-        <p>In Agile Toolkit, pages are handled by special objects instantiated with the Page class. Any page has a name to
-        which it will respond. Usually a page object is automatically initialized by the API, along with all the objects
-        on that page.</p>
+<h1>How Agile Toolkit translates the URL into a Page</h1>
+<p>In Agile Toolkit, pages are objects too. Only one page object is initialized. API class determines it based on routing. </p>
 
-        <p>You might have noticed, how we were adding objects to a Page in previous chapters, using $page. This variable refers to the
-        current page object. In reality, you would probably would put the code directly into page/index.php, which
-        defines the class page_index. All objects you want to see on this page should be added to its init() method.</p>
+<p>You might have noticed, how we were adding objects to $page in previous chapters. That's reference to the Page Object.
+In practice, you would normally add your code directly into page/index.php, by re-defining "init()" method. In this case
+you can use $this to address the page object.</p>
 
-        <p>A Page object is also derived from AbstractView. All you need to do is define page classes. Do not
-        manually add page objects, the API will do this for you. But how does API knows which page class to use?</p>
+<h3>Page Routing</h3>
+<p>In Agile Toolkit the API class determines the router. ApiFrontend uses front-controller approach (this means that all
+web requests are routed through an "entry" file. If you do wish to use front-controller, then ApiWeb is sufficient for your
+application class.</p>
 
-        <h3>Page Routing</h3>
-        <p>By default, Agile Toolkit uses a front-controller approach. All the requests are captured and executed
-        in the same way, by mod_rewrite, and routed through index.php, which creates and executes the API. The API relies on a specific
-        component called a PageManager. The job of PageManager is to determine the name of the Page Class from the URL used.</p>
-
-        <p>The actual logic is always quite intuitive. Look at the following page for examples:</p>
+<p>The logic used by ApiFrontend when determining corresponding class to a page is simple:</p>
 <div class="box blue-noised p-10px">
-	<div class="white">
-		<table>
-			<thead>
-				<tr>
-					<th>Browser URL</th>
-					<th>Page</th>
-					<th width="50%">Notes</th>
-				</tr>
-			</thead>
-			<tbody>
-			<tr>
-				<td>http://example.com/preferences.html</td>
-				<td>preferences</td>
-				<td>Agile Toolkit completely ignores the extension and uses remaining location to determine page name.</td>
-			</tr>
-			<tr>
-				<td>http://example.com/index.php?page=user/add</td>
-				<td>user/add</td>
-				<td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore the URL in the browser will
-                appear with index.php in front of it. Passing page=XX will always override the page name, which is very useful
-                in building beautiful URLs</td>
-			</tr>
-			<tr>
-				<td>http://example.com/profile/change-password.do</td>
-				<td>profile/changepassword</td>
-				<td>Dashes cannot be used in a function or class, they are eliminated from the page name automatically. Any
-                extension can be used as long as .htaccess directs them to index.php</td>
-			</tr>
-			<tr>
-				<td>http://example.com/?abc=123</td>
-				<td>index</td>
-				<td>If URL does not contain page, then "index" page name is used.</td>
-			</tr>
-			<tr>
-				<td>http://example.com/admin/logout</td>
-				<td>logout</td>
-				<td>Most often site administration is implemented as a separate site with another entry point (directory). Pages are
-                relative to the installation point (directory).</td>
-			</tr>
-			</tbody>
-		</table>
-	</div>
+  <div class="white">
+    <table>
+      <thead>
+        <tr>
+          <th>Browser URL</th>
+          <th>Page</th>
+          <th width="50%">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>http://example.com/preferences.html</td>
+          <td>preferences</td>
+          <td>Agile Toolkit completely ignores the extension and uses remaining location to determine page name.</td>
+        </tr>
+        <tr>
+          <td>http://example.com/index.php?page=user/add</td>
+          <td>user/add</td>
+          <td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore the URL in the browser will
+            appear with index.php in front of it. Passing page=XX will always override the page name, which is very useful
+            in building beautiful URLs</td>
+        </tr>
+        <tr>
+          <td>http://example.com/profile/change-password.do</td>
+          <td>profile/changepassword</td>
+          <td>Dashes cannot be used in a function or class, they are eliminated from the page name automatically. Any
+            extension can be used as long as .htaccess directs them to index.php</td>
+        </tr>
+        <tr>
+          <td>http://example.com/?abc=123</td>
+          <td>index</td>
+          <td>If URL does not contain page, then "index" page name is used.</td>
+        </tr>
+        <tr>
+          <td>http://example.com/admin/logout</td>
+          <td>logout</td>
+          <td>Most often site administration is implemented as a separate site with another entry point (directory). Pages are
+            relative to the installation point (directory).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-        <h3>URL Components</h3>
+<h3>URL Components</h3>
 
-        <p>PageManager splits the URL in your location bar into 3 parts:
+<p>PageManager is a controller used by ApiFrontend. It detect URL of the browser and splits it into 3 components:
 
-        <ol><li>base_url</li>
-        <li>base_path</li>
-        <li>page</li></ol>
-       
-        $api->pm->base_url points to the web-server of your
-        web application, such as http://yoursite.com:81. The next part - $api->pm->base_path - points to the root page of
-        your web software. For example, if you unpack the software in webroot/test/app then
-        base_path="/test/app/". base_path always starts and ends with slash.</p>
+<ol><li><b>base_url</b> — http://example.com</li>
+  <li><b>base_path</b> — /atktest/</li>
+  <li><b>page</b> — user/settings</li></ol>
 
-        <p>The final part is called "page" and it's a relative location within your web application. The top-most page is called
-        the "index" page. The page you are looking at right now is called "learn/understand/page" and it is calculated from the url:
-        <?page?>.<?/?>.</p>
+Properties are accessible through $api->pm->base_url, $api->pm->base_path and $api->page. Pay attention at how slashes are distributed.</p>
 
-        <p>The page follows the standard object pattern, and executes the init() method after it's initialized. A Page may have a custom template,
-        but if it does not, the default page layout is used to display an empty page.</p>
+<p>The page you are looking at right now is called "learn/understand/page/route".</p>
 
-    </div>
-</div>
+<p>The page object follows the standard pattern: executes the init() method after it's initialized. A Page may have a custom template,
+but if it does not, the default page layout is used to display an empty page.</p>
 
 <?$Next?>

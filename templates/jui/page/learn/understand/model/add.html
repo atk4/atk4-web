@@ -1,54 +1,48 @@
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
-        <h1>Creating your first model</h1>
+<h1>Creating your first model</h1>
 
-        <p>Like anything else in Agile Toolkit, a Model is a class.</p>
+<p>Like anything else in Agile Toolkit, a Model is a class.</p>
 
-        <h2>Defining table and alias</h2>
-        <p>Models need a way to associate with a lower-level data container, such as an SQL server. Additionally, you can specify an "alias" for your model, which is particularly handy in query debugging, or when joining with other tables.<p>
+<h2>Defining table and alias</h2>
+<p>This book will introduce you to a Relational Models first. To create a relation model you will need to define a separate class and set the "table" property:
 <?Code?>
 class Model_Book extends Model_Table {
-    public $entity_code='book';
-    public $table_alias='b';
+    public $table='book';
 }
 <?/?>
 
-        <p>Congrats, your model has been added</p>
-        <h2>Adding fields</h2>
-        <p>By default a model class defines only a single field - "id".</p>
+<p>Congrats, your model is complete!!</p>
+<h2>Adding fields</h2>
+<p>By default a model class defines only a single field - "id". If you are using different field for your identifier, add property $id_field='book_id'; in your model.</p>
 
-<?MoreInfo?>Why "id"?
-<p>"id" is universally considered a best practice for a primary key field name (especially in MySQL). It is also much easier on the UI, when the ID field name is consistent. If some of your tables don't have this field, you should probably add it for consistency, anyway.</p>
+<p>You dont have to define all the database fields in your models, but only what's relevant for teh business logic of your model.</p>
 
-<p>This field is defined as a system numeric field in a Model's init(), by calling definePrimaryKey(). If for some reason you would like to use a different name for "id" field, redefine the $id_field property. This may create some difficulties, especially if you are joining tables. You should also look into other objects, such as CRUD, as some of them might be incompatible with differently-named ID fields - although this should be addressed and fixed, so if you find it, please file it as a bug.</p>
-<?/?>
-        <p>You should define all the fields you are going to use in the model. Agile Toolkit will not attempt to use or edit any fields you will not define, for security reasons. Below is our definition of a "Book" model, this time with fields.</p>
 <?Code?>
 class Model_Book extends Model_Table {
-    public $entity_code='book';
-    public $table_alias='b';
+    public $table='book';
     function init(){
         parent::init();
         $this->addField('name');
         $this->addField('isbn')->mandatory(true)->caption('ISBN');
-        $this->addField('publisher_id')->refModel('Publisher');
-        $this->addField('author_id')->refModel('Author');
+        $this->hasOne('Publisher');
+        $this->hasOne('Author');
     }
 }
 <?/?>
 
-        <p>$this->addField('field_name') returns a new object of type "FieldDefinition", which you can then manipulate by calling its methods. Methods of this class take one optional argument, and if it's omitted, the current value will be returned instead. For example calling $this->getField('isbn')->mandatory() will return "true"</p>
+<p>Calling addField(), hasOne() and hasMany() returns a new object — descendant of "Field".</p>
 
-        <p>By default a field is defined as being of type "string", however you can set it to a different type. There will be a chapter further  listing all the available types, as well as documentation on how you can create your own types.</p>
+$this->addField('field_name') returns a new object of type "FieldDefinition", which you can then manipulate by calling its methods. Methods of this class take one optional argument, and if it's omitted, the current value will be returned instead. For example calling $this->getField('isbn')->mandatory() will return "true"</p>
 
-        <h3>Sub-selects</h3>
-        <p>refModel() defines a master-child one-to-many relationship between the two models. In our case we are instructing the Book model that "author_id" is a reference to the "id" field of the "Author" model. You would then need to write an Model_Author class for the Author model, and a Model_Publisher, if you use this model as an example.</p>
+<p>By default a field is defined as being of type "string", however you can set it to a different type. There will be a chapter further  listing all the available types, as well as documentation on how you can create your own types.</p>
 
-        <p>Calling refModel with a field name ending in "_id" will actually create 2 field definitions. "publisher_id", for instance, will be defined as integer and will have type "reference", and a field "publisher" will also be added, with exactly same properties - but it will be a calculated field and will use sub-select to determine the value.</p>
+<h3>Sub-selects</h3>
+<p>refModel() defines a master-child one-to-many relationship between the two models. In our case we are instructing the Book model that "author_id" is a reference to the "id" field of the "Author" model. You would then need to write an Model_Author class for the Author model, and a Model_Publisher, if you use this model as an example.</p>
 
-        <p>By default the field called "name" (if defined) is considered a "display field". You will see the "name" of that related table when you are building a GRID with the Book model.</p>
+<p>Calling refModel with a field name ending in "_id" will actually create 2 field definitions. "publisher_id", for instance, will be defined as integer and will have type "reference", and a field "publisher" will also be added, with exactly same properties - but it will be a calculated field and will use sub-select to determine the value.</p>
+
+<p>By default the field called "name" (if defined) is considered a "display field". You will see the "name" of that related table when you are building a GRID with the Book model.</p>
 
 <?MoreInfo?>Why not use JOIN?
 You can use joins too. You can define a JOIN with addRelatedEntity(), which is described further on in this guide.
@@ -58,12 +52,7 @@ You can use joins too. You can define a JOIN with addRelatedEntity(), which is d
 refModel() actually allows you to use a different field, other than the default display field of a related model. You can even use a calculated field, too. Finally, you can always destroy an existing field and add the one you like more.
 <?/?>
 
-        <h3>Actual fields</h3>
-        <p>Just defining a field does not mean it will be queried. The Model will try to be intelligent about which fields to use, depending on how you use it with the View.</p>
-
-
-
-    </div>
-</div>
+<h3>Actual fields</h3>
+<p>Just defining a field does not mean it will be queried. The Model will try to be intelligent about which fields to use, depending on how you use it with the View.</p>
 
 <?$Next?>

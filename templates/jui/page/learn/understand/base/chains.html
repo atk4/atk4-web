@@ -1,41 +1,38 @@
 
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
-        <h1>Chaining method calls</h1>
-        <p>There are no procedures in PHP - all functions return something. When an object's method has nothing
-        meaningfull to return, it returns the same object - '$this'. Methods like that are considered 'chainable', because
-        the object returned by one method can be used to call further methods.</p>
+<h1>Chaining method calls</h1>
+<p>There are no procedures in PHP - all functions return something. When an object's method has nothing
+meaningfull to return, it returns the same object - '$this'. Methods like that are called 'chainable', because
+the object returned by one method can be used to call further methods.</p>
 
-        <p>This approach is used a lot in practice, and often improves code readability. You won't need those extra temporary
-        variables anymore. Below are some examples of code chaining in Agile Toolkit.</p>
+<p>This approach is used a lot in practice, and often improves code readability. You won't need those extra temporary
+variables anymore. Below are some examples of code chaining in Agile Toolkit.</p>
 
 <?Code?>
 $users = $this->api->db->dsql()
-        ->table('user')
-        ->where('age','>',30)
-        ->order('name')
-        ->do_getAllHash();
-
+    ->table('user')
+    ->where('age','>',30)
+    ->order('name')
+    ->get();
 <?/?>
 
-        <p>In the code above, the first function being called belongs to the "DBlite" object, which can be accessed through $this->api->db. This function returns a new instance of a DSQL object.</p>
-        <p>Calling "table", "where" and "order" on a DSQL object returns exactly the same object. It's the equivalent of the following code:</p>
+<p>In the code above, the first function being called belongs to the "DBlite" object, which can be accessed through $this->api->db. This function returns a new instance of a DSQL object.</p>
+<p>Calling "table", "where" and "order" on a DSQL object returns reference to the same object. It's the equivalent of the following code:</p>
 
 <?Code?>
 $dsql = $users = $this->api->db->dsql();
 $dsql->table('user');
 $dsql->where('age','>',30);
 $dsql->order('name');
-$users = $dsql->do_getAllHash();
+$users = $dsql->get();
 <?/?>
 
-        <h2>How can I know what the method will return?</h2>
-        <p>Most of the methods in Agile Toolkit return an instance of the same object for chaining. There are exceptions, which are easy to spot:</p>
+<h2>How can I know what the method will return?</h2>
+<p>Most of the methods in Agile Toolkit return an instance of the same object for chaining. There are exceptions, which are easy to spot:</p>
 
-        <h3>add*() methods</h3>
-        <p>Those will most likely create or return a new object.</p>
+<h3>add*() methods</h3>
+<p>Those will most likely create or return a new object.</p>
 
 <?Code?>
 // all objects have an add() method, returning an instance of a specified class
@@ -54,16 +51,16 @@ $dsql->order('name')
 $users = $dsql->do_getAllHash();
 <?/?>
 
-        <h3>js(), dsql()</h3>
-        <p>$this->api->db->dsql() will return a new instance of a DBlite_dsql() object. All views have a js() method, which returns a new instance of a jQuery_Chain class.</p>
+<h3>js(), dsql()</h3>
+<p>$this->api->db->dsql() will return a new instance of a DBlite_dsql() object. All views have a js() method, which returns a new instance of a jQuery_Chain class.</p>
 
 <?Code?>
 $chain = $form->js(true);
 $chain->hide();
 <?/?>
 
-        <h3>get* methods return a contextual value</h3>
-        <p>Methods starting with "get" often return some value relevant to the context in which they are used. You should look into the documentation of those methods to find out what they return.</p>
+<h3>get* methods return a contextual value</h3>
+<p>Methods starting with "get" often return some value relevant to the context in which they are used. You should look into the documentation of those methods to find out what they return.</p>
 
 
 <?Code?>
@@ -71,46 +68,17 @@ $child = $object->getElement('abc');
 
 $value = $model->get('name');
 
-$url_object = $api->getDestinationURL('user/account');
-
-$model = $view->getModel();
-
-$field_definition = $model->getField('name');
-
+$url_object = $api->url('user/account');  // used to be getDestinatiounURL
 <?/?>
 
-        <h3>DSQL chaining</h3>
-        <p>The chain returned by $this->api->db->dsql() has further exceptions. Functions like "select", "insert", "update", "delete" etc will return a string - a parsed query. If you pre-pend any of those strings with "do_" you can execute it straight away. You can also use do_getOne and do_getAllHash() functions which retrieve data and return it to you.</p>
+<h2>Guidelines for naming methods</h2>
+<p>Apart from what was explained above, there are other guidelines and principles you should follow when creating methods:</p>
 
-<?Code?>
-$query = $this->api->db->dsql()
+<h3>Prefix dynamically-executed methods</h3>
 
-$query->where('parent_id',123);
-if($_GET['match']){
-    $query->where('name like',$_GET['match']);
-}
-$query->field('name')->limit(1);
+<p>Agile Toolkit uses camelCase method naming. When methods are called dynamically, they should be prefixed with a keyword and an underscore. For example: if you want to add a page into the API, your method would start with "page_".Similarly you would use "page_" for sub-pages, "layout_" for ApiFrontend layouts, and so on.</p>
 
-$this->add('Text')->set('Executing: '.$query->select());
-$name=$query->do_getOne();
-<?/?>
+<h2>Method visibility</h2>
+<p>Due to the nature of Agile Toolkit, you will find most of the methods and properties defined as public. This is because some of the controllers require access to those methods and properties, and there is no way to define a "Friendly" class in PHP. Use your common sense when programming. Don't start manually creating objects and adding them into $obj->elements[] just because the elements array is public.
 
-        <h2>Guidelines for naming methods</h2>
-        <p>Apart from what was explained above, there are other guidelines and principles you should follow when creating methods:</p>
-
-        <h3>Prefix dynamically-executed methods</h3>
-
-        <p>Agile Toolkit uses CamelCase method naming. When methods are called dynamically, they are always prefixed
-        with a keyword and an underscore. For example: if you want to add a page into the API, your method would start with "page_".Similarly you would use "page_" for sub-pages, "layout_" for ApiFrontend layouts, and so on.</p>
-
-        <p>Those methods return nothing and you shouldn't casually call them.</p>
-
-        <h3>init()method</h3>
-        <p>This method is executed automatically for every object, when it is added. You shouldn't call it manually, and you do not need to return any value from init. You must call a parent's init from your own init, though. The best practice is to call it before your code, although in some cases you might need to execute code before parent::init(); - ie., if doing authentication and authorization checks.</p>
-
-        <h2>Method visibility</h2>
-        <p>Due to the nature of Agile Toolkit, you will find most of the methods and properties defined as public. This is because some of the controllers require access to those methods and properties, and there is no way to define a "Friendly" class in PHP. Use your common sense when programming. Don't start manually creating objects and adding them into $obj->elements[] just because the elements array is public.
-
-        <?$Next?>
-    </div>
-</div>
+<?$Next?>

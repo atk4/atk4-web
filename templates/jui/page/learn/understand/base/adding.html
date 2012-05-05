@@ -1,50 +1,48 @@
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
+<div class="g-row">
+  <div class="g-12">
 
-    <h1>Adding objects in Agile Toolkit</h1>
+<h1>Adding objects in Agile Toolkit</h1>
 
-<p>Adding is one of the most powerful concepts in Agile Toolkit. Here is the simplest form of adding:
+<p>Adding is one of the most important concepts an Agile Toolkit. When you need to create any object, instead of using "new" operator you add instance of an object to any other object. Here is the simplest form of adding:
 </p>
 <?Code?>
- $new_object = $parent -> add('ClassName');
+$form = $page->add('Form');
 <?/?>
-<p>
-There are some rules:
-<ul>
-<li>All new objects are 'added'. Never use the "new" statement</li>
-<li>There is nothing static (such as User::checkPassword()). Always add before using a method.</li>
-<li>An object is added into another object. Both objects will become linked.</li>
-<li>Each object is assigned a short_name. The short Name is unique within the parent.</li>
-<li>Each object has a "name". It's unique in your server.</li>
-<li>After you added an object, you can configure it.</li>
-<li>There are only 4 arguments for adding. You can't specify more. This is intentional.</li>
-</ul>
+<p>Agile Toolkit requires that you initialize objects before calling methods. There are no static methods in Agile Toolkit classes. When add() is used, in addition to creating new object instance.</p>
 
-<h2>Arguments of add()</h2>
-<p>All arguments of add(), except the first, are optional. When Controllers, Models and Helpers are added, only the first argument is used. Views can use all four arguments.</p>
-<?Code?>
- $new_view_object = $parent -> add($class, $short_name, $spot, $template );
+<p>All objects of Agile Toolkit live in a Runtime Tree. It's similar to "DOM" of the browser, where top-most object is your application (which I will call "api") and it contains many other objects responsible for different things. Each object have an "owner" — reference to an object who created them. Owner of the $form would be $page. Typically owner of a $page is application. </p>
+<p>All objects are also given unique identifier: "name". Each objects have their own name and no two objects would have a same name.</p>
+
+<p>Calling add() returns object, so you can call it's method instantly without even assigning it to a variable:</p>
+
+<?Example?>
+$page->add('Button')->set('Click me');
 <?/?>
-
-<p><b>$parent</b> — must be an existing object. You can only add a View into a View, but you can add a Controller and Model anywhere.</p>
-<p><b>$class</b> — the name of the class. There is a convention for naming classes. 'Form_UserDetails' would be an example of a class name.</p>
-<p><b>$short_name</b> — overrides the generation of short_name. Always use "null".</p>
-<p><b>$spot</b> — defines where rendered version of the View's template will be inserted. You can add multiple objects into the same spot. Existing contents of the spot will be erased when the object is being rendered. Default value is 'Content'.</p>
-<p><b>$template</b> — overrides the View's default template. If an array is used, then the first argument is the file name of the template (such as "view/banner"). The second argument is optional and defines which region to use within the template. If not specified "_top" is used, which means the contents of the entire template file will be used. If $template is not an array, but a string, then it specifies a region in the parent's template which will be cloned and used by the view</p>
 
 <h2>init() method</h2>
-<p>Anytime you add anything, Agile Toolkit creates an object, and links it with the API and the parent by setting $obj->owner and $obj->api properties. For views it also initializes the template. When it's all done, the init() method is called.</p>
-<p>This is true for any object in Agile Toolkit. Therefore, you never need to use object constructors, and should use the init() method instead. There are several important notes:<ul>
-<li>init() does not take arguments. Configuration is done through chaining.</li>
-<li>add() prepares your object so that you can use it in a reasonable way inside init().</li>
-<li>you can add() other objects recursively from inside init().</li>
-<li>you must never use "echo" in agile toolkit. Only for debugging.</li>
-<li>it's suggested you don't assume anything about your object's parent.</li>
-<li>don't do heavy-duty work in init(). There is a chance that your object will be initialized, but not rendered.</li>
-<li>always call parent::init(), preferably before you do anything.</li>
-</ul>
+
+<p>When new object is created, normally constructor is called. Agile Toolkit objects never use default PHP constructors. Instead all objects of Agile Toolkit have init() method. This method is called after Agile Toolkit initializes new object and links it to "owner" and "api". View objects will also have their template loaded and parsed by the time init() is executed.</p>
+
+<p>init() method can be used to add more objects or modify properties of your custom object. For example, if I want to create new class for a button, I would use the following code:</p>
+
+<?Code?>
+class MyButton extends Button {
+    function init(){
+        parent::init();
+        $this->set('Click Me');
+    }
+}
+<?/?>
+
+<p>Now I can use my new object instead of adding a standard button and changing it's label:</p>
+<?Code?>
+$page->add('MyButton');
+<?/?>
+
+<p>Using this approach you can enhance ANY class of Agile Toolkit. Here is another example of a form which will be initialized with fields:</p>
+
 <?Code?>
 class Form_ContactForm extends Form {
     function init(){
@@ -59,11 +57,9 @@ class Form_ContactForm extends Form {
 }
 <?/?>
 <h2>Other forms of adding</h2>
-<p>There are many wrappers for add() functions. For example, when you add a field to a form, you use addField('line','name'). This function is a wrapper for the normal add(), however it performs extra prepping functions for that type of object. Wrappers for add() start with "add" in most cases. However. there are some functions which do not use this convention, such as js(), exception(), and $grid-&gt;addColumn() (it does not create a new object). In your code, always try to follow the convention, and call a function 'addSomething' if it adds a new object and returns a new object.
-</p>
-<p>
+<p>Some objects introduce wrappers for adding objects. This is done for convenience as they would usually automatically decide which class should be used. The ContactForm example you saw before uses addField() and addSubmit(). Both functions rely on add() but with some extra logic. Most functions starting with "add" do this, however. there are some functions which do not use this convention: js(), dsql() and exception() create and return new object, but $grid-&gt;addColumn() does not create new object dispite the name. </p>
 
-<h2>Other Examples</h2>
+<h2>More Examples</h2>
 <?Code?>
 $admin=$this->add('Model_User')->addCondition('admin',true);
 <?/?>
@@ -77,33 +73,39 @@ $menu=$this->api->add('Menu',null,'Menu');
 Adds menu inside api, and use a template spot 'Menu' inside the api's template for output.
 </p>
 
-<?Code?>
-$view=$page->add('View',null,'BusinessInfo','BusinessInfo');
-$view->template->set($data);
-<?/?>
-<p>
-The region &lt;?BusinessInfo?&gt; inside the page's template will be replaced by a view. The template chunk, however, will be cloned by the view, so just adding it like this will have no effect on the resulting output. The second line, however, places the contents of an associative $data array into the template of the view.
-</p>
-
 <h2>The second argument</h2>
-<p>When we are adding objects, the second argument can be used to specify the short_name or properties of the object. When left as "null" object will produce unique short_name on it's own. Short name is used to link "owner" with it's object through "elements" array. You may want to specify a name in some very rare cases only, for example, when you are adding a custom field to the model</p>
+<p>When we are adding objects, the second argument can be used to specify the short_name or properties of the object. When left as "null" object will produce unique short_name on it's own, based on class name. Short name is used to link "owner" with it's object through "elements" array.</p>
 
 <?Code?>
-$model->add('Field_Delete','is_deleted'); // implements soft-delete field
+$page->add('Form','my_form');
+
+if($page->hasElement('my_form')){
+  // has form
+}
+
+$page->getElement('my_form')->owner;  // refers back to $page
 <?/?>
 
-<p>If you specify array as a second argument to add() it will be used as default set of properties for your object. You can access theese properties from init() method and it's a great way to pass arguments to it.</p>
+<p>If you specify array as a second argument to add() it will be used as default set of properties for your object. You can access theese properties from init() method and it's a great way to pass arguments to it. This practice is popular in some frameworks such as "Yii" but in Agile Toolkit it is very rarely used.</p>
 
 <?Code?>
 $model->add('MyObject',array('foo'=>'bar'));
 echo $model->foo;
 <?/?>
 
+<h2>Planning your object functionality properly</h2>
+<p>
+Your init() method must be very short, fast and simple. The goal of init() method is to initialize sub-objects and properties. Subsequental calls to methods can be used to further modify the state of the object. If you are creating new "View" then as much work as possible should be delayed until rendering of the object. This is due to a fact that sometimes objects may be initialized and rendered selectively.
+</p>
+
 <h2>Working with existing objects</h2>
 <p><b>$this->hasElement($short_name)</b> return child object if found, or false if not found.</p>
 <p><b>$this->getElement($short_name)</b> similar to hasElement() but will produce an exception if not found. Use this when chaining.</p>
-<p><b>$this->destroy()</b> remove the current object from its parent. For a view, this will remove it from rendered page.</p>
-<p>Properties: <b>$this->name</b> name unique to the system. <b>$this->short_name</b> is a short name. <b>$this->template</b> reference to the SMlite template for the current view. <b>$this->owner</b> reference to the object whose add() was used (the parent). <b>$this->api</b> refers to the API class of the parent object.</p>
+<p><b>$this->destroy()</b> remove the current object from its owner. For a view, this will remove it from rendered page.</p>
+<p><b>$this->rename($new_short_name)</b> can rename an object, but might not work with some objects.</p>
+<p><b>$this->newInstance()</b> will add a copy of the object and add into the same owner. Unlike cloning, object state is not copied.</p>
+
+<p>Properties: <b>$this->name</b> name unique to the system. <b>$this->short_name</b> is a unique amongst owners children. <b>$this->template</b> reference to the SMlite template for the current view. <b>$this->owner</b> reference to the object whose add() was used (the parent). <b>$this->api</b> refers to the API class of the parent object.</p>
 
 </div></div>
 <?$Next?>

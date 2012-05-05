@@ -1,0 +1,60 @@
+<?$Content?>
+<h1>Practical Example</h1>
+
+<p>To test what you have learned so far, let's create a few new pages for your new application — DVD Rental.</p>
+
+<h2>About Page</h2>
+<p>Create file templates/default/page/about.html and put some information inside about your application. You can use any HTML markup, but avoid
+using JavaScript just yet. The content of this page will be inserted into your Shared template.</p>
+
+<h2>Registration Page</h2>
+<p>We will also need to have a separate page for user registration. Create page/register.php.</p>
+
+<p>To make things look nicer, let's use a custom template for registration. Define registratinon page like this:</p>
+<?Code?>
+class page_register extends Page {
+    function init(){
+        parent::init();
+
+        $form = $this->add('Form');
+        $form->addField('line','email');
+        $form->addField('password','password');
+        $form->addSubmit();
+    }
+}
+<?/?>
+
+<p>As you can see I have created new page object, re-defined init() method and added form into the page. I also have added 2 fields and a submit button into
+the form.</p>
+
+<p>To customize the look of the registration page, I'd like to redefine the template by adding the following method:</p>
+<?Code?>
+    function defaultTemplate(){
+        return array('page/register');
+    }
+<?/?>
+
+<p>and adding the following template file into templates/default/page/register.html:</p>
+
+<div class="atk_doc example"><code><pre>
+&lt;div id="&lt;?_name?&gt;" class="atk-row"&gt;
+  &lt;div class="span8"&gt;
+    &lt;h1&gt;Registration form&lt;/h1&gt;
+    &lt;?$Content?&gt;
+  &lt;/div&gt;&lt;div class="span4"&gt;
+    &lt;h4&gt;Why Register?&lt;/h4&gt;
+    &lt;p&gt;You need to apply for new account to be able to access our video rental catalogue&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre></code></div>
+
+<p>After you've done this, find where Menu is added inside your Application class (lib/Frontend.php) and add new page to it:</p>
+
+<?Code?>
+$menu->addMenuItem('register');
+<?/?>
+
+<p>You should now have a new page with non-functioning form inside a custom markup. Keep this example and we will continue enhancing it
+in the future.</p>
+
+<?$Next?>

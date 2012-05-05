@@ -1,2 +1,3 @@
 ASSERT: "0" in docparser.cpp (5858)
 ASSERT: "0" in docparser.cpp (5858)
+ASSERT: "0" in docparser.cpp (5858)

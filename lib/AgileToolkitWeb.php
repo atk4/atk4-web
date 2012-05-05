@@ -212,6 +212,9 @@ class AgileToolkitWeb extends ApiFrontend {
         parent::dbConnect($this->getConfig('atk_dsn'));
         //$this->api->db=$this->add('DB',array('conf_pref'=>'atk_pdo'));
     }
+    function url($u,$a=array()){
+        return $this->getDestinationURL($u,$a);
+    }
     function getUser(){
         return $this->auth->getModel()->loadData($this->auth->get('id'));
     }

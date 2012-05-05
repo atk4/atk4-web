@@ -1,47 +1,41 @@
 
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
-        <h1>Best Practices and Miscellaneous Information</h1>
+<h1>Best Practices and Miscellaneous Information</h1>
 
-        <h2>Keeping Your Functionality Scalable</h2>
-        <p>Scalability is the ability to grow without facing hindering limitations. When the functionality of the application
-        increases or changes, a poorly planned and maintained project will encounter severe problems.</p>
+<h2>Keeping Your Functionality Scalable</h2>
+<p>Scalability is the ability to grow without facing hindering limitations. When the functionality of the application
+increases or changes, a poorly planned and maintained project will encounter stability problem and loss of development
+efficiency.</p>
 
-        <p>The two major cures against the curse of "spaghetti code" are a decent framework and refactoring. Refactoring
-        implies moving from one file to another.</p>
+<p>The two major cures against the curse of "spaghetti code" are a decent framework and refactoring. Most of refactoring in
+Agile Toolkit is moving code into a standalone view.</p>
 
-        <h3>Avoid using API methods to define pages</h3>
-        <p>In mature web software the API class reaches around 1000 lines of code, and is contains application-related logic.
-        Having page definitions in the same file makes it increasingly difficult to work with it. It's suggested that from the start
-        you should use a class-based approach to define pages in your software.</p>
+<h3>Prevent your API class from growing too big</h3>
+<p>In mature web software the API class reaches around 1000 lines of code, and contains application-related logic.
+Having page definitions in the same file makes it increasingly difficult to work with it. It's suggested that from the start
+you should use a class-based approach to define pages in your software.</p>
 
-        <h3>Extend page classes</h3>
-        <p>If you have had proper training in Object-Oriented development, you should know that making similar pages inherit
-        from a common parent might be a good idea. For instance, you may have 2 preference pages for 2 different types of users, but
-        the structure and objects on those pages might be similar enough to share them through OOP.</p>
-        <p>In this case, create a lib/Page/Preferences.php parent class, then extend it twice, customising the child classes as you 
-        find appropriate. Because the class is inside "lib" and not "page" it won't be accessible directly through a URL.</p>
-        <p>Alternatively you can put the parent class into page/preferences.php and define it as "abstract". Between those two
-        approaches, the first one is recommended, because the "not found" case will be properly handled.</p>
+<h3>Extend page classes</h3>
+<p>If you have had proper training in Object-Oriented development, you should know that making similar pages inherit
+from a common parent might save you some time. For instance, you may have 2 preference pages for 2 different types of users, but
+the structure and objects on those pages might be similar enough to share them through OOP.</p>
+<p>In this case, create a lib/Page/Preferences.php parent class, then extend it twice, customising the child classes as you 
+find appropriate. Because the class is inside "lib" and not "page" it won't be accessible directly through a URL.</p>
+<p>Alternatively you can put the parent class into page/preferences.php and define it as "abstract". Between those two
+approaches, the first one is recommended, because the "not found" case will be properly handled.</p>
+<p>Another use for this is to define pages with some properties such as having local menu or being part of a wizard.</p>
 
+<h2>Upper and Lower Cases</h2>
+<p>If you are developing on Windows or Mac, you use a case-insensitive operating system. However, always assume that
+your deployment platform will be case-sensitive. Page classes always start with "page" and follow this pattern:
+"page_user_preferences_twitter" where underscores correspond with their directory structure. When placed inside "lib",
+classes use CamelCase such as "Page_FileManager", however here they can use underscores to define areas or zones as well as
+inheritance, eg: "Page_User_Settings".</p>
 
-
-        <h2>Upper and Lower Cases</h2>
-        <p>If you are developing on Windows or Mac, you use a case-insensitive operating system. However, always assume that
-        your deployment platform will be case-sensitive. Page classes always start with "page" and follow this pattern:
-        "page_user_preferences_twitter" where underscores correspond with their directory structure. When placed inside "lib",
-        classes use CamelCase such as "Page_FileManager", however here they can use underscores to define areas or zones as well as
-        inheritance, eg: "Page_User_Settings".</p>
-
-        <h2>Use of Slashes Versus Underscores</h2>
-        <p>If you have a page_user_preferences_twitter page class, it can be accessed as either 'user_preferences_twitter' or
-        'user/preferences/twitter'. Link building will work properly regardless of which you use, however if you are
-        using slashes with mod_rewrite and your own template, you may encounter issues with relative image/css paths. Proper
-        use of &lt;?template?&gt; tags inside your templates will help you avoid this problem.
-
-    </div>
-</div>
-
+<h2>Use of Slashes Versus Underscores</h2>
+<p>If you have a page_user_preferences_twitter page class, it can be accessed as either 'user_preferences_twitter' or
+'user/preferences/twitter'. Link building will work properly regardless of which you use, however if you are
+using slashes with mod_rewrite and your own template, you may encounter issues with relative image/css paths. Proper
+use of &lt;?template?&gt; tags inside your templates will help you avoid this problem.
 <?$Next?>

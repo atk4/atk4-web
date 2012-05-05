@@ -138,11 +138,13 @@ $admin->load( $user->id );   // will fail to load data
 
 <h3>Relational Models</h3>
 
-<p>In the intersection of a flexible DSQL and Models you can now create models which span across multiple tables, use expressions or sub-selects and also have a mandatory conditions. Relational Models in Agile Toolkit are similar to "VIEW" concept in some relational databases. However with Agile Toolkit have the ability to define methods of a model.</p>
+<p>In the intersection of a flexible DSQL and Models is "Relational Model" class. With it you can create models which span across multiple tables, use expressions or sub-selects and also have a mandatory conditions. Relational Models in Agile Toolkit are similar to "VIEW" concept in some relational databases. However with Agile Toolkit have the ability to define methods of a model.</p>
 
-<p>Relational Models are implemented in Model_Table class. Model_Table extensively uses DSQL architecture to build and adjust queries of the model. Regardless of the use, the actual queries produced by the back-end architecture are always clear and no unnecessary queries are made.</p>
+<img style=" float : right; padding-left: 2em" src="<?template?>images/ugly_images/relational_model.png<?/?>"/>
 
-<p>Relational Models should be used in any Agile Toolkit application which uses relational database and is ideal for separating Business Logic from Presentation.</p>
+<p>Relational Models are implemented in Model_Table class. Model_Table extensively uses DSQL architecture to build and adjust queries of the model. Regardless of the use, the actual queries produced by the back-end architecture are always clear and no unnecessary queries are made. Illustration on the right show show a single model can be implemented using a query from 4 separate SQL tables. Such a model appears simple for the UI developer and requires no database knowledge.</p>
+
+<p>Relational Models should be used in any Agile Toolkit application which uses relational database and is ideal for separating Business Logic from Presentation. If you decide to switch from SQL to noSQL database you will be able to do so by changing model implementation and will have almost no effect on the UI logic.</p>
 
 <h4>Working with multiple tables</h4>
 <?Code?>

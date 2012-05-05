@@ -15,12 +15,35 @@ $this->api->dbConnect();
 
 <p>In this introduction I wanted to demonstrate how Controller_MVCForm makes it possible to populate your form fields, labels, conditions, types, validations from the model and also add ability for a form to save data back through the model.</p>
 
-<?Example?>
+
+
+<table width="100%" cellspacing="0" cellpadding="0">
+<tbody><tr><td width="49%" valign="top">
+	<div><h3>Result</h3><div class="box metallic box-example"><div id="AgileWeb_intro_3_doc_example_view">
+<?Execute?>
 $form = $page->add('MVCForm');
 $form->setModel('User');
 <?/?>
 
-<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/dsql<?/?>">Full Documentation on Controllers</a>
+</div>
+</div></div>
+</td><td width="2%">&nbsp;
+</td><td width="49%" valign="top">
+<div><h3>Code</h3><div>
+<div id="AgileWeb_intro_3_doc_example_doc_code" class="atk_doc example">
+	<div>
+<?Code?>
+$form = $page->add('Form');
+$form->setModel('User');
+<?/?>
+		<i class="comment"></i>
+	</div>
+</div>
+</div></div>
+</td></tr></tbody></table>
+
+
+<i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/controller<?/?>">Full Documentation on Controllers</a>
 
 <h2>Create, Read, Update, Delete = CRUD</h2>
 <p><a href="http://www.google.com/?q=crud+generator" target="_blank">Crud Generators</a> are evil. They provide no flexibility, duplicate awful amount of code and have no consistency with the rest of your User Interface. Agile Toolkit is in a much better position to build an ideal CRUD.</p>
