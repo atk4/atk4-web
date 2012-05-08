@@ -6,7 +6,7 @@ class Sitemap extends AbstractController{
 //{{{ learn - Learning
         $doc['learn']=array('Learning',
 
-            'intro'=>'What is Object-Oriented Web Development?',
+            'intro'=>'What is Agile Toolkit?',
 
             'install'=>array(
                 'Installing Agile Toolkit',

@@ -8,7 +8,15 @@ class Doc_Page extends Page {
         $this->initBar();
 	}
     function initBar(){
-		if($this->template->is_set('Content')) $this->add('BreadCrumb');
+        if($this->template->is_set('Content')){
+            $this->add('BreadCrumb');
+            $this->add('Button')->set('Propose grammar fix')
+                ->addStyle('float','right')
+                ->js('click')->univ()->alert('Help me improve this documentation. Propose changes and they will be reflected on this page after our review. You will need to have account on github.com')
+                ->newWindow('https://github.com/atk4/atk4-web/edit/master/templates/jui/page/'.
+                str_replace('_','/',$this->api->page).'.html')
+                ;
+        }
     }
     function initMainPage(){
         return $this->subPage('');
