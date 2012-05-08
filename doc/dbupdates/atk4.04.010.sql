@@ -32,7 +32,7 @@ ALTER TABLE `atk_moreinfo` ADD COLUMN `ord` INT(11) NULL DEFAULT NULL  AFTER `id
 ALTER TABLE `atk_moreinfo` ADD COLUMN `atk_user_id` INT(11) NOT NULL  AFTER `is_approved` , 
   ADD CONSTRAINT `fk_atk_moreinfo_atk_user1`
   FOREIGN KEY (`atk_user_id` )
-  REFERENCES `atk4`.`atk_user` (`id` )
+  REFERENCES `atk_user` (`id` )
   ON DELETE NO ACTION
   ON UPDATE NO ACTION
 , ADD INDEX `fk_atk_moreinfo_atk_user1` (`atk_user_id` ASC) ;

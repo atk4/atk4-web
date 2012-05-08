@@ -29,7 +29,7 @@ class Doc_List extends MVCLister {
                 $f->setFormClass('vertical');
                 $_GET['cut_object']=$col->name;
                 $f->setModel($model);
-                $f->addButton('OK');
+                $f->addSubmit('OK');
                 if($f->isSubmitted()){
                     $f->update();
                     $f->js()->univ()->successMessage('Your content was submitted. Thank you!')->closeDialog()->execute();
