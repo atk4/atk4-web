@@ -1,0 +1,82 @@
+<?$Content?>
+
+<h1>The Geeky Introduction to Agile Toolkit</h1>
+
+<p>Agile Toolkit is a collection of classes for multi-purpose web user interface development. Packed as a framework Agile Toolkit can be also used as a library bypassing many of the web initialization routines making it perfect for integration purposes into your existing environments or 3rd party products. Agile Toolkit is well suitable for your growing product starting from the early prototype and up-scaling to a distributed multi-server solution processing thousands of requests per second.</p>
+
+
+<p>To simplify understanding of Agile Toolkit, I have focused around 3 major landmark features of Agile Toolkit which are: business models, user interface and javascript integration. Agile Toolkit contains over a hundred unique features and tricks and have solutions for almost every situation in your development and deployment cycle.</p>
+
+<h2>Agile Application Life-cycle</h2>
+
+<p>We want our software to last for years and remain flexible and extensible forever. But we also want to start from a simple prototype and build it all the way to scalable deployment. Below is the explanation how you will be able to manage the three stages with Agile Toolkit.</p>
+
+<h3>Prototyping stage</h3>
+<p>When using Agile Toolkit to build your early prototype, you can massively reduce amount of developers labor by planing your models and composing your user interface from a ready-to-use Views (widgets). The views are of a object-oriented nature and will mold into any UI element in the hands of skilled developer familiar with power of inheritance. Contrary to some frameworks, Agile Toolkit omits a lot of configuration parameters and options in the core classes but promotes developer to extend and override default behavior.</p>
+
+<p>For a person knowing the way of Agile Toolkit putting together a data management back-end is a matter of minutes. Same applies to some of the PHP project builders which populates your back-end with CRUD pages. Agile Toolkit remains true to it's principles and keeps the code flexible for you to enrich user interface and keep adding new elements inside other elements — crud into page, expander into crud, tabs into expander, crud into tab and so on.</p>
+
+<p>When it comes to front-end, developer would produce a set of custom project-specific templates which are later modified and tweaked by the designer or other way around. The same data model layer is re-used in the frontend and a backend. Integrated ORM and Active Record funnel the power of Relational SQL to optimize your queries and create minimum request per page, which is very important for the further stages of your application.</p>
+
+<p>At this stage out-of-the-box User Interface will be very useful and time-saving for you.</p>
+
+<h3>Fully-functional Product</h3>
+<p>Eventually you need to convert your prototype into polished and well-designed product. With other frameworks you need to start from scratch or you some heavy lifting, but Agile Toolkit allows you to gradually enhance functionality. The code refactoring is essential part of developing with Agile Toolkit. Roles of User Interface developer and Business Logic developer are separated and each have their own ways to separate out code components which are re-used and still have the flexibility of customizing them.</p>
+
+<p>At this stage you will get to love the flexibility of Models. You will get to extend models and produce joins to gather required data. Let's look at example:</p>
+
+<h4>Example</h4>
+
+<p>Let's assume you need to show list of your user profiles. The View would be heavily reused across your applications — you would want to show user list on your "most active users" page, "who follows me" page and "currently logged in" page. In all cases you are showing the same presentation logic — list with pagination. It's wise to create a separate view: "View_UserLister" which will do the right output on your pages.</p>
+
+<p>While the presentation logic remains un-changed for every page, the data may differ. A good solution is to have several sub-classes of your "Model_User" which reflect the proper data. Those descending classes will only tweak conditions, ordering and some other aspects of your query. Still, in all cases, only one query is produced which gathers up all the data without reliance on caching or traversing models inside the loop.</p>
+
+<p>Your next challenge might be the different "templates" for the View_UserLister. Agile Toolkit allows you to specify a different template for each individual instance of the view. This way you can add additional fields into particular page. Your other challenge might be — how to calculate the field? How would you show list of user which are "followed" by a currently logged-in user? A simple SQL sub-select will deal with it most efficiently. Agile Toolkit allows you to tweak existing Model by adding additional query fields without changing the master model. This is really important, because you know that the stable part of your application is not going to be affected by your change and therefore does not require re-testing.</p>
+
+<p>Next challenge you might face in conventional development is reflecting on database refactoring, field alias consistency and debugging queries. Agile Toolkit allows you to extract queries from each model with table-name, conditions, joins embedded into that query. You can further modify and extend the query but should your database logic change, you only need to update your master model and any references to that model would start using the proper query. For example, if you add "soft delete" to your "user_follows" table, normally you would need to review your code and modify the queries. With Agile Toolkit the condition will be automatically embedded into queries produced from the respective model.</p>
+
+<p>Another problem Agile Toolkit will be solving for your team is collaboration issue. Because all the functionality is nicely distributed, you can easily separate responsibilities in your team and assign developers on tasks such as — produce business models and unit tests, create administration interface, create front-end pages, build library of re-usable views, build custom jQuery UI widgets or JavaScript behaviours and never have clashes between different developers and designer. Your produced code will also be consistent and easily maintainable by developers who join development later.</p>
+
+<h3>Scalability Stage</h3>
+
+<p>With the incredible efficiency and flexibility of requests you can achieve no more than 10 requests for each page requested. Furthermore AJAX interaction will require considerably less CPU power which greatly contributes to performance of your Agile Toolkit based software. You can still write inefficient software with Agile Toolkit but to avoid it I am providing performance guide in this book which will focus on performance.</p>
+
+<p>Certainly we both understand that any generalization, frameworks or libraries can't be offered without overheads, but by doing the right choices it's possible to have a perfect combination of software flexibility and performance.</p>
+
+<p>Agile Toolkit has a powerful and fast template parser and query builder with low complexity. The typical page of Agile Toolkit would run at 20-120 requests per second (without cache) while other frameworks and CMS systems might be only able to do around 1-3 requests per second. That is still slower than a raw PHP code, but it is a small price to pay for all the benefit you get.</p>
+
+<p>Realistically with some server tuning, reverse proxy with php-fmp, PHP acceleration you can realistically host up to 200 simultaneous users on a single server with a complex business logic, so you wouldn't need to worry about scalability for a long time and certainly will save a lot on your hardware requirements.</p> 
+
+<h4> Adding Output Caching</h4>
+<p>Your SQL might already be doing some caching for you, but some sections might be too difficult to render efficiently. An example would be a comment section. You can have a NoSQL database such as MemCache for holding your comment section data organized by article_id. With Agile Toolkit HTML caching is easy. Redefine render() function to either save or retrieve HTML content from the cache. You can also implement a generic caching solution which could be implemented through a controller. Initialize your object, set its model and add a caching controller which might just change the way how rendering is done.</p>
+
+<h4>Adding Input Caching</h4>
+<p>If certain data takes too long time to be prepared it might be easier to save it into another storage. In Agile Toolkit, the most common-used models are based on "Model_Table". This class is designed for use with relational databases. You can still use the basic functionality of Data Controllers and send or retrieve data from non-SQL source. Initially they are designed to support non-relational model, but they can be used with relational model too by calling controller's methods directly.</p>
+
+<p>This gives you a transparent enhancement to your models which can cache the data in a faster storage but use SQL as a fall-back.</p>
+
+<h4>Building Service APIs</h4>
+<p>The design of a View permits the use of any kind of model. For a non-relational model, you can implement your own API Data Controller which would retrieve input data through JSON from your internal service. The model and the arguments are initialized during the first pass of your software execution (init phase) but the collection of data is done during the render() phase. That means you can send simultaneous requests to your internal APIs during the init() of your page and then collect result during render(). Not only Agile Toolkit will intelligently decide which objects need to be initialized on your page, but the transparency will be invaluable during your development, deployment and testing.</p>
+
+<p>It's a commonly a great practice to share Models between different components. Your front-end may rely on the set of models for meta-data, but would route requests into API. Your internal API service would also relay on same models, and secured by your custom internal authentication protocol it would rely on the data source to retrieve necessary data and prepare it in the exactly same format as front-end would expect it.</p>
+
+<h4>Stored Procedures</h4>
+<p>Eventually you might have a need to perform heavy processing in the database. Stored procedures is often a great way to tune up performance, although they shouldn't be relied on in the earlier stages of your application. (Think about it — stored procedure languages are so immature and difficult to develop in, it's a nightmare to produce any decent procedures). Agile Toolkit has all the support for executing expressions, calling user-defined SQL functions or using specific extensions of your database of choice without bypassing ORM. You can add new expressions and further customize the query building class: DSQL</p>
+
+<h2>Code Review Services</h2>
+<p>If you are building your first major project in Agile Toolkit, take advantage of your code-review services. We maintain a team of highly experienced web developers who have seen many complex and extreme web solutions. Share your code with our team and we will be able to provide you with comments and feedback on the organization of your code as well as provide training under NDA and specifically tweaked for your project needs. That other framework you were considering for your project earlier wouldn't even have a skilled and motivated team to advise you.</p>
+
+<h2>Developing Commercial Products with Agile Toolkit</h2>
+<p>Many commercial PHP products (such as chat system, support systems, etc) were developed without the use of frameworks and distributed as a closed-source applications simply because frameworks introduce too many obstacles into your own distribution platforms. We understand very well that some projects can be open-source but there is always projects which must be closed-sourced. We aim to support and help you to build your closed-source commercial software and Agile Toolkit is very well suited for bundling with your application.</p>
+
+<h3>Commercial Add-ons</h3>
+<p>By promoting commercial initiative on top of Open-Source framework we are willing to produce good-quality add-ons for a reasonable cost. If you intend to share your commercial add-on with the rest of the world, we will help you to distribute and sell it. Please contact us for more details.
+
+
+<h2>The Bottomline</h2>
+<p>Agile Toolkit is simple to understand and learn but it's a very solid and deep framework with virtually no limitations. There are almost no excuses to NOT use Agile Toolkit. If you are still unsure if you should adopt Agile Toolkit, use the contact form to ask questions and you will receive a reply from someone on our development team, who uses Agile Toolkit in the projects on a daily basis.</p>
+
+
+
+
+
