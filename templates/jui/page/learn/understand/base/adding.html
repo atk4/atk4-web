@@ -5,27 +5,53 @@
 
 <h1>Adding objects in Agile Toolkit</h1>
 
-<p>Adding is one of the most important concepts an Agile Toolkit. When you need to create any object, instead of using "new" operator you add instance of an object to any other object. Here is the simplest form of adding:
+<p>Adding is the fundamental concepts of Agile Toolkit. You don't produce HTML strings like you do with other toolkits, you manipulate with objects. You add objects like this:
 </p>
 <?Code?>
-$form = $page->add('Form');
+$view = $page->add('LoremIpsum');
 <?/?>
-<p>Agile Toolkit requires that you initialize objects before calling methods. There are no static methods in Agile Toolkit classes. When add() is used, in addition to creating new object instance.</p>
+<p>Try this code. Copy it into "page/index.php" inside function init() of your local Agile Toolkit installation. You will see that a few paragraphs of "Lorem Ipsum" text filler will appear on your page.</p>
 
-<p>All objects of Agile Toolkit live in a Runtime Tree. It's similar to "DOM" of the browser, where top-most object is your application (which I will call "api") and it contains many other objects responsible for different things. Each object have an "owner" — reference to an object who created them. Owner of the $form would be $page. Typically owner of a $page is application. </p>
-<p>All objects are also given unique identifier: "name". Each objects have their own name and no two objects would have a same name.</p>
+<?MoreInfo?>Geeky Note — encapsulation and dependency injection.
+<p>Adding is a combination of encapsulation and dependency injection patterns. When you add object A into object B essentially it extends functionality of object B. Depending on the type of the A object, results might be different: adding "View" will enhance presentation of object B. Adding model can configure object with fields. Adding a controller will change default behaviour of the object</p>
 
-<p>Calling add() returns object, so you can call it's method instantly without even assigning it to a variable:</p>
+<p>In other frameworks there is no adding. You rely on "new" operator to create new objects and supply them with dependencies. This is called dependency injection. If your object relies on global variable or assumes a class name of an object it relies on it is considered a bad development practice. In Agile Toolkit, the object "B" IS the dependency container. It will supply link to API, database connection, logging class and more. For these cases when you need to use a different set of classes, you can create a new API class and add your object into this separate API or one of it's sub-objects.</p>
+
+<p>Agile Toolkit never relies on global variables therefore it's possible to have multiple APIs for testing, integration or benchmarking purposes.</p>
+<?/?>
+
+<h2>Run-time Tree</h2>
+
+<p>In the real world, certain objects are containers. Your bag may contain your wallet and your wallet may contain your credit cards. In Agile Toolkit all objects are also containers. You can also imagine it as a tree-like structure. The top node or a top container is called "Application". This object may contain controllers, models and a page. The page will contain views such as Forms, Text, Buttons, LoremIpsum object etc.</p>
+
+<p>When you add objects it also cross-links them with the "owner". When you added LoremIpsum into $page, then the $page have became "owner" of LoremIpsum. LoremIpsum have become "Element" of a $page. All objects are also given unique identifier within it's owner - short_name. Another property which is automatically added to any object is "name": globally unique identifier.</p>
+
+<?MoreInfo?>Geeky Note — Object Presence and independence.
+<p>The rule of thumb in Agile Toolkit is that the $name of an object will not change between different requests. By assuming that the object's name will be always the same, it is often used to identify objects in Agile Toolkit. Let's look at how Agile Toolkit resolves situation when you have two forms on your page.</p>
+
+<p>Like any other object, Form has a name. When form is submitted, each Form on your page will compare it's name with the argument received from the browser. This the right object will be able to react accordingly.</p>
+
+<p>Other objects use presence too. Paginator, for example, remembers which page you are looking at. If you have multiple listings with pagination on a same page, they will not intervene.</p>
+<?/?>
 
 <?Example?>
 $page->add('Button')->set('Click me');
 <?/?>
 
 <h2>init() method</h2>
+<p>When you add an object, Agile Toolkit will automatically execute method init() of a new object. This method is often used to initialize an object. When you are creating your own object, the first method you'll learn to define would be init() method. In fact — you have already created a custom object. You have changed the init() method of your index page.</p>
 
-<p>When new object is created, normally constructor is called. Agile Toolkit objects never use default PHP constructors. Instead all objects of Agile Toolkit have init() method. This method is called after Agile Toolkit initializes new object and links it to "owner" and "api". View objects will also have their template loaded and parsed by the time init() is executed.</p>
+<p>You can also extend and define your own View classes. By adding code in their init() method, you can build more advanced objects or object with altered behaviour. Please always remember to call parent::init() before you place any code of your own.</p>
 
-<p>init() method can be used to add more objects or modify properties of your custom object. For example, if I want to create new class for a button, I would use the following code:</p>
+<?MoreInfo?>Geeky Note — Constructors, Encapsulation versus Inheritance
+<p>Object-oriented development offers developers two powerful principles: encapsulation and inheritance. They achieve similar goals, but are quite different by nature. As a developer you must be able to decide which principle is best in your application. However often you'll see both principles used together.</p>
+
+<p>Addition concept of Agile Toolkit is pure encapsulation. When you extend one object to add more object into it, you are using both principles. In practice this could be a ContactForm class which adds more fields inside init() method.</p>
+
+<p>Agile Toolkit objects never rely on default PHP constructor.</p>
+<?/?>
+
+<p>Next, let's create our own button class with a slightly different behaviour from the button supplied by Agile Toolkit. This button's label will be automatically set to "Click Me". Place the following code inside lib/MyButton.php</p>
 
 <?Code?>
 class MyButton extends Button {
@@ -36,45 +62,49 @@ class MyButton extends Button {
 }
 <?/?>
 
-<p>Now I can use my new object instead of adding a standard button and changing it's label:</p>
+<p>Next add this on your index page: </p>
 <?Code?>
 $page->add('MyButton');
 <?/?>
 
-<p>Using this approach you can enhance ANY class of Agile Toolkit. Here is another example of a form which will be initialized with fields:</p>
+<p>As you have expected the newly created button will have a different label. Remember this principle and every time you feel a need to duplicate some code, put it inside a separate class instead. Next is another example which can help you create a re-usable contact form. Place this code inside lib/Form/ContactForm.php:</p>
 
 <?Code?>
 class Form_ContactForm extends Form {
     function init(){
         parent::init();
 
-        $this->add('Disclaimer');
-
-        $this->addField('line','name');
-        $this->addField('line','surname');
+        $this->addField('Line','name');
+        $this->addField('Line','surname');
         $this->addSubmit('Send');
     }
 }
 <?/?>
-<h2>Other forms of adding</h2>
-<p>Some objects introduce wrappers for adding objects. This is done for convenience as they would usually automatically decide which class should be used. The ContactForm example you saw before uses addField() and addSubmit(). Both functions rely on add() but with some extra logic. Most functions starting with "add" do this, however. there are some functions which do not use this convention: js(), dsql() and exception() create and return new object, but $grid-&gt;addColumn() does not create new object dispite the name. </p>
+<p>Notice that you might as well add more fields or buttons outside of the class — on your page, after object is added:</p>
 
-<h2>More Examples</h2>
 <?Code?>
-$admin=$this->add('Model_User')->addCondition('admin',true);
+$contact_form = $page->('Form_ContactForm');
+$contact_form->addButton('Cancel');
 <?/?>
-<p>
-Adds model to the current object. add() returns an instance of a new object, making it possible for you to chain-call methods of the newly added object.
-</p>
-<?Code?>
-$menu=$this->api->add('Menu',null,'Menu');
-<?/?>
-<p>
-Adds menu inside api, and use a template spot 'Menu' inside the api's template for output.
-</p>
+
+<p>Apart from using $contact_form instead of $this, the syntax and effect is identical. Always put code you want to re-use inside the class but remember that you can still tweak it on per-use basis.</p>
+
+
+<h2>Indirect Adding of Objects</h2>
+<p>For convenience, objects may define new methods for adding certain types of objects. For example, in the form above you can see "addField". This method will actually call add() but will use "Form_Field_Line" class instead of just "Line". You must remember that you can always use "add" method instead of addField, addSubmit or addButton for maximum control.</p>
+
+<p>Most functions starting with "add" are wrappers for add(). There are some functions which do not use this convention: js(), dsql() and exception() will also rely on add(). $grid-&gt;addColumn(), however, does not currently create new object.</p>
 
 <h2>The second argument</h2>
-<p>When we are adding objects, the second argument can be used to specify the short_name or properties of the object. When left as "null" object will produce unique short_name on it's own, based on class name. Short name is used to link "owner" with it's object through "elements" array.</p>
+<p>In some cases you would like to specify a short_name of a new object. You do that when you add a field to a form class. A short_name of a field object will be used to construct POST reply. When it's important to specify new object's short_name the second argument of add() method can be used to specify the new name.</p>
+
+<p>It is also possible to change the name of an object after it was added using rename() method, although only use that method if you have no other alternative (some objects may not work well with renaming)</p>
+
+<?MoreInfo?>Geeky Note — changing default properties
+<p>The second argument can be also an associative array. If you do specify an array, the add() method will set initial object properties as per this array. This may be useful to specify additional parameters. A good example is to specify "grid_class" property to init() method of CRUD and substitute default "Grid" class with your own.</p>
+
+<p>In your own objects, please avoid this approach if possible. The init() method of objects must be as lightweight as possible and must only do the initialization and avoid any complex operations such as retrieving data from database. That is the job for object renderer.</p>
+<?/?>
 
 <?Code?>
 $page->add('Form','my_form');
@@ -86,17 +116,11 @@ if($page->hasElement('my_form')){
 $page->getElement('my_form')->owner;  // refers back to $page
 <?/?>
 
-<p>If you specify array as a second argument to add() it will be used as default set of properties for your object. You can access theese properties from init() method and it's a great way to pass arguments to it. This practice is popular in some frameworks such as "Yii" but in Agile Toolkit it is very rarely used.</p>
-
 <?Code?>
 $model->add('MyObject',array('foo'=>'bar'));
 echo $model->foo;
 <?/?>
 
-<h2>Planning your object functionality properly</h2>
-<p>
-Your init() method must be very short, fast and simple. The goal of init() method is to initialize sub-objects and properties. Subsequental calls to methods can be used to further modify the state of the object. If you are creating new "View" then as much work as possible should be delayed until rendering of the object. This is due to a fact that sometimes objects may be initialized and rendered selectively.
-</p>
 
 <h2>Working with existing objects</h2>
 <p><b>$this->hasElement($short_name)</b> return child object if found, or false if not found.</p>
@@ -106,6 +130,31 @@ Your init() method must be very short, fast and simple. The goal of init() metho
 <p><b>$this->newInstance()</b> will add a copy of the object and add into the same owner. Unlike cloning, object state is not copied.</p>
 
 <p>Properties: <b>$this->name</b> name unique to the system. <b>$this->short_name</b> is a unique amongst owners children. <b>$this->template</b> reference to the SMlite template for the current view. <b>$this->owner</b> reference to the object whose add() was used (the parent). <b>$this->api</b> refers to the API class of the parent object.</p>
+
+<h2>Excercise</h2>
+<p>Create your own class which will produce video playback controls. You don't need to link it with video or make controls work, just make it look like one:</p>
+
+<?Execute?>
+class VideoControls extends View {
+  function init(){
+    parent::init();
+    $this->add('Button')->set('Rewind');
+    $this->add('Button','play_button')->set('Play');
+    $this->add('Button')->set('Stop');
+    $this->add('Button')->set('FastForward');
+  }
+}
+$this->add('VideoControls');
+<?/?>
+<p>Once you are ready with this task, create another instance of a video playback controls and destroy "play" button:</p>
+
+<?Execute?>
+$this->add('VideoControls')
+  ->getElement('play_button')->destroy();
+<?/?>
+
+<p>For solution look at <a href="https://github.com/atk4/atk4-web/edit/master/templates/jui/page/learn/understand/base/adding.html" target="_blank">the source
+  of ths page</a></p>
 
 </div></div>
 <?$Next?>

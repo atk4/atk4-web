@@ -34,6 +34,17 @@ applications are especially sensitive to poor coding skills.</p>
 
 <p>In this book I will continue to point out important points which will help you develop high-performance and scalable applications.</p>
 
+<h2>Guidelines for naming methods</h2>
+<p>Apart from what was explained above, there are other guidelines and principles you should follow when creating methods:</p>
+
+<h3>Prefix dynamically-executed methods</h3>
+
+<p>Agile Toolkit uses camelCase method naming. When methods are called dynamically, they should be prefixed with a keyword and an underscore. For example: if you want to add a page into the API, your method would start with "page_".Similarly you would use "page_" for sub-pages, "layout_" for ApiFrontend layouts, and so on.</p>
+
+<h2>Method visibility</h2>
+<p>Due to the nature of Agile Toolkit, you will find most of the methods and properties defined as public. This is because some of the controllers require access to those methods and properties, and there is no way to define a "Friendly" class in PHP. Use your common sense when programming. Don't start manually creating objects and adding them into $obj->elements[] just because the elements array is public.</p>
+
+
 <?YouTube?>bUNEHqYVOYs<?/?>
   <?$Next?>
 

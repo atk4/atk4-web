@@ -24,7 +24,7 @@ class Sitemap extends AbstractController{
             'understand'=>array(
                 'Understanding Agile Toolkit',
                 'base'=>array(
-                    'Agile Toolkit Coding Style',
+                    'The Way of Agile Toolkit',
                     'adding'=>'Adding Objects',
                     'chains'=>'Chaining Calls',
                     'simplicity'=>'Which PHP Features Are Not Used',

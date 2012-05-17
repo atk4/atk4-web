@@ -2,12 +2,11 @@
 <?$Content?>
 
 <h1>Chaining method calls</h1>
-<p>There are no procedures in PHP - all functions return something. When an object's method has nothing
-meaningfull to return, it returns the same object - '$this'. Methods like that are called 'chainable', because
-the object returned by one method can be used to call further methods.</p>
+<p>There are no procedures in PHP, only functions. Functions can return something. When return of object method is not
+obvious, Agile Toolkit methods return reference of the same object - '$this'. These methods are called "chainable", because
+you can use return of one object to call other method.</p>
 
-<p>This approach is used a lot in practice, and often improves code readability. You won't need those extra temporary
-variables anymore. Below are some examples of code chaining in Agile Toolkit.</p>
+<p>This approach is used to improve code readability. You don't need temporary variables. Below is the example of method chaining:</p>
 
 <?Code?>
 $users = $this->api->db->dsql()
@@ -70,15 +69,5 @@ $value = $model->get('name');
 
 $url_object = $api->url('user/account');  // used to be getDestinatiounURL
 <?/?>
-
-<h2>Guidelines for naming methods</h2>
-<p>Apart from what was explained above, there are other guidelines and principles you should follow when creating methods:</p>
-
-<h3>Prefix dynamically-executed methods</h3>
-
-<p>Agile Toolkit uses camelCase method naming. When methods are called dynamically, they should be prefixed with a keyword and an underscore. For example: if you want to add a page into the API, your method would start with "page_".Similarly you would use "page_" for sub-pages, "layout_" for ApiFrontend layouts, and so on.</p>
-
-<h2>Method visibility</h2>
-<p>Due to the nature of Agile Toolkit, you will find most of the methods and properties defined as public. This is because some of the controllers require access to those methods and properties, and there is no way to define a "Friendly" class in PHP. Use your common sense when programming. Don't start manually creating objects and adding them into $obj->elements[] just because the elements array is public.
 
 <?$Next?>
