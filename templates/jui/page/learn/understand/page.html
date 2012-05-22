@@ -2,25 +2,29 @@
 <?$Content?>
 
 <div class="g-row" id="doc-ref">
-	<div class="g-6">
-        <h1>Pages, Objects and Links</h1>
-        <p>The web is greatly inspired on books. Similar to a book, the most fundamental part of the web is a "page". A Page is
-        a collection of related objects and links. Links would usually lead to other pages, while objects may dynamically
-        interact with the user while he remains on the same page.</p>
-
-        <p>Agile Toolkit relies on similar concepts. Ultimately, your project will consist of pages, and each page will
-        consist of static information, links and objects.</p>
-
-
-
-
+  <div class="g-6">
+    <div class="ref-item box blue-noised">
+      <b>Learning Agile Toolkit</b>
+      <p>Select section to get started</p>
+      <?$toc?>
     </div>
-	<div class="g-6">
-		<div class="ref-item box blue-noised">
-			<b>Learning Agile Toolkit</b>
-			<p>Select section to get started</p>
-            <?$toc?>
-        </div>
-    </div>
+  </div>
+  <div class="g-6">
+    <h1>Pages, Objects and Links</h1>
+    <p>The web is greatly inspired on books. Similar to a book, the most fundamental part of the web is a "page". When user clicks
+    a link on the page, he expect to find himself on a different page. When "Back" button is clicked, user returns to the previous
+    page.</p>
+
+    <p>Each page may contain a number of dynamic elements, which on their own may have a state and dynamic interaction with the user.
+    Such elements are always described on the same page and must not communicate with other pages.</p>
+
+    <p>Agile Toolkit automatically decides which page needs to be loaded. Each page is represented as a class and will be loaded from
+    a file such as page/index.php. You as developer can add other objects on the page. Designer can change the template of the page
+    creating custom layouts and adding static text where necessary.</p>
+
+
+
+
+  </div>
 </div>
-        <?$Next?>
+<?$Next?>

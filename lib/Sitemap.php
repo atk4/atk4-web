@@ -35,7 +35,7 @@ class Sitemap extends AbstractController{
                     'Pages, Routing and Linking',
                     'route'=>'Determining The Current Page',
                     'link'=>'Building Links to Pages',
-                    'add'=>'Adding More Pages',
+                    'add'=>'Adding Static and Dynamic Pages',
                     'misc'=>'Best Practices and Misc. Info',
                     'example'=>'Practical Examples',
                     ),

@@ -1,61 +1,43 @@
+<h3>Step 3: Long-term Solid Foundation for Business Software</h3>
+
 <div class="g-row">
-	<div class="g-6">
-        <h3>Open for Business</h3>
-        <p>
-        Today Agile Toolkit already powers over thousands of sites big and small — On-Line accounting SaaS, loan calculators,
-        time planners, bug-trackers, finance and inventory managers, blogs and personal sites. This is made possible by
-        features such as:
-        <ul>
-          <li>Built-in Integrated ORM system</li>
-          <li>Database Dynamic Query Language</li>
-          <li>Object-Oriented Model Layer</li>
-          <li>Transparent injection prevention</li>
-          <li>Development and Deployment mode</li>
-          <li>Visual Unit-testing framework</li>
-          <li>Customizable Routing, Application</li>
-          <li>Integrated Filestore with volume support</li>
-          <li>Many more...</li>
+  <div class="g-6">
+    <p>Today you may come across many curious hobbyist frameworks but many do not deserve to power your next big 
+    web project. Agile Toolkit is ready for Corporations and Businesses which have very strict expectations</p>
 
-        </ul>
+    <h4>Performance and Scalability</h4>
+    <p>Frameworks introduce overheads. Caching is often the wrong solution. Agile Toolkit focuses at improving
+    scalability of your application while keeping code clean and lightweight.</p>
+   
+    <p>Agile Toolkit allows you to build extremely complex UI with minimum queries per page. Caching is no longer
+    a necessity. Your code will be as you would have an SQL expert design all your database queries for you. And
+    yet developers are not exposed to the dangers of raw SQL.</p>
 
+    <h4>Prototype, that scaled</h4>
+    <p>Often the code which used to put together a quick prototype software can't be used for a full-featured,
+    commercial purposes. Agile Toolkit makes it possible. With Agile Toolkit you can develop quickly when
+    you need results quickly. You can polish your application when your budget and time permits.</p>
 
+  </div>
+  <div class="g-6">
 
+    <h4>Security from Human Error</h4>
+    <p>Developers make mistakes. For many web projects simple developers mistake became source of
+    major corporate crisis.</p>
 
+    <p>It is in our nature to make mistakes. That's why Agile Toolkit has precautions. Your Web
+    Software will consist of Business and Presentation logic. Business logic relies on Object-Oriented
+    Models which introduce physical boundaries for the presentation logic.</p>
 
-
-        Model implementation in Agile Toolkit gives you a great opportunity to bind Views to a business entity. Models,
-        implemented as pure PHP classes. They define properties, behaviour, relations and conditions of a business entity. Once
-        defined they can be inherited and used inside any View.
-
-        </p>
-        <a style="float: left" href="<?page?>intro<?/?>" target="_blank">More Examples</a>
+    <p>For example, if "Order" model has a built-in condition preventing it from loading records
+    owned by other users, not a single Widget or UI element will be able to access, change or
+    delete restricted records.</p>
     </div>
-	<div class="g-6">
-        <h3>Goal-focused development</h3>
-        <p>Need results fast? Focus on your goals rather than technical implementation. You can always come and re-vise things.
-        With Agile Toolkit the maintainability of your code will be on a completely new level
-        </p>
 
-        <h4>Example using "Employee" model</h4>
-
-<?Execute?>
-$form=$page->add('MVCForm');
-$form->js(true)->addClass('ignore_changes');
-$grid=$page->add('MVCGrid');$grid->addPaginator(5)->setModel('Employee',array('name','salary'));
-$grid->dq->order('id',true);$grid->addColumn('delete','delete');
-$form->setModel('Employee',array('name','salary'));
-$form->addSubmit('Add');
-$form->onSubmit(function($form) use($grid){
-	$form->update();
-        $form->js(null,array(
-          $grid->js()->reload(),
-          $form->getElement('name')->js()->val('')->focus(),
-          $form->getElement('salary')->js()->val(''),
-        ))->univ()
-		->successMessage('Employee added')
-		->execute();
-});
-<?/?>
-
-    </div>
+    <h4>Stability</h4>
+    <p>We know two things too well: 1) changing your code introduces bugs. 2) you will have to change your code.</p>
+    <p> With Agile Toolkit you have
+    much less chance to unintentionally break your application. You can now safely follow principles of Extreme 
+    Programming or other Agile Methodology.</p>
+    <a style="float: left" href="<?page?>intro<?/?>" target="_blank">Learn more</a>
 </div>

@@ -1,19 +1,19 @@
+<h3>Step 1: Revolutionary Approach to Web User Interface</h3>
 <div class="g-row">
-	<div class="g-6">
-        <h3>Graphics User Interface for The Web</h3>
-        <p>
-        Agile Toolkit implements an object-oriented approach to building Web User Interface. Inspired by the Desktop Graphical
-        User Interfaces, everything in Agile Toolkit is an object with ability to "render" into HTML.</p>
+  <div class="g-6">
 
-        <p>
-        Powerful Object-Oriented architecture enables you to efficiently use existing View classes as-is or
-        extend them to customize.</p>
+    <p>Agile Toolkit comes with a powerful HTML-based, templates and many UI widgets you can use such as Forms, Buttons,
+    Sliders, Menus. No other PHP Framework comes with User Interface as a standard. Graphical user interfaces changed
+    desktop industry almost 30 years ago. Agile Toolkit revolutionize development of Web Applications today.</p>
 
-        <p>
-        Agile Toolkit allows you to specify a custom template on the "object" level. It will allow some of the generic
-        object look fresh, create complex layouts on your pages or create re-usable HTML-snippets.</p>
+    <h4>Backend, Front-end, Word-press plugin...</h4>
+    <p>Agile Toolkit can be integrated with anything. Agile Toolkit is as big as you want it to be. You can adopt
+    Agile Toolkit fully for your new application, or just use it to develop a single page.</p>
 
-<h4>What can you do in 8 lines of ONLY-PHP code!</h4>
+
+    <h4>Powerful AJAX Integration</h4>
+    <p>Agile Toolkit is a first framework, which offers a tight and flexible integration between JavaScript, AJAX and
+    PHP. Example below is programmed using only PHP code.
 
 <?Execute?>
 $view=$page->add('View');
@@ -27,49 +27,48 @@ if($form->isSubmitted()){
 }
 <?/?>
 
-    </div>
-	<div class="g-6">
-        <h3>Standard Elements</h3>
+  </div>
+  <div class="g-6">
+    <h4>Widgets and Templates</h4>
 
-<div class="g-row">
-	<div class="g-4">
-        <p>
-        Agile Toolkit ships with dozens of standard components you can use out-of-the-box. These include
-        Buttons, Forms, Lists, Grids, Trees, Frames. Some are further enhanced with jQuery UI Widgets such as sliders,
-        drag&amp;drop, lasso-selection. If you miss one, it's a snap to create your own class.
+    <div class="g-row">
+      <div class="g-4">
+        <p>Building re-usable widgets and controls is extremely easy with Agile Toolkit. Not only you will be able to re-use them
+        in your new projects but you can bundle them with custom templates, javascript and powerful features. Widget will automatically
+        adopt local theme and UI modifications.
         </p>
 
-</div> <div class="g-2">
+        </div> <div class="g-2">
 
-<div style="float: right; border: 1px dashed gray; padding: 4px">
-<?Execute?>
-$page->add('Alex');
-<?/?>
-  <center>"Alex" View Class</center> 
-  </div>
+        <div style="float: right; border: 1px dashed gray; padding: 4px">
+          <?Execute?>
+          $page->add('Alex');
+          <?/?>
+          <center>"Alex" View Class</center> 
+        </div>
+      </div>
+    </div>
+    <h4>User Interface Consistency</h4>
+    <div class="g-row">
+      <div class="g-4">
+        <p>If you have a long project ahead of you, you probably think that relying on Models/MVC/ORM principles will help your
+        business logic become flexible. We extend this principle to the User Interface. Don't repeat yourself when writing markup
+        for a button. Design your User Interface once and use it forewer.</p>
+        </div> <div class="g-2">
 
+        <?Execute?>
+        $b=$page->add('Frame')->setTitle('Sample');
+        $b->add('Icon')->set('fun-happy');
+        $b->add('Text')->set('Text Label');
+        <?/?>
+        <br/>
 
+        <?Execute?>
+        // $page->add('Button')->set('Continue »')->setStyle('float','right');
+        <?/?>
+        <a style="float: right" href="<?page?>intro<?/?>">Learn More...</a>
     </div></div>
-<h3>View inside View</h3>
-<div class="g-row">
-	<div class="g-4">
-<p>Agile Toolkit makes it possible to add View into any other View and position it anywhere. "Icon" is a
-stand-alone class and has no relations with "Frame", yet one can be placed into another with just 3 lines of PHP code. Real-time rendered result:</p>
-</div> <div class="g-2">
-
-<?Execute?>
-$b=$page->add('Frame')->setTitle('Sample');
-$b->add('Icon')->set('fun-happy');
-$b->add('Text')->set('Text Label');
-<?/?>
-  <br/>
-
-<?Execute?>
-// $page->add('Button')->set('Continue »')->setStyle('float','right');
-<?/?>
-<a style="float: right" href="<?page?>intro<?/?>" target="_blank">More Examples</a>
-  </div></div>
 
 
- </div>
+  </div>
 </div>

@@ -1,14 +1,17 @@
+<h3>Step 2: Native PHP integration of jQuery</h3>
 
 <div class="g-row" id="doc-ref">
-	<div class="g-6">
-        <h3>jQuery UI Based API and AJAX</h3>
-        <p>
-        Agile Toolkit is based on industry-standard jQuery and jQuery UI to build interactivity between user interface and
-        server-side. Through abstraction, you will be able to harness power of AJAX, jQuery Plugins and jQuery UI Widgets
-        from the comfort of the PHP. Even if your plugin have never been used with Agile Toolkit, integrating it will be
-        a super-easy. Next 2 examples contain zero JavaScript code.</p>
-        <h4>The Math Problem</h4>
-        <?Execute?>
+  <div class="g-6">
+    <p>We know well that some things are better done on the server-side while other things are better done in the browser. When
+    it comes to integrating JavaScript with PHP, most PHP frameworks offer no help at all.</p>
+
+    <p>Agile Toolkit has a unique <b>Native</b> integration. The principle is incredible simple yet amazingly powerful.
+    You define JavaScript behaviour in a plain PHP language.</p>
+
+    <p>Below are just some examples of how short PHP code can produce a fully-functional AJAX applications. They demonstrate
+    independence of widgets, and are both implemented as a short block of PHP code, no extra JavaScript or CSS required.</p>
+
+    <?Execute?>
 $f=$p->add('Form',null,null,array('form_empty'));
 $f->addField('line','a','')
   ->set(2)->setProperty('size',4)
@@ -32,21 +35,21 @@ if($f->isSubmitted()){
 }
 <?/?>        
 <br/>
-        <?Execute?>
-        $this->add('Hangman');
-        <?/?>
-
-        
+<?Execute?>
+$this->add('Hangman');
+<?/?>
 
 
-    </div>
-	<div class="g-6">
-        <h3>Everything just works!</h3>
-        <p>If you are developer with experience, you will find yourself often over-thinking the framework. Once you
-        understand core principles of Agile Toolkit, you will be able to read any code written for Agile Toolkit
-        with great ease.
-        
-        </p>
+
+
+  </div>
+  <div class="g-6">
+    <h4>Everything just works!</h4>
+    <p>Agile Toolkit hides a lot of complexity a typical use of JavaScript on AJAX site would encounter. Loading
+    indication, dependencies, 3rd party jQuery plugin integration, load-on-demand, JavaScript escaping and encoding,
+    JSON as well as many other small tasks are routinely performed by Agile Toolkit.</p>
+
+    </p>
         <?Execute?>
         $page->js()
           ->_load("highcharts/highcharts")
@@ -57,21 +60,14 @@ if($f->isSubmitted()){
        ->univ()
        ->highchart(array(
        'chart'=>array('width'=>480,'height'=>300),
-       'title'=>array('text'=>'Why Developers love Agile Toolkit?'),
+       'title'=>array('text'=>'Why Will Love You Agile Toolkit?'),
        'series'=>array(array('type'=>'pie',
           'data'=>array(
-            array('Simplicity',40),
-            array('User Interface',30),
-            array('Business Logic',20)
+            array('Simple to Learn',40),
+            array('Looks Awesome',30),
+            array('Enterprise Features',20)
             )
             ))));
         <?/?>
-        
+  </div>
 </div>
-<!--
-$form=$page->add('Form');
-$form->addField('line','phone')->js(true)
-    ->_load('jquery.maskedinput-1.3.min')
-    ->mask('(999) 999-9999')
-    ->univ()->disableEnter();
-    -->

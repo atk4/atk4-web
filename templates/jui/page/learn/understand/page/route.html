@@ -2,17 +2,40 @@
 <?$Content?>
 
 
-<h1>How Agile Toolkit translates the URL into a Page</h1>
-<p>In Agile Toolkit, pages are objects too. Only one page object is initialized. API class determines it based on routing. </p>
-
-<p>You might have noticed, how we were adding objects to $page in previous chapters. That's reference to the Page Object.
-In practice, you would normally add your code directly into page/index.php, by re-defining "init()" method. In this case
-you can use $this to address the page object.</p>
+<h1>URL translation into a Page Class</h1>
+<p>In Agile Toolkit, pages are objects created from classes. For each user request only one page object is initialized.
+The process where API class determines name of the page class to initilaize is called "routing".</p>
 
 <h3>Page Routing</h3>
-<p>In Agile Toolkit the API class determines the router. ApiFrontend uses front-controller approach (this means that all
-web requests are routed through an "entry" file. If you do wish to use front-controller, then ApiWeb is sufficient for your
-application class.</p>
+
+<p>Let me start with example. The page you are reading right now was determined by Agile Toolkit as:
+<?Execute?>
+$page->add('Text')->set($page->api->page);
+<?/?></p>
+
+<p>This page is determined from the URL above: <?$page?>. Please note that "/" and "_" are treated identically by Agile Toolkit.</p>
+
+<p>In Agile Toolkit the API class determines how routing is done. You must already know that there are a selection of
+different API clasess in Agile Toolkit and their approach to page routing is different.</p>
+
+<h4>ApiFrontend</h4>
+<p>ApiFrontend — the application class you are most likely to use — uses diverts all web requests into a single file: index.php.
+This is achieved by either using mod_rewrite rule (RewriteRule  .*  index.php) or by building the URLs with the argument "page".
+The default installation of Agile Toolkit uses URLs like this: "http://localhost/agiletoolkit/?page=dbtest".</p>
+
+<p>Open the index.php with text editor and notice that the job of the file is to initialize your Application class and pass
+execution to it.</p>
+
+<h4>ApiWeb</h4>
+<p>ApiWeb — is a good application class if you can't use front controller or will need to use different routing. It is most
+useful when you need to integrate Agile Toolkit with a different framework.</p>
+
+<h4>ApiCLI</h4>
+<p>This class assumes that you'll be executing it from the command-line and will not even try to determine the page.</p>
+
+<p>The rest of this chapter will focus on ApiFrontend routing leaving other API implementation aside.</p>
+
+<h3>Building URL from the page name</h3>
 
 <p>The logic used by ApiFrontend when determining corresponding class to a page is simple:</p>
 <div class="box blue-noised p-10px">
@@ -22,7 +45,7 @@ application class.</p>
         <tr>
           <th>Browser URL</th>
           <th>Page</th>
-          <th width="50%">Notes</th>
+          <th width="40%">Notes</th>
         </tr>
       </thead>
       <tbody>
@@ -32,11 +55,10 @@ application class.</p>
           <td>Agile Toolkit completely ignores the extension and uses remaining location to determine page name.</td>
         </tr>
         <tr>
-          <td>http://example.com/index.php?page=user/add</td>
+          <td>http://example.com/?page=user/add</td>
           <td>user/add</td>
           <td>Your default install of Agile Toolkit is not configured to use mod_rewrite. Therefore the URL in the browser will
-            appear with index.php in front of it. Passing page=XX will always override the page name, which is very useful
-            in building beautiful URLs</td>
+            address index.php passing page=XX. GET['page'] will always override determined page-name.</td>
         </tr>
         <tr>
           <td>http://example.com/profile/change-password.do</td>
@@ -52,8 +74,8 @@ application class.</p>
         <tr>
           <td>http://example.com/admin/logout</td>
           <td>logout</td>
-          <td>Most often site administration is implemented as a separate site with another entry point (directory). Pages are
-            relative to the installation point (directory).</td>
+          <td>Agile Toolkit does not have to be in your web-root directory. If it's installed into subdirectory, Agile Toolkit
+            will detect it and will eleminate installation point (base_path) from the name of the page.</td>
         </tr>
       </tbody>
     </table>
