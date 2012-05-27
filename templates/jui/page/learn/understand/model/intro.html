@@ -48,56 +48,18 @@ $item->save();
 <h2>Defining the Model</h2>
 <p>Just now I have skipped over the necessary step of defining model. Model is described by a class and to start using new model, you need to create a new class. Open lib/Model/Item.php file with your editor and add the following code:</p>
 
-<?Code?>
-class Model_Item extends Model_Table {
-  public $table='item';
-  function init(){
-    parent::init();
-
-    $this->addfield('price');
-    $this->addfield('name');
-  }
-}
-<?/?>
-
+<?Codepad?>learning/model_2#libModelItemphp<?/?>
 
 <p>To demonstrate how Models in Agile Toolkit can address multiple tables, here is another model definition:</p>
-<?Code?>
-class Model_Item_Discounted extends Model_Item {
-  function init(){
-    parent::init();
+<?Codepad?>learning/model#libModelItemDiscountedphp<?/?>
 
-    $this->addField('has_discount')->type('boolean');
-    $this->addCondition('has_discount',true);
-  }
-}
-<?/?>
 <p>This new class is completely independent from the "Model_Item" therefore adding discount feature must have NO EFFECT on any of your existing code-base which operates with Items already. Adding new functionality without changes in your stable code is a significant benefit Agile Toolkit offers you and in practice will improve stability of your project greatly and will help multiple people working at your project simultaniously.</p>
 
 <h3>Table Relationship</h3>
 <p>The other major feature of Agile Toolkit models is ability to keep number of queries to the absolute minimum. If your old ORM library could only describe one table with a single model, then you were forced to increase number of database queries and subsequently introduce caching. Agile Toolkit can make your queries more sophisticated and reduce response latency. Consider the new version of your Model_Item class:</p> 
 
-<?Code?>
-class Model_Item extends Model_Table {
-  public $table='item';
-  function init(){
-    parent::init();
+<?Codepad?>learning/model#libModelItemphp<?/?>
 
-    $this->addfield('price');
-    $this->addfield('name');
-
-    $cat = $this->leftJoin('category');
-    $cat->addField('category_name','name');
-
-
-    $this->hasMany('Order');
-    $this->hasMany('Order_Completed');
-
-    $this->addExpression('successful_orders')
-      ->set($this->refSQL('Order_Completed')->sum('amount'));
-  }
-}
-<?/?>
 <p>First, let me note that all the changes we added to the "Model_Item" are also inherited by "Model_Item_Discounted". We do not need to implement the same change for multiple classes independently. Next let's look at each line and analyze what's been done there.</p>
 
 <h4>join() and leftJoin()</h4>
@@ -117,27 +79,7 @@ class Model_Item extends Model_Table {
 
 <p>You must understand that for this code to work, we also need Model_Order and Model_Order_Completed classes defined:</p>
 
-<?Code?>
-class Model_Order extends Model_Table {
-  public $table='order';
-  function init(){
-    parent::init();
-
-    $this->addOne('Item');
-    $this->addField('amount')->type('int');
-    $this->addField('is_completed')->type('boolean');
-  }
-}
-
-class Model_Order_Completed extends Model_Order {
-  function init(){
-    parent::init();
-
-    $this->addCondition('is_completed',true);
-  }
-}
-<?/?>
-
+<?Codepad?>learning/model#libModelOrderphp<?/?>
 
 <p>Agile Toolkit is already helping you greatly to avoid code duplication. The definition of a completed order describes that the field is_completed must be
 true for completed orders, yet when we are traversing relationship to build a sub-query for number of purchases, this condition is automatically used.</p>
@@ -145,33 +87,10 @@ true for completed orders, yet when we are traversing relationship to build a su
 <p>Now that we have increased number of models and made them much more sophisticated, how did it reflect on your presentation logic? Does it require significant
 changes? Not a single change! Your presentation logic will continue to work unchanged:</p>
 
-<?Code?>
-$item = $this->add('Model_Item');
-
-$item->tryLoadAny();
-
-$item['price'] = 14.99;
-$item['name'] = 'Mouse Pad';
-
-$item->save();
-<?/?>
-
+<?Codepad?>learning/model#Sample1<?/?>
 <p>Of course you can now address more fields and traverse relations, but you do not need to worry about breaking your existing code.</p>
 
-<?Code?>
-$item = $htis->add('Model_Item');
-
-$item->tryLoadAny();
-
-$order = $item->ref('Order');
-
-$order['amount']=5;
-$order->save();
-
-$item->reload();
-
-$res = $item['successful_orders'];   // will increment by 5
-<?/?>
+<?Codepad?>learning/model/2#Sample1b<?/?>
 
 <h2>Conclusion</h2>
 
@@ -179,17 +98,8 @@ $res = $item['successful_orders'];   // will increment by 5
 
 <p>But there is one huge advantage I still haven't demonstrated. That's integration between Model and Views</p>
 
-<?Code?>
-$grid=$this->add('Grid');
-$grid->setModel('Item');
+<?Codepad?>learning/model#Sample2<?/?>
 
-$form = $this->add('Form');
-$form->setModel('Order_Completed');
-if($form->isSubmitted()){
-  $form->update();
-  $form->js(null,$grid->js()->reload())->successMessage('Order added')->execute();
-}
-<?/?>
 <p>The code will produce a grid listing current items (and their category names) as well as showing a form for adding new orders. The form would also feature a drop-down for selecting item and amount and will refresh the grid after successful submission.</p>
 
 <p>All this is implemented using only the few lines of code you see, there are no additional controllers, custom views or additional templates.</p>

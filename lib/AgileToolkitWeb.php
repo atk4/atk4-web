@@ -188,6 +188,7 @@ class AgileToolkitWeb extends ApiFrontend {
             $this->page_object->template->eachTag('Example',array($this,'enclose_Example'));
             $this->page_object->template->eachTag('Vimeo',array($this,'enclose_Vimeo'));
             $this->page_object->template->eachTag('YouTube',array($this,'enclose_YouTube'));
+            $this->page_object->template->eachTag('Codepad',array($this,'enclose_Codepad'));
             if($this->page_object->template->is_set('ContactForm')){
                 $this->page_object->template->tryDel("page_title");
                 $this->page_object->add('ContactForm',null,'ContactForm');
@@ -246,6 +247,11 @@ class AgileToolkitWeb extends ApiFrontend {
     }
     function enclose_YouTube($content,$tag){
         $this->page_object->add('View',null,$tag,array('doc/view/doc_youtube'))->template->trySet('video_id',$content);
+    }
+    function enclose_Codepad($content,$tag){
+        $this->page_object->add('View',null,$tag,array('doc/view/doc_codepad'))->template
+            ->trySet('link',str_replace('#','&cut=',$content))
+            ->trySet('codepad',$this->api->getConfig('codepad','http://agiletoolkit.org/codepad/'));
     }
     function enclose_Pre($content,$tag){
         $this->page_object->add('View',null,$tag,array('doc/view/doc_pre'))->set($content);
