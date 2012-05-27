@@ -3,56 +3,200 @@
 
 <h1>Introduction to Models</h1>
 
-<p>Models describe your real business entities in a very object-oriented way. Models implement Active Record functionality, as well as Dynamic Queries for multi-record actions. That means that Model will be your interface to Relational Database Management System such as (but not limited to) MySQL. You can also create non-relational models if you are using noSQL database.</p>
+<p>Model is a class which mimics real-life objects. If you are building on-line store, then your objects would be items, categories, customers and orders.</p>
 
-<?MoreInfo?>Why not use a 3rd party ORM?
-<p>The design of Models in other ORMs such as Propel and Doctrine focuses mainly on cross-database implementation of SQL requests. The Models in Agile Toolkit focus on consistency of business logic and security features.</p>
+<img style="float: right" src="<?template?>images/ugly_images/ecommerce-models.png<?/?>">
 
-<p>Other ORMs try to map database into a single class while Agile Toolkit normally would have multiple model classes based on the same table and then some models which relies on tables with joins or additional expressions. Expression, join and sub-query support is seriously lacking in other frameworks and ORMs.</p>
+<h4>Fields</h4>
+<p>Each model can contain a number of fields. Each field is also described as an object and can contain some meta-information or specific behaviours.</p>
 
-<p>Another benefit of Agile Toolkit model approach is security. Model level conditions is the best way to implement user data access restrictions or handling multiple states of data records.</p>
+<h4>Database</h4>
+<p>Models are often associated with the database tables. Most of PHP frameworks assume that one model corresponds to a single table, however Agile Toolkit introduces a certain flexibility which is essential to your development stability.</p>
 
-<p>Finally — Models of Agile Toolkit contain meta-information about your model fields, such as caption, validations, visibility rules and so on. As a result, many Views can read model definitions and build themselves based on that information.</p>
+<h4>Relations</h4>
+<p>Some models just like SQL tables may relate to other models. There are two primary relations - one-to-many and many-to-one. Each model contain information about some of the relations.</p>
 
-<p>Business-logic validation is often handled by the model. The User Interface performs validation through AJAX requests, so it's consistent, not duplicated, and not carried outside of the server-side code. If more developers start working on your software, you will want some of them to focus on Models, others on User Interface.</p>
-
-<?/?>
-
-
-<h2>What can a Model on its own?</h2>
-<p>First, models can be used directly to manipulate database data. Here are some examples:</p>
+<h3>Operating with Models</h3>
+<p>Adding an model object is as easy as adding any other object in Agile Toolkit. Model object can be either empty or has one record "loaded". Below is a code demonstrating how to create model object and load it:</p>
 
 <?Code?>
-// Initialize object for employee
-$emp=$this->add('Model_Employee');
+$item = $this->add('Model_Item');
 
-// Load data for a given id
-$emp->load($_GET['id']);
+$res = $item->loaded(); // will contain false
 
-// Interact with data
-$salary = $emp['salary'];
+$item->load($_GET['item_id']);
 
-// Traverse foreign keys. Automatically loads proper model and data
-$company=$emp->ref('company_id');
-
-// a Model can define custom actions.
-$company->letGo($emp);
-
-// Standard actions can also be used
-$emp->delete();
-
-// Traversing foreign keys can happeen both ways
-$emps = $company->ref('Employee');
-
-// a Model can produce dynamic queries for any actions
-$count = $emps->count()->getOne();
-
-// You can use a customized model to create a fully functional CRUD capable of
-// not only listing filtered records but also adding them to match the conditions:
-$this->add('CRUD')->setModel($emps);
+$res = $item->loaded(); // will contain true
 <?/?>
 
-<table width=100%><tr><td width='49%' valign=top>
+<h4>Editing, Saving and Deleting records</h4>
+<p>Any model, once loaded, can have it's fields changed through the same syntax you are using for working with arrays. Alternatively you can use set() and get() methods, which are chain-able.</p>
+
+<?Code?>
+$item = $this->add('Model_Item');
+
+$item->tryLoadAny();
+
+$item['price'] = 14.99;
+$item['name'] = 'Mouse Pad';
+
+$item->save();
+<?/?>
+
+<p>The above example will attempt to load ANY record into the model, update price and name then save back into database. If record couldn't be loaded, then a new record will be added. If record already exists in the database and field properties are exactly as specified, then save() will not perform database update.</p>
+
+<h2>Defining the Model</h2>
+<p>Just now I have skipped over the necessary step of defining model. Model is described by a class and to start using new model, you need to create a new class. Open lib/Model/Item.php file with your editor and add the following code:</p>
+
+<?Code?>
+class Model_Item extends Model_Table {
+  public $table='item';
+  function init(){
+    parent::init();
+
+    $this->addfield('price');
+    $this->addfield('name');
+  }
+}
+<?/?>
+
+
+<p>To demonstrate how Models in Agile Toolkit can address multiple tables, here is another model definition:</p>
+<?Code?>
+class Model_Item_Discounted extends Model_Item {
+  function init(){
+    parent::init();
+
+    $this->addField('has_discount')->type('boolean');
+    $this->addCondition('has_discount',true);
+  }
+}
+<?/?>
+<p>This new class is completely independent from the "Model_Item" therefore adding discount feature must have NO EFFECT on any of your existing code-base which operates with Items already. Adding new functionality without changes in your stable code is a significant benefit Agile Toolkit offers you and in practice will improve stability of your project greatly and will help multiple people working at your project simultaniously.</p>
+
+<h3>Table Relationship</h3>
+<p>The other major feature of Agile Toolkit models is ability to keep number of queries to the absolute minimum. If your old ORM library could only describe one table with a single model, then you were forced to increase number of database queries and subsequently introduce caching. Agile Toolkit can make your queries more sophisticated and reduce response latency. Consider the new version of your Model_Item class:</p> 
+
+<?Code?>
+class Model_Item extends Model_Table {
+  public $table='item';
+  function init(){
+    parent::init();
+
+    $this->addfield('price');
+    $this->addfield('name');
+
+    $cat = $this->leftJoin('category');
+    $cat->addField('category_name','name');
+
+
+    $this->hasMany('Order');
+    $this->hasMany('Order_Completed');
+
+    $this->addExpression('successful_orders')
+      ->set($this->refSQL('Order_Completed')->sum('amount'));
+  }
+}
+<?/?>
+<p>First, let me note that all the changes we added to the "Model_Item" are also inherited by "Model_Item_Discounted". We do not need to implement the same change for multiple classes independently. Next let's look at each line and analyze what's been done there.</p>
+
+<h4>join() and leftJoin()</h4>
+<p>Model has two methods which introduce a join into a table. join() would have create a model which operates with two tables simultaneously. leftJoin is similar, but it will not attempt to populate "category" table when the item is added.</p>
+
+<p>In practice you may have as many joins in a model as you think is necessary. Agile Toolkit will insert records into all the related tables in the proper order. By default Agile Toolkit assumes that your main table has "category_id" field (which it does) but if name of the field is different or the dependency is handled differently, you can define it through additional arguments to join()/leftJoin() method as described in documentation.</p>
+
+<p>The whole idea of a join is that fields physically distributed across several tables are appearing in the same logical model.</p>
+
+<h4>hasOne(), hasMany()</h4>
+<p>These methods allow to establish relationship between different models (not tables). Because each model may join multiple tables, there is no way to join models, that would be too complicated for Agile Toolkit to figure out. However the methods hasOne and hasMany describe relationship between models.</p>
+
+<p>It's important to understand the difference between table relationship and model relationship. As you can see even through there are only one relationship between 'order' and 'item' in the database, we have defined two relationships between Model_Item, Model_Order and Model_Order_Completed. You must also remember that 'Model_Item_Discounted' also inherits relationship definitions.</p>
+
+<h4>addExpressions(), ref() and refSQL()</h4>
+<p>Typically ORM will only work with physical fields, but Agile Toolkit allows you to define calculated fields: expressions. Expression may use a SQL expression or sub-query to calculate it's value. In the example above the expression is set to a subQuery calculating number of completed orders. This might be a little difficult to figure out right now if you are new to Agile Toolkit, but I will get back to this syntax several times.</p>
+
+<p>You must understand that for this code to work, we also need Model_Order and Model_Order_Completed classes defined:</p>
+
+<?Code?>
+class Model_Order extends Model_Table {
+  public $table='order';
+  function init(){
+    parent::init();
+
+    $this->addOne('Item');
+    $this->addField('amount')->type('int');
+    $this->addField('is_completed')->type('boolean');
+  }
+}
+
+class Model_Order_Completed extends Model_Order {
+  function init(){
+    parent::init();
+
+    $this->addCondition('is_completed',true);
+  }
+}
+<?/?>
+
+
+<p>Agile Toolkit is already helping you greatly to avoid code duplication. The definition of a completed order describes that the field is_completed must be
+true for completed orders, yet when we are traversing relationship to build a sub-query for number of purchases, this condition is automatically used.</p>
+
+<p>Now that we have increased number of models and made them much more sophisticated, how did it reflect on your presentation logic? Does it require significant
+changes? Not a single change! Your presentation logic will continue to work unchanged:</p>
+
+<?Code?>
+$item = $this->add('Model_Item');
+
+$item->tryLoadAny();
+
+$item['price'] = 14.99;
+$item['name'] = 'Mouse Pad';
+
+$item->save();
+<?/?>
+
+<p>Of course you can now address more fields and traverse relations, but you do not need to worry about breaking your existing code.</p>
+
+<?Code?>
+$item = $htis->add('Model_Item');
+
+$item->tryLoadAny();
+
+$order = $item->ref('Order');
+
+$order['amount']=5;
+$order->save();
+
+$item->reload();
+
+$res = $item['successful_orders'];   // will increment by 5
+<?/?>
+
+<h2>Conclusion</h2>
+
+<p>Agile Toolkit contains one of the most powerful ORMs ever built for PHP which contains many unique features and focuses on scalability and flexibility. Features demonstrated here is only a tip of the iceberg. As you become more familiar with Agile Toolkit, you will be able to use many other powerful features.</p>
+
+<p>But there is one huge advantage I still haven't demonstrated. That's integration between Model and Views</p>
+
+<?Code?>
+$grid=$this->add('Grid');
+$grid->setModel('Item');
+
+$form = $this->add('Form');
+$form->setModel('Order_Completed');
+if($form->isSubmitted()){
+  $form->update();
+  $form->js(null,$grid->js()->reload())->successMessage('Order added')->execute();
+}
+<?/?>
+<p>The code will produce a grid listing current items (and their category names) as well as showing a form for adding new orders. The form would also feature a drop-down for selecting item and amount and will refresh the grid after successful submission.</p>
+
+<p>All this is implemented using only the few lines of code you see, there are no additional controllers, custom views or additional templates.</p>
+
+<p>This book and Agile Toolkit will teach you how to build complete on-line systems in the similar and extremely efficient way.</p>
+
+<table width=100%><tr><td width='57%' valign=top>
 
       <h4>Direct use of Models</h4>
       <ul>
@@ -65,7 +209,7 @@ $this->add('CRUD')->setModel($emps);
         <li>Track which fields are changed</li>
         <li>Encourage model-level validation and default values</li>
         <li>Allow adding behaviours, either manually inside model functions or as extensions</li>
-        <li>Support SQL expressions fields</li>
+        <li>Support SQL expression fields</li>
         <li>Offer extensions such as strong encryptions, audit log, timestamps, soft delete, and so on</li>
         <li>Contain custom methods for business operations</li>
       </ul>
@@ -74,7 +218,7 @@ $this->add('CRUD')->setModel($emps);
 
       <h4>Interface integration features</h4>
       <ul>
-        <li>Bind Form with Model. It will populate field, validation, conditions and will offer to save form data automatically through model</li>
+        <li>Bind Form with Model. Populate fields, validations, conditions and will offer to save form data automatically through model</li>
         <li>Bind Grid with Model. Displays properly formatted fields, both physical, calculated, foreign and related</li>
         <li>Define which fields and in which order you want to show when binding</li>
         <li>Add more fields, more conditions or even remove fields before you bind with the view</li>
