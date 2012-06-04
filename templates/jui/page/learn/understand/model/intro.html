@@ -45,6 +45,19 @@ $item->save();
 
 <p>The above example will attempt to load ANY record into the model, update price and name then save back into database. If record couldn't be loaded, then a new record will be added. If record already exists in the database and field properties are exactly as specified, then save() will not perform database update.</p>
 
+<h4>Multi-row queries</h4>
+<p>Agile Toolkit models can access records one at a time by implementing pattern "active record". However model can also use SQL language to perform actions on multiple records.</p>
+
+<?Code?>
+$item = $this->add('Model_Item');
+
+$item->dsql()
+  ->set('price',14.99)
+  ->set('name','Mouse Pad')
+  ->update();
+<?/?>
+<p>In contrast with the previous example, this will produce a SQL query which will update all the item prices to 14.99 and names to 'Mouse Pad'.</p>
+
 <h2>Defining the Model</h2>
 <p>Just now I have skipped over the necessary step of defining model. Model is described by a class and to start using new model, you need to create a new class. Open lib/Model/Item.php file with your editor and add the following code:</p>
 
@@ -91,6 +104,16 @@ changes? Not a single change! Your presentation logic will continue to work unch
 <p>Of course you can now address more fields and traverse relations, but you do not need to worry about breaking your existing code.</p>
 
 <?Codepad?>learning/model/2#Sample1b<?/?>
+
+<h2>Use With Views</h2>
+<p>A significant feature of Agile Toolkit models is their integration with views. You can easily populate a Grid or a Form object with the fields from a grid.</p>
+
+<?Code?>
+$this->add('Form')->setModel('Book');
+<?/?>
+
+<p>This is sufficient to show a form with the fields necessary to enter book model data.</p>
+
 
 <h2>Conclusion</h2>
 

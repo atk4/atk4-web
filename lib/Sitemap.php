@@ -42,10 +42,8 @@ class Sitemap extends AbstractController{
                 'model'=>array(
                     'Models',
                     'intro'=>'Introduction to Models',
-                    'add'=>'Creating Your First Model',
-                    'db'=>'Database Considerations',
-                    'calculated'=>'Calculated Fields',
-                    'relations'=>'Relations Between Models and Tables',
+                    'add'=>'Building Model Structure',
+                    'db'=>'Database Features',
                     'actions'=>'Adding Actions (Behaviour)',
                     'debug'=>'Debugging Models',
                     ),
@@ -167,6 +165,7 @@ class Sitemap extends AbstractController{
             'modeltable'=>array(
                 'SQL/Relational Model_Table',
                 'add'=>'Defining Relational Models and Basic Use',
+                'fields'=>'Field types and UI integration',
                 'dsql'=>'Interaction with Dynamic SQL',
                 'condition'=>'Conditions and Master Fields',
                 'expression'=>'Defining Expressions',

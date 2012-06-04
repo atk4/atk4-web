@@ -2,59 +2,57 @@
 
 <h1>Planning your Model Structure</h1>
 
-<p>There are several 
+<p>Object oriented model structure offers you several strategies which can help you structure your application models in a most appropriate way, depending on your application type.</p>
 
-<p>Like anything else in Agile Toolkit, a Model is a class.</p>
+<h4>Standard (Organic) Database</h4>
+<img style="float: right" src="<?template?>images/ugly_images/model-strategy-organic.png<?/?>">
+<p>Starting from just a few tables your database is going to grow into 30+ table database, where new tables are designed to offer data storage for a newly added features. The base tables are also getting additional fields. That's the most common way to have your database organized and I will focus on this strategy mostly in this book.</p>
 
-<h2>Defining table and alias</h2>
-<p>This book will introduce you to a Relational Models first. To create a relation model you will need to define a separate class and set the "table" property:
-<?Code?>
-class Model_Book extends Model_Table {
-    public $table='book';
-}
-<?/?>
+<h4>Data Isolation</h4>
+<img style="float: right" src="<?template?>images/ugly_images/model-strategy-system.png<?/?>">
+<p>With Software as a Service websites specifically you would want to separate table data based on the owner of the data. The general business rule says that only owner of the organization is allowed to access data. Example would be a bookkeeping, invoicing, team tracking or similar system containing variety of primary data.</p>
 
-<p>Congrats, your model is complete!!</p>
-<h2>Adding fields</h2>
-<p>By default a model class defines only a single field - "id". If you are using different field for your identifier, add property $id_field='book_id'; in your model.</p>
+<p>In this situation it makes sense to create a table "system" and associate all sensitive data with the appropriate system through 'system_id' field. Create a class 'Model_Private' which would extend 'Model_Table' just to introduce a system_id field and a condition on a model level. All the sensitive tables can then be inherited from this model. This will offer you a good security model immune to developer mistakes. Owner of system with id=1 won't be able to create a record in any private table with incorrect system_id.</p>
 
-<p>You dont have to define all the database fields in your models, but only what's relevant for teh business logic of your model.</p>
+<h4>Data ACLs (Access Control Lists)</h4>
+<img style="float: right" src="<?template?>images/ugly_images/model-strategy-acl.png<?/?>">
+<p>In this scenario a certain data entries are available to some users as defined in the intermediate table. A good strategy here is to define a Controller which would build the necessary joins between the primary table and the ACL tables. Join condition requirements would automatically limit records available to a user only to these having a proper access record.</p>
 
-<?Code?>
-class Model_Book extends Model_Table {
-    public $table='book';
-    function init(){
-        parent::init();
-        $this->addField('name');
-        $this->addField('isbn')->mandatory(true)->caption('ISBN');
-        $this->hasOne('Publisher');
-        $this->hasOne('Author');
-    }
-}
-<?/?>
+<p>In this case adding data might be tricky and might require a different model.</p>
 
-<p>Calling addField(), hasOne() and hasMany() returns a new object — descendant of "Field".</p>
+<h4>Read-only data</h4>
+<p>If users are not permitted to edit certain data, it's a good idea to add additional conditions for the use of model's save() function or register beforeSave hook. That would ensure that only privileged users can update data. Even if developer working on UI presentation would accidentally expose CRUD with the read-only table, users will receive a message when trying to save data. That's not desirable but is an great additional security measure.</p>
 
-$this->addField('field_name') returns a new object of type "FieldDefinition", which you can then manipulate by calling its methods. Methods of this class take one optional argument, and if it's omitted, the current value will be returned instead. For example calling $this->getField('isbn')->mandatory() will return "true"</p>
+<h4>Object Database</h4>
+<img style="float: right" src="<?template?>images/ugly_images/model-strategy-aportal.png<?/?>">
+<p>Sometimes you'll have a primary table ("obj") complimented with supplementary tables to compliment it depending on object type. This allows you have a common "header" of each record in a single table. Depending on the type, you can then load additional data from an additional table.</p>
 
-<p>By default a field is defined as being of type "string", however you can set it to a different type. There will be a chapter further  listing all the available types, as well as documentation on how you can create your own types.</p>
+<p>The challenge here is most efficient way for loading the data. If you know which type of data you are willing to load, you can have a model with a pre-defined join. If you only have ID of an generic object you will need to load it first to understand the type and then load data from related entry. You can use several techniques here such as model encapsulation or you can also extend the SQL_Relation class to handle your needs.</p>
 
-<h3>Sub-selects</h3>
-<p>refModel() defines a master-child one-to-many relationship between the two models. In our case we are instructing the Book model that "author_id" is a reference to the "id" field of the "Author" model. You would then need to write an Model_Author class for the Author model, and a Model_Publisher, if you use this model as an example.</p>
+<h3>Conclusion on General Structure Selection</h3>
+<p>Agile Toolkit can handle any database structure described above or other data structure. For relational models one table is always "primary". This table requires you to have unique identifier (which is "id" by default, but can be changed).</p>
 
-<p>Calling refModel with a field name ending in "_id" will actually create 2 field definitions. "publisher_id", for instance, will be defined as integer and will have type "reference", and a field "publisher" will also be added, with exactly same properties - but it will be a calculated field and will use sub-select to determine the value.</p>
 
-<p>By default the field called "name" (if defined) is considered a "display field". You will see the "name" of that related table when you are building a GRID with the Book model.</p>
+<h2>Methods and Testing</h2>
+<p>Like any other object, your models can have a custom methods. Because Agile Toolkit does not build models for you, you can just open your favorite text editor, define a class and also add all the necessary models inside it. It's advisable that you perform a type-hinting inside your model function. You should also perform all the necessary validations and throw PHP exceptions if any errors occurs. Avoid assuming too much about the application, user interface or views which will be using your model.</p>
 
-<?MoreInfo?>Why not use JOIN?
-You can use joins too. You can define a JOIN with addRelatedEntity(), which is described further on in this guide.
-<?/?>
+<p>Avoid creating methods which do not provide much of a functionality in themselves, such as "createRecord(array $data)". Such a functionality exists if you call set($array)->save() sequence. Another unnecessary method would be $user->getUserOrders(). A typical Agile Toolkit approach is to define relationship and use $user->ref('Order');</p>
 
-<?MoreInfo?>How about more flexibility?
-refModel() actually allows you to use a different field, other than the default display field of a related model. You can even use a calculated field, too. Finally, you can always destroy an existing field and add the one you like more.
-<?/?>
+<h2>DVD Rental Example</h2>
+<img style="float: right" src="<?template?>images/ugly_images/dvdrental-schema.png<?/?>">
+<p>The example which i'll be returning back throughout this article is a DVD rental application. The goal of the application is to build on-line application which can be used by the staff of a DVD rental shop to catalogue their movies, DVDs and clients. Clients also can log-on to the site, browse available DVDs and order them.</p>
 
-<h3>Actual fields</h3>
-<p>Just defining a field does not mean it will be queried. The Model will try to be intelligent about which fields to use, depending on how you use it with the View.</p>
+<p>I will keep the development of the application as "agile" as possible and will only implement features and objects which I require to complete my immediate task.</p>
+
+
+<h3>The Source Code</h3>
+<p>The below source code creates the four basic models for our DVD Rental application.</p>
+<?Codepad?>learning/dvdrental#view_example<?/?>
+<p>Additionally code include a simple interface allowing the editing of the database data.</p>
+
+<h2>Conclusion so far</h2>
+
+<p>Let me wrap this page up by saying — business models are fundamental part of your application. If you are experienced web developer no doubt you have already seen the model concept. Agile Toolkit Models are different and they hide some great advantages. I will go through on the next page</p>
+
 
 <?$Next?>

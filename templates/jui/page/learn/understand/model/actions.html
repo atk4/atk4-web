@@ -1,51 +1,64 @@
 <?$Content?>
 
-<div class="g-row" id="doc-ref">
-	<div class="g-12">
-        <h1>Adding Actions</h1>
+<h1>Adding Actions</h1>
 
-        <p>Actions are methods which are defined inside a model. Because Agile Toolkit follows the principles of "Object Oriented" design, it properly implements encapsulation inside a single class. Basic methods such as update() and delete() are already implemented by the model parent class, but you are encouraged to add more methods: </p>
+<p>Actions are methods which are defined inside a model. Because Agile Toolkit follows the principles of "Object Oriented" design, it properly implements encapsulation inside a single class. Basic methods such as save() and delete() are already implemented by the model parent class, but you are encouraged to add more methods: </p>
 
 <?Code?>
 class Model_Book extends Model_Table {
-    public $entity_code='book';
-    public $table_alias='b';
-    function init(){
-        parent::init();
-        $this->addField('name');
-        $this->addField('isbn')->mandatory(true)->caption('ISBN');
-        $this->addField('publisher_id')->refModel('Publisher');
-        $this->addField('author_id')->refModel('Author');
+  public $table='book';
+  function init(){
+    parent::init();
+    $this->addField('name');
+    $this->addField('isbn')->mandatory(true)->caption('ISBN');
+    $this->hasOne('Publisher');
+    $this->hasOne('Author');
+  }
+  function addMultipleBooks($data){
+    $this->unloadData();
+    foreach($data as $row){
+      $this->set($row)->save();
     }
-    function addMultipleBooks($data){
-        $this->unloadData();
-        foreach($data as $row){
-            $this->insert($row);
-        }
-    }
+  }
 }
 <?/?>
-        <p>This newly added method must not rely on any User Interface capabilities. It should try to avoid using the API also, as models may share several APIs. If you need to put some code which is shared between models, you should create a model controller and add the shared code to it.</p>
 
-        <p>You can easily call the new action like this:</p>
+<p>It's highly suggested that your Business Logic would not rely on the existence of UI or any views.</p>
+
+<p>You can call your actions like this:</p>
 <?Code?>
-$this->add('Model_Book')
-    ->addMultipleBooks($data);
+$this->add('Model_Book')->addMultipleBooks($data);
 <?/?>
-        <h2>before/after handlers</h2>
-        <p>You can add methods to the model, which will be executed before/after actions such as insert, update, modify and delete. Modify can be confused with Update, so remember: the method for storing data is called update(), so beforeUpdate/afterUpdate are called both for modification of existing records as well as for insertion of new ones.</p>
+
+<h2>Hooks</h2>
+<p>Agile Toolkit contains a system-wide implementation for "hooks". Models use hooks to allow you to perform actions before or after loading or save operations are taken place. The below example can show how normalization and validation can be implemented in Agile Toolkit.</p>
 
 <?Code?>
-function beforeUpdate(){
-    if(!$this->isbnCheck($this->get('isbn')))
-        throw $this->exception('Incorrect format')->setField('isbn');
+class Model_Book extends Model_Table {
+  function init(){
+    parent::init();
 
-    return parent::beforeUpdate();
+    $this->addHook('beforeSave,afterLoad',$this);
+  }
+
+  function beforeSave(){
+    // manually update some fields before saving. This is to create a indexable field for full-text search
+    $this['book_search_field'] = $this['title'].' '.$this['descr'].' '.$this['author_name'];
+
+    // let's also perform some validation
+    if(strlen($this['book_name']<10))throw $this->exception('Name of the book is too short');
+
+    // normalization will modify field to match some internal rules
+    $this['book_url']=$this['book_url'] ?: preg_replace('/[^a-zA-Z0-9]/','-',trim($this['name']));
+  }
+  function afterLoad(){
+    $this['name'] = $this->api->_($this['name']); // wraps name through localization function
+  }
 }
-
 <?/?>
-        <p>This function implements lightweight validation of ISBN fields for newly added or modified books. If the record was being added via a form, then the form will properly intercept the exception and highlight the "ISBN" field. That's basically how simple validation is.</p>
 
-    </div>
-</div>
+<p>In addition to the two demonstrated hooks, there are beforeInsert, afterInsert, beforeModify, afterModify, beforeLoad and afterSave hooks. You will find more in model documentation.</p>
+
+<p>In addition to hooks, you may also re-define standard methods. Remember to call parent through.</p>
+
 <?$Next?>

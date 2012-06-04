@@ -1,0 +1,207 @@
+<?$Content?>
+
+<h1>Field types and User Interface Integration</h1>
+<p>When the model is being described, method "addField()" is called. This method adds instance of a 'Field' class into model and returns it. The Field then is used to store field-related information and behaviour.</p>
+
+<h2>Setting Field Properties</h2>
+<p>Field object has methods to manipulate it's properties in a chain-able way. In the next example caption(), type() and defaultValue() methods are called which set respective properties to supplied values</p>
+
+<?Code?>
+$model->addField('age')
+	->type('int')
+	->caption('Person\'s age')
+	->defaultValue(18);
+<?/?>
+
+<p>Field object participates in constructing queries and also building UI widgets. Model will only address a field of a table if respective field has been defined. Calling below methods will change the properties. Calling same methods without any arguments will return the current property value.</p>
+
+
+<div class="box blue-noised p-10px">
+  <div class="white">
+    <table>
+      <thead>
+        <tr>
+          <th>Usage</th>
+          <th>Default Value</th>
+          <th width="40%">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>caption('Field Label')</td>
+          <td>my_field -&gt; "My Field"</td>
+          <td>Will be used as a field / grid labels. By default caption is calculated from field name:<br/> ucwords(str_relpace('_',' ',$name))</td>
+        </tr>
+        <tr>
+          <td>type('money')</td>
+          <td>'string'</td>
+          <td>'int', 'money', 'real', 'text', 'date', 'time', 'datetime', 'boolean', 'list' - some basic field types, which can be expressed by single SQL field.</td>
+        </tr>
+        <tr>
+          <td>mandatory(true),<br/>mandatory('Fill this in!')</td>
+          <td>false</td>
+          <td>Used by UI to configure mandatory fields in Form. Mandatory fields will have red asterisk next to them and display either a standard error or supplied error message when form is submitted. If model record is created directly (through model interface), mandatory fields are not validated.</td>
+        </tr>
+        <tr>
+          <td>system(true)</td>
+          <td>false</td>
+          <td>System fields are always loaded with the model, but are not displayed on forms and grids by default. "id" is a good example of system field. You might want to set your "state" or "is_deleted" fields as system too.</td>
+        </tr>
+        <tr>
+          <td>editable(false)</td>
+          <td>true</td>
+          <td>By default fields are editable and therefore appear on forms. By setting editable=false fields will be excluded from the form by default. ActualFields property overrides this. They can still be changed directly through the model.</td>
+      	</tr>
+      	<tr>
+      		<td>visible(false)</td>
+      		<td>true</td>
+      		<td>By default fields appear as Grid columns. Setting visible=false will not show fields in grid by default. ActualFields property overrides this. </td>
+      	</tr>
+      	<tr>
+      		<td>hidden(true)</td>
+      		<td>false</td>
+      		<td>Similar to setting editable(false), visible(false), searchable(false) but will also hide from any other UI elements by default. Can be overridden with setActualFields.</td>
+      	</tr>
+      	<tr>
+      		<td>allowHTML(true)</td>
+      		<td>false</td>
+      		<td>For security, fields will automatically strip out HTML tags (with strip_tags()) when their values are collected through form. Setting allowHTML=true will disable this behavior. This does not impact setting properties directly through model</td>
+      	</tr>
+      	<tr>
+      		<td>group('step1')</td>
+      		<td>null</td>
+      		<td>Group is an attribute which can be assigned to field. With this you can use group name with setActualFields($group) instead of specifying array of field names.</td>
+      	</tr>
+      	<tr>
+      		<td>sortable(true)</td>
+      		<td>false</td>
+      		<td>Will attempt to show field as a possible sorting key in UI Views. Grid supports this property.</td>
+      	</tr>
+      	<tr>
+      		<td>searchable(true)</td>
+      		<td>false</td>
+      		<td>Will attempt to show field as a possible filtering field in advanced search forms.</td>
+      	</tr>
+      	<tr>
+      		<td>display('dropdown'),<br/>display(array('grid'=>'my_type'))</td>
+      		<td>null</td>
+      		<td>If set, can set a custom field type for grid, form or other UI widgets. You can also use format display('myaddon/fieldabc').</td>
+      	</tr>
+      	<tr>
+      		<td>length(100)</td>
+      		<td>null</td>
+      		<td>Specifies maximum length of the field. This affects only UI form max-length property of the field and does not perform any additional validation.</td>
+      	</tr>
+      	<tr>
+      		<td>defaultValue('abc')</td>
+      		<td>null</td>
+      		<td>Specified field's default value when new record is added. Default value will be pre-filled into the form which is connected with a model and has no entry loaded</td>
+      	</tr>
+      	<tr>
+      		<td>defaultValue('abc')</td>
+      		<td>null</td>
+      		<td>Specified field's default value when new record is added. Default value will be pre-filled into the form which is connected with a model and has no entry loaded</td>
+      	</tr>
+      	<tr>
+      		<td>setModel('Book')</td>
+      		<td>null</td>
+      		<td>Associates field with 'Model_Book'. This should be done in conjunction with a proper field types. Some fields such as 'dropdown' in form will be looking for associated model.</td>
+      	</tr>
+      	<tr>
+      		<td>setValueList(array(1=>'Value1',<br/>2=>'Value 2',3=>'Value 3'))</td>
+      		<td>null</td>
+      		<td>Specifies set of possible values for some of the elements such as dropdowns. This can be considered an alternative to setting a proper model</td>
+      	</tr>
+      	<tr>
+      		<td>enum(array('open','closed','draft'))</td>
+      		<td>null</td>
+      		<td>Similar to setValueList but values are also used as keys ('open'=>'open', 'closed'=>'closed', 'draft'=>'draft')</td>
+      	</tr>
+      	<tr>
+      		<td>actual('db_name') // Avoid!</td>
+      		<td>null</td>
+      		<td>If set, will override name of the database field. When selecting from the database actual field will be aliased to a field name specified to addField('name'). For convenience second argument to addField sets actual field name. addField('name','db_name'), therefore avoid calling this directly.</td>
+      	</tr>
+      	<tr>
+      		<td>from($relation) // Avoid!</td>
+      		<td>null</td>
+      		<td>Associates field with relation which affects how the field's prefix is being used in queries. Calling 'addField()' on relation will automatically have from() property set, so avoid calling this directly.</td>
+      	</tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p>Additional properties may be created in the future. You can also add your own properties by extending 'Field' class:</p>
+
+<?Code?>
+class MyField extends Field {
+	public $hint=null;
+	function hint($t=undefined){ return $this->setterGetter('hint', $t);}
+}
+class MyModelTable extends Model_Table {
+	public $field_class='MyField';
+}
+<?/?>
+
+<p>You can also use default model with your own custom field type like this:</p>
+
+<?Code?>
+class Book extends Model_Table {
+	function init(){
+		parent::init();
+
+		$this->add('MyField','field_name')->caption('My Custom Field Object');
+	}
+}
+<?/?>
+
+
+<h3>Field Types</h3>
+<p>The "type" property changes the way how field property is being displayed and also stored. For example type('boolean') will allow you to set "true" and "false" values to the field but will use 0 and 1 when saved into MySQL. type('money') will impact display of the field primarily. When a grid with 'money' column is displayed, this column will be formatted as money and will be colored red if negative.</p>
+
+<p>Type of the field is recognized by view controller which is used to populate the UI element</p>
+
+<h2>UI Controllers</h2>
+<p>On it's own, Form does not know how to operate with the model. Neither does Model know about existence of the Form or how to integrate with it. There must be a class to bind View and Model and that's "Controller". In case with Form the class is called Controller_MVCForm.</p>
+
+<p>The View class defines property $default_controller='MVCForm'; Subsequently, when $view->setModel('Book') is called, the controller is initialized first and is used to bind model and controller together.</p>
+
+<p>You can also define $default_controller property in your model, in which case it will use it instead when creating controller for the view</p>
+
+<p>Reference to controller can always be found in $view->controller. You can create multiple controllers, which will rewrite reference. This reference can be useful if you are willing to associate View with additional model or import more fields.</p>
+
+<p>Two methods are called from the setModel() just after controller is set: controller->setActualFields($actual_fields) and controller->_bindView();</p>
+
+<p>With Form and Grid, second argument to setModel() specifies list of Actual Fields. These fields will be automatically populated into Grid or Form from specified model.</p>
+
+<h3>Importing more fields</h3>
+<p>If you are willing to import more fields, you can use $view->controller->importField('age');</p>
+
+<p>It is also possible to import fields from another model by calling $view->controller->importFields($other_model,array('field1','field2')); Here is an example how to create form with two fields</p>
+
+<?Code?>
+$form = $this->add('Form');
+$form->addClass('atk-row');
+
+$form->addSeparator('span6');	// left column
+$form->setModel('User');		// Imports data from user. Model accessible through $form->model
+$form->model->load($_GET['user_id']);	// load record to edit
+
+$form->addSeparator('span6');   // right column
+$form->controller->importFields(
+	$form->model->ref('address_id')		// related record
+);
+
+$form->addSubmit();
+
+if($form->isSubmitted()){
+	$form->update()->js()->univ()->successMessage('Saved!')->execute();
+}
+<?/?>
+
+<p>Above example initially associates form with one model ('User'), but then it traverses the reference ('address_id') to add field from the other model. When $form->update() is called, both models will be updated and saved. Additionally the fields imported from the second model will appear in the right column, separate from the main fields, although within the same form</p>
+
+<p>By default form fields are named just like model fields but if different forms contain same field, this will be resolved by naming form field differently</p>
+
+<?$Next?>
