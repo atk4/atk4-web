@@ -265,11 +265,7 @@ class AgileToolkitWeb extends ApiFrontend {
             ->setCode($content);
     }
     function enclose_List($content,$tag){
-        if($this->api->auth->isLoggedIn()){
-            $this->page_object->add('Doc_List',null,$tag,$tag);
-        }else{
-            $this->template->del($tag);
-        }
+        $this->page_object->add('Doc_List',null,$tag,$tag);
     }
     function locateTemplate($path){
         return $this->locateURL('template',$path);

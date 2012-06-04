@@ -16,10 +16,16 @@ class Doc_List extends MVCLister {
             $label=$this->template->get('add')?:'Add New';
             $button=$this->add('Button',null,'add')
                 ->setLabel($label);
-            $button->js('click')->univ()->frameURL($label,
-                $this->api->getDestinationURL(null,array($this->name=>'add'))
-            );
+
+            if($this->api->auth->isLoggedIn()){
+                $button->js('click')->univ()->frameURL($label,
+                    $this->api->getDestinationURL(null,array($this->name=>'add'))
+                );
+            }else{
+                $button->js('click')->univ()->frameURL('Login',$this->api->getDestinationURL('login'));
+            }
             if($_GET[$this->name]=='add'){
+                if(!$this->api->auth->isLoggedIn())exit;
                 $this->api->stickyGET($this->name);
                 $col=$this->add('Columns',null,$this->spot);
                 $left=$col->addColumn();
