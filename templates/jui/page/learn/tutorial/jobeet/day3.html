@@ -68,7 +68,7 @@ class page_generate extends Page_SchemaGenerator {}
 <p>I am sure you are waiting until you can insert some data into your tables. That's what we will do now. Create file page/test.php and put the following code into it:
 </p>
 <?Code?>
-class page_test1 extends Page {
+class page_test extends Page {
     function init(){
         parent::init();
         $this->add('CRUD')->setModel('Category');
