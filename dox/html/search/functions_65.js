@@ -10,7 +10,6 @@ var searchData=
   ['escapevalue',['escapeValue',['../class_d_blite__dsql.html#a16161c2f53cd13b2adaf9c918bca6b4f',1,'DBlite_dsql']]],
   ['exception',['exception',['../class_abstract_object.html#ad7610133e2fdaa0f815836566e5b39ef',1,'AbstractObject\exception()'],['../class_model___table.html#a3e54345f926a6326080fa8bf1683bab1',1,'Model_Table\exception()']]],
   ['exec',['exec',['../class_system___process_i_o.html#a089db8a71f41c1e52ffe03a5304f9066',1,'System_ProcessIO']]],
-  ['execquery',['execQuery',['../class_grid___advanced.html#afb489433b0497fbaa35455ff7738b777',1,'Grid_Advanced']]],
   ['execute',['execute',['../class_api_frontend.html#a1909f4b7f8129c7790cb75de2ffbe1e4',1,'ApiFrontend\execute()'],['../class_api_web.html#a1909f4b7f8129c7790cb75de2ffbe1e4',1,'ApiWeb\execute()'],['../class_d_b__dsql.html#a1909f4b7f8129c7790cb75de2ffbe1e4',1,'DB_dsql\execute()'],['../classj_query___chain.html#a1909f4b7f8129c7790cb75de2ffbe1e4',1,'jQuery_Chain\execute()']]],
   ['execute_5fraw',['execute_raw',['../class_system___process_i_o.html#a3402269da865d20a2a6b8ccb26670936',1,'System_ProcessIO']]],
   ['expect',['expect',['../class_page___tester.html#a0e340a00eac441425cf766d4e81c84a9',1,'Page_Tester']]],

@@ -109,7 +109,7 @@ var searchData=
   ['smlite_2ephp',['SMlite.php',['../_s_mlite_8php.html',1,'']]],
   ['smliteexception',['SMliteException',['../class_s_mlite_exception.html',1,'']]],
   ['smliteexception_2ephp',['SMliteException.php',['../_s_mlite_exception_8php.html',1,'']]],
-  ['sortable',['sortable',['../class_field.html#ae2dedd91f49b0bc603bd2c80b8ba5ce5',1,'Field']]],
+  ['sortable',['sortable',['../class_field___reference.html#aaaee4d6d42c7b22ca892fdacf498b0d9',1,'Field_Reference\sortable()'],['../class_field.html#ae2dedd91f49b0bc603bd2c80b8ba5ce5',1,'Field\sortable()']]],
   ['sql_5fmany',['SQL_Many',['../class_s_q_l___many.html',1,'']]],
   ['sql_5frelation',['SQL_Relation',['../class_s_q_l___relation.html',1,'']]],
   ['sqlauth',['SQLAuth',['../class_s_q_l_auth.html',1,'']]],

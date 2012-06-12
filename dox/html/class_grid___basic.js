@@ -10,5 +10,6 @@ var class_grid___basic =
     [ "precacheTemplate", "class_grid___basic.html#a42478a6bab8d92234cfae2efe0bb2c48", null ],
     [ "renderRows", "class_grid___basic.html#a8cffb519cef8d77078eda50bec9f1496", null ],
     [ "$columns", "class_grid___basic.html#a19d2a3d21fe02053311fde465e6ae2e9", null ],
-    [ "$default_controller", "class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7", null ]
+    [ "$default_controller", "class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7", null ],
+    [ "$sort_icons", "class_grid___basic.html#a382f5f26fb1be66d4cc4c3f438ad7ffb", null ]
 ];

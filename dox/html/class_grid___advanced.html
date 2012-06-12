@@ -183,8 +183,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afdb64d0b4ac2764ac1666adba274bca1">format_image</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aae321792f0e14cdf7531b2bf8d1ae4a3">addRecordOrder</a> ($field, $table='')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ad47655f23063e4864099fc1f588e4b6a">staticSortCompare</a> ($row1, $row2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a85f7ed9a51007aad690753a2d32fc4df">processSorting</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afb489433b0497fbaa35455ff7738b777">execQuery</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a045bae47718aa252d3973d888aabf667">applySorting</a> ($i, $order, $desc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7a9f937c2958e6f4dd7b030f86fb70b7">getIterator</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a73aeb9f2e3ab69962bbd64ea9ee2c840">setTemplate</a> ($template)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ac79eeaca27de3b2b8fc5a4acd0e38a95">getFieldStyle</a> ($field, $id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3fe6d68af17056a527a7f028c4dc46f0">getRowTitle</a> ()</td></tr>
@@ -498,6 +498,39 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a045bae47718aa252d3973d888aabf667"></a><!-- doxytag: member="Grid_Advanced::applySorting" ref="a045bae47718aa252d3973d888aabf667" args="($i, $order, $desc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a045bae47718aa252d3973d888aabf667">applySorting</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a3b2fdca402f000d0fc1853ea85bafbfa"></a><!-- doxytag: member="Grid_Advanced::applyTDParams" ref="a3b2fdca402f000d0fc1853ea85bafbfa" args="($field, $totals=false)" -->
 <div class="memitem">
 <div class="memproto">
@@ -543,22 +576,6 @@ Protected Attributes</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afb489433b0497fbaa35455ff7738b777"></a><!-- doxytag: member="Grid_Advanced::execQuery" ref="afb489433b0497fbaa35455ff7738b777" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#afb489433b0497fbaa35455ff7738b777">execQuery</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 
 </div>
 </div>
@@ -1278,6 +1295,24 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7a9f937c2958e6f4dd7b030f86fb70b7"></a><!-- doxytag: member="Grid_Advanced::getIterator" ref="a7a9f937c2958e6f4dd7b030f86fb70b7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a7a9f937c2958e6f4dd7b030f86fb70b7">getIterator</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_lister.html#a7a9f937c2958e6f4dd7b030f86fb70b7">Lister</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3fe6d68af17056a527a7f028c4dc46f0"></a><!-- doxytag: member="Grid_Advanced::getRowTitle" ref="a3fe6d68af17056a527a7f028c4dc46f0" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1572,22 +1607,6 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_grid___advanced.html#a17280c65fdb3687e63c07ed76750b33c">makeTitle</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a85f7ed9a51007aad690753a2d32fc4df"></a><!-- doxytag: member="Grid_Advanced::processSorting" ref="a85f7ed9a51007aad690753a2d32fc4df" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a85f7ed9a51007aad690753a2d32fc4df">processSorting</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -2117,7 +2136,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/Grid/<a class="el" href="_advanced_8php.html">Advanced.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/Grid/<a class="el" href="_advanced_8php.html">Advanced.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -2139,7 +2158,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_grid___advanced.html">Grid_Advanced</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:50 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:46 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

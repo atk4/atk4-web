@@ -12,6 +12,5 @@ var searchData=
   ['postrender',['postRender',['../classj_query.html#a4b83c6742c46b3c454e4ed37f6948c98',1,'jQuery']]],
   ['precachetemplate',['precacheTemplate',['../class_grid___basic.html#a42478a6bab8d92234cfae2efe0bb2c48',1,'Grid_Basic']]],
   ['prefix',['prefix',['../class_d_b__dsql__prefixed.html#adca575fbf89ba4f77094bca024470e3f',1,'DB_dsql_prefixed']]],
-  ['processlogin',['processLogin',['../class_auth___basic.html#a187f49807baaaa84157b81ad90d2c518',1,'Auth_Basic']]],
-  ['processsorting',['processSorting',['../class_grid___advanced.html#a85f7ed9a51007aad690753a2d32fc4df',1,'Grid_Advanced']]]
+  ['processlogin',['processLogin',['../class_auth___basic.html#a187f49807baaaa84157b81ad90d2c518',1,'Auth_Basic']]]
 ];

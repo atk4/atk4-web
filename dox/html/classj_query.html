@@ -118,7 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a248168e7775384172e69b62ca4475bc7">addInclude</a> ($file, $ext='.js')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a438ce5e75280d99626c613699c7f881a">addStaticInclude</a> ($file, $ext='.js')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a052f418ee73df1176e73792c0b360227">addStylesheet</a> ($file, $ext='.css')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a730403fd809d600eb1b9869240d4dd31">addStylesheet</a> ($file, $ext='.css', $locate='css')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a20a7fb2383569c9cfb26e756873df04c">addStaticStylesheet</a> ($file, $ext='.css', $locate='css')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#ab876731e18c2f5c48b89a4a51da4bd5c">addOnReady</a> ($js)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a792b2ea508456f4928f2c91cf7c7be4f">chain</a> ($object)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query.html#a5c5271439f9c731c81699011b6f4817d">cutRender</a> ()</td></tr>
@@ -201,12 +202,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a052f418ee73df1176e73792c0b360227"></a><!-- doxytag: member="jQuery::addStylesheet" ref="a052f418ee73df1176e73792c0b360227" args="($file, $ext='.css')" -->
+<a class="anchor" id="a20a7fb2383569c9cfb26e756873df04c"></a><!-- doxytag: member="jQuery::addStaticStylesheet" ref="a20a7fb2383569c9cfb26e756873df04c" args="($file, $ext='.css', $locate='css')" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classj_query.html#a052f418ee73df1176e73792c0b360227">addStylesheet</a> </td>
+          <td class="memname"><a class="el" href="classj_query.html#a20a7fb2383569c9cfb26e756873df04c">addStaticStylesheet</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>file</em>, </td>
@@ -215,7 +216,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>ext</em> = <code>'.css'</code>&#160;</td>
+          <td class="paramname"><em>ext</em> = <code>'.css'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>locate</em> = <code>'css'</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -225,6 +232,41 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a730403fd809d600eb1b9869240d4dd31"></a><!-- doxytag: member="jQuery::addStylesheet" ref="a730403fd809d600eb1b9869240d4dd31" args="($file, $ext='.css', $locate='css')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classj_query.html#a730403fd809d600eb1b9869240d4dd31">addStylesheet</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ext</em> = <code>'.css'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>locate</em> = <code>'css'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classj_u_i.html#a4309c8aafc5485af75a38bff2254e040">jUI</a>.</p>
 
 </div>
 </div>
@@ -319,7 +361,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/<a class="el" href="j_query_8php.html">jQuery.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="j_query_8php.html">jQuery.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -341,7 +383,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="classj_query.html">jQuery</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:50 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:46 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

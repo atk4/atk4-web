@@ -172,7 +172,6 @@ var hierarchy =
                 [ "H5", "class_h5.html", null ]
               ] ],
               [ "P", "class_p.html", null ],
-              [ "UpgradeChecker", "class_upgrade_checker.html", null ],
               [ "View_ButtonSet", "class_view___button_set.html", [
                 [ "ButtonSet", "class_button_set.html", null ]
               ] ],

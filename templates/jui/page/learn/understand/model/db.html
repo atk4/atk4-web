@@ -176,4 +176,17 @@ class Model_User extends Model_Table {
 <?/?>
 <p>The example above implements for a soft-deleted model "User" a purge functionality. A new model is constructed selecting all deleted entries and then it's used to build a sub-query for instant deletion of related purchases. Next all the user records are also permanently disposed of. All of that is done by two operations only.</p>
 
+<h2>Classes and Objects</h2>
+
+<p>As you develop complex model interactions with Agile Toolkit, you must be mindful of what you are operating with - objects (and which type of object) or scalar variables. Below is a summary of different classes introduced and used in this chapter.</p>
+
+<ul>
+  <li><a href="/dox/html/class_model.html">Model</a> - Implements a Generic Model. Model's elements are fields, which describe type and behaviour of each field.</li>
+  <li><a href="/dox/html/class_field.html">Field</a> - Implements a Model Field and it's meta-data.</li>
+  <li><a href="/dox/html/class_model___table.html">Model_Table</a> - Implements a Relational Model. Fields of relational model may be used in DSQL expressions. Each model has a master "DSQL" object (private). You can request a clone of that object through dsql() method.</li>
+  <li><a href="/dox/html/class_d_b__dsql.html">DB_dsql</a> - Dynamic SQL Interface. Each object represent a query or expression. You can specify arguments to a query. You may pass an another DSQL object in place of most arguments. You can also use model fields.</li>
+  <li><a href="/dox/html/class_s_q_l___relation.html">SQL_Relation</a> - When calling model->join() it returns instance of SQL_Relation class. Thys provides syntactic sugar assigning fields to the proper table but also will add necessary hooks your model to update related tables when saving.</li>
+<p>
+
+
 <?$Next?>

@@ -120,7 +120,7 @@ Inheritance diagram for Model_Table:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#aeb33362b878cd956ea9edc762795a310">addField</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a9ed8fd0a06956bc875275aa2e3fd55cc">addField</a> ($name, $actual_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a3e54345f926a6326080fa8bf1683bab1">exception</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a408066d423a9419f03ea826ceeb114d0">initQuery</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#af2e4fee914119f586aa70925ab732a48">_dsql</a> ()</td></tr>
@@ -139,6 +139,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a5b2c621609073dc27ae66381d9ea6cf5">hasOne</a> ($model, $our_field=null, $display_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a379abc6162aae2f9889571969c3c6f07">hasMany</a> ($model, $their_field=null, $our_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#aebc400c4f677c7ab86a6210368a27a93">ref</a> ($name, $<a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a>=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a6cccb18aadbb294f9445b3194f0a6d3d">refSQL</a> ($name, $table_alias=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a388938234134b529bdd1b235cc393d89">getRef</a> ($name, $<a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">load</a>=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a3ee6184c233563345680e50a0ec4d257">addCondition</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model___table.html#a8641265360b9de8071b4abfbbbe049ee">setOrder</a> ($field, $desc=false, $_compat_desc=null)</td></tr>
@@ -352,23 +353,30 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aeb33362b878cd956ea9edc762795a310"></a><!-- doxytag: member="Model_Table::addField" ref="aeb33362b878cd956ea9edc762795a310" args="($name)" -->
+<a class="anchor" id="a9ed8fd0a06956bc875275aa2e3fd55cc"></a><!-- doxytag: member="Model_Table::addField" ref="a9ed8fd0a06956bc875275aa2e3fd55cc" args="($name, $actual_field=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_model___table.html#aeb33362b878cd956ea9edc762795a310">addField</a> </td>
+          <td class="memname"><a class="el" href="class_model___table.html#a9ed8fd0a06956bc875275aa2e3fd55cc">addField</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>actual_field</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates field definition object containing field meta-information such as caption, type validation rules, default value etc </p>
-
-<p>Reimplemented from <a class="el" href="class_model.html#aeb33362b878cd956ea9edc762795a310">Model</a>.</p>
 
 </div>
 </div>
@@ -996,6 +1004,34 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6cccb18aadbb294f9445b3194f0a6d3d"></a><!-- doxytag: member="Model_Table::refSQL" ref="a6cccb18aadbb294f9445b3194f0a6d3d" args="($name, $table_alias=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model___table.html#a6cccb18aadbb294f9445b3194f0a6d3d">refSQL</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>table_alias</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns <a class="el" href="class_model.html">Model</a> with SQL join usable for subqueries. </p>
+
+</div>
+</div>
 <a class="anchor" id="a7b2a44f6ec87a111c1bc3cc911cd15f5"></a><!-- doxytag: member="Model_Table::reload" ref="a7b2a44f6ec87a111c1bc3cc911cd15f5" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -1478,7 +1514,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/Model/<a class="el" href="_table_8php.html">Table.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/Model/<a class="el" href="_table_8php.html">Table.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1500,7 +1536,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_model___table.html">Model_Table</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:51 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:46 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

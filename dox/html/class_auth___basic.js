@@ -27,6 +27,7 @@ var class_auth___basic =
     [ "setModel", "class_auth___basic.html#a38ac7ef1486834a62d07c810bd9b21dd", null ],
     [ "showLoginForm", "class_auth___basic.html#a44362675365895f1c23b2d548f314e68", null ],
     [ "usePasswordEncryption", "class_auth___basic.html#a7fc0c9ca6841fd420536538bea8879eb", null ],
+    [ "verifyCredentials", "class_auth___basic.html#af8e70e879fc2d5e740c705991f6c0ec5", null ],
     [ "verifyCredintials", "class_auth___basic.html#ae89e153e79342edaf485ab1d64570889", null ],
     [ "$allowed_pages", "class_auth___basic.html#a8a1a1338df4763b8683281065b49eda2", null ],
     [ "$form", "class_auth___basic.html#a1a4fda4c28a9ee5f91102c023b9501f4", null ],

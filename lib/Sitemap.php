@@ -37,7 +37,7 @@ class Sitemap extends AbstractController{
                     'link'=>'Building Links to Pages',
                     'add'=>'Adding Static and Dynamic Pages',
                     'misc'=>'Best Practices and Misc. Info',
-                    'example'=>'Practical Examples',
+                    'example'=>'The Example',
                     ),
                 'model'=>array(
                     'Models',
@@ -46,6 +46,7 @@ class Sitemap extends AbstractController{
                     'db'=>'Database Features',
                     'actions'=>'Adding Actions (Behaviour)',
                     'debug'=>'Debugging Models',
+                    'example'=>'The Example',
                     ),
                 'api'=>array(
                     'API Classes',

@@ -165,7 +165,6 @@ var annotated =
     [ "TMail_Transport_Discard", "class_t_mail___transport___discard.html", "class_t_mail___transport___discard" ],
     [ "TMail_Transport_Echo", "class_t_mail___transport___echo.html", "class_t_mail___transport___echo" ],
     [ "TMail_Transport_Fallback", "class_t_mail___transport___fallback.html", "class_t_mail___transport___fallback" ],
-    [ "UpgradeChecker", "class_upgrade_checker.html", "class_upgrade_checker" ],
     [ "URL", "class_u_r_l.html", "class_u_r_l" ],
     [ "View", "class_view.html", "class_view" ],
     [ "View_Box", "class_view___box.html", "class_view___box" ],

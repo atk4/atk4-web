@@ -35,6 +35,5 @@ var searchData=
   ['prefixed_2ephp',['prefixed.php',['../dsql_2prefixed_8php.html',1,'']]],
   ['prefixed_2ephp',['prefixed.php',['../prefixed_8php.html',1,'']]],
   ['processio_2ephp',['ProcessIO.php',['../_process_i_o_8php.html',1,'']]],
-  ['processlogin',['processLogin',['../class_auth___basic.html#a187f49807baaaa84157b81ad90d2c518',1,'Auth_Basic']]],
-  ['processsorting',['processSorting',['../class_grid___advanced.html#a85f7ed9a51007aad690753a2d32fc4df',1,'Grid_Advanced']]]
+  ['processlogin',['processLogin',['../class_auth___basic.html#a187f49807baaaa84157b81ad90d2c518',1,'Auth_Basic']]]
 ];

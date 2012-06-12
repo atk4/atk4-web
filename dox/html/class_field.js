@@ -1,6 +1,7 @@
 var class_field =
 [
     [ "__toString", "class_field.html#a7516ca30af0db3cdbf9a7739b48ce91d", null ],
+    [ "actual", "class_field.html#a4876faa99fee1ec79ce4abff119d211d", null ],
     [ "allowHTML", "class_field.html#a14fce47e2e6b13dbfa5be169c6d5ed8e", null ],
     [ "calculated", "class_field.html#acf968bc1978355bb1b08b5fdeb17fd4c", null ],
     [ "caption", "class_field.html#a9a838ae779210fb9ed1c6ccaf65f3d2c", null ],
@@ -12,6 +13,7 @@ var class_field =
     [ "from", "class_field.html#a28108070aaa895cd4460e609639b0ac6", null ],
     [ "get", "class_field.html#af0b5ba0d363042a841106e973f5d0ed8", null ],
     [ "getBooleanValue", "class_field.html#a52cb9c409c2357f2dc985b8a87dfd015", null ],
+    [ "getExpr", "class_field.html#a41d8e4e832562c519e2dc237e88546bf", null ],
     [ "getModel", "class_field.html#a0a086ca877b41192556a2de7e4a97b98", null ],
     [ "getSQL", "class_field.html#a67e8cb12dd05cee2a73454f8fa79efdc", null ],
     [ "group", "class_field.html#a2e58f7ca35e5d79aaa45a58381798a45", null ],
@@ -47,6 +49,8 @@ var class_field =
     [ "$mandatory", "class_field.html#ae0e4c348246ad04f0991c43bf8f6fd57", null ],
     [ "$readonly", "class_field.html#aa3f67a9df1bc665d0e4ed94c49660380", null ],
     [ "$relation", "class_field.html#a6b8f9d1b57d35bdd7a2caf31a72c69f0", null ],
+    [ "$searchable", "class_field.html#ad625acbe5ad2b1e6665ba54ba4cf04fe", null ],
+    [ "$sortable", "class_field.html#a250b2ffa274a3fae43ac52b4c46cd2e9", null ],
     [ "$system", "class_field.html#ad959a959c94c0934f30f9050eba9a075", null ],
     [ "$theModel", "class_field.html#a07ed51ea385cb5ea0c17eedf274f675b", null ],
     [ "$type", "class_field.html#a9a4a6fba2208984cabb3afacadf33919", null ],

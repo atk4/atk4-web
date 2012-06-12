@@ -124,6 +124,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ae5683284d126e7da841b1e563a37bda1">showExecutionTime</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a68c10124302012b9a0c5eaeba614a8e5">_showExecutionTime</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a6109d8503dafbb69be848c0c3b395d88">_showExecutionTimeJS</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a918ebf81ed5c431a5c7349588d42b56f">license</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a828ebd72e63e2dff342f03c183ef52a8">license_checksum</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a143f21fe5c8ba9f50990e1c678bf84af">licenseCheck</a> ($product)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a549d9c59de071367179a82be7918c2b2">upgradeChecker</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad6fbac308cf2c1d219e4c1d6d36ee4e0">caughtException</a> ($e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1">outputWarning</a> ($msg, $shift=0)</td></tr>
@@ -417,6 +420,57 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a918ebf81ed5c431a5c7349588d42b56f"></a><!-- doxytag: member="ApiWeb::license" ref="a918ebf81ed5c431a5c7349588d42b56f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a918ebf81ed5c431a5c7349588d42b56f">license</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This function will return type of the license used: agpl, single, multi </p>
+
+</div>
+</div>
+<a class="anchor" id="a828ebd72e63e2dff342f03c183ef52a8"></a><!-- doxytag: member="ApiWeb::license_checksum" ref="a828ebd72e63e2dff342f03c183ef52a8" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a828ebd72e63e2dff342f03c183ef52a8">license_checksum</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This function will return installation signature. It is used by add-ons when communicating with agiletoolkit.org to detect tampering with license system. </p>
+
+</div>
+</div>
+<a class="anchor" id="a143f21fe5c8ba9f50990e1c678bf84af"></a><!-- doxytag: member="ApiWeb::licenseCheck" ref="a143f21fe5c8ba9f50990e1c678bf84af" args="($product)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a143f21fe5c8ba9f50990e1c678bf84af">licenseCheck</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>product</em></td><td>)</td>
+          <td><code> [final]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a51af30a60f9f02777c6396b8247e356f"></a><!-- doxytag: member="ApiWeb::main" ref="a51af30a60f9f02777c6396b8247e356f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -688,7 +742,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>If version tag is defined in template, inserts current version of Agile Toolkit there. If newer verison is available, it will be reflected </p>
+<p>If version tag is defined in template, inserts current version of Agile Toolkit there. When newer verison is available, it will be displayed. Override this with empty function to disable. </p>
 
 </div>
 </div>
@@ -762,7 +816,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/<a class="el" href="_api_web_8php.html">ApiWeb.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_api_web_8php.html">ApiWeb.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -784,7 +838,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_web.html">ApiWeb</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:45 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

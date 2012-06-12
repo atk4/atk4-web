@@ -119,6 +119,7 @@ Inheritance diagram for ApiFrontend:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a7196ccc788edd95f5cca8c764a79c135">initLayout</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#ae0745c099a839002495ece26e7e4baf8">routePages</a> ($prefix, $ns=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a182d30f6fcd3dd0ddcaaec36bbaf79db">layout_Content</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#ab9d714deeb12f87da69537d0a5def76a">pageNotFound</a> ($e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a1909f4b7f8129c7790cb75de2ffbe1e4">execute</a> ()</td></tr>
@@ -128,6 +129,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a8167e98c31d92f4469576d04555c32d6">$page_object</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#ae754d6373f275e781f47c8bc9b994b6d">$content_type</a> = 'page'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a9b3ed89330f7ed3e3a5773b22d96f137">$page_class</a> = '<a class="el" href="class_page.html">Page</a>'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#ac6b8743841e7c4f5a35e7d2656384b6d">$namespace_routes</a> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_frontend.html#a41065bd34d6c99d422897df6eff8c882">loadStaticPage</a> ($page)</td></tr>
@@ -256,6 +258,33 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ae0745c099a839002495ece26e7e4baf8"></a><!-- doxytag: member="ApiFrontend::routePages" ref="ae0745c099a839002495ece26e7e4baf8" args="($prefix, $ns=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_frontend.html#ae0745c099a839002495ece26e7e4baf8">routePages</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ns</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
 <a class="anchor" id="ae754d6373f275e781f47c8bc9b994b6d"></a><!-- doxytag: member="ApiFrontend::$content_type" ref="ae754d6373f275e781f47c8bc9b994b6d" args="" -->
 <div class="memitem">
@@ -268,6 +297,20 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>(might be refactored) - type of returned content </p>
+
+</div>
+</div>
+<a class="anchor" id="ac6b8743841e7c4f5a35e7d2656384b6d"></a><!-- doxytag: member="ApiFrontend::$namespace_routes" ref="ac6b8743841e7c4f5a35e7d2656384b6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$namespace_routes = array()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>List of pages which are routed into namespace </p>
 
 </div>
 </div>
@@ -300,7 +343,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/<a class="el" href="_api_frontend_8php.html">ApiFrontend.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_api_frontend_8php.html">ApiFrontend.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -322,7 +365,7 @@ Protected Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_frontend.html">ApiFrontend</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:49 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:45 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

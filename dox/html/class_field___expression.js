@@ -2,6 +2,7 @@ var class_field___expression =
 [
     [ "calculated", "class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed", null ],
     [ "editable", "class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763", null ],
+    [ "getExpr", "class_field___expression.html#a41d8e4e832562c519e2dc237e88546bf", null ],
     [ "set", "class_field___expression.html#a8205b80d63c2d9eafc2cdfc480d301d3", null ],
     [ "updateInsertQuery", "class_field___expression.html#af6102b88560c575ef211db85a78ad69c", null ],
     [ "updateModifyQuery", "class_field___expression.html#a282897212d91bea1bc670ec61f6ac1d0", null ],

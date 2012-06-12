@@ -11,6 +11,7 @@ var class_s_mlite =
     [ "get", "class_s_mlite.html#a618b9aff987c3158ce9cd4c13fa64a67", null ],
     [ "getDefaultSettings", "class_s_mlite.html#a85f0210ef14dfbc9bd929a2409f58432", null ],
     [ "getTagVal", "class_s_mlite.html#a0581d29baa00e04d9c73a55ad7a70247", null ],
+    [ "hasTag", "class_s_mlite.html#ab461ad68607729532c36b3c90cb6d22d", null ],
     [ "init", "class_s_mlite.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "is_set", "class_s_mlite.html#a0e6cde773a7f5d16ef2441071130f2c8", null ],
     [ "isTopTag", "class_s_mlite.html#a3b10e0860cb62f74d1c6815e451f44d7", null ],

@@ -118,7 +118,9 @@ Inheritance diagram for Field_Reference:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a5988ff0c4d90fa83f7b68883c72c39fa">setModel</a> ($model, $display_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a0a086ca877b41192556a2de7e4a97b98">getModel</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#aaaee4d6d42c7b22ca892fdacf498b0d9">sortable</a> ($x=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#acf956f92c2dbef1a02e3aa854d217d5d">ref</a> ($mode=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a7a68511bcc448f6c7feb70c8e459da3c">refSQL</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#ae2936ef23e0f226f965e10fa805f0553">getDereferenced</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#aa118461de946085fe42989193337044a">destroy</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a5b903297be0fd1613a40d6186c5b7efd">calculateSubQuery</a> ($model, $select)</td></tr>
@@ -127,6 +129,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a0c1a142cda2bb060f4dff5286b183a10">$model_name</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a8e215827a08ec2788a833ec2bef4a62a">$display_field</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a6f7db0517ce1083088c528ab82b513c2">$dereferenced_field</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___reference.html#a5b3b9292bc2d41334cda2f099c304cf0">$table_alias</a> = null</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a5b903297be0fd1613a40d6186c5b7efd"></a><!-- doxytag: member="Field_Reference::calculateSubQuery" ref="a5b903297be0fd1613a40d6186c5b7efd" args="($model, $select)" -->
@@ -204,8 +207,6 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="class_field___reference.html#acf956f92c2dbef1a02e3aa854d217d5d">ref()</a> will traverse reference and will attempt to load related model's entry. If the entry will fail to load it will return model which would not be loaded. This can be changed by specifying an argument:</p>
-<p>'model' - simply create new model and return it without loading anything false or 'ignore' - will not even try to load anything null (default) - will tryLoad() 'load' - will always load the model and if record is not present, will fail 'create' - if record fails to load, will create new record, save, get ID and insert into $this 'link' - if record fails to load, will return new record, with appropriate afterSave hander, which will update current model also and save it too. </p>
 
 <p>Reimplemented from <a class="el" href="class_field.html#a0a086ca877b41192556a2de7e4a97b98">Field</a>.</p>
 
@@ -220,6 +221,24 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>mode</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="class_field___reference.html#acf956f92c2dbef1a02e3aa854d217d5d">ref()</a> will traverse reference and will attempt to load related model's entry. If the entry will fail to load it will return model which would not be loaded. This can be changed by specifying an argument:</p>
+<p>'model' - simply create new model and return it without loading anything false or 'ignore' - will not even try to load anything null (default) - will tryLoad() 'load' - will always load the model and if record is not present, will fail 'create' - if record fails to load, will create new record, save, get ID and insert into $this 'link' - if record fails to load, will return new record, with appropriate afterSave hander, which will update current model also and save it too. </p>
+
+</div>
+</div>
+<a class="anchor" id="a7a68511bcc448f6c7feb70c8e459da3c"></a><!-- doxytag: member="Field_Reference::refSQL" ref="a7a68511bcc448f6c7feb70c8e459da3c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_field___reference.html#a7a68511bcc448f6c7feb70c8e459da3c">refSQL</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -252,6 +271,25 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaaee4d6d42c7b22ca892fdacf498b0d9"></a><!-- doxytag: member="Field_Reference::sortable" ref="aaaee4d6d42c7b22ca892fdacf498b0d9" args="($x=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_field___reference.html#aaaee4d6d42c7b22ca892fdacf498b0d9">sortable</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_field.html#ae2dedd91f49b0bc603bd2c80b8ba5ce5">Field</a>.</p>
 
 </div>
 </div>
@@ -295,8 +333,21 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a5b3b9292bc2d41334cda2f099c304cf0"></a><!-- doxytag: member="Field_Reference::$table_alias" ref="a5b3b9292bc2d41334cda2f099c304cf0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$table_alias = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/elexu/atk4/lib/Field/<a class="el" href="_reference_8php.html">Reference.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/Field/<a class="el" href="_reference_8php.html">Reference.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -318,7 +369,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___reference.html">Field_Reference</a>      </li>
 
-    <li class="footer">Generated on Wed Apr 18 2012 12:50:50 for Agile Toolkit by
+    <li class="footer">Generated on Tue Jun 12 2012 00:38:45 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
