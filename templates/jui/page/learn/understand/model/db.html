@@ -78,7 +78,9 @@ function init(){
   $this->addField('is_deleted')->type('boolean');
   $this->addCondition('is_deleted',false);
 }
-function delete(){
+function delete($id=null){
+  if($id)$this->load($id);
+  if(!$this->loaded())throw $this->exception('Unable to determine which record to delete');
   $this->set('is_deleted',true);
   $this->saveAndUnload();
 }
