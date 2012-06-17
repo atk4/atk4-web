@@ -20,6 +20,7 @@ The ORM in Agile Toolkit is slightly different to other ORM systems out there. I
 Agile Toolkit always gives preference to lightweight code instead of generating code. We are going to add a couple of files to destribe our models. Place this code into lib/Model/Job.php and lib/Model/Category.php. Do not forget to add &lt;?php. It's common practice in Agile Toolkit not to close the php-tag (see PHP documentation, why)</p>
 <?Code?>
 class Model_Job extends Model_Table {
+    public $entity_code = 'job';
     function init(){
         parent::init();
 
@@ -46,6 +47,7 @@ class Model_Job extends Model_Table {
 
 <?Code?>
 class Model_Category extends Model_Table {
+    public $entity_code='category';
     function init(){
         parent::init(); 
 
@@ -66,7 +68,7 @@ class page_generate extends Page_SchemaGenerator {}
 <p>I am sure you are waiting until you can insert some data into your tables. That's what we will do now. Create file page/test.php and put the following code into it:
 </p>
 <?Code?>
-class page_test1 extends Page {
+class page_test extends Page {
     function init(){
         parent::init();
         $this->add('CRUD')->setModel('Category');
