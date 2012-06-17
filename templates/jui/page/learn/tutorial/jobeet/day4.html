@@ -67,7 +67,7 @@ Doing any of the above will probably add you extra few weeks of work you could h
 &lt;link rel="stylesheet" type="text/css" href="&lt;?template?&gt;css/atk-icons.css&lt;?/?&gt;" /&gt;
 </pre>
 
-<p>Pay attention to the tag used here &lt;?template?&gt;. It is going to replace contents of the tag (css/general.css) with a properl URL to the file. When you are including more CSS files you need to always use this tag. This will allow you to easily deploy applicaiton on any domain and inside any directory. Another benefit you get is that Agile Toolkit will look for file inside templates/jui/css/general.css and if file is not foudn there atk4/templates/jui/css/general.css will be used instead. That technically allows you to change CSS files without going into atk4 directory and without changing the shared.html template.</p>
+<p>Pay attention to the tag used here &lt;?template?&gt;. It is going to replace contents of the tag (css/general.css) with a properl URL to the file. When you are including more CSS files you need to always use this tag. This will allow you to easily deploy application on any domain and inside any directory. Another benefit you get is that Agile Toolkit will look for file inside templates/jui/css/general.css and if file is not found there atk4/templates/jui/css/general.css will be used instead. That technically allows you to change CSS files without going into atk4 directory and without changing the shared.html template.</p>
 
 <p>The other thing you might have noticed is &lt;?page?&gt;. This generates a proper link to another page in your application. On Day1 we charged all pages to include .html at the end and with this tag you will keep all the link consistent.</p>
 
