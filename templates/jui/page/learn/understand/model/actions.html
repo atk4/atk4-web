@@ -57,8 +57,30 @@ class Model_Book extends Model_Table {
 }
 <?/?>
 
-<p>In addition to the two demonstrated hooks, there are beforeInsert, afterInsert, beforeModify, afterModify, beforeLoad and afterSave hooks. You will find more in model documentation.</p>
+<p>There are the following hooks available for the model (at least):
+  <ul>
+    <li>beforeLoad($model, $query) - called before loading SQL query is executed. You have a chance to modify that query. This is called for both model->load() and for iterating through model with foreach($model). 
+      This hook is great for applying extra options to your SQL query.</li>
+    <li>afterLoad($model) - called after data have been loaded from SQL. You can now access $model->get() and the model will appear to be loaded. Called for both model->load() and iterating. This hook is great for performing data manipulation and normalization.</li>
+    <li>beforeSave($model) - called when $model->save() is called. This is called inside SQL transaction, so database changes you perform here will be rolled back if save would be unsuccessful. This hook is great for performing data modification before it's been saved. You can check $model->loaded() to see if a new record is being stored or updated</li>
+    <li>beforeInsert($model, $query) - called when inserting new data and after the insert query is being formed. That query is passed as 2nd argument. This hook is great for changing insert query options.</li>
+    <li>afterInsert($model,$id) - called after insertion method is performed successfully, but before model is re-loaded. You can break out of this hook and return a substitute model. Great for overriding how model is reloaded after insert.</li>
+    <li>beforeModify($model,$query) - called before update SQL query is executed. This hook is great for changing update query options.</li>
+    <li>afterModify($model) - called after SQL query is executed but before reloading has taken place. Note that if you access set() / get() here it will be reloaded by a subsequental reload.</li>
+    <li>afterSave($model) - called after model have been successfully reloaded. This is the last hook to be executed before SQL transaction is finished with commit. Please note taht beforeLoad / afterLoad will also be called during the reloading of a model. This hook is great for hiding some fields from a model after they are being saved such as wiping your password field.</li>
+  </ul>
+  Few more recommendation on query use. 
+  <ul>
+    <li>to perform additional validation use beforeSave().</li>
+    <li>to measure speed of your query use beforeInsert / afterInsert and beforeModify and afterModify respectively.</li>
+    <li>beforeLoad will be called once per query, but afterLoad may be called several times when iterating through results.</li>
+    <li>apply SQL options in beforeLoad, beforeInsert and beforeModify</li>
+    <li>if you want to divert the query to a different database connection beforeLoad, beforeInsert and beforeModify are good place, but you must enhance DSQL to support switching before databsae handles. If this is what you need, please discuss on Agile Toolkit Development Forum.</li>
+  </ul>
+</p>
 
-<p>In addition to hooks, you may also re-define standard methods. Remember to call parent through.</p>
+<h3>Non-relational models</h3>
+<p>Above hooks also are used for non-relational models, however instead of $query they will receive $id of the record which is about to be loaded or modified.</p>
+
 
 <?$Next?>
