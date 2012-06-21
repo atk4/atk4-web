@@ -4,27 +4,25 @@ class page_download_box extends Page {
         parent::init();
 
         $file41='agiletoolkit-4.1.4.zip';
-        $file=  'agiletoolkit-4.2.0.zip';
+        $file=  'agiletoolkit-4.2.1.zip';
 
         $cc=$this->add('Columns');
         $l=$cc->addColumn(6);
         $r=$cc->addColumn(6);
 
-        $l->add('P')->set('Agile Toolkit <a href="'.
-                $this->api->getDestinationURL('about/license')
-                .'">promotes Open Source</a> by granting freedom to access open-source to you and users of your software.');
+        $l->add('P')->set('By downloading Agile Toolkit you agree to the terms of Affero General Public License. A full source code of your software must be made available to the users of your software. This does not restrict you from developing commercial, private, educational or personal projects with AGPL license.');
 
+
+        $l->add('H4')->set('You will need a commercial license if:');
         $lp=$l->add('P');
-        $lp->add('Can')->set('Your software users must have access to software sources.');
-        $lp->add('Can')->set('Any use (personal, commercial or educational) is permitted.');
-        $lp->add('Can')->set('You <u>may</u> charge for or sell software based on Agile Toolkit.');
-        $lp->add('Can')->set('Use with unlimited CPUs, Domains, Users and Developers.');
-        $lp->add('Cant')->set('You may not Encrypt, Obfuscate or Hide your source code.');
-        $lp->add('Cant')->set('You may not re-release Agile Toolkit under different license.');
+        $lp->add('Can')->set('You create public web service but wish to keep sources closed');
+        $lp->add('Can')->set('You wish to sell closed-source web software distribution');
+        $lp->add('Can')->set('You will require commercial support over email/phone/skype');
+        $lp->add('Can')->set('You are willing to help authors of Agile Toolkit');
 
         $form=$l->add('Form');
         if($this->api->auth->isLoggedIn()){
-            $email=$form->addField('line','email','Valid email');
+            $email=$form->addField('line','email','We will email you download link');
             $email->js(true)->attr('disabled',true);
             $email->set($this->api->auth->get('email'));
             $email->add('HtmlElement',null,'after_field')
@@ -33,7 +31,7 @@ class page_download_box extends Page {
                 ->setAttr('href',$this->api->getDestinationURL('logout'))
                 ->set('Logout');
         }else{
-            $email=$form->addField('line','email','Valid email');
+            $email=$form->addField('line','email','We will email you download link');
             $email->validateNotNULL('Valid Email is required to continue with download')->validateField(function($field){
                     // TODO: var_filter
 
@@ -41,14 +39,9 @@ class page_download_box extends Page {
 
             });
         }
-        $email->setFieldHint('You will receive confirmation email.');
         $form->setFormClass('vertical');
-        $form->addSubmit('Download Agile Toolkit 4.2');
-        $l->add('P')->add('HtmlElement')->setElement('a')->set('Download older branch: v4.1.4')
-            ->setAttr('href','https://github.com/atk4/atk4')
-            ->js('click',$this->js()->load($this->api->getDestinationURL('download/success',
-                        array('file'=>$file41,'cut_page'=>1))));
-
+        $form->addSubmit('Get Open Source');
+        $form->addButton('Get Commercial')->js('click')->univ()->location('commercial/store');
 
         $l->add('P')->add('HtmlElement')->setElement('a')->set('No email? Fork us on GitHub instead')
             ->setAttr('href','https://github.com/atk4/atk4');

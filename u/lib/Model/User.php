@@ -6,6 +6,7 @@ class Model_User extends Model_Table {
 		
         $this->addField('email');
         $this->addField('is_email_confirmed')->type('boolean')->defaultValue(false);
+        $this->addField('password');
 
         $this->addField('full_name');
         $this->addExpression('name')->set('coalesce(if(full_name="",email,full_name),email)');

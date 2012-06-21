@@ -62,6 +62,7 @@ COLLATE = utf8_general_ci;
 
 ALTER TABLE `atk_purchase` ADD COLUMN `project_url` VARCHAR(255) NULL DEFAULT NULL  AFTER `project_type` ;
 
+ALTER TABLE `atk_certificate` ADD COLUMN `domain` VARCHAR(255);
 ALTER TABLE `atk_certificate` ADD COLUMN `type` VARCHAR(255) NULL DEFAULT NULL  AFTER `domain` ;
 ALTER TABLE `atk_certificate` ADD COLUMN `cert_id` VARCHAR(255) NULL DEFAULT NULL  AFTER `domain` ;
 ALTER TABLE `atk_certificate` ADD COLUMN `repo` VARCHAR(255) NULL DEFAULT NULL  AFTER `type` ;
