@@ -137,16 +137,7 @@ Forms are always submitted to the same page where they were added on. This is de
 <p>
 Additionally — form will be fully aware of the data it will be receiving, so instead of reading form data from $_POST, you can get the same data from the form object.
 </p>
-<?Example?>
-$f=$p->add('Form');
-$f->addField('line','name');
-$f->addSubmit('Greet Me');
-if($f->isSubmitted()){
-    $f->js()->univ()->alert('Hello, '.
-            $f->get('name'))->execute();
-}
-<?/?>
-
+<?Codepad?>gui/form#example1<?/?>
 
 <h3>Validation</h3>
 <p>
@@ -154,18 +145,7 @@ Agile Toolkit introduces only one automated validator — NotNull(). Additional 
 </p><p>
 For browser-side validation you can make use of some jQuery plugins such as formValidator.
 </p>
-<?Example?>
-$f=$p->add('Form');
-$f->addField('line','email')
-    ->validateNotNull()
-    ->validateField('filter_var($this->get(), FILTER_VALIDATE_EMAIL)')
-    ;
-$f->addSubmit('Check email');
-if($f->isSubmitted()){
-    $f->js()->univ()->alert('Email '.
-            $f->get('email').' is valid')->execute();
-}
-<?/?>
+<?Codepad?>gui/form#example2<?/?>
 
 <h3>Advanced field types</h3>
 <p>
@@ -206,21 +186,8 @@ class Form_Greeting extends Form {
 Most PHP frameworks this is as far as functionality goes. Agile Toolkit brings a lot of powerful ways to enhance forms, which are explained in further sections.
 </p>
 
+<?Codepad?>gui/form#example3<?/?>
 
-
-<?Example?>
-$f=$p->add('Form');
-$f->addField('line','username')->validateNotNull()
-    ->validateField('preg_match("/^[a-z]+$/",$this->get())')
-    ->validateField('strlen($this->get())>=6','Too short')
-    ->validateField('20>=strlen($this->get())','Too long');
-$f->addField('password','pasword')->validateNotNull();
-$f->addSubmit('Login');
-
-if($f->isSubmitted()){
-    $f->js()->univ()->alert('[Demo] Login Successful')->execute();
-}
-<?/?>
 
 <h2>Common questions answered about forms</h2>
 <p>

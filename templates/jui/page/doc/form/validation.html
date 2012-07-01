@@ -26,54 +26,20 @@ Additionally you can use jQuery widget for client-side validation or filtering.
 
 <h3>Using validateField()</h3>
 <p>If you do not mind passing PHP code to be evaluated, than this is the easiest way to define form validators. First argument contains teh code which will be eval()'ed. You can reference field through $this and access current value through $this->get();</p>
-<?Example?>
-$f=$p->add('Form');
-$f->addField('line','email')
-    ->validateNotNull()
-    ->validateField(
-        'filter_var($this->get(), FILTER_VALIDATE_EMAIL)');
-$f->addSubmit();
-<?/?>
-
+<?Codepad?>gui/validation#example1<?/?>
 
 <h3>Checking Inside isSubmitted() Condition</h3>
 <p>method isSubmitted() loads data from $_POST into form $f. Another common place to perform validation is inside the if() block which checks for form submission.
 
-<?Example?>
-$f=$p->add('Form');
-$f_email=$f->addField('line','email')
-    ->validateNotNull();
-$f->addSubmit();
-if($f->isSubmitted()){
-    if($f->get('email')=='test@example.com'){
-        return $f_email->displayFieldError('Choose other email');
-    }
-}
-<?/?>
-
-
-
-
-
+<?Codepad?>gui/validation#example2<?/?>
 
 <h3>Using validate Hook</h3>
 <p>Hooks are internal mechanism of Agile Toolkit to inject code into object's method. Each form have it's own "validate" hook. You can use this approach to inject a code to be performed at validation stage.</p>
 
 <p><i>This approach semantics might change.</i></p>
 
-<?Example?>
-$f=$p->add('Form');
-$f_email=$f->addField('line','email')
-    ->validateNotNull();
-$f_email->addHook('validate',function() use ($f_email){
-    if($f_email->get()=='test@example.com')
-        $f_email->displayFieldError('Choose other email');
-});
 
-$f->addSubmit();
-<?/?>
-
-
+<?Codepad?>gui/validation#example3<?/?>
 
 <h2>Client-side validation</h2>
 <p>
@@ -89,10 +55,6 @@ numericField: function(){
 }
 </pre></code>
 
-<?Example?>
-$f=$p->add('Form');
-$f->addField('line','age')->js(true)
-    ->univ()->numericField();
-<?/?>
+<?Codepad?>gui/validation#example4<?/?>
 
 <?$Next?>

@@ -75,6 +75,29 @@ Agile Toolkit 4.1 plans to introduce new way for form submission checking. It wi
 </p>
 <?/?>
 
+<h2>Using onSubmit</h2>
+<p>Both methods are essentially doing the same thing. isSubmitted() have been used in older versions of PHP, where closures were not easy to create.</p>
+
+<?Code?>
+if($form->isSubmitted()){
+    ...
+}
+<?/?>
+<p>however with closures you can now create a function call-back like this:</p>
+<?Code?>
+$form->onSubmit(function($form){
+    ...
+});
+<?/?>
+<a target="_blank" href="https://github.com/atk4/atk4/blob/master/lib/Form/Basic.php#L401">Source</a>
+
+<p>One significant change though is that onSubmit() will capture some exceptions and will automatically display them on the form. Therefore if your model has this</p>
+
+<?Code?>
+throw $this->exception('Wrong data','ForUser')->setField('name');
+<?/?>
+<p>Then "name" field will be highlighted with this error.</p>
+
 <h2>Redefining Form::submitted()</h2>
 <p>
 If you are defining your own form, you may want to re-define submitted() function. This approach offers no major benefits over isSubmitted approach, but is preserved for historical reasons.

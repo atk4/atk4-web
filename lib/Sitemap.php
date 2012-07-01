@@ -264,7 +264,6 @@ class Sitemap extends AbstractController{
             'fields'=>'Adding Fields',
             'validation'=>'Validation',
             'submit'=>'Handling Submit',
-            'database'=>'Database Integration',
             'model'=>'Using with Models',
             'styling'=>'Styling and Layout',
             'enhancing'=>'Enhancing Forms',
