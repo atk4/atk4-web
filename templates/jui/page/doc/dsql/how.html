@@ -24,12 +24,12 @@ $q = $mydb->dsql();
 
 <p>You may also call $model->dsql() which will return initialized Query Object with your particular Model settings.</p>
 
-<p>If you create DSQL query before connecting to database, then DSQL will not use which driver to use and generic DB_dsql will be used. Always try to execute connect() before creating query objects.</p>
+<p>If you create DSQL query before connecting to database, then DSQL will use generic DB_dsql. Always try to execute connect() before creating query objects.</p>
 
 <h2>Configuring Query</h2>
 
-<p>There are number of methods which are using to "configure" the query. You can call those methods several times and in any order. You can even call them after
-you already executed query once. All those methods will return $this therefore you can safely chain them:</p>
+<p>There are number of methods which can be used to "configure" the query. You can call those methods several times and in any order. You can even call them after you already executed query once. All those methods will return $this therefore you can safely chain them:</p>
+
 <?Code?>
 $db = $this->api->db->dsql();
 $db
