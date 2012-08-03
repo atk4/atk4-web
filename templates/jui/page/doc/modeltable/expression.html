@@ -31,9 +31,8 @@ class Model_Author extends Model_Table {
   function init(){
     parent::init();
 
-    $self=$this;
-    $this->addExpression('books_written')->set(function($select)use($self){
-      return $self->refBooks($select->getField('id'))
+    $this->addExpression('books_written')->set(function($model,$select)use($self){
+      return $model->refBooks($select->getField('id'))
         ->dsql->field($select->expr('count(*)'));
     });
   }
