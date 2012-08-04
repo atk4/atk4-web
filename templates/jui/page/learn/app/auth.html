@@ -65,7 +65,7 @@ class page_index extends Page {
             $enc_p = $auth->encryptPassword($p,$l);
 
             // Manually verify login
-            if($auth->verifyCredintials($l,$enc_p)){
+            if($auth->verifyCredentials($l,$enc_p)){
 
                 // Manually log-in
                 $auth->login($l);
