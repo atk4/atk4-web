@@ -1,1 +1,17 @@
+<h1>Filestore</h1>
+
+<p>Filestore is a mechanism of Agile Toolkit to simplify file uploading, storage and association with your database records. Typically the choice on how files are stored by the system is done by a web developer. File data is either stored in the SQL or is kept in a file. In some cases it will be uploaded into the CND (cloud) later.</p>
+
+<p>Agile Toolkit abstracts file uploading by introducing a standard Model for your files and images. This is implemented in a "filestore" add-on.</p>
+
+<p><a href="https://github.com/atk4/atk4-addons/tree/master/filestore">https://github.com/atk4/atk4-addons/tree/master/filestore</a></p>
+
+
+<h2>How files are managed?</h2>
+
+<p>File uploads in PHP are automatically stored in a temporary folder and then your PHP application needs to put it in a safe location. Filestore does that automatically by putting file inside upload folder. It starts by creating sub-directory '0' and placing files with random names in there. When large number of files is achieved, it will switch to folder '1' and so on until 256 subdirectories are allocated with 4000 files in each. Afterwards new files will be distributed across all the folders. A single volume can store up to 4096*256*256 files (which is a artificial limit). You can have multiple volumes and the filestore will randomly pick enabled volume.</p>
+
+<p>Filenames are generated randomly and are difficult to guess, preventing someone from scanning folder for additional images.</p>
+
+
 <?$Content?>
