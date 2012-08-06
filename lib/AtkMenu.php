@@ -1,5 +1,11 @@
 <?php
 class AtkMenu extends Menu {
+	function addMenuItem($a,$b=null){
+		if($b){
+			list($a,$b)=array($b,$a);
+		}
+		return parent::addMenuItem($a,$b);
+	}
 	function init(){
 		parent::init();
 		$menu=$this;
