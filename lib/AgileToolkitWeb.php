@@ -10,7 +10,7 @@ class AgileToolkitWeb extends ApiFrontend {
             $this->locale=$_GET['lang'];
             $this->stickyGET('lang');
         }
-        parent::__construct('AgileWeb','jui');
+        parent::__construct('AgileWeb');
     }
     function addDefaultLocations($base_directory){
         if($this->locale){
@@ -29,6 +29,8 @@ class AgileToolkitWeb extends ApiFrontend {
             $this->memorize('session_started',time());
         }
 
+
+        $this->dbConnect();
 
         // Keep this if you are going to use plug-ins
         $this->addLocation('atk4-addons',array(
@@ -100,7 +102,9 @@ class AgileToolkitWeb extends ApiFrontend {
     }
     function initLayout(){
         if($this->template->is_set('Menu')){
+            /*
             $this->api->menu=$menu2=$this->add('AtkMenu','Menu','Menu');
+             */
 
             $this->js(true)->_selector("#sqf")->submit(
                     $this->js(null, "w=window.open(u='http://google.com/search?q='+escape(\$('#sq').val())+' site:agiletoolkit.org','_blank');if(w)w.focus();else document.location=u")->_enclose()
@@ -212,9 +216,6 @@ class AgileToolkitWeb extends ApiFrontend {
         // Connect to administrative database
         parent::dbConnect($this->getConfig('atk_dsn'));
         //$this->api->db=$this->add('DB',array('conf_pref'=>'atk_pdo'));
-    }
-    function url($u,$a=array()){
-        return $this->getDestinationURL($u,$a);
     }
     function getUser(){
         return $this->auth->getModel()->loadData($this->auth->get('id'));

@@ -522,6 +522,8 @@ ul.submenu-body li a,
 .box.white {background:#fff;}
 .box.outline {border:1px solid #d0d9e4;background:#fff;}
 .box.p-10px {padding:10px;}
+.text-gray {color:#777;}
+.text-center {text-align:center;}
 
 h2+.box, h3+.box, h4+.box {margin-top:0;}
 a:link, a.solid:link, a.solid:visited {color:#0041c2;}
@@ -715,6 +717,18 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 #customizable-ui {padding:160px 20px 20px 20px;background:url(../images/customizable-ui.jpg) no-repeat;border-bottom:1px solid #fff;-webkit-box-shadow:0 1px 5px #000 inset;-moz-box-shadow:0 1px 5px #000 inset;box-shadow:0 1px 5px #000 inset;}
 #customizable-ui .screenshots>div {width:268px;height:180px;background:#fff;-webkit-box-shadow:0 1px 5px #000;-moz-box-shadow:0 1px 5px #000;box-shadow:0 1px 5px #000;float:left;margin-left:20px;}
 #customizable-ui .screenshots>div:first-child {margin-left:0;}
+
+
+/* -------------------------------------------------------------------------------------------------
+   Documentation
+------------------------------------------------------------------------------------------------- */
+.doc-quick-links {font-size:11px;margin-top:-10em;display:block;}
+.doc-quick-links strong {margin-right:2.5em;}
+.doc-topics {padding:10px;}
+.doc-topics .span4 {height:60px;margin-top:25px;}
+.doc-topics .span4 a {font-size:16px;}
+.doc-topics .span4:nth-child(3n+1) {margin-left:0;}
+.doc-topics .span4:first-child, .doc-topics .span4:first-child+.span4, .doc-topics .span4:first-child+.span4+.span4 {margin-top:0;}
 
 
 /* -------------------------------------------------------------------------------------------------
