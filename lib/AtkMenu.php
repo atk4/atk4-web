@@ -37,9 +37,9 @@ class AtkMenu extends Menu {
 			case'intro': 
 				$this->api->template->trySet('menu_doc','class="current"');
 
-				$menu->addMenuItem('Introduction','intro');
-				$menu->addMenuItem('Book','learn');
-				$menu->addMenuItem('Documentation','doc');
+				$menu->addMenuItem('Contents','doc');
+				$menu->addMenuItem('Quick Tour','intro');
+				$menu->addMenuItem('Screencasts','learn');
 				$menu->addMenuItem('Reference','doc/ref');
 				//$menu->addMenuItem('Add-ons','a');
 				$menu->addMenuItem('Examples','examples');
