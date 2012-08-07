@@ -1,0 +1,583 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
+			"settings":
+			{
+				"buffer_size": 5474,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/default/button.html",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 247.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"Snippet: model",
+				"Snippet: atk4-model"
+			],
+			[
+				"Snippet: ",
+				"Snippet: REQUEST['…']"
+			],
+			[
+				":install",
+				"Package Control: Install Package"
+			],
+			[
+				":remove",
+				"Package Control: Remove Package"
+			],
+			[
+				":disable",
+				"Package Control: Disable Package"
+			],
+			[
+				":package",
+				"Package Control: Disable Package"
+			],
+			[
+				":plugin",
+				"SublimeCodeIntel: Disable Plugin"
+			],
+			[
+				":insta",
+				"Package Control: Install Package"
+			],
+			[
+				":instal",
+				"Package Control: Install Package"
+			],
+			[
+				":packag",
+				"Preferences: Browse Packages"
+			],
+			[
+				":push",
+				"Git: Push"
+			],
+			[
+				":com",
+				"Git: Commit"
+			],
+			[
+				":statu",
+				"Git: Status"
+			],
+			[
+				":add",
+				"Git: Add..."
+			],
+			[
+				":",
+				"Git: Custom Command"
+			],
+			[
+				":comma",
+				"Git: Custom Command"
+			],
+			[
+				":status",
+				"Git: Status"
+			],
+			[
+				"graph",
+				"Git: Graph All"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				":git gra",
+				"Set Syntax: Git Graph"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rw/Sites/atk4web/templates/default/shared.html",
+		"/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
+		"/Users/rw/Sites/atk4web/templates/default/menu.html",
+		"/Users/rw/Sites/atk4web/atk4/templates/shared/menu.html",
+		"/Users/rw/Sites/atk4web/lib/AtkMenu.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
+		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
+		"/Users/rw/Sites/atk4web/lib/Doc/Page.php",
+		"/Users/rw/Sites/atk4web/page/doc/filestore.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/filestore.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/app/auth.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/expression.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/styling.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/database.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/how.html",
+		"/Users/rw/Sites/atk4web/codepad/templates/default/page/gui/formstyle.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/model.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/submit.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/validation.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/form/fields.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/install/auth.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/install.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/dsql/how.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/actions.html",
+		"/Users/rw/Sites/atk4web/atk4-addons/mvc/Model/MVCTable.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/example.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/debug.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/db.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/intro.html",
+		"/Users/rw/Sites/atk4web/templates/jui/doc/view/doc_codepad.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/page/example.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/community/code.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/base.html",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/rw/Sites/atk4web/lib/Model/ATK/User.php",
+		"/Users/rw/Sites/atk4web/lib/Model/ATK/Purchase.php",
+		"/Users/rw/Sites/atk4web/config.php",
+		"/Users/rw/Sites/atk4web/page/account.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/commercial/account.html",
+		"/Users/rw/Sites/atk4web/README",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/app/planning.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/add.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/page/route.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/fields.html",
+		"/Users/rw/Sites/atk4web/lib/AtkAuth.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiWeb.php",
+		"/Users/rw/Sites/atk4web/codepad/lib/Frontend.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/relations.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/add.html",
+		"/Users/rw/Desktop/agile toolkit guys.csv",
+		"/Users/rw/Sites/atk4web/atk4/lib/DB/dsql.php",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/model/add.html",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/rw/Sites/codepad/templates/default/page/learning/dvdrental.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Menu",
+			"database",
+			"Audit",
+			"enclose_Codepad",
+			"outing",
+			",",
+			"expr",
+			"fx",
+			"call",
+			"cust",
+			"custom",
+			"tion fx",
+			"defined table",
+			"Calculate",
+			"auto_complete",
+			"auto",
+			"vintage"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
+					"settings":
+					{
+						"buffer_size": 5474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								918,
+								918
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/rw/Sites/atk4web/templates/default/button.html",
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								267,
+								267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"buttonhtml",
+				"templates/default/button.html"
+			],
+			[
+				"shared",
+				"templates/default/shared.html"
+			],
+			[
+				"atkmenu.html",
+				"atk4/templates/shared/menu.html"
+			],
+			[
+				"menuhtml",
+				"templates/default/menu.html"
+			],
+			[
+				"atkmenu",
+				"lib/AtkMenu.php"
+			],
+			[
+				"agileweb",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"frontend",
+				"atk4/lib/ApiFrontend.php"
+			],
+			[
+				"new-doc",
+				"templates/default/page/new-doc.html"
+			],
+			[
+				"learnappauth",
+				"templates/jui/page/learn/app/auth.html"
+			],
+			[
+				"modeltableexpress",
+				"templates/jui/page/doc/modeltable/expression.html"
+			],
+			[
+				"sitemap",
+				"lib/Sitemap.php"
+			],
+			[
+				"pagefilestore",
+				"templates/jui/page/doc/filestore.html"
+			],
+			[
+				"pagefilestorehtml",
+				"templates/jui/page/doc/filestore.html"
+			],
+			[
+				"libdocpage",
+				"lib/Doc/Page.php"
+			],
+			[
+				"filestore",
+				"page/doc/filestore.php"
+			],
+			[
+				"formstyling",
+				"templates/jui/page/doc/form/styling.html"
+			],
+			[
+				"formstyle",
+				"codepad/templates/default/page/gui/formstyle.html"
+			],
+			[
+				"formmodel",
+				"templates/jui/page/doc/form/model.html"
+			],
+			[
+				"formdatabase",
+				"templates/jui/page/doc/form/database.html"
+			],
+			[
+				"formsubmit.html",
+				"templates/jui/page/doc/form/submit.html"
+			],
+			[
+				"formvalidat",
+				"templates/jui/page/doc/form/validation.html"
+			],
+			[
+				"formfields.html",
+				"templates/jui/page/doc/form/fields.html"
+			],
+			[
+				"docformhow",
+				"templates/jui/page/doc/form/how.html"
+			],
+			[
+				"docdsqlhow",
+				"templates/jui/page/doc/dsql/how.html"
+			],
+			[
+				"learninstalauth",
+				"templates/jui/page/learn/install/auth.html"
+			],
+			[
+				"learninstal",
+				"templates/jui/page/learn/install.html"
+			],
+			[
+				"communitycode",
+				"templates/jui/page/community/code.html"
+			],
+			[
+				"modelactions",
+				"templates/jui/page/learn/understand/model/actions.html"
+			],
+			[
+				"understanddb",
+				"templates/jui/page/learn/understand/model/db.html"
+			],
+			[
+				"mvctable",
+				"atk4-addons/mvc/Model/MVCTable.php"
+			],
+			[
+				"modeldebug",
+				"templates/jui/page/learn/understand/model/debug.html"
+			],
+			[
+				"modeldb",
+				"templates/jui/page/learn/understand/model/db.html"
+			],
+			[
+				"modelintro",
+				"templates/jui/page/learn/understand/model/intro.html"
+			],
+			[
+				"doc_codepad",
+				"templates/jui/doc/view/doc_codepad.html"
+			],
+			[
+				"agile",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"pageexample",
+				"templates/jui/page/learn/understand/page/example.html"
+			],
+			[
+				"undestandbase",
+				"templates/jui/page/learn/understand/base.html"
+			],
+			[
+				"comercaccount",
+				"templates/jui/page/commercial/account.html"
+			],
+			[
+				"atkpurch",
+				"lib/Model/ATK/Purchase.php"
+			],
+			[
+				"config.php",
+				"config.php"
+			],
+			[
+				"atkuser",
+				"lib/Model/ATK/User.php"
+			],
+			[
+				"modeluser",
+				"lib/Model/User.php"
+			],
+			[
+				"account",
+				"page/account.php"
+			],
+			[
+				"agiletoolk",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"agiletoolkitwe",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"apiweb",
+				"atk4/lib/ApiWeb.php"
+			],
+			[
+				"auth",
+				"lib/AtkAuth.php"
+			],
+			[
+				"learnrou",
+				"templates/jui/page/learn/understand/page/route.html"
+			],
+			[
+				"modeltableadd",
+				"templates/jui/page/doc/modeltable/add.html"
+			],
+			[
+				"appplanning",
+				"templates/jui/page/learn/app/planning.html"
+			],
+			[
+				"atkdsql",
+				"atk4/lib/DB/dsql.php"
+			],
+			[
+				"actions",
+				"templates/jui/page/learn/understand/model/actions.html"
+			],
+			[
+				"sitemapphp",
+				"lib/Sitemap.php"
+			],
+			[
+				"learnmodeladd",
+				"templates/jui/page/learn/understand/model/add.html"
+			],
+			[
+				"modeladd",
+				"templates/jui/page/doc/model/add.html"
+			],
+			[
+				"frotend",
+				"lib/Frontend.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true
+}

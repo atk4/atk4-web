@@ -1,0 +1,468 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"HT",
+				"HTTP_HOST  (variable)"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				":install",
+				"Package Control: Install Package"
+			],
+			[
+				":remove",
+				"Package Control: Remove Package"
+			],
+			[
+				":disable",
+				"Package Control: Disable Package"
+			],
+			[
+				":package",
+				"Package Control: Disable Package"
+			],
+			[
+				":plugin",
+				"SublimeCodeIntel: Disable Plugin"
+			],
+			[
+				":insta",
+				"Package Control: Install Package"
+			],
+			[
+				":instal",
+				"Package Control: Install Package"
+			],
+			[
+				":packag",
+				"Preferences: Browse Packages"
+			],
+			[
+				":push",
+				"Git: Push"
+			],
+			[
+				":com",
+				"Git: Commit"
+			],
+			[
+				":statu",
+				"Git: Status"
+			],
+			[
+				":add",
+				"Git: Add..."
+			],
+			[
+				":",
+				"Git: Custom Command"
+			],
+			[
+				":comma",
+				"Git: Custom Command"
+			],
+			[
+				":status",
+				"Git: Status"
+			],
+			[
+				"graph",
+				"Git: Graph All"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				":git gra",
+				"Set Syntax: Git Graph"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rw/Sites/atk4web/u/atk4/lib/Model/Table.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/User.php",
+		"/Users/rw/Sites/atk4web/u/atk4-addons/licensor/page/index.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Purchase.php",
+		"/Users/rw/Sites/atk4web/u/doc/dbupdates/atk4.001.sql",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/ApiWeb.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Certificate.php",
+		"/Users/rw/Sites/atk4web/u/page/licenses.php",
+		"/Users/rw/Sites/atk4web/u/config.php",
+		"/Users/rw/Sites/atk4web/u/atk4/templates/js/ui.atk4_loader.js",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Purchase/My.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/User/Me.php",
+		"/Users/rw/Sites/atk4web/u/templates/default/view/userinfo.html",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Addon/Version.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Addon.php",
+		"/Users/rw/Sites/atk4web/u/lib/Model/Addon/My.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/ApiFrontend.php",
+		"/Users/rw/Sites/atk4web/u/page/index.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/Form/Basic.php",
+		"/Users/rw/Sites/atk4web/u/index.php",
+		"/Users/rw/Sites/atk4web/u/atk4/templates/shared/form.html",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/ApiCLI.php",
+		"/Users/rw/Sites/atk4web/u/lib/Frontend.php",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/Field.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/Controller/MVCForm.php",
+		"/Users/rw/Sites/atk4web/u/atk4-addons/mvc/MVCFieldDefinition.php",
+		"/Users/rw/Sites/atk4web/u/atk4-addons/mvc/MVCForm.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/MVCForm.php",
+		"/Users/rw/Sites/atk4web/lib/Model/User.php",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/User/atk4-page",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/User/atk4-model",
+		"/Users/rw/Sites/atk4web/u/atk4-addons/filestore/lib/Model/File.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/PathFinder.php",
+		"/Users/rw/Sites/atk4web/u/atk4/lib/PageManager.php",
+		"/Users/rw/Sites/atk4web/README",
+		"/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/app/planning.html",
+		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/add.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/page/route.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/fields.html",
+		"/Users/rw/Sites/atk4web/page/account.php",
+		"/Users/rw/Sites/atk4web/lib/AtkAuth.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiWeb.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/debug.html",
+		"/Users/rw/Sites/atk4web/codepad/lib/Frontend.php",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/actions.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/relations.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/add.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/db.html",
+		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/intro.html",
+		"/Users/rw/Desktop/agile toolkit guys.csv",
+		"/Users/rw/Sites/atk4web/atk4/lib/DB/dsql.php",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/rw/Sites/atk4web/templates/jui/page/doc/model/add.html",
+		"/Users/rw/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/rw/Sites/codepad/templates/default/page/learning/dvdrental.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"_license",
+			"Grid",
+			"`atk4`",
+			"template_chunk",
+			"getLogger",
+			"Logger",
+			"enter",
+			"`atk4",
+			"system",
+			"getPath",
+			"<?",
+			",",
+			"expr",
+			"fx",
+			"call",
+			"cust",
+			"custom",
+			"tion fx",
+			"defined table",
+			"Calculate",
+			"auto_complete",
+			"auto",
+			"vintage"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"certifica",
+				"lib/Model/Certificate.php"
+			],
+			[
+				"certificate",
+				"lib/Model/Certificate.php"
+			],
+			[
+				"licensor",
+				"atk4-addons/licensor/page/index.php"
+			],
+			[
+				"config.php",
+				"config.php"
+			],
+			[
+				"purchase",
+				"lib/Model/Purchase.php"
+			],
+			[
+				"dbupdate",
+				"doc/dbupdates/atk4.001.sql"
+			],
+			[
+				"atkweb",
+				"atk4/lib/ApiWeb.php"
+			],
+			[
+				"certi",
+				"lib/Model/Certificate.php"
+			],
+			[
+				"atkloader",
+				"atk4/templates/js/ui.atk4_loader.js"
+			],
+			[
+				"license",
+				"page/licenses.php"
+			],
+			[
+				"formbasic",
+				"atk4/lib/Form/Basic.php"
+			],
+			[
+				"apifrontend",
+				"atk4/lib/ApiFrontend.php"
+			],
+			[
+				"licenses",
+				"page/licenses.php"
+			],
+			[
+				"userme",
+				"lib/Model/User/Me.php"
+			],
+			[
+				"index",
+				"page/index.php"
+			],
+			[
+				"form.html",
+				"atk4/templates/shared/form.html"
+			],
+			[
+				"apicli",
+				"atk4/lib/ApiCLI.php"
+			],
+			[
+				"apiweb",
+				"atk4/lib/ApiWeb.php"
+			],
+			[
+				"dbupdates",
+				"doc/dbupdates/atk4.001.sql"
+			],
+			[
+				"mvcfield",
+				"atk4-addons/mvc/MVCFieldDefinition.php"
+			],
+			[
+				"field",
+				"atk4/lib/Field.php"
+			],
+			[
+				"mvcform",
+				"atk4/lib/Controller/MVCForm.php"
+			],
+			[
+				"modeltable",
+				"atk4/lib/Model/Table.php"
+			],
+			[
+				"pageinde",
+				"page/index.php"
+			],
+			[
+				"modelfile",
+				"atk4-addons/filestore/lib/Model/File.php"
+			],
+			[
+				"file",
+				"atk4-addons/filestore/lib/Model/File.php"
+			],
+			[
+				"pagemanager",
+				"atk4/lib/PageManager.php"
+			],
+			[
+				"pathfinder",
+				"atk4/lib/PathFinder.php"
+			],
+			[
+				"account",
+				"page/account.php"
+			],
+			[
+				"agiletoolk",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"agiletoolkitwe",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"frontend",
+				"atk4/lib/ApiFrontend.php"
+			],
+			[
+				"auth",
+				"lib/AtkAuth.php"
+			],
+			[
+				"learnrou",
+				"templates/jui/page/learn/understand/page/route.html"
+			],
+			[
+				"sitemap",
+				"lib/Sitemap.php"
+			],
+			[
+				"modeltableadd",
+				"templates/jui/page/doc/modeltable/add.html"
+			],
+			[
+				"appplanning",
+				"templates/jui/page/learn/app/planning.html"
+			],
+			[
+				"modeldebug",
+				"templates/jui/page/learn/understand/model/debug.html"
+			],
+			[
+				"atkdsql",
+				"atk4/lib/DB/dsql.php"
+			],
+			[
+				"actions",
+				"templates/jui/page/learn/understand/model/actions.html"
+			],
+			[
+				"sitemapphp",
+				"lib/Sitemap.php"
+			],
+			[
+				"learnmodeladd",
+				"templates/jui/page/learn/understand/model/add.html"
+			],
+			[
+				"modeladd",
+				"templates/jui/page/doc/model/add.html"
+			],
+			[
+				"frotend",
+				"lib/Frontend.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true
+}
