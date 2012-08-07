@@ -199,7 +199,7 @@ h3 {font:26px 'frutiger','Lucida Grande',sans-serif;margin:1.2em 0 0.2em 0;}
 h4,h5 {text-transform:uppercase;margin:1.5em 0 0.4em 0;}
 h3 span, h4 span, h5 span {text-transform:lowercase;font-family:'Lucida Grande',sans-serif;font-weight:bold;letter-spacing:-0.02em;}
 h4 {font:18px 'frutiger','Lucida Grande',sans-serif;}
-h5 {font:16px 'frutiger','Lucida Grande',sans-serif;}
+h5 {font:16px 'frutiger','Lucida Grande',sans-serif;margin-bottom:0.7em;}
 h6 {font:bold 14px 'Lucida Grande',sans-serif;margin:1.4em 0 0.5em 0;}
 h1+h2 {margin-top:0.7em;}
 h4+p, h5+p, h6+p {margin-top:0;}
@@ -590,6 +590,8 @@ table.zebra th, table.zebra td {padding:1em 2em;}
 .icon-rightarrow {background-position:-251px -20px;width:20px;height:14px;}
 .icon-success {background-position:-512px -79px;width:16px;height:16px;top:2px;}
 
+i.ui-icon {display:inline-block;margin-right:0.3em;position:relative;top:0.15em;}
+
 .box.blue-noised {border-top:1px solid #fff;}
 .box.blue-noised h2 {color:#2c3f53;}
 .box.blue-noised h2:after {background:#2c3f53;-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.7);-moz-box-shadow:0 1px 0 rgba(255,255,255,0.7);box-shadow:0 1px 0 rgba(255,255,255,0.7);}
@@ -722,13 +724,17 @@ h3 .date em, h4 .date em {position:relative;top:-0.5em;left:0.2em;font-size:9px;
 /* -------------------------------------------------------------------------------------------------
    Documentation
 ------------------------------------------------------------------------------------------------- */
-.doc-quick-links {font-size:11px;margin-top:-1.5em !important;display:block;}
-.doc-quick-links strong {margin-right:2em;}
-.doc-topics {padding:10px;}
-.doc-topics .span4 {height:60px;margin-top:25px;}
-.doc-topics .span4 a {font-size:16px;}
-.doc-topics .span4:nth-child(3n+1) {margin-left:0;}
-.doc-topics .span4:first-child, .doc-topics .span4:first-child+.span4, .doc-topics .span4:first-child+.span4+.span4 {margin-top:0;}
+.quick-links {font-size:11px;}
+.quick-links strong {margin-right:2em;}
+h1+.quick-links {margin-top:-1.5em !important;}
+h2+.quick-links {margin-top:-0.5em !important;}
+.topics {padding:10px;}
+.topics .span4 {height:60px;margin-top:25px;}
+.topics .span4 a {font-size:16px;}
+.topics .span4:nth-child(3n+1) {margin-left:0;}
+.topics .span4:first-child, .topics .span4:first-child+.span4, .topics .span4:first-child+.span4+.span4 {margin-top:0;}
+.table-of-contents {position:fixed;right:40px;top:180px;}
+.table-of-contents>ul {padding:0 20px;}
 
 
 /* -------------------------------------------------------------------------------------------------
