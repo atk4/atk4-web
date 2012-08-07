@@ -32,6 +32,16 @@
 		<script type="text/javascript">
 			$(function(){
 				<?$document_ready?>
+
+				$(window).resize(function(){
+					if($(window).width()<1000){
+						console.log('static');
+						$('.table-of-contents').css({"position":"static"})
+					}else{
+						console.log('fixed');
+						$('.table-of-contents').css({"position":"fixed"})
+					}
+				})
 			});
 		</script>
 <script type="text/javascript">
