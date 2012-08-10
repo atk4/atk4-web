@@ -20,7 +20,7 @@
 	-->
 
 
-		<link rel="stylesheet" type="text/css" href="<?template?>css/agile.css<?/?>" />
+<!-- 		<link rel="stylesheet" type="text/css" href="<?template?>css/agile.css<?/?>" /> -->
 		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-main.css<?/?>" />
 		<link rel="stylesheet" type="text/css" href="<?template?>css/general.css<?/?>" />
 		<link rel="stylesheet" type="text/css" href="<?template?>css/atk-icons.css<?/?>" />
@@ -34,12 +34,12 @@
 				<?$document_ready?>
 
 				$(window).resize(function(){
-					if($(window).width()<1000){
+					if($(window).width()<1500){
 						console.log('static');
-						$('.table-of-contents').css({"position":"static"})
+						$('.table-of-contents').addClass("static").removeClass("fixed");
 					}else{
 						console.log('fixed');
-						$('.table-of-contents').css({"position":"fixed"})
+						$('.table-of-contents').addClass("fixed").removeClass("static");
 					}
 				})
 			});
