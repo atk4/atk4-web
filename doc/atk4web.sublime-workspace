@@ -7,22 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
-			"settings":
-			{
-				"buffer_size": 5474,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/rw/Sites/atk4web/templates/default/button.html",
-			"settings":
-			{
-				"buffer_size": 274,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -132,11 +116,21 @@
 	},
 	"file_history":
 	[
+		"/Users/rw/Sites/atk4web/templates/default/page/doc.html",
 		"/Users/rw/Sites/atk4web/templates/default/shared.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/Menu/Light.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/View.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/AbstractView.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Controller/MVCForm.php",
+		"/Users/rw/Sites/atk4web/lib/AtkMenu.php",
+		"/Users/rw/Sites/atk4web/page/doc.php",
+		"/Users/rw/Sites/atk4web/templates/default/page/doc-old.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/Menu.php",
+		"/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
+		"/Users/rw/Sites/atk4web/templates/default/button.html",
 		"/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
 		"/Users/rw/Sites/atk4web/templates/default/menu.html",
 		"/Users/rw/Sites/atk4web/atk4/templates/shared/menu.html",
-		"/Users/rw/Sites/atk4web/lib/AtkMenu.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
 		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
 		"/Users/rw/Sites/atk4web/lib/Doc/Page.php",
@@ -239,62 +233,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
-					"settings":
-					{
-						"buffer_size": 5474,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								918,
-								918
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/rw/Sites/atk4web/templates/default/button.html",
-					"settings":
-					{
-						"buffer_size": 274,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								267,
-								267
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -340,12 +280,40 @@
 		"selected_items":
 		[
 			[
-				"buttonhtml",
-				"templates/default/button.html"
+				"contromvcform",
+				"atk4/lib/Controller/MVCForm.php"
+			],
+			[
+				"abstractview",
+				"atk4/lib/AbstractView.php"
+			],
+			[
+				"view",
+				"atk4/lib/View.php"
+			],
+			[
+				"menulight",
+				"atk4/lib/Menu/Light.php"
 			],
 			[
 				"shared",
 				"templates/default/shared.html"
+			],
+			[
+				"pagedoc",
+				"templates/default/page/doc.html"
+			],
+			[
+				"menu",
+				"lib/AtkMenu.php"
+			],
+			[
+				"new-doc",
+				"templates/default/page/new-doc.html"
+			],
+			[
+				"buttonhtml",
+				"templates/default/button.html"
 			],
 			[
 				"atkmenu.html",
@@ -366,10 +334,6 @@
 			[
 				"frontend",
 				"atk4/lib/ApiFrontend.php"
-			],
-			[
-				"new-doc",
-				"templates/default/page/new-doc.html"
 			],
 			[
 				"learnappauth",

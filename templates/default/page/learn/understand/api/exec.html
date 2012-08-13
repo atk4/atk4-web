@@ -6,35 +6,6 @@
 	<div class="g-12">
 
         <h1>Execution of The API Class</h1>
-        <img src="<?template?>images/ugly_images/apiseq.png<?/?>" style="float: right">
-        <p>An API in Agile Toolkit splits the whole execution of the application into 2 parts. In the first part, the API initializes
-        the objects, coupling them with proper models. The second part is the execution: the API will cause objects to query the 
-        database, iterate through results, produce and render output.</p>
-
-        <p>Agile Toolkit objects never output anything directly. Instead, they insert their output into their parent's template. The API
-        sends the combined output to the user's browser through "echo".</p>
-
-        <h3>Initialization</h3>
-        <p>Depending on which API you use, it will initialize several sub-components which call Controllers. When you
-        extend an API class, you should re-define the init() function and add initialization in there - things like connecting
-        to the database, adding controllers, etc.</p>
-
-        <p>ApiFrontend will automatically initialize Logger() which makes error logging more bearable.</p>
-
-        <h3>Layouts</h3>
-        <p>A Layout is a region in the shared template (shared.html), which is parsed by the API class. If the region is defined, then a
-        corresponding layout function is called.</p>
-
-        <p>The first and most significant layout element is "Content". Content will determine which page is requested and
-        proceed with all the logic of page initialization. However if "Content" is not present in the API template, the page will
-        not be initialized.</p>
-
-        <p>You can add additional layout elements. For example, calling addLayout('Menu') inside api->init() will instruct
-        API to call layout_Menu() method if tag &lt;?Menu?&gt; is found when parsing the template.</p>
-
-        <p>This approach can be used to initialize various things such as sidebars, toolbars and widgets, if they exist
-        inside the API template. You can manipulate different templates from inside the defaultTemplate() function of your API.</p>
-
         <h3>Initializing Auth and checking Auth</h3>
         <p>While you can also execute auth->check() inside init(), we recommend performing auth-check inside an initLayout()
         function:</p>
