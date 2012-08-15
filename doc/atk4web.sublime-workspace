@@ -7,6 +7,54 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc-topic.html",
+			"settings":
+			{
+				"buffer_size": 5340,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/default/page/doc.html",
+			"settings":
+			{
+				"buffer_size": 5792,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
+			"settings":
+			{
+				"buffer_size": 5528,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/templates/js/atk4_univ.js",
+			"settings":
+			{
+				"buffer_size": 20407,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/atk4/lib/Model/Table.php",
+			"settings":
+			{
+				"buffer_size": 23538,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/atk4/lib/DB/dsql.php",
+			"settings":
+			{
+				"buffer_size": 32484,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -116,6 +164,14 @@
 	},
 	"file_history":
 	[
+		"/Users/rw/Sites/atk4web/templates/default/page/doc/api.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiWeb.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Exception/StopInit.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Exception/StopRender.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
+		"/Users/rw/Sites/atk4web/templates/default/page/learn/understand/api/exec.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Basic.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/ApiCLI.php",
 		"/Users/rw/Sites/atk4web/templates/default/page/doc.html",
 		"/Users/rw/Sites/atk4web/templates/default/shared.html",
 		"/Users/rw/Sites/atk4web/atk4/lib/Menu/Light.php",
@@ -131,7 +187,6 @@
 		"/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
 		"/Users/rw/Sites/atk4web/templates/default/menu.html",
 		"/Users/rw/Sites/atk4web/atk4/templates/shared/menu.html",
-		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
 		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
 		"/Users/rw/Sites/atk4web/lib/Doc/Page.php",
 		"/Users/rw/Sites/atk4web/page/doc/filestore.php",
@@ -171,7 +226,6 @@
 		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/page/route.html",
 		"/Users/rw/Sites/atk4web/templates/jui/page/doc/modeltable/fields.html",
 		"/Users/rw/Sites/atk4web/lib/AtkAuth.php",
-		"/Users/rw/Sites/atk4web/atk4/lib/ApiWeb.php",
 		"/Users/rw/Sites/atk4web/codepad/lib/Frontend.php",
 		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/relations.html",
 		"/Users/rw/Sites/atk4web/templates/jui/page/learn/understand/model/add.html",
@@ -198,6 +252,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"indow",
+			"StopRender",
+			"hook",
 			"Menu",
 			"database",
 			"Audit",
@@ -233,8 +290,173 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc-topic.html",
+					"settings":
+					{
+						"buffer_size": 5340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/rw/Sites/atk4web/templates/default/page/doc.html",
+					"settings":
+					{
+						"buffer_size": 5792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4776,
+								4776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2293.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
+					"settings":
+					{
+						"buffer_size": 5528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1353,
+								1353
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 336.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/rw/Sites/atk4web/templates/js/atk4_univ.js",
+					"settings":
+					{
+						"buffer_size": 20407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12681,
+								12681
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8241.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/rw/Sites/atk4web/atk4/lib/Model/Table.php",
+					"settings":
+					{
+						"buffer_size": 23538,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9516,
+								9516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/rw/Sites/atk4web/atk4/lib/DB/dsql.php",
+					"settings":
+					{
+						"buffer_size": 32484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12119,
+								12119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6453.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -280,6 +502,62 @@
 		"selected_items":
 		[
 			[
+				"dsql.php",
+				"atk4/lib/DB/dsql.php"
+			],
+			[
+				"modeltable",
+				"atk4/lib/Model/Table.php"
+			],
+			[
+				"univ",
+				"templates/js/atk4_univ.js"
+			],
+			[
+				"pagenedoc",
+				"templates/default/page/new-doc.html"
+			],
+			[
+				"pagedoc",
+				"templates/default/page/doc.html"
+			],
+			[
+				"stopinit",
+				"atk4/lib/Exception/StopInit.php"
+			],
+			[
+				"stoprender",
+				"atk4/lib/Exception/StopRender.php"
+			],
+			[
+				"apifrontend",
+				"atk4/lib/ApiFrontend.php"
+			],
+			[
+				"apiweb",
+				"atk4/lib/ApiWeb.php"
+			],
+			[
+				"apicli",
+				"atk4/lib/ApiCLI.php"
+			],
+			[
+				"formbasic",
+				"atk4/lib/Form/Basic.php"
+			],
+			[
+				"apiexec",
+				"templates/default/page/learn/understand/api/exec.html"
+			],
+			[
+				"pagedocapi",
+				"templates/default/page/doc/api.html"
+			],
+			[
+				"tnewtopic",
+				"templates/default/page/new-doc-topic.html"
+			],
+			[
 				"contromvcform",
 				"atk4/lib/Controller/MVCForm.php"
 			],
@@ -298,10 +576,6 @@
 			[
 				"shared",
 				"templates/default/shared.html"
-			],
-			[
-				"pagedoc",
-				"templates/default/page/doc.html"
 			],
 			[
 				"menu",
@@ -482,10 +756,6 @@
 			[
 				"agiletoolkitwe",
 				"lib/AgileToolkitWeb.php"
-			],
-			[
-				"apiweb",
-				"atk4/lib/ApiWeb.php"
 			],
 			[
 				"auth",

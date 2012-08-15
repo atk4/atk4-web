@@ -8,13 +8,23 @@
 <p><img style="float: right" src="<?template?>images/schemas/api_doc.png<?/?>"/>
   When your user directs his internet browser towards a Agile Toolkit application, all the requests would be directed towards a "catch-all" file normally called "index.php". The only purpose of this file is to load Application class, create a new instance of applicaiton class and execute the main() method. From that point on, Agile Toolkit will process the requset further including necessary files.</p>
 
+
+  <p>Agile Toolkit does not use any static elements or global variables. The only global variable you use in the "index.php" class is "$api". All additional classes are added into your API, or into other objects inside the API.</p>
+
+  <?MoreInfo?>Use of Multiple APIs
+  <p>Did you know that you can use multiple Application classes? It makes sense sometimes when you are builting a test-frameworks or are willing to perform cross-application authentication. Regardless, Application classes are non-conflicting and non-exclusive.</p>
+
+  <p>For this reason, singletons are not used in Agile Toolkit to avoid version conflicts and have full independence between unrelated objects.</p>
+  <?/?>
+
+
   <p>The fundamental role of the Application is to understand what to do with the request. The logic behind "pages" is the simple concept introduced to new users of Agile Toolkit as default behaviour. In reality any complex logic can be applied on applicaiton levels.</p>
 
   <p>There are few Application classes included in Agile Toolkit. ApiFrontend is the default to be used for web application, however ApiCLI is the most suitable for command-line tools, non-visual applications or third party integrations. Unless stated otherwise, the rest of this documentation will apply to application based of ApiFrontend.</p>
 
  <h3>Initialization and Rendering phases of the Application</h3> 
  <p>
-        <img src="<?template?>images/ugly_images/apiseq.png<?/?>" style="float: right">
+  <img src="<?template?>images/ugly_images/apiseq.png<?/?>" style="float: right">
   An API in Agile Toolkit splits the whole execution of the application into 2 parts: Initialization and Rendering. During the initialization phase application established, which objects needs to be created and what configuration have to be used. During rendering, the data is being pulled from the database and the HTML output is produced.</p>
 
 
@@ -29,6 +39,8 @@
  <p>Each View added into application or any other view will recive a call to their method recursiveRender(). This method will render all the child views first and then rall render(). Inside this method object can rely on output() method to send chunks of HTML to be placed in the owner-view.</p>
 
  <p>The default behaviour of render() is to simply render template associated with a view by calling $this->output($this->template->render()).</p> 
+
+ <a href="<?page?>doc/view<?/?>">Further information about Views, HTML, Rendering and SMLite</a>
 
 <h4>Applicaiton Hooks</h4>
 <p>Between Initialization and Rendering there are multiple hooks objects can take advantage of to postpone some of the initialization steps. For example the forms will attempt to check for the submitted data through 'pre-exec' and 'submitted' hook. Here is the sequence of the hooks in ApiFrontend()
@@ -45,7 +57,14 @@
   There are also other hooks, but those would be called multiple times or depending on further conditions.
 </p>
 
+
 <p>The Application in Agile Toolkit also has a template which is called "shared.html" by default. Finally the rendering of the Agile Toolkit can be interrupted by throwing Exception_StopRender. Similarly to StopInit, no error will be produced and the exception is only used to bail-out from the depths of method calls. It is used when the cut_object argument is present.</p>
+
+<h3>Realms</h3>
+<p>When the API class is initialized it expects only one argument: the "realm". A Realm must be unique to an application or even to an installation. The realm becomes the "name" of your $api, and it will also be used in all unique IDs (cookies, DOM id's, session variables).</p>
+
+<p>Through combining the concept of multiple APIs with proper realms, you can implement some unique features - such as a "Login As User" feature, by actually using the frontend API and calling the "login" method of its auth object.</p>
+
 
 <h3>Cutting Output</h3>
 <p>In some situations a full rendering of the page is not required. For example when a view is reloading itself using an AJAX request, only the rendering of particular object is necessary. All the views will watch for argument "cut_object" and compare it with either "name" or "short_name" property. If it matches, the object output will be generated and then further rendering will be terminated by throwing Exception_StopRender. Application class will intercept this exception and output supplied HTML and not the rest.</p>

@@ -3,17 +3,8 @@
 
 <div class="g-row" id="doc-ref">
 	<div class="g-12">
+        <!-- move into controller doc -->
         <h1>Understanding API Classes</h1>
-
-        <p>Agile Toolkit does not use any static elements or global variables. The only global variable you use in the
-        "index.php" class is "$api". All additional classes are added into your API, or into other objects inside the API.</p>
-
-        <p>This leads to several interesting points:
-        <ul>
-        <li>You can have more than one API running at the same time;</li>
-        <li>APIs are independent, and will never share same ID, Cookie name or session name;</li>
-        <li>You can create one API from inside another one, but the latter won't be able to access the former;</li>
-        </ul>
 
         <h3>Controllers versus Singletons</h3>
         <p>Agile Toolkit does not use singletons. Singletons do not provide any performance or persistence benefits in
@@ -30,13 +21,6 @@
         is really close to the real-life environment of your application.</p>
 
 
-        <h3>Realms</h3>
-        <p>When the API class is initialized it expects only one argument: the "realm". A Realm must be unique to an
-        application or even to an installation. The realm becomes the "name" of your $api, and it will also be used in all unique IDs
-        (cookies, DOM id's, session variables).</p>
-
-        <p>Through combining the concept of multiple APIs with proper realms, you can implement some unique features - such as a "Login As
-        User" feature, by actually using the frontend API and calling the "login" method of its auth object.</p>
 
     </div>
 </div>
