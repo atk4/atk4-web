@@ -13,7 +13,7 @@ $model->addExpression('age')->set('year(now())-year(birth_date)');
 <p>Expressions can also be defined as a callback. The callback will be executed when the query is being built, only once.</p>
 
 <?Code?>
-$author->addExpression('books_written')->set(function($select){
+$author->addExpression('books_written')->set(function($model,$select){
   return $select->dsql()
     ->table('book')
     ->field($select->expr('count(*)'))
