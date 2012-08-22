@@ -704,36 +704,36 @@ h3.w-big-icon em {display:inline-block;margin:0 0 0 15px;position:relative;top:-
 
 .about-facts .span4>div {border:none !important;padding:0 !important;width:296px !important;}
 
-#page-podcast .header h1 {margin:0;}
-#page-podcast .header .feature {position:relative;}
-#page-podcast .header .feature img {position:absolute;top:-2px;left:0;}
-#page-podcast .header .feature p {border-right:1px solid #eee;padding-left:54px;margin:0;}
-#page-podcast .related-videos a.video {border-radius:3px;font-size:13px;text-decoration:none;color:#3c5269;padding:10px 10px 10px 152px;margin:7px;min-height:74px;display:block;position:relative;}
-#page-podcast .related-videos a.video .thumbnail {background:url(../images/video-thumb.png);width:132px;height:82px;position:absolute;top:10px;left:10px;}
-#page-podcast .related-videos a.video .thumbnail img {margin:5px 0 0 6px;width:120px;height:64px;display:block;}
-#page-podcast .related-videos a.video .thumbnail .play {background:url(../images/video-play.png);margin-left:-20px;width:41px;height:41px;position:absolute;top:20px;left:50%;}
-#page-podcast .related-videos a.video .title {line-height:1.3;margin-top:5px;display:block;}
-#page-podcast .related-videos a.video .date {color:#6b8199;margin-top:2px;display:block;}
-#page-podcast .related-videos a.video:hover {background:url(../images/bg-darkblue-alpha.png);box-shadow:0 1px 2px rgba(0,0,0,0.5) inset;color:#000;}
-#page-podcast .related-videos a.video:hover .date {color:#566373;}
-#page-podcast .related-videos a.video.current {background:#617183;box-shadow:0 5px 15px rgba(0,0,0,0.75) inset;color:#fff;text-shadow:0 1px 0 #000;cursor:default;}
-#page-podcast .related-videos a.video.current .date {color:#cfd9e5;}
-#page-podcast .related-videos a.video.current .thumbnail .play {display:none;}
-#page-podcast .related-videos #related-videos-nav {font-size:0;line-height:0;text-align:center;padding:10px 0;}
-#page-podcast .related-videos #related-videos-nav a {background:url(../images/carousel-page.png);font-size:0;line-height:0;margin:0 4px;width:12px;height:13px;display:inline-block;}
-#page-podcast .related-videos #related-videos-nav a.activeSlide {background-image:url(../images/carousel-page-current.png);}
-#page-podcast .video-box {padding:6px;position:relative;}
-#page-podcast .video-box .info .date {margin:-0.7em 0 0 0;}
-#page-podcast .video-box .info {padding:20px 14px 14px 14px;}
-#page-podcast .video-box .info .text {color:#555;font-size:13px;margin-top:1em;}
-#page-podcast .video-box .info .text p {margin:0;}
-#page-podcast .video-box .info .socials {white-space:nowrap;text-align:right;font-size:0;line-height:0;}
-#page-podcast .video-box .info .socials>span {position:relative;top:5px;}
-#page-podcast .video-box .bg-fade {display:none;}
+#page-tutorial .header h1 {margin:0;}
+#page-tutorial .header .feature {position:relative;}
+#page-tutorial .header .feature img {position:absolute;top:-2px;left:0;}
+#page-tutorial .header .feature p {border-right:1px solid #eee;padding-left:54px;margin:0;}
+#page-tutorial .related-videos a.video {border-radius:3px;font-size:13px;text-decoration:none;color:#3c5269;padding:10px 10px 10px 152px;margin:7px;min-height:74px;display:block;position:relative;}
+#page-tutorial .related-videos a.video .thumbnail {background:url(../images/video-thumb.png);width:132px;height:82px;position:absolute;top:10px;left:10px;}
+#page-tutorial .related-videos a.video .thumbnail img {margin:5px 0 0 6px;width:120px;height:64px;display:block;}
+#page-tutorial .related-videos a.video .thumbnail .play {background:url(../images/video-play.png);margin-left:-20px;width:41px;height:41px;position:absolute;top:20px;left:50%;}
+#page-tutorial .related-videos a.video .title {line-height:1.3;margin-top:5px;display:block;}
+#page-tutorial .related-videos a.video .date {color:#6b8199;margin-top:2px;display:block;}
+#page-tutorial .related-videos a.video:hover {background:url(../images/bg-darkblue-alpha.png);box-shadow:0 1px 2px rgba(0,0,0,0.5) inset;color:#000;}
+#page-tutorial .related-videos a.video:hover .date {color:#566373;}
+#page-tutorial .related-videos a.video.current {background:#617183;box-shadow:0 5px 15px rgba(0,0,0,0.75) inset;color:#fff;text-shadow:0 1px 0 #000;cursor:default;}
+#page-tutorial .related-videos a.video.current .date {color:#cfd9e5;}
+#page-tutorial .related-videos a.video.current .thumbnail .play {display:none;}
+#page-tutorial .related-videos #related-videos-nav {font-size:0;line-height:0;text-align:center;padding:10px 0;}
+#page-tutorial .related-videos #related-videos-nav a {background:url(../images/carousel-page.png);font-size:0;line-height:0;margin:0 4px;width:12px;height:13px;display:inline-block;}
+#page-tutorial .related-videos #related-videos-nav a.activeSlide {background-image:url(../images/carousel-page-current.png);}
+#page-tutorial .video-box {padding:6px;position:relative;}
+#page-tutorial .video-box .info .date {margin:-0.7em 0 0 0;}
+#page-tutorial .video-box .info {padding:20px 14px 14px 14px;}
+#page-tutorial .video-box .info .text {color:#555;font-size:13px;margin-top:1em;}
+#page-tutorial .video-box .info .text p:last-child {margin:0;}
+#page-tutorial .video-box .info .socials {white-space:nowrap;text-align:right;font-size:0;line-height:0;}
+#page-tutorial .video-box .info .socials>span {position:relative;top:5px;}
+#page-tutorial .video-box .bg-fade {display:none;}
 
-#page-podcast .video-box.limited {height:531px;overflow:hidden;}
-#page-podcast .video-box.limited .bg-fade {background:url(../images/bg-white-fade.png) repeat-x bottom;text-align:center;width:100%;height:40px;position:absolute;bottom:0;left:0;display:block;}
-#page-podcast .video-box.limited .bg-fade a {
+#page-tutorial .video-box.limited {height:531px;overflow:hidden;}
+#page-tutorial .video-box.limited .bg-fade {background:url(../images/bg-white-fade.png) repeat-x bottom;text-align:center;width:100%;height:40px;position:absolute;bottom:0;left:0;display:block;}
+#page-tutorial .video-box.limited .bg-fade a {
 	border:1px solid #d0d9e4;
 	border-width:1px 1px 0 1px;
 	border-radius:5px 5px 0 0;
@@ -751,7 +751,7 @@ h3.w-big-icon em {display:inline-block;margin:0 0 0 15px;position:relative;top:-
 	position:absolute;
 	bottom:0;
 	left:50%;}
-#page-podcast .video-box.limited .bg-fade a .ui-icon {position:absolute;top:0;right:5px;}
+#page-tutorial .video-box.limited .bg-fade a .ui-icon {position:absolute;top:0;right:5px;}
 
 /* -------------------------------------------------------------------------------------------------
    Introduction
