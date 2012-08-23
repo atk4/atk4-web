@@ -23,7 +23,7 @@ $grid->js(true)->hide();
 
     <h2>Arguments</h2>
     <p>jQuery_Chain objects convert all method calls into respective jQuery code. The native PHP arguments are automatically converted into JavaScript. Native types such as integers and strings are properly quoted and converted into JavaScript.</p>
-    <p>If you specify array() then the chain will try to determine if it's an array or a hash. Hash is converted into {key:value,..} and PHP arrays are converted into ['a','b','c'] in JavaScript. If you use one chain as an argument to a method call on another chain, then that chain would be converted into JavaScript code first and then inserted appropratelly.</p>
+    <p>If you specify array() then the chain will try to determine if it's an array or a hash. Hash is converted into {key:value,..} and PHP arrays are converted into ['a','b','c'] in JavaScript. If you use one chain as an argument to a method call on another chain, then that chain would be converted into JavaScript code first and then inserted appropriately.</p>
 <?Code?>
 $x = 2+2;
 $js = $page->js(true)
