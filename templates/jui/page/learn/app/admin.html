@@ -195,8 +195,9 @@ Once this information is memorized, it will be accessible through $auth->get() a
             if($_GET['set_password']){
                 $auth = $this->add('RentalAuth');
                 $model = $auth->getModel()->loadData($_GET['set_password']);
-                $enc_p = $auth->encryptPassword($_GET['value'],$model->get('email'));
-                $model->set('password',$enc_p)->update();
+                //$enc_p = $auth->encryptPassword($_GET['value'],$model->get('email'));
+                //no longer needed as of version 4.2. Agile Toolkit 4.2 it will automatically add hook into user model to encrypt password when saved, but that only applies to the api->auth->mode
+                $model->set('password',$_GET['value'])->update();
                 $this->js()->univ()->successMessage('Changed password for '.$model->get('email'))
                     ->execute();
             }
