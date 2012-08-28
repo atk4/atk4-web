@@ -166,7 +166,7 @@ class RentalAuth extends BasicAuth {
     }
 
     /** Password validation routine, now using the model. */
-    function verifyCredintials($email,$password){
+    function verifyCredentials($email,$password){
         $model = $this->getModel()->loadBy('email',$email);
         if(!$model->isInstanceLoaded())return false;
         if($password == $model->get('password')){
