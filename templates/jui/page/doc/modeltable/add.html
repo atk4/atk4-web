@@ -23,7 +23,7 @@ class Model_Author extends Model_Table {
   }
 }
 <?/?>
-<p>A further use of the model can use function rel() to traverse towards other records. You must, however, load author record before traversing.</p>
+<p>A further use of the model can use function ref() to traverse towards other records. You must, however, load author record before traversing.</p>
 <?Code?>
 $author = $this->add('Model_Author');
 $author->load($id);
