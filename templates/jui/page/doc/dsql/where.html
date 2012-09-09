@@ -84,8 +84,8 @@ $q->where( $q->or()->where('a',1)->where('b>',5) );
 $q
  ->table('author')
  ->field('name')
- ->where('book_id', $q->dsql()->table('book')->where('is_rented','Y') );   // by default "id" field is is used.
-  // produces  select name from author where book_id in (select id from book where is_rented=:a)    array('a'=>'Y')
+ ->where('book_id', $q->dsql()->table('book')->where('is_rented','Y') );   // by default "id" field is used.
+  // produces: select name from author where book_id in (select id from book where is_rented=:a)    array('a'=>'Y')
   // Note: This is quite ineffective way for listing all authors who's books are rented
 
 $q
