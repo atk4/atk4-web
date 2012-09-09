@@ -16,26 +16,41 @@
 			}
 		},
 		{
-			"file": "/Users/rw/Sites/atk4web/templates/default/page/learn/understand/api/what.html",
+			"file": "/Users/rw/Sites/atk4web/templates/default/page/doc/api/extend.html",
 			"settings":
 			{
-				"buffer_size": 1452,
+				"buffer_size": 2266,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rw/Sites/atk4web/lib/Sitemap.php",
+			"file": "/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
 			"settings":
 			{
-				"buffer_size": 19717,
+				"buffer_size": 14158,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/rw/Sites/atk4web/templates/default/page/doc.html",
+			"file": "/Users/rw/Sites/atk4web/lib/Doc/Code.php",
 			"settings":
 			{
-				"buffer_size": 6173,
+				"buffer_size": 272,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/rw/Sites/atk4web/atk4/lib/AbstractObject.php",
+			"settings":
+			{
+				"buffer_size": 20267,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
 				"line_ending": "Unix"
 			}
 		}
@@ -43,9 +58,13 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 247.0,
+		"height": 47.0,
 		"selected_items":
 		[
+			[
+				":insta",
+				"Package Control: Install Package"
+			],
 			[
 				":w",
 				":w - Save"
@@ -77,10 +96,6 @@
 			[
 				":plugin",
 				"SublimeCodeIntel: Disable Plugin"
-			],
-			[
-				":insta",
-				"Package Control: Install Package"
 			],
 			[
 				":instal",
@@ -148,26 +163,50 @@
 	},
 	"file_history":
 	[
+		"/Users/rw/Sites/atk4web/templates/default/doc/view/doc_code.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/Menu/Light.php",
+		"/Users/rw/Sites/atk4web/lib/AtkMenu.php",
+		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/AbstractObject.php",
+		"/Users/rw/Sites/atk4web/atk4-addons/filestore/lib/Model/File.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Basic.php",
+		"/Users/rw/Sites/atk4web/templates/default/page/tutorial.html",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Field/DropDown.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Field/ValueList.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Field/CheckboxList.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Field/Radio.php",
+		"/Users/rw/Sites/atk4web/atk4/lib/Form/Field.php",
+		"/Users/rw/Sites/atk4web/templates/default/shared.html",
+		"/Users/rw/Sites/atk4web/page/tutorial/schedule.php",
+		"/Users/rw/Downloads/rozes_testi/rozes.i17b",
+		"/Users/rw/Downloads/rozes_testi/rozes.o17b",
+		"/Users/rw/Downloads/rozes_testi/rozes.i00a",
+		"/Users/rw/Downloads/rozes_testi/rozes.o23d",
+		"/Users/rw/Downloads/rozes_testi/rozes.i16d",
+		"/Users/rw/Downloads/rozes_testi/rozes.i27c",
+		"/Users/rw/Downloads/rozes_testi/rozes.i27b",
+		"/Users/rw/Downloads/rozes_testi/rozes.i26d",
+		"/Users/rw/Downloads/rozes_testi/rozes.i24c",
+		"/Users/rw/Downloads/rozes_testi/rozes.i23b",
+		"/Users/rw/Downloads/rozes_testi/rozes.i16b",
+		"/Users/rw/Downloads/rozes_testi/rozes.o16d",
+		"/Users/rw/Sites/atk4web/templates/default/page/doc.html",
+		"/Users/rw/Sites/atk4web/templates/default/page/learn/understand/api/what.html",
+		"/Users/rw/Sites/atk4web/templates/default/page/doc/api.html",
 		"/Users/rw/Sites/atk4web/atk4/lib/Model/Table.php",
 		"/Users/rw/Sites/atk4web/templates/js/atk4_univ.js",
 		"/Users/rw/Sites/atk4web/templates/default/page/new-doc.html",
-		"/Users/rw/Sites/atk4web/templates/default/page/doc.html",
 		"/Users/rw/Sites/atk4web/templates/default/page/new-doc-topic.html",
 		"/Users/rw/Sites/atk4web/atk4/lib/DB/dsql.php",
-		"/Users/rw/Sites/atk4web/templates/default/page/doc/api.html",
 		"/Users/rw/Sites/atk4web/atk4/lib/ApiWeb.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/Exception/StopInit.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/Exception/StopRender.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/ApiFrontend.php",
 		"/Users/rw/Sites/atk4web/templates/default/page/learn/understand/api/exec.html",
-		"/Users/rw/Sites/atk4web/atk4/lib/Form/Basic.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/ApiCLI.php",
-		"/Users/rw/Sites/atk4web/templates/default/shared.html",
-		"/Users/rw/Sites/atk4web/atk4/lib/Menu/Light.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/View.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/AbstractView.php",
 		"/Users/rw/Sites/atk4web/atk4/lib/Controller/MVCForm.php",
-		"/Users/rw/Sites/atk4web/lib/AtkMenu.php",
 		"/Users/rw/Sites/atk4web/page/doc.php",
 		"/Users/rw/Sites/atk4web/templates/default/page/doc-old.html",
 		"/Users/rw/Sites/atk4web/atk4/lib/Menu.php",
@@ -175,7 +214,6 @@
 		"/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
 		"/Users/rw/Sites/atk4web/templates/default/menu.html",
 		"/Users/rw/Sites/atk4web/atk4/templates/shared/menu.html",
-		"/Users/rw/Sites/atk4web/lib/Sitemap.php",
 		"/Users/rw/Sites/atk4web/lib/Doc/Page.php",
 		"/Users/rw/Sites/atk4web/page/doc/filestore.php",
 		"/Users/rw/Sites/atk4web/templates/jui/page/doc/filestore.html",
@@ -239,6 +277,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_Code",
+			"Sitemap",
+			"1",
+			"button",
+			"dropdown",
+			"regions",
 			"indow",
 			"StopRender",
 			"hook",
@@ -277,7 +321,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -292,8 +336,8 @@
 						"selection":
 						[
 							[
-								4901,
-								4901
+								0,
+								0
 							]
 						],
 						"settings":
@@ -303,25 +347,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1552.0,
+						"translation.y": 1530.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/rw/Sites/atk4web/templates/default/page/learn/understand/api/what.html",
+					"file": "/Users/rw/Sites/atk4web/templates/default/page/doc/api/extend.html",
 					"settings":
 					{
-						"buffer_size": 1452,
+						"buffer_size": 2266,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1452,
-								1452
+								698,
+								698
 							]
 						],
 						"settings":
@@ -331,25 +375,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 222.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/Users/rw/Sites/atk4web/lib/Sitemap.php",
+					"file": "/Users/rw/Sites/atk4web/lib/AgileToolkitWeb.php",
 					"settings":
 					{
-						"buffer_size": 19717,
+						"buffer_size": 14158,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2259,
-								2259
+								9768,
+								9768
 							]
 						],
 						"settings":
@@ -359,34 +403,86 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1064.0,
+						"translation.y": 3488.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "/Users/rw/Sites/atk4web/templates/default/page/doc.html",
+					"file": "/Users/rw/Sites/atk4web/lib/Doc/Code.php",
 					"settings":
 					{
-						"buffer_size": 6173,
+						"buffer_size": 272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4944,
-								4944
+								82,
+								82
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2084.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/rw/Sites/atk4web/atk4/lib/AbstractObject.php",
+					"settings":
+					{
+						"buffer_size": 20267,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5685,
+								5685
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2167.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -436,12 +532,68 @@
 		"selected_items":
 		[
 			[
-				"doc.html",
-				"templates/default/page/doc.html"
+				"abstractobje",
+				"atk4/lib/AbstractObject.php"
+			],
+			[
+				"doccode",
+				"lib/Doc/Code.php"
+			],
+			[
+				"agile",
+				"lib/AgileToolkitWeb.php"
+			],
+			[
+				"apiextend",
+				"templates/default/page/doc/api/extend.html"
+			],
+			[
+				"docapi",
+				"templates/default/page/doc/api.html"
+			],
+			[
+				"menulight",
+				"atk4/lib/Menu/Light.php"
+			],
+			[
+				"shared",
+				"templates/default/shared.html"
+			],
+			[
+				"atkmenu",
+				"lib/AtkMenu.php"
 			],
 			[
 				"sitemap",
 				"lib/Sitemap.php"
+			],
+			[
+				"abstractobject",
+				"atk4/lib/AbstractObject.php"
+			],
+			[
+				"filestorefile",
+				"atk4-addons/filestore/lib/Model/File.php"
+			],
+			[
+				"formbasic",
+				"atk4/lib/Form/Basic.php"
+			],
+			[
+				"tutorial",
+				"templates/default/page/tutorial.html"
+			],
+			[
+				"libformfield",
+				"atk4/lib/Form/Field.php"
+			],
+			[
+				"schedule",
+				"page/tutorial/schedule.php"
+			],
+			[
+				"doc.html",
+				"templates/default/page/doc.html"
 			],
 			[
 				"apiwhat",
@@ -492,10 +644,6 @@
 				"atk4/lib/ApiCLI.php"
 			],
 			[
-				"formbasic",
-				"atk4/lib/Form/Basic.php"
-			],
-			[
 				"apiexec",
 				"templates/default/page/learn/understand/api/exec.html"
 			],
@@ -520,14 +668,6 @@
 				"atk4/lib/View.php"
 			],
 			[
-				"menulight",
-				"atk4/lib/Menu/Light.php"
-			],
-			[
-				"shared",
-				"templates/default/shared.html"
-			],
-			[
 				"menu",
 				"lib/AtkMenu.php"
 			],
@@ -546,10 +686,6 @@
 			[
 				"menuhtml",
 				"templates/default/menu.html"
-			],
-			[
-				"atkmenu",
-				"lib/AtkMenu.php"
 			],
 			[
 				"agileweb",
@@ -658,10 +794,6 @@
 			[
 				"doc_codepad",
 				"templates/jui/doc/view/doc_codepad.html"
-			],
-			[
-				"agile",
-				"lib/AgileToolkitWeb.php"
 			],
 			[
 				"pageexample",

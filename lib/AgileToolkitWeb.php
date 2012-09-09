@@ -226,9 +226,14 @@ class AgileToolkitWeb extends ApiFrontend {
     }
     function enclose_Code($content,$tag){
         list($header,$content)=preg_split('/\n/',$content,2);
+        $this->page_object->add('documenting/View_Example',null,$tag)
+            ->setTitle($header)
+            ->set($content);
+            /*
         $this->page_object->add('Doc_Code',null,$tag)
             ->setName($header)
             ->setDescr($content);
+            */
     }
     function enclose_Html($content,$tag){
         list($header,$content)=preg_split('/\n/',$content,2);
