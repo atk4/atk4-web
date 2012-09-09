@@ -1,5 +1,4 @@
 
-
 <?$Content?>
 
 
@@ -25,7 +24,7 @@ Additionally you can use jQuery widget for client-side validation or filtering.
 
 
 <h3>Using validateField()</h3>
-<p>If you do not mind passing PHP code to be evaluated, than this is the easiest way to define form validators. First argument contains teh code which will be eval()'ed. You can reference field through $this and access current value through $this->get();</p>
+<p>If you do not mind passing PHP code to be evaluated, than this is the easiest way to define form validators. First argument contains the code which will be eval()'ed. You can reference field through $this and access current value through $this->get();</p>
 <?Codepad?>gui/validation#example1<?/?>
 
 <h3>Checking Inside isSubmitted() Condition</h3>
@@ -43,7 +42,7 @@ Additionally you can use jQuery widget for client-side validation or filtering.
 
 <h2>Client-side validation</h2>
 <p>
-Agile Toolkit leaves it up to developer to build client-side filters if necessary. A good example is the "univ().numerifcField()" field.The following function exists in univ.js, calling it on the field will introduce bindings for field validation.
+Agile Toolkit leaves it up to developer to build client-side filters if necessary. A good example is the "univ().numericField()" field.The following function exists in univ.js, calling it on the field will introduce bindings for field validation.
 </p>
 
 <code><pre>
@@ -54,6 +53,7 @@ numericField: function(){
 	});
 }
 </pre></code>
+
 
 <?Codepad?>gui/validation#example4<?/?>
 
