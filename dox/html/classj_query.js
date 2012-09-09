@@ -9,5 +9,6 @@ var classj_query =
     [ "cutRender", "classj_query.html#a5c5271439f9c731c81699011b6f4817d", null ],
     [ "getJS", "classj_query.html#a40ce49423c9efe5a735bb16e05941652", null ],
     [ "init", "classj_query.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
-    [ "postRender", "classj_query.html#a4b83c6742c46b3c454e4ed37f6948c98", null ]
+    [ "postRender", "classj_query.html#a4b83c6742c46b3c454e4ed37f6948c98", null ],
+    [ "$included", "classj_query.html#afc44ef0981a4c72dfc03aba296639cb4", null ]
 ];

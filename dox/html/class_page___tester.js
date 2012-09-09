@@ -6,6 +6,8 @@ var class_page___tester =
     [ "init", "class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "runTests", "class_page___tester.html#ac00829f333a919d9093b03f0bdeb1856", null ],
     [ "setVariance", "class_page___tester.html#a65d31646929e5292492c03ad94844e16", null ],
+    [ "silentTest", "class_page___tester.html#afefdbbb8b0a2cac17c1beff76dc0ed98", null ],
+    [ "$auto_test", "class_page___tester.html#a5183217eb44bed5f7e22c33887bef7ea", null ],
     [ "$input", "class_page___tester.html#a69b271260be394b90709736cccb22c76", null ],
     [ "$proper_responses", "class_page___tester.html#a8e6e441d221908129513d04b7b33c487", null ],
     [ "$responses", "class_page___tester.html#aa8987136fed3960c6c78dedb68a3b061", null ],

@@ -1,11 +1,8 @@
 var class_grid___advanced =
 [
-    [ "_getFieldType", "class_grid___advanced.html#a4095ff9f185fe6a1a935a01506566112", null ],
-    [ "_inlineUpdate", "class_grid___advanced.html#a4f084a9081cb5cb719c2ce73be0bccf0", null ],
     [ "_move_delete", "class_grid___advanced.html#a3a04052b3727152fba6e0fc1fe086d69", null ],
     [ "_performDelete", "class_grid___advanced.html#ae1ea2e59d23259de66f16af7c72226ef", null ],
-    [ "addButton", "class_grid___advanced.html#a15d788fafd3e40df19a34e902953f605", null ],
-    [ "addFormatter", "class_grid___advanced.html#a6fb64e1befc55edcd6612434e7493515", null ],
+    [ "addButton", "class_grid___advanced.html#a16e75a4f48d4675e0ff5be8647825391", null ],
     [ "addOrder", "class_grid___advanced.html#a3ee5031f29f0a213e6e9aaeb6b1cbaf6", null ],
     [ "addPaginator", "class_grid___advanced.html#aec465f1f11eb671f1d517de90bb6a610", null ],
     [ "addQuickSearch", "class_grid___advanced.html#a42bcfe82b8d826b0c156f6e464af76ba", null ],
@@ -72,7 +69,6 @@ var class_grid___advanced =
     [ "removeColumn", "class_grid___advanced.html#a9b9d5c303403ad0a4ee54b2a08e2779b", null ],
     [ "render", "class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb", null ],
     [ "setButtonClass", "class_grid___advanced.html#a38e5467664e0464a79133a3e4e9359c2", null ],
-    [ "setFormatter", "class_grid___advanced.html#a9c05ac402c458a3556d260b2add523e5", null ],
     [ "setInlineProperties", "class_grid___advanced.html#ad9394280e8d0ff75f0f9175fb3900fa9", null ],
     [ "setNoRecords", "class_grid___advanced.html#af070c2fe7c7fd07bea186e5b77a91de6", null ],
     [ "setShowSubmit", "class_grid___advanced.html#aaa674853d643e7a96da380bcf22d6938", null ],

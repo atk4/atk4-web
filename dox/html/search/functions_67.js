@@ -2,7 +2,7 @@ var searchData=
 [
   ['gatherdetails',['gatherDetails',['../class_logger.html#a5c73763b40de4dfbdeb0a5542218cec3',1,'Logger']]],
   ['get',['get',['../class_auth___basic.html#a7aa72bd58f057c269e8bd1047d51d869',1,'Auth_Basic\get()'],['../class_d_b__dsql.html#ac33ee765f5ad9f134540bac393721cfe',1,'DB_dsql\get()'],['../class_field.html#af0b5ba0d363042a841106e973f5d0ed8',1,'Field\get()'],['../class_form___basic.html#a1a1834e5e126d184909785c0a0fdda69',1,'Form_Basic\get()'],['../class_form___field___date_picker.html#ac33ee765f5ad9f134540bac393721cfe',1,'Form_Field_DatePicker\get()'],['../class_form___field___date_selector.html#ac33ee765f5ad9f134540bac393721cfe',1,'Form_Field_DateSelector\get()'],['../class_form___field.html#ac33ee765f5ad9f134540bac393721cfe',1,'Form_Field\get()'],['../class_gi_template.html#a618b9aff987c3158ce9cd4c13fa64a67',1,'GiTemplate\get()'],['../class_model.html#a917ea926baa0548ceef7d4c77e97975f',1,'Model\get()'],['../class_s_mlite.html#a618b9aff987c3158ce9cd4c13fa64a67',1,'SMlite\get()'],['../class_t_mail___basic.html#a1b95db6d7a03f3a475681eff1dd8f952',1,'TMail_Basic\get()'],['../class_t_mail___compat.html#ab53bb20c30d2c242589a1bea7b507e86',1,'TMail_Compat\get()'],['../class_u_r_l.html#a487d0fa2401e31e7c7f2516ce3df1649',1,'URL\get()']]],
-  ['getactualfields',['getActualFields',['../class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e',1,'Controller_Data_Array\getActualFields()'],['../class_model___table.html#aba32b3147128bbba0c1cc5e41d680ceb',1,'Model_Table\getActualFields()']]],
+  ['getactualfields',['getActualFields',['../class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e',1,'Controller_Data_Array\getActualFields()'],['../class_model.html#aba32b3147128bbba0c1cc5e41d680ceb',1,'Model\getActualFields()']]],
   ['getadditionalmessage',['getAdditionalMessage',['../class_base_exception.html#a45461949e31844cd8d45696692ba3ba6',1,'BaseException']]],
   ['getall',['getAll',['../class_auth___basic.html#aba0d5b303383fb5b1fabb5fd01cd3800',1,'Auth_Basic\getAll()'],['../class_d_b__dsql.html#aba0d5b303383fb5b1fabb5fd01cd3800',1,'DB_dsql\getAll()']]],
   ['getallfields',['getAllFields',['../class_form___basic.html#a9fc25f3ca3971583e9a1977dbdd52df2',1,'Form_Basic']]],
@@ -21,6 +21,7 @@ var searchData=
   ['getcolumn',['getColumn',['../class_grid___advanced.html#afa3923ca869a04e880535ce6c8868c0c',1,'Grid_Advanced']]],
   ['getconfig',['getConfig',['../class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b',1,'ApiCLI']]],
   ['getcurrentindex',['getCurrentIndex',['../class_grid___advanced.html#af1f578ffd68595d8c0cfbb49c366ca8f',1,'Grid_Advanced']]],
+  ['getdebugquery',['getDebugQuery',['../class_d_b__dsql.html#a26a6e4a5852ff6b16fff071b7a6ed3d1',1,'DB_dsql']]],
   ['getdefault',['getDefault',['../class_form___field.html#adc30a2a4d3e48cb6aee21562afbc4022',1,'Form_Field']]],
   ['getdefaulthref',['getDefaultHref',['../class_menu___basic.html#a43337484332528d943e8cc4ea4092f6e',1,'Menu_Basic\getDefaultHref()'],['../class_menu___compat.html#a43337484332528d943e8cc4ea4092f6e',1,'Menu_Compat\getDefaultHref()']]],
   ['getdefaultsettings',['getDefaultSettings',['../class_s_mlite.html#a85f0210ef14dfbc9bd929a2409f58432',1,'SMlite']]],

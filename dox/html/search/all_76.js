@@ -6,7 +6,7 @@ var searchData=
   ['validatenotnull',['validateNotNULL',['../class_form___field.html#ac04c21f5b0ea4f5e516f9d7f80340d00',1,'Form_Field']]],
   ['validitycheck_2ephp',['ValidityCheck.php',['../_validity_check_8php.html',1,'']]],
   ['verifycredentials',['verifyCredentials',['../class_auth___basic.html#af8e70e879fc2d5e740c705991f6c0ec5',1,'Auth_Basic']]],
-  ['verifycredintials',['verifyCredintials',['../class_auth___basic.html#ae89e153e79342edaf485ab1d64570889',1,'Auth_Basic\verifyCredintials()'],['../class_s_q_l_auth.html#a639b94f76a9d3f4004b63592bace6c0b',1,'SQLAuth\verifyCredintials()']]],
+  ['verifycredintials',['verifyCredintials',['../class_auth___basic.html#ae89e153e79342edaf485ab1d64570889',1,'Auth_Basic']]],
   ['versionrequirement',['versionRequirement',['../class_api_c_l_i.html#a4c5f6bfd3128096d61e207379a03e28c',1,'ApiCLI']]],
   ['view',['View',['../class_view.html',1,'']]],
   ['view_2ephp',['View.php',['../_view_8php.html',1,'']]],

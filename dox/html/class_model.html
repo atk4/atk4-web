@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aeb33362b878cd956ea9edc762795a310">addField</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0471333566fd85931488081ca90a6ede">set</a> ($name, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a917ea926baa0548ceef7d4c77e97975f">get</a> ($name=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aba32b3147128bbba0c1cc5e41d680ceb">getActualFields</a> ($group=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ad3a76dfe369f650dc81085d4913c40fc">setActualFields</a> (array $fields)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0b54d7d1a1c7cda615d761370e5067d0">setDirty</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a3f07a4aa73e71d525744db933bc2aff4">loaded</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aa13d0535d22492ba710e3419a7b92ac1">unload</a> ()</td></tr>
@@ -154,6 +156,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae97941710d863131c700f069b109991e">$id</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a48c01c8cae9e7c683f03899c087d010c">$dirty</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a4cb30b2b3a5b1c27829438846a80e667">$actual_fields</a> = false</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of a Generic <a class="el" href="class_model.html">Model</a>. <a class="el" href="">Model has fields which you add with addField() and access through get() and set() You can also load and save model through different storage controllers.  This model is designed to work with linear, non-SQL resources, if you are looking to have support for joins, ordering, advanced SQL syntax, look into Model_Table  It's recommended that you create your own model class based on generic model where you define fields, but you may also use instance of generic model.  Use: class Model_PageCache extends Model { function init(){ parent::init(); $this-&gt;addField('content')-&gt;allowHtml(true); } function generateContent(){ //complex computation // ... $this-&gt;set('content',$content); } }  $pc=$this-&gt;add('Model_PageCache')-&gt;setSource('Memcached'); $pc-&gt;load($this-&gt;api-&gt;page);  if(!$pc-&gt;loaded()){ $pc-&gt;set('page',$this-&gt;api-&gt;page'); $pc-&gt;generateContent(); $pc-&gt;save(); }   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
@@ -249,6 +252,25 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Return value of the field. If unspecified will return array of all fields. </p>
+
+</div>
+</div>
+<a class="anchor" id="aba32b3147128bbba0c1cc5e41d680ceb"></a><!-- doxytag: member="Model::getActualFields" ref="aba32b3147128bbba0c1cc5e41d680ceb" args="($group=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#aba32b3147128bbba0c1cc5e41d680ceb">getActualFields</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>group</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returs list of fields which belong to specific group. You can add fields into groups when you define them and it can be used by the front-end to determine which fields needs to be displayed.</p>
+<p>If no group is specified, then all non-system fields are displayed for backwards compatibility. </p>
 
 </div>
 </div>
@@ -574,6 +596,24 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad3a76dfe369f650dc81085d4913c40fc"></a><!-- doxytag: member="Model::setActualFields" ref="ad3a76dfe369f650dc81085d4913c40fc" args="(array $fields)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#ad3a76dfe369f650dc81085d4913c40fc">setActualFields</a> </td>
+          <td>(</td>
+          <td class="paramtype">array $&#160;</td>
+          <td class="paramname"><em>fields</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Default set of fields which will be included into further queries </p>
+
+</div>
+</div>
 <a class="anchor" id="a0b54d7d1a1c7cda615d761370e5067d0"></a><!-- doxytag: member="Model::setDirty" ref="a0b54d7d1a1c7cda615d761370e5067d0" args="($name)" -->
 <div class="memitem">
 <div class="memproto">
@@ -666,6 +706,19 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a4cb30b2b3a5b1c27829438846a80e667"></a><!-- doxytag: member="Model::$actual_fields" ref="a4cb30b2b3a5b1c27829438846a80e667" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$actual_fields = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a6efc15b5a2314dd4b5aaa556a375c6d6"></a><!-- doxytag: member="Model::$data" ref="a6efc15b5a2314dd4b5aaa556a375c6d6" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -787,7 +840,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_model.html">Model</a>      </li>
 
-    <li class="footer">Generated on Tue Jun 12 2012 00:38:46 for Agile Toolkit by
+    <li class="footer">Generated on Fri Aug 31 2012 01:35:15 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

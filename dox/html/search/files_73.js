@@ -4,7 +4,6 @@ var searchData=
   ['slider_2ephp',['Slider.php',['../_slider_8php.html',1,'']]],
   ['smlite_2ephp',['SMlite.php',['../_s_mlite_8php.html',1,'']]],
   ['smliteexception_2ephp',['SMliteException.php',['../_s_mlite_exception_8php.html',1,'']]],
-  ['sqlauth_2ephp',['SQLAuth.php',['../_s_q_l_auth_8php.html',1,'']]],
   ['sqlexception_2ephp',['SQLException.php',['../_s_q_l_exception_8php.html',1,'']]],
   ['sqlite_2ephp',['sqlite.php',['../sqlite_8php.html',1,'']]],
   ['static_2ephp',['static.php',['../static_8php.html',1,'']]],

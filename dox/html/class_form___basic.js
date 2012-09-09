@@ -1,6 +1,6 @@
 var class_form___basic =
 [
-    [ "addButton", "class_form___basic.html#a16e75a4f48d4675e0ff5be8647825391", null ],
+    [ "addButton", "class_form___basic.html#a9b2a31acba779f6562d33fc912ea1b84", null ],
     [ "addComment", "class_form___basic.html#a5d96d554c37ec83acb199959d54f5495", null ],
     [ "addCondition", "class_form___basic.html#aa42cd9642bd76465ca5c3f7209ff5aa8", null ],
     [ "addConditionFromGET", "class_form___basic.html#a6e6c590308704225000dd718548145a6", null ],

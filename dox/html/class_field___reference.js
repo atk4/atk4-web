@@ -1,6 +1,7 @@
 var class_field___reference =
 [
     [ "calculateSubQuery", "class_field___reference.html#a5b903297be0fd1613a40d6186c5b7efd", null ],
+    [ "caption", "class_field___reference.html#a4bc3ea2bb830344439bc4a8a58347d9b", null ],
     [ "destroy", "class_field___reference.html#aa118461de946085fe42989193337044a", null ],
     [ "getDereferenced", "class_field___reference.html#ae2936ef23e0f226f965e10fa805f0553", null ],
     [ "getModel", "class_field___reference.html#a0a086ca877b41192556a2de7e4a97b98", null ],

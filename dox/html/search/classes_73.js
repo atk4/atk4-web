@@ -4,7 +4,6 @@ var searchData=
   ['smliteexception',['SMliteException',['../class_s_mlite_exception.html',1,'']]],
   ['sql_5fmany',['SQL_Many',['../class_s_q_l___many.html',1,'']]],
   ['sql_5frelation',['SQL_Relation',['../class_s_q_l___relation.html',1,'']]],
-  ['sqlauth',['SQLAuth',['../class_s_q_l_auth.html',1,'']]],
   ['sqlexception',['SQLException',['../class_s_q_l_exception.html',1,'']]],
   ['system_5fhtmlsanitizer',['System_HTMLSanitizer',['../class_system___h_t_m_l_sanitizer.html',1,'']]],
   ['system_5fprocessio',['System_ProcessIO',['../class_system___process_i_o.html',1,'']]],

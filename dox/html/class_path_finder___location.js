@@ -9,6 +9,7 @@ var class_path_finder___location =
     [ "setBasePath", "class_path_finder___location.html#a317e16be08edc5bc1297d0884d3ed5b1", null ],
     [ "setBaseURL", "class_path_finder___location.html#a7f2d67063d9ee32310dd39bd6f81271f", null ],
     [ "setParent", "class_path_finder___location.html#a3b949fc022c82eb25e8650e0e01404fa", null ],
+    [ "setRelativePath", "class_path_finder___location.html#aea0cd12c3cf5e35841dee3618b3fba21", null ],
     [ "$auto_track_element", "class_path_finder___location.html#a1518f6633c881d3d43b9e4cdc4eaeb4c", null ],
     [ "$base_path", "class_path_finder___location.html#a5e0157e4beef4ad984a25d2a54293184", null ],
     [ "$base_url", "class_path_finder___location.html#a6886427c9c643f707fcb35c018049bc7", null ],

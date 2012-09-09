@@ -1,6 +1,5 @@
 var files =
 [
-    [ "/Users/rw/Sites/atk42/atk4/loader.php", "loader_8php.html", "loader_8php" ],
     [ "/Users/rw/Sites/atk42/atk4/lib/AbstractController.php", "_abstract_controller_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/AbstractModel.php", "_abstract_model_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/AbstractObject.php", "_abstract_object_8php.html", null ],
@@ -59,7 +58,6 @@ var files =
     [ "/Users/rw/Sites/atk42/atk4/lib/QuickSearch.php", "_quick_search_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/SMlite.php", "_s_mlite_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/SMliteException.php", "_s_mlite_exception_8php.html", null ],
-    [ "/Users/rw/Sites/atk42/atk4/lib/SQLAuth.php", "_s_q_l_auth_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/SQLException.php", "_s_q_l_exception_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/static.php", "static_8php.html", "static_8php" ],
     [ "/Users/rw/Sites/atk42/atk4/lib/Tabs.php", "_tabs_8php.html", null ],
@@ -71,6 +69,7 @@ var files =
     [ "/Users/rw/Sites/atk42/atk4/lib/Controller/Compat.php", "_controller_2_compat_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/Controller/MVCForm.php", "_controller_2_m_v_c_form_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/Controller/MVCGrid.php", "_controller_2_m_v_c_grid_8php.html", null ],
+    [ "/Users/rw/Sites/atk42/atk4/lib/Controller/MVCView.php", "_m_v_c_view_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/Controller/Data/Array.php", "_array_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/Controller/Data/ArrayAssoc.php", "_array_assoc_8php.html", null ],
     [ "/Users/rw/Sites/atk42/atk4/lib/DB/dsql.php", "dsql_8php.html", null ],

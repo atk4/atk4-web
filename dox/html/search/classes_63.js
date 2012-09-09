@@ -8,5 +8,6 @@ var searchData=
   ['controller_5fdata_5farrayassoc',['Controller_Data_ArrayAssoc',['../class_controller___data___array_assoc.html',1,'']]],
   ['controller_5fmvcform',['Controller_MVCForm',['../class_controller___m_v_c_form.html',1,'']]],
   ['controller_5fmvcgrid',['Controller_MVCGrid',['../class_controller___m_v_c_grid.html',1,'']]],
+  ['controller_5fmvcview',['Controller_MVCView',['../class_controller___m_v_c_view.html',1,'']]],
   ['crud',['CRUD',['../class_c_r_u_d.html',1,'']]]
 ];

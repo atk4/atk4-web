@@ -119,10 +119,9 @@ Inheritance diagram for Paginator_Basic:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a> ($<a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a804cb1e1ee42576d759e1b20f5c93226">setSource</a> (&amp;$s)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a145d787e8654bd4ae5ac3a22c58aa850">applyHook</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a044e88f28bdb160a56a057815592d10f">setSource</a> (&amp;$source)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a27799930621fd2a01be62e33165db4a5">defaultSpot</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -135,22 +134,6 @@ Data Fields</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_paginator.html">Paginator</a> needs to have source set (which can be either dq or array). It will render itself into parent </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a145d787e8654bd4ae5ac3a22c58aa850"></a><!-- doxytag: member="Paginator_Basic::applyHook" ref="a145d787e8654bd4ae5ac3a22c58aa850" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_paginator___basic.html#a145d787e8654bd4ae5ac3a22c58aa850">applyHook</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a27799930621fd2a01be62e33165db4a5"></a><!-- doxytag: member="Paginator_Basic::defaultSpot" ref="a27799930621fd2a01be62e33165db4a5" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -189,26 +172,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4be4055f3361d4800e16bc2e2e38cda6"></a><!-- doxytag: member="Paginator_Basic::init" ref="a4be4055f3361d4800e16bc2e2e38cda6" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Initialize object. Always call parent </p>
-<p>This method is called for initialization</p>
-
-<p>Reimplemented from <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="af9932375eba7ad6a25892a767e812f31"></a><!-- doxytag: member="Paginator_Basic::ipp" ref="af9932375eba7ad6a25892a767e812f31" args="($ipp)" -->
 <div class="memitem">
 <div class="memproto">
@@ -227,21 +190,41 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a804cb1e1ee42576d759e1b20f5c93226"></a><!-- doxytag: member="Paginator_Basic::setSource" ref="a804cb1e1ee42576d759e1b20f5c93226" args="(&amp;$s)" -->
+<a class="anchor" id="a8c9955ce8c33176bd3548ff0b4a8e67f"></a><!-- doxytag: member="Paginator_Basic::recursiveRender" ref="a8c9955ce8c33176bd3548ff0b4a8e67f" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_paginator___basic.html#a804cb1e1ee42576d759e1b20f5c93226">setSource</a> </td>
+          <td class="memname"><a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> </td>
           <td>(</td>
-          <td class="paramtype">&amp;$&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Specify DQ object </p>
+<p>Recursively renders all views. Calls <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
+<p>function <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); } </p>
+
+<p>Reimplemented from <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">AbstractView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a044e88f28bdb160a56a057815592d10f"></a><!-- doxytag: member="Paginator_Basic::setSource" ref="a044e88f28bdb160a56a057815592d10f" args="(&amp;$source)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_paginator___basic.html#a044e88f28bdb160a56a057815592d10f">setSource</a> </td>
+          <td>(</td>
+          <td class="paramtype">&amp;$&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a custom source. Must be an object with foundRows() method </p>
 
 </div>
 </div>
@@ -321,7 +304,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_paginator___basic.html">Paginator_Basic</a>      </li>
 
-    <li class="footer">Generated on Tue Jun 12 2012 00:38:47 for Agile Toolkit by
+    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

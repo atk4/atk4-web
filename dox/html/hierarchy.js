@@ -4,9 +4,7 @@ var hierarchy =
       [ "AbstractController", "class_abstract_controller.html", [
         [ "Auth_Basic", "class_auth___basic.html", [
           [ "Auth", "class_auth.html", null ],
-          [ "BasicAuth", "class_basic_auth.html", [
-            [ "SQLAuth", "class_s_q_l_auth.html", null ]
-          ] ]
+          [ "BasicAuth", "class_basic_auth.html", null ]
         ] ],
         [ "Controller", "class_controller.html", null ],
         [ "Controller_Compat", "class_controller___compat.html", null ],
@@ -15,6 +13,7 @@ var hierarchy =
         ] ],
         [ "Controller_MVCForm", "class_controller___m_v_c_form.html", null ],
         [ "Controller_MVCGrid", "class_controller___m_v_c_grid.html", null ],
+        [ "Controller_MVCView", "class_controller___m_v_c_view.html", null ],
         [ "DB", "class_d_b.html", [
           [ "DB_prefixed", "class_d_b__prefixed.html", null ]
         ] ],

@@ -7,8 +7,9 @@ var searchData=
   ['multiselect_2ephp',['multiSelect.php',['../multi_select_8php.html',1,'']]],
   ['mvcform_2ephp',['MVCForm.php',['../_m_v_c_form_8php.html',1,'']]],
   ['mvcform_2ephp',['MVCForm.php',['../_controller_2_m_v_c_form_8php.html',1,'']]],
-  ['mvcgrid_2ephp',['MVCGrid.php',['../_controller_2_m_v_c_grid_8php.html',1,'']]],
   ['mvcgrid_2ephp',['MVCGrid.php',['../_m_v_c_grid_8php.html',1,'']]],
-  ['mysql_2ephp',['mysql.php',['../ite_2mysql_8php.html',1,'']]],
-  ['mysql_2ephp',['mysql.php',['../dsql_2mysql_8php.html',1,'']]]
+  ['mvcgrid_2ephp',['MVCGrid.php',['../_controller_2_m_v_c_grid_8php.html',1,'']]],
+  ['mvcview_2ephp',['MVCView.php',['../_m_v_c_view_8php.html',1,'']]],
+  ['mysql_2ephp',['mysql.php',['../dsql_2mysql_8php.html',1,'']]],
+  ['mysql_2ephp',['mysql.php',['../ite_2mysql_8php.html',1,'']]]
 ];

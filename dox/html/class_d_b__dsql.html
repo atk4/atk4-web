@@ -201,12 +201,14 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a8286947e1f3dc71c4b04f03269860f5a">do_getHash</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a48101134c570bf8cbcb59cf290815194">calc_found_rows</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a78250827a715cdf14ebf6d3b6029118f">foundRows</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a496d6423a34cf502af6fdc56fa25eed0">preexec</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#ae619dcf2218c21549cb65d875bbc6c9c">rewind</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#acea62048bfee7b3cd80ed446c86fb78a">next</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#af343507d1926e6ecf964625d41db528c">current</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a729e946b4ef600e71740113c6d4332c0">key</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#abb9f0d6adf1eb9b3b55712056861a247">valid</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aaed74f7942d3fc56582e99324500e87b">debug</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a26a6e4a5852ff6b16fff071b7a6ed3d1">getDebugQuery</a> ($r=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a30bcc620a40b8f755dbafb28ff1c76d4">_render</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -223,9 +225,11 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a85ae3e64cd40e9564adceb010085e9dd">$debug</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a354ccb93d5a00b90fc28fec508b15332">$param_base</a> = 'a'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#af5a2f72cb3ef850336d2718a59f4ffad">$sql_templates</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#aa63113a5b1cc2bf64ee824ab64f9e5c6">$id_field</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a0ade8c219b8908393de79f366bb4dc4b">$bt</a> = '`'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a8e2b125932eca239e5221c9cdcb0e78e">$_iterating</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql.html#a6800b08b24d50476fb22d860c21eda87">$preexec</a> = false</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of PDO-compatible dynamic queries <a class="el" href="">Use: $this-&gt;api-&gt;dbConnect(); $query = $this-&gt;api-&gt;db-&gt;dsql();   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
@@ -936,6 +940,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a26a6e4a5852ff6b16fff071b7a6ed3d1"></a><!-- doxytag: member="DB_dsql::getDebugQuery" ref="a26a6e4a5852ff6b16fff071b7a6ed3d1" args="($r=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#a26a6e4a5852ff6b16fff071b7a6ed3d1">getDebugQuery</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>r</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a243b8706719cb889c4667547e0e1292d"></a><!-- doxytag: member="DB_dsql::getField" ref="a243b8706719cb889c4667547e0e1292d" args="($fld)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1337,6 +1358,22 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Change prefix for parametric values. Useful if you are combining multiple queries. </p>
+
+</div>
+</div>
+<a class="anchor" id="a496d6423a34cf502af6fdc56fa25eed0"></a><!-- doxytag: member="DB_dsql::preexec" ref="a496d6423a34cf502af6fdc56fa25eed0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql.html#a496d6423a34cf502af6fdc56fa25eed0">preexec</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -2063,6 +2100,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa63113a5b1cc2bf64ee824ab64f9e5c6"></a><!-- doxytag: member="DB_dsql::$id_field" ref="aa63113a5b1cc2bf64ee824ab64f9e5c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$id_field</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>required for non-id based tables </p>
+
+</div>
+</div>
 <a class="anchor" id="a0f5965a14f82030869799a6391504245"></a><!-- doxytag: member="DB_dsql::$main_table" ref="a0f5965a14f82030869799a6391504245" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -2116,6 +2167,19 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>List of PDO parametical arguments for a query. Used only during rendering. </p>
+
+</div>
+</div>
+<a class="anchor" id="a6800b08b24d50476fb22d860c21eda87"></a><!-- doxytag: member="DB_dsql::$preexec" ref="a6800b08b24d50476fb22d860c21eda87" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$<a class="el" href="class_d_b__dsql.html#a496d6423a34cf502af6fdc56fa25eed0">preexec</a> = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -2191,7 +2255,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b__dsql.html">DB_dsql</a>      </li>
 
-    <li class="footer">Generated on Tue Jun 12 2012 00:38:45 for Agile Toolkit by
+    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
