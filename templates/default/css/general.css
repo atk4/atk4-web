@@ -227,7 +227,7 @@ button.button, .button {
     cursor:pointer;
     border:1px solid #000;
     position:relative;
-    width:1;
+/*    width:1; by romans */
     overflow:visible}
 input.button[class] {width:auto;}
 /* BODY:nth-of-type(1) .button, x:-moz-any-link, x:default {padding:0.4em 0.7em 0.2em 0.7em;}   */
@@ -1002,8 +1002,6 @@ p {line-height:inherit;}
     background:-moz-linear-gradient(top, #00070f, #002d5e);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00070f", endColorstr="#002d5e");}
 .ui-dialog.ui-widget-content {
-	position:fixed !important;
-	top:50px !important;
 	padding:0;
 	border:none;
 	-webkit-box-shadow:0 5px 50px rgba(0,17,34,0.7);

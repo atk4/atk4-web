@@ -214,7 +214,7 @@ function normalize(){
 $form=$page->add('Form');
 $form->addField('password','password')
   ->add('Text',null,'after_field')
-  ->set('<ins>Use Spaces!</ins>');
+  ->setHTML('<ins>Use Spaces!</ins>');
 $form->setFormClass('vertical');
 $form->addSubmit();
 if($form->isSubmitted()){
@@ -243,9 +243,10 @@ $page->add('Text')->set($url);
 
 <?Example?>
 class MyDI extends Text {
+    public $text;
     function init(){
         parent::init();
-        $this->set($this->di_config['text']);
+        $this->set($this->text);
     }
 }
 
@@ -286,12 +287,11 @@ function addDefaultLocations($pathfinder,$base_dir){
         <p>Adding some consistency by always moving column with delete button to be the last in grid.</p>
 
 <?Example?>
-$page->api->dbConnect();
 $grid=$page->add('Grid');
+$grid->setModel('Employee');
 $grid->addColumn('delete','delete');
 $grid->addColumn('text','name');
 $grid->addColumn('text','surname');
-$grid->setSource('user');
 $grid->dq->limit(5);
 <?/?>
 
@@ -304,7 +304,7 @@ $grid->addColumn('text','name');
 $grid->addColumn('money','salary');
 $grid->addColumn('button','b1');
 $grid->addColumn('button','b2')->setButtonClass('red ');
-$grid->setStaticSource(array(
+$grid->setSource(array(
             array('name'=>'John','salary'=>'2000'),
             array('name'=>'Peter','salary'=>'4200'),
             array('name'=>'Minus','salary'=>'-200'),
@@ -490,7 +490,7 @@ $grid->setStaticSource(array(
         <p>use 4nd argument of array('grid_stripped') to use this new template. Remember that you can always add your own templates to further ehance look of your objects.</p>
 <?Example?>
 $form=$page->add('Form');
-$form->addField('autocomplete','test')
+$form->addField('dropdown','test')
     ->setValueList(
             array('John','Peter','Jane'));
 <?/?>

@@ -11,14 +11,14 @@ class Doc_View extends View {
 	public $type;
 
 	function set($a,$b=null){
-		$this->template->set($a,$b);
+		$this->template->setHTML($a,$b);
 		return $this;
 	}
 	function setName($n){
 		return $this->set('name',$n);
 	}
 	function setDescr($d){
-		$this->add('Text')->set($d);
+		$this->add('Text')->setHTML($d);
 		return $this;
 	}
 	function defaultTemplate(){

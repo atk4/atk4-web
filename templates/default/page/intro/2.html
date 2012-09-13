@@ -1,14 +1,14 @@
 <?$Content?>
 
-<div class="g-row">
-  <div class="g-8">
 <h1>Web User Interface</h1>
+
+    <img style="float: right" src="<?template?>images/screenshots/message_to_romans.png<?/?>"/>
 
 <p>From all the PHP frameworks and toolkits who tried to create User Interface you will find Agile Toolkit to contain the perfect mix between "template customizability" and "content awareness". In Agile Toolkit you have a full control over every line of HTML produced. At the same time Agile Toolkit offer AJAX and JavaScript integration on object-level allowing you to reload objects on the page, assign JavaScript and AJAX events.</p>
 
 <p>To make things simpler, Agile Toolkit already comes with a full-featured theme for you.</p>
 
-<h2>Agile Toolkit CSS Framework</h2>
+<h3>Agile Toolkit CSS Framework</h3>
 <p>In it's aim for maximum flexibility, Agile Toolkit CSS framework is built on top of jQuery UI CSS Framework. That means not only it looks awesome, but your UI will be compatible with thousands of jQuery plugins relying on the same set of CSS classes. You will find CSS framework similar and somewhat compatible with Bootstrap.<ul>
 
   <li>Compatible with jQuery UI Themeroller. Generate a theme and drop into your templates folder.</li>
@@ -19,10 +19,6 @@
   <li>Works out of the box. You don't need to be a nerd to use it.</li>
 </ul></p>
 
-  </div><div class="g-4">
-    <img src="<?template?>images/screenshots/message_to_romans.png<?/?>"/>
-  </div>
-</div>
 
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="http://example.agiletoolkit.org?page=playground" target="_blank">Demo of CSS framework elements</a><br/>
 <i class="atk-icon atk-icons-red atk-icon-arrows-right"></i><a href="<?page?>doc/css<?/?>">Full Documentation on Agile CSS Framework</a>
@@ -30,8 +26,8 @@
 <h2>View Objects</h2>
 <p>Agile Toolkit takes everything there is to make a fully-featured form and hides it behind a simple "Form" class. This class relies on CSS stylesheets, jQuery UI widget, other views such as buttons and fields, jQuery Chains, Form templates. However to use form, you need to know very little of that:</p>
 
-<div class="g-row">
-  <div class="g-8">
+<div class="atk-row">
+  <div class="span8">
 
 <?Code?>
 $form=$page->add('Form');
@@ -41,7 +37,7 @@ $form->addField('text','Body');
 $form->addSubmit('Send');
 $form->addButton('Cancel');
 <?/?>
-  </div><div class="g-4">
+  </div><div class="span4">
     <img src="<?template?>images/ugly_images/form.png<?/?>"/>
   </div>
 </div>

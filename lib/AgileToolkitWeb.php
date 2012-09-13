@@ -228,7 +228,7 @@ class AgileToolkitWeb extends ApiFrontend {
         list($header,$content)=preg_split('/\n/',$content,2);
         $this->page_object->add('documenting/View_Example',null,$tag)
             ->setTitle($header)
-            ->set($content);
+            ->set($content,'noexec');
             /*
         $this->page_object->add('Doc_Code',null,$tag)
             ->setName($header)

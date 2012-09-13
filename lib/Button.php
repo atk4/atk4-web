@@ -11,7 +11,7 @@ class Button extends View_Button {
         return $this;
     }
 	function render(){
-		$this->addClass($this->color);
+		$this->addClass($this->color.' button');
 		parent::render();
 	}
 }
