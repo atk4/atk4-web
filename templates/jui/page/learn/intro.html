@@ -6,22 +6,22 @@
 
     <p>Agile Toolkit is a set of cooperating PHP classes and supporting assets that make up a reusable design for general purpose web software.</p>
 
-    <p>Allow me to rephrase this in a simpler terms.</p>
+    <p>Allow me to rephrase this in simpler terms.</p>
 
-    <p>When a developer is working on a software, he is facing some challenges. By applying his vast experience and software design skills he might come up with a great solutions. Quality of those solutions are a key to the speed, security, ease of use and flexibility of the resulting code. After solving these challenges continuously collection of "solutions" emerges.</p>
+    <p>When a developer is working on software, he faces a number of challenges. By applying his vast experience and software design skills he might come up with great solutions. The quality of those solutions are a key to the speed, security, ease of use and flexibility of the resulting code. After solving these challenges many times, a collection of "solutions" emerge.</p>
 
-    <p>Generally PHP framework is a collection of these "solutions". Authors of PHP frameworks decide what "solutions" to include into their framework. To make it easier for others to understand and use the framework, the approach to each problem needs to be consistent, solutions must be precise and easy to understand. For decades now lots and lots of PHP Classes have been in circulation which tackle certain problems under different ways to distribute and package them: PEAR, Zend, Symfony, PHPClasses.org and so on</p>
+    <p>Simply stated, a PHP framework is a collection of these "solutions". Authors of PHP frameworks decide what "solutions" to include into their framework. To make it easier for others to understand and use the framework, the approach to each problem needs to be consistent; solutions must be precise and easy to understand. For decades now, lots and lots of PHP Classes have been in circulation which tackle certain problems in different ways and from time to time these classes have been packaged and distributed: PEAR, Zend, Symfony, PHPClasses.org and so on</p>
 
-    <p>Agile Toolkit is a collection of PHP classes. Agile Toolkit is designed to solve certain problems. Agile Toolkit is based on it's own philosophy and also on a several development paradigms. Agile toolkit includes support files (HTML, CSS, JavaScript). Every file included in the distribution is a result of 10-year refinement and re-use across thousands of web projects: big and small.</p>
+    <p>Agile Toolkit is also a collection of PHP classes which is designed to solve certain problems. Agile Toolkit is based on it's own philosophy and also on several development paradigms. Agile toolkit includes support files (HTML, CSS, JavaScript). Every file included in the distribution is a result of 10-year refinement and re-use across thousands of web projects, big and small.</p>
 
     <p>It is the choice of principles, clever decisions and great ideas that make Agile Toolkit special.</p>
 
     <h2>Agile Toolkit Core Concepts</h2>
 
-    <p>To use Agile Toolkit successfully, you must understand it's concepts. The most significant concept is that everything is an object. Your application is an object, the page is an object, database connection is an object and a buttons are objects too. Objects are described using PHP classes. Objects also carry some information inside of them. Objects are also interconnected with other objects but in a very regulated way.</p>
+    <p>To use Agile Toolkit successfully, you must understand it's concepts. The most significant concept is that everything is an object. Your application is an object, the page is an object, a database connection is an object and buttons are objects too. Objects are described using PHP classes. Objects carry some information inside of them and are also interconnected with other objects, but in a very regulated way.</p>
 
     <h3>Adding Objects</h3>
-    <p>Objects is the instance of a class. One class may have multiple instances and they are independent. In Agile Toolkit you don't create instances using "new" statement, instead you "add" objects into other objects. It is, in a way, similar, but objects are by default connected with the rest of your application.</p>
+    <p>Objects is the instance of a class. One class may have multiple instances and they are independent. In Agile Toolkit you don't create instances using a "new" statement, instead you "add" objects into other objects. It is, in a way, similar, but objects are by default connected with the rest of your application.</p>
 
     <p>Any object of Agile Toolkit would have a reference to it's owner - the object which spawned it. It also has a reference to the top-most object - Application object.</p>
 
@@ -32,11 +32,11 @@
       <?/?>
     </div>
 
-    <p>The first fundamental concept of Agile Toolkit are <b>the "View"</b>. View is an object which can represent itself through a chunk of HTML code.</p>
+    <p>The first fundamental concept of Agile Toolkit is <b>the "View"</b>. View is an object which can represent itself through a chunk of HTML code.</p>
 
-    <p>The button you see on the right is the object, instance of "Button" class. "Button" class extends "View" class and therefore can be placed on the page. A View can incorporate it's custom template, additional CSS and dependencies to jQuery plug-ins.</p>
+    <p>The button you see on the right is the object instance of "Button" class. "Button" class extends "View" class and therefore can be placed on the page. A View can incorporate it's custom template, additional CSS and dependencies to jQuery plug-ins.</p>
 
-    <p>Agile Toolkit has many fundamental view classes for you to use. More importantly — you will be developing your own views or getting them through Agile Add-On Manager. You can easily override HTML template or any logic behind the View and make it look exactly how YOU want.</p>
+    <p>Agile Toolkit has many fundamental view classes for you to use. More importantly — you will be developing your own views or getting them through Agile Add-On Manager. You can easily override an HTML template or any logic behind the View and make it look exactly how YOU want.</p>
 
     <h3>The "Render Tree"</h3>
     <?Execute?>
@@ -52,7 +52,7 @@
 $page->add('Form')->setModel('Person')->load($person_id);
 <?/?>
 
-    <p>The next fundamental concept is the Model Class. Model describe your business data. Model is what your application will operate with. It's quite similar to names of SQL table but more powerful, because Models are hierarchical. Model contain meta-information about your data records: field names, types, labels, validation rules, custom actions, hints and more. Models act as a Active Record allowing you to operate with either a single record or multiple records.</p>
+    <p>The next fundamental concept is the Model Class. Models describe your business data. Models are what your application will operate with. It's quite similar to names of SQL tables but more powerful, because Models are hierarchical. Models contain meta-information about your data records: field names, types, labels, validation rules, custom actions, hints and more. Models act as an Active Record allowing you to operate with either a single record or multiple records.</p>
 
     <p>Models can be associated with Views. This is how you can populate form or table fields easily. Association is done through a "setModel()" method.
 
@@ -68,23 +68,23 @@ $api->add('Controller_PatternRouter')
   ->route();
 <?/?>
 
-    <p>Controllers in Agile Toolkit are classes which "Enrich" the functionality of existing objects. The "Controller_Encrypt" adds ability into a "Model" to use strong encryption on some of the fields. The PatternRouter controller adds pattern matching and PHP-based rewrites.</p>
+    <p>Controllers in Agile Toolkit are classes which "Enrich" the functionality of existing objects. The "Controller_Encrypt" adds the ability into a "Model" to use strong encryption on some of the fields. The PatternRouter controller adds pattern matching and PHP-based rewrites.</p>
 
     <p>Controllers are used when you connect to database, associate view with model, use pagination on the form, add "strength" indicator into the password field or add anti-XSF tokens into the form class.</p>
 
     <h3>The "Application" Class</h3>
     <p>Application class holds the universe of Agile Toolkit together. It's the top-most class in the Runtime Tree. Application class relies on a number of controllers to do some of the basic functionalities, such as error output or URL generation.</p> 
 
-    <p>Your application extends base API class in Agile Toolkit. If you are building an application which you plan to re-use and customise, you will be able to extend your application further creating some beautiful object hierarchy.</p>
+    <p>Your application extends the base API class in Agile Toolkit. If you are building an application which you plan to re-use and customise, you will be able to extend your application further creating some beautiful object hierarchy.</p>
 
     <h3>The "Agile Store"</h3>
-    <p>Given the powerful architecture of Agile Toolkit, many different extensions, templates, models and the whole UI pages. The "Agile Store" which is introduced in 4.2 of Agile Toolkit is the way of us saying - "Got a nice piece of code? Share and perhaps even make some money on it!". Or if you are looking for a good quality add-on, why purchase it from someone for the price of a "Frappuchino".</p>
+    <p>Given the powerful architecture of Agile Toolkit, there are many different extensions, templates, models and the whole UI pages. The "Agile Store" which is introduced in 4.2 of Agile Toolkit is the way of us saying - "Got a nice piece of code? Why not share and perhaps even make some money on it!". Or if you are looking for a good quality add-on, why not purchase it from someone for the price of a "Frappuchino".</p>
 
-    <p>Some examples of what you can find in the store are: "Comment Anywhere" - plug-in you can put on any page which enables users to comment on anything, "ModelAudit" - controller to make your models auditable (records editing operations into separate table) and also brings the views for you to look at the audit history. "Countries" - delivers model containing up-to-date list of countries. "Job Queue" - a system for implementing your own Cloud-Powered Job Processing queues based on SQL or SQS. Many others too.</p>
+    <p>Some examples of what you can find in the store are: "Comment Anywhere" - plug-in, that you can put on any page, which enables users to comment on anything. "ModelAudit" - a controller to make your models auditable (records editing operations into separate table) and also brings the views for you to look at the audit history. "Countries" - delivers a model containing an up-to-date list of countries. "Job Queue" - a system for implementing your own Cloud-Powered Job Processing queues based on SQL or SQS. There are many others too.</p>
 
 
     <h2>Removing the Packaging</h2>
-    <p>If you haven't done this already — download Agile Toolkit. In the next chapter I will guide you through installation process of Agile Toolkit so that you can try different examples inside your own copy of Agile Toolkit.</p>
+    <p>If you haven't done this already — download Agile Toolkit. In the next chapter I will guide you through the installation process of Agile Toolkit so that you can try different examples inside your own copy of Agile Toolkit.</p>
 
     <!--
     <h2>Fives types of objects in Agile Toolkit</h2>
