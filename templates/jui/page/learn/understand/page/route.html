@@ -1,43 +1,42 @@
-
 <?$Content?>
 
 
 <h1>URL translation into a Page Class</h1>
 <p>In Agile Toolkit, pages are objects created from classes. For each user request only one page object is initialized.
-The process where API class determines name of the page class to initilaize is called "routing".</p>
+The process where an API class determines the name of the page class to initilaize is called "routing".</p>
 
 <h3>Page Routing</h3>
 
-<p>Let me start with example. The page you are reading right now was determined by Agile Toolkit as:
+<p>Let me start with an example. The page you are reading right now was determined by Agile Toolkit as:
 <?Execute?>
 $page->add('Text')->set($page->api->page);
 <?/?></p>
 
 <p>This page is determined from the URL above: <?$page?>. Please note that "/" and "_" are treated identically by Agile Toolkit.</p>
 
-<p>In Agile Toolkit the API class determines how routing is done. You must already know that there are a selection of
+<p>In Agile Toolkit the API class determines how routing is done. You must already know that there is a selection of
 different API clasess in Agile Toolkit and their approach to page routing is different.</p>
 
 <h4>ApiFrontend</h4>
-<p>ApiFrontend — the application class you are most likely to use — uses diverts all web requests into a single file: index.php.
-This is achieved by either using mod_rewrite rule (RewriteRule  .*  index.php) or by building the URLs with the argument "page".
+<p>ApiFrontend — the application class you are most likely to use — diverts all web requests into a single file: index.php.
+This is achieved by either using the mod_rewrite rule (RewriteRule  .*  index.php) or by building the URLs with the argument "page".
 The default installation of Agile Toolkit uses URLs like this: "http://localhost/agiletoolkit/?page=dbtest".</p>
 
-<p>Open the index.php with text editor and notice that the job of the file is to initialize your Application class and pass
+<p>Open the index.php with a text editor and notice that the job of the file is to initialize your Application class and pass
 execution to it.</p>
 
 <h4>ApiWeb</h4>
-<p>ApiWeb — is a good application class if you can't use front controller or will need to use different routing. It is most
+<p>ApiWeb — is a good application class if you can't use frontend controller or will need to use different routing. It is most
 useful when you need to integrate Agile Toolkit with a different framework.</p>
 
 <h4>ApiCLI</h4>
 <p>This class assumes that you'll be executing it from the command-line and will not even try to determine the page.</p>
 
-<p>The rest of this chapter will focus on ApiFrontend routing leaving other API implementation aside.</p>
+<p>The rest of this chapter will focus on ApiFrontend routing leaving other API implementations aside.</p>
 
-<h3>Building URL from the page name</h3>
+<h3>Building a URL from the page name</h3>
 
-<p>The logic used by ApiFrontend when determining corresponding class to a page is simple:</p>
+<p>The logic used by ApiFrontend when determining a corresponding class to a page is simple:</p>
 <div class="box blue-noised p-10px">
   <div class="white">
     <table>
@@ -75,7 +74,7 @@ useful when you need to integrate Agile Toolkit with a different framework.</p>
           <td>http://example.com/admin/logout</td>
           <td>logout</td>
           <td>Agile Toolkit does not have to be in your web-root directory. If it's installed into subdirectory, Agile Toolkit
-            will detect it and will eleminate installation point (base_path) from the name of the page.</td>
+            will detect it and will eliminate the installation point (base_path) from the name of the page.</td>
         </tr>
       </tbody>
     </table>
@@ -84,17 +83,17 @@ useful when you need to integrate Agile Toolkit with a different framework.</p>
 
 <h3>URL Components</h3>
 
-<p>PageManager is a controller used by ApiFrontend. It detect URL of the browser and splits it into 3 components:
+<p>PageManager is a controller used by ApiFrontend. It detects the URL of the browser and splits it into 3 components:
 
 <ol><li><b>base_url</b> — http://example.com</li>
   <li><b>base_path</b> — /atktest/</li>
   <li><b>page</b> — user/settings</li></ol>
 
-Properties are accessible through $api->pm->base_url, $api->pm->base_path and $api->page. Pay attention at how slashes are distributed.</p>
+Properties are accessible through $api->pm->base_url, $api->pm->base_path and $api->page. Pay attention to how slashes are distributed.</p>
 
 <p>The page you are looking at right now is called "learn/understand/page/route".</p>
 
-<p>The page object follows the standard pattern: executes the init() method after it's initialized. A Page may have a custom template,
+<p>The page object follows the standard pattern; And executes the init() method after it's initialized. A Page may have a custom template,
 but if it does not, the default page layout is used to display an empty page.</p>
 
 <?$Next?>
