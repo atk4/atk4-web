@@ -243,8 +243,9 @@ class AgileToolkitWeb extends ApiFrontend {
     }
     function enclose_Example($content,$tag){
         list($header,$content)=preg_split('/\n/',$content,2);
-        $this->page_object->add('Doc_Example',null,$tag)
-            ->setCode($content);
+        $this->page_object->add('documenting/View_Example',null,$tag)
+            ->setTitle($header)
+            ->set($content);
     }
     function enclose_Vimeo($content,$tag){
         $this->page_object->add('View',null,$tag,array('doc/view/doc_vimeo'))->template->trySet('video_id',$content);
