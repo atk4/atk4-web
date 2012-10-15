@@ -21,10 +21,10 @@
   <li>submitted() is called. Verifies if form was really submitted.</li>
   <li>It calls loadPOST() for all fields recurrsively</li>
   <li>Calls validate() recursively. Any errors are accumulated in $f-&lt;errors</li>
-  <li>submitted() returns true if error didn't receive any validation errors</li>
+  <li>submitted() returns true if didn't receive any validation errors</li>
 </ul>
 </li>
-<li>isSubmitted() returns true if error was submitted and contained no errors</li>
+<li>isSubmitted() returns true if data was submitted and contained no errors</li>
 <li>Before rendering — if isSubmitted() wasn't used then submitted() method of respective form is called then</li>
 <li>Execution is expected to be terminated when form submission is handled. If it wasn't done until rendering, lateSubmit() is called which output console warning about missing form handler.</li>
 <li>Global rendering starts which recursively renders fields first, then form</li>
