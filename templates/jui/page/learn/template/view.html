@@ -39,13 +39,13 @@ class View_Disclaimer extends AbstractView {
         <p>Tag company_name will be set to the value from configuration file.</p>
 
         <h3>Unique object names</h3>
-        <p>When defining custom templates for your views, you must be mindful that JavaScript binding will only work if you define id= properly. The empty tag "_name" will have unique name of the object filled into template automatically. Here is a typical template for your disclaimer.
+        <p>When defining custom templates for your views, you must be mindful that JavaScript binding will only work if you define id= properly. The empty tag "_name" will have the unique name of the object filled into the template automatically. Here is a typical template for your disclaimer.
 
 <pre>
 
 &lt;div class="disclaimer-box" id="&lt;?$_name?&gt;"&gt;
   &lt;div class="disclaimer-text"&gt;
-    Any expressions of opinion on this site belong to the individual writers and not to &lt;?$company_name?&gt;.
+    Any expressions of opinion on this site belongs to the individual writers and not to &lt;?$company_name?&gt;.
   &lt;/div&gt;
   &lt;div class="disclaimer-button"&gt;
     &lt;?MoreInfo?&gt;
@@ -54,16 +54,16 @@ class View_Disclaimer extends AbstractView {
 
 </pre>
 
-        <p>It's always recommended to properly set id=. Although it can be ID of any element, the use of &lt;div&gt; is advised.</p>
+        <p>It's always recommended to properly set id=. Although it can be the ID of any element, the use of &lt;div&gt; is advised.</p>
 
         <h3>Custom dynamic CSS</h3>
-        <p>Normally your objects CSS (such as disclaimer-box) will be define inside atk-custom.css. If your view, however, requires additional CSS files,
+        <p>Normally your objects CSS (such as disclaimer-box) will be defined inside atk-custom.css. If your view, however, requires additional CSS files,
         you can load them dynamically by placing this inside init() method:</p>
 <?Code?>
 $this->js(true)->_css('disclaimer'); // loads from templates/defaults/css/disclaimer.css
 <?/?>
 
-        <p>This is handy if you do not want this CSS to be loaded initially, but only if the object is being displayed. The CSS will be properly loaded even if your object as been loaded through AJAX. However due to the way how CSS inclusion works, any referenced images will be loaded relative to webroot. We advise not to use dynamic CSS loading if it relies on images.</p>
+        <p>This is handy if you do not want this CSS to be loaded initially, but only if the object is being displayed. The CSS will be properly loaded even if your object has been loaded through AJAX. However due to the way that CSS inclusion works, any referenced images will be loaded relative to webroot. We advise not to use dynamic CSS loading if it relies on images.</p>
 
         <p>Remember that you can add includes into shared.html file by appending to the region of "js_include" in API's template:</p>
 <?Code?>
