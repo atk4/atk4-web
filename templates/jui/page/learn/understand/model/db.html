@@ -15,7 +15,7 @@
 
 <p>In a conventional frameworks it already provides you with the model class for "book" and "author" and also means to iterate. While you retrieve data for the 50 books in the database, you need to traverse the reference from "book" to "author" model to fetch author's name. This is where some frameworks require to perform caching in order to remain scalable</p>
 
-<p>Agile Toolkit allows you to take a "book" model and add a join into it as well as define additional field from the "author" table. This is done without exposing developer to the SQL code.</p>
+<p>Agile Toolkit allows you to take a "book" model and add a join into it as well as define additional fields from the "author" table. This is done without exposing the developer to the SQL code.</p>
 
 <?Code?>
 $book->join('author')->addField('author_name','name');
