@@ -39,7 +39,7 @@ $auth->useEncryption('sha1')->check();
 
 <?Code?>
 $this->add('BasicAuth');     // automatically sets $api->auth to self
-$this->auth->allowPage('privcay');
+$this->auth->allowPage('privacy');
 $this->auth->allowPage(array('faq','contact','about'));
 $this->auth->setModel('User');
 $this->auth->useEncryption('sha1');
