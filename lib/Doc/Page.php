@@ -9,7 +9,10 @@ class Doc_Page extends Page {
 	}
     function initBar(){
         if($this->template->is_set('Content')){
-            $this->add('BreadCrumb');
+            $b=$this->add('BreadCrumb');
+            $b->js(true)->_selector('.breadcrumb')->_load('atk-toc')->atk4_toc();
+
+
             $this->add('Button')->set('Propose grammar fix')
                 ->addStyle('float','right')
                 ->js('click')->univ()->alert('You are redirected to github.com. Once you are there, click "Edit this file"')
