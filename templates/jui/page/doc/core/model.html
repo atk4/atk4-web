@@ -2,7 +2,7 @@
 
 <h1>Model and Controller Handling</h1>
 
-<p>Most of the view objects supplied through Agile Toolkit or through Add-ons are general-purpose. Form for example does not have knowledge about what fields it needs to display to the user. To initilaize the form to the set of fields defined in your model, you simply need to associate form with a model:</p>
+<p>Most of the view objects supplied through Agile Toolkit or through Add-ons are general-purpose. Form for example does not have knowledge about what fields it needs to display to the user. To initialize the form to the set of fields defined in your model, you simply need to associate the form with a model:</p>
 
 <?Code?>
 $form->setModel('Book');
@@ -10,10 +10,10 @@ $form->setModel('Book');
 $m=$form->model; // points to object of a class Model_Book
 <?/?>
 
-<p>Argument supplied to setModel() can be either an object or a string. If 'Model_' prefix is not present, it will be automatically added. The core AbstractObject will only initialize the model and assign it to a property, but descending objects may (and should) introduce more logic more specific for that particular object.</p>
+<p>The argument supplied to setModel() can be either an object or a string. If 'Model_' prefix is not present, it will be automatically added. The core AbstractObject will only initialize the model and assign it to a property, but descending objects may (and should) introduce more logic more specific for that particular object.</p>
 
 <h3>AbstractView model initialization</h3>
-<p>The <a href="/dox/html/class_abstract_object.html#a1c15df021d82870005f4f4925a4f613e">setModel()</a> for view objects is redefined to support second argument. This argument specifies list of fields which should be automatically initialized inside that view. Form and Grid are good examples. If you specify second argument "false" then no fields will be initialized automatically.</p>
+<p>The <a href="/dox/html/class_abstract_object.html#a1c15df021d82870005f4f4925a4f613e">setModel()</a> for view objects is redefined to support a second argument. This argument specifies a list of fields which should be automatically initialized inside that view. Form and Grid are good examples. If you specify second argument "false" then no fields will be initialized automatically.</p>
 
 <?Code?>
 $form->setModel('Mook',array('name','isdn'));
@@ -24,9 +24,9 @@ $f=$form->getElement('isdn');  // points to initialized field object, if it was 
 <h4>View's default controller</h4>
 <p>AbstractView property "default_controller" will specify a default controller which will be used for field population. If the property is "null" then fields are not populated. Typically the View will specify this value in it's definition. For example, 'Form' uses 'Controller_MVCForm'.</p>
 
-<p>If specified controller has method setActualFields and the list of fields were present as second argument, then that method is executed.</p>
+<p>If the specified controller has method setActualFields and the list of fields were present as second argument, then that method is executed.</p>
 
-<p>View uses setController to initialize default controller primarily due to developer convienence</p>
+<p>View uses setController to initialize default controller primarily due to developer convienence.</p>
 
 <h3><a href="/dox/html/class_abstract_object.html#aa4f9c9e545ef3a90856d30de93fe5e09">setController</a></h3>
 <p>This method is designed to initialize controllers with any objects in your system. While Model primarily contains only field and business logic and would not contain any display-related logic, controllers are permitted to be much more diverse in what they are doing. Below are just some application types for the controllers:</p>
@@ -43,14 +43,14 @@ class Controller_ModelAudit extends AbstractController {
 
         $this->owner->addField('created_dts');
         $this->owner->addHook('beforeSave',function($m){
-            $m->set('crated_dts',date('Y-m-d H:i:s'));
+            $m->set('created_dts',date('Y-m-d H:i:s'));
         });
     }
 }
 <?/?>
 
 <h4>Altering object behaviour</h4>
-<p>Objecst do not have control on how exactly fields are being added into it. To re-order child objects, use "Controller_Ordering". There are many other controllers to look out for.</p>
+<p>Objects do not have control on how exactly fields are being added into it. To re-order child objects, use "Controller_Ordering". There are many other controllers to look out for.</p>
 
 <h4>See also</h4>
 <ul>
