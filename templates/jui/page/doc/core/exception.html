@@ -24,14 +24,14 @@ throw $this->exception('bleh');
 <?Code?>
 if($temperature>70)
   throw $this->exception('Temperature too high')
-    ->addMoreInfo('temperature',%temperature);
+    ->addMoreInfo('temperature',$temperature);
 <?/?>
 
 <h3>Localization of error messages</h3>
 <p>The error message specified to exception() must not contain any variables. This message will be routed through <a href="/dox/html/class_api_c_l_i.html#a7c4e35e703ca26063001e0dfad6092bd">$api->_()</a> method for localization.</p>
 
 <h3>Verbosity control</h3>
-<p>Sometimes you may want to display error message to the user. Certainly you would want to hide any additional information as it may have some sensetive data. </p>
+<p>Sometimes you may want to display error message to the user. Certainly you would want to hide any additional information as it may have some sensitive data. </p>
 
 
 <h3>Object to add more info automatically</h3>
