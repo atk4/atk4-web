@@ -16,14 +16,14 @@
         <p>Agile Toolkit has many add-ons you can use. Addons are distributed through Agile Store in .ZIP files and are unpacked inside
         atk4-addons folder. Your installation should have created atk4-addons/helloworld and atk4-addons/sample_views for you. While
         some add-ons would only contain PHP classes, others may dynamically include additional resource types. To activate add-on,
-        referr to the documetation of that speciffic add-on. </p>
+        referr to the documetation of that specific add-on. </p>
 
         <h3>Copy-On-Modify principle</h3>
         <p>Agile Toolkit requires minimally only one or two files. As you enhance or change the default 
         behaviour of Agile Toolkit, you might want to change its files. You must never change files inside the 'atk4' folder.
-        Instead, if they are PHP clasees, you can just extend them. If it's impossible to achieve what you need through extending the
+        Instead, if they are PHP classes, you can just extend them. If it's impossible to achieve what you need through extending the
         class, you can force Agile Toolkit to use your own version of the class, image, stylesheet or HTML template: simply place a file
-        with identical name outside the "atk4" folder. For example: by creating a file templates/jui/images/logo.png you can replace 
+        with identical name outside the "atk4" folder. For example: by creating a file templates/default/images/logo.png you can replace 
         the default logo with your own. However, never store an identical copy of a file without modification. If you do this,
         when Agile Toolkit updates the original, even when you update your installation, you will not see the changes.</p>
 
@@ -38,7 +38,7 @@
         <li>mail — mail templates.</li>
         </ul>
         The resource types are looked up in certain specific locations by default. However, there are ways for new locations to be
-        added - ie, for storing shared content, or if introducing a new logical separation to your application</p>
+        added - ie, for storing shared content, or if introducing a new logical separation to your application.</p>
 
 
 
@@ -55,7 +55,7 @@ config-distrib.php  — template for config.php. This file is typically
 config.php          — install-specific configuration options, such as database connection
                         settings, etc. WARNING: adding your site's config file to a public 
                         Version Control System is a security hazard.
-doc                 — your software documentation, database initialzation and update scripts
+doc                 — your software documentation, database initialization and update scripts
 index.php           — file containing the Agile Toolkit bootstrap code.
 lib                 — your PHP code, php resource type.
 page                — contains classes used for routing, "page" resource type.  test/foo.html
