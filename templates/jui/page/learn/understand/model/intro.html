@@ -1,4 +1,3 @@
-
 <?$Content?>
 
 <h1>Introduction to Models</h1>
@@ -80,12 +79,12 @@ $item->dsql()
 
 <p>In practice you may have as many joins in a model as you think is necessary. Agile Toolkit will insert records into all the related tables in the proper order. By default Agile Toolkit assumes that your main table has "category_id" field (which it does) but if name of the field is different or the dependency is handled differently, you can define it through additional arguments to join()/leftJoin() method as described in documentation.</p>
 
-<p>The whole idea of a join is that fields physically distributed across several tables are appearing in the same logical model.</p>
+<p>The whole idea of a join is that fields physically distributed across several tables appear in the same logical model.</p>
 
 <h4>hasOne(), hasMany()</h4>
-<p>These methods allow to establish relationship between different models (not tables). Because each model may join multiple tables, there is no way to join models, that would be too complicated for Agile Toolkit to figure out. However the methods hasOne and hasMany describe relationship between models.</p>
+<p>These methods allow you to establish relationship between different models (not tables). Because each model may join multiple tables, there is no way to join models, that would be too complicated for Agile Toolkit to figure out. However the methods hasOne and hasMany describe relationship between models.</p>
 
-<p>It's important to understand the difference between table relationship and model relationship. As you can see even through there are only one relationship between 'order' and 'item' in the database, we have defined two relationships between Model_Item, Model_Order and Model_Order_Completed. You must also remember that 'Model_Item_Discounted' also inherits relationship definitions.</p>
+<p>It's important to understand the difference between table relationship and model relationship. As you can see even though there is only one relationship between 'order' and 'item' in the database, we have defined two relationships between Model_Item, Model_Order and Model_Order_Completed. You must also remember that 'Model_Item_Discounted' also inherits relationship definitions.</p>
 
 <h4>addExpressions(), ref() and refSQL()</h4>
 <p>Typically ORM will only work with physical fields, but Agile Toolkit allows you to define calculated fields: expressions. Expression may use a SQL expression or sub-query to calculate it's value. In the example above the expression is set to a subQuery calculating number of completed orders. This might be a little difficult to figure out right now if you are new to Agile Toolkit, but I will get back to this syntax several times.</p>
@@ -95,9 +94,9 @@ $item->dsql()
 <?Codepad?>learning/model#libModelOrderphp<?/?>
 
 <p>Agile Toolkit is already helping you greatly to avoid code duplication. The definition of a completed order describes that the field is_completed must be
-true for completed orders, yet when we are traversing relationship to build a sub-query for number of purchases, this condition is automatically used.</p>
+true for completed orders, yet when we are traversing relationships to build a sub-query for a number of purchases, this condition is automatically used.</p>
 
-<p>Now that we have increased number of models and made them much more sophisticated, how did it reflect on your presentation logic? Does it require significant
+<p>Now that we have increased the number of models and made them much more sophisticated, how did it reflect on your presentation logic? Does it require significant
 changes? Not a single change! Your presentation logic will continue to work unchanged:</p>
 
 <?Codepad?>learning/model#Sample1<?/?>
@@ -119,13 +118,13 @@ $this->add('Form')->setModel('Book');
 
 <h2>Conclusion</h2>
 
-<p>Agile Toolkit contains one of the most powerful ORMs ever built for PHP which contains many unique features and focuses on scalability and flexibility. Features demonstrated here is only a tip of the iceberg. As you become more familiar with Agile Toolkit, you will be able to use many other powerful features.</p>
+<p>Agile Toolkit contains one of the most powerful ORMs ever built for PHP which contains many unique features and focuses on scalability and flexibility. Features demonstrated here are only a tip of the iceberg. As you become more familiar with Agile Toolkit, you will be able to use many other more powerful features.</p>
 
-<p>But there is one huge advantage I still haven't demonstrated. That's integration between Model and Views</p>
+<p>But there is one huge advantage I still haven't demonstrated. That's the integration between Model and Views</p>
 
 <?Codepad?>learning/model#Sample2<?/?>
 
-<p>The code will produce a grid listing current items (and their category names) as well as showing a form for adding new orders. The form would also feature a drop-down for selecting item and amount and will refresh the grid after successful submission.</p>
+<p>The code will produce a grid listing the current items (and their category names) as well as showing a form for adding new orders. The form would also feature a drop-down for selecting item and amount and will refresh the grid after successful submission.</p>
 
 <p>All this is implemented using only the few lines of code you see, there are no additional controllers, custom views or additional templates.</p>
 
