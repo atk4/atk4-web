@@ -1,6 +1,7 @@
 var class_menu___basic =
 [
     [ "addMenuItem", "class_menu___basic.html#ac8016f132e643a4556af06643ce6de19", null ],
+    [ "addSubMenu", "class_menu___basic.html#a472559de2335184c36ed582864888992", null ],
     [ "defaultTemplate", "class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
     [ "getDefaultHref", "class_menu___basic.html#a43337484332528d943e8cc4ea4092f6e", null ],
     [ "init", "class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],

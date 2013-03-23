@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -108,13 +109,13 @@ Inheritance diagram for BaseException:</div>
  <div class="center">
   <img src="class_base_exception.png" usemap="#BaseException_map" alt=""/>
   <map id="BaseException_map" name="BaseException_map">
-<area href="class_d_blite__exception.html" alt="DBlite_exception" shape="rect" coords="190,56,370,80"/>
-<area href="class_exception___access_denied.html" alt="Exception_AccessDenied" shape="rect" coords="190,112,370,136"/>
-<area href="class_exception___d_b.html" alt="Exception_DB" shape="rect" coords="190,168,370,192"/>
-<area href="class_exception___hook.html" alt="Exception_Hook" shape="rect" coords="190,224,370,248"/>
-<area href="class_exception___init_error.html" alt="Exception_InitError" shape="rect" coords="190,280,370,304"/>
-<area href="class_exception___logic.html" alt="Exception_Logic" shape="rect" coords="190,336,370,360"/>
-<area href="class_exception___not_configured.html" alt="Exception_NotConfigured" shape="rect" coords="190,392,370,416"/>
+<area href="class_exception___access_denied.html" alt="Exception_AccessDenied" shape="rect" coords="190,56,370,80"/>
+<area href="class_exception___d_b.html" alt="Exception_DB" shape="rect" coords="190,112,370,136"/>
+<area href="class_exception___hook.html" alt="Exception_Hook" shape="rect" coords="190,168,370,192"/>
+<area href="class_exception___init_error.html" alt="Exception_InitError" shape="rect" coords="190,224,370,248"/>
+<area href="class_exception___logic.html" alt="Exception_Logic" shape="rect" coords="190,280,370,304"/>
+<area href="class_exception___not_configured.html" alt="Exception_NotConfigured" shape="rect" coords="190,336,370,360"/>
+<area href="class_exception___not_found.html" alt="Exception_NotFound" shape="rect" coords="190,392,370,416"/>
 <area href="class_exception___not_implemented.html" alt="Exception_NotImplemented" shape="rect" coords="190,448,370,472"/>
 <area href="class_exception___stop.html" alt="Exception_Stop" shape="rect" coords="190,504,370,528"/>
 <area href="class_exception___stop_init.html" alt="Exception_StopInit" shape="rect" coords="190,560,370,584"/>
@@ -133,8 +134,8 @@ Inheritance diagram for BaseException:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a5d3d2eaa2ab1ab95e2b708e853d6facd">__construct</a> ($msg, $func=null, $shift=1, $code=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a49d32372570ec8bbe7f93e34c2df6450">collectBasicData</a> ($func, $shift, $code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a9ba4ed1f33a0d0bfeff448891d2223b2">__construct</a> ($msg, $code=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a3b4cf617ce99aa3d6e00ba05610cd9dd">collectBasicData</a> ($code)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#a1b80cac9e20dea78f78788ee334fcbde">addMoreInfo</a> ($key, $value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#aaa9e093abbafe7bace02b0513f5e0448">addThis</a> ($t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_base_exception.html#abcf5384d961813d013fe63ac19ff41e2">addAction</a> ($key, $descr)</td></tr>
@@ -160,27 +161,15 @@ Data Fields</h2></td></tr>
 <p>Learn:</p>
 <p>Reference: </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a5d3d2eaa2ab1ab95e2b708e853d6facd"></a><!-- doxytag: member="BaseException::__construct" ref="a5d3d2eaa2ab1ab95e2b708e853d6facd" args="($msg, $func=null, $shift=1, $code=0)" -->
+<a class="anchor" id="a9ba4ed1f33a0d0bfeff448891d2223b2"></a><!-- doxytag: member="BaseException::__construct" ref="a9ba4ed1f33a0d0bfeff448891d2223b2" args="($msg, $code=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_base_exception.html#a5d3d2eaa2ab1ab95e2b708e853d6facd">__construct</a> </td>
+          <td class="memname"><a class="el" href="class_base_exception.html#a9ba4ed1f33a0d0bfeff448891d2223b2">__construct</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>func</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>shift</em> = <code>1</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -197,7 +186,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_path_finder___exception.html#a0709227d6000cb89a160b6051f66c583">PathFinder_Exception</a>, and <a class="el" href="class_s_q_l_exception.html#abac78ffa88871827895a3f118b7fe121">SQLException</a>.</p>
+<p>Reimplemented in <a class="el" href="class_exception___validity_check.html#a41f6cce2355123cb8d900278d90111be">Exception_ValidityCheck</a>.</p>
 
 </div>
 </div>
@@ -276,32 +265,16 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a49d32372570ec8bbe7f93e34c2df6450"></a><!-- doxytag: member="BaseException::collectBasicData" ref="a49d32372570ec8bbe7f93e34c2df6450" args="($func, $shift, $code)" -->
+<a class="anchor" id="a3b4cf617ce99aa3d6e00ba05610cd9dd"></a><!-- doxytag: member="BaseException::collectBasicData" ref="a3b4cf617ce99aa3d6e00ba05610cd9dd" args="($code)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_base_exception.html#a49d32372570ec8bbe7f93e34c2df6450">collectBasicData</a> </td>
+          <td class="memname"><a class="el" href="class_base_exception.html#a3b4cf617ce99aa3d6e00ba05610cd9dd">collectBasicData</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>code</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>shift</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>code</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -340,8 +313,6 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Redefine this function to add additional HTML output </p>
 
-<p>Reimplemented in <a class="el" href="class_d_blite__exception.html#a4372183a68cb46562238e23cefd06b06">DBlite_exception</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab0205030c5a0ac10564db26c2b776746"></a><!-- doxytag: member="BaseException::getHTML" ref="ab0205030c5a0ac10564db26c2b776746" args="($message=null)" -->
@@ -358,7 +329,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns HTML representation of the exceptoin </p>
+<p>Returns HTML representation of the exception </p>
 
 <p>Reimplemented in <a class="el" href="class_s_q_l_exception.html#ab0205030c5a0ac10564db26c2b776746">SQLException</a>.</p>
 
@@ -425,7 +396,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns Textual representaiton of the exception </p>
+<p>Returns Textual representation of the exception </p>
 
 </div>
 </div>
@@ -549,7 +520,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -562,7 +533,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_base_exception.html">BaseException</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

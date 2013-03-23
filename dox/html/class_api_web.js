@@ -1,12 +1,16 @@
 var class_api_web =
 [
     [ "__construct", "class_api_web.html#a3b0a0d06fee8b3a6f3c4712d01ca88a5", null ],
+    [ "_locateCSS", "class_api_web.html#a7c481cd6035b17742a64cf10cfcf5777", null ],
+    [ "_locateJS", "class_api_web.html#a404882f7238567c8924cc0bde4d69645", null ],
     [ "_showExecutionTime", "class_api_web.html#a68c10124302012b9a0c5eaeba614a8e5", null ],
     [ "_showExecutionTimeJS", "class_api_web.html#a6109d8503dafbb69be848c0c3b395d88", null ],
     [ "addLayout", "class_api_web.html#ad15ae833701872ee84f1c3b98c2fc9f4", null ],
     [ "caughtException", "class_api_web.html#ad6fbac308cf2c1d219e4c1d6d36ee4e0", null ],
     [ "cleanMagicQuotes", "class_api_web.html#a77ffb6f1dc198bf8cbd0d81667e1249d", null ],
+    [ "cut", "class_api_web.html#aeb83db4afeb2fe20d3c8a6c3326e0db7", null ],
     [ "defaultTemplate", "class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
+    [ "destroySession", "class_api_web.html#a9aea96aaeaf1efd5531eb1867ee67ca6", null ],
     [ "execute", "class_api_web.html#a1909f4b7f8129c7790cb75de2ffbe1e4", null ],
     [ "getStickyArguments", "class_api_web.html#a1a5b9b7bc783823accde6b0b9ce16f86", null ],
     [ "init", "class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
@@ -19,7 +23,6 @@ var class_api_web =
     [ "licenseCheck", "class_api_web.html#a143f21fe5c8ba9f50990e1c678bf84af", null ],
     [ "main", "class_api_web.html#a51af30a60f9f02777c6396b8247e356f", null ],
     [ "outputDebug", "class_api_web.html#a41a61ce77bee992bb93b41015d617c81", null ],
-    [ "outputInfo", "class_api_web.html#aa7312b50ddc17745e01a698ef26ba724", null ],
     [ "outputWarning", "class_api_web.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1", null ],
     [ "redirect", "class_api_web.html#a62eae5ca4fe4403928092ef8eb0e9d1d", null ],
     [ "render", "class_api_web.html#afde88292c44dc59faf017738dae6dffb", null ],
@@ -33,6 +36,7 @@ var class_api_web =
     [ "$_is_session_initialized", "class_api_web.html#a05d7fd9138206b3a29fda8723e9b3a4d", null ],
     [ "$index_page", "class_api_web.html#a9ae12c1c80d64c0ab9802729a3d4b824", null ],
     [ "$page", "class_api_web.html#a0a44e6760141442bb439b1ab1395d8ff", null ],
+    [ "$skin", "class_api_web.html#a4011bd1646505f48bf081f40e56552d5", null ],
     [ "$start_time", "class_api_web.html#a73a034a7a0fbdd2c93f23fb6c9946ee9", null ],
     [ "$sticky_get_arguments", "class_api_web.html#ad86d216245070fbc0c0ae7d2b4be955b", null ]
 ];

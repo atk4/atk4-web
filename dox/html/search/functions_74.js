@@ -1,24 +1,26 @@
 var searchData=
 [
-  ['table',['table',['../class_d_b__dsql__prefixed.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c',1,'DB_dsql_prefixed\table()'],['../class_d_b__dsql.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c',1,'DB_dsql\table()'],['../class_d_blite__dsql.html#ac75e84037cdcbeddba0a74fdbcd376d0',1,'DBlite_dsql\table()']]],
-  ['tablehasfield',['tableHasField',['../class_d_blite__mysql.html#a1be0614f77062f3d3e114ccf6ac6de50',1,'DBlite_mysql']]],
+  ['table',['table',['../class_d_b__dsql__prefixed.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c',1,'DB_dsql_prefixed\table()'],['../class_d_b__dsql.html#a66178ed9732b2f95c4b81963a16b47e5',1,'DB_dsql\table()']]],
   ['template',['template',['../class_d_b__dsql.html#a2e98fa0bf8a8263c1f551bdb3a4b65d5',1,'DB_dsql']]],
   ['terminate',['terminate',['../class_system___process_i_o.html#ad855f51215e875f12c5ab9ee64d5334e',1,'System_ProcessIO']]],
   ['test_5fadvanced',['test_advanced',['../class_system___process_i_o___tester.html#a4926fa855b674fdd2263870d340aff36',1,'System_ProcessIO_Tester']]],
   ['test_5fbasic',['test_basic',['../class_system___process_i_o___tester.html#ab2c67bf037de7fec34a812feab0c5401',1,'System_ProcessIO_Tester']]],
   ['test_5ffailure',['test_failure',['../class_system___process_i_o___tester.html#a86c814e6d947f36aff347d3b174099c2',1,'System_ProcessIO_Tester']]],
   ['test_5freadwrite',['test_readwrite',['../class_system___process_i_o___tester.html#ac0a3866a9e41af4491a16c508f249d25',1,'System_ProcessIO_Tester']]],
+  ['ticker',['ticker',['../class_page___tester.html#a3d72262d8e8a95480f1fdc4477cc2ca5',1,'Page_Tester']]],
   ['titlequery',['titleQuery',['../class_model___table.html#aff8836f59fc0886a680ed0fd4450c2b9',1,'Model_Table']]],
   ['truncate',['truncate',['../class_d_b__dsql.html#aded92815b0f4cd9a64f76a6019162198',1,'DB_dsql']]],
   ['trycall',['tryCall',['../class_abstract_object.html#a60fc9e55282170fbd48dc2da9cb32a16',1,'AbstractObject']]],
   ['tryconnect',['tryConnect',['../class_api_c_l_i.html#ae4d9cdd841aa6f531a64a3533a2b6537',1,'ApiCLI']]],
   ['trydel',['tryDel',['../class_gi_template.html#a02bde04f59691035e803c1cc87c06430',1,'GiTemplate\tryDel()'],['../class_s_mlite.html#a02bde04f59691035e803c1cc87c06430',1,'SMlite\tryDel()']]],
-  ['tryload',['tryLoad',['../class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data_Array\tryLoad()'],['../class_model___table.html#a176b4bd223ee151fadab176ce432dcd7',1,'Model_Table\tryLoad()']]],
-  ['tryloadany',['tryLoadAny',['../class_model___table.html#a81e44cd287862f0dd78a351639ecd043',1,'Model_Table']]],
-  ['tryloadby',['tryLoadBy',['../class_controller___data___array.html#a15335a020b88bad0775c2a51a4278e5c',1,'Controller_Data_Array\tryLoadBy()'],['../class_model___table.html#a7c947120b95e1847f0142616c39547b6',1,'Model_Table\tryLoadBy()']]],
+  ['trydelete',['tryDelete',['../class_model___table.html#a3db1e4f8352032665d8fe569d56a51c5',1,'Model_Table']]],
+  ['tryload',['tryLoad',['../class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data_Array\tryLoad()'],['../class_controller___data___dumper.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data_Dumper\tryLoad()'],['../class_controller___data___j_s_o_n_r_p_c.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data_JSONRPC\tryLoad()'],['../class_controller___data___memcached.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data_Memcached\tryLoad()'],['../class_controller___data.html#a6af2b9da15c928d97e037315b35714ad',1,'Controller_Data\tryLoad()'],['../class_model___table.html#a176b4bd223ee151fadab176ce432dcd7',1,'Model_Table\tryLoad()'],['../class_model.html#ac9a1027e557fe8396ca5f04875d93a3a',1,'Model\tryLoad()']]],
+  ['tryloadany',['tryLoadAny',['../class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0',1,'Controller_Data_Array\tryLoadAny()'],['../class_controller___data___dumper.html#a612a6e66bd5765055fcdc103aa3059f0',1,'Controller_Data_Dumper\tryLoadAny()'],['../class_controller___data___j_s_o_n_r_p_c.html#a612a6e66bd5765055fcdc103aa3059f0',1,'Controller_Data_JSONRPC\tryLoadAny()'],['../class_controller___data___memcached.html#a612a6e66bd5765055fcdc103aa3059f0',1,'Controller_Data_Memcached\tryLoadAny()'],['../class_controller___data.html#a612a6e66bd5765055fcdc103aa3059f0',1,'Controller_Data\tryLoadAny()'],['../class_model___table.html#a81e44cd287862f0dd78a351639ecd043',1,'Model_Table\tryLoadAny()'],['../class_model.html#a81e44cd287862f0dd78a351639ecd043',1,'Model\tryLoadAny()']]],
+  ['tryloadby',['tryLoadBy',['../class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e',1,'Controller_Data_Array\tryLoadBy()'],['../class_controller___data___dumper.html#afed5b9b73b9ea6db8d84f638572c479e',1,'Controller_Data_Dumper\tryLoadBy()'],['../class_controller___data___j_s_o_n_r_p_c.html#afed5b9b73b9ea6db8d84f638572c479e',1,'Controller_Data_JSONRPC\tryLoadBy()'],['../class_controller___data___memcached.html#afed5b9b73b9ea6db8d84f638572c479e',1,'Controller_Data_Memcached\tryLoadBy()'],['../class_controller___data.html#abba58a7c1cad3c8b0d150c84969e3aed',1,'Controller_Data\tryLoadBy()'],['../class_model___table.html#a7c947120b95e1847f0142616c39547b6',1,'Model_Table\tryLoadBy()'],['../class_model.html#a7c947120b95e1847f0142616c39547b6',1,'Model\tryLoadBy()']]],
+  ['tryloadrandom',['tryLoadRandom',['../class_model___table.html#a79288f814284f0775b4270da544f3c1f',1,'Model_Table']]],
   ['tryset',['trySet',['../class_gi_template.html#aa03cdcffcf0bf04f25a4ab64ea142c0e',1,'GiTemplate\trySet()'],['../class_s_mlite.html#a55bc40ede8ab92c14abfa82a3e453212',1,'SMlite\trySet()']]],
   ['trysethtml',['trySetHTML',['../class_s_mlite.html#a2094313019c1f080a57a6f1082446cb1',1,'SMlite']]],
   ['txtbacktrace',['txtBacktrace',['../class_logger.html#acd5b626566896d1ed477ee8b643ef014',1,'Logger']]],
   ['txtline',['txtLine',['../class_logger.html#aed2681427084844069d2416f0ca1bd4c',1,'Logger']]],
-  ['type',['type',['../class_field.html#a1b0721546c5855b3d28dd4a208c9db54',1,'Field']]]
+  ['type',['type',['../class_field.html#a0327a297fd69068c61bccae78080c7bb',1,'Field']]]
 ];

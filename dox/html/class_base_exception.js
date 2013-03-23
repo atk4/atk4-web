@@ -1,10 +1,10 @@
 var class_base_exception =
 [
-    [ "__construct", "class_base_exception.html#a5d3d2eaa2ab1ab95e2b708e853d6facd", null ],
+    [ "__construct", "class_base_exception.html#a9ba4ed1f33a0d0bfeff448891d2223b2", null ],
     [ "addAction", "class_base_exception.html#abcf5384d961813d013fe63ac19ff41e2", null ],
     [ "addMoreInfo", "class_base_exception.html#a1b80cac9e20dea78f78788ee334fcbde", null ],
     [ "addThis", "class_base_exception.html#aaa9e093abbafe7bace02b0513f5e0448", null ],
-    [ "collectBasicData", "class_base_exception.html#a49d32372570ec8bbe7f93e34c2df6450", null ],
+    [ "collectBasicData", "class_base_exception.html#a3b4cf617ce99aa3d6e00ba05610cd9dd", null ],
     [ "getAdditionalMessage", "class_base_exception.html#a45461949e31844cd8d45696692ba3ba6", null ],
     [ "getDetailedHTML", "class_base_exception.html#a4372183a68cb46562238e23cefd06b06", null ],
     [ "getHTML", "class_base_exception.html#ab0205030c5a0ac10564db26c2b776746", null ],

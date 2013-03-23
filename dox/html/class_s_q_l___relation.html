@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -120,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#a0b2af216ca7dad64faa8d9ec06e69a06">join</a> ($foreign_table, $master_field=null, $join_kind=null, $_foreign_alias=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#ad6f16da64bba0ce0680067ea9a67d1a1">leftJoin</a> ($foreign_table, $master_field=null, $join_kind=null, $_foreign_alias=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#a5b2c621609073dc27ae66381d9ea6cf5">hasOne</a> ($model, $our_field=null, $display_field=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#a379abc6162aae2f9889571969c3c6f07">hasMany</a> ($model, $their_field=null, $our_field=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#af44629a163f40e941ef95ce56ae9a101">hasMany</a> ($model, $their_field=null, $our_field=null, $as_field=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#a17579a230b28fa603b50d1543f20143a">set</a> ($foreign_table, $master_field=null, $join_kind=null, $relation=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#ab9e4fb36c177d9633b81fc184f7bd933">beforeSave</a> ($m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___relation.html#ada6a7f2abf3ba1c19e4ba3711da1a61e">beforeInsert</a> ($m, $q)</td></tr>
@@ -393,12 +394,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a379abc6162aae2f9889571969c3c6f07"></a><!-- doxytag: member="SQL_Relation::hasMany" ref="a379abc6162aae2f9889571969c3c6f07" args="($model, $their_field=null, $our_field=null)" -->
+<a class="anchor" id="af44629a163f40e941ef95ce56ae9a101"></a><!-- doxytag: member="SQL_Relation::hasMany" ref="af44629a163f40e941ef95ce56ae9a101" args="($model, $their_field=null, $our_field=null, $as_field=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_q_l___relation.html#a379abc6162aae2f9889571969c3c6f07">hasMany</a> </td>
+          <td class="memname"><a class="el" href="class_s_q_l___relation.html#af44629a163f40e941ef95ce56ae9a101">hasMany</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -413,7 +414,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>our_field</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>our_field</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>as_field</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -472,7 +479,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
@@ -711,7 +719,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -724,7 +732,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_q_l___relation.html">SQL_Relation</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

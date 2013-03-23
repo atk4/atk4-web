@@ -1,5 +1,6 @@
 var class_filter =
 [
+    [ "addButtons", "class_filter.html#a9809253e6df0f730037ccaadc355d407", null ],
     [ "init", "class_filter.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "memorizeAll", "class_filter.html#a59add346b7c95577fbb3645fc3bce730", null ],
     [ "postInit", "class_filter.html#a834c2c6af9dbb9bbe622610788c1804e", null ],

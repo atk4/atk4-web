@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -95,6 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">DB_dsql_sqlite Class Reference</div>  </div>
 </div><!--header-->
@@ -110,6 +113,98 @@ Inheritance diagram for DB_dsql_sqlite:</div>
 <area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql__sqlite.html#a5c044919fdfd8d4b36d87288b04937b0">concat</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql__sqlite.html#a520d5814fd72aa930e84c4a6700a0262">render_concat</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql__sqlite.html#a357721c0ac543c54de90e0355b7fa8ca">random</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b__dsql__sqlite.html#a4cac4e49a08898be3036b901b00244c4">describe</a> ($<a class="el" href="class_d_b__dsql.html#a66178ed9732b2f95c4b81963a16b47e5">table</a>)</td></tr>
+</table>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a5c044919fdfd8d4b36d87288b04937b0"></a><!-- doxytag: member="DB_dsql_sqlite::concat" ref="a5c044919fdfd8d4b36d87288b04937b0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql__sqlite.html#a5c044919fdfd8d4b36d87288b04937b0">concat</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return expression for concatinating multiple values Accepts variable number of arguments, all of them would be escaped</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b__dsql.html">DB_dsql</a> clone of $this </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_d_b__dsql.html#a5c044919fdfd8d4b36d87288b04937b0">DB_dsql</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cac4e49a08898be3036b901b00244c4"></a><!-- doxytag: member="DB_dsql_sqlite::describe" ref="a4cac4e49a08898be3036b901b00244c4" args="($table)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql__sqlite.html#a4cac4e49a08898be3036b901b00244c4">describe</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>table</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Creates a query for listing tables in databse-specific form Agile Toolkit DSQL does not pretend to know anything about model structure, so result parsing is up to you</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$table</td><td>Table</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b__dsql.html">DB_dsql</a> clone of $this </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_d_b__dsql.html#a4cac4e49a08898be3036b901b00244c4">DB_dsql</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a357721c0ac543c54de90e0355b7fa8ca"></a><!-- doxytag: member="DB_dsql_sqlite::random" ref="a357721c0ac543c54de90e0355b7fa8ca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql__sqlite.html#a357721c0ac543c54de90e0355b7fa8ca">random</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Returns method for generating random numbers. This is used for ordering table in random order</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b__dsql.html">DB_dsql</a> clone of $this </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_d_b__dsql.html#a357721c0ac543c54de90e0355b7fa8ca">DB_dsql</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a520d5814fd72aa930e84c4a6700a0262"></a><!-- doxytag: member="DB_dsql_sqlite::render_concat" ref="a520d5814fd72aa930e84c4a6700a0262" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_b__dsql__sqlite.html#a520d5814fd72aa930e84c4a6700a0262">render_concat</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/rw/Sites/atk42/atk4/lib/DB/dsql/<a class="el" href="sqlite_8php.html">sqlite.php</a></li>
 </ul>
@@ -120,7 +215,7 @@ Inheritance diagram for DB_dsql_sqlite:</div>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,7 +228,7 @@ Inheritance diagram for DB_dsql_sqlite:</div>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b__dsql__sqlite.html">DB_dsql_sqlite</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

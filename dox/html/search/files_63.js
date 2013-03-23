@@ -1,6 +1,8 @@
 var searchData=
 [
   ['chain_2ephp',['Chain.php',['../_chain_8php.html',1,'']]],
+  ['checkbox_2ephp',['Checkbox.php',['../_checkbox_8php.html',1,'']]],
+  ['checkboxlist_2ephp',['CheckboxList.php',['../_checkbox_list_8php.html',1,'']]],
   ['columns_2ephp',['Columns.php',['../_columns_8php.html',1,'']]],
   ['columns_2ephp',['Columns.php',['../_view_2_columns_8php.html',1,'']]],
   ['compat_2ephp',['Compat.php',['../_t_mail_2_compat_8php.html',1,'']]],

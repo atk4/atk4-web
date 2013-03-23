@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -108,10 +109,11 @@ Inheritance diagram for ApiWeb:</div>
  <div class="center">
   <img src="class_api_web.png" usemap="#ApiWeb_map" alt=""/>
   <map id="ApiWeb_map" name="ApiWeb_map">
-<area href="class_api_c_l_i.html" alt="ApiCLI" shape="rect" coords="0,112,96,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_api_c_l_i.html" alt="ApiCLI" shape="rect" coords="53,112,149,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
 <area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="0,224,96,248"/>
+<area href="class_api_install.html" alt="ApiInstall" shape="rect" coords="106,224,202,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -131,17 +133,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad6fbac308cf2c1d219e4c1d6d36ee4e0">caughtException</a> ($e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1">outputWarning</a> ($msg, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a41a61ce77bee992bb93b41015d617c81">outputDebug</a> ($msg, $shift=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#aa7312b50ddc17745e01a698ef26ba724">outputInfo</a> ($msg, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a742b13f9349e224a24301a0d22324046">initializeSession</a> ($create=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9aea96aaeaf1efd5531eb1867ee67ca6">destroySession</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ac7d3e7afa13d05e9ae5c6c7e2aabd225">stickyGET</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a8d3febf4b27bf7960c3ff09b436eacad">stickyForget</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a1a5b9b7bc783823accde6b0b9ce16f86">getStickyArguments</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a51af30a60f9f02777c6396b8247e356f">main</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a1909f4b7f8129c7790cb75de2ffbe1e4">execute</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#aeb83db4afeb2fe20d3c8a6c3326e0db7">cut</a> ($object)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a62eae5ca4fe4403928092ef8eb0e9d1d">redirect</a> ($page=null, $args=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#aa265a4f5509ac06e3c0bc7517e591663">setTags</a> ($t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9759ffd43dac374e766b19cc3e97e38a">isAjaxOutput</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a404882f7238567c8924cc0bde4d69645">_locateJS</a> ($path)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a7c481cd6035b17742a64cf10cfcf5777">_locateCSS</a> ($path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a6b1f9e6d6be3aaff35eb9a25354b589f">renderOnly</a> ($object)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a7196ccc788edd95f5cca8c764a79c135">initLayout</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad15ae833701872ee84f1c3b98c2fc9f4">addLayout</a> ($name)</td></tr>
@@ -152,6 +157,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a0a44e6760141442bb439b1ab1395d8ff">$page</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9ae12c1c80d64c0ab9802729a3d4b824">$index_page</a> = 'index'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a73a034a7a0fbdd2c93f23fb6c9946ee9">$start_time</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a4011bd1646505f48bf081f40e56552d5">$skin</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a05d7fd9138206b3a29fda8723e9b3a4d">$_is_session_initialized</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad86d216245070fbc0c0ae7d2b4be955b">$sticky_get_arguments</a> = array()</td></tr>
 </table>
@@ -187,6 +193,40 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a7c481cd6035b17742a64cf10cfcf5777"></a><!-- doxytag: member="ApiWeb::_locateCSS" ref="a7c481cd6035b17742a64cf10cfcf5777" args="($path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a7c481cd6035b17742a64cf10cfcf5777">_locateCSS</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a404882f7238567c8924cc0bde4d69645"></a><!-- doxytag: member="ApiWeb::_locateJS" ref="a404882f7238567c8924cc0bde4d69645" args="($path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a404882f7238567c8924cc0bde4d69645">_locateJS</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a68c10124302012b9a0c5eaeba614a8e5"></a><!-- doxytag: member="ApiWeb::_showExecutionTime" ref="a68c10124302012b9a0c5eaeba614a8e5" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -274,6 +314,24 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aeb83db4afeb2fe20d3c8a6c3326e0db7"></a><!-- doxytag: member="ApiWeb::cut" ref="aeb83db4afeb2fe20d3c8a6c3326e0db7" args="($object)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#aeb83db4afeb2fe20d3c8a6c3326e0db7">cut</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Render only specified object or object with specified name </p>
+
+</div>
+</div>
 <a class="anchor" id="add8c5a33f231d9979e5f8bbded576d9e"></a><!-- doxytag: member="ApiWeb::defaultTemplate" ref="add8c5a33f231d9979e5f8bbded576d9e" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -290,6 +348,23 @@ Data Fields</h2></td></tr>
 <p>Default template for the application. Redefine to add your own rules. </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#add8c5a33f231d9979e5f8bbded576d9e">AbstractView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9aea96aaeaf1efd5531eb1867ee67ca6"></a><!-- doxytag: member="ApiWeb::destroySession" ref="a9aea96aaeaf1efd5531eb1867ee67ca6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#a9aea96aaeaf1efd5531eb1867ee67ca6">destroySession</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Completely destroy existing session </p>
 
 </div>
 </div>
@@ -346,6 +421,8 @@ Data Fields</h2></td></tr>
 <p>In addition to default initialization, set up logger and template </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_api_install.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiInstall</a>.</p>
 
 </div>
 </div>
@@ -515,35 +592,6 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_api_c_l_i.html#a41a61ce77bee992bb93b41015d617c81">ApiCLI</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa7312b50ddc17745e01a698ef26ba724"></a><!-- doxytag: member="ApiWeb::outputInfo" ref="aa7312b50ddc17745e01a698ef26ba724" args="($msg, $shift=0)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_web.html#aa7312b50ddc17745e01a698ef26ba724">outputInfo</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>shift</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_api_c_l_i.html#aa7312b50ddc17745e01a698ef26ba724">ApiCLI</a>.</p>
 
 </div>
 </div>
@@ -789,6 +837,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4011bd1646505f48bf081f40e56552d5"></a><!-- doxytag: member="ApiWeb::$skin" ref="a4011bd1646505f48bf081f40e56552d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$skin</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Skin for web application templates </p>
+
+</div>
+</div>
 <a class="anchor" id="a73a034a7a0fbdd2c93f23fb6c9946ee9"></a><!-- doxytag: member="ApiWeb::$start_time" ref="a73a034a7a0fbdd2c93f23fb6c9946ee9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -826,7 +888,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -839,7 +901,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_web.html">ApiWeb</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

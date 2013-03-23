@@ -13,5 +13,6 @@ var searchData=
   ['paginator_5fcompat',['Paginator_Compat',['../class_paginator___compat.html',1,'']]],
   ['pathfinder',['PathFinder',['../class_path_finder.html',1,'']]],
   ['pathfinder_5fexception',['PathFinder_Exception',['../class_path_finder___exception.html',1,'']]],
-  ['pathfinder_5flocation',['PathFinder_Location',['../class_path_finder___location.html',1,'']]]
+  ['pathfinder_5flocation',['PathFinder_Location',['../class_path_finder___location.html',1,'']]],
+  ['php_5fcodesniffer_5fstandards_5fkingkludge_5fkingkludgecodingstandard',['PHP_CodeSniffer_Standards_KingKludge_KingKludgeCodingStandard',['../class_p_h_p___code_sniffer___standards___king_kludge___king_kludge_coding_standard.html',1,'']]]
 ];

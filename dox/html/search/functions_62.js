@@ -6,9 +6,10 @@ var searchData=
   ['beforeinsert',['beforeInsert',['../class_s_q_l___relation.html#ada6a7f2abf3ba1c19e4ba3711da1a61e',1,'SQL_Relation']]],
   ['beforeload',['beforeLoad',['../class_s_q_l___relation.html#a665492752f54f9cbc3fd2cae51ca4373',1,'SQL_Relation']]],
   ['beforemodify',['beforeModify',['../class_s_q_l___relation.html#a3ad587772d12f99af11a3db64d879210',1,'SQL_Relation']]],
-  ['beforesave',['beforeSave',['../class_s_q_l___relation.html#ab9e4fb36c177d9633b81fc184f7bd933',1,'SQL_Relation']]],
-  ['begintransaction',['beginTransaction',['../class_d_b.html#af3380f3b13931d581fa973a382946b32',1,'DB\beginTransaction()'],['../class_d_blite__mysql.html#a06fdc3063ff49b8de811683aae3483e6',1,'DBlite_mysql\beginTransaction()']]],
+  ['beforesave',['beforeSave',['../class_model___agile_toolkit___access.html#a3fbb1a1567b714334cbe3d56dd66abde',1,'Model_AgileToolkit_Access\beforeSave()'],['../class_s_q_l___relation.html#ab9e4fb36c177d9633b81fc184f7bd933',1,'SQL_Relation\beforeSave()']]],
+  ['begintransaction',['beginTransaction',['../class_d_b.html#af3380f3b13931d581fa973a382946b32',1,'DB']]],
   ['belowfield',['belowField',['../class_form___field.html#a27cd7c6e75ed8c09aae8af32905a888d',1,'Form_Field']]],
+  ['bindevent',['bindEvent',['../class_virtual_page.html#a82b731f8c0e4e02cbd6a89d4ad2e61c1',1,'VirtualPage']]],
   ['breakhook',['breakHook',['../class_abstract_object.html#a446b3f8327b3272c838ae46f40a9da06',1,'AbstractObject']]],
   ['bt',['bt',['../class_d_b__dsql.html#aa374d1bfaabf3f546fe8862d09f4a096',1,'DB_dsql']]]
 ];

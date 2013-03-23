@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -124,17 +125,19 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#af3380f3b13931d581fa973a382946b32">beginTransaction</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#af5674c27d4a92f6228565010eacbb9cb">commit</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#aaf34a959f7c26d1f97713adab5a6c429">inTransaction</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a6c8e90da29100c80c1abe381cfb37593">rollBack</a> ($option=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#aebaea4cae21e0e75ec1489c1648caeb3">rollBack</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#acc1e62674bb7200ea73767c19dc1344d">$dbh</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a9a4a6fba2208984cabb3afacadf33919">$type</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a04ab0f27959cb92fa5691286bcd8b55b">$dsql_class</a> = '<a class="el" href="class_d_b__dsql.html">DB_dsql</a>'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a04ab0f27959cb92fa5691286bcd8b55b">$dsql_class</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_b.html#a7da74af76d647c306ce5acf42fe799df">$transaction_depth</a> = 0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implementation of PDO support in Agile Toolkit</p>
-<p>Use: $this-&gt;api-&gt;dbConnect(); $query = $this-&gt;api-&gt;db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a>; </p>
+<div class="textblock"><p>This file is part of Agile Toolkit 4 <a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a></p>
+<p>(c) 2008-2013 Agile Toolkit Limited &lt;<a href="mailto:info@agiletoolkit.org">info@agiletoolkit.org</a>&gt; Distributed under Affero General Public License v3 and commercial license.</p>
+<p>See LICENSE or LICENSE_COM for more information Implementation of SQL Query Abstraction Layer for Agile Toolkit</p>
+<p><a class="el" href="">http://agiletoolkit.org/doc/dsql</a></p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="af3380f3b13931d581fa973a382946b32"></a><!-- doxytag: member="DB::beginTransaction" ref="af3380f3b13931d581fa973a382946b32" args="()" -->
 <div class="memitem">
@@ -149,6 +152,10 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Database driver supports statements for starting and committing transactions. Unfortunatelly they don't allow to nest them and commit gradually. With this method you have some implementation of nested transactions.</p>
+<p>When you call it for the first time it will begin transaction. If you call it more times, it will do nothing but will increase depth counter. You will need to call <a class="el" href="class_d_b.html#af5674c27d4a92f6228565010eacbb9cb">commit()</a> for each execution of beginTransactions() and the last commit will actually perform a real commit.</p>
+<p>So if you have been working with the database and got unhandled exception in the middle of your code, everything would be rolled back.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed Don't rely on any meaningful return </dd></dl>
 
 </div>
 </div>
@@ -165,6 +172,9 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Each occurance of <a class="el" href="class_d_b.html#af3380f3b13931d581fa973a382946b32">beginTransaction()</a> must be matched with <a class="el" href="class_d_b.html#af5674c27d4a92f6228565010eacbb9cb">commit()</a>. Only when same amount of commits are executed, the ACTUAL commit will be issued to the database.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_d_b.html#af3380f3b13931d581fa973a382946b32">beginTransaction()</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed Don't rely on any meaningful return </dd></dl>
 
 </div>
 </div>
@@ -182,7 +192,16 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>we need to move dsn parsing to init, as other wise db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a> is creating new object of class <a class="el" href="class_d_b__dsql.html">DB_dsql</a> instead of DB_dsql_$driver, as $this-&gt;dsql_class was set in connect, which is called after db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a> connection to the database. Reads config from file. $dsn may be array </p>
+<p>Connect will parse supplied DSN and connect to the database. Please be aware that DSN may contain plaintext password and if you record backtrace it may expose it. To avoid, put your DSN inside a config file under a custom key and use a string e'g:</p>
+<p>$config['my_dsn']='secret'; $db-&gt;connect('my_dsn');</p>
+<p>If the argument $dsn is not specified, it will read it from $config['dsn'].</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;array</td><td class="paramname">$dsn</td><td>Connection string in PEAR::DB or PDO format</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b.html">DB</a> this </dd></dl>
 
 </div>
 </div>
@@ -200,7 +219,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns Dynamic Query object compatible with this database driver (PDO) </p>
+<p>Returns Dynamic Query object which would be compatible with current database connection. If you are connected to MySQL, <a class="el" href="class_d_b__dsql__mysql.html">DB_dsql_mysql</a> will be returned.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">sting</td><td class="paramname">$class</td><td>Override class (e.g. DB_dsql_my)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b__dsql.html">DB_dsql</a> empty dsql object </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_d_b__prefixed.html#aa5207dec422b4c320efdaa3ee1f85b1e">DB_prefixed</a>.</p>
 
@@ -230,7 +256,16 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes query and returns first column of first row </p>
+<p>Executes query and returns first column of first row. This is a quick and speedy way to get the results of simple queries. Consider using DSQL:</p>
+<p>echo $this-&gt;api-&gt;db-&gt;<a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a>-&gt;expr('select now()');</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$query</td><td>SQL Qurey </td></tr>
+    <tr><td class="paramtype">arary</td><td class="paramname">$params</td><td>PDO-params</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string first row, first column </dd></dl>
 
 </div>
 </div>
@@ -247,6 +282,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Will return true if currently running inside a transaction. This is useful if you are logging anything into a database. If you are inside a transaction, don't log or it may be rolled back. Perhaps use a hook?</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean if in transactionn </dd></dl>
 
 </div>
 </div>
@@ -274,7 +311,18 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns last ID after insert. Driver-dependant. Redefine if needed. </p>
+<p>Returns last ID after insert. Driver-dependant. Redefine if needed, but avoid using.</p>
+<p>Agile Toolkit models automatically reload themselves with the newly inserted id:</p>
+<p>$m = $this-&gt;add('Model_Book'); $m-&gt;set('title','The Book of Oz'); $m-&gt;save(); $id = $m-&gt;id; // Last ID automatically stored here</p>
+<p>TODO: test with postgreSQL and other databases. I've heard pgsql does not support autoincrements, but we can pull some sequences. Yak, but we would need to know table name and some more info about the statement, right?</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$statement</td><td>for unsupported db's </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$table</td><td>for unsupported db's</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -302,24 +350,34 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Query database with SQL statement </p>
+<p>Sometimes for whatever reason DSQL is not what you want to do. I really don't understand your circumstances in which you would want to use <a class="el" href="class_d_b.html#a08ad982f7f88a8b80c3062d99bfc302b">query()</a> directly but if you really really know what you are doing, then this method executes query with specified params</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$query</td><td>SQL query </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$params</td><td>Parametric arguments</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>PDOStatement Newly created statement </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6c8e90da29100c80c1abe381cfb37593"></a><!-- doxytag: member="DB::rollBack" ref="a6c8e90da29100c80c1abe381cfb37593" args="($option=null)" -->
+<a class="anchor" id="aebaea4cae21e0e75ec1489c1648caeb3"></a><!-- doxytag: member="DB::rollBack" ref="aebaea4cae21e0e75ec1489c1648caeb3" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_d_b.html#a6c8e90da29100c80c1abe381cfb37593">rollBack</a> </td>
+          <td class="memname"><a class="el" href="class_d_b.html#aebaea4cae21e0e75ec1489c1648caeb3">rollBack</a> </td>
           <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>option</em> = <code>null</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Rollbacks queries since beginTransaction and resets transaction depth</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_d_b.html#af3380f3b13931d581fa973a382946b32">beginTransaction()</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed Don't rely on any meaningful return </dd></dl>
 
 </div>
 </div>
@@ -343,11 +401,12 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$dsql_class = '<a class="el" href="class_d_b__dsql.html">DB_dsql</a>'</td>
+          <td class="memname">$dsql_class = null</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This is initialized to a class name which will be returned by <a class="el" href="class_d_b.html#aa5207dec422b4c320efdaa3ee1f85b1e">dsql()</a> by default. If you want to specify a different one, add this parameter to your PDO: 'class'=&gt;'DB_dsql_my'. </p>
 
 </div>
 </div>
@@ -388,7 +447,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -401,7 +460,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b.html">DB</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

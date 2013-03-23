@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -157,14 +158,14 @@ Data Fields</h2></td></tr>
 <p>by default, single mode is used</p>
 <p>Mode Support. You can use setModel('filestore/File'); This will use the model for file upload handling. You can specify your own model, which derives from either filestore or filestore <a class="el" href="class_field.html">Field</a> value will always contain "id" of uploaded file. If multiple file upload is permitted, field will contain comma-separated list of IDs.</p>
 <p>Example1: Simple use with model</p>
-<p>$upl=$form-&gt;addField('upload','myfile_id') -&gt;setModel('filestore/File');</p>
+<p>$upl=$form-&gt;addField('Upload','myfile_id') -&gt;setModel('filestore/File');</p>
 <p>Example2: Customizing field</p>
-<p>$upl=$form-&gt;addField('upload','photo_id','Photo') -&gt;setController('filestore/Image') -&gt;allowMultiple(false) ; $upl-&gt;template-&gt;set('after_field','Max size: 500k');</p>
+<p>$upl=$form-&gt;addField('Upload','photo_id','Photo') -&gt;setController('filestore/Image') -&gt;allowMultiple(false) ; $upl-&gt;template-&gt;set('after_field','Max size: 500k');</p>
 <p>Example3: Specifying inside <a class="el" href="class_model.html">Model</a></p>
 <p>$model=$this-&gt;add('Model_Book'); $model-&gt;add('filestore/Field_Image','picture_id');</p>
 <p>$this-&gt;add('<a class="el" href="class_form.html">Form</a>')-&gt;setModel($model);</p>
 <p>Example4: Use of your custom model</p>
-<p>$this-&gt;api-&gt;stickyGET('user_id'); $myfile=$this-&gt;add('filestore/Image'); $myfile-&gt;join('user_images.file_id')-&gt;setMasterField('user_id',$_GET['user_id']); $form-&gt;addField('upload','photo') -&gt;<a class="el" href="class_form___field.html#a1cda0185f14206bec026b1af0639b5fa">setNoSave()</a>-&gt;setModel($myfile);</p>
+<p>$this-&gt;api-&gt;stickyGET('user_id'); $myfile=$this-&gt;add('filestore/Image'); $myfile-&gt;join('user_images.file_id')-&gt;setMasterField('user_id',$_GET['user_id']); $form-&gt;addField('Upload','photo') -&gt;<a class="el" href="class_form___field.html#a1cda0185f14206bec026b1af0639b5fa">setNoSave()</a>-&gt;setModel($myfile);</p>
 <p>This last example will implement many-to-many relationship between file object and user_id. This is implemented through intermediate table user_images, which is joined with an image model. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a46a20dfc2ba14759034edf50301c6fc5"></a><!-- doxytag: member="Form_Field_Upload::allowMultiple" ref="a46a20dfc2ba14759034edf50301c6fc5" args="($multiple=50)" -->
@@ -375,7 +376,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_form___field.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field</a>.</p>
@@ -568,7 +570,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="upload_8php.html">upload.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_upload_8php.html">Upload.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -577,7 +579,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -590,7 +592,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field___upload.html">Form_Field_Upload</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:14 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

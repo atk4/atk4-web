@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -124,6 +125,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page.html#a95e859a4588a39a1824b717378a84c29">getTitle</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">$default_exception</a> = '<a class="el" href="class_exception___for_user.html">Exception_ForUser</a>'</td></tr>
@@ -150,7 +152,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#add8c5a33f231d9979e5f8bbded576d9e">AbstractView</a>.</p>
 
@@ -187,12 +191,36 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_page___entity_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_EntityManager</a>, <a class="el" href="classpage___default_about.html#a4be4055f3361d4800e16bc2e2e38cda6">page_DefaultAbout</a>, and <a class="el" href="class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_Tester</a>.</p>
+<p>Reimplemented in <a class="el" href="class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_Tester</a>, <a class="el" href="class_page___entity_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_EntityManager</a>, and <a class="el" href="classpage___default_about.html#a4be4055f3361d4800e16bc2e2e38cda6">page_DefaultAbout</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8c9955ce8c33176bd3548ff0b4a8e67f"></a><!-- doxytag: member="Page::recursiveRender" ref="a8c9955ce8c33176bd3548ff0b4a8e67f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Recursively renders all views. Calls <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
+<p>function <a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); // will render <a class="el" href="class_text.html">Text</a> also }</p>
+<p>When cut_object is specified in the GET arguments, then output of HTML would be limited to object with matching $name or $short_name.</p>
+<p>This method will be called instead of default <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">AbstractView</a>.</p>
 
 </div>
 </div>
@@ -207,7 +235,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad7610133e2fdaa0f815836566e5b39ef">exception()</a> is called </p>
+<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception()</a> is called </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">AbstractObject</a>.</p>
 
@@ -236,7 +264,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -249,7 +277,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_page.html">Page</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

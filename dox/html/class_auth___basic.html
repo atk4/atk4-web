@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -128,12 +129,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a582f7fd951b87c1312eec1a0377fb98b">allowPage</a> ($page)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a6aeb50b13a46bddd34205ac219f0b194">getAllowedPages</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#af893fdd686b5d8ea59efc4e45611af31">isPageAllowed</a> ($page)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a7fc0c9ca6841fd420536538bea8879eb">usePasswordEncryption</a> ($method)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#af89b52f3657a6191da613252d0ec3d26">usePasswordEncryption</a> ($method='php')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#af058fa57227f8debb3556c872025966b">encryptPassword</a> ($password, $salt=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a5fb1933974ac9aae8c7ac4d3344caca6">check</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a2209a0db6291ff270f1eca270a33edb3">addInfo</a> ($key, $val=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a33bdd79e5da367ebddd4cfbdbbfc7cff">isLoggedIn</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#ae89e153e79342edaf485ab1d64570889">verifyCredintials</a> ($user, $password)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#af8e70e879fc2d5e740c705991f6c0ec5">verifyCredentials</a> ($user, $password)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a321b77544ca18becf802329e951d2414">memorizeURL</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a7fab9ce25511a132269e791a5308f7b7">getURL</a> ()</td></tr>
@@ -153,6 +153,8 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a1a4fda4c28a9ee5f91102c023b9501f4">$form</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a7571298b54c8ec508e9ca80bfe04c6f7">$login_field</a> = 'email'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#ade8b6757c21d8ba8687b7723b0441acb">$password_field</a> = 'password'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a35059930deef0c8802f4db1d4e62fcc0">$hash_algo</a> = PASSWORD_DEFAULT</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#a878512736f2a3a01c0b3bd221dbbe24d">$hash_options</a> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_auth___basic.html#ae6ecbba0492b19a6a0f157ec11db8477">$password_encryption</a> = null</td></tr>
@@ -304,6 +306,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Removes object from parent and prevents it from renedring </p>
+<div class="fragment"><pre class="fragment"> $view = $this-&gt;<a class="code" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add</a>(<span class="stringliteral">&#39;View&#39;</span>);
+ $view -&gt; <a class="code" href="class_auth___basic.html#aa118461de946085fe42989193337044a">destroy</a>();
+</pre></div><dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#aa118461de946085fe42989193337044a">AbstractObject</a>.</p>
 
@@ -427,7 +432,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
@@ -697,15 +703,15 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7fc0c9ca6841fd420536538bea8879eb"></a><!-- doxytag: member="Auth_Basic::usePasswordEncryption" ref="a7fc0c9ca6841fd420536538bea8879eb" args="($method)" -->
+<a class="anchor" id="af89b52f3657a6191da613252d0ec3d26"></a><!-- doxytag: member="Auth_Basic::usePasswordEncryption" ref="af89b52f3657a6191da613252d0ec3d26" args="($method='php')" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_auth___basic.html#a7fc0c9ca6841fd420536538bea8879eb">usePasswordEncryption</a> </td>
+          <td class="memname"><a class="el" href="class_auth___basic.html#af89b52f3657a6191da613252d0ec3d26">usePasswordEncryption</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>method</em></td><td>)</td>
+          <td class="paramname"><em>method</em> = <code>'php'</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -739,34 +745,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This function verifies username and password. Password must be supplied in plain text. Does not affect currently logged in user </p>
-
-</div>
-</div>
-<a class="anchor" id="ae89e153e79342edaf485ab1d64570889"></a><!-- doxytag: member="Auth_Basic::verifyCredintials" ref="ae89e153e79342edaf485ab1d64570889" args="($user, $password)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_auth___basic.html#ae89e153e79342edaf485ab1d64570889">verifyCredintials</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>user</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>password</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>This function verifies credibility of supplied authenication data. It will search based on user and verify the password. It's also possible that the function will re-hash user password with updated hash.</p>
+<p>if default authentication method is used, the function will automatically determine hash used for password generation and will upgrade to a new php5.5-compatible syntax. </p>
 
 </div>
 </div>
@@ -790,6 +770,32 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">$form = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a35059930deef0c8802f4db1d4e62fcc0"></a><!-- doxytag: member="Auth_Basic::$hash_algo" ref="a35059930deef0c8802f4db1d4e62fcc0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$hash_algo = PASSWORD_DEFAULT</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a878512736f2a3a01c0b3bd221dbbe24d"></a><!-- doxytag: member="Auth_Basic::$hash_options" ref="a878512736f2a3a01c0b3bd221dbbe24d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$hash_options = array()</td>
         </tr>
       </table>
 </div>
@@ -859,7 +865,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -872,7 +878,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_auth___basic.html">Auth_Basic</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

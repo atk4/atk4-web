@@ -8,7 +8,7 @@ var class_view =
     [ "setAttr", "class_view.html#af872a9c35cc9d5ef7956986455122a12", null ],
     [ "setClass", "class_view.html#a8d2c9f07514863c12756f00354c96f67", null ],
     [ "setElement", "class_view.html#a2193ae9420d4227a233ac136d14c9407", null ],
-    [ "setHtml", "class_view.html#a08c0d72e86b5b52a0da9ac9f2165bd96", null ],
+    [ "setHTML", "class_view.html#aaa214328de3363603766a57ab67db132", null ],
     [ "setStyle", "class_view.html#aecfb78e7665096735196b2504d4a9580", null ],
     [ "setText", "class_view.html#aed98453b92e9e7e961179dfff24c4a3a", null ]
 ];

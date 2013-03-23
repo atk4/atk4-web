@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -135,7 +136,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
@@ -155,8 +157,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
-<p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_hello_world.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
 
@@ -189,7 +193,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -202,7 +206,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_hello_world.html">HelloWorld</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:14 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

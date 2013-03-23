@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -108,8 +109,9 @@ Inheritance diagram for SMlite:</div>
  <div class="center">
   <img src="class_s_mlite.png" usemap="#SMlite_map" alt=""/>
   <map id="SMlite_map" name="SMlite_map">
-<area href="class_abstract_model.html" alt="AbstractModel" shape="rect" coords="0,56,96,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_abstract_model.html" alt="AbstractModel" shape="rect" coords="0,56,100,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,100,24"/>
+<area href="class_t_mail___template.html" alt="TMail_Template" shape="rect" coords="0,168,100,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -143,6 +145,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#af17958004461df4bbafc95f92e86358a">rebuildTagsRegion</a> (&amp;$branch)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a870ede70459f7a4fe07d82669b06941b">renderRegion</a> (&amp;$chunk)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a974b22a6392c3abc99db4d8f0b4b81fa">debugRender</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#a2ab6221576bef4ca02a9ec7177592d3d">debugRenderRegion</a> (&amp;$chunk)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_mlite.html#aa8b7f60d528ad005ad2c13137264e9d3">myStrTok</a> (&amp;$string, $tok)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -197,6 +201,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Clones associated controller and model. If cloning views, add them to the owner</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> Copy this object </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ad0cb87b388bc74d63dc884accdca8713">AbstractObject</a>.</p>
 
@@ -271,6 +277,39 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>tag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a974b22a6392c3abc99db4d8f0b4b81fa"></a><!-- doxytag: member="SMlite::debugRender" ref="a974b22a6392c3abc99db4d8f0b4b81fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a974b22a6392c3abc99db4d8f0b4b81fa">debugRender</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2ab6221576bef4ca02a9ec7177592d3d"></a><!-- doxytag: member="SMlite::debugRenderRegion" ref="a2ab6221576bef4ca02a9ec7177592d3d" args="(&amp;$chunk)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_mlite.html#a2ab6221576bef4ca02a9ec7177592d3d">debugRenderRegion</a> </td>
+          <td>(</td>
+          <td class="paramtype">&amp;$&#160;</td>
+          <td class="paramname"><em>chunk</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -437,10 +476,13 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_t_mail___template.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Template</a>.</p>
 
 </div>
 </div>
@@ -872,6 +914,8 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Type of resource to look for pathFinder </p>
 
+<p>Reimplemented in <a class="el" href="class_t_mail___template.html#a13b5ab8ab859b33ff9a1ea55631de5fd">TMail_Template</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a24d265fde9170f81f3c87f3e4cb958d7"></a><!-- doxytag: member="SMlite::$top_tag" ref="a24d265fde9170f81f3c87f3e4cb958d7" args="" -->
@@ -911,7 +955,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -924,7 +968,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_mlite.html">SMlite</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

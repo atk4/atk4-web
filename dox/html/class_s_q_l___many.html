@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -115,10 +116,11 @@ Inheritance diagram for SQL_Many:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a5395aacb73c635d0af2bd11eee1d386a">set</a> ($model, $their_field=null, $our_field=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#af59c7facf2550935581cfde03373934f">set</a> ($model, $their_field=null, $our_field=null, $relation=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a28108070aaa895cd4460e609639b0ac6">from</a> ($m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#abdc73d5f124f6204575e5fc4ba1620c6">saveConditions</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a982b3e1d1ddccbd61a7a455aad5155a4">restoreConditions</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a7a68511bcc448f6c7feb70c8e459da3c">refSQL</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a664f23b8642bad8e397ba63cd391a8b1">refSQL</a> ($options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#acf956f92c2dbef1a02e3aa854d217d5d">ref</a> ($mode=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -127,8 +129,27 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#ae9d2ae54d05da1228754f9b25438b82f">$orig_conditions</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#ab06104eb00d92e79538eb217633e8299">$our_field</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">$auto_track_element</a> = true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a6b8f9d1b57d35bdd7a2caf31a72c69f0">$relation</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_l___many.html#a5b3b9292bc2d41334cda2f099c304cf0">$table_alias</a> = null</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a28108070aaa895cd4460e609639b0ac6"></a><!-- doxytag: member="SQL_Many::from" ref="a28108070aaa895cd4460e609639b0ac6" args="($m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_s_q_l___many.html#a28108070aaa895cd4460e609639b0ac6">from</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="acf956f92c2dbef1a02e3aa854d217d5d"></a><!-- doxytag: member="SQL_Many::ref" ref="acf956f92c2dbef1a02e3aa854d217d5d" args="($mode=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -146,14 +167,15 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7a68511bcc448f6c7feb70c8e459da3c"></a><!-- doxytag: member="SQL_Many::refSQL" ref="a7a68511bcc448f6c7feb70c8e459da3c" args="()" -->
+<a class="anchor" id="a664f23b8642bad8e397ba63cd391a8b1"></a><!-- doxytag: member="SQL_Many::refSQL" ref="a664f23b8642bad8e397ba63cd391a8b1" args="($options=array())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_q_l___many.html#a7a68511bcc448f6c7feb70c8e459da3c">refSQL</a> </td>
+          <td class="memname"><a class="el" href="class_s_q_l___many.html#a664f23b8642bad8e397ba63cd391a8b1">refSQL</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>options</em> = <code>array()</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -194,12 +216,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5395aacb73c635d0af2bd11eee1d386a"></a><!-- doxytag: member="SQL_Many::set" ref="a5395aacb73c635d0af2bd11eee1d386a" args="($model, $their_field=null, $our_field=null)" -->
+<a class="anchor" id="af59c7facf2550935581cfde03373934f"></a><!-- doxytag: member="SQL_Many::set" ref="af59c7facf2550935581cfde03373934f" args="($model, $their_field=null, $our_field=null, $relation=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_q_l___many.html#a5395aacb73c635d0af2bd11eee1d386a">set</a> </td>
+          <td class="memname"><a class="el" href="class_s_q_l___many.html#af59c7facf2550935581cfde03373934f">set</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -214,7 +236,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>our_field</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>our_field</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>relation</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -283,6 +311,32 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a6b8f9d1b57d35bdd7a2caf31a72c69f0"></a><!-- doxytag: member="SQL_Many::$relation" ref="a6b8f9d1b57d35bdd7a2caf31a72c69f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$relation = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5b3b9292bc2d41334cda2f099c304cf0"></a><!-- doxytag: member="SQL_Many::$table_alias" ref="a5b3b9292bc2d41334cda2f099c304cf0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$table_alias = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a98e5fe65d113bcfc123cc6eedaf201e0"></a><!-- doxytag: member="SQL_Many::$their_field" ref="a98e5fe65d113bcfc123cc6eedaf201e0" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +360,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -319,7 +373,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_q_l___many.html">SQL_Many</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

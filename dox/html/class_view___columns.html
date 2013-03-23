@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -125,9 +126,9 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___columns.html#a3aaf40baac36e278c7d7c9139df1750c">$mode</a> = 'auto'</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implementation of <a class="el" href="classj_query.html">jQuery</a> UI <a class="el" href="class_tabs.html">Tabs</a></p>
+<div class="textblock"><p>Implementation of columns</p>
 <p>Use:</p>
-<p>12-GS: $cols=$this-&gt;add('<a class="el" href="class_columns.html">Columns</a>'); $cols-&gt;addColumn(4)-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>'); $cols-&gt;addColumn(6)-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>');</p>
+<p>12-GS: $cols=$this-&gt;add('<a class="el" href="class_columns.html">Columns</a>'); $cols-&gt;addColumn(4)-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>'); $cols-&gt;addColumn(6)-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>'); $cols-&gt;addColumn(2)-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>');</p>
 <p>Flexible $cols=$this-&gt;add('<a class="el" href="class_columns.html">Columns</a>'); $cols-&gt;addColumn('10')-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>'); $cols-&gt;addColumn('90')-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>');</p>
 <p>Auto $cols=$this-&gt;add('<a class="el" href="class_columns.html">Columns</a>'); $cols-&gt;<a class="el" href="class_view___columns.html#a86f5e3ddd5da12b1e74b0e7d8c1e5c9d">addColumn()</a>-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>'); $cols-&gt;<a class="el" href="class_view___columns.html#a86f5e3ddd5da12b1e74b0e7d8c1e5c9d">addColumn()</a>-&gt;add('<a class="el" href="class_lorem_ipsum.html">LoremIpsum</a>');</p>
 <p>See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </p>
@@ -163,7 +164,9 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>.</p>
 
@@ -183,7 +186,10 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Recursively renders all views. Calls <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
-<p>function <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); } </p>
+<p>function <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); // will render <a class="el" href="class_text.html">Text</a> also }</p>
+<p>When cut_object is specified in the GET arguments, then output of HTML would be limited to object with matching $name or $short_name.</p>
+<p>This method will be called instead of default <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">AbstractView</a>.</p>
 
@@ -213,7 +219,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -226,7 +232,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_view___columns.html">View_Columns</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:17 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

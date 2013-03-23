@@ -6,6 +6,7 @@ var searchData=
   ['abstractview',['AbstractView',['../class_abstract_view.html',1,'']]],
   ['apicli',['ApiCLI',['../class_api_c_l_i.html',1,'']]],
   ['apifrontend',['ApiFrontend',['../class_api_frontend.html',1,'']]],
+  ['apiinstall',['ApiInstall',['../class_api_install.html',1,'']]],
   ['apiweb',['ApiWeb',['../class_api_web.html',1,'']]],
   ['auth',['Auth',['../class_auth.html',1,'']]],
   ['auth_5fbasic',['Auth_Basic',['../class_auth___basic.html',1,'']]]

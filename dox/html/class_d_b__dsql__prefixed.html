@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -199,9 +200,21 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Specifies which table to use in this dynamic query. You may specify array to perform operation on multiple tables.</p>
-<p><a class="el" href="">Examples: $q-&gt;table('user'); $q-&gt;table('user','u'); $q-&gt;table('user')-&gt;table('salary') $q-&gt;table(array('user','salary')); $q-&gt;table(array('user','salary'),'user'); $q-&gt;table(array('u'=&gt;'user','s'=&gt;'salary'));  If you specify multiple tables, you still need to make sure to add proper "where" conditions. All the above examples return $q (for chaining)  You can also call table without arguments, which will return current table:  echo $q-&gt;table();  If multiple tables are used, "false" is returned. Return is not quoted. Please avoid using table() without arguments as more tables may be dynamically added later. </a></p>
+<p>Examples: $q-&gt;table('user'); $q-&gt;table('user','u'); $q-&gt;table('user')-&gt;table('salary') $q-&gt;table(array('user','salary')); $q-&gt;table(array('user','salary'),'user'); $q-&gt;table(array('u'=&gt;'user','s'=&gt;'salary'));</p>
+<p>If you specify multiple tables, you still need to make sure to add proper "where" conditions. All the above examples return $q (for chaining)</p>
+<p>You can also call table without arguments, which will return current table:</p>
+<p>echo $q-&gt;<a class="el" href="class_d_b__dsql__prefixed.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c">table()</a>;</p>
+<p>If multiple tables are used, "false" is returned. Return is not quoted. Please avoid using <a class="el" href="class_d_b__dsql__prefixed.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c">table()</a> without arguments as more tables may be dynamically added later.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$table</td><td>Specify table to use </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$alias</td><td>Specify alias for the table</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_d_b__dsql.html">DB_dsql</a> $this </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_d_b__dsql.html#ac5e5ec0cf9a1473cc7acba95d8a76b8c">DB_dsql</a>.</p>
+<p>Reimplemented from <a class="el" href="class_d_b__dsql.html#a66178ed9732b2f95c4b81963a16b47e5">DB_dsql</a>.</p>
 
 </div>
 </div>
@@ -230,7 +243,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -243,7 +256,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_d_b__dsql__prefixed.html">DB_dsql_prefixed</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

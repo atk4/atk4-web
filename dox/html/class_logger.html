@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -123,6 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#adcdf6466e3c205ac4d09bec26d83d69a">showRenderTree</a> ($e, $obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a1d79eb4b63fd5714ed3afff8673f97db">logCaughtException</a> ($e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a0f20914beae36a06c270d81ddc13e5fd">caughtException</a> ($caller, $e)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a3a5a6065d10ea1e481fa923c6fc7472a">print_r</a> ($key, $gs, $ge, $ls, $le, $ind=' ')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a7fb5bbd39ccc833e45f38d08610c4093">outputWarning</a> ($caller, $msg, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#affe82524d53cc5d18a761d1ca183284b">outputDebug</a> ($caller, $msg, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a569c06f2a12d0c0887927137acf60110">outputInfo</a> ($caller, $msg, $shift=0, $nohtml=false)</td></tr>
@@ -130,7 +132,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a8d0c5628ddb5ee88b69c8b0ccf134ad0">htmlLine</a> ($msg, $frame=array(), $prefix=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#aed2681427084844069d2416f0ca1bd4c">txtLine</a> ($msg, $frame=array(), $prefix=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a5974d1fe0a604e4b90532f10e891021f">logLine</a> ($msg, $shiftfunc=null, $severity='<a class="el" href="class_abstract_object.html#aad0b399def722e4ccd5cd3a198ff3ad3">info</a>', $trace=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ad998f7dea18438b9ea0ce5666e9c5bb4">logVar</a> ($var, $msg=&quot;&quot;, $shiftfunc=null, $severity='<a class="el" href="class_abstract_object.html#a8d39fa0575737998fc63aae69f718519">debug</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ad998f7dea18438b9ea0ce5666e9c5bb4">logVar</a> ($var, $msg=&quot;&quot;, $shiftfunc=null, $severity='<a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug</a>')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a56b753d459da0cd0fd77b1221256f2ff">logException</a> ($e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#af01270d938fec952b6a484fc4a504877">openLogFile</a> ($severity='error')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a7cf49dccd2681331f434f25cc1efc3c7">writeLogMessage</a> ()</td></tr>
@@ -150,6 +152,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#aac6ea340d2cc2002091bbae29e52c15c">$public_error_message</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a153cdf2aa14c96d07f506b4417cc962d">$log_dir</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#ab49ceda45cf5f7d1e67247bd05d0e95a">$details</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a992dab6f3818f78369a4d1ef504fb3e2">$debug_log</a> = ''</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a19be3c28a931ad3a958c62dff733e5a0">$recskip</a> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -367,7 +370,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
@@ -473,7 +477,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>severity</em> = <code>'<a class="el" href="class_abstract_object.html#a8d39fa0575737998fc63aae69f718519">debug</a>'</code>&#160;</td>
+          <td class="paramname"><em>severity</em> = <code>'<a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug</a>'</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -674,6 +678,57 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3a5a6065d10ea1e481fa923c6fc7472a"></a><!-- doxytag: member="Logger::print_r" ref="a3a5a6065d10ea1e481fa923c6fc7472a" args="($key, $gs, $ge, $ls, $le, $ind=' ')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_logger.html#a3a5a6065d10ea1e481fa923c6fc7472a">print_r</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>gs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ge</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ls</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>le</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ind</em> = <code>'&#160;'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a5bb3067b46ffa8a205420dab80442867"></a><!-- doxytag: member="Logger::showDebugInfo" ref="a5bb3067b46ffa8a205420dab80442867" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -810,6 +865,19 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a992dab6f3818f78369a4d1ef504fb3e2"></a><!-- doxytag: member="Logger::$debug_log" ref="a992dab6f3818f78369a4d1ef504fb3e2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$debug_log = ''</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab49ceda45cf5f7d1e67247bd05d0e95a"></a><!-- doxytag: member="Logger::$details" ref="ab49ceda45cf5f7d1e67247bd05d0e95a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -902,7 +970,7 @@ Protected Attributes</h2></td></tr>
 <p>Normally all error messages are sent through the API class by using one of two ways:</p>
 <p>1. throwing exception, which is caught by Api class (unless you catch it yourself) 2. calling $this-&gt;<a class="el" href="class_abstract_object.html#afc4c1081f771a2a41fd2eebdd7e1322e">fatal()</a> which would throw exception for you (useful when calling from PHP4 compatible components)</p>
 <p>additionally there are way to pass info and warnings by calling:</p>
-<p>$this-&gt;<a class="el" href="class_abstract_object.html#af3c567c541fd01128487fa16d53a1e62">warning()</a>; $this-&gt;<a class="el" href="class_abstract_object.html#aad0b399def722e4ccd5cd3a198ff3ad3">info()</a>; $this-&gt;<a class="el" href="class_abstract_object.html#a8d39fa0575737998fc63aae69f718519">debug()</a>;</p>
+<p>$this-&gt;<a class="el" href="class_abstract_object.html#af3c567c541fd01128487fa16d53a1e62">warning()</a>; $this-&gt;<a class="el" href="class_abstract_object.html#aad0b399def722e4ccd5cd3a198ff3ad3">info()</a>; $this-&gt;<a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug()</a>;</p>
 <p>Debug information will reach logs only if debug mode is set.</p>
 <p>==[ Controling debug info ]===================================================</p>
 <p>AModules3 support two ways to set debug mode. Global and Local.</p>
@@ -934,7 +1002,7 @@ Protected Attributes</h2></td></tr>
 <ul>
 <li>called some function which might contain errors or being debuged</li>
 <li>user logged in or logged out</li>
-<li>when debuging, even more messages might be sent as <a class="el" href="class_abstract_object.html#a8d39fa0575737998fc63aae69f718519">debug()</a> WARNING: please keep debug information to the minimum. Debug information is accompanied with extended information. Debug information is always saved into logs or is available on the screen.</li>
+<li>when debuging, even more messages might be sent as <a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug()</a> WARNING: please keep debug information to the minimum. Debug information is accompanied with extended information. Debug information is always saved into logs or is available on the screen.</li>
 </ul>
 <p>AModules3 core tries not to produce any debug or info messages to keep files clean. Even if it does, those calls might eventually be cleaned out.</p>
 <p>==[ Configuring logger ]====================================================== <a class="el" href="class_logger.html">Logger</a> uses 2 output destinations, and 3 ways to restrict output information.</p>
@@ -1008,7 +1076,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1021,7 +1089,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_logger.html">Logger</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:15 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

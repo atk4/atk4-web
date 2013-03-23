@@ -11,6 +11,7 @@ var class_lister =
     [ "$current_row", "class_lister.html#a2ec3a266ee95cda75cdbb71bc9ee1b53", null ],
     [ "$current_row_html", "class_lister.html#af7c9c05bbefcfe02242d897a5a8f3916", null ],
     [ "$dq", "class_lister.html#aebca8a669fb218b783f96a1bf801264e", null ],
+    [ "$id_field", "class_lister.html#aa63113a5b1cc2bf64ee824ab64f9e5c6", null ],
     [ "$iter", "class_lister.html#a24e6fb63018a7bf30419158cfedcdc22", null ],
     [ "$iterator", "class_lister.html#a3a999852dfee63e69aacacefb7e33564", null ]
 ];

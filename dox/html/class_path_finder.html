@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -122,13 +123,23 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#a578e035b4becee0a01688fd291892d3d">search</a> ($type, $filename='', $return='relative')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#a2c1c250f4260b4e35c2ef5755163d221">_searchDirFiles</a> ($dir, &amp;$files, $prefix='')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#a50299c5e8cd1863f25475071571332d7">searchDir</a> ($type, $directory='')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#a7108b6a0903b596c677512fe499d3bf5">loadClass</a> ($class_name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#a3eeebc8a0eb1d30bd4c52dd93d9205d8">loadClass</a> ($className)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#afbc71b72d6212ed640f5282d75c62476">$base_location</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#ab32ac078357094ad5560005af6202828">$atk_location</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path_finder.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">$default_exception</a> = '<a class="el" href="class_exception___path_finder.html">Exception_PathFinder</a>'</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>==ATK4=================================================== This file is part of Agile Toolkit 4 <a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a></p>
+<p>(c) 2008-2013 Agile Toolkit Limited &lt;<a href="mailto:info@agiletoolkit.org">info@agiletoolkit.org</a>&gt; Distributed under Affero General Public License v3 and commercial license.</p>
+<p>See LICENSE or LICENSE_COM for more information =====================================================ATK4= <a class="el" href="class_path_finder.html">PathFinder</a> is responsible for locating resources in Agile Toolkit. One of the most significant principles it implements is ability for any resource (PHP, JS, HTML, IMG) to be located under several locations. Pathfinder will look for the location containing the resource you ask for and will provide you with either a relative path, <a class="el" href="class_u_r_l.html">URL</a> or absolute path to a file.</p>
+<p>To make this possible, <a class="el" href="class_path_finder.html">PathFinder</a> relies on a class <a class="el" href="class_path_finder___location.html">PathFinder_Location</a>, which describes each individual location and it's contents.</p>
+<p>You may add additional locations in your application, add-on or elsewhere. Some locations may be activated only in certain circumstances, for example add-on will be able to add it's location only if add-on have been added to a page.</p>
+<p>Here is a list of resource categories: php, page, addons, template, mail, js, css</p>
+<p>Resources which are planned or under development: dbupdates, logs, public</p>
+<p><a class="el" href="">http://agiletoolkit.org/pathfinder</a></p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a2c1c250f4260b4e35c2ef5755163d221"></a><!-- doxytag: member="PathFinder::_searchDirFiles" ref="a2c1c250f4260b4e35c2ef5755163d221" args="($dir, &amp;$files, $prefix='')" -->
 <div class="memitem">
 <div class="memproto">
@@ -175,6 +186,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Agile Toolkit-based application comes with a structure as described in documentation. For new users it's easier if they see consistent structure they are used to.</p>
+<p>As a more advanced developer (since you reading this text!) you may know that it's possible to completely redefine locations of resources to suit your own preferences. You might want to do this if you are integrating with your existing application or another framework or building multi-tiered project with extensive structure.</p>
+<p>Usually it's enough to add additional resources by creating one or both methods in your API class:</p>
+<p>* <a class="el" href="class_path_finder.html#aae65669ca0081d5fc98438b4c91e1011">addDefaultLocations()</a> - will be checked first (overrides) * base_location is checked after * addSharedLocations() - add your secondary location (shared/lib) * atk_location is checked Here * api-&gt;<a class="el" href="class_path_finder.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> executes after where you can add more fall-back locations</p>
+<p>Add-ons would typically be added during <a class="el" href="class_path_finder.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> so they would have low precedence. PathPinder does not support priority handling.</p>
+<p>As each location must know both physical path and <a class="el" href="class_u_r_l.html">URL</a>, for custom configuration you will need to define both - base path and base url.</p>
+<p>By default the following things are assumed: * path of base location is same as the front-controller (index.php) * <a class="el" href="class_u_r_l.html">URL</a> of base location is same as dirname(request url) * path to ATK location determined by 2 directories up from this file * <a class="el" href="class_u_r_l.html">URL</a> of ATK location is ./atk4/ or $config['atk_location'], if set</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -202,6 +221,16 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Cretes new <a class="el" href="class_path_finder___location.html">PathFinder_Location</a> object and specifies it's contents. You can subsequentially add more contents by calling</p>
+<p>$location-&gt;defineContents</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$path</td><td>UNCLEAR!!! TODO: FIX </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$contents</td><td>Array describing contents</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_path_finder___location.html">PathFinder_Location</a> New Location </dd></dl>
 
 </div>
 </div>
@@ -218,22 +247,22 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
-<p>This method is called for initialization</p>
+<p>{Initialize object. Always call parent Do not call directly<dl class="return"><dt><b>Returns:</b></dt><dd>void</dd></dl>
+} </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7108b6a0903b596c677512fe499d3bf5"></a><!-- doxytag: member="PathFinder::loadClass" ref="a7108b6a0903b596c677512fe499d3bf5" args="($class_name)" -->
+<a class="anchor" id="a3eeebc8a0eb1d30bd4c52dd93d9205d8"></a><!-- doxytag: member="PathFinder::loadClass" ref="a3eeebc8a0eb1d30bd4c52dd93d9205d8" args="($className)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_path_finder.html#a7108b6a0903b596c677512fe499d3bf5">loadClass</a> </td>
+          <td class="memname"><a class="el" href="class_path_finder.html#a3eeebc8a0eb1d30bd4c52dd93d9205d8">loadClass</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>class_name</em></td><td>)</td>
+          <td class="paramname"><em>className</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -272,6 +301,16 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Search for a file inside multiple locations, associated with resource $type. By default will return relative path, but 3rd argument can change that</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$type</td><td>Type of resource to search surch as "php" </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$filename</td><td>Name of the file to search for </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$return</td><td>'relative','url','path' or 'location'</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string|object as specified by $return </dd></dl>
 
 </div>
 </div>
@@ -305,6 +344,16 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Search is similar to locate, but will return array of all matching files.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$type</td><td>Type of resource to search surch as "php" </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$filename</td><td>Name of the file to search for </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$return</td><td>'relative','url','path' or 'location'</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string|object as specified by $return </dd></dl>
 
 </div>
 </div>
@@ -346,6 +395,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Agile Toolkit comes with some assets: lib, js, template, css. This location describes those resources. </p>
 
 </div>
 </div>
@@ -359,6 +409,23 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Base location is where your application files are located. Normally this location is added first and all the requests are checked here before elsewhere. </p>
+
+</div>
+</div>
+<a class="anchor" id="ade8f8bc9c31f13c39edfe43aaea3a4e8"></a><!-- doxytag: member="PathFinder::$default_exception" ref="ade8f8bc9c31f13c39edfe43aaea3a4e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$default_exception = '<a class="el" href="class_exception___path_finder.html">Exception_PathFinder</a>'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>{Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception()</a> is called } </p>
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">AbstractObject</a>.</p>
 
 </div>
 </div>
@@ -372,7 +439,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -385,7 +452,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_path_finder.html">PathFinder</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

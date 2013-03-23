@@ -1,8 +1,9 @@
 var searchData=
 [
+  ['unix_5fdirname',['unix_dirname',['../class_page_manager.html#a862f90ba5f5083ea27232000c3c518fe',1,'PageManager']]],
   ['unload',['unload',['../class_model___table.html#aa13d0535d22492ba710e3419a7b92ac1',1,'Model_Table\unload()'],['../class_model.html#aa13d0535d22492ba710e3419a7b92ac1',1,'Model\unload()']]],
-  ['upcall',['upCall',['../class_abstract_object.html#aa983dc8b59d34e26ebf27a5e3e85e559',1,'AbstractObject\upCall()'],['../class_api_c_l_i.html#aa983dc8b59d34e26ebf27a5e3e85e559',1,'ApiCLI\upCall()']]],
-  ['update',['update',['../class_controller___m_v_c_form.html#ad5e39b8d6d73155099708030afff292d',1,'Controller_MVCForm\update()'],['../class_controller___m_v_c_grid.html#ad5e39b8d6d73155099708030afff292d',1,'Controller_MVCGrid\update()'],['../class_d_b__dsql.html#a842e4774e3b3601a005b995c02f7e883',1,'DB_dsql\update()'],['../class_d_blite__dsql.html#a842e4774e3b3601a005b995c02f7e883',1,'DBlite_dsql\update()'],['../class_form___basic.html#a842e4774e3b3601a005b995c02f7e883',1,'Form_Basic\update()'],['../class_model___table.html#a516b51d6cdc9a8f212b903c984ca6e77',1,'Model_Table\update()']]],
+  ['upcall',['upCall',['../class_abstract_object.html#aa983dc8b59d34e26ebf27a5e3e85e559',1,'AbstractObject']]],
+  ['update',['update',['../class_controller___m_v_c_form.html#ad5e39b8d6d73155099708030afff292d',1,'Controller_MVCForm\update()'],['../class_d_b__dsql.html#a842e4774e3b3601a005b995c02f7e883',1,'DB_dsql\update()'],['../class_form___basic.html#a842e4774e3b3601a005b995c02f7e883',1,'Form_Basic\update()'],['../class_model___table.html#a516b51d6cdc9a8f212b903c984ca6e77',1,'Model_Table\update()']]],
   ['updateinsertquery',['updateInsertQuery',['../class_field___expression.html#af6102b88560c575ef211db85a78ad69c',1,'Field_Expression\updateInsertQuery()'],['../class_field.html#af6102b88560c575ef211db85a78ad69c',1,'Field\updateInsertQuery()']]],
   ['updatemodifyquery',['updateModifyQuery',['../class_field___expression.html#a282897212d91bea1bc670ec61f6ac1d0',1,'Field_Expression\updateModifyQuery()'],['../class_field.html#a30a38db825c046780e876b5b7182ec3f',1,'Field\updateModifyQuery()']]],
   ['updateselectquery',['updateSelectQuery',['../class_field___expression.html#ac161e2288bb97e432934c5ada9f23a3a',1,'Field_Expression\updateSelectQuery()'],['../class_field.html#ac161e2288bb97e432934c5ada9f23a3a',1,'Field\updateSelectQuery()']]],
@@ -13,9 +14,11 @@ var searchData=
   ['url',['url',['../class_api_c_l_i.html#a37b5260768d793d1011544d7d2f670b3',1,'ApiCLI']]],
   ['useabsoluteurl',['useAbsoluteURL',['../class_u_r_l.html#aebc4c8366ed6f9cdbff7e625650723eb',1,'URL']]],
   ['usearray',['useArray',['../class_order.html#a6ebb179ba0c2af46d54b8b649a323523',1,'Order']]],
-  ['usedb',['useDB',['../class_d_blite__mysql.html#aaf414a2f63b4a9d96836ba2745957e44',1,'DBlite_mysql']]],
+  ['usearrow',['useArrow',['../class_view___flyout.html#a91ce7e09ae85babe5a79d41e42c8387a',1,'View_Flyout']]],
   ['usedq',['useDQ',['../class_paginator___compat.html#af9316bad15af1ed33e9781657da2f0b5',1,'Paginator_Compat']]],
+  ['useexpr',['useExpr',['../class_d_b__dsql.html#a0b09ebef4439fb39098d813181a05c37',1,'DB_dsql']]],
   ['usefields',['useFields',['../class_quick_search.html#ad3abde9fb69a04eb93018ef52447cf0b',1,'QuickSearch']]],
-  ['usepasswordencryption',['usePasswordEncryption',['../class_auth___basic.html#a7fc0c9ca6841fd420536538bea8879eb',1,'Auth_Basic']]],
+  ['usemenu',['useMenu',['../class_view___drop_button.html#a98d8acb9023be0f22cf8dfd9474d187e',1,'View_DropButton']]],
+  ['usepasswordencryption',['usePasswordEncryption',['../class_auth___basic.html#af89b52f3657a6191da613252d0ec3d26',1,'Auth_Basic']]],
   ['usewith',['useWith',['../class_filter.html#a55e207b9bc52b815dcbe7dce5423bae2',1,'Filter']]]
 ];

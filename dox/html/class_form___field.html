@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -121,11 +122,10 @@ Inheritance diagram for Form_Field:</div>
 <area href="class_form___field___readonly.html" alt="Form_Field_Readonly" shape="rect" coords="186,560,362,584"/>
 <area href="class_form___field___search.html" alt="Form_Field_Search" shape="rect" coords="186,616,362,640"/>
 <area href="class_form___field___simple_checkbox.html" alt="Form_Field_SimpleCheckbox" shape="rect" coords="186,672,362,696"/>
-<area href="class_form___field___slider.html" alt="Form_Field_Slider" shape="rect" coords="186,728,362,752"/>
-<area href="class_form___field___text.html" alt="Form_Field_Text" shape="rect" coords="186,784,362,808"/>
-<area href="class_form___field___time.html" alt="Form_Field_Time" shape="rect" coords="186,840,362,864"/>
-<area href="class_form___field___upload.html" alt="Form_Field_Upload" shape="rect" coords="186,896,362,920"/>
-<area href="class_form___field___value_list.html" alt="Form_Field_ValueList" shape="rect" coords="186,952,362,976"/>
+<area href="class_form___field___text.html" alt="Form_Field_Text" shape="rect" coords="186,728,362,752"/>
+<area href="class_form___field___time.html" alt="Form_Field_Time" shape="rect" coords="186,784,362,808"/>
+<area href="class_form___field___upload.html" alt="Form_Field_Upload" shape="rect" coords="186,840,362,864"/>
+<area href="class_form___field___value_list.html" alt="Form_Field_ValueList" shape="rect" coords="186,896,362,920"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -143,7 +143,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a545341e59cc9a0dafc4e265d60d4b5d6">disable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#ac4c4f7e70e526e2a651f6f1dabfe9186">isDisabled</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a4cb9716a3dead296474d25838294ed39">set</a> ($value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a50d21f05315e39bef3914479273987f3">addButton</a> ($label, $position='after')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a69813d776a9a6dd0a32662dbf9b7c725">addButton</a> ($label, $options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#aa4bbfb40048e1c3fe939621179652be1">beforeField</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#af1c1c5d93278f28a90fb84e0c10cb347">afterField</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#afd3140dc2eea7f22118a684a14ce8530">aboveField</a> ()</td></tr>
@@ -151,22 +151,17 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#abb60935929dd5b78becfd6a4a9094519">setComment</a> ($text='')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a0ece2b39cc7eb38e0e12c721eeb7b4fb">addComment</a> ($text='')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#ac33ee765f5ad9f134540bac393721cfe">get</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#afa373a3fdee84b2c9c136a6ff69f5573">setProperty</a> ($property, $value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#af297b685c862e9957c775f11d30367a4">addClass</a> ($class)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a8d2c9f07514863c12756f00354c96f67">setClass</a> ($class)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a863a6f0513f90d826af5e7b26bc229e3">setAttr</a> ($property, $value='true')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#af297b685c862e9957c775f11d30367a4">addClass</a> ($class)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a1b1860ff252e4a5fc18d31e022d33f9c">setAttr</a> ($attr, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#afa373a3fdee84b2c9c136a6ff69f5573">setProperty</a> ($property, $value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a7e357b1b24af2f2229997df1287bb348">setFieldHint</a> ($var_args=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a4ed4f624629b84739ee9283e6bc29811">setFieldTitle</a> ($text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a4e6e083c787fc4d26e512a24bb4d5242">clearFieldValue</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a0fbb8884d6b64d0e4c73c8760060b274">loadPOST</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a8189efe6c41ceba4084f6b074d4a47c0">normalize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a856cc4ddc47405721aea66eec2f868cb">validateField</a> ($condition, $msg=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a26f9164c90c61a62a19fdaeaa66827ea">_validateNotNull</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#ac04c21f5b0ea4f5e516f9d7f80340d00">validateNotNULL</a> ($msg=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#ac9f6d85ef73d97d3bf4f633eada3b388">setNotNull</a> ($msg='')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#aae7b38e461eb4bb55b0fc924ca924201">setDefault</a> ($default=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#adc30a2a4d3e48cb6aee21562afbc4022">getDefault</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#acf7b72f550e86edd8c4bf68a763dfe49">getInput</a> ($attr=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a4d614f573db3b2c769bdde6de9239464">setSeparator</a> ($separator)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
@@ -176,7 +171,7 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a2aad9819e33bda9df8cca15577473942">$error_template</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#ab56c4c690766414b4cff0fe2e3c8d4e8">$error_mandatory</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#aecf32b05179e4aad8c46041ce5917167">$mandatory_template</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a4f9340ccb02c5d876a448a1d860f3812">$caption</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#abfe328f6f767c8f805d07eff9ab23734">$short_name</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field.html#a0b41385738b43ee6b8668650e7a4c990">$attr</a> = array()</td></tr>
@@ -250,12 +245,12 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a50d21f05315e39bef3914479273987f3"></a><!-- doxytag: member="Form_Field::addButton" ref="a50d21f05315e39bef3914479273987f3" args="($label, $position='after')" -->
+<a class="anchor" id="a69813d776a9a6dd0a32662dbf9b7c725"></a><!-- doxytag: member="Form_Field::addButton" ref="a69813d776a9a6dd0a32662dbf9b7c725" args="($label, $options=array())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#a50d21f05315e39bef3914479273987f3">addButton</a> </td>
+          <td class="memname"><a class="el" href="class_form___field.html#a69813d776a9a6dd0a32662dbf9b7c725">addButton</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>label</em>, </td>
@@ -264,7 +259,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>position</em> = <code>'after'</code>&#160;</td>
+          <td class="paramname"><em>options</em> = <code>array()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -376,24 +371,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a4e6e083c787fc4d26e512a24bb4d5242"></a><!-- doxytag: member="Form_Field::clearFieldValue" ref="a4e6e083c787fc4d26e512a24bb4d5242" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#a4e6e083c787fc4d26e512a24bb4d5242">clearFieldValue</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_form___field___date_selector.html#a4e6e083c787fc4d26e512a24bb4d5242">Form_Field_DateSelector</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a545341e59cc9a0dafc4e265d60d4b5d6"></a><!-- doxytag: member="Form_Field::disable" ref="a545341e59cc9a0dafc4e265d60d4b5d6" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -447,22 +424,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adc30a2a4d3e48cb6aee21562afbc4022"></a><!-- doxytag: member="Form_Field::getDefault" ref="adc30a2a4d3e48cb6aee21562afbc4022" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#adc30a2a4d3e48cb6aee21562afbc4022">getDefault</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="acf7b72f550e86edd8c4bf68a763dfe49"></a><!-- doxytag: member="Form_Field::getInput" ref="acf7b72f550e86edd8c4bf68a763dfe49" args="($attr=array())" -->
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +439,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_form___field___radio.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Radio</a>, <a class="el" href="class_form___field___checkbox_list.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_CheckboxList</a>, <a class="el" href="class_form___field___dropdown.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Dropdown</a>, <a class="el" href="class_form___field___money.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Money</a>, <a class="el" href="class_form___field___text.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Text</a>, <a class="el" href="class_form___field___time.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Time</a>, <a class="el" href="class_form___field___readonly.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Readonly</a>, <a class="el" href="class_form___field___hidden.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Hidden</a>, <a class="el" href="class_form___field___password.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Password</a>, <a class="el" href="class_form___field___checkbox.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___search.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Search</a>, <a class="el" href="class_form___field___line.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Line</a>, <a class="el" href="class_form___field___date_selector.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___grouped.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Grouped</a>, <a class="el" href="class_form___field___date_picker.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DatePicker</a>, and <a class="el" href="class_form___field___simple_checkbox.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_SimpleCheckbox</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___date_selector.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___checkbox_list.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_CheckboxList</a>, <a class="el" href="class_form___field___grouped.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Grouped</a>, <a class="el" href="class_form___field___date_picker.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DatePicker</a>, <a class="el" href="class_form___field___radio.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Radio</a>, <a class="el" href="class_form___field___drop_down.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DropDown</a>, <a class="el" href="class_form___field___simple_checkbox.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_SimpleCheckbox</a>, <a class="el" href="class_form___field___checkbox.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___text.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Text</a>, <a class="el" href="class_form___field___password.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Password</a>, <a class="el" href="class_form___field___money.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Money</a>, <a class="el" href="class_form___field___readonly.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Readonly</a>, <a class="el" href="class_form___field___search.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Search</a>, <a class="el" href="class_form___field___hidden.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Hidden</a>, <a class="el" href="class_form___field___line.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Line</a>, and <a class="el" href="class_form___field___time.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Time</a>.</p>
 
 </div>
 </div>
@@ -555,12 +516,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_form___field___text.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Text</a>, <a class="el" href="class_form___field___readonly.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Readonly</a>, <a class="el" href="class_form___field___checkbox.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___upload.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Upload</a>, <a class="el" href="class_form___field___date_selector.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DateSelector</a>, and <a class="el" href="class_form___field___date_picker.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DatePicker</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___upload.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Upload</a>, <a class="el" href="class_form___field___date_selector.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___date_picker.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DatePicker</a>, <a class="el" href="class_form___field___checkbox.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___text.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Text</a>, and <a class="el" href="class_form___field___readonly.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Readonly</a>.</p>
 
 </div>
 </div>
@@ -610,7 +572,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_form___field___checkbox_list.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_CheckboxList</a>, <a class="el" href="class_form___field___value_list.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_ValueList</a>, <a class="el" href="class_form___field___checkbox.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___date_selector.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___grouped.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Grouped</a>, <a class="el" href="class_form___field___upload.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Upload</a>, and <a class="el" href="class_form___field___simple_checkbox.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_SimpleCheckbox</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___date_selector.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___upload.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Upload</a>, <a class="el" href="class_form___field___grouped.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Grouped</a>, <a class="el" href="class_form___field___value_list.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_ValueList</a>, <a class="el" href="class_form___field___checkbox.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___simple_checkbox.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_SimpleCheckbox</a>, and <a class="el" href="class_form___field___readonly.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field_Readonly</a>.</p>
 
 </div>
 </div>
@@ -628,7 +590,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_form___field___number.html#a8189efe6c41ceba4084f6b074d4a47c0">Form_Field_Number</a>, and <a class="el" href="class_form___field___password.html#a8189efe6c41ceba4084f6b074d4a47c0">Form_Field_Password</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___password.html#a8189efe6c41ceba4084f6b074d4a47c0">Form_Field_Password</a>.</p>
 
 </div>
 </div>
@@ -645,8 +607,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
-<p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
 
@@ -673,21 +637,21 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a863a6f0513f90d826af5e7b26bc229e3"></a><!-- doxytag: member="Form_Field::setAttr" ref="a863a6f0513f90d826af5e7b26bc229e3" args="($property, $value='true')" -->
+<a class="anchor" id="a1b1860ff252e4a5fc18d31e022d33f9c"></a><!-- doxytag: member="Form_Field::setAttr" ref="a1b1860ff252e4a5fc18d31e022d33f9c" args="($attr, $value=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#a863a6f0513f90d826af5e7b26bc229e3">setAttr</a> </td>
+          <td class="memname"><a class="el" href="class_form___field.html#a1b1860ff252e4a5fc18d31e022d33f9c">setAttr</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>property</em>, </td>
+          <td class="paramname"><em>attr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code>'true'</code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -751,23 +715,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aae7b38e461eb4bb55b0fc924ca924201"></a><!-- doxytag: member="Form_Field::setDefault" ref="aae7b38e461eb4bb55b0fc924ca924201" args="($default=null)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#aae7b38e461eb4bb55b0fc924ca924201">setDefault</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>default</em> = <code>null</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a7e357b1b24af2f2229997df1287bb348"></a><!-- doxytag: member="Form_Field::setFieldHint" ref="a7e357b1b24af2f2229997df1287bb348" args="($var_args=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -777,25 +724,6 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>var_args</em> = <code>null</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_form___field___text.html#a3e0b49a3d911fb9eade768317534abe7">Form_Field_Text</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4ed4f624629b84739ee9283e6bc29811"></a><!-- doxytag: member="Form_Field::setFieldTitle" ref="a4ed4f624629b84739ee9283e6bc29811" args="($text)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#a4ed4f624629b84739ee9283e6bc29811">setFieldTitle</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>text</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -851,24 +779,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ac9f6d85ef73d97d3bf4f633eada3b388"></a><!-- doxytag: member="Form_Field::setNotNull" ref="ac9f6d85ef73d97d3bf4f633eada3b388" args="($msg='')" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_form___field.html#ac9f6d85ef73d97d3bf4f633eada3b388">setNotNull</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>msg</em> = <code>''</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>obsolete version of validateNotNULL </p>
 
 </div>
 </div>
@@ -963,7 +873,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_form___field___radio.html#a184909dab34698899937d810a9f5d393">Form_Field_Radio</a>, <a class="el" href="class_form___field___checkbox_list.html#a184909dab34698899937d810a9f5d393">Form_Field_CheckboxList</a>, <a class="el" href="class_form___field___dropdown.html#a184909dab34698899937d810a9f5d393">Form_Field_Dropdown</a>, <a class="el" href="class_form___field___date.html#a184909dab34698899937d810a9f5d393">Form_Field_Date</a>, and <a class="el" href="class_form___field___date_selector.html#a184909dab34698899937d810a9f5d393">Form_Field_DateSelector</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___date_selector.html#a184909dab34698899937d810a9f5d393">Form_Field_DateSelector</a>, <a class="el" href="class_form___field___value_list.html#a184909dab34698899937d810a9f5d393">Form_Field_ValueList</a>, <a class="el" href="class_form___field___radio.html#a184909dab34698899937d810a9f5d393">Form_Field_Radio</a>, <a class="el" href="class_form___field___number.html#a184909dab34698899937d810a9f5d393">Form_Field_Number</a>, and <a class="el" href="class_form___field___date.html#a184909dab34698899937d810a9f5d393">Form_Field_Date</a>.</p>
 
 </div>
 </div>
@@ -991,7 +901,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Executes a callback. If callabck returns string, shows it as error message. If callback returns "false" shows either $msg or a standard error message about field being incorrect </p>
+<p>Executes a callback. If callback returns string, shows it as error message. If callback returns "false" shows either $msg or a standard error message about field being incorrect </p>
 
 </div>
 </div>
@@ -1009,7 +919,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds asterisk to the field and validation </p>
+<p>Adds "X is a mandatory field" message </p>
 
 </div>
 </div>
@@ -1105,19 +1015,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab56c4c690766414b4cff0fe2e3c8d4e8"></a><!-- doxytag: member="Form_Field::$error_mandatory" ref="ab56c4c690766414b4cff0fe2e3c8d4e8" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$error_mandatory</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a2aad9819e33bda9df8cca15577473942"></a><!-- doxytag: member="Form_Field::$error_template" ref="a2aad9819e33bda9df8cca15577473942" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1177,6 +1074,19 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">$mandatory = false<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aecf32b05179e4aad8c46041ce5917167"></a><!-- doxytag: member="Form_Field::$mandatory_template" ref="aecf32b05179e4aad8c46041ce5917167" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$mandatory_template</td>
         </tr>
       </table>
 </div>
@@ -1249,7 +1159,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1262,7 +1172,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field.html">Form_Field</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:13 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

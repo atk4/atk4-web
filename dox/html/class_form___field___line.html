@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -107,12 +108,14 @@ Inheritance diagram for Form_Field_Line:</div>
  <div class="center">
   <img src="class_form___field___line.png" usemap="#Form_Field_Line_map" alt=""/>
   <map id="Form_Field_Line_map" name="Form_Field_Line_map">
-<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="155,112,300,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="155,56,300,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="155,0,300,24"/>
+<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="77,112,222,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="77,56,222,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="77,0,222,24"/>
 <area href="class_form___field___date_picker.html" alt="Form_Field_DatePicker" shape="rect" coords="0,224,145,248"/>
-<area href="class_form___field___money.html" alt="Form_Field_Money" shape="rect" coords="155,224,300,248"/>
-<area href="class_form___field___number.html" alt="Form_Field_Number" shape="rect" coords="310,224,455,248"/>
+<area href="class_form___field___number.html" alt="Form_Field_Number" shape="rect" coords="155,224,300,248"/>
+<area href="class_form___field___money.html" alt="Form_Field_Money" shape="rect" coords="0,280,145,304"/>
+<area href="class_form___field___slider.html" alt="Form_Field_Slider" shape="rect" coords="155,280,300,304"/>
+<area href="class_form___field___spinner.html" alt="Form_Field_Spinner" shape="rect" coords="310,280,455,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -138,12 +141,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_form___field.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_form___field___money.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Money</a>, and <a class="el" href="class_form___field___date_picker.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DatePicker</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___date_picker.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_DatePicker</a>, and <a class="el" href="class_form___field___money.html#acf7b72f550e86edd8c4bf68a763dfe49">Form_Field_Money</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Form/<a class="el" href="_form_2_field_8php.html">Field.php</a></li>
+<li>/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_line_8php.html">Line.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -152,7 +155,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -165,7 +168,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field___line.html">Form_Field_Line</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:13 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

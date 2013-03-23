@@ -1,9 +1,12 @@
 var searchData=
 [
+  ['search_2ephp',['Search.php',['../_search_8php.html',1,'']]],
+  ['session_2ephp',['Session.php',['../_session_8php.html',1,'']]],
   ['simplecheckbox_2ephp',['SimpleCheckbox.php',['../_simple_checkbox_8php.html',1,'']]],
   ['slider_2ephp',['Slider.php',['../_slider_8php.html',1,'']]],
   ['smlite_2ephp',['SMlite.php',['../_s_mlite_8php.html',1,'']]],
   ['smliteexception_2ephp',['SMliteException.php',['../_s_mlite_exception_8php.html',1,'']]],
+  ['spinner_2ephp',['Spinner.php',['../_spinner_8php.html',1,'']]],
   ['sqlexception_2ephp',['SQLException.php',['../_s_q_l_exception_8php.html',1,'']]],
   ['sqlite_2ephp',['sqlite.php',['../sqlite_8php.html',1,'']]],
   ['static_2ephp',['static.php',['../static_8php.html',1,'']]],

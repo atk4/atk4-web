@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -119,12 +120,15 @@ Inheritance diagram for View_Tabs_jUItabs:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a929e8f404dc73d92009451a5ed013002">setOption</a> ($key, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#abdd0a892603471eb845af2f26abe9ae7">addTab</a> ($title, $name=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a3c8fa4c5fab908052a0b25dbb538cba5">addTabURL</a> ($page, $title)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a2cc8d00e9a521f163486eef795bfc0c8">addTabURL</a> ($page, $title=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a35ba412787d9cb7865aafe17d5fbbe1a">$tab_template</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___tabs__j_u_itabs.html#a011800c63ece4cbbfa77136a20607023">$options</a> = array('cache'=&gt;false)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Implementation of <a class="el" href="classj_query.html">jQuery</a> UI <a class="el" href="class_tabs.html">Tabs</a></p>
@@ -159,12 +163,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3c8fa4c5fab908052a0b25dbb538cba5"></a><!-- doxytag: member="View_Tabs_jUItabs::addTabURL" ref="a3c8fa4c5fab908052a0b25dbb538cba5" args="($page, $title)" -->
+<a class="anchor" id="a2cc8d00e9a521f163486eef795bfc0c8"></a><!-- doxytag: member="View_Tabs_jUItabs::addTabURL" ref="a2cc8d00e9a521f163486eef795bfc0c8" args="($page, $title=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_view___tabs__j_u_itabs.html#a3c8fa4c5fab908052a0b25dbb538cba5">addTabURL</a> </td>
+          <td class="memname"><a class="el" href="class_view___tabs__j_u_itabs.html#a2cc8d00e9a521f163486eef795bfc0c8">addTabURL</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>page</em>, </td>
@@ -173,7 +177,7 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>title</em>&#160;</td>
+          <td class="paramname"><em>title</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -199,7 +203,9 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>.</p>
 
@@ -218,14 +224,77 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
 </div>
 </div>
+<a class="anchor" id="afde88292c44dc59faf017738dae6dffb"></a><!-- doxytag: member="View_Tabs_jUItabs::render" ref="afde88292c44dc59faf017738dae6dffb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">render</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a929e8f404dc73d92009451a5ed013002"></a><!-- doxytag: member="View_Tabs_jUItabs::setOption" ref="a929e8f404dc73d92009451a5ed013002" args="($key, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___tabs__j_u_itabs.html#a929e8f404dc73d92009451a5ed013002">setOption</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a011800c63ece4cbbfa77136a20607023"></a><!-- doxytag: member="View_Tabs_jUItabs::$options" ref="a011800c63ece4cbbfa77136a20607023" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$options = array('cache'=&gt;false)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a35ba412787d9cb7865aafe17d5fbbe1a"></a><!-- doxytag: member="View_Tabs_jUItabs::$tab_template" ref="a35ba412787d9cb7865aafe17d5fbbe1a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -249,7 +318,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -262,7 +331,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_view___tabs__j_u_itabs.html">View_Tabs_jUItabs</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:17 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

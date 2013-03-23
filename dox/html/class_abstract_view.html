@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -128,8 +129,7 @@ Inheritance diagram for AbstractView:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#ad0cb87b388bc74d63dc884accdca8713">__clone</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a0a086ca877b41192556a2de7e4a97b98">getModel</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel</a> ($model, $actual_fields=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel</a> ($model, $actual_fields=<a class="el" href="static_8php.html#a93cb8dbe7a79de0dc281e43f0ea6dd80">UNDEFINED</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a703a2027a95ae61e311c7de937369ade">_tsBuffer</a> ($t, $data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a80b7534dca4a73e1327512970c9912fc">getHTML</a> ($<a class="el" href="class_abstract_object.html#aa118461de946085fe42989193337044a">destroy</a>=true, $execute_js=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a8564194c0808f6856ad194d7f84bbcd4">initializeTemplate</a> ($template_spot=null, $template_branch=null)</td></tr>
@@ -141,7 +141,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output</a> ($txt)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a408f80ba244c43561b15988a19cbe837">region_render</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a04bd4ca33b675d7e859c09a719c7042f">object_render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js</a> ($when=null, $code=null, $instance=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -170,7 +169,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Duplicate view and it's template. Will not duplicate children </p>
+<p>For safety, you can't clone views. Use $view-&gt;newInstance instead</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ad0cb87b388bc74d63dc884accdca8713">AbstractObject</a>.</p>
 
@@ -216,7 +216,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default tag in parent's template where output is inserted, when 3rd argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>Normally when you add a view, it's output is placed inside &lt;?$Content?&gt; tag of its parent view. You can specify a different tag as 3rd argument for the <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method. If you wish for object to use different tag by default, you can override this method.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string Tag / Spot in $this-&gt;owner-&gt;template </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_paginator___basic.html#a27799930621fd2a01be62e33165db4a5">Paginator_Basic</a>.</p>
 
@@ -235,9 +236,11 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e">ApiWeb</a>, <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_menu_separator.html#add8c5a33f231d9979e5f8bbded576d9e">MenuSeparator</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_menu_item.html#add8c5a33f231d9979e5f8bbded576d9e">MenuItem</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>, <a class="el" href="class_menu___light.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Light</a>, <a class="el" href="class_paginator___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Compat</a>, <a class="el" href="class_page.html#add8c5a33f231d9979e5f8bbded576d9e">Page</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_menu___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Compat</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="classpage___error.html#add8c5a33f231d9979e5f8bbded576d9e">page_Error</a>, <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>, <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>.</p>
+<p>Reimplemented in <a class="el" href="class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e">ApiWeb</a>, <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>, <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_menu_separator.html#add8c5a33f231d9979e5f8bbded576d9e">MenuSeparator</a>, <a class="el" href="class_menu_item.html#add8c5a33f231d9979e5f8bbded576d9e">MenuItem</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_menu___light.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Light</a>, <a class="el" href="class_paginator___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Compat</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_page.html#add8c5a33f231d9979e5f8bbded576d9e">Page</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_menu___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Compat</a>, <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>, <a class="el" href="classpage___error.html#add8c5a33f231d9979e5f8bbded576d9e">page_Error</a>, <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>.</p>
 
 </div>
 </div>
@@ -265,26 +268,15 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Converting <a class="el" href="class_view.html">View</a> into string will render recursively and produce HTML. If argument is passed, JavaScript will be added into on_ready section of your document like when rendered normally. Note that you might require to destroy object if you don't want it's HTML to appear normally </p>
-
-</div>
-</div>
-<a class="anchor" id="a0a086ca877b41192556a2de7e4a97b98"></a><!-- doxytag: member="AbstractView::getModel" ref="a0a086ca877b41192556a2de7e4a97b98" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_abstract_view.html#a0a086ca877b41192556a2de7e4a97b98">getModel</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get associated model. It's safe to access $object-&gt;model directly. </p>
-
-<p>Reimplemented from <a class="el" href="class_abstract_object.html#a0a086ca877b41192556a2de7e4a97b98">AbstractObject</a>.</p>
+<p>Converting <a class="el" href="class_view.html">View</a> into string will render recursively and produce HTML. If argument is passed, JavaScript will be added into on_ready section of your document like when rendered normally. Note that you might require to destroy object if you don't want it's HTML to appear normally</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">boolean</td><td class="paramname">$destroy</td><td>Destroy object preventing it from rendering </td></tr>
+    <tr><td class="paramtype">boolean</td><td class="paramname">$execute_js</td><td>Also capture JavaScript chains of object</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string HTML </dd></dl>
 
 </div>
 </div>
@@ -312,6 +304,15 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Called automatically during init for template initalization</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$template_spot</td><td>Where object's output goes </td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;array</td><td class="paramname">$template_branch</td><td>Where objects gets it's template</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_view.html">AbstractView</a> $this </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_form___basic.html#ac827534404de4c1135a1556898cb1e9a">Form_Basic</a>.</p>
 
@@ -330,6 +331,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This method is called to automatically fill in some of the tags in this view. Normally the call is bassed to $api-&gt;setTags(), however you can extend and add more tags to fill</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -363,10 +366,12 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Function <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> will return <a class="el" href="classj_query.html">jQuery</a> chain and, if first argument was specified, bind the chain to a certain enent. Use <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> to bind views with JavaScript plugins and calls defined in univ() chain or in 3rd party plugins.</p>
+<p>Views in Agile Toolkit can assign javascript actions to themselves. This is done by calling $view-&gt;<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> method.</p>
+<p>Method <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> will return <a class="el" href="classj_query___chain.html">jQuery_Chain</a> object which would record all calls to it's non-existant methods and convert them into <a class="el" href="classj_query.html">jQuery</a> call chain.</p>
 <p>js([action], [other_chain]);</p>
-<p>Action can represent javascript event, such as "click" or "mouseenter". If you specify action = true, then the event will ALWAYS be executed on pageload. It will also be executed if respective view is being reloaded by <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>-&gt;reload() (Do not make mistake by specifying "true" instead of true)</p>
-<p>action = false will still return <a class="el" href="classj_query.html">jQuery</a> chain but will not bidn it. You can bind it by passing to a different object's <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> call as 2nd argument or by executing chain.</p>
+<p>Action can represent javascript event, such as "click" or "mouseenter". If you specify action = true, then the event will ALWAYS be executed on pageload. It will also be executed if respective view is being reloaded by <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>-&gt;reload()</p>
+<p>(Do not make mistake by specifying "true" instead of true)</p>
+<p>action = false will still return <a class="el" href="classj_query.html">jQuery</a> chain but will not bind it. You can bind it by passing to a different object's <a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a> call as 2nd argument or output the chain in response to AJAX-ec call by calling execute() method.</p>
 <p>1. Calling with arguments:</p>
 <p>$view-&gt;<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>; // does nothing $a = $view-&gt;<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>-&gt;hide(); // creates chain for hiding $view but does not // bind to event yet.</p>
 <p>2. Binding existing chains $img-&gt;js('mouseenter', $a); // binds previously defined chain to event on // event of $img.</p>
@@ -379,7 +384,17 @@ Data Fields</h2></td></tr>
 <p>Will inject javascript un-escaped portion of javascript into chain. If you need to have a custom script then put it into file instead, save into templates/js/myfile.js and then include:</p>
 <p>$view-&gt;<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>-&gt;_load('myfile');</p>
 <p>It's highly suggested to bind your libraries with <a class="el" href="classj_query.html">jQuery</a> namespace by registered them as plugins, this way you can call your function easily:</p>
-<p>$view-&gt;js(true)-&gt;_load('myfile')-&gt;myplugin('myfunc',array($arg,$arg)); </p>
+<p>$view-&gt;js(true)-&gt;_load('myfile')-&gt;myplugin('myfunc',array($arg,$arg));</p>
+<p>This approach is compatible with jQuerry UI Widget factory and will keep your code clean</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;true&#160;|&#160;null</td><td class="paramname">$when</td><td>Event when chain will be executed </td></tr>
+    <tr><td class="paramtype">array&#160;|&#160;chain&#160;|&#160;string</td><td class="paramname">$code</td><td>JavaScript chain(s) or code </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$instance</td><td>Obsolete</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><a class="el" href="">jQuery_Chain </a></p>
 
 </div>
 </div>
@@ -396,24 +411,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a04bd4ca33b675d7e859c09a719c7042f"></a><!-- doxytag: member="AbstractView::object_render" ref="a04bd4ca33b675d7e859c09a719c7042f" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_abstract_view.html#a04bd4ca33b675d7e859c09a719c7042f">object_render</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>When cutting, perform selective render for an object </p>
-<p>if GET['cut'] is set, then only particular object will be rendered</p>
+<p>Append our chains to owner's chains. JS chains bubble up to API, which plugs them into template. If the object is being "cut" then only relevant chains will be outputed.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -431,7 +430,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Low level output function which append's to the parent object's template. Normally you wouldn't want to use this function but should modify $this-&gt;template instead. </p>
+<p>Low level output function which append's to the parent object's template. For normal objects, you simply need to specify a suitable template</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$txt</td><td>HTML chunk</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -449,9 +455,12 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Recursively renders all views. Calls <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
-<p>function <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); } </p>
+<p>function <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); // will render <a class="el" href="class_text.html">Text</a> also }</p>
+<p>When cut_object is specified in the GET arguments, then output of HTML would be limited to object with matching $name or $short_name.</p>
+<p>This method will be called instead of default <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">View_Columns</a>, <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Paginator_Basic</a>, and <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">HX</a>.</p>
+<p>Reimplemented in <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">View_Columns</a>, <a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Page</a>, <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Paginator_Basic</a>, and <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">HX</a>.</p>
 
 </div>
 </div>
@@ -468,8 +477,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When cutting, perform selective render for a region </p>
-<p>if GET['ajax'] is set, we need only one chunk of a page</p>
+<p>When "cut"-ing using cut_region we need to output only a specified tag. This method of cutting is mostly un-used now, and should be considered obsolete.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void  </dd></dl>
 
 </div>
 </div>
@@ -486,19 +495,21 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
-<p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_form___field___hidden.html#afde88292c44dc59faf017738dae6dffb">Form_Field_Hidden</a>, <a class="el" href="class_form___basic.html#afde88292c44dc59faf017738dae6dffb">Form_Basic</a>, <a class="el" href="class_api_web.html#afde88292c44dc59faf017738dae6dffb">ApiWeb</a>, <a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">Form_Field</a>, <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_menu_item.html#afde88292c44dc59faf017738dae6dffb">MenuItem</a>, <a class="el" href="class_paginator___compat.html#afde88292c44dc59faf017738dae6dffb">Paginator_Compat</a>, <a class="el" href="class_lorem_ipsum.html#afde88292c44dc59faf017738dae6dffb">LoremIpsum</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_view___button.html#afde88292c44dc59faf017738dae6dffb">View_Button</a>, <a class="el" href="class_menu___light.html#afde88292c44dc59faf017738dae6dffb">Menu_Light</a>, <a class="el" href="class_text.html#afde88292c44dc59faf017738dae6dffb">Text</a>, <a class="el" href="class_view___icon.html#afde88292c44dc59faf017738dae6dffb">View_Icon</a>, <a class="el" href="class_view___box.html#afde88292c44dc59faf017738dae6dffb">View_Box</a>, <a class="el" href="class_info_window.html#afde88292c44dc59faf017738dae6dffb">InfoWindow</a>, <a class="el" href="class_view___button_set.html#afde88292c44dc59faf017738dae6dffb">View_ButtonSet</a>, <a class="el" href="class_hello_world.html#afde88292c44dc59faf017738dae6dffb">HelloWorld</a>, <a class="el" href="class_frame.html#afde88292c44dc59faf017738dae6dffb">Frame</a>, and <a class="el" href="class_html.html#afde88292c44dc59faf017738dae6dffb">Html</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___basic.html#afde88292c44dc59faf017738dae6dffb">Form_Basic</a>, <a class="el" href="class_api_web.html#afde88292c44dc59faf017738dae6dffb">ApiWeb</a>, <a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">Form_Field</a>, <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_paginator___compat.html#afde88292c44dc59faf017738dae6dffb">Paginator_Compat</a>, <a class="el" href="class_menu_item.html#afde88292c44dc59faf017738dae6dffb">MenuItem</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_lorem_ipsum.html#afde88292c44dc59faf017738dae6dffb">LoremIpsum</a>, <a class="el" href="class_view___button.html#afde88292c44dc59faf017738dae6dffb">View_Button</a>, <a class="el" href="class_menu___light.html#afde88292c44dc59faf017738dae6dffb">Menu_Light</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">View_Tabs_jUItabs</a>, <a class="el" href="class_text.html#afde88292c44dc59faf017738dae6dffb">Text</a>, <a class="el" href="class_view___icon.html#afde88292c44dc59faf017738dae6dffb">View_Icon</a>, <a class="el" href="class_view___box.html#afde88292c44dc59faf017738dae6dffb">View_Box</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, <a class="el" href="class_hello_world.html#afde88292c44dc59faf017738dae6dffb">HelloWorld</a>, <a class="el" href="class_frame.html#afde88292c44dc59faf017738dae6dffb">Frame</a>, <a class="el" href="class_html.html#afde88292c44dc59faf017738dae6dffb">Html</a>, <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>, <a class="el" href="class_view___button_set.html#afde88292c44dc59faf017738dae6dffb">View_ButtonSet</a>, <a class="el" href="class_view___drop_button.html#afde88292c44dc59faf017738dae6dffb">View_DropButton</a>, and <a class="el" href="class_form___field___hidden.html#afde88292c44dc59faf017738dae6dffb">Form_Field_Hidden</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="acd8548bf466edfaa7e488e7e39ad28a2"></a><!-- doxytag: member="AbstractView::setModel" ref="acd8548bf466edfaa7e488e7e39ad28a2" args="($model, $actual_fields=undefined)" -->
+<a class="anchor" id="a9451618bb79badea2edaf9527a5ab03f"></a><!-- doxytag: member="AbstractView::setModel" ref="a9451618bb79badea2edaf9527a5ab03f" args="($model, $actual_fields=UNDEFINED)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel</a> </td>
+          <td class="memname"><a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -507,7 +518,7 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>actual_fields</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>actual_fields</em> = <code><a class="el" href="static_8php.html#a93cb8dbe7a79de0dc281e43f0ea6dd80">UNDEFINED</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -517,7 +528,15 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Associate view with a model. Different models may behave differently. </p>
+<p>Associate view with a model. Additionally may initialize a controller which would copy fields from the model into the <a class="el" href="class_view.html">View</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">object&#160;|&#160;string</td><td class="paramname">$model</td><td>Class without "Model_" prefix or object </td></tr>
+    <tr><td class="paramtype">array&#160;|&#160;string</td><td class="paramname">$actual_fields</td><td>List of fields in order to populate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> object </dd></dl>
 
 </div>
 </div>
@@ -561,11 +580,11 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When using <a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
+<p>When using <a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ab949cccd963058f0937d04bc26ee24a7">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>, <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, and <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>, <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
 
 </div>
 </div>
@@ -597,7 +616,7 @@ Data Fields</h2></td></tr>
 <dd>
 <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> </dd>
 <dd>
-<a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">AbstractObject::add()</a>; </dd>
+<a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">AbstractObject::add()</a>; </dd>
 <dd>
 <a class="el" href="class_abstract_view.html#a27799930621fd2a01be62e33165db4a5">defaultSpot()</a>; </dd></dl>
 
@@ -617,7 +636,7 @@ Data Fields</h2></td></tr>
 <p>Example:</p>
 <p>$view-&gt;template-&gt;set('title', $my_title);</p>
 <p>Assuming you have tag &lt;?$template?&gt; in template file associated with this view - will insert text into this tag.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">AbstractObject::add()</a>; </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">AbstractObject::add()</a>; </dd>
 <dd>
 <a class="el" href="class_abstract_view.html#add8c5a33f231d9979e5f8bbded576d9e">AbstractView::defaultTemplate()</a>; </dd></dl>
 
@@ -646,7 +665,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -659,7 +678,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_abstract_view.html">AbstractView</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:11 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

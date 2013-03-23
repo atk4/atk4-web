@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -97,7 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Model Class Reference</div>  </div>
 </div><!--header-->
@@ -108,10 +110,12 @@ Inheritance diagram for Model:</div>
  <div class="center">
   <img src="class_model.png" usemap="#Model_map" alt=""/>
   <map id="Model_map" name="Model_map">
-<area href="class_abstract_model.html" alt="AbstractModel" shape="rect" coords="53,56,149,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
-<area href="class_model___table.html" alt="Model_Table" shape="rect" coords="0,168,96,192"/>
-<area href="class_model_i_o.html" alt="ModelIO" shape="rect" coords="106,168,202,192"/>
+<area href="class_abstract_model.html" alt="AbstractModel" shape="rect" coords="279,56,455,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="279,0,455,24"/>
+<area href="class_model___agile_toolkit___access.html" alt="Model_AgileToolkit_Access" shape="rect" coords="0,168,176,192"/>
+<area href="class_model___agile_toolkit___licenses.html" alt="Model_AgileToolkit_Licenses" shape="rect" coords="186,168,362,192"/>
+<area href="class_model___table.html" alt="Model_Table" shape="rect" coords="372,168,548,192"/>
+<area href="class_model_i_o.html" alt="ModelIO" shape="rect" coords="558,168,734,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -128,39 +132,86 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a3f07a4aa73e71d525744db933bc2aff4">loaded</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aa13d0535d22492ba710e3419a7b92ac1">unload</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a4a20559544fdf4dcb457e258dc976cf8">reset</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a5ecc5ca193b19bbf0ff5aff36d3bc64f">setSource</a> ($controller, $table=null, $id=null)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">{{{ Operation with external Data Controllers  <a href="#a5ecc5ca193b19bbf0ff5aff36d3bc64f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a90f83714d8df3e6f07b28fb5d25e7116">load</a> ($id=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a62560c0da114488c0eea1b721c3274c7">save</a> ($id=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0fa3387249f930dea59b44e92b7235eb">delete</a> ($id=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a14f08d489c790c82c6207fefdd3d1564">offsetExists</a> ($name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">}}}  <a href="#a14f08d489c790c82c6207fefdd3d1564"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a3d0a0d05f795eea43971f8ab662b3404">offsetGet</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a5c46dec4163d3dd717d42f1897c1716f">offsetSet</a> ($name, $val)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac64f6f4bbdf2eaac50e8334a92ea7106">offsetUnset</a> ($name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a5ecc5ca193b19bbf0ff5aff36d3bc64f">setSource</a> ($controller, $table=null, $id=null)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">{{{ Operation with external Data Controllers  <a href="#a5ecc5ca193b19bbf0ff5aff36d3bc64f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#af6111eff41fd35359a49b49f24cb800b">addCache</a> ($controller, $table=null, $priority=5)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a90f83714d8df3e6f07b28fb5d25e7116">load</a> ($id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae0dc374407d85ad42f7495a6fc0c36b2">save</a> ($id=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a95fbd5750867a4eda3806daa79e12223">saveAndUnload</a> ($id=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a01c8c24f38ea57d6e3ae675661479a31">saveLater</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a421831a265621325e1fdd19aace0c758">__destruct</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0fa3387249f930dea59b44e92b7235eb">delete</a> ($id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac2240ef160b9a6b52f12cb5c4ab8ea03">deleteAll</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac9a1027e557fe8396ca5f04875d93a3a">tryLoad</a> ($id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a81e44cd287862f0dd78a351639ecd043">tryLoadAny</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a7c947120b95e1847f0142616c39547b6">tryLoadBy</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#afafe80b1d812f4d904507a88478dd79f">loadBy</a> ($field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a64219eb48222a8fd880376d0bdd36c5b">setLimit</a> ($a, $b=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a2b7ac4def0884877c42ac2051be6867f">setOrder</a> ($field, $desc=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae619dcf2218c21549cb65d875bbc6c9c">rewind</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#acea62048bfee7b3cd80ed446c86fb78a">next</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#af343507d1926e6ecf964625d41db528c">current</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a729e946b4ef600e71740113c6d4332c0">key</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#abb9f0d6adf1eb9b3b55712056861a247">valid</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a4655a09eb9e6ea8c2acf6fbb1053f442">getRows</a> ($fields=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ab35510c2ff7fd8884fb05108eba5135e">each</a> ($callable)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a6991fff5ae18fb58f5c6831192100534">newField</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a745df067a3c60381abd68e82d5784b26">hasField</a> ($name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a7e82f244f1fd6b5b49fdbd94eac89e18">getEntityCode</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a930579c797a4d5fc83e1824cde702e59">getField</a> ($f)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a89794a7be3306bdc07ab207ac214ba56">hasOne</a> ($model, $our_field=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $field_class='<a class="el" href="class_field.html">Field</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#af1a9ae3c8bdfc60f8883c33d0e012f12">hasMany</a> ($model, $their_field=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $our_field=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a495cc64feca27628706dc02a7cf3b9cb">ref</a> ($<a class="el" href="class_model.html#a495cc64feca27628706dc02a7cf3b9cb">ref</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a5e4a2e44f63079bf93f518c7ed695d2c">_refBind</a> ($field_in, $expression, $field_out=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">$default_exception</a> = 'Exception'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a11b073d484bd84c44cfaf3d218f0aac1">$field_class</a> = '<a class="el" href="class_field.html">Field</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac45d9b29a3365afe29bec487bbb8233d">$strict_fields</a> = false</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae8876a14058f368335baccf35af4a22b">$table</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a4f9340ccb02c5d876a448a1d860f3812">$caption</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae8876a14058f368335baccf35af4a22b">$table</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac0ee5b766d19cb282552a3449a1f8376">$_table</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae97941710d863131c700f069b109991e">$id</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aa63113a5b1cc2bf64ee824ab64f9e5c6">$id_field</a> = 'id'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a3b906743c55b4360f1b7ff1aa5a0050f">$title_field</a> = 'name'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a48c01c8cae9e7c683f03899c087d010c">$dirty</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a4cb30b2b3a5b1c27829438846a80e667">$actual_fields</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ad0608cac4d7d36216f8ec187ed82948a">$_references</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aff3f2b7c0b641500c0aa6dac460c6cb5">$_save_as</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a857a3ae4ee366c8be9d44d04d7b840ef">$_save_later</a> = false</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implementation of a Generic <a class="el" href="class_model.html">Model</a>. <a class="el" href="">Model has fields which you add with addField() and access through get() and set() You can also load and save model through different storage controllers.  This model is designed to work with linear, non-SQL resources, if you are looking to have support for joins, ordering, advanced SQL syntax, look into Model_Table  It's recommended that you create your own model class based on generic model where you define fields, but you may also use instance of generic model.  Use: class Model_PageCache extends Model { function init(){ parent::init(); $this-&gt;addField('content')-&gt;allowHtml(true); } function generateContent(){ //complex computation // ... $this-&gt;set('content',$content); } }  $pc=$this-&gt;add('Model_PageCache')-&gt;setSource('Memcached'); $pc-&gt;load($this-&gt;api-&gt;page);  if(!$pc-&gt;loaded()){ $pc-&gt;set('page',$this-&gt;api-&gt;page'); $pc-&gt;generateContent(); $pc-&gt;save(); }   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
-</div><hr/><h2>Member Function Documentation</h2>
+<div class="textblock"><p>Implementation of a Generic <a class="el" href="class_model.html">Model</a>. <a class="el" href="">Model has fields which you add with addField() and access through get() and set() You can also load and save model through different storage controllers.  This model is designed to work with linear, non-SQL resources, if you are looking to have support for joins, ordering, advanced SQL syntax, look into Model_Table  It's recommended that you create your own model class based on generic model where you define fields, but you may also use instance of generic model.  Use: class Model_PageCache extends Model { function init(){ parent::init(); $this-&gt;addField('content')-&gt;allowHtml(true); } function generateContent(){ //complex computation // ... $this-&gt;set('content',$content); } }  $pc=$this-&gt;add('Model_PageCache')-&gt;addCache('Memcached'); $pc-&gt;load($this-&gt;api-&gt;page);  if(!$pc-&gt;loaded()){ $pc-&gt;set('page',$this-&gt;api-&gt;page'); $pc-&gt;generateContent(); $pc-&gt;save(); }   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a421831a265621325e1fdd19aace0c758"></a><!-- doxytag: member="Model::__destruct" ref="a421831a265621325e1fdd19aace0c758" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a421831a265621325e1fdd19aace0c758">__destruct</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Always call parent if you redefine this </p>
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#a421831a265621325e1fdd19aace0c758">AbstractObject</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a421831a265621325e1fdd19aace0c758">Model_Table</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad0cb87b388bc74d63dc884accdca8713"></a><!-- doxytag: member="Model::__clone" ref="ad0cb87b388bc74d63dc884accdca8713" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -174,10 +225,79 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Clones associated controller and model. If cloning views, add them to the owner</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> Copy this object </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ad0cb87b388bc74d63dc884accdca8713">AbstractObject</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_model___table.html#ad0cb87b388bc74d63dc884accdca8713">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e4a2e44f63079bf93f518c7ed695d2c"></a><!-- doxytag: member="Model::_refBind" ref="a5e4a2e44f63079bf93f518c7ed695d2c" args="($field_in, $expression, $field_out=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a5e4a2e44f63079bf93f518c7ed695d2c">_refBind</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field_in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>expression</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field_out</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af6111eff41fd35359a49b49f24cb800b"></a><!-- doxytag: member="Model::addCache" ref="af6111eff41fd35359a49b49f24cb800b" args="($controller, $table=null, $priority=5)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#af6111eff41fd35359a49b49f24cb800b">addCache</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>table</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>priority</em> = <code>5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Cache controller is used to attempt and load data a little faster then the primary controller </p>
 
 </div>
 </div>
@@ -234,6 +354,52 @@ Data Fields</h2></td></tr>
 <p>Deletes record associated with specified $id. If not specified, currently loaded record is deleted (and unloaded) </p>
 
 <p>Reimplemented in <a class="el" href="class_model___table.html#a0fa3387249f930dea59b44e92b7235eb">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac2240ef160b9a6b52f12cb5c4ab8ea03"></a><!-- doxytag: member="Model::deleteAll" ref="ac2240ef160b9a6b52f12cb5c4ab8ea03" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#ac2240ef160b9a6b52f12cb5c4ab8ea03">deleteAll</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deletes all records associated with this modle. </p>
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#ac2240ef160b9a6b52f12cb5c4ab8ea03">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab35510c2ff7fd8884fb05108eba5135e"></a><!-- doxytag: member="Model::each" ref="ab35510c2ff7fd8884fb05108eba5135e" args="($callable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#ab35510c2ff7fd8884fb05108eba5135e">each</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>callable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A handy shortcut for foreach(){ .. } code. Make your callable return "false" if you would like to break the loop.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">callable</td><td class="paramname">$callable</td><td>will be executed for each member</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> $this </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#ab35510c2ff7fd8884fb05108eba5135e">AbstractObject</a>.</p>
 
 </div>
 </div>
@@ -307,6 +473,25 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a4655a09eb9e6ea8c2acf6fbb1053f442"></a><!-- doxytag: member="Model::getRows" ref="a4655a09eb9e6ea8c2acf6fbb1053f442" args="($fields=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a4655a09eb9e6ea8c2acf6fbb1053f442">getRows</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a4655a09eb9e6ea8c2acf6fbb1053f442">Model_Table</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a745df067a3c60381abd68e82d5784b26"></a><!-- doxytag: member="Model::hasField" ref="a745df067a3c60381abd68e82d5784b26" args="($name)" -->
 <div class="memitem">
 <div class="memproto">
@@ -317,6 +502,72 @@ Data Fields</h2></td></tr>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af1a9ae3c8bdfc60f8883c33d0e012f12"></a><!-- doxytag: member="Model::hasMany" ref="af1a9ae3c8bdfc60f8883c33d0e012f12" args="($model, $their_field=undefined, $our_field=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#af1a9ae3c8bdfc60f8883c33d0e012f12">hasMany</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>their_field</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>our_field</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a89794a7be3306bdc07ab207ac214ba56"></a><!-- doxytag: member="Model::hasOne" ref="a89794a7be3306bdc07ab207ac214ba56" args="($model, $our_field=undefined, $field_class='Field')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a89794a7be3306bdc07ab207ac214ba56">hasOne</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>our_field</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field_class</em> = <code>'<a class="el" href="class_field.html">Field</a>'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -337,12 +588,13 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_model___table.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Table</a>.</p>
+<p>Reimplemented in <a class="el" href="class_model___table.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Table</a>, <a class="el" href="class_model___agile_toolkit___access.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Access</a>, and <a class="el" href="class_model___agile_toolkit___licenses.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Licenses</a>.</p>
 
 </div>
 </div>
@@ -378,9 +630,44 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Attempt to load record with specified ID. If this fails, no error is produced </p>
+<p>Attempt to load record with specified ID. If this fails, exception is thrown </p>
 
 <p>Reimplemented in <a class="el" href="class_model___table.html#a6b969091e6dd3697e8a5be100f66115a">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afafe80b1d812f4d904507a88478dd79f"></a><!-- doxytag: member="Model::loadBy" ref="afafe80b1d812f4d904507a88478dd79f" args="($field, $cond=undefined, $value=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#afafe80b1d812f4d904507a88478dd79f">loadBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#afafe80b1d812f4d904507a88478dd79f">Model_Table</a>.</p>
 
 </div>
 </div>
@@ -451,8 +738,6 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>}}} </p>
-
 </div>
 </div>
 <a class="anchor" id="a3d0a0d05f795eea43971f8ab662b3404"></a><!-- doxytag: member="Model::offsetGet" ref="a3d0a0d05f795eea43971f8ab662b3404" args="($name)" -->
@@ -516,6 +801,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a495cc64feca27628706dc02a7cf3b9cb"></a><!-- doxytag: member="Model::ref" ref="a495cc64feca27628706dc02a7cf3b9cb" args="($ref)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a495cc64feca27628706dc02a7cf3b9cb">ref</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>ref</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a4a20559544fdf4dcb457e258dc976cf8"></a><!-- doxytag: member="Model::reset" ref="a4a20559544fdf4dcb457e258dc976cf8" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -550,21 +852,58 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a62560c0da114488c0eea1b721c3274c7"></a><!-- doxytag: member="Model::save" ref="a62560c0da114488c0eea1b721c3274c7" args="($id=null)" -->
+<a class="anchor" id="ae0dc374407d85ad42f7495a6fc0c36b2"></a><!-- doxytag: member="Model::save" ref="ae0dc374407d85ad42f7495a6fc0c36b2" args="($id=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_model.html#a62560c0da114488c0eea1b721c3274c7">save</a> </td>
+          <td class="memname"><a class="el" href="class_model.html#ae0dc374407d85ad42f7495a6fc0c36b2">save</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>id</em> = <code>null</code></td><td>)</td>
+          <td class="paramname"><em>id</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Saves record with current controller. If no argument is specified, uses $this-&gt;id. Specifying "false" will create record with new ID. Returns ID of saved record </p>
+<p>Saves record with current controller. If no argument is specified, uses $this-&gt;id. Specifying "false" will create record with new ID. </p>
+
+</div>
+</div>
+<a class="anchor" id="a95fbd5750867a4eda3806daa79e12223"></a><!-- doxytag: member="Model::saveAndUnload" ref="a95fbd5750867a4eda3806daa79e12223" args="($id=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a95fbd5750867a4eda3806daa79e12223">saveAndUnload</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Save model and don't try to load it back </p>
+
+</div>
+</div>
+<a class="anchor" id="a01c8c24f38ea57d6e3ae675661479a31"></a><!-- doxytag: member="Model::saveLater" ref="a01c8c24f38ea57d6e3ae675661479a31" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a01c8c24f38ea57d6e3ae675661479a31">saveLater</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Will save model later, when it's being destructed by Garbage Collector </p>
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a01c8c24f38ea57d6e3ae675661479a31">Model_Table</a>.</p>
 
 </div>
 </div>
@@ -628,7 +967,65 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When fields are changed, they are marked dirty. Only dirty fields are saved when <a class="el" href="class_model.html#a62560c0da114488c0eea1b721c3274c7">save()</a> is called </p>
+<p>When fields are changed, they are marked dirty. Only dirty fields are saved when <a class="el" href="class_model.html#ae0dc374407d85ad42f7495a6fc0c36b2">save()</a> is called </p>
+
+</div>
+</div>
+<a class="anchor" id="a64219eb48222a8fd880376d0bdd36c5b"></a><!-- doxytag: member="Model::setLimit" ref="a64219eb48222a8fd880376d0bdd36c5b" args="($a, $b=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a64219eb48222a8fd880376d0bdd36c5b">setLimit</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>b</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a64219eb48222a8fd880376d0bdd36c5b">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b7ac4def0884877c42ac2051be6867f"></a><!-- doxytag: member="Model::setOrder" ref="a2b7ac4def0884877c42ac2051be6867f" args="($field, $desc=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a2b7ac4def0884877c42ac2051be6867f">setOrder</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>desc</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a2b7ac4def0884877c42ac2051be6867f">Model_Table</a>.</p>
 
 </div>
 </div>
@@ -665,6 +1062,78 @@ Data Fields</h2></td></tr>
 
 <p>{{{ Operation with external Data Controllers </p>
 <p>Associates appropriate controller and loads data such as 'Array' for <a class="el" href="class_controller___data___array.html">Controller_Data_Array</a> class </p>
+
+</div>
+</div>
+<a class="anchor" id="ac9a1027e557fe8396ca5f04875d93a3a"></a><!-- doxytag: member="Model::tryLoad" ref="ac9a1027e557fe8396ca5f04875d93a3a" args="($id=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#ac9a1027e557fe8396ca5f04875d93a3a">tryLoad</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a176b4bd223ee151fadab176ce432dcd7">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81e44cd287862f0dd78a351639ecd043"></a><!-- doxytag: member="Model::tryLoadAny" ref="a81e44cd287862f0dd78a351639ecd043" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a81e44cd287862f0dd78a351639ecd043">tryLoadAny</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a81e44cd287862f0dd78a351639ecd043">Model_Table</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7c947120b95e1847f0142616c39547b6"></a><!-- doxytag: member="Model::tryLoadBy" ref="a7c947120b95e1847f0142616c39547b6" args="($field, $cond=undefined, $value=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model.html#a7c947120b95e1847f0142616c39547b6">tryLoadBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_model___table.html#a7c947120b95e1847f0142616c39547b6">Model_Table</a>.</p>
 
 </div>
 </div>
@@ -706,6 +1175,59 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ad0608cac4d7d36216f8ec187ed82948a"></a><!-- doxytag: member="Model::$_references" ref="ad0608cac4d7d36216f8ec187ed82948a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_references</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aff3f2b7c0b641500c0aa6dac460c6cb5"></a><!-- doxytag: member="Model::$_save_as" ref="aff3f2b7c0b641500c0aa6dac460c6cb5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_save_as = null<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a857a3ae4ee366c8be9d44d04d7b840ef"></a><!-- doxytag: member="Model::$_save_later" ref="a857a3ae4ee366c8be9d44d04d7b840ef" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_save_later = false<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac0ee5b766d19cb282552a3449a1f8376"></a><!-- doxytag: member="Model::$_table" ref="ac0ee5b766d19cb282552a3449a1f8376" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$_table = array()</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Controllers store some custom informatio in here under key equal to their name </p>
+
+</div>
+</div>
 <a class="anchor" id="a4cb30b2b3a5b1c27829438846a80e667"></a><!-- doxytag: member="Model::$actual_fields" ref="a4cb30b2b3a5b1c27829438846a80e667" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -716,6 +1238,20 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4f9340ccb02c5d876a448a1d860f3812"></a><!-- doxytag: member="Model::$caption" ref="a4f9340ccb02c5d876a448a1d860f3812" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$caption = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Caption is used on buttons of <a class="el" href="class_c_r_u_d.html">CRUD</a> and other views which operate with this model. If not defined, will use class name. Use singular </p>
 
 </div>
 </div>
@@ -742,7 +1278,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad7610133e2fdaa0f815836566e5b39ef">exception()</a> is called </p>
+<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception()</a> is called </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">AbstractObject</a>.</p>
 
@@ -789,6 +1325,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa63113a5b1cc2bf64ee824ab64f9e5c6"></a><!-- doxytag: member="Model::$id_field" ref="aa63113a5b1cc2bf64ee824ab64f9e5c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$id_field = 'id'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The actual ID field of the table might now always be "id" </p>
+
+</div>
+</div>
 <a class="anchor" id="ac45d9b29a3365afe29bec487bbb8233d"></a><!-- doxytag: member="Model::$strict_fields" ref="ac45d9b29a3365afe29bec487bbb8233d" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -808,12 +1358,27 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$table</td>
+          <td class="memname">$table = null</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Contains information about table/file/bucket/array used by <a class="el" href="class_controller.html">Controller</a> to determine source </p>
+<p>Contains name of table, session key, collection or file, depending on a driver </p>
+
+<p>Reimplemented in <a class="el" href="class_model___agile_toolkit___access.html#ae8876a14058f368335baccf35af4a22b">Model_AgileToolkit_Access</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3b906743c55b4360f1b7ff1aa5a0050f"></a><!-- doxytag: member="Model::$title_field" ref="a3b906743c55b4360f1b7ff1aa5a0050f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$title_field = 'name'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -827,7 +1392,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -840,7 +1405,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_model.html">Model</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:15 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

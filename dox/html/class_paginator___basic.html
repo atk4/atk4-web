@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -120,7 +121,7 @@ Inheritance diagram for Paginator_Basic:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a> ($<a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a044e88f28bdb160a56a057815592d10f">setSource</a> (&amp;$source)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a55a8779d4a8f6d2bbec5e6fedf28ef7c">setSource</a> ($source)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a27799930621fd2a01be62e33165db4a5">defaultSpot</a> ()</td></tr>
@@ -129,10 +130,12 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#abeec997137030c782d94b8fb39c7e0f8">$ipp</a> = 30</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a79588b27bc2edf4aa7b92f247b01012d">$skip</a> = 0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#ac2e4b5fa63099d7c943a803ae122dd2b">$range</a> = 4</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a864da6c25dcc997eeb180c883265a1f2">$ajax_reload</a> = true</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a99a2b085f0a29bd5d799fdcbb63d261b">$source</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a7b3fba99e075c3c0708a094709c35fa2">$base_page</a> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_paginator.html">Paginator</a> needs to have source set (which can be either dq or array). It will render itself into parent </p>
+<div class="textblock"><p><a class="el" href="class_paginator.html">Paginator</a> needs to have source set (which can be either <a class="el" href="class_model.html">Model</a>, DSQL or Array). It will render itself into parent. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a27799930621fd2a01be62e33165db4a5"></a><!-- doxytag: member="Paginator_Basic::defaultSpot" ref="a27799930621fd2a01be62e33165db4a5" args="()" -->
 <div class="memitem">
@@ -147,7 +150,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default tag in parent's template where output is inserted, when 3rd argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>Normally when you add a view, it's output is placed inside &lt;?$Content?&gt; tag of its parent view. You can specify a different tag as 3rd argument for the <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method. If you wish for object to use different tag by default, you can override this method.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string Tag / Spot in $this-&gt;owner-&gt;template </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#a27799930621fd2a01be62e33165db4a5">AbstractView</a>.</p>
 
@@ -166,7 +170,9 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>.</p>
 
@@ -204,20 +210,23 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Recursively renders all views. Calls <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
-<p>function <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); } </p>
+<p>function <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); // will render <a class="el" href="class_text.html">Text</a> also }</p>
+<p>When cut_object is specified in the GET arguments, then output of HTML would be limited to object with matching $name or $short_name.</p>
+<p>This method will be called instead of default <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">AbstractView</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a044e88f28bdb160a56a057815592d10f"></a><!-- doxytag: member="Paginator_Basic::setSource" ref="a044e88f28bdb160a56a057815592d10f" args="(&amp;$source)" -->
+<a class="anchor" id="a55a8779d4a8f6d2bbec5e6fedf28ef7c"></a><!-- doxytag: member="Paginator_Basic::setSource" ref="a55a8779d4a8f6d2bbec5e6fedf28ef7c" args="($source)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_paginator___basic.html#a044e88f28bdb160a56a057815592d10f">setSource</a> </td>
+          <td class="memname"><a class="el" href="class_paginator___basic.html#a55a8779d4a8f6d2bbec5e6fedf28ef7c">setSource</a> </td>
           <td>(</td>
-          <td class="paramtype">&amp;$&#160;</td>
+          <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>source</em></td><td>)</td>
           <td></td>
         </tr>
@@ -229,6 +238,32 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a864da6c25dcc997eeb180c883265a1f2"></a><!-- doxytag: member="Paginator_Basic::$ajax_reload" ref="a864da6c25dcc997eeb180c883265a1f2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$ajax_reload = true</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7b3fba99e075c3c0708a094709c35fa2"></a><!-- doxytag: member="Paginator_Basic::$base_page" ref="a7b3fba99e075c3c0708a094709c35fa2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$base_page = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="abeec997137030c782d94b8fb39c7e0f8"></a><!-- doxytag: member="Paginator_Basic::$ipp" ref="abeec997137030c782d94b8fb39c7e0f8" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -291,7 +326,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -304,7 +339,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_paginator___basic.html">Paginator_Basic</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:16 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

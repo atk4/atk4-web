@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,19 +110,20 @@ Inheritance diagram for CompleteLister:</div>
  <div class="center">
   <img src="class_complete_lister.png" usemap="#CompleteLister_map" alt=""/>
   <map id="CompleteLister_map" name="CompleteLister_map">
-<area href="class_lister.html" alt="Lister" shape="rect" coords="171,168,275,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="171,112,275,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="171,56,275,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="171,0,275,24"/>
-<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="57,280,161,304"/>
-<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="171,280,275,304"/>
-<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="285,280,389,304"/>
-<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="57,336,161,360"/>
-<area href="class_menu.html" alt="Menu" shape="rect" coords="171,336,275,360"/>
-<area href="class_paginator.html" alt="Paginator" shape="rect" coords="285,336,389,360"/>
-<area href="class_grid.html" alt="Grid" shape="rect" coords="57,392,161,416"/>
-<area href="class_info_window.html" alt="InfoWindow" shape="rect" coords="0,448,104,472"/>
-<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="114,448,218,472"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="325,168,445,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="325,112,445,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="325,56,445,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="325,0,445,24"/>
+<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="65,280,185,304"/>
+<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="325,280,445,304"/>
+<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="520,280,640,304"/>
+<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="0,336,120,360"/>
+<area href="class_view___model_details.html" alt="View_ModelDetails" shape="rect" coords="130,336,250,360"/>
+<area href="class_menu.html" alt="Menu" shape="rect" coords="260,336,380,360"/>
+<area href="class_menu__j_u_i.html" alt="Menu_jUI" shape="rect" coords="390,336,510,360"/>
+<area href="class_paginator.html" alt="Paginator" shape="rect" coords="520,336,640,360"/>
+<area href="class_grid.html" alt="Grid" shape="rect" coords="0,392,120,416"/>
+<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="0,448,120,472"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -139,6 +141,7 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e">$row_t</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab3c7a9eeb638bd5906689f9d5cba65bc">$totals</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#af2c641e024ee7eeec68ae26c08ca2cf2">$total_rows</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a006a1ee45474664193b59e380003a49a">$totals_t</a> = false</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -186,11 +189,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, and <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, and <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>.</p>
 
 </div>
 </div>
@@ -247,12 +252,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, <a class="el" href="class_info_window.html#a4be4055f3361d4800e16bc2e2e38cda6">InfoWindow</a>, and <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, and <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>.</p>
 
 </div>
 </div>
@@ -269,12 +275,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
-<p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, and <a class="el" href="class_info_window.html#afde88292c44dc59faf017738dae6dffb">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, and <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>.</p>
 
 </div>
 </div>
@@ -309,7 +317,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Update totals on rows. Called at the start of <a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> </p>
+<p>Update totals on rows. Called before each <a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> call </p>
 
 <p>Reimplemented in <a class="el" href="class_grid___advanced.html#a61454d750109349ca19666b2b07fb44d">Grid_Advanced</a>.</p>
 
@@ -372,6 +380,19 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af2c641e024ee7eeec68ae26c08ca2cf2"></a><!-- doxytag: member="CompleteLister::$total_rows" ref="af2c641e024ee7eeec68ae26c08ca2cf2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$total_rows = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab3c7a9eeb638bd5906689f9d5cba65bc"></a><!-- doxytag: member="CompleteLister::$totals" ref="ab3c7a9eeb638bd5906689f9d5cba65bc" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -412,7 +433,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -425,7 +446,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_complete_lister.html">CompleteLister</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

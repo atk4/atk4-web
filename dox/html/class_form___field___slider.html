@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -102,29 +103,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Form_Field_Slider Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Form_Field_Slider" --><!-- doxytag: inherits="Form_Field" --><div class="dynheader">
+<!-- doxytag: class="Form_Field_Slider" --><!-- doxytag: inherits="Form_Field_Number" --><div class="dynheader">
 Inheritance diagram for Form_Field_Slider:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_form___field___slider.png" usemap="#Form_Field_Slider_map" alt=""/>
   <map id="Form_Field_Slider_map" name="Form_Field_Slider_map">
-<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="0,112,116,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,116,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,116,24"/>
+<area href="class_form___field___number.html" alt="Form_Field_Number" shape="rect" coords="0,224,127,248"/>
+<area href="class_form___field___line.html" alt="Form_Field_Line" shape="rect" coords="0,168,127,192"/>
+<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="0,112,127,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,127,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,127,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a399149df34deb87c0cfd42691131bc75">setRange</a> ($min, $max)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a559ae2c78708d2afb23f79fd08d0eddf">setStep</a> ($n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a9a6c6104b2a64c5b8dadec45bccfad0e">setLabels</a> ($left, $right)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a4380f30ae9202fa49ebd2439572f9cdb">getInput</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a8ce48148e988ab5ecd61213c1d460962">$left</a> = 'Min'</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a79e068e5169b6f084dcf0baf74137378">$right</a> = 'Max'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a56ba76399d12529c48ecea581ecd08cf">$min</a> = 0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a9fb747ef5633c244639185a7fe54f6b0">$max</a> = 10</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a8734bbce7774e01990aa0ac749fc398d">$step</a> = 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a8ce48148e988ab5ecd61213c1d460962">$left</a> = 'Min'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___slider.html#a79e068e5169b6f084dcf0baf74137378">$right</a> = 'Max'</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a4380f30ae9202fa49ebd2439572f9cdb"></a><!-- doxytag: member="Form_Field_Slider::getInput" ref="a4380f30ae9202fa49ebd2439572f9cdb" args="()" -->
@@ -170,26 +174,16 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a399149df34deb87c0cfd42691131bc75"></a><!-- doxytag: member="Form_Field_Slider::setRange" ref="a399149df34deb87c0cfd42691131bc75" args="($min, $max)" -->
+<a class="anchor" id="a559ae2c78708d2afb23f79fd08d0eddf"></a><!-- doxytag: member="Form_Field_Slider::setStep" ref="a559ae2c78708d2afb23f79fd08d0eddf" args="($n)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field___slider.html#a399149df34deb87c0cfd42691131bc75">setRange</a> </td>
+          <td class="memname"><a class="el" href="class_form___field___slider.html#a559ae2c78708d2afb23f79fd08d0eddf">setStep</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>max</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -222,6 +216,8 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_form___field___number.html#a9fb747ef5633c244639185a7fe54f6b0">Form_Field_Number</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a56ba76399d12529c48ecea581ecd08cf"></a><!-- doxytag: member="Form_Field_Slider::$min" ref="a56ba76399d12529c48ecea581ecd08cf" args="" -->
@@ -235,6 +231,8 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_form___field___number.html#a56ba76399d12529c48ecea581ecd08cf">Form_Field_Number</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a79e068e5169b6f084dcf0baf74137378"></a><!-- doxytag: member="Form_Field_Slider::$right" ref="a79e068e5169b6f084dcf0baf74137378" args="" -->
@@ -243,6 +241,19 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">$right = 'Max'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8734bbce7774e01990aa0ac749fc398d"></a><!-- doxytag: member="Form_Field_Slider::$step" ref="a8734bbce7774e01990aa0ac749fc398d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$step = 1</td>
         </tr>
       </table>
 </div>
@@ -260,7 +271,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -273,7 +284,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field___slider.html">Form_Field_Slider</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:14 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

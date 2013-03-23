@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -97,7 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">View_CRUD Class Reference</div>  </div>
 </div><!--header-->
@@ -118,10 +121,10 @@ Inheritance diagram for View_CRUD:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#aa4f9c9e545ef3a90856d30de93fe5e09">setController</a> ($controller)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing</a> ($mode=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a07435fbebc25d5d7904719ffce5d05c3">setModel</a> ($model, $fields=null, $grid_fields=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a58a61795752de7c6cfa03e1d0a438b5a">initComponents</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a6f8f178aea9c07b0febd5f9b83bf88d2">formSubmit</a> ($form)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ab47bb03bb6f35f71addc5f0e775a87c4">addRef</a> ($name, $options=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ad8877c4cc43637734662a62773074323">addFrame</a> ($name, $options=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a77b8953186b2d9acf5f70eed9d4dc924">formSubmitSuccess</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -129,13 +132,197 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a4a9896ad6b15303d4d0a31a2754c22a3">$grid</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ae86cd5d7189881cce699f44f4f9d2e55">$grid_class</a> = '<a class="el" href="class_grid.html">Grid</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a1ce4546ab5cc182956a20ea2f8efe7e0">$form_class</a> = '<a class="el" href="class_form.html">Form</a>'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#aad4ead086517a05232bef61af0b9485c">$entity_name</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a86f558b5bfb9dbeba2ac8dd1f1fece03">$add_button</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a5efa4a6e7f363526b79e9774676103f0">$virtual_page</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a26226be4a25305a71ca1eadaecdef41c">$frame_options</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ae97941710d863131c700f069b109991e">$id</a> = null</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ab5684af3f3e3a1f50499a312ea826bf2">configureAdd</a> ($fields)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a105d654ec78ca51de4f4da1ae03057c5">configureEdit</a> ($fields)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a6b8c865f1afd1a22aa613e1aa23d7084">configureGrid</a> ($fields)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#acb894e4aad9cfde442719ca5281513d7">configureDel</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a6f8f178aea9c07b0febd5f9b83bf88d2">formSubmit</a> ($form)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a470cbe255c27229eae35bc8a27555e13">$allow_add</a> = true</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#af8b0f48b972ae7875ff7ec88e9635a4f">$allow_edit</a> = true</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#ada72c165a21956c9251f0da32b6022fc">$allow_del</a> = true</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a86f558b5bfb9dbeba2ac8dd1f1fece03">$add_button</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view___c_r_u_d.html#a26226be4a25305a71ca1eadaecdef41c">$frame_options</a> = null</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>==ATK4=================================================== This file is part of Agile Toolkit 4 <a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a></p>
+<p>(c) 2008-2013 Agile Toolkit Limited &lt;<a href="mailto:info@agiletoolkit.org">info@agiletoolkit.org</a>&gt; Distributed under Affero General Public License v3 and commercial license.</p>
+<p>See LICENSE or LICENSE_COM for more information =====================================================ATK4= <a class="el" href="class_c_r_u_d.html">CRUD</a> stands for Create, Read, Update and Delete. This view combines both "Grid", "Form" and "VirtualPage" to bring you a seamless editing control. You would need to supply a model.</p>
+<p>IMPORTANT NOTE: While you can disable adding and editing, if you do that you must simply use Grid!</p>
+<p><a class="el" href="">http://agiletoolkit.org/</a></p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad8877c4cc43637734662a62773074323"></a><!-- doxytag: member="View_CRUD::addFrame" ref="ad8877c4cc43637734662a62773074323" args="($name, $options=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#ad8877c4cc43637734662a62773074323">addFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>options</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adds button to the crud, which opens a new frame and returns page to you. Add anything into the page as you see fit. The ID of the record will be inside $crud-&gt;id</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Unique name, also button and title default </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$options</td><td>Options</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Page|null Returns object if clicked on popup. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab47bb03bb6f35f71addc5f0e775a87c4"></a><!-- doxytag: member="View_CRUD::addRef" ref="ab47bb03bb6f35f71addc5f0e775a87c4" args="($name, $options=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#ab47bb03bb6f35f71addc5f0e775a87c4">addRef</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>options</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adds expander to the crud, which edits references under the specified name. Returns object of nested <a class="el" href="class_c_r_u_d.html">CRUD</a> when active, or null</p>
+<p>The format of $options is the following: array ( 'view_class' =&gt; '<a class="el" href="class_c_r_u_d.html">CRUD</a>', // Which <a class="el" href="class_view.html">View</a> to use inside expander 'view_options' =&gt; .. // Second arg when adding view. 'fields' =&gt; array() // Used as second argument for <a class="el" href="class_view___c_r_u_d.html#a07435fbebc25d5d7904719ffce5d05c3">setModel()</a> 'extra_fields' =&gt; array() // Third arguments to <a class="el" href="class_view___c_r_u_d.html#a07435fbebc25d5d7904719ffce5d05c3">setModel()</a> used by CRUDs 'label'=&gt; 'Click Me' // Label for a button inside a grid )</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Name of the reference. If you leave blank adds all </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$options</td><td>Customizations, see above</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>View_CRUD|null Returns crud object, when expanded page is rendered </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab5684af3f3e3a1f50499a312ea826bf2"></a><!-- doxytag: member="View_CRUD::configureAdd" ref="ab5684af3f3e3a1f50499a312ea826bf2" args="($fields)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#ab5684af3f3e3a1f50499a312ea826bf2">configureAdd</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Configures necessary components when <a class="el" href="class_c_r_u_d.html">CRUD</a> is in the adding mode</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>List of fields for add form</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void|Model If model, then bail out, no greed needed </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acb894e4aad9cfde442719ca5281513d7"></a><!-- doxytag: member="View_CRUD::configureDel" ref="acb894e4aad9cfde442719ca5281513d7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#acb894e4aad9cfde442719ca5281513d7">configureDel</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Configures deleting functionality for grid</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a105d654ec78ca51de4f4da1ae03057c5"></a><!-- doxytag: member="View_CRUD::configureEdit" ref="a105d654ec78ca51de4f4da1ae03057c5" args="($fields)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#a105d654ec78ca51de4f4da1ae03057c5">configureEdit</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Configures necessary components when <a class="el" href="class_c_r_u_d.html">CRUD</a> is in the editing mode</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>List of fields for add form</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void|Model If model, then bail out, no greed needed </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b8c865f1afd1a22aa613e1aa23d7084"></a><!-- doxytag: member="View_CRUD::configureGrid" ref="a6b8c865f1afd1a22aa613e1aa23d7084" args="($fields)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#a6b8c865f1afd1a22aa613e1aa23d7084">configureGrid</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Configures grid's model itself</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>List of fields for grid</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a6f8f178aea9c07b0febd5f9b83bf88d2"></a><!-- doxytag: member="View_CRUD::formSubmit" ref="a6f8f178aea9c07b0febd5f9b83bf88d2" args="($form)" -->
 <div class="memitem">
 <div class="memproto">
@@ -145,11 +332,19 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>form</em></td><td>)</td>
-          <td></td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Called after on post-init hook when form is submitted</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"><a class="el" href="class_form.html">Form</a></td><td class="paramname">$form</td><td><a class="el" href="class_form.html">Form</a> which was submitted</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -166,6 +361,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns JavaScript action which should be executed on form successfull submission</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="classj_query___chain.html">jQuery_Chain</a> to be executed on successful submit </dd></dl>
 
 </div>
 </div>
@@ -182,45 +379,38 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
-<p>This method is called for initialization</p>
+<p>{Initialize object. Always call parent Do not call directly<dl class="return"><dt><b>Returns:</b></dt><dd>void</dd></dl>
+}</p>
+<p><a class="el" href="class_c_r_u_d.html">CRUD</a>'s <a class="el" href="class_view___c_r_u_d.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> will create either a grid or form, depending on <a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing()</a>. You can then do the necessary changes after</p>
+<p>Note, that the form or grid will not be populated until you call <a class="el" href="class_view___c_r_u_d.html#a07435fbebc25d5d7904719ffce5d05c3">setModel()</a></p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a58a61795752de7c6cfa03e1d0a438b5a"></a><!-- doxytag: member="View_CRUD::initComponents" ref="a58a61795752de7c6cfa03e1d0a438b5a" args="()" -->
+<a class="anchor" id="aa3f9a97dd5e8e241a2a17be88949b830"></a><!-- doxytag: member="View_CRUD::isEditing" ref="aa3f9a97dd5e8e241a2a17be88949b830" args="($mode=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#a58a61795752de7c6cfa03e1d0a438b5a">initComponents</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa4f9c9e545ef3a90856d30de93fe5e09"></a><!-- doxytag: member="View_CRUD::setController" ref="aa4f9c9e545ef3a90856d30de93fe5e09" args="($controller)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#aa4f9c9e545ef3a90856d30de93fe5e09">setController</a> </td>
+          <td class="memname"><a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>controller</em></td><td>)</td>
+          <td class="paramname"><em>mode</em> = <code>null</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_abstract_object.html#aa4f9c9e545ef3a90856d30de93fe5e09">AbstractObject</a>.</p>
+<p>Returns if <a class="el" href="class_c_r_u_d.html">CRUD</a> is in editing mode or not. It's preferable over checking if($grid-&gt;form)</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$mode</td><td>Specify which editing mode you expect</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean true if editing. </dd></dl>
 
 </div>
 </div>
@@ -254,6 +444,17 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Assign model to your <a class="el" href="class_c_r_u_d.html">CRUD</a> and specify list of fields to use from model</p>
+<p>{}</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;object</td><td class="paramname">$model</td><td>Same as parent </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>Specify list of fields for form and grid </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$grid_fields</td><td>Overide list of fields for the grid</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> $model </dd></dl>
 
 </div>
 </div>
@@ -268,6 +469,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This points to a <a class="el" href="class_button.html">Button</a> object, which you can change if you want a different label or anything else on it </p>
 
 </div>
 </div>
@@ -276,11 +478,13 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$allow_add = true</td>
+          <td class="memname">$allow_add = true<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p><a class="el" href="class_grid.html">Grid</a> will contain an "Add X" button and will allow user to add records</p>
+<p>$this-&gt;add('<a class="el" href="class_c_r_u_d.html">CRUD</a>', array('allow_add'=&gt;false')); // to disable </p>
 
 </div>
 </div>
@@ -289,11 +493,13 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$allow_del = true</td>
+          <td class="memname">$allow_del = true<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p><a class="el" href="class_grid.html">Grid</a> will contain a "DELETE" button for each row. If you don't want thes set this option to false</p>
+<p>$this-&gt;add('<a class="el" href="class_c_r_u_d.html">CRUD</a>', array('allow_del'=&gt;false')); // to disable </p>
 
 </div>
 </div>
@@ -302,11 +508,28 @@ Data Fields</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$allow_edit = true</td>
+          <td class="memname">$allow_edit = true<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p><a class="el" href="class_grid.html">Grid</a> will contain "EDIT" button for each row allowing usir to edit records</p>
+<p>$this-&gt;add('<a class="el" href="class_c_r_u_d.html">CRUD</a>', array('allow_edit'=&gt;false')); // to disable </p>
+
+</div>
+</div>
+<a class="anchor" id="aad4ead086517a05232bef61af0b9485c"></a><!-- doxytag: member="View_CRUD::$entity_name" ref="aad4ead086517a05232bef61af0b9485c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$entity_name = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>For -&gt;setModel('User'), your add button would contain "Add User". If you want add button and frames to use different label, then change this property.</p>
+<p>If you set this to 'false' then <a class="el" href="class_c_r_u_d.html">CRUD</a> will not attempt to change default label ("Add") </p>
 
 </div>
 </div>
@@ -320,6 +543,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>After <a class="el" href="class_c_r_u_d.html">CRUD</a> is initialized, this will point to a form object IF <a class="el" href="class_c_r_u_d.html">CRUD</a> goes into editing mode. Typically the same code is initialized for editing pop-up, but only form is rendered. You can enhance the form all you want</p>
+<p>IMPORTANT: check <a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing()</a> method </p>
 
 </div>
 </div>
@@ -333,6 +558,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>By default, <a class="el" href="class_c_r_u_d.html">CRUD</a> will simply use "Form" class for editing and adding, but if you would like to use your custom form, specify it inside associative array as second argument to <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a></p>
+<p>$this-&gt;add('<a class="el" href="class_c_r_u_d.html">CRUD</a>', array('grid_class'=&gt;'MyGrid')); </p>
 
 </div>
 </div>
@@ -346,6 +573,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>When clicking on EDIT or ADD the frameURL is used. If you want to pass some arguments to it, put your hash here. </p>
 
 </div>
 </div>
@@ -359,6 +587,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>After <a class="el" href="class_c_r_u_d.html">CRUD</a> is initialized, this will point do a <a class="el" href="class_grid.html">Grid</a> object, IF <a class="el" href="class_c_r_u_d.html">CRUD</a> is in "read" mode. You can add more columns or actions to the grid.</p>
+<p>IMPORTANT: check <a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing()</a> method </p>
 
 </div>
 </div>
@@ -372,6 +602,37 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>By default, <a class="el" href="class_c_r_u_d.html">CRUD</a> will simply use "Grid" class, but if you would like to use your custom grid class for listing, specify it inside associative array as second argument to <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a></p>
+<p>$this-&gt;add('<a class="el" href="class_c_r_u_d.html">CRUD</a>', array('grid_class'=&gt;'MyGrid')); </p>
+
+</div>
+</div>
+<a class="anchor" id="ae97941710d863131c700f069b109991e"></a><!-- doxytag: member="View_CRUD::$id" ref="ae97941710d863131c700f069b109991e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$id = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This is set to ID of the model when are in editing mode. In theory this can also be 0, so use is_null() </p>
+
+</div>
+</div>
+<a class="anchor" id="a5efa4a6e7f363526b79e9774676103f0"></a><!-- doxytag: member="View_CRUD::$virtual_page" ref="a5efa4a6e7f363526b79e9774676103f0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$virtual_page = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p><a class="el" href="class_virtual_page.html">VirtualPage</a> object will be used to display popup content. That is to ensure that none of your other content you put AROUND the <a class="el" href="class_c_r_u_d.html">CRUD</a> would mess with the forms.</p>
+<p>If <a class="el" href="class_view___c_r_u_d.html#aa3f9a97dd5e8e241a2a17be88949b830">isEditing()</a> then you can add more stuff on this page, by calling virtual_page-&gt;getPage()-&gt;add('Hello!'); </p>
 
 </div>
 </div>
@@ -385,7 +646,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -398,7 +659,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_view___c_r_u_d.html">View_CRUD</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:17 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

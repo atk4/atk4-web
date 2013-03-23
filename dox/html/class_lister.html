@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -108,19 +109,20 @@ Inheritance diagram for Lister:</div>
  <div class="center">
   <img src="class_lister.png" usemap="#Lister_map" alt=""/>
   <map id="Lister_map" name="Lister_map">
-<area href="class_view.html" alt="View" shape="rect" coords="171,112,275,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="171,56,275,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="171,0,275,24"/>
-<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="171,224,275,248"/>
-<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="57,280,161,304"/>
-<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="171,280,275,304"/>
-<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="285,280,389,304"/>
-<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="57,336,161,360"/>
-<area href="class_menu.html" alt="Menu" shape="rect" coords="171,336,275,360"/>
-<area href="class_paginator.html" alt="Paginator" shape="rect" coords="285,336,389,360"/>
-<area href="class_grid.html" alt="Grid" shape="rect" coords="57,392,161,416"/>
-<area href="class_info_window.html" alt="InfoWindow" shape="rect" coords="0,448,104,472"/>
-<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="114,448,218,472"/>
+<area href="class_view.html" alt="View" shape="rect" coords="325,112,445,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="325,56,445,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="325,0,445,24"/>
+<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="325,224,445,248"/>
+<area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="65,280,185,304"/>
+<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="325,280,445,304"/>
+<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="520,280,640,304"/>
+<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="0,336,120,360"/>
+<area href="class_view___model_details.html" alt="View_ModelDetails" shape="rect" coords="130,336,250,360"/>
+<area href="class_menu.html" alt="Menu" shape="rect" coords="260,336,380,360"/>
+<area href="class_menu__j_u_i.html" alt="Menu_jUI" shape="rect" coords="390,336,510,360"/>
+<area href="class_paginator.html" alt="Paginator" shape="rect" coords="520,336,640,360"/>
+<area href="class_grid.html" alt="Grid" shape="rect" coords="0,392,120,416"/>
+<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="0,448,120,472"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -140,14 +142,10 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lister.html#a2ec3a266ee95cda75cdbb71bc9ee1b53">$current_row</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lister.html#af7c9c05bbefcfe02242d897a5a8f3916">$current_row_html</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lister.html#ad97957dc8f96da580b344ae7a203805d">$current_id</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lister.html#aa63113a5b1cc2bf64ee824ab64f9e5c6">$id_field</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lister.html#a3a999852dfee63e69aacacefb7e33564">$iterator</a> = array()</td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_lister.html">Lister</a> implements a very simple and fast way to output series of data by applying template formatting</p>
-<p><a class="el" href="">Use: $list=$this-&gt;add('Lister'); $list-&gt;setModel('User');  Template (view/users.html): </a>&lt;?$name?&gt; </p>
-<p>&lt;?$desc?&gt;</p>
-<p>See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </p>
-</div><hr/><h2>Member Function Documentation</h2>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="add8c5a33f231d9979e5f8bbded576d9e"></a><!-- doxytag: member="Lister::defaultTemplate" ref="add8c5a33f231d9979e5f8bbded576d9e" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -161,11 +159,13 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, and <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, and <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>.</p>
 
 </div>
 </div>
@@ -219,12 +219,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default render. Generates HTML presentation of the view based on $this-&gt;template and passes it to <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a> function which then inserts output into parent's template </p>
-<p>For visual objects, their default action while rendering is rely on <a class="el" href="class_s_mlite.html">SMlite</a> engine. For sake of simplicity and speed you can redefine this method with a simple call</p>
+<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
+<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
+<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, and <a class="el" href="class_info_window.html#afde88292c44dc59faf017738dae6dffb">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, and <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>.</p>
 
 </div>
 </div>
@@ -270,8 +272,6 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets source data for the lister. If source is a model, use <a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel()</a> instead.</p>
-<p><a class="el" href="">Examples: $l=$this-&gt;add('Lister'); $l-&gt;setSource( array('a','b','c') ); // associative array  or // array of hashes $l-&gt;setSource( array( array('id'=&gt;1,'name'=&gt;'John','surname'=&gt;'Smith'), array('id'=&gt;2,'name'=&gt;'Joe','surname'=&gt;'Blogs') ));  or // dsql $l-&gt;setSource( $this-&gt;api-&gt;db-&gt;dsql() -&gt;table('user') -&gt;where('age&gt;',3) -&gt;field('*') );  or // sql table $l-&gt;setSource( 'user', array('name','surname')); </a></p>
 
 </div>
 </div>
@@ -350,6 +350,20 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aa63113a5b1cc2bf64ee824ab64f9e5c6"></a><!-- doxytag: member="Lister::$id_field" ref="aa63113a5b1cc2bf64ee824ab64f9e5c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$id_field = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Name of the ID field in this lister </p>
+
+</div>
+</div>
 <a class="anchor" id="a24e6fb63018a7bf30419158cfedcdc22"></a><!-- doxytag: member="Lister::$iter" ref="a24e6fb63018a7bf30419158cfedcdc22" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -388,7 +402,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -401,7 +415,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_lister.html">Lister</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:15 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

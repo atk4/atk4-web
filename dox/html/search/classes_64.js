@@ -8,8 +8,5 @@ var searchData=
   ['db_5fdsql_5fprefixed',['DB_dsql_prefixed',['../class_d_b__dsql__prefixed.html',1,'']]],
   ['db_5fdsql_5fsqlite',['DB_dsql_sqlite',['../class_d_b__dsql__sqlite.html',1,'']]],
   ['db_5fprefixed',['DB_prefixed',['../class_d_b__prefixed.html',1,'']]],
-  ['dblite_5fdsql',['DBlite_dsql',['../class_d_blite__dsql.html',1,'']]],
-  ['dblite_5fexception',['DBlite_exception',['../class_d_blite__exception.html',1,'']]],
-  ['dblite_5fmysql',['DBlite_mysql',['../class_d_blite__mysql.html',1,'']]],
   ['dummy',['Dummy',['../class_dummy.html',1,'']]]
 ];

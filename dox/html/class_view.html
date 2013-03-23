@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -115,8 +116,9 @@ Inheritance diagram for View:</div>
 <area href="class_view___box.html" alt="View_Box" shape="rect" coords="125,336,240,360"/>
 <area href="class_view___columns.html" alt="View_Columns" shape="rect" coords="125,392,240,416"/>
 <area href="class_view___c_r_u_d.html" alt="View_CRUD" shape="rect" coords="125,448,240,472"/>
-<area href="class_view___html_element.html" alt="View_HtmlElement" shape="rect" coords="125,504,240,528"/>
-<area href="class_view___tabs.html" alt="View_Tabs" shape="rect" coords="125,560,240,584"/>
+<area href="class_view___flyout.html" alt="View_Flyout" shape="rect" coords="125,504,240,528"/>
+<area href="class_view___html_element.html" alt="View_HtmlElement" shape="rect" coords="125,560,240,584"/>
+<area href="class_view___tabs.html" alt="View_Tabs" shape="rect" coords="125,616,240,640"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -127,16 +129,18 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#af297b685c862e9957c775f11d30367a4">addClass</a> ($class)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#ab97cac463ec6e8c394e5609f4c7afcc9">removeClass</a> ($class)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a8d2c9f07514863c12756f00354c96f67">setClass</a> ($class)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aecfb78e7665096735196b2504d4a9580">setStyle</a> ($property, $style=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a2ab7f4f94ec115c4b13fb8d2d30b3c8b">addStyle</a> ($property, $style=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aecfb78e7665096735196b2504d4a9580">setStyle</a> ($property, $style=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aed98453b92e9e7e961179dfff24c4a3a">setText</a> ($text)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a4a8ff66c403a977763a802f94a7707bc">set</a> ($text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#a08c0d72e86b5b52a0da9ac9f2165bd96">setHtml</a> ($html)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#aaa214328de3363603766a57ab67db132">setHTML</a> ($html)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_html_element.html">HtmlElement</a> is a base class of any <a class="el" href="class_view.html">View</a> which would render as a single HTML element. By default it puts </p>
-<div> on your page, but you can change the element with <a class="el" href="class_view.html#a2193ae9420d4227a233ac136d14c9407">setElement()</a></div><div> Use: $tabs=$this-&gt;add('<a class="el" href="class_view.html">View</a>')-&gt;set('Hello')-&gt;addClass('myclass');</div><div>  See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </div></div><hr/><h2>Member Function Documentation</h2>
+<div class="textblock"><p>==ATK4=================================================== This file is part of Agile Toolkit 4 <a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a></p>
+<p>(c) 2008-2013 Agile Toolkit Limited &lt;<a href="mailto:info@agiletoolkit.org">info@agiletoolkit.org</a>&gt; Distributed under Affero General Public License v3 and commercial license.</p>
+<p>See LICENSE or LICENSE_COM for more information =====================================================ATK4= <a class="el" href="class_view.html">View</a> represents a stand-alone HTML element in your render-tree, by default </p>
+<div></div><div> Most other views would contain a template with many HTML elements, but "View" is for those cases when you need to add an image, div or video tag.</div><div> $this-&gt;add('<a class="el" href="class_view.html">View</a>') -&gt;setElement('a') -&gt;setAttr('href',$this-&gt;api-&gt;url('reminder')) -&gt;addClass('password_reminder') -&gt;set('Forgot your password?');</div><div> For a commonly used elements such as "P", "H1" etc you will find dedicated classes inherited from <a class="el" href="class_view.html">View</a>. </div></div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="af297b685c862e9957c775f11d30367a4"></a><!-- doxytag: member="View::addClass" ref="af297b685c862e9957c775f11d30367a4" args="($class)" -->
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +155,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add class to element. </p>
+<p>Add class to element. Previously added classes are not affected. Multiple classes can also be separated by a space.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>HTML class or array of classes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -179,7 +190,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add style to element </p>
+<p>Add inline style to element.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$property</td><td>CSS Property </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$style</td><td>CSS Style definition</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -196,11 +215,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#add8c5a33f231d9979e5f8bbded576d9e">AbstractView</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>, <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>.</p>
+<p>Reimplemented in <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>, <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>.</p>
 
 </div>
 </div>
@@ -218,6 +239,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Remove class from element, if it was added with addClass or setClass.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>Single class to remove (no spaces)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -235,9 +264,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Alias for setText. Escapes HTML characters. </p>
+<p>Sets text to appear inside element. Automatically escapes HTML characters.See also <a class="el" href="class_view.html#aaa214328de3363603766a57ab67db132">setHTML()</a>. Same as <a class="el" href="class_view.html#aed98453b92e9e7e961179dfff24c4a3a">setText()</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td><a class="el" href="class_text.html">Text</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_view___icon.html#afc7f621bbed1870843b8834dc15ccf8b">View_Icon</a>, <a class="el" href="class_view___box.html#a4a8ff66c403a977763a802f94a7707bc">View_Box</a>, and <a class="el" href="class_h_x.html#a4a8ff66c403a977763a802f94a7707bc">HX</a>.</p>
+<p>Reimplemented in <a class="el" href="class_h_x.html#a4a8ff66c403a977763a802f94a7707bc">HX</a>, <a class="el" href="class_view___icon.html#afc7f621bbed1870843b8834dc15ccf8b">View_Icon</a>, and <a class="el" href="class_view___box.html#a4a8ff66c403a977763a802f94a7707bc">View_Box</a>.</p>
 
 </div>
 </div>
@@ -265,7 +301,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add attribute to element. Also supports hash for multiple attributes </p>
+<p>Add attribute to element. Previously added attributes are not affected</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">string,$attribute</td><td>Name of the attribute, or hash </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$value</td><td>New value of the attribute</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -283,8 +327,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_view___button.html#a8d2c9f07514863c12756f00354c96f67">View_Button</a>.</p>
+<p>Replace all classes with a new ones.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>New class (can contain spaces)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -302,16 +352,23 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Change which element is used. 'div' by default, but change with this funciton </p>
+<p>Change which element is used. 'div' by default, but can be changed with this function</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$element</td><td>Any HTML elment</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a08c0d72e86b5b52a0da9ac9f2165bd96"></a><!-- doxytag: member="View::setHtml" ref="a08c0d72e86b5b52a0da9ac9f2165bd96" args="($html)" -->
+<a class="anchor" id="aaa214328de3363603766a57ab67db132"></a><!-- doxytag: member="View::setHTML" ref="aaa214328de3363603766a57ab67db132" args="($html)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_view.html#a08c0d72e86b5b52a0da9ac9f2165bd96">setHtml</a> </td>
+          <td class="memname"><a class="el" href="class_view.html#aaa214328de3363603766a57ab67db132">setHTML</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>html</em></td><td>)</td>
@@ -320,7 +377,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets HTML </p>
+<p>Sets HTML to appear inside element.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$html</td><td>HTML</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -348,9 +412,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add style to element. </p>
-
-<p>Reimplemented in <a class="el" href="class_view___button.html#a368d7113773295983c7547bc05f0f133">View_Button</a>.</p>
+<p>Same as addStyle</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$property</td><td>CSS Property </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$style</td><td>CSS Style definition</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this : Align functionality with addClass / setClass </dd></dl>
 
 </div>
 </div>
@@ -368,7 +438,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets text appearing inside element. Automatically escapes HTML characters </p>
+<p>Sets text to appear inside element. Automatically escapes HTML characters.See also <a class="el" href="class_view.html#aaa214328de3363603766a57ab67db132">setHTML()</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td><a class="el" href="class_text.html">Text</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -382,7 +459,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -395,7 +472,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_view.html">View</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:17 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

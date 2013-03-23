@@ -8,7 +8,7 @@ var class_d_b =
     [ "inTransaction", "class_d_b.html#aaf34a959f7c26d1f97713adab5a6c429", null ],
     [ "lastID", "class_d_b.html#a9dff7c3e9f73314fa29c785a4bb730fd", null ],
     [ "query", "class_d_b.html#a08ad982f7f88a8b80c3062d99bfc302b", null ],
-    [ "rollBack", "class_d_b.html#a6c8e90da29100c80c1abe381cfb37593", null ],
+    [ "rollBack", "class_d_b.html#aebaea4cae21e0e75ec1489c1648caeb3", null ],
     [ "$dbh", "class_d_b.html#acc1e62674bb7200ea73767c19dc1344d", null ],
     [ "$dsql_class", "class_d_b.html#a04ab0f27959cb92fa5691286bcd8b55b", null ],
     [ "$transaction_depth", "class_d_b.html#a7da74af76d647c306ce5acf42fe799df", null ],

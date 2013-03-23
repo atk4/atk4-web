@@ -4,6 +4,8 @@ var class_s_mlite =
     [ "append", "class_s_mlite.html#a54c0f479d3559597855b62ee0cee387a", null ],
     [ "appendHTML", "class_s_mlite.html#a3aab7be1ba87394417dc4ff420a84e22", null ],
     [ "cloneRegion", "class_s_mlite.html#a7c89591930e7b02d190706d7e4f5e4d7", null ],
+    [ "debugRender", "class_s_mlite.html#a974b22a6392c3abc99db4d8f0b4b81fa", null ],
+    [ "debugRenderRegion", "class_s_mlite.html#a2ab6221576bef4ca02a9ec7177592d3d", null ],
     [ "del", "class_s_mlite.html#a66f6d38f233798481fb0d0aa2559c8db", null ],
     [ "dumpTags", "class_s_mlite.html#affc3723870a0cb41997ea0988632604a", null ],
     [ "eachTag", "class_s_mlite.html#a2eeb46dc55800833fad156b0029cf9c7", null ],

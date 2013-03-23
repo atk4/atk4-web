@@ -12,6 +12,7 @@ var class_complete_lister =
     [ "$item_tag", "class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd", null ],
     [ "$odd_even", "class_complete_lister.html#a80d56bbd4c03d0ee9b9fe450da93913f", null ],
     [ "$row_t", "class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e", null ],
+    [ "$total_rows", "class_complete_lister.html#af2c641e024ee7eeec68ae26c08ca2cf2", null ],
     [ "$totals", "class_complete_lister.html#ab3c7a9eeb638bd5906689f9d5cba65bc", null ],
     [ "$totals_t", "class_complete_lister.html#a006a1ee45474664193b59e380003a49a", null ]
 ];

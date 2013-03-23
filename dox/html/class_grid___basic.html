@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -108,15 +109,15 @@ Inheritance diagram for Grid_Basic:</div>
  <div class="center">
   <img src="class_grid___basic.png" usemap="#Grid_Basic_map" alt=""/>
   <map id="Grid_Basic_map" name="Grid_Basic_map">
-<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="55,224,156,248"/>
-<area href="class_lister.html" alt="Lister" shape="rect" coords="55,168,156,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="55,112,156,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="55,56,156,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="55,0,156,24"/>
-<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="55,336,156,360"/>
-<area href="class_grid.html" alt="Grid" shape="rect" coords="55,392,156,416"/>
-<area href="class_info_window.html" alt="InfoWindow" shape="rect" coords="0,448,101,472"/>
-<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="111,448,212,472"/>
+<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="65,224,185,248"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="65,168,185,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="65,112,185,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="65,56,185,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="65,0,185,24"/>
+<area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="0,336,120,360"/>
+<area href="class_view___model_details.html" alt="View_ModelDetails" shape="rect" coords="130,336,250,360"/>
+<area href="class_grid.html" alt="Grid" shape="rect" coords="0,392,120,416"/>
+<area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="0,448,120,472"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -127,20 +128,22 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> ($model, $fields=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a35d2e5d6594f47ace013def1f480a986">addColumn</a> ($formatters, $name=null, $descr=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a6fb64e1befc55edcd6612434e7493515">addFormatter</a> ($field, $formatter)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a56e5399467f45f7dab5fdca7b3ceb5fe">addFormatter</a> ($field, $formatter, $options=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a9c05ac402c458a3556d260b2add523e5">setFormatter</a> ($field, $formatter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a42478a6bab8d92234cfae2efe0bb2c48">precacheTemplate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a3222dca6e34e763380f981d60be9d8ee">applyTDParams</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a8cffb519cef8d77078eda50bec9f1496">renderRows</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a535d772e469d0ec95170cb9d69e1079c">format_text</a> ($field)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a19d2a3d21fe02053311fde465e6ae2e9">$columns</a> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">$default_controller</a> = '<a class="el" href="class_controller___m_v_c_grid.html">Controller_MVCGrid</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a382f5f26fb1be66d4cc4c3f438ad7ffb">$sort_icons</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___basic.html#a855cfc52a6b5b8de8a2accec15277d9c">$show_header</a> = true</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This is a Basic <a class="el" href="class_grid.html">Grid</a> implementation, which produces fully functional HTML grid capable of filtering, sorting, paginating and using multiple column formatters. Basic <a class="el" href="class_grid.html">Grid</a> no longer implements the column formatters, instead they have been moved into <a class="el" href="class_grid___advanced.html">Grid_Advanced</a></p>
+<div class="textblock"><p>This is a Basic <a class="el" href="class_grid.html">Grid</a> implementation, which produces fully functional HTML grid capable of filtering, sorting, paginating and using multiple column formatters. Basic <a class="el" href="class_grid.html">Grid</a> no longer implements the column formatters, instead they have been moved into <a class="el" href="class_grid___advanced.html">Grid_Advanced</a>.</p>
 <p><a class="el" href="">Use: $grid=$this-&gt;add('Grid'); $grid-&gt;setModel('User');   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a35d2e5d6594f47ace013def1f480a986"></a><!-- doxytag: member="Grid_Basic::addColumn" ref="a35d2e5d6594f47ace013def1f480a986" args="($formatters, $name=null, $descr=null)" -->
@@ -176,12 +179,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6fb64e1befc55edcd6612434e7493515"></a><!-- doxytag: member="Grid_Basic::addFormatter" ref="a6fb64e1befc55edcd6612434e7493515" args="($field, $formatter)" -->
+<a class="anchor" id="a56e5399467f45f7dab5fdca7b3ceb5fe"></a><!-- doxytag: member="Grid_Basic::addFormatter" ref="a56e5399467f45f7dab5fdca7b3ceb5fe" args="($field, $formatter, $options=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___basic.html#a6fb64e1befc55edcd6612434e7493515">addFormatter</a> </td>
+          <td class="memname"><a class="el" href="class_grid___basic.html#a56e5399467f45f7dab5fdca7b3ceb5fe">addFormatter</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -190,12 +193,34 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>formatter</em>&#160;</td>
+          <td class="paramname"><em>formatter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>options</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3222dca6e34e763380f981d60be9d8ee"></a><!-- doxytag: member="Grid_Basic::applyTDParams" ref="a3222dca6e34e763380f981d60be9d8ee" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___basic.html#a3222dca6e34e763380f981d60be9d8ee">applyTDParams</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
@@ -216,20 +241,22 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to return default template, when 4th argument of <a class="el" href="class_abstract_object.html#a166878abcde3d0e82826ed3110c37c87">add()</a> is omitted </p>
+<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
+<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, and <a class="el" href="class_info_window.html#add8c5a33f231d9979e5f8bbded576d9e">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3935def4b84f490286442f0252a9aa3f"></a><!-- doxytag: member="Grid_Basic::format_shorttext" ref="a3935def4b84f490286442f0252a9aa3f" args="($field)" -->
+<a class="anchor" id="a535d772e469d0ec95170cb9d69e1079c"></a><!-- doxytag: member="Grid_Basic::format_text" ref="a535d772e469d0ec95170cb9d69e1079c" args="($field)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___basic.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> </td>
+          <td class="memname"><a class="el" href="class_grid___basic.html#a535d772e469d0ec95170cb9d69e1079c">format_text</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em></td><td>)</td>
@@ -302,12 +329,13 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
+<p>Initialize object. Always call parent Do not call directly</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, and <a class="el" href="class_info_window.html#a4be4055f3361d4800e16bc2e2e38cda6">InfoWindow</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, and <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>.</p>
 
 </div>
 </div>
@@ -413,11 +441,24 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When using <a class="el" href="class_abstract_view.html#acd8548bf466edfaa7e488e7e39ad28a2">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
+<p>When using <a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#ab949cccd963058f0937d04bc26ee24a7">AbstractView</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a855cfc52a6b5b8de8a2accec15277d9c"></a><!-- doxytag: member="Grid_Basic::$show_header" ref="a855cfc52a6b5b8de8a2accec15277d9c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$show_header = true</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -449,7 +490,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -462,7 +503,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_grid___basic.html">Grid_Basic</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:14 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

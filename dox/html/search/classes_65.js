@@ -12,6 +12,7 @@ var searchData=
   ['exception_5fnotfound',['Exception_NotFound',['../class_exception___not_found.html',1,'']]],
   ['exception_5fnotimplemented',['Exception_NotImplemented',['../class_exception___not_implemented.html',1,'']]],
   ['exception_5fobsolete',['Exception_Obsolete',['../class_exception___obsolete.html',1,'']]],
+  ['exception_5fpathfinder',['Exception_PathFinder',['../class_exception___path_finder.html',1,'']]],
   ['exception_5fstop',['Exception_Stop',['../class_exception___stop.html',1,'']]],
   ['exception_5fstopinit',['Exception_StopInit',['../class_exception___stop_init.html',1,'']]],
   ['exception_5fstoprender',['Exception_StopRender',['../class_exception___stop_render.html',1,'']]],

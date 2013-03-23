@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -123,15 +124,18 @@ Inheritance diagram for HX:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#a4a8ff66c403a977763a802f94a7707bc">set</a> ($text)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#a160ba7b4fed6a7b204614d5c991224ea">sub</a> ($text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#a4a8ff66c403a977763a802f94a7707bc">set</a> ($text)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#adf95f30eaafccead90ab5e2cdb55e9b9">$text</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_h_x.html#a744e14cc367de39c50533a1443fc00d4">$sub</a> = null</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Adds a support for subtitles for </p>
+<h1>, , ,  and  elements  $this-&gt;add('<a class="el" href="class_h1.html">H1</a>')-&gt;set('Welcome') -&gt;sub('we really mean it!'); $this-&gt;add('<a class="el" href="class_p.html">P</a>')-&gt;set('Your balance is: '.$balance);  Syntactically, subtitle appears inside the  element:  Hello<sub>world</sub></h1>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a8c9955ce8c33176bd3548ff0b4a8e67f"></a><!-- doxytag: member="HX::recursiveRender" ref="a8c9955ce8c33176bd3548ff0b4a8e67f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +150,10 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Recursively renders all views. Calls <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> for all or for the one being cut. In some cases you may want to redefine this function instead of <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a>. The difference is that this function is called before sub-views are rendered, but <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> is called after.</p>
-<p>function <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); } </p>
+<p>function <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender()</a>{ $this-&gt;add('<a class="el" href="class_text.html">Text</a>')-&gt;set('test'); return parent::recursiveRender(); // will render <a class="el" href="class_text.html">Text</a> also }</p>
+<p>When cut_object is specified in the GET arguments, then output of HTML would be limited to object with matching $name or $short_name.</p>
+<p>This method will be called instead of default <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_view.html#a8c9955ce8c33176bd3548ff0b4a8e67f">AbstractView</a>.</p>
 
@@ -166,7 +173,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Alias for setText. Escapes HTML characters. </p>
+<p>Sets text to appear inside element. Automatically escapes HTML characters.See also <a class="el" href="class_view.html#aaa214328de3363603766a57ab67db132">setHTML()</a>. Same as <a class="el" href="class_view.html#aed98453b92e9e7e961179dfff24c4a3a">setText()</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td><a class="el" href="class_text.html">Text</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_view.html#a4a8ff66c403a977763a802f94a7707bc">View</a>.</p>
 
@@ -186,7 +200,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds subtitle </p>
+<p>Adds subtitle to your header.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>Subheader</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -227,7 +248,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -240,7 +261,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_h_x.html">HX</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:15 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

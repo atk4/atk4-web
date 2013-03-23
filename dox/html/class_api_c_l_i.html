@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -109,10 +110,11 @@ Inheritance diagram for ApiCLI:</div>
  <div class="center">
   <img src="class_api_c_l_i.png" usemap="#ApiCLI_map" alt=""/>
   <map id="ApiCLI_map" name="ApiCLI_map">
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
-<area href="class_api_web.html" alt="ApiWeb" shape="rect" coords="0,168,96,192"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
+<area href="class_api_web.html" alt="ApiWeb" shape="rect" coords="53,168,149,192"/>
 <area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="0,224,96,248"/>
+<area href="class_api_install.html" alt="ApiInstall" shape="rect" coords="106,224,202,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -130,13 +132,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ae55da8dc3cff0839c2f0bab9082a33c3">getBaseURL</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a37b5260768d793d1011544d7d2f670b3">url</a> ($page=null, $arguments=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aad58c9cd82218720890a8350dd9ea90a">getDestinationURL</a> ($page=null, $arguments=array())</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aca80e4cb45444a4ef80c6ce696df7dc2">getLogger</a> ($class_name='<a class="el" href="class_logger.html">Logger</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a788e3195be0e75956fa2bcc149c7db9c">getLogger</a> ($class_name=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ad6fbac308cf2c1d219e4c1d6d36ee4e0">caughtException</a> ($e)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a70dfafefd567c8115a65126fa340d882">outputFatal</a> ($msg, $shift)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a15b908f9b57ba6d5eb3d9e0214f3f2d1">outputWarning</a> ($msg, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a41a61ce77bee992bb93b41015d617c81">outputDebug</a> ($msg, $shift=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aa7312b50ddc17745e01a698ef26ba724">outputInfo</a> ($msg, $shift=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aa983dc8b59d34e26ebf27a5e3e85e559">upCall</a> ($type, $args=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ac7f3fa06553515f0b9aef2a2b87bfde8">configExceptionOrDefault</a> ($default, $exceptiontext)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#abd9a3259a940f29bade0d0f495593787">readConfig</a> ($file='config.php')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ab4d327ecd33baee7cd893aff5298fbb6">setConfig</a> ($config=array())</td></tr>
@@ -146,22 +145,29 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4c5f6bfd3128096d61e207379a03e28c">versionRequirement</a> ($v, $return_only=false)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#af0f24576af293cb29436a19284fa0a06">dbConnect</a> ($dsn=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ae4d9cdd841aa6f531a64a3533a2b6537">tryConnect</a> ($dsn)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a316732455e475e9056db3d1b62c94d81">normalizeName</a> ($name, $separator= '<a class="el" href="class_api_c_l_i.html#a7c4e35e703ca26063001e0dfad6092bd">_</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a7d08d22818984b945890f4ca95e71877">normalizeClassName</a> ($name, $prefix=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a1fa3127fc82f96b1436d871ef02be319">$db</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aebfec76216371ef236acc5910e90933d">$logger</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a460d134a5364c5dcac49939e1696a90f">$logger_class</a> = '<a class="el" href="class_logger.html">Logger</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aa4f3292cb660a22ce111d47635b225c9">$pathfinder</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a4011bd1646505f48bf081f40e56552d5">$skin</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a7b15e8bcbcabe0d69d54a5533cf4c3eb">$atk_version</a> = 4.2</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#aac4284f23d285f90b5f5d98f742ee29d">$pr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#ab337cbad370c6d2a5de061e99423ae21">$max_name_length</a> = 60</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a3559228470d9098cee4342b4cb010d63">$unique_hashes</a> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_c_l_i.html#a8c827eb5ea72ee1b6d59078227d8db5b">$pathfinder_class</a> = '<a class="el" href="class_path_finder.html">PathFinder</a>'</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base class for Command-Line Applications. If you need to share code between multiple APIs, create a controller.</p>
-<p>More Info <a class="el" href=""><a href="http://agiletoolkit.org/doc/apicli">http://agiletoolkit.org/doc/apicli</a> </a></p>
+<div class="textblock"><p>==ATK4=================================================== This file is part of Agile Toolkit 4 <a href="http://agiletoolkit.org/">http://agiletoolkit.org/</a></p>
+<p>(c) 2008-2013 Agile Toolkit Limited &lt;<a href="mailto:info@agiletoolkit.org">info@agiletoolkit.org</a>&gt; Distributed under Affero General Public License v3 and commercial license.</p>
+<p>See LICENSE or LICENSE_COM for more information =====================================================ATK4= Base class for Command-Line Applications. The purpose of Application class is to initialize all the other classes and aid their connectivity. API class can be accessed from any object through $this-&gt;api property.</p>
+<p>API classes are derrived from <a class="el" href="class_abstract_view.html">AbstractView</a> because normally they would have a template and will be able to render themselves consistently to any other view in the system. Although <a class="el" href="class_api_c_l_i.html">ApiCLI</a> does not do any rendering, it's descendants do</p>
+<p><a class="el" href="">http://agiletoolkit.org/doc/api</a></p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aee3db7bdae36468c8d21102728f28205"></a><!-- doxytag: member="ApiCLI::__construct" ref="aee3db7bdae36468c8d21102728f28205" args="($realm=null)" -->
 <div class="memitem">
@@ -177,7 +183,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes properties of the application. Redefine <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> instead of this </p>
+<p>Regular objects in Agile Toolkit use <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a> and are added through <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a>. Application class is differente, you use "new" keyword because it's the first class to be created. That's why constructor will perform quite a bit of initialization.</p>
+<p>Do not redefine constructor but instead use <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">init()</a>;</p>
+<p>$realm defines a top-level name of your application. This impacts all id= prefixes in your HTML code, form field names and many other things, such as session name. If you have two application classes which are part of same web app and may want to use same realm, but in other cases it's preferably that you keep realm unique on your domain in the interests of security.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$realm</td><td>Will become $api-&gt;name </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,10 +239,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Register method with all objects in Agile Toolkit. </p>
+<p>Agile Toolkit objects allow method injection. This is quite similar to technique used in JavaScript:</p>
+<p>obj.test = function() { .. }</p>
+<p>All non-existant method calls on all Agile Toolkit objects will be tried against local table of registered methods and then against global registered methods.</p>
+<p>addGlobalmethod allows you to register a globally-recognized for all agile toolkit object. PHP is not particularly fast about executing methods like that, but this technique can be used for adding backward-compatibility or debugging, etc.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Name of the method </td></tr>
+    <tr><td class="paramtype">callable</td><td class="paramname">$callable</td><td>Calls your function($object, $arg1, $arg2)</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_abstract_object.html#a6d24132dc92242f7f71aa98e7ae86442">AbstractObject::hasMethod()</a> </dd>
 <dd>
-<a class="el" href="class_abstract_object.html#acfa40ec504c3c792c3b84cf2f1af511d">AbstractObject::__call()</a> </dd></dl>
+<a class="el" href="class_abstract_object.html#acfa40ec504c3c792c3b84cf2f1af511d">AbstractObject::__call()</a></dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -403,15 +428,15 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aca80e4cb45444a4ef80c6ce696df7dc2"></a><!-- doxytag: member="ApiCLI::getLogger" ref="aca80e4cb45444a4ef80c6ce696df7dc2" args="($class_name='Logger')" -->
+<a class="anchor" id="a788e3195be0e75956fa2bcc149c7db9c"></a><!-- doxytag: member="ApiCLI::getLogger" ref="a788e3195be0e75956fa2bcc149c7db9c" args="($class_name=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#aca80e4cb45444a4ef80c6ce696df7dc2">getLogger</a> </td>
+          <td class="memname"><a class="el" href="class_api_c_l_i.html#a788e3195be0e75956fa2bcc149c7db9c">getLogger</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>class_name</em> = <code>'<a class="el" href="class_logger.html">Logger</a>'</code></td><td>)</td>
+          <td class="paramname"><em>class_name</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -452,7 +477,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns if a global method with such name was defined </p>
+<p>Returns if a global method with such name was defined</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Name of the method</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean if registered </dd></dl>
 
 </div>
 </div>
@@ -546,6 +578,80 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a7d08d22818984b945890f4ca95e71877"></a><!-- doxytag: member="ApiCLI::normalizeClassName" ref="a7d08d22818984b945890f4ca95e71877" args="($name, $prefix=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_c_l_i.html#a7d08d22818984b945890f4ca95e71877">normalizeClassName</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>prefix</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>First normalize class name, then add specified prefix to class name if it's passed and not already added. Class name can have namespaces and they are treated prefectly.</p>
+<p>Example: normalizeClassName('User','<a class="el" href="class_model.html">Model</a>') == 'Model_User';</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string&#160;|&#160;object</td><td class="paramname">$name</td><td>Name of class or object </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$prefix</td><td>Optional prefix for class name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string|object Full, normalized class name or received object </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a316732455e475e9056db3d1b62c94d81"></a><!-- doxytag: member="ApiCLI::normalizeName" ref="a316732455e475e9056db3d1b62c94d81" args="($name, $separator= '_')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_c_l_i.html#a316732455e475e9056db3d1b62c94d81">normalizeName</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>separator</em> = <code>'<a class="el" href="class_api_c_l_i.html#a7c4e35e703ca26063001e0dfad6092bd">_</a>'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Normalize field or identifier name. Can also be used in <a class="el" href="class_u_r_l.html">URL</a> normalization. This will replace all non alpha-numeric characters with separator. Multiple separators in a row is replaced with one. Separators in beginning and at the end of name are removed.</p>
+<p>Sample input: "Hello, Dear Jon!" Sample output: "Hello_Dear_Jon"</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>String to process </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$separator</td><td>Character acting as separator</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string Normalized string </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a41a61ce77bee992bb93b41015d617c81"></a><!-- doxytag: member="ApiCLI::outputDebug" ref="a41a61ce77bee992bb93b41015d617c81" args="($msg, $shift=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -572,62 +678,6 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_api_web.html#a41a61ce77bee992bb93b41015d617c81">ApiWeb</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a70dfafefd567c8115a65126fa340d882"></a><!-- doxytag: member="ApiCLI::outputFatal" ref="a70dfafefd567c8115a65126fa340d882" args="($msg, $shift)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#a70dfafefd567c8115a65126fa340d882">outputFatal</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>shift</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aa7312b50ddc17745e01a698ef26ba724"></a><!-- doxytag: member="ApiCLI::outputInfo" ref="aa7312b50ddc17745e01a698ef26ba724" args="($msg, $shift=0)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#aa7312b50ddc17745e01a698ef26ba724">outputInfo</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>shift</em> = <code>0</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_api_web.html#aa7312b50ddc17745e01a698ef26ba724">ApiWeb</a>.</p>
 
 </div>
 </div>
@@ -766,37 +816,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa983dc8b59d34e26ebf27a5e3e85e559"></a><!-- doxytag: member="ApiCLI::upCall" ref="aa983dc8b59d34e26ebf27a5e3e85e559" args="($type, $args=array())" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_api_c_l_i.html#aa983dc8b59d34e26ebf27a5e3e85e559">upCall</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>args</em> = <code>array()</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Uncaught call default handler.</p>
-<p>In your application you should handle your own calls. If you do not, the call will be forwarded to API and finaly this method will be executed displaying error message about uncaught call</p>
-
-<p>Reimplemented from <a class="el" href="class_abstract_object.html#aa983dc8b59d34e26ebf27a5e3e85e559">AbstractObject</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a37b5260768d793d1011544d7d2f670b3"></a><!-- doxytag: member="ApiCLI::url" ref="a37b5260768d793d1011544d7d2f670b3" args="($page=null, $arguments=array())" -->
 <div class="memitem">
 <div class="memproto">
@@ -864,7 +883,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>For fast compatibility checks. To be more specific use $api-&gt;<a class="el" href="class_api_c_l_i.html#a708c51fc3e1bb2399b8bd83aa0b6eb60">requires()</a> </p>
+<p>This is a major version of Agile Toolkit. The API of Agile Toolkit is very well established and changes rarely. Your application would generally be compatible throughout the same major version of Agile Tooolkit.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_api_c_l_i.html#a708c51fc3e1bb2399b8bd83aa0b6eb60">requires()</a>; </dd></dl>
 
 </div>
 </div>
@@ -878,7 +898,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Configuration loaded from config.php and config-defaults.php files. Use <a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig()</a> to access </p>
+<p><a class="el" href="class_api_c_l_i.html">ApiCLI</a> implements a API for accessing your application configuration. Once configuration file is read, data is saved inside this property.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_api_c_l_i.html#a57ebc8874f57c076e0f43fbdb526a39b">getConfig()</a> </dd>
+<dd>
+<a class="el" href="class_api_c_l_i.html#abd9a3259a940f29bade0d0f495593787">readConfig()</a> </dd></dl>
 
 </div>
 </div>
@@ -892,7 +915,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default database connection. </p>
+<p>In a typical application, one connection to the database is enough for majority of applications. Calling $api-&gt;dbConnect will read Database data from config file and store it in $db property. If you requires a more advanced connectivity or multiple connections, you can manually initialize more database connections.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_api_c_l_i.html#af0f24576af293cb29436a19284fa0a06">dbConnect()</a> </dd></dl>
 
 </div>
@@ -907,7 +930,38 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Points to the instance of system logger (<a class="el" href="_logger_8php.html">lib/Logger.php</a>) for enriching error logging </p>
+<p>Without logger, API will dump out errors and exceptions in a very brief and straigtforward way. <a class="el" href="class_logger.html">Logger</a> is a controller which enhances error output and in most cases you do need one. <a class="el" href="class_logger.html">Logger</a> can be further configured to either output detailed errors or show brief message instead.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_logger.html">Logger</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a460d134a5364c5dcac49939e1696a90f"></a><!-- doxytag: member="ApiCLI::$logger_class" ref="a460d134a5364c5dcac49939e1696a90f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$logger_class = '<a class="el" href="class_logger.html">Logger</a>'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>If you want to use your own logger class, redefine this property </p>
+
+</div>
+</div>
+<a class="anchor" id="ab337cbad370c6d2a5de061e99423ae21"></a><!-- doxytag: member="ApiCLI::$max_name_length" ref="ab337cbad370c6d2a5de061e99423ae21" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$max_name_length = 60</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Object in Agile Toolkit contain $name property which is derrived from the owher object and keeps extending as you add objects deeper into run-time tree. Sometimes that may generate long names. Long names are difficult to read, they increase HTML output size but most importantly they may be restricted by security extensions such as SUHOSIN.</p>
+<p>Agile Toolkit implements a mechanism which will replace common beginning of objects with an abbreviation thus keeping object name length under control. This variable defines the maximum length of the object's $name. Be mindful that some objects will concatinate theri name with fields, so the maximum letgth of GET argument names can exceed this value by the length of your field.</p>
+<p>We recommend you to increase SUHOSIN get limits if you encounter any problems. Set this value to "false" to turn off name shortening. </p>
 
 </div>
 </div>
@@ -921,7 +975,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Points to the instance of <a class="el" href="class_path_finder.html">PathFinder</a> class, which is used to locate resource files. <a class="el" href="class_path_finder.html">PathFinder</a> is the first class to be initialized after API. </p>
+<p><a class="el" href="class_path_finder.html">PathFinder</a> is a controller which is responsible for locating resources, such as PHP includes, JavaScript files, templates, etc. API Initializes <a class="el" href="class_path_finder.html">PathFinder</a> as soon as possible, then defines "Locations" which describe type of data found in different folders. </p>
 
 </div>
 </div>
@@ -935,6 +989,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>If you would want to use your own <a class="el" href="class_path_finder.html">PathFinder</a> class, you must change this property and include it. </p>
 
 </div>
 </div>
@@ -948,21 +1003,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>$pr points to profiler. All lines referencing $pr myst be prefixed with the 4-symbol sequence "/ ** /" (no spaces). When deploying to production, you can remove all lines from all files starting with the sequence without affecting how your application works, but slightly improving performance </p>
+<p>Some Agile Toolkit classes contain references to profiler. Profiler would be initialized early and reference would be kept in this variable. Profiler measures relative time it took in certain parts of your application to help you find a slow-perfoming parts of application.</p>
+<p>By default $pr points to empty profiler object, which implements empty methods. All the lines referencing $pr myst be prefixed with the 4-symbol sequence "/ ** /" (no spaces). If you want to speed up Agile Toolkit further, you can eliminate all lines started with this sequence from your source code. </p>
 
 </div>
 </div>
-<a class="anchor" id="a4011bd1646505f48bf081f40e56552d5"></a><!-- doxytag: member="ApiCLI::$skin" ref="a4011bd1646505f48bf081f40e56552d5" args="" -->
+<a class="anchor" id="a3559228470d9098cee4342b4cb010d63"></a><!-- doxytag: member="ApiCLI::$unique_hashes" ref="a3559228470d9098cee4342b4cb010d63" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$skin</td>
+          <td class="memname">$unique_hashes = array()</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Skin for web application templates </p>
+<p>As more names are shortened, the substituted part is being placed into this hash and the value contains the new key. This helps to avoid creating many sequential prefixes for the same character sequenece. </p>
 
 </div>
 </div>
@@ -976,7 +1032,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -989,7 +1045,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_c_l_i.html">ApiCLI</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

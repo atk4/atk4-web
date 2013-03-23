@@ -1,16 +1,22 @@
 var class_controller___data___array =
 [
-    [ "delete", "class_controller___data___array.html#a86a994646f5cf94be65cb3edfc75a74a", null ],
+    [ "delete", "class_controller___data___array.html#a66295a7830000061da0256b417f56596", null ],
+    [ "deleteAll", "class_controller___data___array.html#af412dc3c0335dea093670b21ecae786c", null ],
     [ "getActualFields", "class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e", null ],
-    [ "getBy", "class_controller___data___array.html#a124bd65bdfb6dc928a294a72dd775d43", null ],
-    [ "init", "class_controller___data___array.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
-    [ "load", "class_controller___data___array.html#a62380e6588709bcc3711ae2d11051bbc", null ],
-    [ "loadBy", "class_controller___data___array.html#aa5d1ee74174f3643f601bdfabfd0b6c2", null ],
+    [ "getBy", "class_controller___data___array.html#a7eb53360d902f1a0cd17a1cfe03507a5", null ],
+    [ "getRows", "class_controller___data___array.html#aaef09f18a158bc24d34f60c584c23b68", null ],
+    [ "load", "class_controller___data___array.html#a53887b0e24ea6d44e7f3f40dec165a9f", null ],
+    [ "loadBy", "class_controller___data___array.html#a78a2942dc133cfef0884270a15d9cbf8", null ],
     [ "next", "class_controller___data___array.html#ac74f16ffc3a74f1a69616e1be48f40b9", null ],
     [ "rewind", "class_controller___data___array.html#ab79a3b895d0e862ccda37ed10259c217", null ],
-    [ "save", "class_controller___data___array.html#aa56f5948f9ef6aad5a2f85441f6e02ab", null ],
+    [ "save", "class_controller___data___array.html#aec46e1ed5840f7856efee28de321101e", null ],
     [ "setAssoc", "class_controller___data___array.html#a66a1481fc9574687b8ab03fe45806023", null ],
-    [ "setSource", "class_controller___data___array.html#a7a816bf90e863c5e2c7e7811347d4499", null ],
+    [ "setLimit", "class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340", null ],
+    [ "setOrder", "class_controller___data___array.html#a6836647111c4a23a748a3d9086880d03", null ],
+    [ "setSource", "class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e", null ],
     [ "tryLoad", "class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad", null ],
-    [ "tryLoadBy", "class_controller___data___array.html#a15335a020b88bad0775c2a51a4278e5c", null ]
+    [ "tryLoadAny", "class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0", null ],
+    [ "tryLoadBy", "class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e", null ],
+    [ "$search_on_load", "class_controller___data___array.html#ac0b821c705b8b6c56b763c865dcacb8e", null ],
+    [ "$sequential_id", "class_controller___data___array.html#a94c6c0ca160d3a5defe254899c97c734", null ]
 ];

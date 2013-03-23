@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -168,14 +169,22 @@ Data Fields</h2></td></tr>
           <td class="memname"><a class="el" href="class_field___reference.html#a4bc3ea2bb830344439bc4a8a58347d9b">caption</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td class="paramname"><em>t</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Sets field caption which will be used by forms, grids and other view elements as a label. The caption will be localized through api-&gt;_</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$t</td><td>new value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string current value if $t=UNDEFINED </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_field.html#a9a838ae779210fb9ed1c6ccaf65f3d2c">Field</a>.</p>
+<p>Reimplemented from <a class="el" href="class_field.html#a01d3a58e2cd44cb1e288c8b53e8e2bf0">Field</a>.</p>
 
 </div>
 </div>
@@ -193,6 +202,9 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Removes object from parent and prevents it from renedring </p>
+<div class="fragment"><pre class="fragment"> $view = $this-&gt;<a class="code" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add</a>(<span class="stringliteral">&#39;View&#39;</span>);
+ $view -&gt; <a class="code" href="class_field___reference.html#aa118461de946085fe42989193337044a">destroy</a>();
+</pre></div><dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#aa118461de946085fe42989193337044a">AbstractObject</a>.</p>
 
@@ -227,6 +239,8 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns current model. This is different than other setters getters, but it's done to keep consistency with the rest of Agile Toolkit</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string current associated model Class </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_field.html#a0a086ca877b41192556a2de7e4a97b98">Field</a>.</p>
 
@@ -302,14 +316,22 @@ Data Fields</h2></td></tr>
           <td class="memname"><a class="el" href="class_field___reference.html#aaaee4d6d42c7b22ca892fdacf498b0d9">sortable</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td class="paramname"><em>t</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Will instruct <a class="el" href="class_grid.html">Grid</a> and similar views that the sorting controls must be enabled for this field.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">boolean</td><td class="paramname">$t</td><td>new value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean current value if $t=UNDEFINED </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_field.html#ae2dedd91f49b0bc603bd2c80b8ba5ce5">Field</a>.</p>
+<p>Reimplemented from <a class="el" href="class_field.html#aa4b09294597aa6a77f94440a88adf9cd">Field</a>.</p>
 
 </div>
 </div>
@@ -376,7 +398,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -389,7 +411,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___reference.html">Field_Reference</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:13 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

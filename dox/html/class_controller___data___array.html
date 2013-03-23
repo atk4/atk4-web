@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -96,46 +97,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">Controller_Data_Array Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Controller_Data_Array" --><!-- doxytag: inherits="AbstractController" --><div class="dynheader">
+<!-- doxytag: class="Controller_Data_Array" --><!-- doxytag: inherits="Controller_Data" --><div class="dynheader">
 Inheritance diagram for Controller_Data_Array:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_controller___data___array.png" usemap="#Controller_Data_Array_map" alt=""/>
   <map id="Controller_Data_Array_map" name="Controller_Data_Array_map">
-<area href="class_abstract_controller.html" alt="AbstractController" shape="rect" coords="0,56,176,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,176,24"/>
-<area href="class_controller___data___array_assoc.html" alt="Controller_Data_ArrayAssoc" shape="rect" coords="0,168,176,192"/>
+<area href="class_controller___data.html" alt="Controller_Data" shape="rect" coords="93,112,269,136"/>
+<area href="class_abstract_controller.html" alt="AbstractController" shape="rect" coords="93,56,269,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="93,0,269,24"/>
+<area href="class_controller___data___array_assoc.html" alt="Controller_Data_ArrayAssoc" shape="rect" coords="0,224,176,248"/>
+<area href="class_controller___data___session.html" alt="Controller_Data_Session" shape="rect" coords="186,224,362,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a124bd65bdfb6dc928a294a72dd775d43">getBy</a> ($model, $field, $value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a15335a020b88bad0775c2a51a4278e5c">tryLoadBy</a> ($model, $field, $value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aa5d1ee74174f3643f601bdfabfd0b6c2">loadBy</a> ($model, $field, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e">setSource</a> ($model, $data=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a7eb53360d902f1a0cd17a1cfe03507a5">getBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e">tryLoadBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0">tryLoadAny</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a78a2942dc133cfef0884270a15d9cbf8">loadBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad">tryLoad</a> ($model, $id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a62380e6588709bcc3711ae2d11051bbc">load</a> ($model, $id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aa56f5948f9ef6aad5a2f85441f6e02ab">save</a> ($model)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a86a994646f5cf94be65cb3edfc75a74a">delete</a> ($model, $id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a53887b0e24ea6d44e7f3f40dec165a9f">load</a> ($model, $id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aec46e1ed5840f7856efee28de321101e">save</a> ($model, $id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a66295a7830000061da0256b417f56596">delete</a> ($model, $id=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#af412dc3c0335dea093670b21ecae786c">deleteAll</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aaef09f18a158bc24d34f60c584c23b68">getRows</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a6836647111c4a23a748a3d9086880d03">setOrder</a> ($model, $field, $desc=false)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340">setLimit</a> ($model, $count, $offset=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ab79a3b895d0e862ccda37ed10259c217">rewind</a> ($model)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ac74f16ffc3a74f1a69616e1be48f40b9">next</a> ($model)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a7a816bf90e863c5e2c7e7811347d4499">setSource</a> ($model, $data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a66a1481fc9574687b8ab03fe45806023">setAssoc</a> ($data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e">getActualFields</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a94c6c0ca160d3a5defe254899c97c734">$sequential_id</a> = true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ac0b821c705b8b6c56b763c865dcacb8e">$search_on_load</a> = true</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a86a994646f5cf94be65cb3edfc75a74a"></a><!-- doxytag: member="Controller_Data_Array::delete" ref="a86a994646f5cf94be65cb3edfc75a74a" args="($model, $id)" -->
+<a class="anchor" id="a66295a7830000061da0256b417f56596"></a><!-- doxytag: member="Controller_Data_Array::delete" ref="a66295a7830000061da0256b417f56596" args="($model, $id=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a86a994646f5cf94be65cb3edfc75a74a">delete</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a66295a7830000061da0256b417f56596">delete</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -144,7 +156,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
+          <td class="paramname"><em>id</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -154,6 +166,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a66295a7830000061da0256b417f56596">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af412dc3c0335dea093670b21ecae786c"></a><!-- doxytag: member="Controller_Data_Array::deleteAll" ref="af412dc3c0335dea093670b21ecae786c" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#af412dc3c0335dea093670b21ecae786c">deleteAll</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#af412dc3c0335dea093670b21ecae786c">Controller_Data</a>.</p>
 
 </div>
 </div>
@@ -173,12 +206,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a124bd65bdfb6dc928a294a72dd775d43"></a><!-- doxytag: member="Controller_Data_Array::getBy" ref="a124bd65bdfb6dc928a294a72dd775d43" args="($model, $field, $value)" -->
+<a class="anchor" id="a7eb53360d902f1a0cd17a1cfe03507a5"></a><!-- doxytag: member="Controller_Data_Array::getBy" ref="a7eb53360d902f1a0cd17a1cfe03507a5" args="($model, $field, $cond=undefined, $value=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a124bd65bdfb6dc928a294a72dd775d43">getBy</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a7eb53360d902f1a0cd17a1cfe03507a5">getBy</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -193,7 +226,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -204,34 +243,35 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aa0d290aadb83c608a6896379fc37e4d5">Controller_Data</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a4be4055f3361d4800e16bc2e2e38cda6"></a><!-- doxytag: member="Controller_Data_Array::init" ref="a4be4055f3361d4800e16bc2e2e38cda6" args="()" -->
+<a class="anchor" id="aaef09f18a158bc24d34f60c584c23b68"></a><!-- doxytag: member="Controller_Data_Array::getRows" ref="aaef09f18a158bc24d34f60c584c23b68" args="($model)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#aaef09f18a158bc24d34f60c584c23b68">getRows</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent </p>
-<p>This method is called for initialization</p>
 
-<p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aaef09f18a158bc24d34f60c584c23b68">Controller_Data</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a62380e6588709bcc3711ae2d11051bbc"></a><!-- doxytag: member="Controller_Data_Array::load" ref="a62380e6588709bcc3711ae2d11051bbc" args="($model, $id)" -->
+<a class="anchor" id="a53887b0e24ea6d44e7f3f40dec165a9f"></a><!-- doxytag: member="Controller_Data_Array::load" ref="a53887b0e24ea6d44e7f3f40dec165a9f" args="($model, $id=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a62380e6588709bcc3711ae2d11051bbc">load</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a53887b0e24ea6d44e7f3f40dec165a9f">load</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -240,7 +280,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
+          <td class="paramname"><em>id</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -251,16 +291,16 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_controller___data___array_assoc.html#a62380e6588709bcc3711ae2d11051bbc">Controller_Data_ArrayAssoc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a53887b0e24ea6d44e7f3f40dec165a9f">Controller_Data</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa5d1ee74174f3643f601bdfabfd0b6c2"></a><!-- doxytag: member="Controller_Data_Array::loadBy" ref="aa5d1ee74174f3643f601bdfabfd0b6c2" args="($model, $field, $value)" -->
+<a class="anchor" id="a78a2942dc133cfef0884270a15d9cbf8"></a><!-- doxytag: member="Controller_Data_Array::loadBy" ref="a78a2942dc133cfef0884270a15d9cbf8" args="($model, $field, $cond=undefined, $value=undefined)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#aa5d1ee74174f3643f601bdfabfd0b6c2">loadBy</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a78a2942dc133cfef0884270a15d9cbf8">loadBy</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -275,7 +315,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -285,6 +331,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a7a5289999e37a5af22a2faaa95db786f">Controller_Data</a>.</p>
 
 </div>
 </div>
@@ -303,6 +351,8 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_controller___data.html#ac74f16ffc3a74f1a69616e1be48f40b9">Controller_Data</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ab79a3b895d0e862ccda37ed10259c217"></a><!-- doxytag: member="Controller_Data_Array::rewind" ref="ab79a3b895d0e862ccda37ed10259c217" args="($model)" -->
@@ -320,18 +370,30 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_controller___data.html#ab79a3b895d0e862ccda37ed10259c217">Controller_Data</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="aa56f5948f9ef6aad5a2f85441f6e02ab"></a><!-- doxytag: member="Controller_Data_Array::save" ref="aa56f5948f9ef6aad5a2f85441f6e02ab" args="($model)" -->
+<a class="anchor" id="aec46e1ed5840f7856efee28de321101e"></a><!-- doxytag: member="Controller_Data_Array::save" ref="aec46e1ed5840f7856efee28de321101e" args="($model, $id=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#aa56f5948f9ef6aad5a2f85441f6e02ab">save</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#aec46e1ed5840f7856efee28de321101e">save</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
@@ -356,12 +418,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7a816bf90e863c5e2c7e7811347d4499"></a><!-- doxytag: member="Controller_Data_Array::setSource" ref="a7a816bf90e863c5e2c7e7811347d4499" args="($model, $data)" -->
+<a class="anchor" id="a76c7a50afdfbc492c5f0c50cfd3d5340"></a><!-- doxytag: member="Controller_Data_Array::setLimit" ref="a76c7a50afdfbc492c5f0c50cfd3d5340" args="($model, $count, $offset=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a7a816bf90e863c5e2c7e7811347d4499">setSource</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340">setLimit</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -370,7 +432,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>offset</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -381,7 +449,73 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_controller___data___array_assoc.html#a7a816bf90e863c5e2c7e7811347d4499">Controller_Data_ArrayAssoc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a76c7a50afdfbc492c5f0c50cfd3d5340">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6836647111c4a23a748a3d9086880d03"></a><!-- doxytag: member="Controller_Data_Array::setOrder" ref="a6836647111c4a23a748a3d9086880d03" args="($model, $field, $desc=false)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a6836647111c4a23a748a3d9086880d03">setOrder</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>desc</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a6836647111c4a23a748a3d9086880d03">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a84791cff3a2832ee914f87ac4f81c08e"></a><!-- doxytag: member="Controller_Data_Array::setSource" ref="a84791cff3a2832ee914f87ac4f81c08e" args="($model, $data=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e">setSource</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>data</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a84791cff3a2832ee914f87ac4f81c08e">Controller_Data</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_controller___data___session.html#a84791cff3a2832ee914f87ac4f81c08e">Controller_Data_Session</a>, and <a class="el" href="class_controller___data___array_assoc.html#a80900d3361c5e7e0bdde30956babab0d">Controller_Data_ArrayAssoc</a>.</p>
 
 </div>
 </div>
@@ -410,14 +544,35 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a6af2b9da15c928d97e037315b35714ad">Controller_Data</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a15335a020b88bad0775c2a51a4278e5c"></a><!-- doxytag: member="Controller_Data_Array::tryLoadBy" ref="a15335a020b88bad0775c2a51a4278e5c" args="($model, $field, $value)" -->
+<a class="anchor" id="a612a6e66bd5765055fcdc103aa3059f0"></a><!-- doxytag: member="Controller_Data_Array::tryLoadAny" ref="a612a6e66bd5765055fcdc103aa3059f0" args="($model)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a15335a020b88bad0775c2a51a4278e5c">tryLoadBy</a> </td>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0">tryLoadAny</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a612a6e66bd5765055fcdc103aa3059f0">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afed5b9b73b9ea6db8d84f638572c479e"></a><!-- doxytag: member="Controller_Data_Array::tryLoadBy" ref="afed5b9b73b9ea6db8d84f638572c479e" args="($model, $field, $cond=undefined, $value=undefined)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e">tryLoadBy</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>model</em>, </td>
@@ -432,12 +587,49 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#abba58a7c1cad3c8b0d150c84969e3aed">Controller_Data</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Field Documentation</h2>
+<a class="anchor" id="ac0b821c705b8b6c56b763c865dcacb8e"></a><!-- doxytag: member="Controller_Data_Array::$search_on_load" ref="ac0b821c705b8b6c56b763c865dcacb8e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$search_on_load = true</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_controller___data___session.html#ac0b821c705b8b6c56b763c865dcacb8e">Controller_Data_Session</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a94c6c0ca160d3a5defe254899c97c734"></a><!-- doxytag: member="Controller_Data_Array::$sequential_id" ref="a94c6c0ca160d3a5defe254899c97c734" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$sequential_id = true</td>
         </tr>
       </table>
 </div>
@@ -455,7 +647,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -468,7 +660,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_controller___data___array.html">Controller_Data_Array</a>      </li>
 
-    <li class="footer">Generated on Fri Aug 31 2012 01:35:12 for Agile Toolkit by
+    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
