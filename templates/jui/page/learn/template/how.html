@@ -13,14 +13,14 @@
         <li>Nested tag — tag located inside a region &lt;?elephant?&gt;Hello, &lt;?name?&gt;World&lt;?/?&gt;&lt;?/?&gt;</li>
         </p>
 
-        <h2>SMLite — template manager</h2>
-        <p>This is a class defined in lib/SMLite.php which will read template from file into memory and will allow developer to interact with template. Templates in Agile Toolkit contains no logic, however certain views may introduce their own logic. Let's go over the basic functionality of SMlite first to see what can we do with the following template:</p>
+        <h2>SMlite — template manager</h2>
+        <p>This is a class defined in lib/SMlite.php which will read template from file into memory and will allow developer to interact with template. Templates in Agile Toolkit contains no logic, however certain views may introduce their own logic. Let's go over the basic functionality of SMlite first to see what can we do with the following template:</p>
         <pre>&lt;?greetings?&gt;Hello, &lt;?name?&gt;World&lt;?/?&gt;&lt;?/?&gt;</pre>
 
         <h3>Initializing SMlite</h3>
         <p>Like any other object in Agile Toolkit, you can use the following form:</p>
 <?Code?>
-$template = $this->add('SMLite');
+$template = $this->add('SMlite');
 <?/?>
         <h3>Loading template</h3>
         <p>Template can be loaded from either file or string by using one of following commands</p>
@@ -84,7 +84,7 @@ $template->set('name', strtoupper($template->get('name')));
         </pre>
 
 <?Code?>
-$template=$this->add('SMLite');
+$template=$this->add('SMlite');
 $template->loadData('envelope');        // templates/default/envelope.html
 
 // Split into multiple objects for processing
