@@ -2,9 +2,9 @@
 
 <h1>Model References</h1>
 
-<p>One model may reference another model. Typically you would have two ways how relation can do one-to-many and many-to-one. There is also one-to-one which is a special case of two-sided many-to-one reference. Many-to-many relations are implemented through intermediate table which is referenced through one-to-many.</p>
+<p>One model may reference another model. Typically you would have two ways: a relation can do one-to-many and many-to-one. There is also one-to-one which is a special case of two-sided many-to-one reference. Many-to-many relations are implemented through an intermediate table which is referenced through one-to-many.</p>
 
-<p>References are always defined between models. To avoid loops, reference should use name of the model class and not object itself.</p>
+<p>References are always defined between models. To avoid loops, a reference should use the name of the model class and not the object itself.</p>
 
 <h2>hasOne() reference</h2>
 
@@ -18,7 +18,7 @@ class Model_Book extends Model_Table {
 // select id,author_id,(select name from author where author.id=book.author_id) as author from book
 <?/?>
 
-<p>The "hasOne" reference in example above specifies that each book has a field pointing to a record in Author model. Multiple book records can belong to same author. hasOne() method will create a new field of type Field_Reference and initialize it. That field will also create a expression field for showing read-only column in grid.</p>
+<p>The "hasOne" reference in example above specifies that each book has a field pointing to a record in the Author model. Multiple book records can belong to the same author. hasOne() method will create a new field of type Field_Reference and initialize it. That field will also create an expression field for showing a read-only column in a grid.</p>
 
 <p>In the code above, model 'Author' will be examined for it's "table" property. That property is then used in the assumption about the referencing field. If Model_Author->table = 'author' then hasOne() function will use "author_id" field by default. If a different field is used, you can specify it as a second argument to hasOne().</p>
 
