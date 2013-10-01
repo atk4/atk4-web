@@ -3,6 +3,7 @@ var class_api_web =
     [ "__construct", "class_api_web.html#a3b0a0d06fee8b3a6f3c4712d01ca88a5", null ],
     [ "_locateCSS", "class_api_web.html#a7c481cd6035b17742a64cf10cfcf5777", null ],
     [ "_locateJS", "class_api_web.html#a404882f7238567c8924cc0bde4d69645", null ],
+    [ "_locatePublic", "class_api_web.html#ad2024638c60848eb9facfba8a5609199", null ],
     [ "_showExecutionTime", "class_api_web.html#a68c10124302012b9a0c5eaeba614a8e5", null ],
     [ "_showExecutionTimeJS", "class_api_web.html#a6109d8503dafbb69be848c0c3b395d88", null ],
     [ "addLayout", "class_api_web.html#ad15ae833701872ee84f1c3b98c2fc9f4", null ],

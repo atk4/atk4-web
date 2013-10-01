@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -109,9 +110,19 @@ Inheritance diagram for Page_Tester:</div>
  <div class="center">
   <img src="class_page___tester.png" usemap="#Page_Tester_map" alt=""/>
   <map id="Page_Tester_map" name="Page_Tester_map">
-<area href="class_page.html" alt="Page" shape="rect" coords="0,112,96,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_page.html" alt="Page" shape="rect" coords="0,112,120,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,120,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,120,24"/>
+<area href="classpage__core.html" alt="page_core" shape="rect" coords="130,224,250,248"/>
+<area href="classpage__exceptions.html" alt="page_exceptions" shape="rect" coords="130,280,250,304"/>
+<area href="classpage__jquerychain.html" alt="page_jquerychain" shape="rect" coords="130,336,250,360"/>
+<area href="classpage__model3.html" alt="page_model3" shape="rect" coords="130,392,250,416"/>
+<area href="classpage__modeldef.html" alt="page_modeldef" shape="rect" coords="130,448,250,472"/>
+<area href="classpage__mongo1.html" alt="page_mongo1" shape="rect" coords="130,504,250,528"/>
+<area href="classpage__normalize.html" alt="page_normalize" shape="rect" coords="130,560,250,584"/>
+<area href="classpage__patternrouter.html" alt="page_patternrouter" shape="rect" coords="130,616,250,640"/>
+<area href="classpage__skipthis.html" alt="page_skipthis" shape="rect" coords="130,672,250,696"/>
+<area href="classpage__view.html" alt="page_view" shape="rect" coords="130,728,250,752"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -119,7 +130,9 @@ Inheritance diagram for Page_Tester:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#a65d31646929e5292492c03ad94844e16">setVariance</a> ($arr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#acc633376990132a89f44b53cc7db67ee">skipTests</a> ($msg=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#a3d72262d8e8a95480f1fdc4477cc2ca5">ticker</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#a1a61bb340114b15a588877b0238d323a">executeTest</a> ($test_obj, $test_func, $input)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#afefdbbb8b0a2cac17c1beff76dc0ed98">silentTest</a> ($test_obj=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#ac00829f333a919d9093b03f0bdeb1856">runTests</a> ($test_obj=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_page___tester.html#a5c8228ef2a27d277841b7a3d942f4f29">formatResult</a> (&amp;$row, $key, $result)</td></tr>
@@ -152,6 +165,39 @@ Data Fields</h2></td></tr>
           <td></td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>str</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1a61bb340114b15a588877b0238d323a"></a><!-- doxytag: member="Page_Tester::executeTest" ref="a1a61bb340114b15a588877b0238d323a" args="($test_obj, $test_func, $input)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_page___tester.html#a1a61bb340114b15a588877b0238d323a">executeTest</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>test_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>test_func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>input</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -237,11 +283,13 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
+<p>Initialize object. Always call parent::init(). Do not call directly.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_page.html#a4be4055f3361d4800e16bc2e2e38cda6">Page</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classpage__view.html#a4be4055f3361d4800e16bc2e2e38cda6">page_view</a>, <a class="el" href="classpage__modeldef.html#a4be4055f3361d4800e16bc2e2e38cda6">page_modeldef</a>, and <a class="el" href="classpage__mongo2.html#a4be4055f3361d4800e16bc2e2e38cda6">page_mongo2</a>.</p>
 
 </div>
 </div>
@@ -288,6 +336,23 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>test_obj</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="acc633376990132a89f44b53cc7db67ee"></a><!-- doxytag: member="Page_Tester::skipTests" ref="acc633376990132a89f44b53cc7db67ee" args="($msg=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_page___tester.html#acc633376990132a89f44b53cc7db67ee">skipTests</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>msg</em> = <code>null</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -364,6 +429,8 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Redefine this to the value generated by a test </p>
 
+<p>Reimplemented in <a class="el" href="classpage__core.html#a8e6e441d221908129513d04b7b33c487">page_core</a>, <a class="el" href="classpage__view.html#a8e6e441d221908129513d04b7b33c487">page_view</a>, <a class="el" href="classpage__normalize.html#a8e6e441d221908129513d04b7b33c487">page_normalize</a>, <a class="el" href="classpage__jquerychain.html#a8e6e441d221908129513d04b7b33c487">page_jquerychain</a>, <a class="el" href="classpage__model3.html#a8e6e441d221908129513d04b7b33c487">page_model3</a>, <a class="el" href="classpage__modeldef.html#a8e6e441d221908129513d04b7b33c487">page_modeldef</a>, <a class="el" href="classpage__exceptions.html#a8e6e441d221908129513d04b7b33c487">page_exceptions</a>, <a class="el" href="classpage__mongo1.html#a8e6e441d221908129513d04b7b33c487">page_mongo1</a>, and <a class="el" href="classpage__skipthis.html#a8e6e441d221908129513d04b7b33c487">page_skipthis</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa8987136fed3960c6c78dedb68a3b061"></a><!-- doxytag: member="Page_Tester::$responses" ref="aa8987136fed3960c6c78dedb68a3b061" args="" -->
@@ -393,7 +460,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Page/<a class="el" href="_tester_8php.html">Tester.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Page/<a class="el" href="_tester_8php.html">Tester.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -402,7 +469,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -415,7 +482,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_page___tester.html">Page_Tester</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:42 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

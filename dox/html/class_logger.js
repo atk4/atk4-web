@@ -6,6 +6,7 @@ var class_logger =
     [ "caughtException", "class_logger.html#a0f20914beae36a06c270d81ddc13e5fd", null ],
     [ "cleanupLogDirectory", "class_logger.html#a5ba52751fcd646412d8d12daa6a54a2a", null ],
     [ "Debug", "class_logger.html#a63c7f72bec0f0c209153f5bc7839e76c", null ],
+    [ "displayError", "class_logger.html#adb415469d6b37152ad11352c0b7fab8e", null ],
     [ "findFrame", "class_logger.html#ae2e5c2df29c2bcc91b54cfe9176fae25", null ],
     [ "gatherDetails", "class_logger.html#a5c73763b40de4dfbdeb0a5542218cec3", null ],
     [ "htmlLine", "class_logger.html#a8d0c5628ddb5ee88b69c8b0ccf134ad0", null ],

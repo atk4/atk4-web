@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -98,7 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Controller_Data_Array Class Reference</div>  </div>
 </div><!--header-->
@@ -119,29 +121,84 @@ Inheritance diagram for Controller_Data_Array:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e">setSource</a> ($model, $data=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a7eb53360d902f1a0cd17a1cfe03507a5">getBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e">tryLoadBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e">setSource</a> ($model, $data=undefined)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a7eb53360d902f1a0cd17a1cfe03507a5">getBy</a> ($model, $field, $cond=undefined, $value=undefined)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e">tryLoadBy</a> ($model, $field, $cond=undefined, $value=undefined)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0">tryLoadAny</a> ($model)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a78a2942dc133cfef0884270a15d9cbf8">loadBy</a> ($model, $field, $cond=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>, $value=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a78a2942dc133cfef0884270a15d9cbf8">loadBy</a> ($model, $field, $cond=undefined, $value=undefined)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad">tryLoad</a> ($model, $id)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a53887b0e24ea6d44e7f3f40dec165a9f">load</a> ($model, $id=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aec46e1ed5840f7856efee28de321101e">save</a> ($model, $id=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a66295a7830000061da0256b417f56596">delete</a> ($model, $id=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#af412dc3c0335dea093670b21ecae786c">deleteAll</a> ($model)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aaef09f18a158bc24d34f60c584c23b68">getRows</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aa4db11255ac6ad939d710551eecc17c9">count</a> ($model, $alias=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a6836647111c4a23a748a3d9086880d03">setOrder</a> ($model, $field, $desc=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340">setLimit</a> ($model, $count, $offset=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340">setLimit</a> ($model, $<a class="el" href="class_controller___data___array.html#aa4db11255ac6ad939d710551eecc17c9">count</a>, $offset=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#aa30a20c66b75ce821df9aba57f4855c0">createCursor</a> ($model)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ab79a3b895d0e862ccda37ed10259c217">rewind</a> ($model)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ac74f16ffc3a74f1a69616e1be48f40b9">next</a> ($model)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a66a1481fc9574687b8ab03fe45806023">setAssoc</a> ($data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e">getActualFields</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a94c6c0ca160d3a5defe254899c97c734">$sequential_id</a> = true</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ac0b821c705b8b6c56b763c865dcacb8e">$search_on_load</a> = true</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ad413b24e9391a54d786068309fc6fa38">$max_id</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ad6f9c1a3cc0cda663e689c4c97df33ed">$limited</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a8d0524bc19ab88deefe62f208e3ef858">$limit_count</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#ad8ab9ed0fca48b5f46a0e4059f54a44d">$limit_offset</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___array.html#a031ce33ce8ae0b495b672ab4e6b2f6e7">$current_offset</a></td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa4db11255ac6ad939d710551eecc17c9"></a><!-- doxytag: member="Controller_Data_Array::count" ref="aa4db11255ac6ad939d710551eecc17c9" args="($model, $alias=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#aa4db11255ac6ad939d710551eecc17c9">count</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>alias</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>returns count of records matching model criteria </p>
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aa4db11255ac6ad939d710551eecc17c9">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa30a20c66b75ce821df9aba57f4855c0"></a><!-- doxytag: member="Controller_Data_Array::createCursor" ref="aa30a20c66b75ce821df9aba57f4855c0" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___array.html#aa30a20c66b75ce821df9aba57f4855c0">createCursor</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method applies conditions, orders etc then returns a subset of records within the array </p>
+
+</div>
+</div>
 <a class="anchor" id="a66295a7830000061da0256b417f56596"></a><!-- doxytag: member="Controller_Data_Array::delete" ref="a66295a7830000061da0256b417f56596" args="($model, $id=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -167,7 +224,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_controller___data.html#a66295a7830000061da0256b417f56596">Controller_Data</a>.</p>
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a86a994646f5cf94be65cb3edfc75a74a">Controller_Data</a>.</p>
 
 </div>
 </div>
@@ -226,13 +283,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+          <td class="paramname"><em>cond</em> = <code>undefined</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>undefined</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -291,7 +348,7 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_controller___data.html#a53887b0e24ea6d44e7f3f40dec165a9f">Controller_Data</a>.</p>
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a62380e6588709bcc3711ae2d11051bbc">Controller_Data</a>.</p>
 
 </div>
 </div>
@@ -315,13 +372,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+          <td class="paramname"><em>cond</em> = <code>undefined</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>undefined</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -350,6 +407,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Provided that rewind was called before, load next data entry </p>
 
 <p>Reimplemented from <a class="el" href="class_controller___data.html#ac74f16ffc3a74f1a69616e1be48f40b9">Controller_Data</a>.</p>
 
@@ -369,6 +427,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Create a new cursor and load model with the first entry </p>
 
 <p>Reimplemented from <a class="el" href="class_controller___data.html#ab79a3b895d0e862ccda37ed10259c217">Controller_Data</a>.</p>
 
@@ -394,23 +453,6 @@ Data Fields</h2></td></tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a66a1481fc9574687b8ab03fe45806023"></a><!-- doxytag: member="Controller_Data_Array::setAssoc" ref="a66a1481fc9574687b8ab03fe45806023" args="($data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_controller___data___array.html#a66a1481fc9574687b8ab03fe45806023">setAssoc</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div>
@@ -448,6 +490,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>must implement in underlying layer </p>
 
 <p>Reimplemented from <a class="el" href="class_controller___data.html#a76c7a50afdfbc492c5f0c50cfd3d5340">Controller_Data</a>.</p>
 
@@ -483,6 +526,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>must implement in underlying layer </p>
 
 <p>Reimplemented from <a class="el" href="class_controller___data.html#a6836647111c4a23a748a3d9086880d03">Controller_Data</a>.</p>
 
@@ -502,7 +546,7 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>data</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>data</em> = <code>undefined</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -587,13 +631,13 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>cond</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>, </td>
+          <td class="paramname"><em>cond</em> = <code>undefined</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>value</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>value</em> = <code>undefined</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -609,18 +653,70 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
-<a class="anchor" id="ac0b821c705b8b6c56b763c865dcacb8e"></a><!-- doxytag: member="Controller_Data_Array::$search_on_load" ref="ac0b821c705b8b6c56b763c865dcacb8e" args="" -->
+<a class="anchor" id="a031ce33ce8ae0b495b672ab4e6b2f6e7"></a><!-- doxytag: member="Controller_Data_Array::$current_offset" ref="a031ce33ce8ae0b495b672ab4e6b2f6e7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$search_on_load = true</td>
+          <td class="memname">$current_offset<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_controller___data___session.html#ac0b821c705b8b6c56b763c865dcacb8e">Controller_Data_Session</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a8d0524bc19ab88deefe62f208e3ef858"></a><!-- doxytag: member="Controller_Data_Array::$limit_count" ref="a8d0524bc19ab88deefe62f208e3ef858" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$limit_count<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8ab9ed0fca48b5f46a0e4059f54a44d"></a><!-- doxytag: member="Controller_Data_Array::$limit_offset" ref="ad8ab9ed0fca48b5f46a0e4059f54a44d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$limit_offset<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad6f9c1a3cc0cda663e689c4c97df33ed"></a><!-- doxytag: member="Controller_Data_Array::$limited" ref="ad6f9c1a3cc0cda663e689c4c97df33ed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$limited = false<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Variables to hold record count and offset for setLimit functionality </p>
+
+</div>
+</div>
+<a class="anchor" id="ad413b24e9391a54d786068309fc6fa38"></a><!-- doxytag: member="Controller_Data_Array::$max_id" ref="ad413b24e9391a54d786068309fc6fa38" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$max_id = 0<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Maximum ID value. Used when $sequential_id = true. </p>
 
 </div>
 </div>
@@ -634,11 +730,12 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>By default new records are added with the ID being sequential. If you set this to false, then model IDs will be assigned using unique identifiers. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Controller/Data/<a class="el" href="_array_8php.html">Array.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Controller/Data/<a class="el" href="_array_8php.html">Array.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -647,7 +744,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -660,7 +757,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_controller___data___array.html">Controller_Data_Array</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -103,50 +104,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Menu_jUI Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Menu_jUI" --><!-- doxytag: inherits="Menu_Basic" --><div class="dynheader">
+<!-- doxytag: class="Menu_jUI" --><!-- doxytag: inherits="Menu_Objective" --><div class="dynheader">
 Inheritance diagram for Menu_jUI:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_menu__j_u_i.png" usemap="#Menu_jUI_map" alt=""/>
   <map id="Menu_jUI_map" name="Menu_jUI_map">
-<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="0,280,96,304"/>
-<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="0,224,96,248"/>
-<area href="class_lister.html" alt="Lister" shape="rect" coords="0,168,96,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="0,112,96,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
+<area href="class_menu___objective.html" alt="Menu_Objective" shape="rect" coords="0,168,105,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="0,112,105,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,105,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,105,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#a482817c80aa2d8290a62f14b1d8e87dd">addSubMenu</a> ($name)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#a076886e4bce70198c63035ac97d0826e">$current_menu_class</a> = &quot;current&quot;</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#ab69638a8fabcb73402bd8946d20aec8d">$inactive_menu_class</a> = &quot;&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#a6af64298aa6de5a2e181456c9cb9498b">$js_widget</a> = 'menu'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu__j_u_i.html#a011800c63ece4cbbfa77136a20607023">$options</a> = array()</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="add8c5a33f231d9979e5f8bbded576d9e"></a><!-- doxytag: member="Menu_jUI::defaultTemplate" ref="add8c5a33f231d9979e5f8bbded576d9e" args="()" -->
+<a class="anchor" id="a482817c80aa2d8290a62f14b1d8e87dd"></a><!-- doxytag: member="Menu_jUI::addSubMenu" ref="a482817c80aa2d8290a62f14b1d8e87dd" args="($name)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> </td>
+          <td class="memname"><a class="el" href="class_menu__j_u_i.html#a482817c80aa2d8290a62f14b1d8e87dd">addSubMenu</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
-<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>.</p>
+<p>Reimplemented from <a class="el" href="class_menu___objective.html#a482817c80aa2d8290a62f14b1d8e87dd">Menu_Objective</a>.</p>
 
 </div>
 </div>
@@ -168,7 +166,7 @@ Data Fields</h2></td></tr>
 <p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>.</p>
+<p>Reimplemented from <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">AbstractView</a>.</p>
 
 </div>
 </div>
@@ -184,8 +182,6 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_menu___basic.html#a076886e4bce70198c63035ac97d0826e">Menu_Basic</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab69638a8fabcb73402bd8946d20aec8d"></a><!-- doxytag: member="Menu_jUI::$inactive_menu_class" ref="ab69638a8fabcb73402bd8946d20aec8d" args="" -->
@@ -199,7 +195,18 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class_menu___basic.html#ab69638a8fabcb73402bd8946d20aec8d">Menu_Basic</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a6af64298aa6de5a2e181456c9cb9498b"></a><!-- doxytag: member="Menu_jUI::$js_widget" ref="a6af64298aa6de5a2e181456c9cb9498b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$js_widget = 'menu'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -217,7 +224,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Menu/<a class="el" href="_menu_2j_u_i_8php.html">jUI.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Menu/<a class="el" href="_menu_2j_u_i_8php.html">jUI.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -226,7 +233,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -239,7 +246,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_menu__j_u_i.html">Menu_jUI</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

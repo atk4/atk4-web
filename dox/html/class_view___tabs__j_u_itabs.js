@@ -6,6 +6,11 @@ var class_view___tabs__j_u_itabs =
     [ "init", "class_view___tabs__j_u_itabs.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "render", "class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb", null ],
     [ "setOption", "class_view___tabs__j_u_itabs.html#a929e8f404dc73d92009451a5ed013002", null ],
+    [ "toBottom", "class_view___tabs__j_u_itabs.html#ab9345b60396c3a12a52612da85a39e06", null ],
+    [ "toLeft", "class_view___tabs__j_u_itabs.html#ae6e72706237024c1f154cc63512d6e21", null ],
+    [ "toRight", "class_view___tabs__j_u_itabs.html#ac47b71207de557ae57c16e6da9fa43bf", null ],
     [ "$options", "class_view___tabs__j_u_itabs.html#a011800c63ece4cbbfa77136a20607023", null ],
+    [ "$position", "class_view___tabs__j_u_itabs.html#a6e88dcb746884d18f6c89eb9b9c14a42", null ],
+    [ "$show_loader", "class_view___tabs__j_u_itabs.html#a53171f587065bb5e0cb9bb5a146444a4", null ],
     [ "$tab_template", "class_view___tabs__j_u_itabs.html#a35ba412787d9cb7865aafe17d5fbbe1a", null ]
 ];

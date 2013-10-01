@@ -2,7 +2,7 @@ var class_form___basic =
 [
     [ "addButton", "class_form___basic.html#ada0cf04a9ecd1c9ac602f4eeecd82b29", null ],
     [ "addComment", "class_form___basic.html#a5d96d554c37ec83acb199959d54f5495", null ],
-    [ "addField", "class_form___basic.html#aad2ccd75b31d322f9082ac72dfb39d2c", null ],
+    [ "addField", "class_form___basic.html#a11cd473d62af2519bf858c6c7f6635ec", null ],
     [ "addSeparator", "class_form___basic.html#afcc12c5b6556151905d17d4a57547057", null ],
     [ "addSubmit", "class_form___basic.html#ac8b6fa0a429778f318f2970a7f36f733", null ],
     [ "defaultTemplate", "class_form___basic.html#ad9ead7f331d22603a3f08bfc66a6d8bd", null ],
@@ -47,6 +47,7 @@ var class_form___basic =
     [ "$get_field", "class_form___basic.html#a137c96f7631807f30128bde390cb2b03", null ],
     [ "$js_widget", "class_form___basic.html#a6af64298aa6de5a2e181456c9cb9498b", null ],
     [ "$js_widget_arguments", "class_form___basic.html#a6d0c28b95c7a196548bfd08461a60cdc", null ],
+    [ "$layout", "class_form___basic.html#a2b0d08e73a90b9443ce37506b7c6a544", null ],
     [ "$loaded_from_db", "class_form___basic.html#a8d3bcb17672529578bca0ba272735199", null ],
     [ "$onload", "class_form___basic.html#ad2fb5ab5a935a02be27481675cce13ff", null ],
     [ "$onsubmit", "class_form___basic.html#ad194a5cc11a4fa00a9688e4589e88348", null ],

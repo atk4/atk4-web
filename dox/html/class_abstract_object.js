@@ -14,7 +14,7 @@ var class_abstract_object =
     [ "debug", "class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5", null ],
     [ "destroy", "class_abstract_object.html#aa118461de946085fe42989193337044a", null ],
     [ "each", "class_abstract_object.html#ab35510c2ff7fd8884fb05108eba5135e", null ],
-    [ "exception", "class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c", null ],
+    [ "exception", "class_abstract_object.html#a9f1d36968c4efe66e167d69cfd00eaed", null ],
     [ "fatal", "class_abstract_object.html#afc4c1081f771a2a41fd2eebdd7e1322e", null ],
     [ "forget", "class_abstract_object.html#a46863ade0a1ea520982bcdac3451ebee", null ],
     [ "getElement", "class_abstract_object.html#adbb1f88c18695a4db162574aeed77d87", null ],
@@ -44,6 +44,7 @@ var class_abstract_object =
     [ "$api", "class_abstract_object.html#afce321e6f53c241037f871b50680cf1c", null ],
     [ "$auto_track_element", "class_abstract_object.html#a1518f6633c881d3d43b9e4cdc4eaeb4c", null ],
     [ "$controller", "class_abstract_object.html#a388ef7b1db5e6f728e63cee704ce6e23", null ],
+    [ "$debug", "class_abstract_object.html#a85ae3e64cd40e9564adceb010085e9dd", null ],
     [ "$default_controller", "class_abstract_object.html#ab949cccd963058f0937d04bc26ee24a7", null ],
     [ "$default_exception", "class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8", null ],
     [ "$elements", "class_abstract_object.html#ad18dd8fbe31b294e2bc4711dcde4548d", null ],
@@ -51,6 +52,5 @@ var class_abstract_object =
     [ "$model", "class_abstract_object.html#a08fdd91bde255dbe3e2d15a22d9663e8", null ],
     [ "$name", "class_abstract_object.html#ab2fc40d43824ea3e1ce5d86dee0d763b", null ],
     [ "$owner", "class_abstract_object.html#a9aabf46bdb166877480b2094d7ca01a7", null ],
-    [ "$settings", "class_abstract_object.html#ac7c3353107070daa85f641882931b358", null ],
     [ "$short_name", "class_abstract_object.html#abfe328f6f767c8f805d07eff9ab23734", null ]
 ];

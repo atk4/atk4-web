@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -123,6 +124,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a7516ca30af0db3cdbf9a7739b48ce91d">__toString</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a125dd62e5e4586b1842d04f5179d5b3e">each</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a163f87e56702331f6ff0d93d41fe3839">_selector</a> ($selector=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a1de3065afaa77a38f4e70d0142a23613">_library</a> ($library)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a6308a9b72a45a9b68c9d8e770cf0aa26">_selectorDocument</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a4a70f147be3ed8e6a81f1beddd148137">_selectorWindow</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a904ff605fa32a2edb95530b90788dd79">_selectorThis</a> ()</td></tr>
@@ -143,7 +145,7 @@ Public Member Functions</h2></td></tr>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a7542d95618011800c61773127fa625cf">$str</a> = ''</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a829d62e7dd18027c1fc2c9b3fe321ae2">$prepend</a> = ''</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#a3014d0a3a57985c974251f5e8496ddc1">$selector</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#af7f16973b677264e07096e6d768b41b6">$library</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#ae8faa162b8340421f2621e943ecafa54">$enclose</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#aec0782268c79c9243ff9a8962318b302">$preventDefault</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classj_query___chain.html#ac78df45419614d6db964d0bd9e542c63">$base</a> = ''</td></tr>
@@ -177,7 +179,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Call method is used to display exception for non-existant methods and provides ability to extend objects with <a class="el" href="class_abstract_object.html#aa5ee682b6b7455b050ebf43c543cf522">addMethod()</a></p>
+<p>Call method is used to display exception for non-existant methods and provides ability to extend objects with <a class="el" href="class_abstract_object.html#aa5ee682b6b7455b050ebf43c543cf522">addMethod()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$method</td><td>Name of the method </td></tr>
@@ -323,6 +325,29 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a1de3065afaa77a38f4e70d0142a23613"></a><!-- doxytag: member="jQuery_Chain::_library" ref="a1de3065afaa77a38f4e70d0142a23613" args="($library)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classj_query___chain.html#a1de3065afaa77a38f4e70d0142a23613">_library</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>library</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Allows to chain calls on different library</p>
+<p>If you are using <a class="el" href="classj_query.html">jQuery</a>, then you can call _selector('blah') which will result in $('blah') prefix, however if you want to chain to any other library you can use this modifier instead:</p>
+<p>_library('window.player').play();</p>
+<p>will result in</p>
+<p>window.player.play();</p>
+<p>You must be sure to properly escape the string! </p>
 
 </div>
 </div>
@@ -639,6 +664,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Setting this to true will output additional debug info about object </p>
+
+<p>Reimplemented from <a class="el" href="class_abstract_object.html#a85ae3e64cd40e9564adceb010085e9dd">AbstractObject</a>.</p>
 
 </div>
 </div>
@@ -648,6 +676,19 @@ Protected Member Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">$enclose = false</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="af7f16973b677264e07096e6d768b41b6"></a><!-- doxytag: member="jQuery_Chain::$library" ref="af7f16973b677264e07096e6d768b41b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$library = null</td>
         </tr>
       </table>
 </div>
@@ -681,19 +722,6 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3014d0a3a57985c974251f5e8496ddc1"></a><!-- doxytag: member="jQuery_Chain::$selector" ref="a3014d0a3a57985c974251f5e8496ddc1" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$selector = null</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a7542d95618011800c61773127fa625cf"></a><!-- doxytag: member="jQuery_Chain::$str" ref="a7542d95618011800c61773127fa625cf" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -708,7 +736,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/jQuery/<a class="el" href="_chain_8php.html">Chain.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/jQuery/<a class="el" href="_chain_8php.html">Chain.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -717,7 +745,7 @@ Protected Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -730,7 +758,7 @@ Protected Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="classj_query___chain.html">jQuery_Chain</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

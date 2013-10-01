@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -110,32 +111,38 @@ Inheritance diagram for Form_Field_ValueList:</div>
  <div class="center">
   <img src="class_form___field___value_list.png" usemap="#Form_Field_ValueList_map" alt=""/>
   <map id="Form_Field_ValueList_map" name="Form_Field_ValueList_map">
-<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="168,112,326,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="168,56,326,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="168,0,326,24"/>
+<area href="class_form___field.html" alt="Form_Field" shape="rect" coords="252,112,410,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="252,56,410,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="252,0,410,24"/>
 <area href="class_form___field___checkbox_list.html" alt="Form_Field_CheckboxList" shape="rect" coords="0,224,158,248"/>
 <area href="class_form___field___drop_down.html" alt="Form_Field_DropDown" shape="rect" coords="168,224,326,248"/>
 <area href="class_form___field___radio.html" alt="Form_Field_Radio" shape="rect" coords="336,224,494,248"/>
+<area href="class_form___field___readonly.html" alt="Form_Field_Readonly" shape="rect" coords="504,224,662,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a81d7b82d316cf67681fc28e971527617">setModel</a> ($m)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#af5267165ff1586e5c4a02150031502c8">setEmptyText</a> ($empty_text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#ad37579fe45f7130077844b3c400f83ea">getValueList</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#af0acc97417dc4c6887db1ccaebe664a9">setValueList</a> ($list)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a0fbb8884d6b64d0e4c73c8760060b274">loadPOST</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#afe8d0b41a98482dd331499b993c107e5">setEmptyText</a> ($text=UNDEFINED)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#ad37579fe45f7130077844b3c400f83ea">getValueList</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a8189efe6c41ceba4084f6b074d4a47c0">normalize</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#ace9a42ad0d31f1f8c8b92b540c7347f7">$value_list</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#ace9a42ad0d31f1f8c8b92b540c7347f7">$value_list</a> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#a880223f35fa0534c57b7778dacd545ac">$default_empty_text</a> = 'Please, select ...'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#ada1ae8f6e8b45b6eb857f6d4ad6236ba">$empty_text</a> = null</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#aab9e8e1dd124d1f7360abf828ec10937">$empty_value</a> = ''</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___value_list.html#acb4e8e50eaf0132d1e70b8776b4ad5cc">$separator</a> = ','</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Undocumented</p>
+<p><a class="el" href="">http://agiletoolkit.org/</a></p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad37579fe45f7130077844b3c400f83ea"></a><!-- doxytag: member="Form_Field_ValueList::getValueList" ref="ad37579fe45f7130077844b3c400f83ea" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -149,15 +156,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Return value list</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a0fbb8884d6b64d0e4c73c8760060b274"></a><!-- doxytag: member="Form_Field_ValueList::loadPOST" ref="a0fbb8884d6b64d0e4c73c8760060b274" args="()" -->
+<a class="anchor" id="a8189efe6c41ceba4084f6b074d4a47c0"></a><!-- doxytag: member="Form_Field_ValueList::normalize" ref="a8189efe6c41ceba4084f6b074d4a47c0" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field___value_list.html#a0fbb8884d6b64d0e4c73c8760060b274">loadPOST</a> </td>
+          <td class="memname"><a class="el" href="class_form___field___value_list.html#a8189efe6c41ceba4084f6b074d4a47c0">normalize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -165,26 +174,36 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Normalize POSTed data</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_form___field.html#a0fbb8884d6b64d0e4c73c8760060b274">Form_Field</a>.</p>
+<p>Reimplemented from <a class="el" href="class_form___field.html#a8189efe6c41ceba4084f6b074d4a47c0">Form_Field</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af5267165ff1586e5c4a02150031502c8"></a><!-- doxytag: member="Form_Field_ValueList::setEmptyText" ref="af5267165ff1586e5c4a02150031502c8" args="($empty_text)" -->
+<a class="anchor" id="afe8d0b41a98482dd331499b993c107e5"></a><!-- doxytag: member="Form_Field_ValueList::setEmptyText" ref="afe8d0b41a98482dd331499b993c107e5" args="($text=UNDEFINED)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field___value_list.html#af5267165ff1586e5c4a02150031502c8">setEmptyText</a> </td>
+          <td class="memname"><a class="el" href="class_form___field___value_list.html#afe8d0b41a98482dd331499b993c107e5">setEmptyText</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>empty_text</em></td><td>)</td>
+          <td class="paramname"><em>text</em> = <code>UNDEFINED</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default text which is displayed on a null-value option. Set to "Select.." or "Pick one.." </p>
+<p>Sets default text which is displayed on a null-value option.</p>
+<p>Set to "Select.." or "Pick one.."</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$text</td><td>Pass UNDEFINED to use default text, empty string - disable</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -196,20 +215,20 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_form___field___value_list.html#a81d7b82d316cf67681fc28e971527617">setModel</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>model</em></td><td>)</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Associate model with object.</p>
+<p>Sets model of form field</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string&#160;|&#160;object</td><td class="paramname">$model</td><td>Class or instance of model</td></tr>
+    <tr><td class="paramtype"><a class="el" href="class_model.html">Model</a></td><td class="paramname">$m</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> Newly added <a class="el" href="class_model.html">Model</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_model.html">Model</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a1c15df021d82870005f4f4925a4f613e">AbstractObject</a>.</p>
 
@@ -229,6 +248,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Set value list of form field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$list</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -245,14 +272,29 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Validate POSTed field value</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_form___field.html#a184909dab34698899937d810a9f5d393">Form_Field</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_form___field___radio.html#a184909dab34698899937d810a9f5d393">Form_Field_Radio</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___field___readonly.html#a184909dab34698899937d810a9f5d393">Form_Field_Readonly</a>, and <a class="el" href="class_form___field___radio.html#a184909dab34698899937d810a9f5d393">Form_Field_Radio</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Field Documentation</h2>
+<a class="anchor" id="a880223f35fa0534c57b7778dacd545ac"></a><!-- doxytag: member="Form_Field_ValueList::$default_empty_text" ref="a880223f35fa0534c57b7778dacd545ac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$default_empty_text = 'Please, select ...'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ada1ae8f6e8b45b6eb857f6d4ad6236ba"></a><!-- doxytag: member="Form_Field_ValueList::$empty_text" ref="ada1ae8f6e8b45b6eb857f6d4ad6236ba" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -279,26 +321,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="acb4e8e50eaf0132d1e70b8776b4ad5cc"></a><!-- doxytag: member="Form_Field_ValueList::$separator" ref="acb4e8e50eaf0132d1e70b8776b4ad5cc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$separator = ','<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_form___field.html">Form_Field</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ace9a42ad0d31f1f8c8b92b540c7347f7"></a><!-- doxytag: member="Form_Field_ValueList::$value_list" ref="ace9a42ad0d31f1f8c8b92b540c7347f7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$value_list</td>
+          <td class="memname">$value_list = array()</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Initial value:</b><div class="fragment"><pre class="fragment">array(
-            0=&gt;<span class="stringliteral">&#39;No available options #1&#39;</span>,
-            1=&gt;<span class="stringliteral">&#39;No available options #2&#39;</span>,
-            2=&gt;<span class="stringliteral">&#39;No available options #3&#39;</span>
-            )
-</pre></div>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_value_list_8php.html">ValueList.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_value_list_8php.html">ValueList.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -307,7 +359,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -320,7 +372,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field___value_list.html">Form_Field_ValueList</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

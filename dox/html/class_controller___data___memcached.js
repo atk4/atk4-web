@@ -10,7 +10,6 @@ var class_controller___data___memcached =
     [ "next", "class_controller___data___memcached.html#ac74f16ffc3a74f1a69616e1be48f40b9", null ],
     [ "rewind", "class_controller___data___memcached.html#ab79a3b895d0e862ccda37ed10259c217", null ],
     [ "save", "class_controller___data___memcached.html#aec46e1ed5840f7856efee28de321101e", null ],
-    [ "setAssoc", "class_controller___data___memcached.html#a66a1481fc9574687b8ab03fe45806023", null ],
     [ "setLimit", "class_controller___data___memcached.html#a76c7a50afdfbc492c5f0c50cfd3d5340", null ],
     [ "setOrder", "class_controller___data___memcached.html#a6836647111c4a23a748a3d9086880d03", null ],
     [ "setSource", "class_controller___data___memcached.html#a84791cff3a2832ee914f87ac4f81c08e", null ],

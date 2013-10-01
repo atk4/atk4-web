@@ -14,10 +14,8 @@ var class_base_exception =
     [ "getText", "class_base_exception.html#a8a2999b1d846c0a7bc77187e28facd99", null ],
     [ "init", "class_base_exception.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "$actions", "class_base_exception.html#a6cafc5f8d4f5d73acc0b5c6daaa766c1", null ],
-    [ "$api", "class_base_exception.html#afce321e6f53c241037f871b50680cf1c", null ],
     [ "$more_info", "class_base_exception.html#a132cc7ce850425829a999cb316404d19", null ],
     [ "$my_backtrace", "class_base_exception.html#a506bc1e45802705387793264c73b5b9e", null ],
     [ "$name", "class_base_exception.html#ab2fc40d43824ea3e1ce5d86dee0d763b", null ],
-    [ "$owner", "class_base_exception.html#a9aabf46bdb166877480b2094d7ca01a7", null ],
     [ "$shift", "class_base_exception.html#a7fab1421fa05f199c5c17b21d3632669", null ]
 ];

@@ -1,15 +1,25 @@
 var class_view___button =
 [
+    [ "addMenu", "class_view___button.html#ae990ca835ed0a886d700c3b6774e6ef4", null ],
+    [ "addPopover", "class_view___button.html#aa8103c96c08812cde3c0bebd18a16a58", null ],
+    [ "addSplitButton", "class_view___button.html#a44bf4c55d0848c08cf16690a1ee81cab", null ],
     [ "defaultTemplate", "class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
-    [ "isClicked", "class_view___button.html#a212ef023571cc1afef64a35c36fb24b2", null ],
+    [ "getPosition", "class_view___button.html#a1d6f175fa8e395cad7f68e813e02bd80", null ],
+    [ "isClicked", "class_view___button.html#af36e6b1d1da0a317e1ce75efcaaee68a", null ],
     [ "jsButton", "class_view___button.html#a2085dbe0ee3ef232cfc5a23f04a16f57", null ],
-    [ "onClick", "class_view___button.html#a8cbb19f4a320d90e53e6209bc68afa4b", null ],
+    [ "link", "class_view___button.html#abba63825c07a1a6ec7c0809425d3efd3", null ],
+    [ "onClick", "class_view___button.html#a6daf4e5b087e056f26aaf96c6c81f2c9", null ],
     [ "redirect", "class_view___button.html#aa7e78bf5572fe3a109a59d4a63e0fa34", null ],
     [ "render", "class_view___button.html#afde88292c44dc59faf017738dae6dffb", null ],
     [ "setAction", "class_view___button.html#a40312d74ef9f727fdb2dc2433669e520", null ],
-    [ "setButtonStyle", "class_view___button.html#ac552f71aeee16ad1fb9407672989de86", null ],
-    [ "setIcon", "class_view___button.html#a94e410c3aed8903d140240faeaeee888", null ],
+    [ "setIcon", "class_view___button.html#a279097e114946d07f9257f4014bd45ca", null ],
     [ "setLabel", "class_view___button.html#aff9dc1c7a22e2b4168647651480e586a", null ],
+    [ "setNoText", "class_view___button.html#acc49561358c5ed6e821d2afbd9912a86", null ],
     [ "submitForm", "class_view___button.html#aed3a3b279ce4b09413fa3075be9c81ed", null ],
-    [ "$options", "class_view___button.html#a011800c63ece4cbbfa77136a20607023", null ]
+    [ "useMenu", "class_view___button.html#a0d7118d9b193a4a2e985e33d2290cdea", null ],
+    [ "$js_active_class", "class_view___button.html#a8751f36234071b1e3463b73b938f2e77", null ],
+    [ "$js_triangle_class", "class_view___button.html#aa60a0920aa6475837a1d6621c9701892", null ],
+    [ "$menu_class", "class_view___button.html#adeba2d4a602b830f5f177e4033333051", null ],
+    [ "$options", "class_view___button.html#a011800c63ece4cbbfa77136a20607023", null ],
+    [ "$popover_class", "class_view___button.html#a8a9f600c47738fe5e044f9540a07f9f6", null ]
 ];

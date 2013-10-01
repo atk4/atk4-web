@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -117,8 +118,8 @@ Inheritance diagram for Field_Expression:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763">editable</a> ($x=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed">calculated</a> ($x=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763">editable</a> ($x=undefined)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed">calculated</a> ($x=undefined)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a8205b80d63c2d9eafc2cdfc480d301d3">set</a> ($expr=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#a41d8e4e832562c519e2dc237e88546bf">getExpr</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#ac161e2288bb97e432934c5ada9f23a3a">updateSelectQuery</a> ($select)</td></tr>
@@ -129,7 +130,7 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_field___expression.html#aa660a3177eb257a767c0323f967d877f">$expr</a> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implementation of a Expression fields in <a class="el" href="class_model___table.html">Model_Table</a> <a class="el" href="">Field_Expression implements ability to specify expressions inside your Model_Table and have them appear as a read-only fields.  Use: $model-&gt;addExpression('age','year(now())-year(birthdate)'); // Below example achieves the same, but it prefixes age with proper table name $model-&gt;addExpression('age','year(now())-year('.$model-&gt;getElement('adatege')-&gt;getField().')');  $model-&gt;addExpression('row_counter',$this-&gt;db-&gt;dsql()-&gt;useExpr(' := +1');  $myctl=$this-&gt;add('Controller_MiscMySQL'); // using custom controller to format field $model-&gt;addExpression('date_formatted',array($myctl,'dateExpr1'));  or $myctl=$this-&gt;add('Controller_MiscMySQL'); // or by using closure and extra argument $model-&gt;addExpression('date_formatted',function($model,$query) uses $myctl { return $myctl-&gt;dateExpr2($query,'date_raw'); });  NOTE: MiscMySQL is fictional controller.   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
+<div class="textblock"><p>Implementation of a Expression fields in <a class="el" href="class_s_q_l___model.html">SQL_Model</a> <a class="el" href="">Field_Expression implements ability to specify expressions inside your SQL_Model and have them appear as a read-only fields.  Use: $model-&gt;addExpression('age','year(now())-year(birthdate)'); // Below example achieves the same,but it prefixes age with proper table name $model-&gt;addExpression('age', 'year(now())-year('.$model-&gt;getElement('adatege')-&gt;getField().')');  $model-&gt;addExpression('row_counter',$this-&gt;db-&gt;dsql()-&gt;useExpr(' := +1');  // using custom controller to format field $myctl=$this-&gt;add('Controller_MiscMySQL'); $model-&gt;addExpression('date_formatted',array($myctl,'dateExpr1'));  or // or by using closure and extra argument $myctl=$this-&gt;add('Controller_MiscMySQL'); $model-&gt;addExpression('date_formatted', function($model,$query) uses $myctl { return $myctl-&gt;dateExpr2($query,'date_raw'); });  NOTE: MiscMySQL is fictional controller.   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a685b7d681e1a76bb1482780de60b2bed"></a><!-- doxytag: member="Field_Expression::calculated" ref="a685b7d681e1a76bb1482780de60b2bed" args="($x=undefined)" -->
 <div class="memitem">
@@ -139,7 +140,7 @@ Data Fields</h2></td></tr>
           <td class="memname"><a class="el" href="class_field___expression.html#a685b7d681e1a76bb1482780de60b2bed">calculated</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>x</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td class="paramname"><em>x</em> = <code>undefined</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -158,7 +159,7 @@ Data Fields</h2></td></tr>
           <td class="memname"><a class="el" href="class_field___expression.html#a6e6c086ab47b22b4249d8ded7ea48763">editable</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>t</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code></td><td>)</td>
+          <td class="paramname"><em>t</em> = <code>undefined</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -291,7 +292,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Field/<a class="el" href="_expression_8php.html">Expression.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Field/<a class="el" href="_expression_8php.html">Expression.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -300,7 +301,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -313,7 +314,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_field___expression.html">Field_Expression</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

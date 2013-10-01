@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -99,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">CompleteLister Class Reference</div>  </div>
@@ -110,18 +112,17 @@ Inheritance diagram for CompleteLister:</div>
  <div class="center">
   <img src="class_complete_lister.png" usemap="#CompleteLister_map" alt=""/>
   <map id="CompleteLister_map" name="CompleteLister_map">
-<area href="class_lister.html" alt="Lister" shape="rect" coords="325,168,445,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="325,112,445,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="325,56,445,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="325,0,445,24"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="260,168,380,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="260,112,380,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="260,56,380,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="260,0,380,24"/>
 <area href="class_grid___basic.html" alt="Grid_Basic" shape="rect" coords="65,280,185,304"/>
-<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="325,280,445,304"/>
-<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="520,280,640,304"/>
+<area href="class_menu___basic.html" alt="Menu_Basic" shape="rect" coords="260,280,380,304"/>
+<area href="class_paginator___basic.html" alt="Paginator_Basic" shape="rect" coords="390,280,510,304"/>
 <area href="class_grid___advanced.html" alt="Grid_Advanced" shape="rect" coords="0,336,120,360"/>
 <area href="class_view___model_details.html" alt="View_ModelDetails" shape="rect" coords="130,336,250,360"/>
 <area href="class_menu.html" alt="Menu" shape="rect" coords="260,336,380,360"/>
-<area href="class_menu__j_u_i.html" alt="Menu_jUI" shape="rect" coords="390,336,510,360"/>
-<area href="class_paginator.html" alt="Paginator" shape="rect" coords="520,336,640,360"/>
+<area href="class_paginator.html" alt="Paginator" shape="rect" coords="390,336,510,360"/>
 <area href="class_grid.html" alt="Grid" shape="rect" coords="0,392,120,416"/>
 <area href="class_m_v_c_grid.html" alt="MVCGrid" shape="rect" coords="0,448,120,472"/>
 </map>
@@ -130,34 +131,109 @@ Inheritance diagram for CompleteLister:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a91a8cb89472bdb583bba068eaabe084c">addTotals</a> ($fields=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a61454d750109349ca19666b2b07fb44d">updateTotals</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ac1054b9842592b68e4be6169a20bc8cb">formatTotalsRow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a8cffb519cef8d77078eda50bec9f1496">renderRows</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a91a8cb89472bdb583bba068eaabe084c">addTotals</a> ($fields=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a34638cfb9224ced65c90881295fd66f3">addGrandTotals</a> ($fields=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#aab87838f1582662fc4571c7ed9e9b0c1">removeTotals</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a8cffb519cef8d77078eda50bec9f1496">renderRows</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#afee95addb65fc71e9deeb12048f2712d">renderDataRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#acb52af882dffe27f0b0dddce352780c3">renderTotalsRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ac1054b9842592b68e4be6169a20bc8cb">formatTotalsRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a61454d750109349ca19666b2b07fb44d">updateTotals</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#afad8fdd57ca2695418513cb1cfcb9500">updateGrandTotals</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e">$row_t</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab3c7a9eeb638bd5906689f9d5cba65bc">$totals</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#af2c641e024ee7eeec68ae26c08ca2cf2">$total_rows</a> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a006a1ee45474664193b59e380003a49a">$totals_t</a> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a0e19151ef88f952c8089a8a4a6302633">$odd_css_class</a> = 'odd'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a8e1fae22a368ec7f0501b06b4ee34293">$even_css_class</a> = 'even'</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#aa6133dd023f3716baebebd0915e29781">_addTotals</a> ($fields=null, $type=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd">$item_tag</a> = 'row'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab56179d3da9f7be09d655d0698f5e880">$container_tag</a> = 'rows'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#ab2c2839d11623f6bea604d7cd22538f9">$totals_type</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_complete_lister.html#a80d56bbd4c03d0ee9b9fe450da93913f">$odd_even</a> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_complete_lister.html">CompleteLister</a> is very similar to regular <a class="el" href="class_lister.html">Lister</a>, but will use &lt;?rows?&gt;&lt;?row?&gt;blah&lt;?/?&gt;&lt;?/?&gt; structrue inside template. Also adds support for totals.</p>
-<p><a class="el" href="">Use: $list=$this-&gt;add('CompleteLister'); $list-&gt;setModel('User'); $list-&gt;addTotals();  Template (view/users.html): </a>Users &lt;?rows?&gt; &lt;?row?&gt; </p>
+<div class="textblock"><p><a class="el" href="class_complete_lister.html">CompleteLister</a> is very similar to regular <a class="el" href="class_lister.html">Lister</a>, but will use &lt;?rows?&gt;&lt;?row?&gt;blah&lt;?/?&gt;&lt;?/?&gt; structure inside template. Also adds support for calculating totals.</p>
+<p><a class="el" href="">Use: $list = $this-&gt;add('CompleteLister'); $list-&gt;setModel('User'); $list-&gt;addTotals();  Template (view/users.html): </a>Users &lt;?rows?&gt; &lt;?row?&gt; </p>
 <h4>&lt;?$name?&gt;</h4>
 <p>&lt;?$desc?&gt; &lt;?/row?&gt; </p>
 <h4>Joe Blogs</h4>
 <p>Sample template. Will be ignored &lt;?/rows?&gt; &lt;?totals?&gt; &lt;?$row_count?&gt; user&lt;?$plural_s?&gt;. &lt;?/?&gt;</p>
 <p>See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aa6133dd023f3716baebebd0915e29781"></a><!-- doxytag: member="CompleteLister::_addTotals" ref="aa6133dd023f3716baebebd0915e29781" args="($fields=null, $type=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#aa6133dd023f3716baebebd0915e29781">_addTotals</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>type</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Private method to enable / disable totals calculation for specified array of fields</p>
+<p>If particular fields not specified, then all field totals are calculated.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>optional array of fieldnames </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$type</td><td>type of totals calculation (null|onRender|onRequest)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a34638cfb9224ced65c90881295fd66f3"></a><!-- doxytag: member="CompleteLister::addGrandTotals" ref="a34638cfb9224ced65c90881295fd66f3" args="($fields=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#a34638cfb9224ced65c90881295fd66f3">addGrandTotals</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em> = <code>null</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Enable totals calculation for specified array of fields</p>
+<p>If particular fields not specified, then all field totals are calculated.</p>
+<p>Be aware that this method works ONLY for SQL models set as data source because this calculates grand totals using DSQL.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>optional array of fieldnames</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a91a8cb89472bdb583bba068eaabe084c"></a><!-- doxytag: member="CompleteLister::addTotals" ref="a91a8cb89472bdb583bba068eaabe084c" args="($fields=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +248,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Enable total calculation for specified array of fields. If not specified, all field totals are calculated </p>
+<p>Enable totals calculation for specified array of fields</p>
+<p>If particular fields not specified, then all field totals are calculated.</p>
+<p>Be aware that if you use <a class="el" href="class_paginator.html">Paginator</a>, then only records of current page will be calculated. If you need grand totals for all records, then use method <a class="el" href="class_complete_lister.html#a34638cfb9224ced65c90881295fd66f3">addGrandTotals()</a> instead.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>optional array of fieldnames</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -189,13 +274,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
-<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
+<p>Default template</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, and <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, and <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>.</p>
 
 </div>
 </div>
@@ -212,7 +296,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine and change $this-&gt;current_row to format data before it appears </p>
+<p>Format lister row</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">Lister</a>.</p>
 
@@ -233,7 +318,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Additional formatting for Totals row </p>
+<p>Additional formatting for Totals row</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>This plural_s method suits only English locale !!!</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_grid___advanced.html#ac1054b9842592b68e4be6169a20bc8cb">Grid_Advanced</a>.</p>
 
@@ -252,13 +339,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
-<p>This method is called for initialization</p>
+<p>Initialization</p>
+<p>void </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, and <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, <a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Paginator_Basic</a>, and <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aab87838f1582662fc4571c7ed9e9b0c1"></a><!-- doxytag: member="CompleteLister::removeTotals" ref="aab87838f1582662fc4571c7ed9e9b0c1" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#aab87838f1582662fc4571c7ed9e9b0c1">removeTotals</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Disable totals calculation</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -275,14 +379,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
-<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
-<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<p>Render lister</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, and <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>.</p>
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, and <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afee95addb65fc71e9deeb12048f2712d"></a><!-- doxytag: member="CompleteLister::renderDataRow" ref="afee95addb65fc71e9deeb12048f2712d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#afee95addb65fc71e9deeb12048f2712d">renderDataRow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Render data row</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -299,8 +419,51 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Render lister rows</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_grid___basic.html#a8cffb519cef8d77078eda50bec9f1496">Grid_Basic</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb52af882dffe27f0b0dddce352780c3"></a><!-- doxytag: member="CompleteLister::renderTotalsRow" ref="acb52af882dffe27f0b0dddce352780c3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#acb52af882dffe27f0b0dddce352780c3">renderTotalsRow</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Render Totals row</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#acb52af882dffe27f0b0dddce352780c3">Grid_Advanced</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afad8fdd57ca2695418513cb1cfcb9500"></a><!-- doxytag: member="CompleteLister::updateGrandTotals" ref="afad8fdd57ca2695418513cb1cfcb9500" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_complete_lister.html#afad8fdd57ca2695418513cb1cfcb9500">updateGrandTotals</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Calculate grand totals of all rows</p>
+<p>Called one time on rendering phase - before <a class="el" href="class_complete_lister.html#a8cffb519cef8d77078eda50bec9f1496">renderRows()</a> call.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_grid___advanced.html#afad8fdd57ca2695418513cb1cfcb9500">Grid_Advanced</a>.</p>
 
 </div>
 </div>
@@ -317,7 +480,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Update totals on rows. Called before each <a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> call </p>
+<p>Add current rendered row values to totals</p>
+<p>Called before each <a class="el" href="class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> call.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_grid___advanced.html#a61454d750109349ca19666b2b07fb44d">Grid_Advanced</a>.</p>
 
@@ -339,6 +504,19 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8e1fae22a368ec7f0501b06b4ee34293"></a><!-- doxytag: member="CompleteLister::$even_css_class" ref="a8e1fae22a368ec7f0501b06b4ee34293" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$even_css_class = 'even'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a1c5ab74e36790de226cbf169bbbe1edd"></a><!-- doxytag: member="CompleteLister::$item_tag" ref="a1c5ab74e36790de226cbf169bbbe1edd" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -349,8 +527,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Used template tags </p>
 
 <p>Reimplemented in <a class="el" href="class_menu___basic.html#a1c5ab74e36790de226cbf169bbbe1edd">Menu_Basic</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e19151ef88f952c8089a8a4a6302633"></a><!-- doxytag: member="CompleteLister::$odd_css_class" ref="a0e19151ef88f952c8089a8a4a6302633" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$odd_css_class = 'odd'</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Used CSS classes for odd and even rows </p>
 
 </div>
 </div>
@@ -364,6 +557,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Is current odd or even row? </p>
 
 </div>
 </div>
@@ -377,6 +571,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Item ($item_tag) template </p>
 
 </div>
 </div>
@@ -390,6 +585,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>After rendering will contain data row count </p>
 
 </div>
 </div>
@@ -417,14 +613,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Will be initialized to "totals" template when <a class="el" href="class_complete_lister.html#a91a8cb89472bdb583bba068eaabe084c">addTotals()</a> is called </p>
+<p>Will be initialized to "totals" template when <a class="el" href="class_complete_lister.html#aa6133dd023f3716baebebd0915e29781">_addTotals()</a> is called </p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#a006a1ee45474664193b59e380003a49a">Grid_Advanced</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ab2c2839d11623f6bea604d7cd22538f9"></a><!-- doxytag: member="CompleteLister::$totals_type" ref="ab2c2839d11623f6bea604d7cd22538f9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$totals_type = null<code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Type of totals calculation: null - no totals calculation onRender - calculate totals only for rendered rows on rendering phase onRequest - grand totals, works for <a class="el" href="class_s_q_l___many.html">SQL_Many</a> models only, creates 1 additional <a class="el" href="class_d_b.html">DB</a> request</p>
+<p>Should be changed using addTotals and addGrandTotals methods only </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_complete_lister_8php.html">CompleteLister.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_complete_lister_8php.html">CompleteLister.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -433,7 +642,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -446,7 +655,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_complete_lister.html">CompleteLister</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -2,7 +2,7 @@ var class_s_q_l___many =
 [
     [ "from", "class_s_q_l___many.html#a28108070aaa895cd4460e609639b0ac6", null ],
     [ "ref", "class_s_q_l___many.html#acf956f92c2dbef1a02e3aa854d217d5d", null ],
-    [ "refSQL", "class_s_q_l___many.html#a664f23b8642bad8e397ba63cd391a8b1", null ],
+    [ "refSQL", "class_s_q_l___many.html#a7a68511bcc448f6c7feb70c8e459da3c", null ],
     [ "restoreConditions", "class_s_q_l___many.html#a982b3e1d1ddccbd61a7a455aad5155a4", null ],
     [ "saveConditions", "class_s_q_l___many.html#abdc73d5f124f6204575e5fc4ba1620c6", null ],
     [ "set", "class_s_q_l___many.html#af59c7facf2550935581cfde03373934f", null ],

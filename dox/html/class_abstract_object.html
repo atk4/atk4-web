@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -112,6 +113,9 @@ Inheritance diagram for AbstractObject:</div>
 <area href="class_abstract_controller.html" alt="AbstractController" shape="rect" coords="0,56,181,80"/>
 <area href="class_abstract_model.html" alt="AbstractModel" shape="rect" coords="382,56,563,80"/>
 <area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="764,56,945,80"/>
+<area href="class_my_controller.html" alt="MyController" shape="rect" coords="955,56,1136,80"/>
+<area href="class_my_object.html" alt="MyObject" shape="rect" coords="1146,56,1327,80"/>
+<area href="class_tracked_object.html" alt="TrackedObject" shape="rect" coords="1337,56,1518,80"/>
 <area href="class_auth___basic.html" alt="Auth_Basic" shape="rect" coords="191,112,372,136"/>
 <area href="class_controller.html" alt="Controller" shape="rect" coords="191,168,372,192"/>
 <area href="class_controller___compat.html" alt="Controller_Compat" shape="rect" coords="191,224,372,248"/>
@@ -152,10 +156,11 @@ Inheritance diagram for AbstractObject:</div>
 <area href="class_menu___light.html" alt="Menu_Light" shape="rect" coords="955,448,1136,472"/>
 <area href="class_menu_item.html" alt="MenuItem" shape="rect" coords="955,504,1136,528"/>
 <area href="class_menu_separator.html" alt="MenuSeparator" shape="rect" coords="955,560,1136,584"/>
-<area href="class_page.html" alt="Page" shape="rect" coords="955,616,1136,640"/>
-<area href="class_paginator___compat.html" alt="Paginator_Compat" shape="rect" coords="955,672,1136,696"/>
-<area href="class_text.html" alt="Text" shape="rect" coords="955,728,1136,752"/>
-<area href="class_view.html" alt="View" shape="rect" coords="955,784,1136,808"/>
+<area href="class_my_invisible.html" alt="MyInvisible" shape="rect" coords="955,616,1136,640"/>
+<area href="class_page.html" alt="Page" shape="rect" coords="955,672,1136,696"/>
+<area href="class_paginator___compat.html" alt="Paginator_Compat" shape="rect" coords="955,728,1136,752"/>
+<area href="class_text.html" alt="Text" shape="rect" coords="955,784,1136,808"/>
+<area href="class_view.html" alt="View" shape="rect" coords="955,840,1136,864"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -178,7 +183,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ab25619f6338006363570293fd320aeaf">learn</a> ($key, $default=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a46863ade0a1ea520982bcdac3451ebee">forget</a> ($key=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a218b3c3493327699218d9f57bd54b72c">recall</a> ($key, $default=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception</a> ($message, $type=null, $code=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a9f1d36968c4efe66e167d69cfd00eaed">exception</a> ($message= 'Undefined Exception', $type=null, $code=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#afc4c1081f771a2a41fd2eebdd7e1322e">fatal</a> ($error, $shift=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#aad0b399def722e4ccd5cd3a198ff3ad3">info</a> ($msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug</a> ($msg=true, $file=null, $line=null)</td></tr>
@@ -203,11 +208,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#aaf11785905da71774e052912d784e3b4">__sleep</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ac7c3353107070daa85f641882931b358">$settings</a> = array('extension'=&gt;'.html')</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a08fdd91bde255dbe3e2d15a22d9663e8">$model</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a388ef7b1db5e6f728e63cee704ce6e23">$controller</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">$default_exception</a> = '<a class="el" href="class_base_exception.html">BaseException</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ab949cccd963058f0937d04bc26ee24a7">$default_controller</a> = null</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#a85ae3e64cd40e9564adceb010085e9dd">$debug</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ab2fc40d43824ea3e1ce5d86dee0d763b">$name</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#abfe328f6f767c8f805d07eff9ab23734">$short_name</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_object.html#ad18dd8fbe31b294e2bc4711dcde4548d">$elements</a> = array ()</td></tr>
@@ -234,9 +239,10 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Always call parent if you redefine this </p>
+<p>Always call parent if you redefine this/</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_model___table.html#a421831a265621325e1fdd19aace0c758">Model_Table</a>, <a class="el" href="class_model.html#a421831a265621325e1fdd19aace0c758">Model</a>, and <a class="el" href="class_controller___data___dumper.html#a421831a265621325e1fdd19aace0c758">Controller_Data_Dumper</a>.</p>
+<p>Reimplemented in <a class="el" href="class_model.html#a421831a265621325e1fdd19aace0c758">Model</a>, and <a class="el" href="class_controller___data___dumper.html#a421831a265621325e1fdd19aace0c758">Controller_Data_Dumper</a>.</p>
 
 </div>
 </div>
@@ -265,7 +271,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Call method is used to display exception for non-existant methods and provides ability to extend objects with <a class="el" href="class_abstract_object.html#aa5ee682b6b7455b050ebf43c543cf522">addMethod()</a></p>
+<p>Call method is used to display exception for non-existant methods and provides ability to extend objects with <a class="el" href="class_abstract_object.html#aa5ee682b6b7455b050ebf43c543cf522">addMethod()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$method</td><td>Name of the method </td></tr>
@@ -292,10 +298,10 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Clones associated controller and model. If cloning views, add them to the owner</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> Copy this object </dd></dl>
+<p>Clones associated controller and model. If cloning views, add them to the owner.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> Copy of this object </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_s_mlite.html#ad0cb87b388bc74d63dc884accdca8713">SMlite</a>, <a class="el" href="class_model___table.html#ad0cb87b388bc74d63dc884accdca8713">Model_Table</a>, <a class="el" href="class_model.html#ad0cb87b388bc74d63dc884accdca8713">Model</a>, <a class="el" href="class_d_b__dsql.html#ad0cb87b388bc74d63dc884accdca8713">DB_dsql</a>, <a class="el" href="class_abstract_view.html#ad0cb87b388bc74d63dc884accdca8713">AbstractView</a>, and <a class="el" href="class_gi_template.html#ad0cb87b388bc74d63dc884accdca8713">GiTemplate</a>.</p>
+<p>Reimplemented in <a class="el" href="class_s_mlite.html#ad0cb87b388bc74d63dc884accdca8713">SMlite</a>, <a class="el" href="class_s_q_l___model.html#ad0cb87b388bc74d63dc884accdca8713">SQL_Model</a>, <a class="el" href="class_model.html#ad0cb87b388bc74d63dc884accdca8713">Model</a>, <a class="el" href="class_d_b__dsql.html#ad0cb87b388bc74d63dc884accdca8713">DB_dsql</a>, <a class="el" href="class_abstract_view.html#ad0cb87b388bc74d63dc884accdca8713">AbstractView</a>, and <a class="el" href="class_gi_template.html#ad0cb87b388bc74d63dc884accdca8713">GiTemplate</a>.</p>
 
 </div>
 </div>
@@ -354,11 +360,11 @@ Data Fields</h2></td></tr>
 <p>Method used internally for shortening object names.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$desired</td><td>Desired name of new objects</td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$desired</td><td>Desired name of new object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>string shortened name of new object. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string Shortened name of new object. </dd></dl>
 
 </div>
 </div>
@@ -386,7 +392,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This funcion given the associative $array and desired new key will return the best matching key which is not yet in the arary. For example if you have array('foo'=&gt;x,'bar'=&gt;x) and $desired is 'foo' function will return 'foo_2'. If 'foo_2' key also exists in that array, then 'foo_3' is returned and so on.</p>
+<p>This funcion given the associative $array and desired new key will return the best matching key which is not yet in the array. For example, if you have array('foo'=&gt;x,'bar'=&gt;x) and $desired is 'foo' function will return 'foo_2'. If 'foo_2' key also exists in that array, then 'foo_3' is returned and so on.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">array</td><td class="paramname">&amp;$array</td><td>Reference to array which stores key=&gt;value pairs </td></tr>
@@ -436,7 +442,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates new object and adds it as a child. Returns new object.</p>
+<p>Creates new object and adds it as a child of current object. Returns new object.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>Name of the new class </td></tr>
@@ -486,7 +492,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>If priority is negative, then hooks will be executed in reverse order</p>
+<p>If priority is negative, then hooks will be executed in reverse order.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$hook_spot</td><td>Hook identifier to bind on </td></tr>
@@ -524,7 +530,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add new method for this object</p>
+<p>Add new method for this object.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string&#160;|&#160;array</td><td class="paramname">$name</td><td>Name of new method of $this object </td></tr>
@@ -550,7 +556,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When called from inside a hook callable, will stop execution of other callables on same hook. The passed argument will be returned by the hook method</p>
+<p>When called from inside a hook callable, will stop execution of other callables on same hook. The passed argument will be returned by the hook method.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">mixed</td><td class="paramname">$return</td><td>What would <a class="el" href="class_abstract_object.html#a4d036962b05d7009036e5bc13c1b3c11">hook()</a> return?</td></tr>
@@ -591,7 +597,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Turns on debug mode for this object. Using first argument as string is obsolete</p>
+<p>Turns on debug mode for this object. Using first argument as string is obsolete.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">bool&#160;|&#160;string</td><td class="paramname">$msg</td><td>"true" to start debugging </td></tr>
@@ -617,7 +623,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Removes object from parent and prevents it from renedring </p>
+<p>Removes object from parent and prevents it from rendering </p>
 <div class="fragment"><pre class="fragment"> $view = $this-&gt;<a class="code" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add</a>(<span class="stringliteral">&#39;View&#39;</span>);
  $view -&gt; <a class="code" href="class_abstract_object.html#aa118461de946085fe42989193337044a">destroy</a>();
 </pre></div><dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
@@ -643,7 +649,7 @@ Data Fields</h2></td></tr>
 <p>A handy shortcut for foreach(){ .. } code. Make your callable return "false" if you would like to break the loop.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramtype">callable</td><td class="paramname">$callable</td><td>will be executed for each member</td></tr>
+    <tr><td class="paramtype">string&#160;|&#160;callable</td><td class="paramname">$callable</td><td>will be executed for each member</td></tr>
   </table>
   </dd>
 </dl>
@@ -653,15 +659,15 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad21bce5c5adeb2e72a8f0edda2ef043c"></a><!-- doxytag: member="AbstractObject::exception" ref="ad21bce5c5adeb2e72a8f0edda2ef043c" args="($message, $type=null, $code=null)" -->
+<a class="anchor" id="a9f1d36968c4efe66e167d69cfd00eaed"></a><!-- doxytag: member="AbstractObject::exception" ref="a9f1d36968c4efe66e167d69cfd00eaed" args="($message= 'Undefined Exception', $type=null, $code=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception</a> </td>
+          <td class="memname"><a class="el" href="class_abstract_object.html#a9f1d36968c4efe66e167d69cfd00eaed">exception</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
+          <td class="paramname"><em>message</em> = <code>'Undefined&#160;Exception'</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -683,7 +689,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns relevant exception class. Use this method with "throw"</p>
+<p>Returns relevant exception class. Use this method with "throw".</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$message</td><td>Static text of exception. </td></tr>
@@ -720,7 +726,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Reports fatal error. Use -&gt;exception instead</p>
+<p>Reports fatal error. Use -&gt;exception instead.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$error</td><td>error text </td></tr>
@@ -746,10 +752,10 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Forget session data for arg $key. If $key is omitted will forget all associated session data</p>
+<p>Forget session data for arg $key. If $key is omitted will forget all associated session data.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramtype">string</td><td class="paramname">$key</td><td>Optional key for data to forget</td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$key</td><td>Optional key of data to forget</td></tr>
   </table>
   </dd>
 </dl>
@@ -771,7 +777,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Find child element by their short name. Use in chaining. Exception if not found.</p>
+<p>Find child element by its short name. Use in chaining. Exception if not found.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$short_name</td><td>Short name of the child element</td></tr>
@@ -823,7 +829,7 @@ Data Fields</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> </dd></dl>
 
 </div>
 </div>
@@ -841,7 +847,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Return if this object have specified method (either native or dynamic)</p>
+<p>Return if this object has specified method (either native or dynamic).</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Name of the method</td></tr>
@@ -902,7 +908,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Records debug information</p>
+<p>Records debug information.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$msg</td><td>information</td></tr>
@@ -928,11 +934,11 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
+<p>Initialize object. Always call parent::init(). Do not call directly.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
-<p>Reimplemented in <a class="el" href="class_path_finder___location.html#a4be4055f3361d4800e16bc2e2e38cda6">PathFinder_Location</a>, <a class="el" href="class_t_mail___template.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Template</a>, <a class="el" href="class_t_mail___transport.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Transport</a>, <a class="el" href="class_logger.html#a4be4055f3361d4800e16bc2e2e38cda6">Logger</a>, <a class="el" href="class_t_mail___part___text.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Part_Text</a>, <a class="el" href="class_s_mlite.html#a4be4055f3361d4800e16bc2e2e38cda6">SMlite</a>, <a class="el" href="class_form___field___upload.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Upload</a>, <a class="el" href="class_t_mail___part.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Part</a>, <a class="el" href="class_view___c_r_u_d.html#a4be4055f3361d4800e16bc2e2e38cda6">View_CRUD</a>, <a class="el" href="class_model.html#a4be4055f3361d4800e16bc2e2e38cda6">Model</a>, <a class="el" href="class_menu_item.html#a4be4055f3361d4800e16bc2e2e38cda6">MenuItem</a>, <a class="el" href="class_model___table.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Table</a>, <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_page_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">PageManager</a>, <a class="el" href="class_form___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Basic</a>, <a class="el" href="class_t_mail___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Compat</a>, <a class="el" href="class_path_finder.html#a4be4055f3361d4800e16bc2e2e38cda6">PathFinder</a>, <a class="el" href="class_auth___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Auth_Basic</a>, <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>, <a class="el" href="class_form___field.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field</a>, <a class="el" href="class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiWeb</a>, <a class="el" href="class_form___field___date_selector.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DateSelector</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, <a class="el" href="class_system___process_i_o.html#a4be4055f3361d4800e16bc2e2e38cda6">System_ProcessIO</a>, <a class="el" href="class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_Tester</a>, <a class="el" href="class_page___entity_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_EntityManager</a>, <a class="el" href="class_paginator___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Paginator_Compat</a>, <a class="el" href="class_s_q_l___relation.html#a4be4055f3361d4800e16bc2e2e38cda6">SQL_Relation</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, <a class="el" href="class_u_r_l.html#a4be4055f3361d4800e16bc2e2e38cda6">URL</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Tabs_jUItabs</a>, <a class="el" href="class_menu___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Compat</a>, <a class="el" href="classj_query.html#a4be4055f3361d4800e16bc2e2e38cda6">jQuery</a>, <a class="el" href="class_t_mail___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Basic</a>, <a class="el" href="class_form___submit.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Submit</a>, <a class="el" href="class_page.html#a4be4055f3361d4800e16bc2e2e38cda6">Page</a>, <a class="el" href="class_view___error.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Error</a>, <a class="el" href="classj_u_i.html#a4be4055f3361d4800e16bc2e2e38cda6">jUI</a>, <a class="el" href="class_order.html#a4be4055f3361d4800e16bc2e2e38cda6">Order</a>, <a class="el" href="class_h2.html#a4be4055f3361d4800e16bc2e2e38cda6">H2</a>, <a class="el" href="class_h3.html#a4be4055f3361d4800e16bc2e2e38cda6">H3</a>, <a class="el" href="class_h4.html#a4be4055f3361d4800e16bc2e2e38cda6">H4</a>, <a class="el" href="class_h5.html#a4be4055f3361d4800e16bc2e2e38cda6">H5</a>, <a class="el" href="class_form___field___date_picker.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DatePicker</a>, <a class="el" href="class_controller___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Controller_Compat</a>, <a class="el" href="class_quick_search.html#a4be4055f3361d4800e16bc2e2e38cda6">QuickSearch</a>, <a class="el" href="class_d_b__dsql__mysql.html#a4be4055f3361d4800e16bc2e2e38cda6">DB_dsql_mysql</a>, <a class="el" href="class_filter.html#a4be4055f3361d4800e16bc2e2e38cda6">Filter</a>, <a class="el" href="class_h1.html#a4be4055f3361d4800e16bc2e2e38cda6">H1</a>, <a class="el" href="class_controller___pattern_router.html#a4be4055f3361d4800e16bc2e2e38cda6">Controller_PatternRouter</a>, <a class="el" href="class_p.html#a4be4055f3361d4800e16bc2e2e38cda6">P</a>, <a class="el" href="class_form___plain.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Plain</a>, <a class="el" href="class_hello_world.html#a4be4055f3361d4800e16bc2e2e38cda6">HelloWorld</a>, <a class="el" href="classpage___default_about.html#a4be4055f3361d4800e16bc2e2e38cda6">page_DefaultAbout</a>, <a class="el" href="class_view___icon.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Icon</a>, <a class="el" href="class_view___warning.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Warning</a>, <a class="el" href="class_field___deleted.html#a4be4055f3361d4800e16bc2e2e38cda6">Field_Deleted</a>, <a class="el" href="class_form___hint.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Hint</a>, <a class="el" href="class_model___agile_toolkit___access.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Access</a>, <a class="el" href="class_api_install.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiInstall</a>, <a class="el" href="class_h_r.html#a4be4055f3361d4800e16bc2e2e38cda6">HR</a>, <a class="el" href="class_model___agile_toolkit___licenses.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Licenses</a>, <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>, <a class="el" href="class_form___field___checkbox.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___text.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Text</a>, and <a class="el" href="class_form___field___readonly.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Readonly</a>.</p>
+<p>Reimplemented in <a class="el" href="class_path_finder___location.html#a4be4055f3361d4800e16bc2e2e38cda6">PathFinder_Location</a>, <a class="el" href="class_t_mail___template.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Template</a>, <a class="el" href="class_t_mail___transport.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Transport</a>, <a class="el" href="class_logger.html#a4be4055f3361d4800e16bc2e2e38cda6">Logger</a>, <a class="el" href="class_t_mail___part___text.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Part_Text</a>, <a class="el" href="class_s_mlite.html#a4be4055f3361d4800e16bc2e2e38cda6">SMlite</a>, <a class="el" href="class_t_mail___part.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Part</a>, <a class="el" href="class_view___c_r_u_d.html#a4be4055f3361d4800e16bc2e2e38cda6">View_CRUD</a>, <a class="el" href="class_model.html#a4be4055f3361d4800e16bc2e2e38cda6">Model</a>, <a class="el" href="class_form___field___upload.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Upload</a>, <a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Advanced</a>, <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>, <a class="el" href="class_menu_item.html#a4be4055f3361d4800e16bc2e2e38cda6">MenuItem</a>, <a class="el" href="class_s_q_l___model.html#a4be4055f3361d4800e16bc2e2e38cda6">SQL_Model</a>, <a class="el" href="class_page_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">PageManager</a>, <a class="el" href="class_form___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Basic</a>, <a class="el" href="class_t_mail___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Compat</a>, <a class="el" href="class_path_finder.html#a4be4055f3361d4800e16bc2e2e38cda6">PathFinder</a>, <a class="el" href="class_model___person.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Person</a>, <a class="el" href="class_auth___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Auth_Basic</a>, <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>, <a class="el" href="class_form___field.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field</a>, <a class="el" href="class_api_web.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiWeb</a>, <a class="el" href="class_form___field___date_selector.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DateSelector</a>, <a class="el" href="class_quick_search.html#a4be4055f3361d4800e16bc2e2e38cda6">QuickSearch</a>, <a class="el" href="class_system___process_i_o.html#a4be4055f3361d4800e16bc2e2e38cda6">System_ProcessIO</a>, <a class="el" href="class_model___child.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Child</a>, <a class="el" href="class_page___tester.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_Tester</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Tabs_jUItabs</a>, <a class="el" href="class_page___entity_manager.html#a4be4055f3361d4800e16bc2e2e38cda6">Page_EntityManager</a>, <a class="el" href="class_paginator___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Paginator_Compat</a>, <a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Basic</a>, <a class="el" href="class_s_q_l___relation.html#a4be4055f3361d4800e16bc2e2e38cda6">SQL_Relation</a>, <a class="el" href="class_u_r_l.html#a4be4055f3361d4800e16bc2e2e38cda6">URL</a>, <a class="el" href="class_model___mother.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_Mother</a>, <a class="el" href="class_menu___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Compat</a>, <a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Paginator_Basic</a>, <a class="el" href="classj_query.html#a4be4055f3361d4800e16bc2e2e38cda6">jQuery</a>, <a class="el" href="class_hello_world.html#a4be4055f3361d4800e16bc2e2e38cda6">HelloWorld</a>, <a class="el" href="class_t_mail___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">TMail_Basic</a>, <a class="el" href="class_form___submit.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Submit</a>, <a class="el" href="class_page.html#a4be4055f3361d4800e16bc2e2e38cda6">Page</a>, <a class="el" href="class_view___error.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Error</a>, <a class="el" href="class_order.html#a4be4055f3361d4800e16bc2e2e38cda6">Order</a>, <a class="el" href="class_d_b__dsql__firebird.html#a4be4055f3361d4800e16bc2e2e38cda6">DB_dsql_firebird</a>, <a class="el" href="class_controller___pattern_router.html#a4be4055f3361d4800e16bc2e2e38cda6">Controller_PatternRouter</a>, <a class="el" href="class_form___field___date_picker.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_DatePicker</a>, <a class="el" href="class_view___popover.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Popover</a>, <a class="el" href="class_controller___compat.html#a4be4055f3361d4800e16bc2e2e38cda6">Controller_Compat</a>, <a class="el" href="class_h_r.html#a4be4055f3361d4800e16bc2e2e38cda6">HR</a>, <a class="el" href="classpage__view.html#a4be4055f3361d4800e16bc2e2e38cda6">page_view</a>, <a class="el" href="class_d_b__dsql__mysql.html#a4be4055f3361d4800e16bc2e2e38cda6">DB_dsql_mysql</a>, <a class="el" href="class_filter.html#a4be4055f3361d4800e16bc2e2e38cda6">Filter</a>, <a class="el" href="class_h1.html#a4be4055f3361d4800e16bc2e2e38cda6">H1</a>, <a class="el" href="class_h2.html#a4be4055f3361d4800e16bc2e2e38cda6">H2</a>, <a class="el" href="class_h3.html#a4be4055f3361d4800e16bc2e2e38cda6">H3</a>, <a class="el" href="class_h4.html#a4be4055f3361d4800e16bc2e2e38cda6">H4</a>, <a class="el" href="class_h5.html#a4be4055f3361d4800e16bc2e2e38cda6">H5</a>, <a class="el" href="classj_u_i.html#a4be4055f3361d4800e16bc2e2e38cda6">jUI</a>, <a class="el" href="class_p.html#a4be4055f3361d4800e16bc2e2e38cda6">P</a>, <a class="el" href="class_form___plain.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Plain</a>, <a class="el" href="classpage___default_about.html#a4be4055f3361d4800e16bc2e2e38cda6">page_DefaultAbout</a>, <a class="el" href="class_view___icon.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Icon</a>, <a class="el" href="class_view___warning.html#a4be4055f3361d4800e16bc2e2e38cda6">View_Warning</a>, <a class="el" href="class_d_b__dsql__sqlite.html#a4be4055f3361d4800e16bc2e2e38cda6">DB_dsql_sqlite</a>, <a class="el" href="class_field___deleted.html#a4be4055f3361d4800e16bc2e2e38cda6">Field_Deleted</a>, <a class="el" href="class_form___hint.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Hint</a>, <a class="el" href="class_model___agile_toolkit___access.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Access</a>, <a class="el" href="class_api_install.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiInstall</a>, <a class="el" href="class_model___agile_toolkit___licenses.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileToolkit_Licenses</a>, <a class="el" href="class_model___agile_test.html#a4be4055f3361d4800e16bc2e2e38cda6">Model_AgileTest</a>, <a class="el" href="classpage__modeldef.html#a4be4055f3361d4800e16bc2e2e38cda6">page_modeldef</a>, <a class="el" href="class_form___field___readonly.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Readonly</a>, <a class="el" href="class_view___model_details.html#a4be4055f3361d4800e16bc2e2e38cda6">View_ModelDetails</a>, <a class="el" href="class_mongo___model.html#a4be4055f3361d4800e16bc2e2e38cda6">Mongo_Model</a>, <a class="el" href="class_form___field___checkbox.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Checkbox</a>, <a class="el" href="class_form___field___text.html#a4be4055f3361d4800e16bc2e2e38cda6">Form_Field_Text</a>, <a class="el" href="class_menu___objective.html#a4be4055f3361d4800e16bc2e2e38cda6">Menu_Objective</a>, <a class="el" href="class_mongo___field.html#a4be4055f3361d4800e16bc2e2e38cda6">Mongo_Field</a>, <a class="el" href="class_mongo___reference.html#a4be4055f3361d4800e16bc2e2e38cda6">Mongo_Reference</a>, <a class="el" href="class_test_api.html#a4be4055f3361d4800e16bc2e2e38cda6">TestApi</a>, and <a class="el" href="classpage__mongo2.html#a4be4055f3361d4800e16bc2e2e38cda6">page_mongo2</a>.</p>
 
 </div>
 </div>
@@ -960,7 +966,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Similar to memorize, but if value for key exist, will return Iterator instead.</p>
+<p>Similar to memorize, but if value for key exist, will return it.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$key</td><td>Data Key </td></tr>
@@ -968,7 +974,7 @@ Data Fields</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> $this </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed Previously memorized data or $default </dd></dl>
 
 </div>
 </div>
@@ -996,7 +1002,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Output string into error file</p>
+<p>Output string into error file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$error</td><td>error </td></tr>
@@ -1032,7 +1038,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Output string into info file</p>
+<p>Output string into info file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$info</td><td>info </td></tr>
@@ -1068,7 +1074,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Output string into log file</p>
+<p>Output string into log file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$var</td><td>var </td></tr>
@@ -1112,7 +1118,7 @@ Data Fields</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> $this </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed $value </dd></dl>
 
 </div>
 </div>
@@ -1165,7 +1171,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns session data for this object. If not previously set, then $default is returned</p>
+<p>Returns session data for this object. If not previously set, then $default is returned.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$key</td><td>Data Key </td></tr>
@@ -1241,7 +1247,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Remove dynamically registered method</p>
+<p>Remove dynamically registered method.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$name</td><td>Name of the method</td></tr>
@@ -1266,14 +1272,14 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Names object accordingly. May not work on some objects</p>
+<p>Names object accordingly. May not work on some objects.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$short_name</td><td>Short name of the child element</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> $this </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_object.html">AbstractObject</a> $this </dd></dl>
 
 </div>
 </div>
@@ -1336,7 +1342,7 @@ Data Fields</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_abstract_model.html">AbstractModel</a> Newly added <a class="el" href="class_model.html">Model</a> </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_field.html#a3a14e0beb3bb7c7a23df6ba5616c58d6">Field</a>, <a class="el" href="class_t_mail___transport___d_b_store.html#a81d7b82d316cf67681fc28e971527617">TMail_Transport_DBStore</a>, <a class="el" href="class_form___field___value_list.html#a81d7b82d316cf67681fc28e971527617">Form_Field_ValueList</a>, and <a class="el" href="class_controller___pattern_router.html#a1c15df021d82870005f4f4925a4f613e">Controller_PatternRouter</a>.</p>
+<p>Reimplemented in <a class="el" href="class_field.html#a3a14e0beb3bb7c7a23df6ba5616c58d6">Field</a>, <a class="el" href="class_t_mail___transport___d_b_store.html#a81d7b82d316cf67681fc28e971527617">TMail_Transport_DBStore</a>, <a class="el" href="class_controller___pattern_router.html#a1c15df021d82870005f4f4925a4f613e">Controller_PatternRouter</a>, and <a class="el" href="class_form___field___value_list.html#a81d7b82d316cf67681fc28e971527617">Form_Field_ValueList</a>.</p>
 
 </div>
 </div>
@@ -1364,7 +1370,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>attempts to call dynamic method, returns array containing result or false</p>
+<p>Attempts to call dynamic method. Returns array containing result or false</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$method</td><td>Name of the method </td></tr>
@@ -1400,7 +1406,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Call specified method for this class and all parents up to api</p>
+<p>Call specified method for this class and all parents up to api.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$type</td><td>information </td></tr>
@@ -1437,7 +1443,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Records warning</p>
+<p>Records warning.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string</td><td class="paramname">$msg</td><td>information </td></tr>
@@ -1492,7 +1498,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>When this object is added, owner-&gt;elements[$this-&gt;short_name] will be == $this; </p>
 
-<p>Reimplemented in <a class="el" href="class_path_finder___location.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">PathFinder_Location</a>, <a class="el" href="class_t_mail___part.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">TMail_Part</a>, <a class="el" href="class_abstract_view.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">AbstractView</a>, <a class="el" href="class_field.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">Field</a>, and <a class="el" href="class_s_q_l___many.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">SQL_Many</a>.</p>
+<p>Reimplemented in <a class="el" href="class_path_finder___location.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">PathFinder_Location</a>, <a class="el" href="class_t_mail___part.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">TMail_Part</a>, <a class="el" href="class_abstract_view.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">AbstractView</a>, <a class="el" href="class_field.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">Field</a>, <a class="el" href="class_controller___data.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">Controller_Data</a>, <a class="el" href="class_s_q_l___many.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">SQL_Many</a>, and <a class="el" href="class_tracked_object.html#a1518f6633c881d3d43b9e4cdc4eaeb4c">TrackedObject</a>.</p>
 
 </div>
 </div>
@@ -1512,6 +1518,22 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a85ae3e64cd40e9564adceb010085e9dd"></a><!-- doxytag: member="AbstractObject::$debug" ref="a85ae3e64cd40e9564adceb010085e9dd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$<a class="el" href="class_abstract_object.html#a14b5f5e04db771e5df6589a0cfc12dd5">debug</a> = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Setting this to true will output additional debug info about object </p>
+
+<p>Reimplemented in <a class="el" href="class_form___field___upload.html#a85ae3e64cd40e9564adceb010085e9dd">Form_Field_Upload</a>, <a class="el" href="class_s_q_l___model.html#a85ae3e64cd40e9564adceb010085e9dd">SQL_Model</a>, <a class="el" href="class_d_b__dsql.html#a85ae3e64cd40e9564adceb010085e9dd">DB_dsql</a>, and <a class="el" href="classj_query___chain.html#a85ae3e64cd40e9564adceb010085e9dd">jQuery_Chain</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ab949cccd963058f0937d04bc26ee24a7"></a><!-- doxytag: member="AbstractObject::$default_controller" ref="ab949cccd963058f0937d04bc26ee24a7" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1524,7 +1546,7 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Default controller to initialize when calling <a class="el" href="class_abstract_object.html#a1c15df021d82870005f4f4925a4f613e">setModel()</a> </p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>, <a class="el" href="class_abstract_view.html#ab949cccd963058f0937d04bc26ee24a7">AbstractView</a>, <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
+<p>Reimplemented in <a class="el" href="class_abstract_view.html#ab949cccd963058f0937d04bc26ee24a7">AbstractView</a>, <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
 
 </div>
 </div>
@@ -1538,7 +1560,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#ad21bce5c5adeb2e72a8f0edda2ef043c">exception()</a> is called </p>
+<p>Exception class to use when $this-&gt;<a class="el" href="class_abstract_object.html#a9f1d36968c4efe66e167d69cfd00eaed">exception()</a> is called </p>
 
 <p>Reimplemented in <a class="el" href="class_form___basic.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">Form_Basic</a>, <a class="el" href="class_model.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">Model</a>, <a class="el" href="class_path_finder.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">PathFinder</a>, <a class="el" href="class_d_b__dsql.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">DB_dsql</a>, <a class="el" href="class_gi_template.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">GiTemplate</a>, and <a class="el" href="class_page.html#ade8f8bc9c31f13c39edfe43aaea3a4e8">Page</a>.</p>
 
@@ -1617,21 +1639,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac7c3353107070daa85f641882931b358"></a><!-- doxytag: member="AbstractObject::$settings" ref="ac7c3353107070daa85f641882931b358" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$settings = array('extension'=&gt;'.html')</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented in <a class="el" href="class_s_mlite.html#ac7c3353107070daa85f641882931b358">SMlite</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="abfe328f6f767c8f805d07eff9ab23734"></a><!-- doxytag: member="AbstractObject::$short_name" ref="abfe328f6f767c8f805d07eff9ab23734" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1649,7 +1656,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_abstract_object_8php.html">AbstractObject.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_abstract_object_8php.html">AbstractObject.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1658,7 +1665,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1671,7 +1678,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_abstract_object.html">AbstractObject</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -111,13 +112,12 @@ Inheritance diagram for Menu_Basic:</div>
  <div class="center">
   <img src="class_menu___basic.png" usemap="#Menu_Basic_map" alt=""/>
   <map id="Menu_Basic_map" name="Menu_Basic_map">
-<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="53,224,149,248"/>
-<area href="class_lister.html" alt="Lister" shape="rect" coords="53,168,149,192"/>
-<area href="class_view.html" alt="View" shape="rect" coords="53,112,149,136"/>
-<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="53,56,149,80"/>
-<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
+<area href="class_complete_lister.html" alt="CompleteLister" shape="rect" coords="0,224,96,248"/>
+<area href="class_lister.html" alt="Lister" shape="rect" coords="0,168,96,192"/>
+<area href="class_view.html" alt="View" shape="rect" coords="0,112,96,136"/>
+<area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,96,80"/>
+<area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,96,24"/>
 <area href="class_menu.html" alt="Menu" shape="rect" coords="0,336,96,360"/>
-<area href="class_menu__j_u_i.html" alt="Menu_jUI" shape="rect" coords="106,336,202,360"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -125,6 +125,7 @@ Inheritance diagram for Menu_Basic:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#ab7ef15fe4ff84b8cb8ad2ee4e41aac2e">setTarget</a> ($js_func)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#ac8016f132e643a4556af06643ce6de19">addMenuItem</a> ($page, $label=null)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#a472559de2335184c36ed582864888992">addSubMenu</a> ($label)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu___basic.html#ac061233320116be798fd33b2b16a2c98">isCurrent</a> ($href)</td></tr>
@@ -207,13 +208,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
-<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
+<p>Default template</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>.</p>
-
-<p>Reimplemented in <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>.</p>
 
 </div>
 </div>
@@ -247,9 +245,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
-<p>This method is called for initialization</p>
+<p>Initialization</p>
+<p>void </p>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>.</p>
 
@@ -285,14 +282,28 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
-<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
-<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<p>Render lister</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ab7ef15fe4ff84b8cb8ad2ee4e41aac2e"></a><!-- doxytag: member="Menu_Basic::setTarget" ref="ab7ef15fe4ff84b8cb8ad2ee4e41aac2e" args="($js_func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_menu___basic.html#ab7ef15fe4ff84b8cb8ad2ee4e41aac2e">setTarget</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>js_func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This will add a new behaviour for clicking on the menu items. For example setTarget('frameURL') will show menu links inside a frame instead of just linking to them </p>
 
 </div>
 </div>
@@ -336,8 +347,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_menu__j_u_i.html#a076886e4bce70198c63035ac97d0826e">Menu_jUI</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab69638a8fabcb73402bd8946d20aec8d"></a><!-- doxytag: member="Menu_Basic::$inactive_menu_class" ref="ab69638a8fabcb73402bd8946d20aec8d" args="" -->
@@ -351,8 +360,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_menu__j_u_i.html#ab69638a8fabcb73402bd8946d20aec8d">Menu_jUI</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a1c5ab74e36790de226cbf169bbbe1edd"></a><!-- doxytag: member="Menu_Basic::$item_tag" ref="a1c5ab74e36790de226cbf169bbbe1edd" args="" -->
@@ -365,6 +372,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Used template tags </p>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd">CompleteLister</a>.</p>
 
@@ -397,7 +405,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Menu/<a class="el" href="_menu_2_basic_8php.html">Basic.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Menu/<a class="el" href="_menu_2_basic_8php.html">Basic.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -406,7 +414,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -419,7 +427,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_menu___basic.html">Menu_Basic</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -28,6 +28,7 @@ var class_s_mlite =
     [ "renderRegion", "class_s_mlite.html#a870ede70459f7a4fe07d82669b06941b", null ],
     [ "set", "class_s_mlite.html#a8b767b2200068cfd390257b7a429a9f5", null ],
     [ "setHTML", "class_s_mlite.html#a2afddbc651ee880341615e62570e0975", null ],
+    [ "setMessage", "class_s_mlite.html#a3985b76c19b1879174bb5390300f3935", null ],
     [ "tryDel", "class_s_mlite.html#a02bde04f59691035e803c1cc87c06430", null ],
     [ "trySet", "class_s_mlite.html#a55bc40ede8ab92c14abfa82a3e453212", null ],
     [ "trySetHTML", "class_s_mlite.html#a2094313019c1f080a57a6f1082446cb1", null ],

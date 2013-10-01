@@ -1,0 +1,25 @@
+var classpage__core =
+[
+    [ "myfunc", "classpage__core.html#abeb74ec5c3a4e0965f7189b8ab481e6d", null ],
+    [ "myfunc2", "classpage__core.html#ab73c451674bf18cff56c881861d5d4ee", null ],
+    [ "prepare", "classpage__core.html#a9596f1635d3c078fa06ab0166bcbb11b", null ],
+    [ "test_add", "classpage__core.html#a3405b512db5f150e9a96493d878a6631", null ],
+    [ "test_add2_controller", "classpage__core.html#a476cad96079a636ce7aa477a068e3e53", null ],
+    [ "test_addGlobalMethod", "classpage__core.html#abf0f9adf5cea5014f5fde3712f098314", null ],
+    [ "test_addMethod", "classpage__core.html#a7d08de5edb8745b869755fdd558d90b6", null ],
+    [ "test_clone", "classpage__core.html#a271bddddc20d4345f6e2528119e5d3d6", null ],
+    [ "test_destroy", "classpage__core.html#a32db001d5db1d0016b942f75bfdb2917", null ],
+    [ "test_empty", "classpage__core.html#aec3bc68d77464e61845f3e06417eb00a", null ],
+    [ "test_exception", "classpage__core.html#a317ac4ffd9ec7d3aa515fed64625b0fc", null ],
+    [ "test_exception2", "classpage__core.html#a495f070f57314aa8a4e3c9dfd5d0d377", null ],
+    [ "test_exception3", "classpage__core.html#af8553e3651913ac274218177feff7276", null ],
+    [ "test_getElement", "classpage__core.html#aa51b9cf2833a2a787e0f8edba67801e9", null ],
+    [ "test_getElement1", "classpage__core.html#a615bf6dad7c966674f51ea55c8168aaa", null ],
+    [ "test_getElement2", "classpage__core.html#a442a521f4365aeea061be000f739f4cb", null ],
+    [ "test_hasElement2", "classpage__core.html#a6b595c23d920410782c5c93b8d54c7c3", null ],
+    [ "test_hook1", "classpage__core.html#affe235eaacbb951df44aa1b3dd17e0b0", null ],
+    [ "test_hook2", "classpage__core.html#aaabd2450c2e97ff23786406d829dc5ae", null ],
+    [ "test_hook3", "classpage__core.html#ab1b81d9ec73e111f7318dd73467d0f87", null ],
+    [ "test_uniqname", "classpage__core.html#a37f095e6b0925ba1659d647436620d18", null ],
+    [ "$proper_responses", "classpage__core.html#a8e6e441d221908129513d04b7b33c487", null ]
+];

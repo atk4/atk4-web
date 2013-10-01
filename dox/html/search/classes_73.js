@@ -3,6 +3,7 @@ var searchData=
   ['smlite',['SMlite',['../class_s_mlite.html',1,'']]],
   ['smliteexception',['SMliteException',['../class_s_mlite_exception.html',1,'']]],
   ['sql_5fmany',['SQL_Many',['../class_s_q_l___many.html',1,'']]],
+  ['sql_5fmodel',['SQL_Model',['../class_s_q_l___model.html',1,'']]],
   ['sql_5frelation',['SQL_Relation',['../class_s_q_l___relation.html',1,'']]],
   ['sqlexception',['SQLException',['../class_s_q_l_exception.html',1,'']]],
   ['system_5fhtmlsanitizer',['System_HTMLSanitizer',['../class_system___h_t_m_l_sanitizer.html',1,'']]],

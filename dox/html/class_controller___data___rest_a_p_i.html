@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -117,8 +118,218 @@ Inheritance diagram for Controller_Data_RestAPI:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#aa709c9b04213dafcc1f6344218aa32c0">request_get</a> ($method, $object=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#a62380e6588709bcc3711ae2d11051bbc">load</a> ($model, $id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#aa56f5948f9ef6aad5a2f85441f6e02ab">save</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#a86a994646f5cf94be65cb3edfc75a74a">delete</a> ($model, $id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#a6af2b9da15c928d97e037315b35714ad">tryLoad</a> ($model, $id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#a7a5289999e37a5af22a2faaa95db786f">loadBy</a> ($model, $field, $cond, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#abba58a7c1cad3c8b0d150c84969e3aed">tryLoadBy</a> ($model, $field, $cond, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#a612a6e66bd5765055fcdc103aa3059f0">tryLoadAny</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#af412dc3c0335dea093670b21ecae786c">deleteAll</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#aaef09f18a158bc24d34f60c584c23b68">getRows</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#aa0d290aadb83c608a6896379fc37e4d5">getBy</a> ($model, $field, $cond, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#ab79a3b895d0e862ccda37ed10259c217">rewind</a> ($model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___data___rest_a_p_i.html#ac74f16ffc3a74f1a69616e1be48f40b9">next</a> ($model)</td></tr>
 </table>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a86a994646f5cf94be65cb3edfc75a74a"></a><!-- doxytag: member="Controller_Data_RestAPI::delete" ref="a86a994646f5cf94be65cb3edfc75a74a" args="($model, $id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#a86a994646f5cf94be65cb3edfc75a74a">delete</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a86a994646f5cf94be65cb3edfc75a74a">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af412dc3c0335dea093670b21ecae786c"></a><!-- doxytag: member="Controller_Data_RestAPI::deleteAll" ref="af412dc3c0335dea093670b21ecae786c" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#af412dc3c0335dea093670b21ecae786c">deleteAll</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#af412dc3c0335dea093670b21ecae786c">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa0d290aadb83c608a6896379fc37e4d5"></a><!-- doxytag: member="Controller_Data_RestAPI::getBy" ref="aa0d290aadb83c608a6896379fc37e4d5" args="($model, $field, $cond, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#aa0d290aadb83c608a6896379fc37e4d5">getBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aa0d290aadb83c608a6896379fc37e4d5">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaef09f18a158bc24d34f60c584c23b68"></a><!-- doxytag: member="Controller_Data_RestAPI::getRows" ref="aaef09f18a158bc24d34f60c584c23b68" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#aaef09f18a158bc24d34f60c584c23b68">getRows</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aaef09f18a158bc24d34f60c584c23b68">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a62380e6588709bcc3711ae2d11051bbc"></a><!-- doxytag: member="Controller_Data_RestAPI::load" ref="a62380e6588709bcc3711ae2d11051bbc" args="($model, $id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#a62380e6588709bcc3711ae2d11051bbc">load</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a62380e6588709bcc3711ae2d11051bbc">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a5289999e37a5af22a2faaa95db786f"></a><!-- doxytag: member="Controller_Data_RestAPI::loadBy" ref="a7a5289999e37a5af22a2faaa95db786f" args="($model, $field, $cond, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#a7a5289999e37a5af22a2faaa95db786f">loadBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a7a5289999e37a5af22a2faaa95db786f">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac74f16ffc3a74f1a69616e1be48f40b9"></a><!-- doxytag: member="Controller_Data_RestAPI::next" ref="ac74f16ffc3a74f1a69616e1be48f40b9" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#ac74f16ffc3a74f1a69616e1be48f40b9">next</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Provided that rewind was called before, load next data entry </p>
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#ac74f16ffc3a74f1a69616e1be48f40b9">Controller_Data</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa709c9b04213dafcc1f6344218aa32c0"></a><!-- doxytag: member="Controller_Data_RestAPI::request_get" ref="aa709c9b04213dafcc1f6344218aa32c0" args="($method, $object=null)" -->
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +357,136 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab79a3b895d0e862ccda37ed10259c217"></a><!-- doxytag: member="Controller_Data_RestAPI::rewind" ref="ab79a3b895d0e862ccda37ed10259c217" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#ab79a3b895d0e862ccda37ed10259c217">rewind</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a new cursor and load model with the first entry </p>
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#ab79a3b895d0e862ccda37ed10259c217">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa56f5948f9ef6aad5a2f85441f6e02ab"></a><!-- doxytag: member="Controller_Data_RestAPI::save" ref="aa56f5948f9ef6aad5a2f85441f6e02ab" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#aa56f5948f9ef6aad5a2f85441f6e02ab">save</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#aa56f5948f9ef6aad5a2f85441f6e02ab">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6af2b9da15c928d97e037315b35714ad"></a><!-- doxytag: member="Controller_Data_RestAPI::tryLoad" ref="a6af2b9da15c928d97e037315b35714ad" args="($model, $id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#a6af2b9da15c928d97e037315b35714ad">tryLoad</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a6af2b9da15c928d97e037315b35714ad">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a612a6e66bd5765055fcdc103aa3059f0"></a><!-- doxytag: member="Controller_Data_RestAPI::tryLoadAny" ref="a612a6e66bd5765055fcdc103aa3059f0" args="($model)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#a612a6e66bd5765055fcdc103aa3059f0">tryLoadAny</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#a612a6e66bd5765055fcdc103aa3059f0">Controller_Data</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abba58a7c1cad3c8b0d150c84969e3aed"></a><!-- doxytag: member="Controller_Data_RestAPI::tryLoadBy" ref="abba58a7c1cad3c8b0d150c84969e3aed" args="($model, $field, $cond, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_controller___data___rest_a_p_i.html#abba58a7c1cad3c8b0d150c84969e3aed">tryLoadBy</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>cond</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_controller___data.html#abba58a7c1cad3c8b0d150c84969e3aed">Controller_Data</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Controller/Data/<a class="el" href="_rest_a_p_i_8php.html">RestAPI.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Controller/Data/<a class="el" href="_rest_a_p_i_8php.html">RestAPI.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -156,7 +495,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -169,7 +508,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_controller___data___rest_a_p_i.html">Controller_Data_RestAPI</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

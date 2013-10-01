@@ -7,6 +7,7 @@ var class_menu___basic =
     [ "init", "class_menu___basic.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
     [ "isCurrent", "class_menu___basic.html#ac061233320116be798fd33b2b16a2c98", null ],
     [ "render", "class_menu___basic.html#afde88292c44dc59faf017738dae6dffb", null ],
+    [ "setTarget", "class_menu___basic.html#ab7ef15fe4ff84b8cb8ad2ee4e41aac2e", null ],
     [ "$class_tag", "class_menu___basic.html#a619824cec42dc5a881ef47a1b5aa40de", null ],
     [ "$container_tag", "class_menu___basic.html#ab56179d3da9f7be09d655d0698f5e880", null ],
     [ "$current_menu_class", "class_menu___basic.html#a076886e4bce70198c63035ac97d0826e", null ],

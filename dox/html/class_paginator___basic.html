@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -120,6 +121,7 @@ Inheritance diagram for Paginator_Basic:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a> ($<a class="el" href="class_paginator___basic.html#af9932375eba7ad6a25892a767e812f31">ipp</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a55a8779d4a8f6d2bbec5e6fedf28ef7c">setSource</a> ($source)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">recursiveRender</a> ()</td></tr>
@@ -131,11 +133,13 @@ Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a79588b27bc2edf4aa7b92f247b01012d">$skip</a> = 0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#ac2e4b5fa63099d7c943a803ae122dd2b">$range</a> = 4</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a864da6c25dcc997eeb180c883265a1f2">$ajax_reload</a> = true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#ad21c4eb3eeaa7dc86c51fc723e937f22">$memorize</a> = true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a9324c35e0b9ff54682589a378d910a66">$skip_var</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a99a2b085f0a29bd5d799fdcbb63d261b">$source</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_paginator___basic.html#a7b3fba99e075c3c0708a094709c35fa2">$base_page</a> = null</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_paginator.html">Paginator</a> needs to have source set (which can be either <a class="el" href="class_model.html">Model</a>, DSQL or Array). It will render itself into parent. </p>
+<div class="textblock"><p><a class="el" href="class_paginator.html">Paginator</a> needs to have source set (which can be either <a class="el" href="class_model.html">Model</a>, DSQL or Array). It will render itself into parent and will limit the source to display limited number of records per page with ability to travel back and forth </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a27799930621fd2a01be62e33165db4a5"></a><!-- doxytag: member="Paginator_Basic::defaultSpot" ref="a27799930621fd2a01be62e33165db4a5" args="()" -->
 <div class="memitem">
@@ -170,11 +174,30 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
-<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
+<p>Default template</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4be4055f3361d4800e16bc2e2e38cda6"></a><!-- doxytag: member="Paginator_Basic::init" ref="a4be4055f3361d4800e16bc2e2e38cda6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_paginator___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initialization</p>
+<p>void </p>
+
+<p>Reimplemented from <a class="el" href="class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6">CompleteLister</a>.</p>
 
 </div>
 </div>
@@ -277,6 +300,19 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ad21c4eb3eeaa7dc86c51fc723e937f22"></a><!-- doxytag: member="Paginator_Basic::$memorize" ref="ad21c4eb3eeaa7dc86c51fc723e937f22" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$<a class="el" href="class_abstract_object.html#aec1994a9226a2910377f55948fb593a6">memorize</a> = true</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ac2e4b5fa63099d7c943a803ae122dd2b"></a><!-- doxytag: member="Paginator_Basic::$range" ref="ac2e4b5fa63099d7c943a803ae122dd2b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -303,6 +339,19 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a9324c35e0b9ff54682589a378d910a66"></a><!-- doxytag: member="Paginator_Basic::$skip_var" ref="a9324c35e0b9ff54682589a378d910a66" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$skip_var = null</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a99a2b085f0a29bd5d799fdcbb63d261b"></a><!-- doxytag: member="Paginator_Basic::$source" ref="a99a2b085f0a29bd5d799fdcbb63d261b" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -317,7 +366,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Paginator/<a class="el" href="_paginator_2_basic_8php.html">Basic.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Paginator/<a class="el" href="_paginator_2_basic_8php.html">Basic.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -326,7 +375,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -339,7 +388,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_paginator___basic.html">Paginator_Basic</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:42 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

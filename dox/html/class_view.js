@@ -4,6 +4,7 @@ var class_view =
     [ "addStyle", "class_view.html#a2ab7f4f94ec115c4b13fb8d2d30b3c8b", null ],
     [ "defaultTemplate", "class_view.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
     [ "removeClass", "class_view.html#ab97cac463ec6e8c394e5609f4c7afcc9", null ],
+    [ "removeStyle", "class_view.html#ab86e6b92bd69a3f88114f328fe320ba5", null ],
     [ "set", "class_view.html#a4a8ff66c403a977763a802f94a7707bc", null ],
     [ "setAttr", "class_view.html#af872a9c35cc9d5ef7956986455122a12", null ],
     [ "setClass", "class_view.html#a8d2c9f07514863c12756f00354c96f67", null ],

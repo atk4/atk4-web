@@ -23,6 +23,7 @@ var class_gi_template =
     [ "tryDel", "class_gi_template.html#a02bde04f59691035e803c1cc87c06430", null ],
     [ "trySet", "class_gi_template.html#aa03cdcffcf0bf04f25a4ab64ea142c0e", null ],
     [ "$default_exception", "class_gi_template.html#ade8f8bc9c31f13c39edfe43aaea3a4e8", null ],
+    [ "$settings", "class_gi_template.html#ac7c3353107070daa85f641882931b358", null ],
     [ "$source", "class_gi_template.html#a99a2b085f0a29bd5d799fdcbb63d261b", null ],
     [ "$tags", "class_gi_template.html#a475a6a63b85186663d34151bcbd21590", null ],
     [ "$template", "class_gi_template.html#aa3e9534005fd516d941f6a5569896e01", null ],

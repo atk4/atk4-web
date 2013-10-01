@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -124,133 +125,84 @@ Inheritance diagram for Grid_Advanced:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> ($model, $fields=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3a46492254fde0243e3175d62270a806">getExpanderId</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afa3923ca869a04e880535ce6c8868c0c">getColumn</a> ($column)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aaaaa0c74636c7e8b80931a1968a969c4">hasColumn</a> ($column)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a9b9d5c303403ad0a4ee54b2a08e2779b">removeColumn</a> ($name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a16e75a4f48d4675e0ff5be8647825391">addButton</a> ($label)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a42bcfe82b8d826b0c156f6e464af76ba">addQuickSearch</a> ($fields, $class='<a class="el" href="class_quick_search.html">QuickSearch</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3a490f0df79f5b911719790b3b6e68a0">addButton</a> ($label, $class= '<a class="el" href="class_button.html">Button</a>')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8384b9aeb1f95bfb704d52965eec8d76">addQuickSearch</a> ($fields, $class='<a class="el" href="class_quick_search.html">QuickSearch</a>', $options=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7ca42c54ac7d0faf99522b30b6bdb9ed">addPaginator</a> ($ipp=25, $options=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3ee5031f29f0a213e6e9aaeb6b1cbaf6">addOrder</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a66111a2387275b7d6a664f9664db4a86">addSelectable</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7a9f937c2958e6f4dd7b030f86fb70b7">getIterator</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae98c6ac44bd6d6ba3bd2c9414ac475ba">makeSortable</a> ($db_sort=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a17280c65fdb3687e63c07ed76750b33c">makeTitle</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#acc9a5a53a7c38fc0537ffc7d691a2057">staticSortCompare</a> ($str1, $str2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a927b5d5f7bf1aba73333467c7490f127">applySorting</a> ($i, $field, $desc)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">render</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a9295a083215102a37fde05e948f5adcc">format_number</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4a03595fec80a615d83c480724af3e4c">format_html</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aec4ce9407f65efacc7256c3a980d591f">init_money</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a043dadf6bd13cf81d9d12d3327384e69">init_real</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a58ece0bf26ab6463fd65604339db7013">init_fullwidth</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a43e9386cf65d1f1899ca78606ff892ef">format_fullwidth</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4e9046086b8495a830cd3b954489ef6a">format_money</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aaa0b249d27866ba859b7206442cb67d7">format_real</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#acb52af882dffe27f0b0dddce352780c3">renderTotalsRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ac1054b9842592b68e4be6169a20bc8cb">formatTotalsRow</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a2693089eaf4ca0d30d0ce4934840e4bd">getCurrentIndex</a> ($idfield= 'id')</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a2e604f1f858ed845fff057217b937578">setTDParam</a> ($field, $path, $value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a93655a3c67d7554e51de3a07da240f91">applyTDParams</a> ($field, &amp;$row_template=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ac9c4a0ad6b260a3c028d0a926cd91381">setTotalsTitle</a> ($field, $title=&quot;Total: %s row%s&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a61454d750109349ca19666b2b07fb44d">updateTotals</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afad8fdd57ca2695418513cb1cfcb9500">updateGrandTotals</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7251e37a015f3eb9ce4c2058f0dd8e2d">format_totals_number</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a76452aa1255b38d4f20683ad42bb6176">format_totals_money</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af337f4a02219c04092228e795cd55e34">format_totals_real</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af95ffd644e98c84cfb7ba343dbbb98ae">format_totals_text</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a1ad6194b6fbcd1cd2e745b413c998ef5">format_time</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6225f3778b69f98c8e3c0d31d83f90fd">format_totals_expander</a> ($field, $column)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae532484af18e59245870bc961164753a">format_totals_template</a> ($field, $column)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aebe0332c7c5e583c35364bba4d7a4ac5">format_totals_delete</a> ($field, $column)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aecb6fdf9d889e1f1c923cc063505f7b2">init_expander</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a430d76ca2bb275bf14d6a04836be5203">format_expander</a> ($field, $column)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4a03595fec80a615d83c480724af3e4c">format_html</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a9295a083215102a37fde05e948f5adcc">format_number</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a043dadf6bd13cf81d9d12d3327384e69">init_real</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aaa0b249d27866ba859b7206442cb67d7">format_real</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aec4ce9407f65efacc7256c3a980d591f">init_money</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4e9046086b8495a830cd3b954489ef6a">format_money</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#accef872b7e943d06bfcdf026f2ef0155">init_boolean</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae710fa8fb68d77b9f56db0f65b753606">format_boolean</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a37c007ba8d656c72452672fb32af83ba">format_date</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a1ad6194b6fbcd1cd2e745b413c998ef5">format_time</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aa277707b58fe91e7943dbb0e1730551c">format_datetime</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a9e9a285cb7063d93a07de5e20d1d050e">format_timestamp</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a58ece0bf26ab6463fd65604339db7013">init_fullwidth</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a43e9386cf65d1f1899ca78606ff892ef">format_fullwidth</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a980e11a9642faf153e90815070895590">format_nowrap</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af832bdba2072a28443e8cf00221668b3">format_wrap</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8e51fbe8c52dfa19d21f3df527f40325">format_template</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af2eed9cd0525a1a66940a79dc6121bdc">format_widget</a> ($field, $widget, $params=array(), $widget_json=null)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7fe1013a203acb380b84a8895da0f35b">format_expander_widget</a> ($field, $column)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a430d76ca2bb275bf14d6a04836be5203">format_expander</a> ($field, $column)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a001ca3b7e28245c4b09deb0e2d32e0b9">prepareIdField</a> ($val)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae68e59ecb6b88f19cb2ea28a61540aca">init_expander_widget</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aecb6fdf9d889e1f1c923cc063505f7b2">init_expander</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8e7a18959f57aae7eca2d87f3693dbbc">format_inline</a> ($field, $idfield='id')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8f3a0124469cb14c5fb8b18df28ff09e">format_nl2br</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a21f728993cb2ddbda5e975808f30a224">format_order</a> ($field, $idfield='id')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a69c065f3f1baca6ab0d2b2a5ff8bc871">init_link</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a9ae465de4b5fa336d597cd49c1e2ab00">format_password</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a97da17ae76d20de2f9a7d056b1fed249">format_link</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae1ea2e59d23259de66f16af7c72226ef">_performDelete</a> ($id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6110d2dc12ad7ef84d4fe78e7e5c2280">format_delete</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8f3a0124469cb14c5fb8b18df28ff09e">format_nl2br</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afdb64d0b4ac2764ac1666adba274bca1">format_image</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a05c9a3bccf3fc768fd6ccd656af7a4c1">format_checkbox</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7359ecdbd5ce08b221eab8cb1fd99291">init_button</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a38e5467664e0464a79133a3e4e9359c2">setButtonClass</a> ($class)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afb221297d43b210968f60695aca6cc61">init_delete</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3a04052b3727152fba6e0fc1fe086d69">_move_delete</a> ($grid, $field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a2c7dff8f09e23dd6b03290aab19aed11">init_confirm</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a4d147d76163879e4db077520a8ef80cb">init_prompt</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a190dcbd7ded17f067c3f375ae38543f5">format_button</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a251346ca8312256454d1f048332d249d">format_confirm</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7b98cd1630ba6b18e146c24930c9d5fd">format_prompt</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#accef872b7e943d06bfcdf026f2ef0155">init_boolean</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae710fa8fb68d77b9f56db0f65b753606">format_boolean</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a05c9a3bccf3fc768fd6ccd656af7a4c1">format_checkbox</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afdb64d0b4ac2764ac1666adba274bca1">format_image</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ad47655f23063e4864099fc1f588e4b6a">staticSortCompare</a> ($row1, $row2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a927b5d5f7bf1aba73333467c7490f127">applySorting</a> ($i, $field, $desc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a7a9f937c2958e6f4dd7b030f86fb70b7">getIterator</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afb221297d43b210968f60695aca6cc61">init_delete</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae1ea2e59d23259de66f16af7c72226ef">_performDelete</a> ($id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6110d2dc12ad7ef84d4fe78e7e5c2280">format_delete</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a73aeb9f2e3ab69962bbd64ea9ee2c840">setTemplate</a> ($template)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ac79eeaca27de3b2b8fc5a4acd0e38a95">getFieldStyle</a> ($field, $id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3fe6d68af17056a527a7f028c4dc46f0">getRowTitle</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3b2fdca402f000d0fc1853ea85bafbfa">applyTDParams</a> ($field, $totals=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ae7c3ae0aaab25eda615e04b6b3ff59da">setTotalsTitle</a> ($field, $title=&quot;Total:&quot;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ac1054b9842592b68e4be6169a20bc8cb">formatTotalsRow</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a61454d750109349ca19666b2b07fb44d">updateTotals</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aec465f1f11eb671f1d517de90bb6a610">addPaginator</a> ($ipp=25)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#adb2ef71e95464b35945ff9f67e4d6e44">setWidth</a> ($width)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af070c2fe7c7fd07bea186e5b77a91de6">setNoRecords</a> ($message)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af1f578ffd68595d8c0cfbb49c366ca8f">getCurrentIndex</a> ($idfield='id')</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a2e604f1f858ed845fff057217b937578">setTDParam</a> ($field, $path, $value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3ee5031f29f0a213e6e9aaeb6b1cbaf6">addOrder</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a66111a2387275b7d6a664f9664db4a86">addSelectable</a> ($field)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ab6e0c003ad3f69d2e02779fcfe7f2358">getAllTDParams</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a8e51fbe8c52dfa19d21f3df527f40325">format_template</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a69c065f3f1baca6ab0d2b2a5ff8bc871">init_link</a> ($field)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a97da17ae76d20de2f9a7d056b1fed249">format_link</a> ($field)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a3cc428a595858ebaf6b395a694226c45">$last_column</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#acf72375a78d4655e245b3bd40a2f1c93">$sortby</a> = '0'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#acb36dae630591e8751a735bb9d959273">$sortby_db</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a0c1de057f264e15d8a788d042102bfd7">$buttonset</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a006a1ee45474664193b59e380003a49a">$totals_t</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#acd0b71ce34bf46bee7aa2f264e4e279f">$totals_value_na</a> = '-'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6efc15b5a2314dd4b5aaa556a375c6d6">$data</a> = null</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#aadf769619b583dcfa3e416c1f0bdf05e">$title_col</a> = array()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a813d989b6fadde4afb97125cb6dd0640">$paginator</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6af64298aa6de5a2e181456c9cb9498b">$js_widget</a> = 'ui.atk4_grid'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a6d0c28b95c7a196548bfd08461a60cdc">$js_widget_arguments</a> = array()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">$default_controller</a> = '<a class="el" href="class_m_v_c_grid.html">MVCGrid</a>'</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#abf7a0f58a91b041385fe4e5f99176133">$_url</a> = array()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#af619926fd0313d1f37e3386aa5f9f9cd">$no_records_message</a> = &quot;No matching records to display&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#a813d989b6fadde4afb97125cb6dd0640">$paginator</a> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_grid___advanced.html#afa0d86b1f58528b8956905bf87cc560f">$tdparam</a> = array()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This is a Basic <a class="el" href="class_grid.html">Grid</a> implementation, which produces fully functional HTML grid capable of filtering, sorting, paginating and using multiple column formatters.</p>
 <p><a class="el" href="">Use: $grid=$this-&gt;add('Grid'); $grid-&gt;setModel('User');   See <a href="http://agiletoolkit.org/about/license">http://agiletoolkit.org/about/license</a> </a></p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a3a04052b3727152fba6e0fc1fe086d69"></a><!-- doxytag: member="Grid_Advanced::_move_delete" ref="a3a04052b3727152fba6e0fc1fe086d69" args="($grid, $field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a3a04052b3727152fba6e0fc1fe086d69">_move_delete</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>grid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ae1ea2e59d23259de66f16af7c72226ef"></a><!-- doxytag: member="Grid_Advanced::_performDelete" ref="ae1ea2e59d23259de66f16af7c72226ef" args="($id)" -->
 <div class="memitem">
 <div class="memproto">
@@ -265,23 +217,51 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Delete record from <a class="el" href="class_d_b.html">DB</a></p>
+<p>Formatter <a class="el" href="class_grid___advanced.html#afb221297d43b210968f60695aca6cc61">init_delete()</a> calls this to delete current record from <a class="el" href="class_d_b.html">DB</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$id</td><td>ID of record</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a16e75a4f48d4675e0ff5be8647825391"></a><!-- doxytag: member="Grid_Advanced::addButton" ref="a16e75a4f48d4675e0ff5be8647825391" args="($label)" -->
+<a class="anchor" id="a3a490f0df79f5b911719790b3b6e68a0"></a><!-- doxytag: member="Grid_Advanced::addButton" ref="a3a490f0df79f5b911719790b3b6e68a0" args="($label, $class= 'Button')" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a16e75a4f48d4675e0ff5be8647825391">addButton</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a3a490f0df79f5b911719790b3b6e68a0">addButton</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>label</em></td><td>)</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>class</em> = <code>'<a class="el" href="class_button.html">Button</a>'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Adds button</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$label</td><td>label of button </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>optional name of button class</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_button.html">Button</a> </dd></dl>
 
 </div>
 </div>
@@ -298,49 +278,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds column ordering object. With it you can reorder your columns. </p>
+<p>Adds column ordering object</p>
+<p>With it you can reorder your columns</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_order.html">Order</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aec465f1f11eb671f1d517de90bb6a610"></a><!-- doxytag: member="Grid_Advanced::addPaginator" ref="aec465f1f11eb671f1d517de90bb6a610" args="($ipp=25)" -->
+<a class="anchor" id="a7ca42c54ac7d0faf99522b30b6bdb9ed"></a><!-- doxytag: member="Grid_Advanced::addPaginator" ref="a7ca42c54ac7d0faf99522b30b6bdb9ed" args="($ipp=25, $options=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#aec465f1f11eb671f1d517de90bb6a610">addPaginator</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a7ca42c54ac7d0faf99522b30b6bdb9ed">addPaginator</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>ipp</em> = <code>25</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Adds paginator to the grid </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">$ipp</td><td>row count per page </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a42bcfe82b8d826b0c156f6e464af76ba"></a><!-- doxytag: member="Grid_Advanced::addQuickSearch" ref="a42bcfe82b8d826b0c156f6e464af76ba" args="($fields, $class='QuickSearch')" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a42bcfe82b8d826b0c156f6e464af76ba">addQuickSearch</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>fields</em>, </td>
+          <td class="paramname"><em>ipp</em> = <code>25</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>class</em> = <code>'<a class="el" href="class_quick_search.html">QuickSearch</a>'</code>&#160;</td>
+          <td class="paramname"><em>options</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -350,6 +308,58 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Adds paginator to the grid</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$ipp</td><td>row count per page </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$options</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8384b9aeb1f95bfb704d52965eec8d76"></a><!-- doxytag: member="Grid_Advanced::addQuickSearch" ref="a8384b9aeb1f95bfb704d52965eec8d76" args="($fields, $class='QuickSearch', $options=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a8384b9aeb1f95bfb704d52965eec8d76">addQuickSearch</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>fields</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>class</em> = <code>'<a class="el" href="class_quick_search.html">QuickSearch</a>'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>options</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Adds <a class="el" href="class_quick_search.html">QuickSearch</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$fields</td><td>array of fieldnames used in quick search </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$class</td><td>optional quick search object class </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$options</td><td>optional options array</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="class_quick_search.html">QuickSearch</a> </dd></dl>
 
 </div>
 </div>
@@ -367,7 +377,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds column with checkboxes on the basis of <a class="el" href="class_model.html">Model</a> definition  - should be <a class="el" href="class_form___field.html">Form_Field</a> object or <a class="el" href="classj_query.html">jQuery</a> selector of 1 field When passing it as <a class="el" href="classj_query.html">jQuery</a> selector don't forget hash sign like "#myfield" </p>
+<p>Adds column with checkboxes on the basis of <a class="el" href="class_model.html">Model</a> definition</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$field</td><td>should be <a class="el" href="class_form___field.html">Form_Field</a> object or <a class="el" href="classj_query.html">jQuery</a> selector of 1 field. When passing it as <a class="el" href="classj_query.html">jQuery</a> selector don't forget to use hash sign like "#myfield" </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -401,15 +417,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Apply sorting on particular field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">Iterator</td><td class="paramname">$i</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$desc</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a3b2fdca402f000d0fc1853ea85bafbfa"></a><!-- doxytag: member="Grid_Advanced::applyTDParams" ref="a3b2fdca402f000d0fc1853ea85bafbfa" args="($field, $totals=false)" -->
+<a class="anchor" id="a93655a3c67d7554e51de3a07da240f91"></a><!-- doxytag: member="Grid_Advanced::applyTDParams" ref="a93655a3c67d7554e51de3a07da240f91" args="($field, &amp;$row_template=null)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a3b2fdca402f000d0fc1853ea85bafbfa">applyTDParams</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a93655a3c67d7554e51de3a07da240f91">applyTDParams</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -417,8 +443,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>totals</em> = <code>false</code>&#160;</td>
+          <td class="paramtype">&amp;$&#160;</td>
+          <td class="paramname"><em>row_template</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -428,27 +454,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Apply TD parameters to appropriate template</p>
+<p>You can pass row template to use too. That's useful to set up totals rows, for example.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>Fieldname </td></tr>
+    <tr><td class="paramtype">SQLite</td><td class="paramname">$row_template</td><td>Optional row template</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="add8c5a33f231d9979e5f8bbded576d9e"></a><!-- doxytag: member="Grid_Advanced::defaultTemplate" ref="add8c5a33f231d9979e5f8bbded576d9e" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">defaultTemplate</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This method is commonly redefined to set a default template for an object. If you return string, object will try to clone specified region off the parent. If you specify array, it will load and parse a separate <a class="el" href="class_s_mlite.html">SMlite</a> template.</p>
-<p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
-
-<p>Reimplemented from <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>.</p>
+<p>Reimplemented from <a class="el" href="class_grid___basic.html#a93655a3c67d7554e51de3a07da240f91">Grid_Basic</a>.</p>
 
 </div>
 </div>
@@ -466,6 +483,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as boolean</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -483,6 +508,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as button</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -500,6 +533,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as checkbox</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -517,6 +558,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as confirm button</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -534,6 +583,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as date</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -551,6 +608,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as datetime</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -568,6 +633,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as delete button</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -595,15 +668,399 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format expander</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>field name </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$column</td><td>column configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7fe1013a203acb380b84a8895da0f35b"></a><!-- doxytag: member="Grid_Advanced::format_expander_widget" ref="a7fe1013a203acb380b84a8895da0f35b" args="($field, $column)" -->
+<a class="anchor" id="a43e9386cf65d1f1899ca78606ff892ef"></a><!-- doxytag: member="Grid_Advanced::format_fullwidth" ref="a43e9386cf65d1f1899ca78606ff892ef" args="($field)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a7fe1013a203acb380b84a8895da0f35b">format_expander_widget</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a43e9386cf65d1f1899ca78606ff892ef">format_fullwidth</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as full width field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4a03595fec80a615d83c480724af3e4c"></a><!-- doxytag: member="Grid_Advanced::format_html" ref="a4a03595fec80a615d83c480724af3e4c" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a4a03595fec80a615d83c480724af3e4c">format_html</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as HTML without encoding. Use with care.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afdb64d0b4ac2764ac1666adba274bca1"></a><!-- doxytag: member="Grid_Advanced::format_image" ref="afdb64d0b4ac2764ac1666adba274bca1" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#afdb64d0b4ac2764ac1666adba274bca1">format_image</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as HTML image tag</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a97da17ae76d20de2f9a7d056b1fed249"></a><!-- doxytag: member="Grid_Advanced::format_link" ref="a97da17ae76d20de2f9a7d056b1fed249" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a97da17ae76d20de2f9a7d056b1fed249">format_link</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as link</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e9046086b8495a830cd3b954489ef6a"></a><!-- doxytag: member="Grid_Advanced::format_money" ref="a4e9046086b8495a830cd3b954489ef6a" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a4e9046086b8495a830cd3b954489ef6a">format_money</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as money with 2 digit precision</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8f3a0124469cb14c5fb8b18df28ff09e"></a><!-- doxytag: member="Grid_Advanced::format_nl2br" ref="a8f3a0124469cb14c5fb8b18df28ff09e" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a8f3a0124469cb14c5fb8b18df28ff09e">format_nl2br</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as New-Line to BR-eak</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a980e11a9642faf153e90815070895590"></a><!-- doxytag: member="Grid_Advanced::format_nowrap" ref="a980e11a9642faf153e90815070895590" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a980e11a9642faf153e90815070895590">format_nowrap</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as no-wrap field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9295a083215102a37fde05e948f5adcc"></a><!-- doxytag: member="Grid_Advanced::format_number" ref="a9295a083215102a37fde05e948f5adcc" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a9295a083215102a37fde05e948f5adcc">format_number</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as number</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9ae465de4b5fa336d597cd49c1e2ab00"></a><!-- doxytag: member="Grid_Advanced::format_password" ref="a9ae465de4b5fa336d597cd49c1e2ab00" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a9ae465de4b5fa336d597cd49c1e2ab00">format_password</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format password field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b98cd1630ba6b18e146c24930c9d5fd"></a><!-- doxytag: member="Grid_Advanced::format_prompt" ref="a7b98cd1630ba6b18e146c24930c9d5fd" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a7b98cd1630ba6b18e146c24930c9d5fd">format_prompt</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as prompt button</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aaa0b249d27866ba859b7206442cb67d7"></a><!-- doxytag: member="Grid_Advanced::format_real" ref="aaa0b249d27866ba859b7206442cb67d7" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#aaa0b249d27866ba859b7206442cb67d7">format_real</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as real number with 2 digit precision</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3935def4b84f490286442f0252a9aa3f"></a><!-- doxytag: member="Grid_Advanced::format_shorttext" ref="a3935def4b84f490286442f0252a9aa3f" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format shorttext field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8e51fbe8c52dfa19d21f3df527f40325"></a><!-- doxytag: member="Grid_Advanced::format_template" ref="a8e51fbe8c52dfa19d21f3df527f40325" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a8e51fbe8c52dfa19d21f3df527f40325">format_template</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field using template</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ad6194b6fbcd1cd2e745b413c998ef5"></a><!-- doxytag: member="Grid_Advanced::format_time" ref="a1ad6194b6fbcd1cd2e745b413c998ef5" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a1ad6194b6fbcd1cd2e745b413c998ef5">format_time</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as time</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e9a285cb7063d93a07de5e20d1d050e"></a><!-- doxytag: member="Grid_Advanced::format_timestamp" ref="a9e9a285cb7063d93a07de5e20d1d050e" args="($field)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a9e9a285cb7063d93a07de5e20d1d050e">format_timestamp</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>field</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Format field as timestamp</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aebe0332c7c5e583c35364bba4d7a4ac5"></a><!-- doxytag: member="Grid_Advanced::format_totals_delete" ref="aebe0332c7c5e583c35364bba4d7a4ac5" args="($field, $column)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#aebe0332c7c5e583c35364bba4d7a4ac5">format_totals_delete</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -622,66 +1079,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Additional formatting of delete button fields for totals row</p>
+<p>Basically we remove everything from such field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>field name </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$column</td><td>column configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a43e9386cf65d1f1899ca78606ff892ef"></a><!-- doxytag: member="Grid_Advanced::format_fullwidth" ref="a43e9386cf65d1f1899ca78606ff892ef" args="($field)" -->
+<a class="anchor" id="a6225f3778b69f98c8e3c0d31d83f90fd"></a><!-- doxytag: member="Grid_Advanced::format_totals_expander" ref="a6225f3778b69f98c8e3c0d31d83f90fd" args="($field, $column)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a43e9386cf65d1f1899ca78606ff892ef">format_fullwidth</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4a03595fec80a615d83c480724af3e4c"></a><!-- doxytag: member="Grid_Advanced::format_html" ref="a4a03595fec80a615d83c480724af3e4c" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a4a03595fec80a615d83c480724af3e4c">format_html</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afdb64d0b4ac2764ac1666adba274bca1"></a><!-- doxytag: member="Grid_Advanced::format_image" ref="afdb64d0b4ac2764ac1666adba274bca1" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#afdb64d0b4ac2764ac1666adba274bca1">format_image</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8e7a18959f57aae7eca2d87f3693dbbc"></a><!-- doxytag: member="Grid_Advanced::format_inline" ref="a8e7a18959f57aae7eca2d87f3693dbbc" args="($field, $idfield='id')" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a8e7a18959f57aae7eca2d87f3693dbbc">format_inline</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a6225f3778b69f98c8e3c0d31d83f90fd">format_totals_expander</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -690,7 +1106,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>idfield</em> = <code>'id'</code>&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -700,239 +1116,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Formats the InlineEdit: field that on click should substitute the text in the columns of the row by the edit controls</p>
-<p>The point is to set an Id for each column of the row. To do this, we should set a property showing that id should be added in prerender</p>
-
-</div>
-</div>
-<a class="anchor" id="a97da17ae76d20de2f9a7d056b1fed249"></a><!-- doxytag: member="Grid_Advanced::format_link" ref="a97da17ae76d20de2f9a7d056b1fed249" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a97da17ae76d20de2f9a7d056b1fed249">format_link</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4e9046086b8495a830cd3b954489ef6a"></a><!-- doxytag: member="Grid_Advanced::format_money" ref="a4e9046086b8495a830cd3b954489ef6a" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a4e9046086b8495a830cd3b954489ef6a">format_money</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8f3a0124469cb14c5fb8b18df28ff09e"></a><!-- doxytag: member="Grid_Advanced::format_nl2br" ref="a8f3a0124469cb14c5fb8b18df28ff09e" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a8f3a0124469cb14c5fb8b18df28ff09e">format_nl2br</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a980e11a9642faf153e90815070895590"></a><!-- doxytag: member="Grid_Advanced::format_nowrap" ref="a980e11a9642faf153e90815070895590" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a980e11a9642faf153e90815070895590">format_nowrap</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9295a083215102a37fde05e948f5adcc"></a><!-- doxytag: member="Grid_Advanced::format_number" ref="a9295a083215102a37fde05e948f5adcc" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a9295a083215102a37fde05e948f5adcc">format_number</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a21f728993cb2ddbda5e975808f30a224"></a><!-- doxytag: member="Grid_Advanced::format_order" ref="a21f728993cb2ddbda5e975808f30a224" args="($field, $idfield='id')" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a21f728993cb2ddbda5e975808f30a224">format_order</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>idfield</em> = <code>'id'</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9ae465de4b5fa336d597cd49c1e2ab00"></a><!-- doxytag: member="Grid_Advanced::format_password" ref="a9ae465de4b5fa336d597cd49c1e2ab00" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a9ae465de4b5fa336d597cd49c1e2ab00">format_password</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a7b98cd1630ba6b18e146c24930c9d5fd"></a><!-- doxytag: member="Grid_Advanced::format_prompt" ref="a7b98cd1630ba6b18e146c24930c9d5fd" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a7b98cd1630ba6b18e146c24930c9d5fd">format_prompt</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aaa0b249d27866ba859b7206442cb67d7"></a><!-- doxytag: member="Grid_Advanced::format_real" ref="aaa0b249d27866ba859b7206442cb67d7" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#aaa0b249d27866ba859b7206442cb67d7">format_real</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3935def4b84f490286442f0252a9aa3f"></a><!-- doxytag: member="Grid_Advanced::format_shorttext" ref="a3935def4b84f490286442f0252a9aa3f" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a3935def4b84f490286442f0252a9aa3f">format_shorttext</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8e51fbe8c52dfa19d21f3df527f40325"></a><!-- doxytag: member="Grid_Advanced::format_template" ref="a8e51fbe8c52dfa19d21f3df527f40325" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a8e51fbe8c52dfa19d21f3df527f40325">format_template</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a1ad6194b6fbcd1cd2e745b413c998ef5"></a><!-- doxytag: member="Grid_Advanced::format_time" ref="a1ad6194b6fbcd1cd2e745b413c998ef5" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a1ad6194b6fbcd1cd2e745b413c998ef5">format_time</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9e9a285cb7063d93a07de5e20d1d050e"></a><!-- doxytag: member="Grid_Advanced::format_timestamp" ref="a9e9a285cb7063d93a07de5e20d1d050e" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a9e9a285cb7063d93a07de5e20d1d050e">format_timestamp</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Additional formatting of expander fields for totals row</p>
+<p>Basically we remove everything from such field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>field name </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$column</td><td>column configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -950,6 +1143,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Additional formatting of money fields for totals row</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -967,6 +1168,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Additional formatting of number fields for totals row</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -984,32 +1193,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Additional formatting of real number fields for totals row</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af95ffd644e98c84cfb7ba343dbbb98ae"></a><!-- doxytag: member="Grid_Advanced::format_totals_text" ref="af95ffd644e98c84cfb7ba343dbbb98ae" args="($field)" -->
+<a class="anchor" id="ae532484af18e59245870bc961164753a"></a><!-- doxytag: member="Grid_Advanced::format_totals_template" ref="ae532484af18e59245870bc961164753a" args="($field, $column)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#af95ffd644e98c84cfb7ba343dbbb98ae">format_totals_text</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af2eed9cd0525a1a66940a79dc6121bdc"></a><!-- doxytag: member="Grid_Advanced::format_widget" ref="af2eed9cd0525a1a66940a79dc6121bdc" args="($field, $widget, $params=array(), $widget_json=null)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#af2eed9cd0525a1a66940a79dc6121bdc">format_widget</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#ae532484af18e59245870bc961164753a">format_totals_template</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -1018,19 +1218,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>widget</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>params</em> = <code>array()</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>widget_json</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>column</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1040,6 +1228,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Additional formatting of custom template fields for totals row</p>
+<p>Basically we remove everything from such field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>field name </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$column</td><td>column configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1057,6 +1255,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Format field as wrap field</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1073,51 +1279,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Additional formatting for Totals row </p>
+<p>Additional formatting for Totals row</p>
+<p>Extends <a class="el" href="class_complete_lister.html">CompleteLister</a> formatTotalsRow method.</p>
+<p>Note: in this method you should only add *additional* formatting of totals row because standard row formatting will be already applied by calling parent::formatTotalsRow().</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#ac1054b9842592b68e4be6169a20bc8cb">CompleteLister</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab6e0c003ad3f69d2e02779fcfe7f2358"></a><!-- doxytag: member="Grid_Advanced::getAllTDParams" ref="ab6e0c003ad3f69d2e02779fcfe7f2358" args="()" -->
+<a class="anchor" id="a2693089eaf4ca0d30d0ce4934840e4bd"></a><!-- doxytag: member="Grid_Advanced::getCurrentIndex" ref="a2693089eaf4ca0d30d0ce4934840e4bd" args="($idfield= 'id')" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#ab6e0c003ad3f69d2e02779fcfe7f2358">getAllTDParams</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="afa3923ca869a04e880535ce6c8868c0c"></a><!-- doxytag: member="Grid_Advanced::getColumn" ref="afa3923ca869a04e880535ce6c8868c0c" args="($column)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#afa3923ca869a04e880535ce6c8868c0c">getColumn</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>column</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af1f578ffd68595d8c0cfbb49c366ca8f"></a><!-- doxytag: member="Grid_Advanced::getCurrentIndex" ref="af1f578ffd68595d8c0cfbb49c366ca8f" args="($idfield='id')" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#af1f578ffd68595d8c0cfbb49c366ca8f">getCurrentIndex</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#a2693089eaf4ca0d30d0ce4934840e4bd">getCurrentIndex</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>idfield</em> = <code>'id'</code></td><td>)</td>
@@ -1126,51 +1302,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3a46492254fde0243e3175d62270a806"></a><!-- doxytag: member="Grid_Advanced::getExpanderId" ref="a3a46492254fde0243e3175d62270a806" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a3a46492254fde0243e3175d62270a806">getExpanderId</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the ID value of the expanded content on the basis of GET parameters </p>
-
-</div>
-</div>
-<a class="anchor" id="ac79eeaca27de3b2b8fc5a4acd0e38a95"></a><!-- doxytag: member="Grid_Advanced::getFieldStyle" ref="ac79eeaca27de3b2b8fc5a4acd0e38a95" args="($field, $id)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#ac79eeaca27de3b2b8fc5a4acd0e38a95">getFieldStyle</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the structured string with row styles. Used along with getRowContent() in row redrawing</p>
+<p>Returns ID of record</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$idfield</td><td>ID field name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed </dd></dl>
 
 </div>
 </div>
@@ -1187,70 +1326,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Returns data source iterator</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>mixed </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_lister.html#a7a9f937c2958e6f4dd7b030f86fb70b7">Lister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3fe6d68af17056a527a7f028c4dc46f0"></a><!-- doxytag: member="Grid_Advanced::getRowTitle" ref="a3fe6d68af17056a527a7f028c4dc46f0" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a3fe6d68af17056a527a7f028c4dc46f0">getRowTitle</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aaaaa0c74636c7e8b80931a1968a969c4"></a><!-- doxytag: member="Grid_Advanced::hasColumn" ref="aaaaa0c74636c7e8b80931a1968a969c4" args="($column)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#aaaaa0c74636c7e8b80931a1968a969c4">hasColumn</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>column</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4db8ae8ecf2d34fed5eeb8cfc02658b1"></a><!-- doxytag: member="Grid_Advanced::importFields" ref="a4db8ae8ecf2d34fed5eeb8cfc02658b1" args="($model, $fields=undefined)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>model</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>fields</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Reimplemented from <a class="el" href="class_grid___basic.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">Grid_Basic</a>.</p>
 
 </div>
 </div>
@@ -1267,9 +1346,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
+<p>Initialization</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
-<p>This method is called for initialization</p>
 
 <p>Reimplemented from <a class="el" href="class_grid___basic.html#a4be4055f3361d4800e16bc2e2e38cda6">Grid_Basic</a>.</p>
 
@@ -1289,6 +1367,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column as boolean</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1306,6 +1392,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize buttons column</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1323,6 +1417,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize confirm buttons column</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1340,6 +1442,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column with delete buttons</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1357,23 +1467,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ae68e59ecb6b88f19cb2ea28a61540aca"></a><!-- doxytag: member="Grid_Advanced::init_expander_widget" ref="ae68e59ecb6b88f19cb2ea28a61540aca" args="($field)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#ae68e59ecb6b88f19cb2ea28a61540aca">init_expander_widget</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Initialize expander</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td>field name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1391,6 +1492,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column as fullwidth</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1408,6 +1517,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column with links using template</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1425,6 +1542,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column as money</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1442,6 +1567,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize prompt buttons column</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1459,6 +1592,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Initialize column as real number</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1476,56 +1617,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a17280c65fdb3687e63c07ed76750b33c"></a><!-- doxytag: member="Grid_Advanced::makeTitle" ref="a17280c65fdb3687e63c07ed76750b33c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a17280c65fdb3687e63c07ed76750b33c">makeTitle</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a001ca3b7e28245c4b09deb0e2d32e0b9"></a><!-- doxytag: member="Grid_Advanced::prepareIdField" ref="a001ca3b7e28245c4b09deb0e2d32e0b9" args="($val)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a001ca3b7e28245c4b09deb0e2d32e0b9">prepareIdField</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9b9d5c303403ad0a4ee54b2a08e2779b"></a><!-- doxytag: member="Grid_Advanced::removeColumn" ref="a9b9d5c303403ad0a4ee54b2a08e2779b" args="($name)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a9b9d5c303403ad0a4ee54b2a08e2779b">removeColumn</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Make sortable</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$db_sort</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
@@ -1542,46 +1641,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default rendering method. Generates HTML presentation of $this view. For most views, rendering the $this-&gt;template would be sufficient.</p>
-<p>If your view requires to do some heavy-duty work, please be sure to do it inside <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">render()</a> method. This way would save some performance in cases when your object is not being rendered.</p>
-<p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
+<p>Render grid</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a38e5467664e0464a79133a3e4e9359c2"></a><!-- doxytag: member="Grid_Advanced::setButtonClass" ref="a38e5467664e0464a79133a3e4e9359c2" args="($class)" -->
+<a class="anchor" id="acb52af882dffe27f0b0dddce352780c3"></a><!-- doxytag: member="Grid_Advanced::renderTotalsRow" ref="acb52af882dffe27f0b0dddce352780c3" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#a38e5467664e0464a79133a3e4e9359c2">setButtonClass</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#acb52af882dffe27f0b0dddce352780c3">renderTotalsRow</a> </td>
           <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>class</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Render Totals row</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-</div>
-</div>
-<a class="anchor" id="af070c2fe7c7fd07bea186e5b77a91de6"></a><!-- doxytag: member="Grid_Advanced::setNoRecords" ref="af070c2fe7c7fd07bea186e5b77a91de6" args="($message)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#af070c2fe7c7fd07bea186e5b77a91de6">setNoRecords</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>message</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Reimplemented from <a class="el" href="class_complete_lister.html#acb52af882dffe27f0b0dddce352780c3">CompleteLister</a>.</p>
 
 </div>
 </div>
@@ -1615,6 +1698,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Sets TD params</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$path</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -1632,15 +1725,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>This allows you to use Template</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$template</td><td>template as a string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ae7c3ae0aaab25eda615e04b6b3ff59da"></a><!-- doxytag: member="Grid_Advanced::setTotalsTitle" ref="ae7c3ae0aaab25eda615e04b6b3ff59da" args="($field, $title=&quot;Total:&quot;)" -->
+<a class="anchor" id="ac9c4a0ad6b260a3c028d0a926cd91381"></a><!-- doxytag: member="Grid_Advanced::setTotalsTitle" ref="ac9c4a0ad6b260a3c028d0a926cd91381" args="($field, $title=&quot;Total: %s row%s&quot;)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#ae7c3ae0aaab25eda615e04b6b3ff59da">setTotalsTitle</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#ac9c4a0ad6b260a3c028d0a926cd91381">setTotalsTitle</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>field</em>, </td>
@@ -1649,7 +1750,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>title</em> = <code>&quot;Total:&quot;</code>&#160;</td>
+          <td class="paramname"><em>title</em> = <code>&quot;Total:&#160;%s&#160;row%s&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1659,41 +1760,33 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Sets totals title field and text</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$field</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$title</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>$this </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="adb2ef71e95464b35945ff9f67e4d6e44"></a><!-- doxytag: member="Grid_Advanced::setWidth" ref="adb2ef71e95464b35945ff9f67e4d6e44" args="($width)" -->
+<a class="anchor" id="acc9a5a53a7c38fc0537ffc7d691a2057"></a><!-- doxytag: member="Grid_Advanced::staticSortCompare" ref="acc9a5a53a7c38fc0537ffc7d691a2057" args="($str1, $str2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#adb2ef71e95464b35945ff9f67e4d6e44">setWidth</a> </td>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#acc9a5a53a7c38fc0537ffc7d691a2057">staticSortCompare</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>width</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad47655f23063e4864099fc1f588e4b6a"></a><!-- doxytag: member="Grid_Advanced::staticSortCompare" ref="ad47655f23063e4864099fc1f588e4b6a" args="($row1, $row2)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_grid___advanced.html#ad47655f23063e4864099fc1f588e4b6a">staticSortCompare</a> </td>
-          <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>row1</em>, </td>
+          <td class="paramname"><em>str1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>row2</em>&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1703,6 +1796,37 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Compare two strings and return: &lt; 0 if str1 is less than str2; &gt; 0 if str1 is greater than str2, and 0 if they are equal.</p>
+<p>Note that this comparison is case sensitive</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$str1</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$str2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afad8fdd57ca2695418513cb1cfcb9500"></a><!-- doxytag: member="Grid_Advanced::updateGrandTotals" ref="afad8fdd57ca2695418513cb1cfcb9500" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_grid___advanced.html#afad8fdd57ca2695418513cb1cfcb9500">updateGrandTotals</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Calculate grand totals of all rows</p>
+<p>Called one time on rendering phase - before <a class="el" href="class_grid___basic.html#a8cffb519cef8d77078eda50bec9f1496">renderRows()</a> call.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_complete_lister.html#afad8fdd57ca2695418513cb1cfcb9500">CompleteLister</a>.</p>
 
 </div>
 </div>
@@ -1719,7 +1843,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Update totals on rows. Called before each <a class="el" href="class_grid___basic.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> call </p>
+<p>Add current rendered row values to totals</p>
+<p>Called before each <a class="el" href="class_grid___basic.html#ab05ae94078db7f9ae3bc38a3d229aef2">formatRow()</a> call.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_complete_lister.html#a61454d750109349ca19666b2b07fb44d">CompleteLister</a>.</p>
 
@@ -1736,6 +1862,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>used in button formatters to share <a class="el" href="class_u_r_l.html">URL</a> between methods </p>
 
 </div>
 </div>
@@ -1749,6 +1876,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p><a class="el" href="class_grid.html">Grid</a> buttons</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_grid___advanced.html#a3a490f0df79f5b911719790b3b6e68a0">addButton()</a> </dd></dl>
 
 </div>
 </div>
@@ -1762,22 +1891,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab949cccd963058f0937d04bc26ee24a7"></a><!-- doxytag: member="Grid_Advanced::$default_controller" ref="ab949cccd963058f0937d04bc26ee24a7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$default_controller = '<a class="el" href="class_m_v_c_grid.html">MVCGrid</a>'</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>When using <a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel()</a> with Views some views will want to populate fields, columns etc corresponding to models meta-data. That is the job of <a class="el" href="class_controller.html">Controller</a>. When you create a custom controller for your view set this property to point at your controller and it will be used automatically </p>
-
-<p>Reimplemented from <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>.</p>
+<p>Static data source? </p>
 
 </div>
 </div>
@@ -1807,42 +1921,18 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a3cc428a595858ebaf6b395a694226c45"></a><!-- doxytag: member="Grid_Advanced::$last_column" ref="a3cc428a595858ebaf6b395a694226c45" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$last_column</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af619926fd0313d1f37e3386aa5f9f9cd"></a><!-- doxytag: member="Grid_Advanced::$no_records_message" ref="af619926fd0313d1f37e3386aa5f9f9cd" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$no_records_message = &quot;No matching records to display&quot;<code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a813d989b6fadde4afb97125cb6dd0640"></a><!-- doxytag: member="Grid_Advanced::$paginator" ref="a813d989b6fadde4afb97125cb6dd0640" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">$paginator = null</td>
+          <td class="memname">$paginator = null<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p><a class="el" href="class_paginator.html">Paginator</a> object</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_grid___advanced.html#a7ca42c54ac7d0faf99522b30b6bdb9ed">addPaginator()</a> </dd></dl>
 
 </div>
 </div>
@@ -1856,6 +1946,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Sorting </p>
 
 </div>
 </div>
@@ -1882,56 +1973,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>$tdparam property is an array with cell parameters specified in td tag. This should be a hash: 'param_name'=&gt;'param_value' Following parameters treated and processed in a special way: 1) 'style': nested array, style parameter. items of this nested array converted to a form of style: style="param_name: param_value; param_name: param_value" 2) OBSOLTE! wrap: possible values are true|false; if true, 'wrap' is added use style/white-space property or simply <a class="el" href="class_grid___advanced.html#af832bdba2072a28443e8cf00221668b3">format_wrap()</a></p>
-<p>All the rest are not checked and converted to a form of param_name="param_value"</p>
-<p>This is a tree-like array with the following structure: array( [level1]=&gt;dataset_row=array( [level2]=&gt;field=array( [level3]=&gt;tdparam_elements=array( param_name=&gt;param_value ) ) ) ) </p>
-
-</div>
-</div>
-<a class="anchor" id="aadf769619b583dcfa3e416c1f0bdf05e"></a><!-- doxytag: member="Grid_Advanced::$title_col" ref="aadf769619b583dcfa3e416c1f0bdf05e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$title_col = array()</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a006a1ee45474664193b59e380003a49a"></a><!-- doxytag: member="Grid_Advanced::$totals_t" ref="a006a1ee45474664193b59e380003a49a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$totals_t = null</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Will be initialized to "totals" template when <a class="el" href="class_complete_lister.html#a91a8cb89472bdb583bba068eaabe084c">addTotals()</a> is called </p>
-
-<p>Reimplemented from <a class="el" href="class_complete_lister.html#a006a1ee45474664193b59e380003a49a">CompleteLister</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="acd0b71ce34bf46bee7aa2f264e4e279f"></a><!-- doxytag: member="Grid_Advanced::$totals_value_na" ref="acd0b71ce34bf46bee7aa2f264e4e279f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">$totals_value_na = '-'</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>$tdparam property is an array with cell parameters specified in td tag. This should be a hash: 'param_name'=&gt;'param_value' Following parameters treated and processed in a special way: 1) 'style': nested array, style parameter. items of this nested array converted to a form of style: style="param_name: param_value; param_name: param_value"</p>
+<p>All the rest are not checked and simply converted to a form of param_name="param_value"</p>
+<p>This is a tree-like array with the following structure: array( [level1] =&gt; dataset_row = array( [level2] =&gt; field = array( [level3] =&gt; tdparam_elements = array( param_name =&gt; param_value ) ) ) ) </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Grid/<a class="el" href="_advanced_8php.html">Advanced.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Grid/<a class="el" href="_advanced_8php.html">Advanced.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1940,7 +1989,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -1953,7 +2002,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_grid___advanced.html">Grid_Advanced</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

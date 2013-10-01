@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -135,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hasColumn()
-: <a class="el" href="class_grid___advanced.html#aaaaa0c74636c7e8b80931a1968a969c4">Grid_Advanced</a>
+: <a class="el" href="class_grid___basic.html#ad22f74443f99e6130b829d2b7bdb4bdf">Grid_Basic</a>
 </li>
 <li>hasElement()
 : <a class="el" href="class_abstract_object.html#a9619b88e5947b9beb5efb14c6ccd53e0">AbstractObject</a>
@@ -151,17 +152,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_d_b__dsql.html#aead37bdd57fe56e0ad4a70867563cd0b">DB_dsql</a>
 </li>
 <li>hasMany()
-: <a class="el" href="class_model.html#af1a9ae3c8bdfc60f8883c33d0e012f12">Model</a>
+: <a class="el" href="class_s_q_l___model.html#af44629a163f40e941ef95ce56ae9a101">SQL_Model</a>
 , <a class="el" href="class_s_q_l___relation.html#af44629a163f40e941ef95ce56ae9a101">SQL_Relation</a>
-, <a class="el" href="class_model___table.html#af44629a163f40e941ef95ce56ae9a101">Model_Table</a>
+, <a class="el" href="class_model.html#ac3d748c0f9cebacae5b45c2694a3c605">Model</a>
 </li>
 <li>hasMethod()
 : <a class="el" href="class_abstract_object.html#a6d24132dc92242f7f71aa98e7ae86442">AbstractObject</a>
 </li>
 <li>hasOne()
-: <a class="el" href="class_model___table.html#a767f9ab1a317f8182fcb9814b13a347c">Model_Table</a>
+: <a class="el" href="class_model.html#a89794a7be3306bdc07ab207ac214ba56">Model</a>
+, <a class="el" href="class_mongo___model.html#a15a526231d7a7945fc6d1c169bc9e930">Mongo_Model</a>
+, <a class="el" href="class_s_q_l___model.html#a767f9ab1a317f8182fcb9814b13a347c">SQL_Model</a>
 , <a class="el" href="class_s_q_l___relation.html#a5b2c621609073dc27ae66381d9ea6cf5">SQL_Relation</a>
-, <a class="el" href="class_model.html#a89794a7be3306bdc07ab207ac214ba56">Model</a>
 </li>
 <li>hasOption()
 : <a class="el" href="class_d_b__dsql.html#a11ad07d9420b0b9db29da1e39a596e98">DB_dsql</a>
@@ -174,6 +176,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>hidden()
 : <a class="el" href="class_field.html#a40b070de153c5a8f1734b77a64ba0172">Field</a>
+</li>
+<li>hint()
+: <a class="el" href="class_field.html#a9747b10158c287a2b297b11b56318ebf">Field</a>
 </li>
 <li>hook()
 : <a class="el" href="class_abstract_object.html#a4d036962b05d7009036e5bc13c1b3c11">AbstractObject</a>
@@ -188,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -201,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="nav-path" class="navpath">
     <ul>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:13 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:42 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

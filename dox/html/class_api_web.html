@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -114,6 +115,7 @@ Inheritance diagram for ApiWeb:</div>
 <area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="53,0,149,24"/>
 <area href="class_api_frontend.html" alt="ApiFrontend" shape="rect" coords="0,224,96,248"/>
 <area href="class_api_install.html" alt="ApiInstall" shape="rect" coords="106,224,202,248"/>
+<area href="class_test_api.html" alt="TestApi" shape="rect" coords="0,280,96,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -145,6 +147,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a62eae5ca4fe4403928092ef8eb0e9d1d">redirect</a> ($page=null, $args=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#aa265a4f5509ac06e3c0bc7517e591663">setTags</a> ($t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a9759ffd43dac374e766b19cc3e97e38a">isAjaxOutput</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#ad2024638c60848eb9facfba8a5609199">_locatePublic</a> ($path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a404882f7238567c8924cc0bde4d69645">_locateJS</a> ($path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a7c481cd6035b17742a64cf10cfcf5777">_locateCSS</a> ($path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_api_web.html#a6b1f9e6d6be3aaff35eb9a25354b589f">renderOnly</a> ($object)</td></tr>
@@ -216,6 +219,23 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_api_web.html#a404882f7238567c8924cc0bde4d69645">_locateJS</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad2024638c60848eb9facfba8a5609199"></a><!-- doxytag: member="ApiWeb::_locatePublic" ref="ad2024638c60848eb9facfba8a5609199" args="($path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_api_web.html#ad2024638c60848eb9facfba8a5609199">_locatePublic</a> </td>
           <td>(</td>
           <td class="paramtype">$&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
@@ -402,6 +422,8 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>- used by <a class="el" href="class_u_r_l.html">URL</a> class </p>
 
+<p>Reimplemented from <a class="el" href="class_api_c_l_i.html#a1a5b9b7bc783823accde6b0b9ce16f86">ApiCLI</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a4be4055f3361d4800e16bc2e2e38cda6"></a><!-- doxytag: member="ApiWeb::init" ref="a4be4055f3361d4800e16bc2e2e38cda6" args="()" -->
@@ -417,12 +439,12 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redifine this function instead of default constructor </p>
+<p>Redefine this function instead of default constructor </p>
 <p>In addition to default initialization, set up logger and template </p>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#a4be4055f3361d4800e16bc2e2e38cda6">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_api_install.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiInstall</a>.</p>
+<p>Reimplemented in <a class="el" href="class_api_install.html#a4be4055f3361d4800e16bc2e2e38cda6">ApiInstall</a>, and <a class="el" href="class_test_api.html#a4be4055f3361d4800e16bc2e2e38cda6">TestApi</a>.</p>
 
 </div>
 </div>
@@ -649,7 +671,6 @@ Data Fields</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Perform instant redirect to another page </p>
-<p>Redirect to specified page. $args are $_GET arguments. Use this function instead of issuing header("Location") stuff</p>
 
 </div>
 </div>
@@ -791,7 +812,7 @@ Data Fields</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>If version tag is defined in template, inserts current version of Agile Toolkit there. When newer verison is available, it will be displayed. Override this with empty function to disable. </p>
+<p>If version tag is defined in template, inserts current version of Agile Toolkit there. When newer version is available, it will be displayed. Override this with empty function to disable. </p>
 
 </div>
 </div>
@@ -879,7 +900,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_api_web_8php.html">ApiWeb.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_api_web_8php.html">ApiWeb.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -888,7 +909,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -901,7 +922,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_api_web.html">ApiWeb</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

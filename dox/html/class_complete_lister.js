@@ -1,18 +1,27 @@
 var class_complete_lister =
 [
+    [ "_addTotals", "class_complete_lister.html#aa6133dd023f3716baebebd0915e29781", null ],
+    [ "addGrandTotals", "class_complete_lister.html#a34638cfb9224ced65c90881295fd66f3", null ],
     [ "addTotals", "class_complete_lister.html#a91a8cb89472bdb583bba068eaabe084c", null ],
     [ "defaultTemplate", "class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e", null ],
     [ "formatRow", "class_complete_lister.html#ab05ae94078db7f9ae3bc38a3d229aef2", null ],
     [ "formatTotalsRow", "class_complete_lister.html#ac1054b9842592b68e4be6169a20bc8cb", null ],
     [ "init", "class_complete_lister.html#a4be4055f3361d4800e16bc2e2e38cda6", null ],
+    [ "removeTotals", "class_complete_lister.html#aab87838f1582662fc4571c7ed9e9b0c1", null ],
     [ "render", "class_complete_lister.html#afde88292c44dc59faf017738dae6dffb", null ],
+    [ "renderDataRow", "class_complete_lister.html#afee95addb65fc71e9deeb12048f2712d", null ],
     [ "renderRows", "class_complete_lister.html#a8cffb519cef8d77078eda50bec9f1496", null ],
+    [ "renderTotalsRow", "class_complete_lister.html#acb52af882dffe27f0b0dddce352780c3", null ],
+    [ "updateGrandTotals", "class_complete_lister.html#afad8fdd57ca2695418513cb1cfcb9500", null ],
     [ "updateTotals", "class_complete_lister.html#a61454d750109349ca19666b2b07fb44d", null ],
     [ "$container_tag", "class_complete_lister.html#ab56179d3da9f7be09d655d0698f5e880", null ],
+    [ "$even_css_class", "class_complete_lister.html#a8e1fae22a368ec7f0501b06b4ee34293", null ],
     [ "$item_tag", "class_complete_lister.html#a1c5ab74e36790de226cbf169bbbe1edd", null ],
+    [ "$odd_css_class", "class_complete_lister.html#a0e19151ef88f952c8089a8a4a6302633", null ],
     [ "$odd_even", "class_complete_lister.html#a80d56bbd4c03d0ee9b9fe450da93913f", null ],
     [ "$row_t", "class_complete_lister.html#a6deecca6002d52f6e9b70f71c463f31e", null ],
     [ "$total_rows", "class_complete_lister.html#af2c641e024ee7eeec68ae26c08ca2cf2", null ],
     [ "$totals", "class_complete_lister.html#ab3c7a9eeb638bd5906689f9d5cba65bc", null ],
-    [ "$totals_t", "class_complete_lister.html#a006a1ee45474664193b59e380003a49a", null ]
+    [ "$totals_t", "class_complete_lister.html#a006a1ee45474664193b59e380003a49a", null ],
+    [ "$totals_type", "class_complete_lister.html#ab2c2839d11623f6bea604d7cd22538f9", null ]
 ];

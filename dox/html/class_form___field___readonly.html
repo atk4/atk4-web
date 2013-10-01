@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -102,12 +103,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Form_Field_Readonly Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="Form_Field_Readonly" --><!-- doxytag: inherits="Form_Field" --><div class="dynheader">
+<!-- doxytag: class="Form_Field_Readonly" --><!-- doxytag: inherits="Form_Field_ValueList" --><div class="dynheader">
 Inheritance diagram for Form_Field_Readonly:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_form___field___readonly.png" usemap="#Form_Field_Readonly_map" alt=""/>
   <map id="Form_Field_Readonly_map" name="Form_Field_Readonly_map">
+<area href="class_form___field___value_list.html" alt="Form_Field_ValueList" shape="rect" coords="0,168,136,192"/>
 <area href="class_form___field.html" alt="Form_Field" shape="rect" coords="0,112,136,136"/>
 <area href="class_abstract_view.html" alt="AbstractView" shape="rect" coords="0,56,136,80"/>
 <area href="class_abstract_object.html" alt="AbstractObject" shape="rect" coords="0,0,136,24"/>
@@ -119,9 +121,11 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___readonly.html#a4be4055f3361d4800e16bc2e2e38cda6">init</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___readonly.html#acf7b72f550e86edd8c4bf68a763dfe49">getInput</a> ($attr=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___readonly.html#a0fbb8884d6b64d0e4c73c8760060b274">loadPOST</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___readonly.html#af0acc97417dc4c6887db1ccaebe664a9">setValueList</a> ($list)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_form___field___readonly.html#a184909dab34698899937d810a9f5d393">validate</a> ()</td></tr>
 </table>
-<hr/><h2>Member Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Note: This class extends <a class="el" href="class_form___field___value_list.html">Form_Field_ValueList</a> not <a class="el" href="class_form___field.html">Form_Field</a>, because it have to nicely replace <a class="el" href="class_form___field___value_list.html">Form_Field_ValueList</a> based fields too. </p>
+</div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="acf7b72f550e86edd8c4bf68a763dfe49"></a><!-- doxytag: member="Form_Field_Readonly::getInput" ref="acf7b72f550e86edd8c4bf68a763dfe49" args="($attr=array())" -->
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +158,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize object. Always call parent Do not call directly</p>
+<p>Initialize object. Always call parent::init(). Do not call directly.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 <p>This method is called for initialization</p>
 
@@ -180,25 +184,28 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af0acc97417dc4c6887db1ccaebe664a9"></a><!-- doxytag: member="Form_Field_Readonly::setValueList" ref="af0acc97417dc4c6887db1ccaebe664a9" args="($list)" -->
+<a class="anchor" id="a184909dab34698899937d810a9f5d393"></a><!-- doxytag: member="Form_Field_Readonly::validate" ref="a184909dab34698899937d810a9f5d393" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_form___field___readonly.html#af0acc97417dc4c6887db1ccaebe664a9">setValueList</a> </td>
+          <td class="memname"><a class="el" href="class_form___field___readonly.html#a184909dab34698899937d810a9f5d393">validate</a> </td>
           <td>(</td>
-          <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>list</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Validate POSTed field value</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>boolean </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_form___field___value_list.html#a184909dab34698899937d810a9f5d393">Form_Field_ValueList</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_readonly_8php.html">Readonly.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Form/Field/<a class="el" href="_readonly_8php.html">Readonly.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -207,7 +214,7 @@ Public Member Functions</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -220,7 +227,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_form___field___readonly.html">Form_Field_Readonly</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:41 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

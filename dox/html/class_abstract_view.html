@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -119,17 +120,18 @@ Inheritance diagram for AbstractView:</div>
 <area href="class_menu___light.html" alt="Menu_Light" shape="rect" coords="125,448,240,472"/>
 <area href="class_menu_item.html" alt="MenuItem" shape="rect" coords="125,504,240,528"/>
 <area href="class_menu_separator.html" alt="MenuSeparator" shape="rect" coords="125,560,240,584"/>
-<area href="class_page.html" alt="Page" shape="rect" coords="125,616,240,640"/>
-<area href="class_paginator___compat.html" alt="Paginator_Compat" shape="rect" coords="125,672,240,696"/>
-<area href="class_text.html" alt="Text" shape="rect" coords="125,728,240,752"/>
-<area href="class_view.html" alt="View" shape="rect" coords="125,784,240,808"/>
+<area href="class_my_invisible.html" alt="MyInvisible" shape="rect" coords="125,616,240,640"/>
+<area href="class_page.html" alt="Page" shape="rect" coords="125,672,240,696"/>
+<area href="class_paginator___compat.html" alt="Paginator_Compat" shape="rect" coords="125,728,240,752"/>
+<area href="class_text.html" alt="Text" shape="rect" coords="125,784,240,808"/>
+<area href="class_view.html" alt="View" shape="rect" coords="125,840,240,864"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#ad0cb87b388bc74d63dc884accdca8713">__clone</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel</a> ($model, $actual_fields=<a class="el" href="static_8php.html#a93cb8dbe7a79de0dc281e43f0ea6dd80">UNDEFINED</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a9451618bb79badea2edaf9527a5ab03f">setModel</a> ($model, $actual_fields=UNDEFINED)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a703a2027a95ae61e311c7de937369ade">_tsBuffer</a> ($t, $data)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a80b7534dca4a73e1327512970c9912fc">getHTML</a> ($<a class="el" href="class_abstract_object.html#aa118461de946085fe42989193337044a">destroy</a>=true, $execute_js=true)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a8564194c0808f6856ad194d7f84bbcd4">initializeTemplate</a> ($template_spot=null, $template_branch=null)</td></tr>
@@ -142,6 +144,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output</a> ($txt)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a408f80ba244c43561b15988a19cbe837">region_render</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js</a> ($when=null, $code=null, $instance=null)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a00bd547e5a4d45524d8f1b55fd54b5ca">getJSID</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#a35adddcd50522811d1e8b87b1592474a">on</a> ($event, $selector=null, $<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js</a>=null)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_abstract_view.html#aa3e9534005fd516d941f6a5569896e01">$template</a> = false</td></tr>
@@ -240,7 +244,7 @@ Data Fields</h2></td></tr>
 <p>This is overriden by 4th argument in <a class="el" href="class_abstract_object.html#a85c632732b724213c164fbd68fb0aac6">add()</a> method</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>array|string Template definition </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e">ApiWeb</a>, <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>, <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_menu_separator.html#add8c5a33f231d9979e5f8bbded576d9e">MenuSeparator</a>, <a class="el" href="class_menu_item.html#add8c5a33f231d9979e5f8bbded576d9e">MenuItem</a>, <a class="el" href="class_grid___advanced.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Advanced</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_menu___light.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Light</a>, <a class="el" href="class_paginator___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Compat</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_page.html#add8c5a33f231d9979e5f8bbded576d9e">Page</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_menu___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Compat</a>, <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>, <a class="el" href="classpage___error.html#add8c5a33f231d9979e5f8bbded576d9e">page_Error</a>, <a class="el" href="class_menu__j_u_i.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_jUI</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, and <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>.</p>
+<p>Reimplemented in <a class="el" href="class_api_web.html#add8c5a33f231d9979e5f8bbded576d9e">ApiWeb</a>, <a class="el" href="class_grid___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Grid_Basic</a>, <a class="el" href="class_view.html#add8c5a33f231d9979e5f8bbded576d9e">View</a>, <a class="el" href="class_paginator___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Basic</a>, <a class="el" href="class_lister.html#add8c5a33f231d9979e5f8bbded576d9e">Lister</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#add8c5a33f231d9979e5f8bbded576d9e">View_Tabs_jUItabs</a>, <a class="el" href="class_menu_separator.html#add8c5a33f231d9979e5f8bbded576d9e">MenuSeparator</a>, <a class="el" href="class_complete_lister.html#add8c5a33f231d9979e5f8bbded576d9e">CompleteLister</a>, <a class="el" href="class_menu_item.html#add8c5a33f231d9979e5f8bbded576d9e">MenuItem</a>, <a class="el" href="class_view___columns.html#add8c5a33f231d9979e5f8bbded576d9e">View_Columns</a>, <a class="el" href="class_menu___light.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Light</a>, <a class="el" href="class_paginator___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Paginator_Compat</a>, <a class="el" href="class_page.html#add8c5a33f231d9979e5f8bbded576d9e">Page</a>, <a class="el" href="class_view___box.html#add8c5a33f231d9979e5f8bbded576d9e">View_Box</a>, <a class="el" href="class_menu___basic.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Basic</a>, <a class="el" href="class_menu___compat.html#add8c5a33f231d9979e5f8bbded576d9e">Menu_Compat</a>, <a class="el" href="class_view___button.html#add8c5a33f231d9979e5f8bbded576d9e">View_Button</a>, <a class="el" href="classpage___error.html#add8c5a33f231d9979e5f8bbded576d9e">page_Error</a>, <a class="el" href="class_frame.html#add8c5a33f231d9979e5f8bbded576d9e">Frame</a>, and <a class="el" href="class_view___hint.html#add8c5a33f231d9979e5f8bbded576d9e">View_Hint</a>.</p>
 
 </div>
 </div>
@@ -277,6 +281,22 @@ Data Fields</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string HTML </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a00bd547e5a4d45524d8f1b55fd54b5ca"></a><!-- doxytag: member="AbstractView::getJSID" ref="a00bd547e5a4d45524d8f1b55fd54b5ca" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_abstract_view.html#a00bd547e5a4d45524d8f1b55fd54b5ca">getJSID</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
 </div>
 </div>
@@ -385,7 +405,7 @@ Data Fields</h2></td></tr>
 <p>$view-&gt;<a class="el" href="class_abstract_view.html#aeb3ef10a1d8090e178bbf7db8016c462">js()</a>-&gt;_load('myfile');</p>
 <p>It's highly suggested to bind your libraries with <a class="el" href="classj_query.html">jQuery</a> namespace by registered them as plugins, this way you can call your function easily:</p>
 <p>$view-&gt;js(true)-&gt;_load('myfile')-&gt;myplugin('myfunc',array($arg,$arg));</p>
-<p>This approach is compatible with jQuerry UI Widget factory and will keep your code clean</p>
+<p>This approach is compatible with <a class="el" href="classj_query.html">jQuery</a> UI Widget factory and will keep your code clean</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype">string&#160;|&#160;true&#160;|&#160;null</td><td class="paramname">$when</td><td>Event when chain will be executed </td></tr>
@@ -413,6 +433,40 @@ Data Fields</h2></td></tr>
 <div class="memdoc">
 <p>Append our chains to owner's chains. JS chains bubble up to API, which plugs them into template. If the object is being "cut" then only relevant chains will be outputed.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a35adddcd50522811d1e8b87b1592474a"></a><!-- doxytag: member="AbstractView::on" ref="a35adddcd50522811d1e8b87b1592474a" args="($event, $selector=null, $js=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_abstract_view.html#a35adddcd50522811d1e8b87b1592474a">on</a> </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>selector</em> = <code>null</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>js</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Experimental </p>
 
 </div>
 </div>
@@ -460,7 +514,7 @@ Data Fields</h2></td></tr>
 <p>This method will be called instead of default <a class="el" href="class_abstract_view.html#afde88292c44dc59faf017738dae6dffb">render()</a> and it will stop rendering process and output object's HTML once it finds a suitable object. <a class="el" href="class_exception___stop_render.html">Exception_StopRender</a> is used to terminate rendering process and bubble up to the API. This exception is not an error.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">View_Columns</a>, <a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Page</a>, <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Paginator_Basic</a>, and <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">HX</a>.</p>
+<p>Reimplemented in <a class="el" href="class_paginator___basic.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Paginator_Basic</a>, <a class="el" href="class_page.html#a8c9955ce8c33176bd3548ff0b4a8e67f">Page</a>, <a class="el" href="class_view___columns.html#a8c9955ce8c33176bd3548ff0b4a8e67f">View_Columns</a>, <a class="el" href="class_h_x.html#a8c9955ce8c33176bd3548ff0b4a8e67f">HX</a>, and <a class="el" href="class_my_invisible.html#a8c9955ce8c33176bd3548ff0b4a8e67f">MyInvisible</a>.</p>
 
 </div>
 </div>
@@ -500,7 +554,7 @@ Data Fields</h2></td></tr>
 <p>render method relies on method <a class="el" href="class_abstract_view.html#a8ac6ac46665fbc9198c94b8cea378a40">output()</a>, which appeends HTML chunks to the parent's template.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_form___basic.html#afde88292c44dc59faf017738dae6dffb">Form_Basic</a>, <a class="el" href="class_api_web.html#afde88292c44dc59faf017738dae6dffb">ApiWeb</a>, <a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">Form_Field</a>, <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_paginator___compat.html#afde88292c44dc59faf017738dae6dffb">Paginator_Compat</a>, <a class="el" href="class_menu_item.html#afde88292c44dc59faf017738dae6dffb">MenuItem</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_lorem_ipsum.html#afde88292c44dc59faf017738dae6dffb">LoremIpsum</a>, <a class="el" href="class_view___button.html#afde88292c44dc59faf017738dae6dffb">View_Button</a>, <a class="el" href="class_menu___light.html#afde88292c44dc59faf017738dae6dffb">Menu_Light</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">View_Tabs_jUItabs</a>, <a class="el" href="class_text.html#afde88292c44dc59faf017738dae6dffb">Text</a>, <a class="el" href="class_view___icon.html#afde88292c44dc59faf017738dae6dffb">View_Icon</a>, <a class="el" href="class_view___box.html#afde88292c44dc59faf017738dae6dffb">View_Box</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, <a class="el" href="class_hello_world.html#afde88292c44dc59faf017738dae6dffb">HelloWorld</a>, <a class="el" href="class_frame.html#afde88292c44dc59faf017738dae6dffb">Frame</a>, <a class="el" href="class_html.html#afde88292c44dc59faf017738dae6dffb">Html</a>, <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>, <a class="el" href="class_view___button_set.html#afde88292c44dc59faf017738dae6dffb">View_ButtonSet</a>, <a class="el" href="class_view___drop_button.html#afde88292c44dc59faf017738dae6dffb">View_DropButton</a>, and <a class="el" href="class_form___field___hidden.html#afde88292c44dc59faf017738dae6dffb">Form_Field_Hidden</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___basic.html#afde88292c44dc59faf017738dae6dffb">Form_Basic</a>, <a class="el" href="class_api_web.html#afde88292c44dc59faf017738dae6dffb">ApiWeb</a>, <a class="el" href="class_grid___advanced.html#afde88292c44dc59faf017738dae6dffb">Grid_Advanced</a>, <a class="el" href="class_form___field.html#afde88292c44dc59faf017738dae6dffb">Form_Field</a>, <a class="el" href="class_complete_lister.html#afde88292c44dc59faf017738dae6dffb">CompleteLister</a>, <a class="el" href="class_lister.html#afde88292c44dc59faf017738dae6dffb">Lister</a>, <a class="el" href="class_view___button.html#afde88292c44dc59faf017738dae6dffb">View_Button</a>, <a class="el" href="class_paginator___compat.html#afde88292c44dc59faf017738dae6dffb">Paginator_Compat</a>, <a class="el" href="class_menu_item.html#afde88292c44dc59faf017738dae6dffb">MenuItem</a>, <a class="el" href="class_menu___basic.html#afde88292c44dc59faf017738dae6dffb">Menu_Basic</a>, <a class="el" href="class_lorem_ipsum.html#afde88292c44dc59faf017738dae6dffb">LoremIpsum</a>, <a class="el" href="class_view___button_set.html#afde88292c44dc59faf017738dae6dffb">View_ButtonSet</a>, <a class="el" href="class_view___tabs__j_u_itabs.html#afde88292c44dc59faf017738dae6dffb">View_Tabs_jUItabs</a>, <a class="el" href="class_hello_world.html#afde88292c44dc59faf017738dae6dffb">HelloWorld</a>, <a class="el" href="class_menu___light.html#afde88292c44dc59faf017738dae6dffb">Menu_Light</a>, <a class="el" href="class_html.html#afde88292c44dc59faf017738dae6dffb">Html</a>, <a class="el" href="class_text.html#afde88292c44dc59faf017738dae6dffb">Text</a>, <a class="el" href="class_view___icon.html#afde88292c44dc59faf017738dae6dffb">View_Icon</a>, <a class="el" href="class_view___box.html#afde88292c44dc59faf017738dae6dffb">View_Box</a>, <a class="el" href="class_view___model_details.html#afde88292c44dc59faf017738dae6dffb">View_ModelDetails</a>, <a class="el" href="class_menu__j_u_i.html#afde88292c44dc59faf017738dae6dffb">Menu_jUI</a>, <a class="el" href="class_view___drop_button.html#afde88292c44dc59faf017738dae6dffb">View_DropButton</a>, <a class="el" href="class_frame.html#afde88292c44dc59faf017738dae6dffb">Frame</a>, and <a class="el" href="class_form___field___hidden.html#afde88292c44dc59faf017738dae6dffb">Form_Field_Hidden</a>.</p>
 
 </div>
 </div>
@@ -518,7 +572,7 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>actual_fields</em> = <code><a class="el" href="static_8php.html#a93cb8dbe7a79de0dc281e43f0ea6dd80">UNDEFINED</a></code>&#160;</td>
+          <td class="paramname"><em>actual_fields</em> = <code>UNDEFINED</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -584,7 +638,7 @@ Data Fields</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_abstract_object.html#ab949cccd963058f0937d04bc26ee24a7">AbstractObject</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_grid___advanced.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Advanced</a>, <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
+<p>Reimplemented in <a class="el" href="class_form___basic.html#ab949cccd963058f0937d04bc26ee24a7">Form_Basic</a>, <a class="el" href="class_grid___basic.html#ab949cccd963058f0937d04bc26ee24a7">Grid_Basic</a>, and <a class="el" href="class_view___model_details.html#ab949cccd963058f0937d04bc26ee24a7">View_ModelDetails</a>.</p>
 
 </div>
 </div>
@@ -656,7 +710,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_abstract_view_8php.html">AbstractView.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/<a class="el" href="_abstract_view_8php.html">AbstractView.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -665,7 +719,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -678,7 +732,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_abstract_view.html">AbstractView</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:11 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

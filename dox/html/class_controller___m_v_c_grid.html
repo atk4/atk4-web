@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -118,7 +119,7 @@ Inheritance diagram for Controller_MVCGrid:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#a4a35edebc614102122c07e331f4b9782">addTypeAssociation</a> ($k, $v)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#acc18d3653152f17511856da0d6de63c8">setActualFields</a> ($fields)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> ($model, $fields=<a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#a4db8ae8ecf2d34fed5eeb8cfc02658b1">importFields</a> ($model, $fields=undefined)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#a4adad7a91285542d95eeb312906e6451">importField</a> ($field)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller___m_v_c_grid.html#a242289ba7aa6a36aeda249d806aabccf">getFieldType</a> ($field)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -204,7 +205,7 @@ Data Fields</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>fields</em> = <code><a class="el" href="static_8php.html#ae21cc36bf0d65014c717a481a3f8a468">undefined</a></code>&#160;</td>
+          <td class="paramname"><em>fields</em> = <code>undefined</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -284,22 +285,23 @@ Data Fields</h2></td></tr>
         <span class="stringliteral">&#39;money&#39;</span>=&gt;<span class="stringliteral">&#39;money&#39;</span>,
         <span class="stringliteral">&#39;text&#39;</span>=&gt;<span class="stringliteral">&#39;shorttext&#39;</span>,
         <span class="stringliteral">&#39;reference&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
+        <span class="stringliteral">&#39;reference_id&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
         <span class="stringliteral">&#39;datetime&#39;</span>=&gt;<span class="stringliteral">&#39;timestamp&#39;</span>,
         <span class="stringliteral">&#39;date&#39;</span>=&gt;<span class="stringliteral">&#39;date&#39;</span>,
-        <span class="stringliteral">&#39;daytime&#39;</span>=&gt;<span class="stringliteral">&#39;daytime&#39;</span>,
-        <span class="stringliteral">&#39;daytime_total&#39;</span>=&gt;<span class="stringliteral">&#39;daytime_total&#39;</span>,
+        <span class="stringliteral">&#39;daytime&#39;</span>=&gt;<span class="stringliteral">&#39;time&#39;</span>,
         <span class="stringliteral">&#39;boolean&#39;</span>=&gt;<span class="stringliteral">&#39;boolean&#39;</span>,
         <span class="stringliteral">&#39;list&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
+        <span class="stringliteral">&#39;radio&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
         <span class="stringliteral">&#39;readonly&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
         <span class="stringliteral">&#39;image&#39;</span>=&gt;<span class="stringliteral">&#39;text&#39;</span>,
-        <span class="stringliteral">&#39;file&#39;</span>=&gt;<span class="stringliteral">&#39;referenece&#39;</span>,
+        <span class="stringliteral">&#39;file&#39;</span>=&gt;<span class="stringliteral">&#39;reference&#39;</span>,
         <span class="stringliteral">&#39;password&#39;</span>=&gt;<span class="stringliteral">&#39;password&#39;</span>,
     )
 </pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/rw/Sites/atk42/atk4/lib/Controller/<a class="el" href="_controller_2_m_v_c_grid_8php.html">MVCGrid.php</a></li>
+<li>/Volumes/Macintosh HD/Users/rw/Sites/atk42/atk4/lib/Controller/<a class="el" href="_controller_2_m_v_c_grid_8php.html">MVCGrid.php</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -308,7 +310,7 @@ Data Fields</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -321,7 +323,7 @@ Data Fields</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_controller___m_v_c_grid.html">Controller_MVCGrid</a>      </li>
 
-    <li class="footer">Generated on Sat Mar 23 2013 18:27:12 for Agile Toolkit by
+    <li class="footer">Generated on Tue Oct 1 2013 17:45:40 for Agile Toolkit by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

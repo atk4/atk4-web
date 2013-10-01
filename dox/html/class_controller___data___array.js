@@ -1,5 +1,7 @@
 var class_controller___data___array =
 [
+    [ "count", "class_controller___data___array.html#aa4db11255ac6ad939d710551eecc17c9", null ],
+    [ "createCursor", "class_controller___data___array.html#aa30a20c66b75ce821df9aba57f4855c0", null ],
     [ "delete", "class_controller___data___array.html#a66295a7830000061da0256b417f56596", null ],
     [ "deleteAll", "class_controller___data___array.html#af412dc3c0335dea093670b21ecae786c", null ],
     [ "getActualFields", "class_controller___data___array.html#a9fd693173a527cc059de8e7d669dc91e", null ],
@@ -10,13 +12,16 @@ var class_controller___data___array =
     [ "next", "class_controller___data___array.html#ac74f16ffc3a74f1a69616e1be48f40b9", null ],
     [ "rewind", "class_controller___data___array.html#ab79a3b895d0e862ccda37ed10259c217", null ],
     [ "save", "class_controller___data___array.html#aec46e1ed5840f7856efee28de321101e", null ],
-    [ "setAssoc", "class_controller___data___array.html#a66a1481fc9574687b8ab03fe45806023", null ],
     [ "setLimit", "class_controller___data___array.html#a76c7a50afdfbc492c5f0c50cfd3d5340", null ],
     [ "setOrder", "class_controller___data___array.html#a6836647111c4a23a748a3d9086880d03", null ],
     [ "setSource", "class_controller___data___array.html#a84791cff3a2832ee914f87ac4f81c08e", null ],
     [ "tryLoad", "class_controller___data___array.html#a6af2b9da15c928d97e037315b35714ad", null ],
     [ "tryLoadAny", "class_controller___data___array.html#a612a6e66bd5765055fcdc103aa3059f0", null ],
     [ "tryLoadBy", "class_controller___data___array.html#afed5b9b73b9ea6db8d84f638572c479e", null ],
-    [ "$search_on_load", "class_controller___data___array.html#ac0b821c705b8b6c56b763c865dcacb8e", null ],
+    [ "$current_offset", "class_controller___data___array.html#a031ce33ce8ae0b495b672ab4e6b2f6e7", null ],
+    [ "$limit_count", "class_controller___data___array.html#a8d0524bc19ab88deefe62f208e3ef858", null ],
+    [ "$limit_offset", "class_controller___data___array.html#ad8ab9ed0fca48b5f46a0e4059f54a44d", null ],
+    [ "$limited", "class_controller___data___array.html#ad6f9c1a3cc0cda663e689c4c97df33ed", null ],
+    [ "$max_id", "class_controller___data___array.html#ad413b24e9391a54d786068309fc6fa38", null ],
     [ "$sequential_id", "class_controller___data___array.html#a94c6c0ca160d3a5defe254899c97c734", null ]
 ];

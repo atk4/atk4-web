@@ -16,6 +16,7 @@ var hierarchy =
           [ "Controller_Data_Dumper", "class_controller___data___dumper.html", null ],
           [ "Controller_Data_JSONRPC", "class_controller___data___j_s_o_n_r_p_c.html", null ],
           [ "Controller_Data_Memcached", "class_controller___data___memcached.html", null ],
+          [ "Controller_Data_Mongo", "class_controller___data___mongo.html", null ],
           [ "Controller_Data_RestAPI", "class_controller___data___rest_a_p_i.html", null ]
         ] ],
         [ "Controller_DatabaseMigration", "class_controller___database_migration.html", null ],
@@ -44,6 +45,7 @@ var hierarchy =
       ] ],
       [ "AbstractModel", "class_abstract_model.html", [
         [ "DB_dsql", "class_d_b__dsql.html", [
+          [ "DB_dsql_firebird", "class_d_b__dsql__firebird.html", null ],
           [ "DB_dsql_mysql", "class_d_b__dsql__mysql.html", null ],
           [ "DB_dsql_oracle", "class_d_b__dsql__oracle.html", null ],
           [ "DB_dsql_pgsql", "class_d_b__dsql__pgsql.html", null ],
@@ -53,15 +55,28 @@ var hierarchy =
         [ "Field", "class_field.html", [
           [ "Field_Deleted", "class_field___deleted.html", null ],
           [ "Field_Expression", "class_field___expression.html", null ],
-          [ "Field_Reference", "class_field___reference.html", null ]
+          [ "Field_Reference", "class_field___reference.html", null ],
+          [ "Mongo_Field", "class_mongo___field.html", [
+            [ "Mongo_Reference", "class_mongo___reference.html", null ]
+          ] ]
         ] ],
         [ "GiTemplate", "class_gi_template.html", null ],
         [ "jQuery_Chain", "classj_query___chain.html", null ],
         [ "Model", "class_model.html", [
+          [ "Model_AgileTest", "class_model___agile_test.html", null ],
           [ "Model_AgileToolkit_Access", "class_model___agile_toolkit___access.html", null ],
           [ "Model_AgileToolkit_Licenses", "class_model___agile_toolkit___licenses.html", null ],
-          [ "Model_Table", "class_model___table.html", null ],
-          [ "ModelIO", "class_model_i_o.html", null ]
+          [ "Model_Simple", "class_model___simple.html", null ],
+          [ "ModelIO", "class_model_i_o.html", null ],
+          [ "Mongo_Model", "class_mongo___model.html", [
+            [ "Model_Person", "class_model___person.html", [
+              [ "Model_Child", "class_model___child.html", null ],
+              [ "Model_Mother", "class_model___mother.html", null ]
+            ] ]
+          ] ],
+          [ "SQL_Model", "class_s_q_l___model.html", [
+            [ "Model_Table", "class_model___table.html", null ]
+          ] ]
         ] ],
         [ "PathFinder_Location", "class_path_finder___location.html", null ],
         [ "SMlite", "class_s_mlite.html", [
@@ -84,7 +99,9 @@ var hierarchy =
       [ "AbstractView", "class_abstract_view.html", [
         [ "ApiCLI", "class_api_c_l_i.html", [
           [ "ApiWeb", "class_api_web.html", [
-            [ "ApiFrontend", "class_api_frontend.html", null ],
+            [ "ApiFrontend", "class_api_frontend.html", [
+              [ "TestApi", "class_test_api.html", null ]
+            ] ],
             [ "ApiInstall", "class_api_install.html", null ]
           ] ]
         ] ],
@@ -103,7 +120,6 @@ var hierarchy =
             ] ]
           ] ],
           [ "Form_Field_Password", "class_form___field___password.html", null ],
-          [ "Form_Field_Readonly", "class_form___field___readonly.html", null ],
           [ "Form_Field_Search", "class_form___field___search.html", null ],
           [ "Form_Field_SimpleCheckbox", "class_form___field___simple_checkbox.html", null ],
           [ "Form_Field_Text", "class_form___field___text.html", null ],
@@ -112,7 +128,8 @@ var hierarchy =
           [ "Form_Field_ValueList", "class_form___field___value_list.html", [
             [ "Form_Field_CheckboxList", "class_form___field___checkbox_list.html", null ],
             [ "Form_Field_DropDown", "class_form___field___drop_down.html", null ],
-            [ "Form_Field_Radio", "class_form___field___radio.html", null ]
+            [ "Form_Field_Radio", "class_form___field___radio.html", null ],
+            [ "Form_Field_Readonly", "class_form___field___readonly.html", null ]
           ] ]
         ] ],
         [ "HelloWorld", "class_hello_world.html", null ],
@@ -122,13 +139,27 @@ var hierarchy =
         [ "Menu_Light", "class_menu___light.html", null ],
         [ "MenuItem", "class_menu_item.html", null ],
         [ "MenuSeparator", "class_menu_separator.html", null ],
+        [ "MyInvisible", "class_my_invisible.html", null ],
         [ "Page", "class_page.html", [
           [ "page_DefaultAbout", "classpage___default_about.html", [
             [ "page_About", "classpage___about.html", null ]
           ] ],
           [ "Page_EntityManager", "class_page___entity_manager.html", null ],
           [ "page_Error", "classpage___error.html", null ],
-          [ "Page_Tester", "class_page___tester.html", null ]
+          [ "Page_Tester", "class_page___tester.html", [
+            [ "page_core", "classpage__core.html", null ],
+            [ "page_exceptions", "classpage__exceptions.html", null ],
+            [ "page_jquerychain", "classpage__jquerychain.html", null ],
+            [ "page_model3", "classpage__model3.html", null ],
+            [ "page_modeldef", "classpage__modeldef.html", null ],
+            [ "page_mongo1", "classpage__mongo1.html", [
+              [ "page_mongo2", "classpage__mongo2.html", null ]
+            ] ],
+            [ "page_normalize", "classpage__normalize.html", null ],
+            [ "page_patternrouter", "classpage__patternrouter.html", null ],
+            [ "page_skipthis", "classpage__skipthis.html", null ],
+            [ "page_view", "classpage__view.html", null ]
+          ] ]
         ] ],
         [ "Paginator_Compat", "class_paginator___compat.html", null ],
         [ "Text", "class_text.html", null ],
@@ -153,13 +184,15 @@ var hierarchy =
                 [ "View_ModelDetails", "class_view___model_details.html", null ]
               ] ],
               [ "Menu_Basic", "class_menu___basic.html", [
-                [ "Menu", "class_menu.html", null ],
-                [ "Menu_jUI", "class_menu__j_u_i.html", null ]
+                [ "Menu", "class_menu.html", null ]
               ] ],
               [ "Paginator_Basic", "class_paginator___basic.html", [
                 [ "Paginator", "class_paginator.html", null ]
               ] ]
             ] ]
+          ] ],
+          [ "Menu_Objective", "class_menu___objective.html", [
+            [ "Menu_jUI", "class_menu__j_u_i.html", null ]
           ] ],
           [ "View_Box", "class_view___box.html", [
             [ "View_Error", "class_view___error.html", null ],
@@ -175,7 +208,6 @@ var hierarchy =
           [ "View_CRUD", "class_view___c_r_u_d.html", [
             [ "CRUD", "class_c_r_u_d.html", null ]
           ] ],
-          [ "View_Flyout", "class_view___flyout.html", null ],
           [ "View_HtmlElement", "class_view___html_element.html", [
             [ "Form_Hint", "class_form___hint.html", null ],
             [ "HtmlElement", "class_html_element.html", [
@@ -205,13 +237,17 @@ var hierarchy =
               [ "Icon", "class_icon.html", null ]
             ] ]
           ] ],
+          [ "View_Popover", "class_view___popover.html", null ],
           [ "View_Tabs", "class_view___tabs.html", [
             [ "View_Tabs_jUItabs", "class_view___tabs__j_u_itabs.html", [
               [ "Tabs", "class_tabs.html", null ]
             ] ]
           ] ]
         ] ]
-      ] ]
+      ] ],
+      [ "MyController", "class_my_controller.html", null ],
+      [ "MyObject", "class_my_object.html", null ],
+      [ "TrackedObject", "class_tracked_object.html", null ]
     ] ],
     [ "BaseException", "class_base_exception.html", [
       [ "Exception_AccessDenied", "class_exception___access_denied.html", null ],
@@ -225,13 +261,18 @@ var hierarchy =
         [ "Exception_NoObject", "class_exception___no_object.html", null ],
         [ "Exception_Obsolete", "class_exception___obsolete.html", null ]
       ] ],
-      [ "Exception_Logic", "class_exception___logic.html", null ],
+      [ "Exception_Logic", "class_exception___logic.html", [
+        [ "Exception_Logic_Ouch", "class_exception___logic___ouch.html", null ],
+        [ "Exception_Logic_test", "class_exception___logic__test.html", null ]
+      ] ],
       [ "Exception_NotConfigured", "class_exception___not_configured.html", null ],
       [ "Exception_NotFound", "class_exception___not_found.html", null ],
       [ "Exception_NotImplemented", "class_exception___not_implemented.html", null ],
-      [ "Exception_Stop", "class_exception___stop.html", null ],
-      [ "Exception_StopInit", "class_exception___stop_init.html", null ],
-      [ "Exception_StopRender", "class_exception___stop_render.html", null ],
+      [ "Exception_Stop", "class_exception___stop.html", [
+        [ "Exception_SkipTests", "class_exception___skip_tests.html", null ],
+        [ "Exception_StopInit", "class_exception___stop_init.html", null ],
+        [ "Exception_StopRender", "class_exception___stop_render.html", null ]
+      ] ],
       [ "Exception_Template", "class_exception___template.html", null ],
       [ "IOException", "class_i_o_exception.html", null ],
       [ "MailException", "class_mail_exception.html", null ],

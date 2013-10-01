@@ -7,6 +7,7 @@ var classj_query___chain =
     [ "_enclose", "classj_query___chain.html#a990b38fd50a7e99c014e331875096073", null ],
     [ "_flattern_objects", "classj_query___chain.html#acf23996ee83a6f7e87cfdd1a3bc1b175", null ],
     [ "_fn", "classj_query___chain.html#aad5483e7347e61bb0332084e78218a7b", null ],
+    [ "_library", "classj_query___chain.html#a1de3065afaa77a38f4e70d0142a23613", null ],
     [ "_load", "classj_query___chain.html#ab7b680f754b8a17318de9092d047f78f", null ],
     [ "_prepend", "classj_query___chain.html#ac6f0393ef42a07ef25475458bb1a2c37", null ],
     [ "_render", "classj_query___chain.html#a30bcc620a40b8f755dbafb28ff1c76d4", null ],
@@ -26,8 +27,8 @@ var classj_query___chain =
     [ "$base", "classj_query___chain.html#ac78df45419614d6db964d0bd9e542c63", null ],
     [ "$debug", "classj_query___chain.html#a85ae3e64cd40e9564adceb010085e9dd", null ],
     [ "$enclose", "classj_query___chain.html#ae8faa162b8340421f2621e943ecafa54", null ],
+    [ "$library", "classj_query___chain.html#af7f16973b677264e07096e6d768b41b6", null ],
     [ "$prepend", "classj_query___chain.html#a829d62e7dd18027c1fc2c9b3fe321ae2", null ],
     [ "$preventDefault", "classj_query___chain.html#aec0782268c79c9243ff9a8962318b302", null ],
-    [ "$selector", "classj_query___chain.html#a3014d0a3a57985c974251f5e8496ddc1", null ],
     [ "$str", "classj_query___chain.html#a7542d95618011800c61773127fa625cf", null ]
 ];

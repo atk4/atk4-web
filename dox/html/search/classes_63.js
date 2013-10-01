@@ -10,6 +10,7 @@ var searchData=
   ['controller_5fdata_5fdumper',['Controller_Data_Dumper',['../class_controller___data___dumper.html',1,'']]],
   ['controller_5fdata_5fjsonrpc',['Controller_Data_JSONRPC',['../class_controller___data___j_s_o_n_r_p_c.html',1,'']]],
   ['controller_5fdata_5fmemcached',['Controller_Data_Memcached',['../class_controller___data___memcached.html',1,'']]],
+  ['controller_5fdata_5fmongo',['Controller_Data_Mongo',['../class_controller___data___mongo.html',1,'']]],
   ['controller_5fdata_5frestapi',['Controller_Data_RestAPI',['../class_controller___data___rest_a_p_i.html',1,'']]],
   ['controller_5fdata_5fsession',['Controller_Data_Session',['../class_controller___data___session.html',1,'']]],
   ['controller_5fdatabasemigration',['Controller_DatabaseMigration',['../class_controller___database_migration.html',1,'']]],
