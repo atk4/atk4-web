@@ -38,12 +38,12 @@ $name = $this->api->db->dsql()
 
 
 <?MoreInfo?>Collects all information about the query into one object;
-<p>Once query object is created it will accumulate information about SQL conditions, joins, fields, tables. It even stores information
+<p>Once a query object is created it will accumulate information about SQL conditions, joins, fields, tables. It even stores information
 about parametric variables and sub-queries.</p>
 <p>This is really important when you need to pass query information from one object to another, between models or even allow controller or add-on to interact with standard query. Multiple queries may exist and can even be executed simultaneously without affecting each-other</p>
 <?/?>
-<?MoreInfo?>Allow do modify existing query dynamically;
-<p>Most ORMs produce query in one go. You can't create query in one object then pass it on to another object to add additional queries or joins.</p>
+<?MoreInfo?>Allow to modify existing query dynamically;
+<p>Most ORMs produce a query in one go. You can't create query in one object then pass it on to another object to add additional queries or joins.</p>
 <p>DSQL allows you to add or remove fields, conditions, arguments or anything else at any time. Even after you perform one select, you can re-use the object.</p>
 <?/?>
 <?MoreInfo?>Permit use of customizations for different SQL vendors;
