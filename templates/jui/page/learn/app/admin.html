@@ -169,7 +169,7 @@ class RentalAuth extends BasicAuth {
     function verifyCredentials($email,$password){
         $model = $this->getModel()->tryLoadBy('email',$email);
         // Manually encrypt password
-        $enc_p = encryptPassword($password,$email);
+        $enc_p = $this->encryptPassword($password,$email);
         if(!$model->isInstanceLoaded())return false;
         if($enc_p == $model->get('password')){
             $this->addInfo($model->get());
