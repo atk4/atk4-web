@@ -42,47 +42,6 @@
 &lt;/div&gt;
 </pre></code></div>
 
-<p>Next, open page/index.php and instead of what there is right now, put this code in:</p>
-<?Code?>
-class page_index extends Page {
-    function init(){
-        parent::init();
-
-        $form = $this->add('Form',null,'LoginForm');
-        $form->setFormClass('vertical');
-        $form->addField('line','login');
-        $form->addfield('password','password');
-        $form->addSubmit('Login');
-
-        if($form->isSubmitted()){
-
-            // Short-cuts
-            $auth=$this->api->auth;
-            $l=$form->get('login');
-            $p=$form->get('password');
-
-            // Manually encrypt password
-            $enc_p = $auth->encryptPassword($p,$l);
-
-            // Manually verify login
-            if($auth->verifyCredentials($l,$enc_p)){
-
-                // Manually log-in
-                $auth->login($l);
-                $form->js()->univ()->redirect('video')->execute();
-            }
-            $form->getElement('password')->displayFieldError('Incorrect login');
-        }
-    }
-    function defaultTemplate(){
-        return array('page/index');
-    }
-}
-<?/?>
-<p>Let's go over the contens of that index page. First we create a simple form with 2 fields. setFormClass() makes field labels appear over the fields.
-When form is submitted, we are encrypting password with the
-standard Authentication class, verify credentials and if they match, manually login the user and redirect him to the "video" page. If login wasn't successful, display message about incorrect login instead. We've also switched to use our new template, which defines "LoginForm" tag.</p>
-
 <p>Next we should configure system-wide Auth class for our frontend. Edit the lib/Frontend.php file to add this:</p>
 
 <?Code?>
@@ -104,6 +63,45 @@ standard Authentication class, verify credentials and if they match, manually lo
 <?Code?>
 $config['auth']['key']='secret';  // should match the one used by admin
 <?/?>
+
+
+<p>Next, open page/index.php and instead of what there is right now, put this code in:</p>
+<?Code?>
+class page_index extends Page {
+    function init(){
+        parent::init();
+
+        $form = $this->add('Form',null,'LoginForm');
+        $form->setFormClass('vertical');
+        $form->addField('line','login');
+        $form->addfield('password','password');
+        $form->addSubmit('Login');
+
+        if($form->isSubmitted()){
+
+            // Short-cuts
+            $auth=$this->api->auth;
+            $l=$form->get('login');
+            $p=$form->get('password');
+
+            // Manually verify login
+            if($auth->verifyCredentials($l,$p)){
+                // Manually log-in
+                $auth->login($l);
+                $form->js()->univ()->redirect('video')->execute();
+            }
+            $form->getElement('password')->displayFieldError('Incorrect login');
+        }
+    }
+    function defaultTemplate(){
+        return array('page/index');
+    }
+}
+<?/?>
+<p>Let's go over the contens of that index page. First we create a simple form with 2 fields. setFormClass() makes field labels appear over the fields.
+When form is submitted, the Auth class verifies the credentials and if they match, manually login the user and redirect him to the "video" page. If login wasn't successful, display message about incorrect login instead. We've also switched to use our new template, which defines "LoginForm" tag.</p>
+
+
 
 <p>Create the page/video.php containing list of available videos and make it protected from non-authenticated users.</p>
 <?Code?>
