@@ -116,7 +116,7 @@ $result=$template->render();
         <pre>&lt;?mywiki?&gt;Continue to &lt;?page?&gt;about&lt;?/?&gt; page or &lt;?page?&gt;history&lt;?/?&gt; page&lt;?/?&gt;</pre>
 
 <?Code?>
-$tempalte->eachTag('page',function($val){
+$template->eachTag('page',function($val){
     return '<a href="'.$val.'.html">'.ucwords($val).'</a>';
 });
 
