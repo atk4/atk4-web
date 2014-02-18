@@ -55,7 +55,7 @@ $tabs->addTab('Step 2')
   </div>
 </div>
 
-<p>There are two "dynamic" groups: "editable" and "visible". Those are used as default by views and they will rely on editable() / visible() flags on the fields to decide if the field should be displayed or not. $model->getActualFields() will convert name of the group or array with fields into array of field names matching the criteria. getActualFields will exclude hidden() or system() fields and therefore hey wouldn't appear as columns or fields even if specified as actual fields.</p>
+<p>There are two "dynamic" groups: "editable" and "visible". Those are used as default by views and they will rely on editable() / visible() flags on the fields to decide if the field should be displayed or not. $model->getActualFields() will convert name of the group or array with fields into array of field names matching the criteria. getActualFields will exclude hidden() or system() fields and therefore they wouldn't appear as columns or fields even if specified as actual fields.</p>
 
 <p>If you want to display a system field no matter what, you can either import field manually or reset the system()/hidden() flag. Below examples will use these techniques to display "id" field as a column. Additionally they will use "Order" controller to position "id" field first.</p>
 
