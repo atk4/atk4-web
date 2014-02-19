@@ -162,7 +162,7 @@ class Book extends Model_Table {
 
 <p>The View class defines property $default_controller='MVCForm'; Subsequently, when $view->setModel('Book') is called, the controller is initialized first and is used to bind model and controller together.</p>
 
-<p>You can also define $default_controller property in your model, in which case it will use it instead when creating controller for the view</p>
+<p>You can also define $default_controller property in your model. So, model will use $default_controller when creating controller for the view.</p>
 
 <p>Reference to controller can always be found in $view->controller. You can create multiple controllers, which will rewrite reference. This reference can be useful if you are willing to associate View with additional model or import more fields.</p>
 
