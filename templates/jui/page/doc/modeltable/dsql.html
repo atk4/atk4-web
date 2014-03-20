@@ -126,7 +126,7 @@ $model->addHook('beforeModify',function($m,$dsql){
 <h3>Title column and ID column</h3>
 <p>Unlike basic "Model" class where "id" is defined entirely by the controller, Model_Table will assume that one field in a model is going to be identifier. Agile Toolkit does not support multi-column primary keys. By default a field called "id" is considered a primary key, however developer can change it by defining $model->id_field property.</p>
 
-<p>Similarly, if field "name" is defined, it is considered to be a "Title field". The title field will appear on by default when other models refer to this model or when the model contents are displayed in drop-down or if you simply convert model to string. It's possible to change title field by setting "title_field" property. ID field is defined my parent::init() but you still should define title field manually.</p>
+<p>Similarly, if field "name" is defined, it is considered to be a "Title field". The title field will appear on by default when other models refer to this model or when the model contents are displayed in drop-down or if you simply convert model to string. It's possible to change title field by setting "title_field" property. ID field is defined by parent::init() but you still should define title field manually.</p>
 
 <?Code?>
 class Model_Book extends Model_Table {
